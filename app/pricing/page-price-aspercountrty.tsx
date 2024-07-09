@@ -14,6 +14,7 @@ type Plan = {
   description: string;
   button: string;
   feature?: string;
+  link: { US: string; IN: string };
 };
 
 const plans: Plan[] = [
@@ -30,6 +31,10 @@ const plans: Plan[] = [
     style: " rounded-3xl  py-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-300 to-neutral-50",
     description: "Standalone components tailored to your needs and easily integrated. Perfect for website elements or sections.",
     button: "Buy Now",
+    link: {
+      US: "https://buy.stripe.com/6oEg1WdsibFr1EYbIK",
+      IN: "https://buy.stripe.com/14k2b65ZQ8tf5Ve28c" // Change this to your actual INR link
+    }
   },
   {
     index: 1,
@@ -46,6 +51,10 @@ const plans: Plan[] = [
     style: " rounded-3xl  py-10 bg-clip-text text-transparent bg-gradient-to-b from-neutral-300 to-neutral-50",
     description: "Best for early-stage startups, businesses, and freelancers that need a marketing side to showcase their work and vision.",
     button: "Buy Now",
+    link: {
+      US: "https://buy.stripe.com/14k2b65ZQ8tf5Ve28c",
+      IN: "https://buy.stripe.com/7sI3d4eXQ3tf5Ve28c" // Change this to your actual INR link
+    }
   },
   {
     index: 2,
@@ -65,6 +74,10 @@ const plans: Plan[] = [
     style: " h-full rounded-3xl py-10 flex flex-col  bg-clip-text text-transparent bg-gradient-to-b from-neutral-300 to-neutral-50  ",
     description: "Best for small businesses and startups that need a performant website that looks great and converts visitors to customers.",
     button: "Contact Us",
+    link: {
+      US: "/contact",
+      IN: "/contact" // This remains the same as it's a contact form link
+    }
   },
 ];
 
@@ -130,7 +143,7 @@ const Pricing = () => {
               <div className={plan.button}>
                 {index === 0 && (
                   <Link
-                    href="https://buy.stripe.com/6oEg1WdsibFr1EYbIK"
+                    href={plan.link[country]}
                     className="rounded-3xl my-4 py-2 text-white w-full mx-auto items-center flex justify-center bg-gradient-to-r from-emerald-500 to-blue-300"
                   >
                     Buy Now
@@ -138,7 +151,7 @@ const Pricing = () => {
                 )}
                 {index === 1 && (
                   <Link
-                    href="https://buy.stripe.com/14k2b65ZQ8tf5Ve28c"
+                    href={plan.link[country]}
                     className="rounded-3xl my-4 py-2 text-white w-full mx-auto items-center flex justify-center bg-gradient-to-r from-emerald-500 to-blue-300"
                   >
                     Buy Now
@@ -146,7 +159,7 @@ const Pricing = () => {
                 )}
                 {index === 2 && (
                   <Link
-                    href="/contact"
+                    href={plan.link[country]}
                     className="rounded-3xl my-4 py-2 text-white w-full mx-auto items-center flex justify-center bg-gradient-to-r from-purple-500 to-blue-300"
                   >
                     Contact Us
