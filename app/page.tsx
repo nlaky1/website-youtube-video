@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState, useRef } from "react";
 import Navbar from "@/components/navbar";
@@ -10,10 +10,11 @@ import Link from "next/link";
 import WebsiteDesign from "./website-design";
 import GraphicDesign from "./graphic-design";
 import ShopifyStores from "./shopify-stores";
-import Brands from "./brands";
+
 import Services from "./services";
 import FAQS from "./faq";
 import { InfiniteMovingCardsDemo } from "./snippets/infinite-moving-card-snippet";
+import { CompanyName } from "./snippets/company-name";
 
 export default function Home() {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -27,7 +28,7 @@ export default function Home() {
   const websiteDesignRef = useRef<HTMLDivElement>(null);
   const graphicDesignRef = useRef<HTMLDivElement>(null);
   const shopifyStoresRef = useRef<HTMLDivElement>(null);
-  const brandsRef = useRef<HTMLDivElement>(null);
+
   const servicesRef = useRef<HTMLDivElement>(null);
 
   const scrollToWebsiteDesign = () => {
@@ -46,10 +47,6 @@ export default function Home() {
     shopifyStoresRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToBrands = () => {
-    brandsRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   // Function to scroll to Services section
   const scrollToServices = () => {
     servicesRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -61,9 +58,9 @@ export default function Home() {
         scrollToWebsiteDesign={scrollToWebsiteDesign}
         scrollToGraphicDesign={scrollToGraphicDesign}
         scrollToShopifyStores={scrollToShopifyStores}
-        scrollToBrands={scrollToBrands}
         scrollToServices={scrollToServices}
       />
+      <CompanyName />
 
       <Spotlight className="hidden md:flex md:-top-80 left-80  " fill="white" />
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
@@ -71,7 +68,8 @@ export default function Home() {
           Create, grow, and <br /> scale your business
         </div>
         <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
-          Custom tailored solutions for your business. We are a team of creatives who are excited to help you grow your business.
+          Custom tailored solutions for your business. We are a team of
+          creatives who are excited to help you grow your business.
         </p>
 
         <Link
@@ -93,13 +91,11 @@ export default function Home() {
         <div ref={shopifyStoresRef}>
           <ShopifyStores />
         </div>
-        <div ref={brandsRef}>
-          <Brands />
+
+        <div id="services">
+          <Services />
         </div>
-        <div id ='services'>
-        <Services />
-        </div>
-        <InfiniteMovingCardsDemo />
+        {/* <InfiniteMovingCardsDemo /> */}
         <FAQS />
       </div>
     </div>
