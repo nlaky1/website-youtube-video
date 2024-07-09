@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { AlignJustify, X } from "lucide-react";
-
 import Image from "next/image";
 import Link from "next/link";
 import DropDownMenu from "./drop-down-menu";
@@ -11,7 +10,6 @@ interface NavbarProps {
   scrollToWebsiteDesign: () => void;
   scrollToGraphicDesign: () => void;
   scrollToShopifyStores: () => void;
-
   scrollToServices: () => void; // Define scrollToServices function
 }
 
@@ -19,7 +17,6 @@ const Navbar = ({
   scrollToWebsiteDesign,
   scrollToGraphicDesign,
   scrollToShopifyStores,
-
   scrollToServices, // Add scrollToServices to props
 }: NavbarProps) => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
@@ -61,22 +58,18 @@ const Navbar = ({
           <div onClick={scrollToGraphicDesign} className="hover:text-gray-50">
             Graphic Design
           </div>
-
           <div onClick={scrollToShopifyStores} className="hover:text-gray-50">
             Ecommerce Stores
           </div>
           <div className="hover:text-gray-50">
             Blogs
           </div>
-
           <Link href="/pricing" className="hover:text-gray-50">
             Pricing
           </Link>
         </div>
-
         <div className="flex md:hidden">
           {isDropDownVisible ? (
-            // display an x icon when the drop is visible
             <div
               onClick={toggleDropDown}
               className="w-8 h-8 text-slate-300 cursor-pointer"
@@ -94,7 +87,6 @@ const Navbar = ({
             />
           )}
         </div>
-
         <div className="hidden md:flex">
           <Link
             href="/contact"
@@ -104,7 +96,6 @@ const Navbar = ({
             bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors
              focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2
               focus:ring-offset-slate-50
-
             "
           >
             Contact

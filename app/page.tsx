@@ -10,7 +10,6 @@ import Link from "next/link";
 import WebsiteDesign from "./website-design";
 import GraphicDesign from "./graphic-design";
 import ShopifyStores from "./shopify-stores";
-
 import Services from "./services";
 import FAQS from "./faq";
 import { InfiniteMovingCardsDemo } from "./snippets/infinite-moving-card-snippet";
@@ -28,7 +27,6 @@ export default function Home() {
   const websiteDesignRef = useRef<HTMLDivElement>(null);
   const graphicDesignRef = useRef<HTMLDivElement>(null);
   const shopifyStoresRef = useRef<HTMLDivElement>(null);
-
   const servicesRef = useRef<HTMLDivElement>(null);
 
   const scrollToWebsiteDesign = () => {
@@ -92,7 +90,7 @@ export default function Home() {
           <ShopifyStores />
         </div>
 
-        <div id="services">
+        <div id="services" ref={servicesRef}>
           <Services />
         </div>
         {/* <InfiniteMovingCardsDemo /> */}
