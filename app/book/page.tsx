@@ -12,7 +12,7 @@ const Book = () => {
           scrollToWebsiteDesign={() => {}}
           scrollToGraphicDesign={() => {}}
           scrollToShopifyStores={() => {}}
-          scrollToBrands={() => {}}
+   
           scrollToServices={() => {}}
         />
         <div className="text-4xl pb-5 md:text-6xl text-center 
