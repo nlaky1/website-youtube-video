@@ -4,22 +4,22 @@ import Image from "next/image";
 
 const stores = [
   {
-    image: "/images/image2.png",
-    quote: "Bird showed us to get started, what to do, and how to do it.",
-    name: "Jason Scer",
+    image: "https://agency-liart.vercel.app/_next/image?url=%2Fimages%2Fimage2.png&w=828&q=75",
+    quote: "Stunning online stores that turn visitors into customers. Elevate your brand and boost sales.",
+    name: "",
   },
   {
-    image: "/images/shop-2.jpeg",
+    image: "https://agency-liart.vercel.app/_next/image?url=%2Fimages%2Fshop-2.jpeg&w=828&q=75",
     quote:
-      "We had no idea how to get started, but Bird showed us the way. And we were able to create something amazing.",
-    name: "John Prency",
+      "Beautiful, user-friendly Ecommerce websites designed to drive conversions and maximize ROI.",
+    name: "",
   },
 
   {
-    image: "/images/s-2.webp",
+    image: "https://agency-liart.vercel.app/_next/image?url=%2Fimages%2Fs-2.webp&w=828&q=75",
     quote:
-      "The team at Bird is amazing. They helped us create a stunning store that we are proud of.",
-    name: "Miguel Martinez",
+      "Attractive, high-performance Ecommerce stores for a seamless shopping experience.",
+    name: "",
   },
 ];
 
