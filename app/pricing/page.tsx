@@ -78,7 +78,7 @@ const Pricing = () => {
              scrollToWebsiteDesign={() => {}}
              scrollToGraphicDesign={() => {}}
              scrollToShopifyStores={() => {}}
-             scrollToBrands={() => {}}
+
               scrollToServices={() => {}}
       />
 
