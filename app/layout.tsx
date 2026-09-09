@@ -1,20 +1,14 @@
-
 import { Analytics } from '@vercel/analytics/react';
-
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const font = Poppins(
-  { subsets: ["latin"],
-    weight: '400'
-}
-  );
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Soluqube | Software Development Agency - Websites, E-commerce, Mobile Apps",
-  description: "Soluqube is a leading software development agency specializing in website development, e-commerce store development, mobile application development, Flutter, and cross-platform apps. Contact us to elevate your digital presence.",
-  keywords: "software development agency, website development, e-commerce store development, mobile application development, Flutter, cross-platform apps",
+  title: "Soluqube | Deterministic Contract-to-Ledger Revenue Recognition Engine",
+  description: "Zero floating-point calculation drift. Spatial token character grounding. Automated 18% GST isolation for ASC 606 & Ind AS 115 statutory compliance. Patent Priority Application No. 202621096305.",
+  keywords: "ASC 606, Ind AS 115, revenue recognition, contract to ledger, zero drift, statutory audit defense, GST isolation, Merkle tree, Big 4 audit, revenue accounting automation",
   robots: "index, follow",
 };
 
@@ -24,15 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body 
-      
-      suppressHydrationWarning={true}
-      className={font.className}>
+    <html lang="en" className="dark scroll-smooth">
+      <body suppressHydrationWarning={true} className={`${inter.className} bg-slate-950 text-slate-100 antialiased`}>
         <Analytics />
         {children}
-        
-        </body>
+      </body>
     </html>
   );
 }
