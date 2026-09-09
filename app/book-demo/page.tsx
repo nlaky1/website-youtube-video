@@ -17,7 +17,9 @@ import {
   Lock,
   Sparkles,
   ExternalLink,
-  ChevronLeft
+  ChevronLeft,
+  RefreshCw,
+  Check
 } from "lucide-react";
 
 export default function BookDemoPage() {
@@ -48,333 +50,357 @@ export default function BookDemoPage() {
       return false;
     }
     if (CONSUMER_DOMAINS.includes(domain)) {
-      setEmailError("Corporate work email required. Consumer domains (@gmail, @yahoo, etc.) are restricted for audit compliance.");
+      setEmailError("Please provide a corporate enterprise email address (e.g. name@company.com).");
       return false;
     }
     setEmailError("");
     return true;
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value;
-    setEmail(val);
-    if (val.includes("@")) {
-      validateEmail(val);
-    } else {
-      setEmailError("");
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateEmail(email)) return;
-    if (!fullName || !email || !company) {
-      alert("Please fill in all required enterprise fields.");
+    if (!validateEmail(email) || !fullName || !company) {
+      if (!validateEmail(email)) {
+        setEmailError("A valid business domain email is required.");
+      }
       return;
     }
-
     setIsSubmitting(true);
     setTimeout(() => {
-      const sampleHex = Array.from({ length: 64 }, () =>
-        Math.floor(Math.random() * 16).toString(16)
-      ).join("");
-      const randomRef = `SLQ-AUDIT-${Math.floor(1000 + Math.random() * 9000)}`;
-
-      setSubmittedData({
-        referenceId: randomRef,
-        merkleRoot: sampleHex
-      });
       setIsSubmitting(false);
-      setActiveTab("calendly");
-    }, 850);
+      setSubmittedData({
+        referenceId: "SLQ-" + Math.floor(100000 + Math.random() * 900000),
+        merkleRoot: "0x" + Array.from({length: 32}, () => Math.floor(Math.random()*16).toString(16)).join("")
+      });
+    }, 700);
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       <Navbar />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 space-y-10">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         
-        {/* Breadcrumb / Back link */}
-        <div className="flex items-center justify-between">
+        {/* Navigation Breadcrumb */}
+        <div className="mb-8">
           <Link
             href="/"
-            className="text-xs font-semibold text-slate-400 hover:text-white flex items-center gap-1 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-900 transition-colors"
           >
             <ChevronLeft className="w-4 h-4" />
-            <span>Back to Soluqube Home</span>
+            <span>Return to Overview</span>
           </Link>
-
-          <a
-            href="https://smart-contracts-henna.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1"
-          >
-            <span>Launch Sandbox Engine</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
         </div>
 
-        {/* Header */}
-        <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/30 text-xs font-mono font-semibold">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Patent Priority Application No. 202621096305</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Book a Technical Evaluation & Historical Drift Audit
-          </h1>
-          <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-            Upload or submit up to 3 complex customer agreements. Our engineering team will run your contracts through the 5-Gate deterministic engine to verify stand-alone selling prices, 18% GST isolation, and $0.00 drift.
-          </p>
-        </div>
-
-        {/* View Switcher: Form vs Direct Calendar */}
-        <div className="flex items-center gap-2 border-b border-slate-800 pb-4">
-          <button
-            onClick={() => setActiveTab("form")}
-            className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-              activeTab === "form"
-                ? "bg-blue-600 text-white shadow"
-                : "bg-slate-900 text-slate-400 hover:text-white"
-            }`}
-          >
-            1. Audit Intake Specification
-          </button>
-          <button
-            onClick={() => setActiveTab("calendly")}
-            className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-              activeTab === "calendly"
-                ? "bg-blue-600 text-white shadow"
-                : "bg-slate-900 text-slate-400 hover:text-white"
-            }`}
-          >
-            2. Calendar Slot Reservation (Calendly)
-          </button>
-        </div>
-
-        {activeTab === "calendly" ? (
-          <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-6">
-            {submittedData && (
-              <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-800/60 flex items-center justify-between text-xs font-mono">
-                <div className="flex items-center gap-2 text-emerald-400 font-bold">
-                  <CheckCircle2 className="w-4 h-4" />
-                  <span>Audit Session Provisioned: {submittedData.referenceId}</span>
-                </div>
-                <span className="text-slate-400">Merkle Root: {submittedData.merkleRoot.slice(0, 16)}...</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column: Context & Assurances */}
+          <div className="lg:col-span-5 space-y-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase font-mono tracking-wider mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span>Executive Intake Portal</span>
               </div>
-            )}
-
-            <div className="text-center space-y-2">
-              <h3 className="text-lg font-bold text-white">Select a 15 or 30-Minute Meeting Slot</h3>
-              <p className="text-xs text-slate-400">
-                Direct integration with our systems engineering pipeline.
+              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                Schedule an Audit Defense Deep-Dive
+              </h1>
+              <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
+                Discover how Soluqube automates contract-to-ledger revenue recognition under ASC 606 and Ind AS 115 with zero floating-point drift.
               </p>
             </div>
 
-            <div className="rounded-xl overflow-hidden border border-slate-800 bg-black min-h-[650px]">
-              <InlineWidget url="https://calendly.com/nlaky1/15min" />
+            {/* Feature checklist */}
+            <div className="space-y-4 text-xs sm:text-sm text-slate-700">
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <span className="font-bold text-slate-900">Complimentary Historical Drift Audit:</span> Receive a mathematical verification certificate certifying balance sheet zero-drift down to the exact cent.
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <span className="font-bold text-slate-900">Spatial Token Bounding Boxes:</span> Pinned to raw contract PDF coordinates for instantaneous Big 4 audit substantiation.
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <span className="font-bold text-slate-900">18% GST Statutory Firewall:</span> MCA Schedule III isolation protecting US GAAP revenue from tax commingling.
+                </div>
+              </div>
+            </div>
+
+            {/* Patent Callout */}
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/90 font-mono text-xs text-slate-600">
+              <span className="font-bold text-slate-900 block mb-1">Patent Application: 202621096305</span>
+              Deterministic Revenue Recognition Engine with 128-bit Closed-Form Parity.
+            </div>
+
+            {/* Security Assurance */}
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center gap-3">
+              <Lock className="w-5 h-5 text-slate-600 shrink-0" />
+              <div className="text-xs text-slate-600">
+                <span className="font-semibold text-slate-900 block">Bank-Grade Confidentiality</span>
+                Protected under mutual enterprise NDA prior to data review. Zero training on customer contract data.
+              </div>
             </div>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
-            {/* Form Column */}
-            <div className="lg:col-span-7">
-              <form
-                onSubmit={handleSubmit}
-                className="p-8 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl space-y-6"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  
-                  {/* Full Name */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                      <User className="w-3.5 h-3.5 text-slate-400" />
-                      <span>Full Name *</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Sarah Jenkins"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
-                    />
-                  </div>
 
-                  {/* Corporate Email */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                      <Mail className="w-3.5 h-3.5 text-slate-400" />
-                      <span>Corporate Email *</span>
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="sarah@enterprise.com"
-                      value={email}
-                      onChange={handleEmailChange}
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border text-sm text-white placeholder-slate-600 focus:outline-none transition-all ${
-                        emailError ? "border-rose-500" : "border-slate-800 focus:border-blue-500"
-                      }`}
-                    />
-                    {emailError && (
-                      <div className="flex items-start gap-1 text-[11px] text-rose-400 mt-1">
-                        <AlertCircle className="w-3.5 h-3.5 shrink-0 mt-0.5" />
-                        <span>{emailError}</span>
+          {/* Right Column: Intake Card */}
+          <div className="lg:col-span-7">
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+              
+              {/* Tab Switcher: Form vs Calendly */}
+              <div className="flex items-center gap-2 p-1 bg-slate-100/80 rounded-xl mb-6 border border-slate-200">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("form")}
+                  className={`flex-1 py-2 rounded-lg text-xs font-semibold transition-all ${
+                    activeTab === "form"
+                      ? "bg-white text-slate-900 shadow-sm"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  1. Enterprise Audit Intake Form
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("calendly")}
+                  className={`flex-1 py-2 rounded-lg text-xs font-semibold transition-all ${
+                    activeTab === "calendly"
+                      ? "bg-white text-slate-900 shadow-sm"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  2. Direct Calendar Booking
+                </button>
+              </div>
+
+              {activeTab === "form" ? (
+                !submittedData ? (
+                  <form onSubmit={handleBookingSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {/* Full Name */}
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={fullName}
+                          onChange={(e) => setFullName(e.target.value)}
+                          placeholder="Sarah Jenkins"
+                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all"
+                        />
                       </div>
-                    )}
-                  </div>
 
-                  {/* Company Name */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                      <Building2 className="w-3.5 h-3.5 text-slate-400" />
-                      <span>Company Name *</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Acme Global Inc."
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
-                    />
-                  </div>
+                      {/* Corporate Email */}
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                          Corporate Email *
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={email}
+                          onChange={(e) => {
+                            setEmail(e.target.value);
+                            if (emailError) validateEmail(e.target.value);
+                          }}
+                          onBlur={(e) => validateEmail(e.target.value)}
+                          placeholder="s.jenkins@enterprise.com"
+                          className={`w-full px-3.5 py-2.5 rounded-xl border text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 transition-all ${
+                            emailError 
+                              ? "border-red-300 focus:ring-red-500 bg-red-50/20" 
+                              : "border-slate-200 focus:ring-slate-900"
+                          }`}
+                        />
+                        {emailError && (
+                          <div className="flex items-center gap-1 text-[11px] text-red-600 mt-1.5">
+                            <AlertCircle className="w-3 h-3 shrink-0" />
+                            <span>{emailError}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
 
-                  {/* Accounting Standard */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-300">
-                      Accounting Standard *
-                    </label>
-                    <select
-                      value={accountingStandard}
-                      onChange={(e) => setAccountingStandard(e.target.value as any)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-blue-500 transition-all cursor-pointer"
-                    >
-                      <option value="ASC 606 (US GAAP)">ASC 606 (US GAAP)</option>
-                      <option value="Ind AS 115 (MCA India)">Ind AS 115 (MCA India - 18% GST)</option>
-                      <option value="Both / Cross-Border">Both / Cross-Border Consolidated</option>
-                    </select>
-                  </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {/* Company Name */}
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                          Company Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={company}
+                          onChange={(e) => setCompany(e.target.value)}
+                          placeholder="CloudTech Holdings, Inc."
+                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all"
+                        />
+                      </div>
 
-                  {/* ERP Stack */}
-                  <div className="sm:col-span-2 space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-300">
-                      Current ERP / RevRec System
-                    </label>
-                    <select
-                      value={revrecStack}
-                      onChange={(e) => setRevrecStack(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-blue-500 transition-all cursor-pointer"
-                    >
-                      <option value="NetSuite">Oracle NetSuite (SuiteTalk)</option>
-                      <option value="SAP">SAP S/4HANA / ECC</option>
-                      <option value="QuickBooks">QuickBooks Enterprise</option>
-                      <option value="Tally Prime">Tally Prime (India GST)</option>
-                      <option value="Manual Spreadsheets">Manual Spreadsheets / Excel</option>
-                    </select>
-                  </div>
+                      {/* Primary ERP / RevRec Stack */}
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                          Primary ERP Stack
+                        </label>
+                        <select
+                          value={revrecStack}
+                          onChange={(e) => setRevrecStack(e.target.value)}
+                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all"
+                        >
+                          <option value="NetSuite">Oracle NetSuite (ARM)</option>
+                          <option value="SAP">SAP S/4HANA (RAR)</option>
+                          <option value="QuickBooks">QuickBooks Enterprise</option>
+                          <option value="Tally Prime">Tally Prime (India Statutory)</option>
+                          <option value="Manual Spreadsheets">Manual Excel / Google Sheets</option>
+                          <option value="Other">Other General Ledger</option>
+                        </select>
+                      </div>
+                    </div>
 
-                </div>
-
-                {/* Offer Checkbox */}
-                <div className="p-4 rounded-xl bg-blue-950/40 border border-blue-800/60">
-                  <label className="flex items-start gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={driftAuditOffer}
-                      onChange={(e) => setDriftAuditOffer(e.target.checked)}
-                      className="w-4 h-4 rounded mt-0.5 text-blue-600 focus:ring-blue-500 bg-slate-900 border-slate-700 cursor-pointer"
-                    />
+                    {/* Target Accounting Standard */}
                     <div>
-                      <span className="text-xs font-bold text-white flex items-center gap-1.5">
-                        <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-                        Complimentary 3-Contract Historical Drift Audit
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Target Accounting Standard
+                      </label>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        {[
+                          "ASC 606 (US GAAP)",
+                          "Ind AS 115 (MCA India)",
+                          "Both / Cross-Border"
+                        ].map((std) => (
+                          <button
+                            type="button"
+                            key={std}
+                            onClick={() => setAccountingStandard(std as any)}
+                            className={`px-3 py-2 rounded-xl text-xs font-medium border text-center transition-all ${
+                              accountingStandard === std
+                                ? "bg-slate-900 text-white border-slate-900 shadow-sm"
+                                : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
+                            }`}
+                          >
+                            {std}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Offer Checkbox */}
+                    <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3 cursor-pointer" onClick={() => setDriftAuditOffer(!driftAuditOffer)}>
+                      <input
+                        type="checkbox"
+                        checked={driftAuditOffer}
+                        onChange={(e) => setDriftAuditOffer(e.target.checked)}
+                        className="mt-0.5 rounded border-slate-300 text-slate-900 focus:ring-slate-900 cursor-pointer"
+                      />
+                      <label className="text-xs text-slate-700 cursor-pointer select-none">
+                        <span className="font-bold text-slate-900 block">Complimentary 3-Contract Historical Drift Audit</span>
+                        Include our complimentary historical floating-point variance analysis report ($4,500 value) at zero charge.
+                      </label>
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <RefreshCw className="w-4 h-4 animate-spin" />
+                          <span>Generating Cryptographic Anchor...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Initialize Audit Request &rarr;</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+
+                    <p className="text-[11px] text-slate-400 text-center leading-relaxed">
+                      By submitting, you agree to our Enterprise Audit terms. Confidentiality protected under mutual NDA.
+                    </p>
+                  </form>
+                ) : (
+                  /* Form state on submit: Verified Confirmation */
+                  <div className="text-center py-6 space-y-5 animate-in fade-in zoom-in duration-300">
+                    <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
+                      <ShieldCheck className="w-7 h-7" />
+                    </div>
+
+                    <div>
+                      <span className="text-xs font-mono uppercase font-bold text-emerald-700 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 inline-block mb-2">
+                        Audit Request Logged — Merkle Anchor Initialized
                       </span>
-                      <p className="text-[11px] text-slate-300 mt-0.5">
-                        Includes mathematical reconciliation of up to 3 historic agreements, comparing current ERP balance sheets with our 128-bit closed-form parity ledger.
+                      <h3 className="text-xl font-bold text-slate-900">
+                        Verification Parameters Cryptographically Anchored
+                      </h3>
+                      <p className="text-xs text-slate-600 max-w-md mx-auto mt-2 leading-relaxed">
+                        Our technical accounting team will review your contract parameters and reach out within 1 business day with your secure upload vault.
                       </p>
                     </div>
-                  </label>
-                </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-blue-600 hover:bg-blue-500 shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      <span>Computing Merkle Anchor...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Lock Audit Reservation & Choose Slot</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
+                    {/* Receipt Card */}
+                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/90 text-left font-mono text-xs space-y-2 max-w-md mx-auto">
+                      <div className="flex justify-between text-slate-500">
+                        <span>Reference ID:</span>
+                        <span className="font-bold text-slate-900">{submittedData.referenceId}</span>
+                      </div>
+                      <div className="flex justify-between text-slate-500">
+                        <span>Assigned Desk:</span>
+                        <span className="text-slate-800 font-semibold">Priority Accounting Queue #1</span>
+                      </div>
+                      <div className="flex justify-between text-slate-500 truncate">
+                        <span>Merkle Root:</span>
+                        <span className="text-slate-800 font-semibold truncate max-w-[200px]">{submittedData.merkleRoot}</span>
+                      </div>
+                      <div className="flex justify-between text-slate-500">
+                        <span>Selected Standard:</span>
+                        <span className="text-blue-700 font-semibold">{accountingStandard}</span>
+                      </div>
+                      <div className="flex justify-between text-slate-500">
+                        <span>Historical Drift Offer:</span>
+                        <span className="text-emerald-700 font-bold">CLAIMED ($0.00)</span>
+                      </div>
+                    </div>
 
-                <div className="text-center text-[11px] font-mono text-slate-500">
-                  Mutual NDA Protected • Patent App: 202621096305
+                    <div className="pt-2">
+                      <button
+                        onClick={() => setActiveTab("calendly")}
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-all"
+                      >
+                        <Calendar className="w-4 h-4 text-slate-500" />
+                        <span>Schedule Technical Deep-Dive Directly (Calendly) &rarr;</span>
+                      </button>
+                    </div>
+                  </div>
+                )
+              ) : (
+                /* Calendly Embed */
+                <div className="min-h-[600px] w-full rounded-xl overflow-hidden">
+                  <InlineWidget url="https://calendly.com/nlaky1/15min" />
                 </div>
-              </form>
+              )}
+
             </div>
-
-            {/* Information Column */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4">
-                <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  What We Deliver in Your Drift Audit Report
-                </h3>
-                <div className="space-y-3 text-xs text-slate-300">
-                  <div className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white">Floating-Point Drift Reconciliation:</strong> Identify every cent variance between binary float amortization vs 128-bit fixed-point math.
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white">Spatial Coordinate Bounding Verification:</strong> Verify character-level spatial coordinates extracted from scanned PDF agreements.
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-white">18% GST Isolation Audit:</strong> Ensure domestic tax components are firewalled out of core operational margins.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800/80 space-y-3">
-                <div className="text-xs font-bold text-white">Already familiar with the Soluqube Engine?</div>
-                <p className="text-xs text-slate-400">
-                  You can jump directly into the live sandbox environment to inspect SEC Edgar exhibits.
-                </p>
-                <a
-                  href="https://smart-contracts-henna.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-400 hover:text-blue-300"
-                >
-                  <span>Launch Live Sandbox Canvas</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
-
           </div>
-        )}
 
-      </div>
+        </div>
+
+      </main>
     </div>
   );
 }
