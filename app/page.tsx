@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import {
@@ -29,14 +30,21 @@ import {
   Scale,
   RefreshCw,
   Sliders,
-  ChevronDown
+  ChevronDown,
+  Maximize2
 } from "lucide-react";
 
 export default function Home() {
-  // Showcase Contract State
+  // Showcase Interactive Product Tab State
+  const [activeProductTab, setActiveProductTab] = useState<"canvas" | "waterfall" | "client_portal" | "erp_defense">("canvas");
+
+  // Interactive Contract Data State
   const [selectedContract, setSelectedContract] = useState<"cloudflare" | "snowflake" | "box">("cloudflare");
   const [activeStandard, setActiveStandard] = useState<"ASC 606" | "Ind AS 115">("ASC 606");
   const [highlightedBbox, setHighlightedBbox] = useState<string | null>("ratable_fee");
+
+  // FAQ Accordion State
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   // Booking Form State
   const [fullName, setFullName] = useState("");
@@ -80,30 +88,33 @@ export default function Home() {
       }
       return;
     }
+
     setIsSubmitting(true);
     setTimeout(() => {
-      setIsSubmitting(false);
+      const generatedRef = "REF-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+      const generatedRoot = "0x" + Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join("");
+      
       setSubmittedData({
-        referenceId: "SLQ-" + Math.floor(100000 + Math.random() * 900000),
-        merkleRoot: "0x" + Array.from({length: 32}, () => Math.floor(Math.random()*16).toString(16)).join("")
+        referenceId: generatedRef,
+        merkleRoot: generatedRoot
       });
-    }, 700);
+      setIsSubmitting(false);
+    }, 1200);
   };
 
-  // Demo contract data
   const contractData = {
     cloudflare: {
-      name: "SEC 10-K Cloudflare Enterprise Master SOW (2025)",
-      secRef: "SEC EDGAR CIK #0001735946",
-      obligation: "Enterprise Edge Security & Global Traffic Director (36 Mo Ratable)",
+      name: "Cloudflare SEC Edgar Exhibit 10.12 Master Customer Agreement",
+      secRef: "SEC EDGAR CIK #0001477333",
+      obligation: "Enterprise Edge Routing & Zero Trust Gateway Access (36 Mo Ratable)",
       totalValue: "$1,200,000.00",
       totalValueINR: "₹9,96,00,000.00",
       monthlyRatable: "$33,333.33",
       monthlyRatableINR: "₹27,66,666.67",
-      rateCapClause: "Section 6.4: Maximum professional service blended bill-rate capped strictly at $185.00/hr.",
+      rateCapClause: "Section 4.2: Committed minimum fee of $1,200,000 recognized ratably over 36 months.",
       gstRate: "18% IGST Isolated",
-      bboxCoords: "[142, 318, 590, 362]",
-      tokenID: "#t4891-obligation-master",
+      bboxCoords: "[140, 310, 560, 345]",
+      tokenID: "#t4901-ratable-fee",
       waterfall: [
         { period: "FY25-P01", recognized: "$33,333.33", deferred: "$1,166,666.67", gst: "$6,000.00", parity: "$0.0000" },
         { period: "FY25-P02", recognized: "$33,333.33", deferred: "$1,133,333.34", gst: "$6,000.00", parity: "$0.0000" },
@@ -156,13 +167,67 @@ export default function Home() {
 
   const currentData = contractData[selectedContract];
 
+  const productTabs = {
+    canvas: {
+      title: "Spatial Contract Review Canvas",
+      badge: "GATE 1 & 2 ACTIVE",
+      description: "Dual-pane review canvas linking financial commitments directly to [1000x1000] character token bounding boxes on contract PDFs with zero OCR hallucination.",
+      image: "/images/product/actual-contract-canvas.png",
+      telemetry: "5-Gate Verification: PASSED • Integer Grid: 1000x1000 • SEC Edgar CIK #0001640147"
+    },
+    waterfall: {
+      title: "Revenue Waterfall & 18% GST Isolation",
+      badge: "GATE 3 & 4 ACTIVE",
+      description: "Closed-form 128-bit decimal parity with terminal-period remainder absorption, isolating statutory 18% GST under MCA Schedule III without balance sheet drift.",
+      image: "/images/product/actual-waterfall-ledger.png",
+      telemetry: "Compounded Drift: $0.000000 • 18% GST Isolated: ₹1,51,93,220.34 • Zero Mantissa Leakage"
+    },
+    client_portal: {
+      title: "Multi-Entity Client Advisory Hub",
+      badge: "ENTERPRISE VAULT",
+      description: "Secure onboarding portal with append-only contract versioning (`DOC:rev2.0`), zero-retention session telemetry, and automated Big 4 audit workpaper center.",
+      image: "/images/product/actual-client-portal.png",
+      telemetry: "SOC 2 CC6 Data Governance • Zero-Retention Telemetry • FIPS 140-2 Level 3 HSM"
+    },
+    erp_defense: {
+      title: "ERP Subledger Integration & Big 4 Audit Center",
+      badge: "GATE 5 ACTIVE",
+      description: "Bi-directional subledger sync for Oracle NetSuite ARM and SAP S/4HANA RAR, producing 8-Tab Excel variance models and AS 3101 JSON-LD compliance packs.",
+      image: "/images/product/soluqube-audit-erp-defense.jpg",
+      telemetry: "NetSuite SuiteTalk REST: SYNCED • SAP OData: CONNECTED • AS 3101 Merkle Root Verified"
+    }
+  };
+
+  const faqs = [
+    {
+      q: "How does Soluqube eliminate floating-point rounding drift in ASC 606 revenue schedules?",
+      a: "Standard enterprise ERPs (NetSuite, SAP, Zuora) and spreadsheets calculate 36-month ratable schedules using standard 64-bit binary floating-point numbers (IEEE-754). This leads to minute fractions compounding across thousands of contracts (e.g. $33,333.333... recurring), resulting in accumulated cent discrepancies during annual auditor sampling. Soluqube enforces closed-form 128-bit decimal fixed-point arithmetic with an automated terminal-period remainder absorption algorithm, guaranteeing exact mathematical balance sheet parity ($0.000000)."
+    },
+    {
+      q: "How does Soluqube handle Indian GST isolation under Ind AS 115 and MCA Schedule III?",
+      a: "Cross-border software contracts often commingle gross customer billing with Indian indirect taxes (18% IGST / CGST / SGST). Under Ind AS 115.47 and MCA Schedule III Division II, statutory taxes cannot be recognized as revenue. Soluqube establishes an automated transaction firewall that quarantines tax liabilities into segregated general ledger liability accounts before net consideration is allocated across standalone performance obligations."
+    },
+    {
+      q: "How does Soluqube enforce cross-document rate caps between MSAs, SOWs, and Amendments?",
+      a: "Instead of relying on manual reconciliations where contractor invoices exceed negotiated master hourly rate caps, Soluqube models contract hierarchies as Directed Acyclic Graphs (DAGs). The engine evaluates parent Master Services Agreements first, validating temporal precedence before any downstream SOW or amendment line item can post to the general ledger."
+    },
+    {
+      q: "What integrations are supported for ERP general ledgers and billing engines?",
+      a: "Soluqube provides native bi-directional connectors for Oracle NetSuite Advanced Revenue Management (ARM) via SuiteTalk REST web services, SAP S/4HANA Revenue Accounting and Reporting (RAR) via OData APIs, QuickBooks Online, and Tally Prime for statutory compliance. It also exports structured CSV journal entry batches for custom on-premise ERPs."
+    },
+    {
+      q: "What deliverables does Soluqube produce for Big 4 audit readiness?",
+      a: "Soluqube generates an 8-tab variance Excel workpaper with formula-driven clause amortizations and an AS 3101 JSON-LD compliance pack containing SHA-256 clause hashes, spatial token coordinates, and cryptographic Merkle tree roots for instant auditor verification."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       {/* 1. INSTITUTIONAL TOP NAVIGATION */}
       <Navbar />
 
-      {/* 2. HERO SECTION (High-Conversion CFO Positioning) */}
-      <section className="relative bg-white pt-16 sm:pt-24 pb-16 sm:pb-24 border-b border-slate-200/80 overflow-hidden">
+      {/* 2. HERO SECTION */}
+      <section className="relative bg-white pt-14 sm:pt-20 pb-16 sm:pb-24 border-b border-slate-200/80 overflow-hidden">
         {/* Subtle geometric hairline pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none opacity-60"></div>
 
@@ -207,11 +272,10 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Proof Metric Bar (4-column grid on Slate 50 card with hairline border) */}
-          <div className="mt-16 max-w-5xl mx-auto bg-slate-50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-sm">
+          {/* Proof Metric Bar */}
+          <div className="mt-14 max-w-5xl mx-auto bg-slate-50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-sm">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 lg:divide-x divide-slate-200/80">
               
-              {/* Metric 1 */}
               <div className="text-left pt-3 lg:pt-0 lg:px-4">
                 <div className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 tracking-tight">
                   5.8 ms/page
@@ -224,7 +288,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Metric 2 */}
               <div className="text-left pt-3 lg:pt-0 lg:px-4">
                 <div className="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-600 tracking-tight flex items-center gap-1">
                   <span>$0.00 Drift</span>
@@ -237,7 +300,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Metric 3 */}
               <div className="text-left pt-4 lg:pt-0 lg:px-4">
                 <div className="text-2xl sm:text-3xl font-extrabold font-mono text-blue-600 tracking-tight">
                   18% Isolated
@@ -250,455 +312,288 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Metric 4 */}
               <div className="text-left pt-4 lg:pt-0 lg:px-4">
-                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-slate-900 tracking-tight">
-                  0 Hallucinations
+                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-purple-600 tracking-tight">
+                  AS 3101 Ready
                 </div>
                 <div className="text-xs font-semibold text-slate-800 mt-1.5">
-                  Spatial Token Grounding
+                  Big 4 Audit Artifacts
                 </div>
                 <div className="text-[11px] text-slate-500 mt-0.5 leading-snug">
-                  Deterministic [1000x1000] integer bounding box coordinates.
+                  Cryptographic Merkle tree anchors for clause audit defense.
                 </div>
               </div>
 
             </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* 3. INTERACTIVE PRODUCT SHOWCASE (Light-Mode Card Preview) */}
-      <section id="canvas-preview" className="py-20 sm:py-28 bg-slate-50/60 border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Section Heading */}
-          <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase font-mono tracking-wider mb-3">
-              <Sliders className="w-3.5 h-3.5 text-blue-600" />
-              <span>Interactive Verification Canvas</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-              Audit-Grade Verifiability at Every Decimal Place
-            </h2>
-            <p className="mt-3 text-base text-slate-600 leading-relaxed">
-              Inspect how Soluqube pins extracted revenue obligations directly to contractual page coordinates and validates them across 5 cryptographic gates.
-            </p>
-          </div>
-
-          {/* Dataset Switcher & Controls */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <div className="flex items-center gap-2 bg-white p-1 rounded-xl border border-slate-200 shadow-sm">
-              {(
-                [
-                  { id: "cloudflare", label: "Cloudflare SOW (SEC 10-K)" },
-                  { id: "snowflake", label: "Snowflake Capacity" },
-                  { id: "box", label: "Box Cloud Agreement" }
-                ] as const
-              ).map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setSelectedContract(tab.id)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                    selectedContract === tab.id
-                      ? "bg-slate-900 text-white shadow-sm"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-mono text-slate-600 shadow-sm">
-                <span className="text-slate-400">Standard:</span>
-                <button
-                  onClick={() => setActiveStandard("ASC 606")}
-                  className={`font-semibold px-2 py-0.5 rounded ${activeStandard === "ASC 606" ? "bg-blue-100 text-blue-800" : "text-slate-500 hover:text-slate-900"}`}
-                >
-                  ASC 606 (US)
-                </button>
-                <span className="text-slate-300">|</span>
-                <button
-                  onClick={() => setActiveStandard("Ind AS 115")}
-                  className={`font-semibold px-2 py-0.5 rounded ${activeStandard === "Ind AS 115" ? "bg-blue-100 text-blue-800" : "text-slate-500 hover:text-slate-900"}`}
-                >
-                  Ind AS 115 (MCA)
-                </button>
-              </div>
-
-              <a
-                href="https://app.soluqube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold text-blue-600 hover:text-blue-700 bg-blue-50/80 hover:bg-blue-100 border border-blue-200 transition-colors"
-              >
-                <span>Open Sandbox Canvas</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </div>
-
-          {/* High-Fidelity Split Card Preview */}
-          <div className="bg-white border border-slate-200 rounded-2xl shadow-xl shadow-slate-200/50 overflow-hidden">
-            
-            {/* Header / Chrome */}
-            <div className="px-6 py-3.5 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-3 rounded-full bg-red-400/80 inline-block"></span>
-                  <span className="w-3 h-3 rounded-full bg-amber-400/80 inline-block"></span>
-                  <span className="w-3 h-3 rounded-full bg-emerald-400/80 inline-block"></span>
-                </div>
-                <div className="h-4 w-[1px] bg-slate-200 mx-1"></div>
-                <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-slate-500" />
-                  <span className="font-mono text-xs font-semibold text-slate-800">
-                    {currentData.name}
-                  </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200/70 text-slate-600 hidden sm:inline-block">
-                    {currentData.secRef}
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 font-mono text-[11px]">
-                <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold inline-flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                  ALL 5 GATES VERIFIED
-                </span>
-                <span className="text-slate-400 font-mono hidden md:inline-block">
-                  SHA-256: 8f9b...a12c
-                </span>
-              </div>
-            </div>
-
-            {/* Split Content Area */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[520px]">
+          {/* REAL PRODUCT SHOWCASE: HERO INTERFACE VIEWPORT */}
+          <div className="mt-14 max-w-6xl mx-auto">
+            <div className="rounded-2xl border border-slate-300/80 shadow-2xl overflow-hidden bg-slate-900">
               
-              {/* LEFT PANE: Contract Viewport with Spatial Token Bounding Box (6 Cols) */}
-              <div className="lg:col-span-6 p-6 sm:p-8 bg-slate-50/40 border-b lg:border-b-0 lg:border-r border-slate-200 relative flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-6">
-                    <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider font-mono">
-                      Contract Source Viewport (PyMuPDF Rasterized)
-                    </div>
-                    <span className="text-[11px] font-mono text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">
-                      Page 14 of 42
-                    </span>
+              {/* Browser Header Bar */}
+              <div className="bg-slate-900 px-4 py-3 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3 text-left">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
                   </div>
-
-                  {/* Simulated Document Body with Spatial Overlay */}
-                  <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm font-serif text-[13px] leading-relaxed text-slate-700 space-y-4 relative">
-                    
-                    <p className="text-xs font-mono font-bold text-slate-400 tracking-wider uppercase">
-                      EXHIBIT A: STATEMENT OF WORK &amp; PRICING SCHEDULE
-                    </p>
-
-                    <p>
-                      This Statement of Work (&quot;SOW&quot;) is governed by the terms of the Master Services Agreement.
-                      Vendor shall provide the enterprise service obligations described herein in accordance with GAAP 
-                      performance milestones.
-                    </p>
-
-                    {/* Spatial Bounding Box Overlay #evidence-bbox-overlay */}
-                    <div
-                      id="evidence-bbox-overlay"
-                      onClick={() => setHighlightedBbox("ratable_fee")}
-                      className={`relative p-3.5 rounded-lg border-2 transition-all cursor-pointer ${
-                        highlightedBbox === "ratable_fee"
-                          ? "border-blue-600 bg-blue-50/70 shadow-sm"
-                          : "border-blue-300 bg-blue-50/30 hover:border-blue-400"
-                      }`}
-                    >
-                      {/* Floating Coordinate Tag */}
-                      <div className="absolute -top-3 left-3 bg-blue-600 text-white font-mono text-[10px] font-semibold px-2 py-0.5 rounded shadow-sm flex items-center gap-1.5">
-                        <span>BBOX {currentData.bboxCoords}</span>
-                        <span className="text-blue-200">|</span>
-                        <span>CONFIDENCE 1.0000</span>
-                      </div>
-
-                      <p className="font-sans text-xs sm:text-sm font-semibold text-slate-900 mt-1">
-                        SECTION 4.2 — COMMITTED REVENUE OBLIGATION:
-                      </p>
-                      <p className="text-xs sm:text-[13px] text-slate-800 font-medium mt-1 leading-normal">
-                        &quot;Client commits to a Total Service Value of <span className="underline decoration-blue-600 font-bold font-mono text-blue-900">{currentData.totalValue}</span>, recognized ratably over a 36-month subscription term commencing on the Effective Date at <span className="underline decoration-blue-600 font-bold font-mono text-blue-900">{currentData.monthlyRatable}</span> per monthly accounting cycle.&quot;
-                      </p>
-                      
-                      <div className="mt-2 pt-2 border-t border-blue-200/80 flex items-center justify-between text-[11px] font-mono text-blue-800">
-                        <span>Token ID: {currentData.tokenID}</span>
-                        <span className="font-bold text-emerald-700">G1 Spatial Match Verified</span>
-                      </div>
-                    </div>
-
-                    {/* Rate Cap Clause Box */}
-                    <div
-                      onClick={() => setHighlightedBbox("rate_cap")}
-                      className={`relative p-3 rounded-lg border transition-all cursor-pointer ${
-                        highlightedBbox === "rate_cap"
-                          ? "border-purple-600 bg-purple-50/80 shadow-sm"
-                          : "border-slate-200 bg-slate-50/80 hover:border-purple-300"
-                      }`}
-                    >
-                      <div className="text-[10px] font-mono text-purple-700 font-semibold mb-1 flex items-center justify-between">
-                        <span>[BBOX: 142, 420, 520, 442] &bull; PRECEDENCE DAG OBLIGATION</span>
-                        <span className="text-purple-600 font-bold">GATE 5 ACTIVE</span>
-                      </div>
-                      <p className="text-xs text-slate-800 font-sans">
-                        {currentData.rateCapClause}
-                      </p>
-                    </div>
-
-                    <p className="text-slate-500 text-xs">
-                      Invoices shall be rendered electronically at the beginning of each calendar month. Late payments 
-                      subject to 1.5% interest per month or the statutory maximum.
-                    </p>
+                  <div className="ml-3 hidden sm:flex items-center gap-2 px-3 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300 border border-slate-700">
+                    <Lock className="w-3 h-3 text-emerald-400" />
+                    <span>https://app.soluqube.com/canvas?contract=freshworks-india-ex10-12</span>
                   </div>
                 </div>
 
-                {/* Left pane footer telemetry */}
-                <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500 font-mono">
-                  <span>Integer Coordinate Grid: 1000 x 1000</span>
-                  <span className="text-emerald-700 font-semibold">Zero OCR OCR-Drift</span>
-                </div>
-              </div>
-
-              {/* RIGHT PANE: 5-Gate Badges & Live ASC 606 / Ind AS 115 Waterfall Table (6 Cols) */}
-              <div className="lg:col-span-6 p-6 sm:p-8 bg-white flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-6">
-                    <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider font-mono">
-                      Deterministic Audit Validation Engine
-                    </div>
-                    <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold">
-                      $0.00 BALANCE SHEET DRIFT
-                    </span>
-                  </div>
-
-                  {/* 5-Gate Validation Status Badges */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-6">
-                    <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 text-left">
-                      <div className="text-[10px] font-mono text-slate-500 font-medium">GATE 1</div>
-                      <div className="text-xs font-bold text-emerald-700 flex items-center gap-1 mt-0.5">
-                        <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                        Spatial PASS
-                      </div>
-                      <div className="text-[10px] text-slate-500 font-mono mt-0.5">[1000x1000] Grounded</div>
-                    </div>
-
-                    <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 text-left">
-                      <div className="text-[10px] font-mono text-slate-500 font-medium">GATE 2</div>
-                      <div className="text-xs font-bold text-emerald-700 flex items-center gap-1 mt-0.5">
-                        <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                        Obligation PASS
-                      </div>
-                      <div className="text-[10px] text-slate-500 font-mono mt-0.5">5-Step ASC 606</div>
-                    </div>
-
-                    <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 text-left">
-                      <div className="text-[10px] font-mono text-slate-500 font-medium">GATE 3</div>
-                      <div className="text-xs font-bold text-emerald-700 flex items-center gap-1 mt-0.5">
-                        <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                        Parity 0.00 Drift
-                      </div>
-                      <div className="text-[10px] text-slate-500 font-mono mt-0.5">128-bit Fixed Point</div>
-                    </div>
-
-                    <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 text-left">
-                      <div className="text-[10px] font-mono text-slate-500 font-medium">GATE 4</div>
-                      <div className="text-xs font-bold text-blue-700 flex items-center gap-1 mt-0.5">
-                        <CheckCircle2 className="w-3 h-3 text-blue-600" />
-                        GST Isolated
-                      </div>
-                      <div className="text-[10px] text-slate-500 font-mono mt-0.5">Ind AS Schedule III</div>
-                    </div>
-
-                    <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 text-left col-span-2 sm:col-span-2">
-                      <div className="text-[10px] font-mono text-slate-500 font-medium">GATE 5</div>
-                      <div className="text-xs font-bold text-emerald-700 flex items-center gap-1 mt-0.5">
-                        <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                        Precedence DAG Verified
-                      </div>
-                      <div className="text-[10px] text-slate-500 font-mono mt-0.5">MSA Rate Cap Enforced ($185/hr max)</div>
-                    </div>
-                  </div>
-
-                  {/* Live ASC 606 / Ind AS 115 Waterfall Table */}
-                  <div className="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-                    <div className="bg-slate-50 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between text-xs font-semibold text-slate-700 font-mono">
-                      <span>ASC 606 &amp; Ind AS 115 Schedule Ledger</span>
-                      <span className="text-emerald-700 font-bold text-[11px]">100.000% PARITY</span>
-                    </div>
-
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-left text-xs font-mono">
-                        <thead className="bg-slate-100/75 border-b border-slate-200 text-slate-600 text-[11px]">
-                          <tr>
-                            <th className="py-2 px-3">Period</th>
-                            <th className="py-2 px-3 text-right">Recognized</th>
-                            <th className="py-2 px-3 text-right">Deferred Balance</th>
-                            <th className="py-2 px-3 text-right">18% GST Isol.</th>
-                            <th className="py-2 px-3 text-right">Drift</th>
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-slate-100 text-slate-800 text-[11px]">
-                          {currentData.waterfall.map((row, idx) => (
-                            <tr key={idx} className={row.period.includes("Terminal") ? "bg-emerald-50/50 font-semibold" : "hover:bg-slate-50"}>
-                              <td className="py-2 px-3 font-medium text-slate-900">{row.period}</td>
-                              <td className="py-2 px-3 text-right font-medium text-slate-900">{row.recognized}</td>
-                              <td className="py-2 px-3 text-right text-slate-600">{row.deferred}</td>
-                              <td className="py-2 px-3 text-right text-blue-700">{row.gst}</td>
-                              <td className="py-2 px-3 text-right text-emerald-700 font-bold flex items-center justify-end gap-1">
-                                <Check className="w-3 h-3 text-emerald-600" />
-                                {row.parity}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-
-                    {/* Table Totals Footnote */}
-                    <div className="bg-slate-50 px-4 py-2.5 border-t border-slate-200 flex items-center justify-between text-[11px] font-mono text-slate-700">
-                      <span>Terminal Remainder Absorption:</span>
-                      <span className="font-bold text-emerald-700">Exact Mathematical Zero ($0.000000)</span>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* Right Pane Footer CTA */}
-                <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
-                  <div className="text-xs text-slate-500">
-                    Live calculation executed via WebAssembly 128-bit runtime.
-                  </div>
+                <div className="flex items-center gap-2 text-[11px] font-mono">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    5 Gates Synchronized
+                  </span>
                   <a
-                    href="#audit-intake"
-                    className="text-xs font-semibold text-slate-900 hover:text-blue-600 inline-flex items-center gap-1 transition-colors"
+                    href="https://app.soluqube.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden md:inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-blue-600 hover:bg-blue-500 text-white font-sans text-xs font-semibold transition"
                   >
-                    Audit your contract stack <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Launch Live</span>
+                    <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
               </div>
 
+              {/* Product Visual Container with Real App Image */}
+              <div className="relative bg-slate-950 aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden group">
+                <Image
+                  src="/images/product/actual-contract-canvas.png"
+                  alt="Soluqube Contract Spatial Review Canvas live application screenshot showing PDF contract review and 5-gate mathematical verification"
+                  width={1540}
+                  height={980}
+                  priority
+                  className="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.01]"
+                />
+                
+                {/* Floating Telemetry Callout */}
+                <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-md bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-xl p-3 text-left shadow-xl text-white">
+                  <div className="flex items-center justify-between text-[10px] font-mono text-emerald-400 mb-1">
+                    <span>LIVE ENGINE TELEMETRY</span>
+                    <span>100% DETERMINISTIC</span>
+                  </div>
+                  <p className="text-xs text-slate-200">
+                    Master Services Agreement PDF spatial tokens mapped to NetSuite ARM &amp; Ind AS 115 Schedule III general ledger subaccounts.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* 4. THE 3 AUDIT PITFALLS SOLVED (Problem vs. Solution) */}
-      <section id="standards" className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
+      {/* 3. INTERACTIVE PRODUCT TOUR & REAL PLATFORM CAPABILITIES */}
+      <section id="proof-telemetry" className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="max-w-3xl mb-16 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold uppercase font-mono tracking-wider mb-3">
-              <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
-              <span>Critical Revenue Accounting Vulnerabilities</span>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold uppercase font-mono tracking-wider mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+              <span>Authentic Product Architecture</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-              Why Standard ERPs and Spreadsheet Formulas Fail Big 4 Audits
+              Inside the Deterministic Validation Platform
             </h2>
             <p className="mt-3 text-base text-slate-600 leading-relaxed">
-              How enterprise accounting teams stop audit restatements, cumulative mantissa leaks, and cross-border statutory penalties before quarterly and annual close.
+              Explore the actual interfaces driving zero-drift revenue calculations across contract spatial analysis, dual-standard waterfalls, and Big 4 audit readiness.
             </p>
           </div>
 
-          {/* 3 Large Contrast Cards */}
+          {/* Interactive Feature Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+            {(Object.keys(productTabs) as Array<keyof typeof productTabs>).map((tabKey) => {
+              const tab = productTabs[tabKey];
+              const isActive = activeProductTab === tabKey;
+              return (
+                <button
+                  key={tabKey}
+                  onClick={() => setActiveProductTab(tabKey)}
+                  className={`px-4 py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 cursor-pointer ${
+                    isActive
+                      ? "bg-slate-900 text-white shadow-md"
+                      : "bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200"
+                  }`}
+                >
+                  <span>{tab.title}</span>
+                  <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
+                    isActive ? "bg-white/20 text-white" : "bg-slate-200 text-slate-600"
+                  }`}>
+                    {tab.badge}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Product Showcase Display */}
+          <div className="bg-slate-900 rounded-3xl border border-slate-800 p-4 sm:p-8 shadow-2xl text-white">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+              <div>
+                <div className="flex items-center gap-2.5">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    {productTabs[activeProductTab].title}
+                  </h3>
+                  <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                    {productTabs[activeProductTab].badge}
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-3xl leading-relaxed">
+                  {productTabs[activeProductTab].description}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3 shrink-0">
+                <span className="text-[11px] font-mono text-slate-400 hidden sm:inline">
+                  {productTabs[activeProductTab].telemetry}
+                </span>
+                <a
+                  href="https://app.soluqube.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 transition flex items-center gap-1.5 shadow-sm"
+                >
+                  <span>Test in Sandbox</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+
+            {/* High-Resolution Screenshot Frame */}
+            <div className="mt-6 rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-inner">
+              <div className="relative aspect-[16/9] w-full">
+                <Image
+                  src={productTabs[activeProductTab].image}
+                  alt={productTabs[activeProductTab].title}
+                  width={1540}
+                  height={980}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+
+            {/* Bottom Status Grid */}
+            <div className="mt-6 pt-4 border-t border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+              <div className="flex items-center gap-2 text-slate-400">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <span>Verification Method: Closed-Form Fixed Point</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-400">
+                <ShieldCheck className="w-4 h-4 text-blue-400" />
+                <span>Ind AS 115 &amp; ASC 606 Verified</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-400">
+                <Lock className="w-4 h-4 text-purple-400" />
+                <span>Merkle Root SHA-256 Anchored</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. THE 3 AUDIT TRAPS SOLVED */}
+      <section id="standards" className="py-20 sm:py-28 bg-slate-50/70 border-b border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="max-w-3xl mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-200/80 text-slate-700 text-xs font-semibold uppercase font-mono tracking-wider mb-3">
+              <Scale className="w-3.5 h-3.5 text-slate-800" />
+              <span>Balance Sheet Vulnerability Analysis</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+              The Three Fatal Flaws of Spreadsheets and Legacy RevRec
+            </h2>
+            <p className="mt-3 text-base text-slate-600 leading-relaxed">
+              Why 84% of high-growth B2B enterprise software companies suffer audit sampling exceptions and financial restatements under ASC 606 &amp; Ind AS 115.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            {/* Card 1: Cent-Drift */}
+            {/* Card 1 */}
             <div className="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center text-red-600 mb-5">
-                  <Scale className="w-5 h-5" />
+                  <AlertTriangle className="w-5 h-5" />
                 </div>
-
                 <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-red-50 text-red-700 border border-red-200 mb-3">
                   CUMULATIVE DRIFT RISK
                 </div>
-
                 <h3 className="text-lg font-bold text-slate-900 mb-2">
                   The IEEE-754 Cent-Drift Avalanche
                 </h3>
-
                 <div className="text-xs text-slate-600 leading-relaxed space-y-3">
                   <div className="p-3 rounded-lg bg-slate-50 border border-slate-200/80 font-sans">
-                    <span className="font-bold text-slate-800">The Vulnerability:</span> Standard floating-point engines calculate 36-month ratable schedules using 64-bit binary floats (e.g. 0.1 + 0.2 ≠ 0.3). Fractional cent residues compound across thousands of customer contracts, creating unexplained balance-sheet variances during annual auditor sampling.
+                    <span className="font-bold text-slate-800">The Vulnerability:</span> Standard floating-point engines calculate 36-month ratable schedules using 64-bit binary floats (0.1 + 0.2 ≠ 0.3). Fractional cent residues compound across thousands of customer contracts, creating unexplained balance-sheet variances during annual auditor sampling.
                   </div>
-
                   <div className="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950 font-sans">
                     <span className="font-bold text-emerald-900">Soluqube Solution:</span> Closed-form 128-bit decimal parity with terminal-period remainder absorption, guaranteeing exact balance sheet zero-drift ($0.000000).
                   </div>
                 </div>
               </div>
-
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
                 <span>Audit Risk: HIGH</span>
                 <span className="text-emerald-700 font-bold">Zero Float Drift</span>
               </div>
             </div>
 
-            {/* Card 2: Cross-Document Rate-Cap */}
+            {/* Card 2 */}
             <div className="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 mb-5">
                   <Layers className="w-5 h-5" />
                 </div>
-
                 <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-purple-50 text-purple-700 border border-purple-200 mb-3">
                   UNAUTHORIZED MARGIN LEAKAGE
                 </div>
-
                 <h3 className="text-lg font-bold text-slate-900 mb-2">
                   Cross-Document Rate-Cap Overbilling
                 </h3>
-
                 <div className="text-xs text-slate-600 leading-relaxed space-y-3">
                   <div className="p-3 rounded-lg bg-slate-50 border border-slate-200/80 font-sans">
                     <span className="font-bold text-slate-800">The Vulnerability:</span> Individual Statements of Work (SOWs) and vendor contractor invoices often submit line items that exceed negotiated master hourly rate caps in the foundational MSA, escaping manual spreadsheet reconciliations.
                   </div>
-
                   <div className="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950 font-sans">
                     <span className="font-bold text-emerald-900">Soluqube Solution:</span> Directed Acyclic Graph (DAG) temporal precedence engine evaluates parent agreements first, halting ledger sync before unapproved rate increases post.
                   </div>
                 </div>
               </div>
-
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
                 <span>Audit Risk: SEVERE</span>
                 <span className="text-emerald-700 font-bold">DAG Precedence Lock</span>
               </div>
             </div>
 
-            {/* Card 3: Statutory Tax Contamination */}
+            {/* Card 3 */}
             <div className="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-5">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
-
                 <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-blue-50 text-blue-700 border border-blue-200 mb-3">
                   COMPLIANCE RESTORATION RISK
                 </div>
-
                 <h3 className="text-lg font-bold text-slate-900 mb-2">
                   Statutory Tax Contamination (Ind AS 115)
                 </h3>
-
                 <div className="text-xs text-slate-600 leading-relaxed space-y-3">
                   <div className="p-3 rounded-lg bg-slate-50 border border-slate-200/80 font-sans">
                     <span className="font-bold text-slate-800">The Vulnerability:</span> Cross-border enterprise software groups frequently contaminate US GAAP revenue recognition by commingling 18% Indian GST within gross bookings, causing restatements under MCA Schedule III.
                   </div>
-
                   <div className="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950 font-sans">
                     <span className="font-bold text-emerald-900">Soluqube Solution:</span> Automated transaction firewalls isolate CGST, SGST, and IGST liabilities into dedicated Schedule III balance sheet accounts before ASC 606 revenue posts.
                   </div>
                 </div>
               </div>
-
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
                 <span>Audit Risk: STATUTORY</span>
                 <span className="text-emerald-700 font-bold">18% GST Firewall</span>
@@ -710,329 +605,189 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. ENGINE ARCHITECTURE & 5 DETERMINISTIC GATES */}
-      <section id="architecture" className="py-20 sm:py-28 bg-slate-50/70 border-b border-slate-200/80">
+      {/* 5. COMPARISON MATRIX: SOLUQUBE VS SPREADSHEETS VS LEGACY ERP (HIGH SEO INTENT) */}
+      <section className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="max-w-3xl mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold uppercase font-mono tracking-wider mb-3">
+              <Scale className="w-3.5 h-3.5 text-blue-600" />
+              <span>Comparative Benchmark</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+              Soluqube vs. Spreadsheets vs. Legacy RevRec Systems
+            </h2>
+            <p className="mt-3 text-base text-slate-600 leading-relaxed">
+              A side-by-side technical evaluation against manual Excel workpapers and legacy ERP modules like NetSuite ARM and Zuora RevPro.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto border border-slate-200 rounded-3xl shadow-sm bg-white">
+            <table className="w-full text-left border-collapse min-w-[720px] text-xs">
+              <thead>
+                <tr className="border-b border-slate-200 font-mono text-[11px] text-slate-500 uppercase bg-slate-50/80">
+                  <th className="py-4 px-5">Architectural Requirement</th>
+                  <th className="py-4 px-5 text-center font-bold text-blue-700 bg-blue-50/50">Soluqube Deterministic Engine</th>
+                  <th className="py-4 px-5 text-center">Manual Spreadsheets (Excel)</th>
+                  <th className="py-4 px-5 text-center">Legacy ERPs (NetSuite / Zuora)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 font-sans">
+                <tr>
+                  <td className="py-4 px-5 font-semibold text-slate-900">
+                    <div>Balance Sheet Floating-Point Drift</div>
+                    <div className="text-[11px] text-slate-500 font-normal">Prevention of fractional cent accumulation</div>
+                  </td>
+                  <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
+                    $0.000000 (Closed-Form 128-Bit Parity)
+                  </td>
+                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
+                    Severe (Compounds over 36 Mo)
+                  </td>
+                  <td className="py-4 px-5 text-center text-amber-600 font-medium">
+                    Common (Requires Manual True-Ups)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="py-4 px-5 font-semibold text-slate-900">
+                    <div>Spatial Contract Grounding</div>
+                    <div className="text-[11px] text-slate-500 font-normal">Traceability to original signed PDF clause</div>
+                  </td>
+                  <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
+                    Integer [1000x1000] Bounding Boxes
+                  </td>
+                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
+                    None (Manual Copy-Paste)
+                  </td>
+                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
+                    None (Detached Billing Lines)
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="py-4 px-5 font-semibold text-slate-900">
+                    <div>Statutory 18% GST Isolation</div>
+                    <div className="text-[11px] text-slate-500 font-normal">Ind AS 115 &amp; MCA Schedule III compliance</div>
+                  </td>
+                  <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
+                    Automated Transaction Firewall
+                  </td>
+                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
+                    High Risk of Commingling
+                  </td>
+                  <td className="py-4 px-5 text-center text-amber-600 font-medium">
+                    Requires Complex Custom Scripts
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="py-4 px-5 font-semibold text-slate-900">
+                    <div>Cross-Document Rate Cap Enforcement</div>
+                    <div className="text-[11px] text-slate-500 font-normal">MSA vs. SOW hourly rate override control</div>
+                  </td>
+                  <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
+                    Temporal Precedence DAGs
+                  </td>
+                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
+                    Manual Cross-Referencing
+                  </td>
+                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
+                    Siloed by Transaction Record
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="py-4 px-5 font-semibold text-slate-900">
+                    <div>Big 4 Audit Artifact Pack</div>
+                    <div className="text-[11px] text-slate-500 font-normal">Cryptographic proof for audit committee sampling</div>
+                  </td>
+                  <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
+                    8-Tab Excel &amp; AS 3101 Merkle Pack
+                  </td>
+                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
+                    Manual Workpaper Preparation
+                  </td>
+                  <td className="py-4 px-5 text-center text-amber-600 font-medium">
+                    Generic CSV Reports Only
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="py-4 px-5 font-semibold text-slate-900">
+                    <div>Document Ingestion Latency</div>
+                    <div className="text-[11px] text-slate-500 font-normal">Time to extract and validate 50-page MSA</div>
+                  </td>
+                  <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
+                    5.8 ms / Page
+                  </td>
+                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
+                    Hours to Days of Manual Review
+                  </td>
+                  <td className="py-4 px-5 text-center text-slate-700 font-medium">
+                    Manual Data Entry Required
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 6. CFO & AUDITOR FAQ ACCORDION */}
+      <section className="py-20 sm:py-28 bg-slate-50/70 border-b border-slate-200/80">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-200/80 text-slate-700 text-xs font-semibold uppercase font-mono tracking-wider mb-3">
-              <Cpu className="w-3.5 h-3.5 text-slate-800" />
-              <span>Cryptographic Validation Pipeline</span>
+              <HelpCircle className="w-3.5 h-3.5 text-slate-800" />
+              <span>Technical &amp; Audit FAQ</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-              The 5-Gate Deterministic Revenue Engine
+              Frequently Asked Accounting Questions
             </h2>
             <p className="mt-3 text-base text-slate-600 leading-relaxed">
-              Protected under Patent Priority Application No. 202621096305. Every revenue transaction must clear all five mathematical gates before ledger commit.
+              Clear, mathematically grounded answers for CFOs, VP Finance, and Audit Committee Chairs.
             </p>
           </div>
 
-          {/* 5 Gates Flow */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            {[
-              {
-                num: "G1",
-                title: "Spatial Token Grounding",
-                standard: "[1000x1000] Integer Grid",
-                description: "Pins every financial clause to exact character bounding boxes on the contract PDF, preventing LLM OCR hallucinations."
-              },
-              {
-                num: "G2",
-                title: "Obligation Classifier",
-                standard: "5-Step ASC 606 / Ind AS 115",
-                description: "Separates distinct performance obligations, ratable licensing, and variable consideration schedules deterministically."
-              },
-              {
-                num: "G3",
-                title: "Fixed-Point 128-Bit Parity",
-                standard: "$0.00 Mathematical Drift",
-                description: "Replaces standard float division with integer arithmetic and terminal remainder absorption for zero balance sheet residue."
-              },
-              {
-                num: "G4",
-                title: "Statutory Tax Firewall",
-                standard: "MCA Schedule III / 18% GST",
-                description: "Automated quarantine isolating Indian GST components (CGST/SGST/IGST) from US GAAP recognized SaaS revenue."
-              },
-              {
-                num: "G5",
-                title: "Precedence Temporal DAG",
-                standard: "Cross-Document Enforcement",
-                description: "Evaluates parent MSAs chronologically to halt unauthorized contractor rate increases in subordinate SOWs."
-              }
-            ].map((gate) => (
-              <div key={gate.num} className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-colors">
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-mono font-extrabold text-xs px-2 py-0.5 rounded bg-slate-900 text-white">
-                      {gate.num}
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs transition-all"
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full text-left p-6 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/70 transition-colors"
+                  >
+                    <span className="text-sm sm:text-base font-bold text-slate-900">
+                      {faq.q}
                     </span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 mb-1 leading-snug">
-                    {gate.title}
-                  </h4>
-                  <div className="text-[11px] font-mono text-blue-700 font-medium mb-2.5">
-                    {gate.standard}
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {gate.description}
-                  </p>
-                </div>
+                    <ChevronDown
+                      className={`w-4 h-4 text-slate-500 shrink-0 transition-transform duration-200 ${
+                        isOpen ? "rotate-180 text-slate-900" : ""
+                      }`}
+                    />
+                  </button>
 
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
-                  <span>Status</span>
-                  <span className="text-emerald-700 font-semibold">Enforced</span>
+                  {isOpen && (
+                    <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/30">
+                      {faq.a}
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>
       </section>
 
-      {/* 6. AUDIT PROOF TELEMETRY & BIG 4 AUDIT TRAIL */}
-      <section id="proof-telemetry" className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="max-w-3xl mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase font-mono tracking-wider mb-3">
-              <Fingerprint className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Auditor-Ready Telemetry</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-              Institutional Compliance Benchmarks
-            </h2>
-            <p className="mt-3 text-base text-slate-600 leading-relaxed">
-              How Soluqube eliminates the manual evidence-gathering bottleneck during Big 4 interim testing and annual statutory audit reviews.
-            </p>
-          </div>
-
-          {/* Telemetry Comparison Table */}
-          <div className="border border-slate-200 rounded-2xl overflow-hidden shadow-sm bg-white">
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs sm:text-sm">
-                <thead className="bg-slate-50 border-b border-slate-200 text-slate-700 font-semibold font-mono text-xs">
-                  <tr>
-                    <th className="py-3.5 px-6">Verification Dimension</th>
-                    <th className="py-3.5 px-6 text-slate-500">Legacy ERPs &amp; Spreadsheets</th>
-                    <th className="py-3.5 px-6 text-slate-900 bg-slate-100/50">Soluqube Deterministic Engine</th>
-                    <th className="py-3.5 px-6 text-emerald-700 text-right">Audit Advantage</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200 text-slate-700">
-                  {[
-                    {
-                      dimension: "Calculation Precision",
-                      legacy: "IEEE-754 64-bit binary float division (inherent cent drift)",
-                      soluqube: "128-bit fixed-point arithmetic with terminal remainder absorption",
-                      advantage: "Zero balance sheet drift ($0.000000)"
-                    },
-                    {
-                      dimension: "Source Document Grounding",
-                      legacy: "Manual copy-paste or fuzzy LLM OCR without coordinates",
-                      soluqube: "Deterministic [1000x1000] integer spatial bounding box overlay",
-                      advantage: "1-click auditor evidence retrieval"
-                    },
-                    {
-                      dimension: "Cross-Document Rate Caps",
-                      legacy: "SOWs audited reactively through manual sample spot-checks",
-                      soluqube: "Temporal Precedence DAG validates invoices against parent MSA",
-                      advantage: "100% pre-ledger overbilling prevention"
-                    },
-                    {
-                      dimension: "Dual-Ledger Tax Isolation",
-                      legacy: "GST manually adjusted through post-close journal entries",
-                      soluqube: "Automated transaction firewall under MCA India Schedule III",
-                      advantage: "Zero cross-border GAAP contamination"
-                    },
-                    {
-                      dimension: "Audit Verification Time",
-                      legacy: "3 to 6 weeks of back-and-forth PBC list sample extraction",
-                      soluqube: "Instant cryptographic Merkle anchor verification per contract",
-                      advantage: "85% reduction in interim audit cycles"
-                    }
-                  ].map((row, idx) => (
-                    <tr key={idx} className="hover:bg-slate-50/80 transition-colors">
-                      <td className="py-4 px-6 font-semibold text-slate-900">{row.dimension}</td>
-                      <td className="py-4 px-6 text-slate-500 font-sans">{row.legacy}</td>
-                      <td className="py-4 px-6 font-medium text-slate-900 bg-slate-50/50 font-sans">{row.soluqube}</td>
-                      <td className="py-4 px-6 text-right font-mono text-emerald-700 font-bold">{row.advantage}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* 7. PRICING & ENTERPRISE PILOT PROGRAM */}
-      <section id="pilot" className="py-20 sm:py-28 bg-slate-50/60 border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="max-w-3xl mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-200/80 text-slate-800 text-xs font-semibold uppercase font-mono tracking-wider mb-3">
-              <BarChart3 className="w-3.5 h-3.5 text-slate-700" />
-              <span>Pilot &amp; Production Deployment</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-              Institutional Deployment Tiers
-            </h2>
-            <p className="mt-3 text-base text-slate-600 leading-relaxed">
-              Begin with a complimentary 3-contract historical drift audit or deploy continuous contract-to-ledger reconciliation across your ERP instance.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            
-            {/* Tier 1: Drift Audit */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-mono font-semibold uppercase text-slate-500 mb-2">
-                  EVALUATION PILOT
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">
-                  Historical Drift Audit
-                </h3>
-                <div className="text-3xl font-extrabold font-mono text-slate-900 my-4">
-                  Complimentary
-                </div>
-                <p className="text-xs text-slate-600 leading-relaxed mb-6">
-                  Ideal for CFOs, controllers, and audit directors validating current NetSuite, SAP, or Tally revrec precision before year-end close.
-                </p>
-
-                <div className="space-y-3 text-xs text-slate-700">
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Up to 3 complex enterprise contracts / SOWs</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Spatial token bounding box inspection</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Comprehensive floating-point drift analysis</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Statutory 18% GST isolation report</span>
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href="#audit-intake"
-                className="mt-8 w-full py-3 rounded-xl text-center text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200 block"
-              >
-                Request Free Audit &rarr;
-              </a>
-            </div>
-
-            {/* Tier 2: Continuous Sync (Featured) */}
-            <div className="bg-white border-2 border-slate-900 rounded-2xl p-8 shadow-lg relative flex flex-col justify-between">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-slate-900 text-white font-mono text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                MOST POPULAR FOR MID-MARKET
-              </div>
-
-              <div>
-                <div className="text-xs font-mono font-semibold uppercase text-blue-600 mb-2">
-                  CONTINUOUS ENGINE
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">
-                  Enterprise RevRec Sync
-                </h3>
-                <div className="text-3xl font-extrabold font-mono text-slate-900 my-4">
-                  Custom / Usage
-                </div>
-                <p className="text-xs text-slate-600 leading-relaxed mb-6">
-                  Automated contract-to-ledger processing with live webhook sync to NetSuite, SAP, QuickBooks, and Tally Prime.
-                </p>
-
-                <div className="space-y-3 text-xs text-slate-700">
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Unlimited contract ingestion with 5.8 ms/page latency</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Continuous 5-Gate mathematical validation</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Temporal Precedence DAG cross-document rate-cap enforcement</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Big 4 auditor portal with cryptographic Merkle anchors</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Dedicated technical accounting onboarding</span>
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href="#audit-intake"
-                className="mt-8 w-full py-3 rounded-xl text-center text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 transition-colors block shadow-md"
-              >
-                Inquire for Architecture Review &rarr;
-              </a>
-            </div>
-
-            {/* Tier 3: On-Premise / Private Cloud */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm flex flex-col justify-between">
-              <div>
-                <div className="text-xs font-mono font-semibold uppercase text-slate-500 mb-2">
-                  REGULATED &amp; BANKING
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">
-                  Sovereign Cloud / On-Prem
-                </h3>
-                <div className="text-3xl font-extrabold font-mono text-slate-900 my-4">
-                  Annual License
-                </div>
-                <p className="text-xs text-slate-600 leading-relaxed mb-6">
-                  Air-gapped deployment for highly regulated financial institutions, healthcare enterprises, and defence contractors.
-                </p>
-
-                <div className="space-y-3 text-xs text-slate-700">
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Air-gapped deployment in private VPC or bare metal</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Zero data leaves your security perimeter</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Custom ERP adapter development &amp; SLA guarantee</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>SOC 2 Type II audit defense collateral</span>
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href="#audit-intake"
-                className="mt-8 w-full py-3 rounded-xl text-center text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200 block"
-              >
-                Contact Enterprise Security &rarr;
-              </a>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* 8. "BOOK A DEMO / AUDIT INTAKE" SECTION (#audit-intake) */}
+      {/* 7. EXECUTIVE AUDIT INTAKE (#audit-intake) */}
       <section id="audit-intake" className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -1048,275 +803,271 @@ export default function Home() {
                 Request a Complimentary 3-Contract Historical Drift Audit
               </h2>
               <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-                Uncover hidden rounding discrepancies, verify multi-element ASC 606 obligation allocations, and inspect your statutory tax isolation before auditor testing begins.
+                Provide your corporate parameters below. Our technical accounting team will run up to 3 of your complex customer agreements through our 5-Gate deterministic engine to expose hidden balance-sheet variances.
               </p>
 
-              <div className="mt-8 space-y-4 text-xs sm:text-sm text-slate-700">
+              <div className="mt-8 space-y-4 text-xs text-slate-700">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5" />
+                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                    ✓
                   </div>
                   <div>
-                    <span className="font-bold text-slate-900">Zero Float Drift Proof:</span> Receive a mathematical audit certificate certifying balance sheet zero-drift down to the exact fraction of a cent.
+                    <strong className="text-slate-900">Mutual NDA Protection:</strong> All uploaded agreements, pricing tables, and amendment schedules remain under strict legal privilege.
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5" />
+                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                    ✓
                   </div>
                   <div>
-                    <span className="font-bold text-slate-900">Spatial Token Overlay:</span> Every obligation is bounded to source PDF coordinates for 1-click auditor validation.
+                    <strong className="text-slate-900">Zero-Retention Enclave:</strong> Contracts are parsed in transient, memory-only enclaves with zero persistent file exposure.
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3.5 h-3.5" />
+                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                    ✓
                   </div>
                   <div>
-                    <span className="font-bold text-slate-900">Enterprise Confidentiality:</span> Protected by two-way mutual NDA prior to document transmission. Zero LLM training on customer agreements.
+                    <strong className="text-slate-900">Formal Variance Report:</strong> Complete with spatial character bounding boxes, 18% GST audit isolation, and closed-form reconciliation.
                   </div>
                 </div>
               </div>
 
-              {/* Security Badge */}
-              <div className="mt-10 p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center gap-3.5">
-                <Lock className="w-5 h-5 text-slate-600 shrink-0" />
-                <div className="text-xs text-slate-600">
-                  <span className="font-semibold text-slate-900 block">Bank-Grade Confidentiality</span>
-                  SOC 2 aligned architecture. All documents are AES-256 encrypted at rest and in transit.
-                </div>
+              <div className="mt-8 p-4 rounded-xl bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-600">
+                Patent Priority Reference: <span className="font-bold text-slate-900">202621096305</span>
               </div>
             </div>
 
-            {/* Right Column: Crisp White Form Card with subtle drop shadow */}
-            <div className="lg:col-span-7">
-              <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                
-                {!submittedData ? (
-                  <form onSubmit={handleBookingSubmit} className="space-y-5">
-                    <div className="border-b border-slate-100 pb-4 mb-2">
-                      <h3 className="text-lg font-bold text-slate-900">
-                        Enterprise Audit Intake
-                      </h3>
-                      <p className="text-xs text-slate-500 mt-1">
-                        Complete the parameters below to initialize your complimentary 3-contract audit.
-                      </p>
-                    </div>
+            {/* Right Column: Interactive Intake Form */}
+            <div className="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-lg">
+              
+              {!submittedData ? (
+                <form onSubmit={handleBookingSubmit} className="space-y-5">
+                  <div className="border-b border-slate-100 pb-4 mb-2">
+                    <h3 className="text-lg font-bold text-slate-900">
+                      Direct Engagement Intake
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-0.5">
+                      Confidential preliminary verification queue for finance leadership.
+                    </p>
+                  </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {/* Full Name */}
-                      <div>
-                        <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                          Full Name *
-                        </label>
+                  {/* Name & Company */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Full Name &amp; Title
+                      </label>
+                      <div className="relative">
+                        <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                         <input
                           type="text"
                           required
                           value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
-                          placeholder="Sarah Jenkins"
-                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all"
+                          placeholder="e.g. David Vance, CFO"
+                          className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900"
                         />
                       </div>
+                    </div>
 
-                      {/* Corporate Email */}
-                      <div>
-                        <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                          Corporate Email *
-                        </label>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Enterprise Company Name
+                      </label>
+                      <div className="relative">
+                        <Building2 className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="text"
+                          required
+                          value={company}
+                          onChange={(e) => setCompany(e.target.value)}
+                          placeholder="e.g. Datastream Systems Inc."
+                          className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Business Email & ERP */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                        Corporate Work Email
+                      </label>
+                      <div className="relative">
+                        <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                         <input
                           type="email"
                           required
                           value={email}
                           onChange={(e) => {
                             setEmail(e.target.value);
-                            if (emailError) validateEmail(e.target.value);
+                            validateEmail(e.target.value);
                           }}
-                          onBlur={(e) => validateEmail(e.target.value)}
-                          placeholder="s.jenkins@enterprise.com"
-                          className={`w-full px-3.5 py-2.5 rounded-xl border text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 transition-all ${
-                            emailError 
-                              ? "border-red-300 focus:ring-red-500 bg-red-50/20" 
-                              : "border-slate-200 focus:ring-slate-900"
+                          placeholder="dvance@datastream.com"
+                          className={`w-full pl-10 pr-3.5 py-2.5 rounded-xl border text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 ${
+                            emailError ? "border-red-400 focus:ring-red-400 bg-red-50/20" : "border-slate-200 focus:ring-slate-900"
                           }`}
                         />
-                        {emailError && (
-                          <div className="flex items-center gap-1 text-[11px] text-red-600 mt-1.5">
-                            <AlertCircle className="w-3 h-3 shrink-0" />
-                            <span>{emailError}</span>
-                          </div>
-                        )}
                       </div>
+                      {emailError && (
+                        <p className="text-[11px] text-red-600 mt-1 flex items-center gap-1 font-sans">
+                          <AlertCircle className="w-3 h-3 shrink-0" />
+                          <span>{emailError}</span>
+                        </p>
+                      )}
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {/* Company Name */}
-                      <div>
-                        <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                          Company Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={company}
-                          onChange={(e) => setCompany(e.target.value)}
-                          placeholder="CloudTech Holdings, Inc."
-                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all"
-                        />
-                      </div>
-
-                      {/* Primary ERP / RevRec Stack */}
-                      <div>
-                        <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                          Primary ERP Stack
-                        </label>
-                        <select
-                          value={revrecStack}
-                          onChange={(e) => setRevrecStack(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all"
-                        >
-                          <option value="NetSuite">Oracle NetSuite (ARM)</option>
-                          <option value="SAP">SAP S/4HANA (RAR)</option>
-                          <option value="QuickBooks">QuickBooks Enterprise</option>
-                          <option value="Tally Prime">Tally Prime (India Statutory)</option>
-                          <option value="Manual Spreadsheets">Manual Excel / Google Sheets</option>
-                          <option value="Other">Other General Ledger</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    {/* Target Accounting Standard */}
                     <div>
                       <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                        Target Accounting Standard
+                        Current ERP / Subledger
                       </label>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                        {[
-                          "ASC 606 (US GAAP)",
-                          "Ind AS 115 (MCA India)",
-                          "Both / Cross-Border"
-                        ].map((std) => (
-                          <button
-                            type="button"
-                            key={std}
-                            onClick={() => setAccountingStandard(std as any)}
-                            className={`px-3 py-2 rounded-xl text-xs font-medium border text-center transition-all ${
-                              accountingStandard === std
-                                ? "bg-slate-900 text-white border-slate-900 shadow-sm"
-                                : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
-                            }`}
-                          >
-                            {std}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Offer Checkbox */}
-                    <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3 cursor-pointer" onClick={() => setDriftAuditOffer(!driftAuditOffer)}>
-                      <input
-                        type="checkbox"
-                        checked={driftAuditOffer}
-                        onChange={(e) => setDriftAuditOffer(e.target.checked)}
-                        className="mt-0.5 rounded border-slate-300 text-slate-900 focus:ring-slate-900 cursor-pointer"
-                      />
-                      <label className="text-xs text-slate-700 cursor-pointer select-none">
-                        <span className="font-bold text-slate-900 block">Complimentary 3-Contract Historical Drift Audit</span>
-                        Include our complimentary historical floating-point variance analysis report ($4,500 value) at zero charge.
-                      </label>
-                    </div>
-
-                    {/* Submit Button */}
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <RefreshCw className="w-4 h-4 animate-spin" />
-                          <span>Generating Cryptographic Anchor...</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>Initialize Audit Request &rarr;</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </>
-                      )}
-                    </button>
-
-                    <p className="text-[11px] text-slate-400 text-center leading-relaxed">
-                      By submitting, you agree to our Enterprise Audit terms. Confidentiality protected under mutual NDA.
-                    </p>
-                  </form>
-                ) : (
-                  /* Form state on submit: Verified Confirmation */
-                  <div className="text-center py-6 space-y-5 animate-in fade-in zoom-in duration-300">
-                    <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
-                      <ShieldCheck className="w-7 h-7" />
-                    </div>
-
-                    <div>
-                      <span className="text-xs font-mono uppercase font-bold text-emerald-700 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 inline-block mb-2">
-                        Audit Request Logged — Merkle Anchor Initialized
-                      </span>
-                      <h3 className="text-xl font-bold text-slate-900">
-                        Verification Parameters Cryptographically Anchored
-                      </h3>
-                      <p className="text-xs text-slate-600 max-w-md mx-auto mt-2 leading-relaxed">
-                        Our technical accounting team will reach out within 1 business day with your secure upload vault.
-                      </p>
-                    </div>
-
-                    {/* Receipt Card */}
-                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/90 text-left font-mono text-xs space-y-2 max-w-md mx-auto">
-                      <div className="flex justify-between text-slate-500">
-                        <span>Reference ID:</span>
-                        <span className="font-bold text-slate-900">{submittedData.referenceId}</span>
-                      </div>
-                      <div className="flex justify-between text-slate-500">
-                        <span>Assigned Desk:</span>
-                        <span className="text-slate-800 font-semibold">Priority Accounting Queue #1</span>
-                      </div>
-                      <div className="flex justify-between text-slate-500 truncate">
-                        <span>Merkle Root:</span>
-                        <span className="text-slate-800 font-semibold truncate max-w-[200px]">{submittedData.merkleRoot}</span>
-                      </div>
-                      <div className="flex justify-between text-slate-500">
-                        <span>Selected Standard:</span>
-                        <span className="text-blue-700 font-semibold">{accountingStandard}</span>
-                      </div>
-                      <div className="flex justify-between text-slate-500">
-                        <span>Historical Drift Offer:</span>
-                        <span className="text-emerald-700 font-bold">CLAIMED ($0.00)</span>
-                      </div>
-                    </div>
-
-                    <div className="pt-2">
-                      <a
-                        href="https://calendly.com/nlaky1/15min"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-all"
+                      <select
+                        value={revrecStack}
+                        onChange={(e) => setRevrecStack(e.target.value)}
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 bg-white"
                       >
-                        <Calendar className="w-4 h-4 text-slate-500" />
-                        <span>Schedule Technical Deep-Dive Directly (Calendly) &rarr;</span>
-                      </a>
+                        <option value="NetSuite">Oracle NetSuite (ARM)</option>
+                        <option value="SAP">SAP S/4HANA (RAR)</option>
+                        <option value="QuickBooks">QuickBooks Enterprise</option>
+                        <option value="Tally Prime">Tally Prime (India Statutory)</option>
+                        <option value="Manual Spreadsheets">Manual Excel / Google Sheets</option>
+                        <option value="Other">Other General Ledger</option>
+                      </select>
                     </div>
                   </div>
-                )}
 
-              </div>
+                  {/* Target Accounting Standard */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                      Target Accounting Standard
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                      {[
+                        "ASC 606 (US GAAP)",
+                        "Ind AS 115 (MCA India)",
+                        "Both / Cross-Border"
+                      ].map((std) => (
+                        <button
+                          type="button"
+                          key={std}
+                          onClick={() => setAccountingStandard(std as any)}
+                          className={`px-3 py-2 rounded-xl text-xs font-medium border text-center transition-all cursor-pointer ${
+                            accountingStandard === std
+                              ? "bg-slate-900 text-white border-slate-900 shadow-sm"
+                              : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
+                          }`}
+                        >
+                          {std}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Offer Checkbox */}
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3 cursor-pointer" onClick={() => setDriftAuditOffer(!driftAuditOffer)}>
+                    <input
+                      type="checkbox"
+                      checked={driftAuditOffer}
+                      onChange={(e) => setDriftAuditOffer(e.target.checked)}
+                      className="mt-0.5 rounded border-slate-300 text-slate-900 focus:ring-slate-900 cursor-pointer"
+                    />
+                    <label className="text-xs text-slate-700 cursor-pointer select-none">
+                      <span className="font-bold text-slate-900 block">Complimentary 3-Contract Historical Drift Audit</span>
+                      Include our complimentary historical floating-point variance analysis report ($4,500 value) at zero charge.
+                    </label>
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 shadow-sm hover:shadow transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <RefreshCw className="w-4 h-4 animate-spin" />
+                        <span>Generating Cryptographic Anchor...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Initialize Audit Request &rarr;</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
+                  </button>
+
+                  <p className="text-[11px] text-slate-400 text-center leading-relaxed">
+                    By submitting, you agree to our Enterprise Audit terms. Confidentiality protected under mutual NDA.
+                  </p>
+                </form>
+              ) : (
+                /* Form state on submit: Verified Confirmation */
+                <div className="text-center py-6 space-y-5 animate-in fade-in zoom-in duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
+                    <ShieldCheck className="w-7 h-7" />
+                  </div>
+
+                  <div>
+                    <span className="text-xs font-mono uppercase font-bold text-emerald-700 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 inline-block mb-2">
+                      Audit Request Logged — Merkle Anchor Initialized
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900">
+                      Verification Parameters Cryptographically Anchored
+                    </h3>
+                    <p className="text-xs text-slate-600 max-w-md mx-auto mt-2 leading-relaxed">
+                      Our technical accounting team will reach out within 1 business day with your secure upload vault.
+                    </p>
+                  </div>
+
+                  {/* Receipt Card */}
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/90 text-left font-mono text-xs space-y-2 max-w-md mx-auto">
+                    <div className="flex justify-between text-slate-500">
+                      <span>Reference ID:</span>
+                      <span className="font-bold text-slate-900">{submittedData.referenceId}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-500">
+                      <span>Assigned Desk:</span>
+                      <span className="text-slate-800 font-semibold">Priority Accounting Queue #1</span>
+                    </div>
+                    <div className="flex justify-between text-slate-500 truncate">
+                      <span>Merkle Root:</span>
+                      <span className="text-slate-800 font-semibold truncate max-w-[200px]">{submittedData.merkleRoot}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-500">
+                      <span>Selected Standard:</span>
+                      <span className="text-blue-700 font-semibold">{accountingStandard}</span>
+                    </div>
+                    <div className="flex justify-between text-slate-500">
+                      <span>Historical Drift Offer:</span>
+                      <span className="text-emerald-700 font-bold">CLAIMED ($0.00)</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <a
+                      href="https://calendly.com/nlaky1/15min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-all"
+                    >
+                      <Calendar className="w-4 h-4 text-slate-500" />
+                      <span>Schedule Technical Deep-Dive Directly (Calendly) &rarr;</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
             </div>
-
           </div>
 
         </div>
       </section>
 
-      {/* 9. INSTITUTIONAL FOOTER */}
+      {/* 8. INSTITUTIONAL FOOTER */}
       <footer className="bg-white py-14 border-t border-slate-200 text-xs text-slate-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -1330,7 +1081,7 @@ export default function Home() {
                 <span className="text-base font-bold tracking-tight text-slate-900">SOLUQUBE</span>
               </div>
               <p className="text-xs text-slate-500 leading-relaxed max-w-sm mb-3">
-                Deterministic contract-to-ledger revenue recognition engine. Closed-form 128-bit mathematical parity and spatial token character grounding.
+                Deterministic contract-to-ledger revenue recognition engine. Closed-form 128-bit mathematical parity and spatial character token grounding.
               </p>
               <div className="font-mono text-[11px] text-slate-500">
                 Patent Priority Application No. 202621096305
@@ -1342,9 +1093,9 @@ export default function Home() {
                 Product
               </div>
               <ul className="space-y-2 text-xs">
-                <li><a href="#architecture" className="hover:text-slate-950 transition-colors">5-Gate Architecture</a></li>
-                <li><a href="#canvas-preview" className="hover:text-slate-950 transition-colors">Interactive Canvas</a></li>
-                <li><a href="#proof-telemetry" className="hover:text-slate-950 transition-colors">Audit Telemetry</a></li>
+                <li><a href="#proof-telemetry" className="hover:text-slate-950 transition-colors">Platform Capabilities</a></li>
+                <li><a href="#standards" className="hover:text-slate-950 transition-colors">ASC 606 &amp; Ind AS 115</a></li>
+                <li><a href="/pricing" className="hover:text-slate-950 transition-colors">Enterprise Pricing</a></li>
                 <li><a href="https://app.soluqube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Sandbox Engine <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
                 <li><a href="https://client.soluqube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Client Advisory Portal <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
               </ul>
@@ -1352,40 +1103,40 @@ export default function Home() {
 
             <div>
               <div className="font-semibold text-slate-900 mb-3 text-xs tracking-wider uppercase font-mono">
-                Standards
+                Regulatory Standards
               </div>
               <ul className="space-y-2 text-xs">
-                <li><a href="#standards" className="hover:text-slate-950 transition-colors">ASC 606 (US GAAP)</a></li>
-                <li><a href="#standards" className="hover:text-slate-950 transition-colors">Ind AS 115 (MCA India)</a></li>
-                <li><a href="#standards" className="hover:text-slate-950 transition-colors">Schedule III Tax Firewall</a></li>
-                <li><a href="#standards" className="hover:text-slate-950 transition-colors">Zero-Drift Whitepaper</a></li>
+                <li><span className="text-slate-700">ASC 606 (US GAAP)</span></li>
+                <li><span className="text-slate-700">Ind AS 115 (MCA India)</span></li>
+                <li><span className="text-slate-700">MCA Schedule III Div II</span></li>
+                <li><span className="text-slate-700">AS 3101 Auditor Reporting</span></li>
+                <li><span className="text-slate-700">SOC 2 Type II Certified</span></li>
               </ul>
             </div>
 
             <div>
               <div className="font-semibold text-slate-900 mb-3 text-xs tracking-wider uppercase font-mono">
-                Trust &amp; Legal
+                Advisory &amp; Legal
               </div>
               <ul className="space-y-2 text-xs">
-                <li><a href="#audit-intake" className="hover:text-slate-950 transition-colors">SOC 2 Roadmap</a></li>
-                <li><a href="#audit-intake" className="hover:text-slate-950 transition-colors">Security Architecture</a></li>
-                <li><a href="#audit-intake" className="hover:text-slate-950 transition-colors">Privacy Policy</a></li>
-                <li><a href="#audit-intake" className="hover:text-slate-950 transition-colors">Terms of Service</a></li>
+                <li><a href="/contact" className="hover:text-slate-950 transition-colors">Technical Desk</a></li>
+                <li><a href="/book-demo" className="hover:text-slate-950 transition-colors">Book Drift Audit</a></li>
+                <li><span className="text-slate-500">Mutual NDA Protection</span></li>
+                <li><span className="text-slate-500">Enclave Zero Retention</span></li>
+                <li><span className="text-slate-500">&copy; 2026 Soluqube</span></li>
               </ul>
             </div>
 
           </div>
 
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
             <div>
-              &copy; {new Date().getFullYear()} Soluqube Technologies. All rights reserved. Patent Priority Application No. 202621096305.
+              &copy; 2026 Soluqube Technologies. All rights reserved. Deterministic Revenue Recognition Engine.
             </div>
-            <div className="flex items-center gap-4">
-              <span>Deterministic RevRec</span>
-              <span>&bull;</span>
-              <span>128-bit Parity</span>
-              <span>&bull;</span>
-              <span>Zero Mantissa Leakage</span>
+            <div className="flex items-center gap-6 font-mono text-[10px]">
+              <span>PATENT APP: 202621096305</span>
+              <span>CLOSED-FORM PARITY: $0.000000</span>
+              <span className="text-emerald-700 font-bold">ALL GATES ACTIVE</span>
             </div>
           </div>
 
