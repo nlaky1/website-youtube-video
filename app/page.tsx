@@ -197,7 +197,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://smart-contracts-henna.vercel.app/"
+              href="https://app.soluqube.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-all"
@@ -330,7 +330,7 @@ export default function Home() {
               </div>
 
               <a
-                href="https://smart-contracts-henna.vercel.app/"
+                href="https://app.soluqube.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold text-blue-600 hover:text-blue-700 bg-blue-50/80 hover:bg-blue-100 border border-blue-200 transition-colors"
@@ -1345,7 +1345,8 @@ export default function Home() {
                 <li><a href="#architecture" className="hover:text-slate-950 transition-colors">5-Gate Architecture</a></li>
                 <li><a href="#canvas-preview" className="hover:text-slate-950 transition-colors">Interactive Canvas</a></li>
                 <li><a href="#proof-telemetry" className="hover:text-slate-950 transition-colors">Audit Telemetry</a></li>
-                <li><a href="https://smart-contracts-henna.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Sandbox Engine <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
+                <li><a href="https://app.soluqube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Sandbox Engine <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
+                <li><a href="https://client.soluqube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Client Advisory Portal <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
               </ul>
             </div>
 
