@@ -63,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         </nav>
 
         {/* Right: Dual Action CTAs */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-2.5">
           <a
             href="https://client.soluqube.com/"
             target="_blank"
@@ -147,7 +147,7 @@ const Navbar: React.FC<NavbarProps> = () => {
               href="https://client.soluqube.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 transition-colors"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors active:scale-[0.98]"
             >
               <span>Client Advisory Portal</span>
               <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
@@ -157,19 +157,19 @@ const Navbar: React.FC<NavbarProps> = () => {
               href="https://app.soluqube.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-colors"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs font-bold text-blue-700 bg-blue-50/80 hover:bg-blue-100 border border-blue-200 transition-colors active:scale-[0.98]"
             >
-              <span>Live Sandbox Engine</span>
-              <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
+              <span>Launch Live Sandbox</span>
+              <ExternalLink className="w-3.5 h-3.5 text-blue-500" />
             </a>
 
             <a
               href="#audit-intake"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 shadow-sm transition-colors"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 shadow-sm transition-colors active:scale-[0.98]"
             >
               <span>Book Historical Drift Audit</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
             </a>
           </div>
         </div>

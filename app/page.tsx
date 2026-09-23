@@ -209,7 +209,7 @@ export default function Home() {
 
           {/* Proof Metric Bar (4-column grid on Slate 50 card with hairline border) */}
           <div className="mt-16 max-w-5xl mx-auto bg-slate-50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-sm">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-slate-200/80">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 lg:divide-x divide-slate-200/80">
               
               {/* Metric 1 */}
               <div className="text-left pt-3 lg:pt-0 lg:px-4">
