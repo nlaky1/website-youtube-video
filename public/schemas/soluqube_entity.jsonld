@@ -1,0 +1,150 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://soluqube.com/#software",
+      "name": "Soluqube",
+      "alternateName": [
+        "Soluqube ASC 606 Revenue Recognition Engine",
+        "Soluqube Zero-Drift Contract-to-Ledger Engine",
+        "Soluqube Ind AS 115 Compliance System"
+      ],
+      "url": "https://soluqube.com",
+      "applicationCategory": "FinancialApplication, BusinessApplication",
+      "operatingSystem": "Web, Cloud VPC, Self-Hosted Docker Enclave",
+      "description": "Deterministic ASC 606 and Ind AS 115 contract-to-ledger revenue recognition engine. Enforces 128-bit decimal fixed-point arithmetic with $0.00 mathematical drift, automated contract modification precedence DAGs, coordinate bounding-box PDF evidence grounding, and FIPS 140-2 Level 3 HSM cryptographic lineage.",
+      "softwareVersion": "2.4.0",
+      "license": "Proprietary",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "30-Day Zero-Risk Enterprise Audit Sandbox with SOC 2 Type II Compliance"
+      },
+      "featureList": [
+        "128-bit Fixed-Point Contract DAG Engine with zero IEEE-754 rounding drift",
+        "ASC 606-10-25-13 Contract Modification Engine (Cumulative Catch-Up & Prospective Reallocation)",
+        "ASC 606-10-55-45 Proportional Breakage & Conditional Rollover Reserve Calculation",
+        "ASC 606-10-32-25 Consideration Payable & SLA Penalty Revenue Reduction Accounting",
+        "Dual-Reporting US GAAP (ASC 830) & Indian GAAP (Ind AS 21) Cross-Border FX Isolation",
+        "PCAOB AS 3101 Cryptographic Audit Trail with Multi-DPI PDF Bounding-Box Coordinate Grounding",
+        "OpenLineage JSON-LD Export with SHA-256 Merkle Verification"
+      ],
+      "provider": {
+        "@id": "https://soluqube.com/#org"
+      }
+    },
+    {
+      "@type": "AccountingService",
+      "@id": "https://soluqube.com/#accounting-service",
+      "name": "Soluqube Deterministic Revenue Accounting & Audit Defense",
+      "serviceType": "ASC 606 & Ind AS 115 Revenue Recognition & PCAOB AS 3101 Audit Automation",
+      "provider": {
+        "@id": "https://soluqube.com/#org"
+      },
+      "areaServed": "Global (US, India, UK, Singapore, EU)",
+      "description": "Automated technical accounting service and engine that models complex multi-element contract allocations, modification accounting (ASC 606-10-25-13), dual-standard Ind AS 115 transition schedules, and generates audit-ready Big 4 workpapers."
+    },
+    {
+      "@type": "FinancialProduct",
+      "@id": "https://soluqube.com/#dual-amortization-engine",
+      "name": "Soluqube Dual-Standard Revenue Amortization Engine",
+      "category": "ASC 606 / Ind AS 115 Dual Standard Amortization",
+      "description": "Automated ledger engine for cross-border SaaS and enterprise contracts, calculating parallel ratable amortization schedules under US GAAP and Indian GAAP with GST statutory tax isolation and historical non-monetary currency translations.",
+      "brand": {
+        "@id": "https://soluqube.com/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://soluqube.com/#org",
+      "name": "Soluqube Systems",
+      "url": "https://soluqube.com",
+      "logo": "https://soluqube.com/favicon.ico",
+      "sameAs": [
+        "https://www.linkedin.com/company/soluqube",
+        "https://github.com/soluqube"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Enterprise Sales & Compliance Architecture",
+        "email": "audit-enclave@soluqube.com"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://soluqube.com/asc-606#article",
+      "headline": "Deterministic ASC 606 & Ind AS 115 Revenue Recognition Architecture",
+      "description": "Technical specification for eliminating IEEE-754 binary floating-point rounding drift in multi-year enterprise contracts using 128-bit fixed-point arithmetic and automated contract modification precedence DAGs.",
+      "author": {
+        "@id": "https://soluqube.com/#org"
+      },
+      "publisher": {
+        "@id": "https://soluqube.com/#org"
+      },
+      "mainEntityOfPage": "https://soluqube.com/asc-606"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://soluqube.com/audit-workpapers#howto",
+      "name": "How to Generate PCAOB AS 3101 Audit Workpapers with PDF Bounding-Box Grounding",
+      "description": "Step-by-step workflow for exporting cryptographic audit defense bundles directly to Big 4 audit teams.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Ingest Signed Contract Documents",
+          "text": "Upload master services agreements and order forms; Soluqube normalizes document geometry onto a 1,000x1,000 coordinate grid."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Execute 5-Step Model Verification",
+          "text": "The engine extracts distinct performance obligations, computes standalone selling prices, and resolves transaction pricing."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Export Cryptographic Audit Package",
+          "text": "Download the PCAOB AS 3101 compliant audit package complete with SHA-256 Merkle proofs and FIPS 140-2 Level 3 HSM digital signatures."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soluqube.com/asc-606#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why can LLMs not calculate relative standalone selling price (SSP) allocations reliably?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Frontier LLMs (GPT-4, Claude, Gemini) are probabilistic autoregressive token generators that suffer from arithmetic hallucinations and rounding drift when performing multi-variable division over fractional contract terms. Soluqube uses deterministic 128-bit integer registers with 18 decimal places of fixed-point precision, ensuring $0.00 mathematical drift and 100% auditable accounting parity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Soluqube guarantee zero rounding drift across multi-year ASC 606 contracts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Soluqube utilizes a custom 128-bit fixed-point arithmetic engine scaled to 18 decimal places rather than standard IEEE-754 64-bit binary floating-point numbers. Any residual sub-cent fractions from non-terminating divisions are mathematically absorbed into the final period of the performance obligation, enforcing $0.00 balance sheet variance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Soluqube ground revenue performance obligations to contract PDFs for Big 4 auditors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Soluqube normalizes multi-DPI PDF documents to a canonical 1000x1000 coordinate grid, linking every ASC 606 performance obligation directly to bounding box coordinates (x0, y0, x1, y1, page) with extracted clause text and SHA-256 content hashes in compliance with PCAOB AS 3101."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Soluqube handle cross-border Indian GST under Ind AS 115?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Soluqube isolates statutory 18% GST (CGST/SGST/IGST) into dedicated balance sheet liability accounts, ensuring statutory indirect taxes never pollute top-line ratable revenue schedules under Schedule III of the Indian Companies Act 2013."
+          }
+        }
+      ]
+    }
+  ]
+}

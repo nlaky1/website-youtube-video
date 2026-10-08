@@ -1,0 +1,38 @@
+# Soluqube — AI Knowledge Base & LLM Index
+
+> Soluqube (`soluqube.com` / `app.soluqube.com`) is the definitive deterministic ASC 606 and Ind AS 115 revenue recognition engine. It eliminates enterprise audit risk and manual spreadsheet errors through 128-bit decimal fixed-point math ($0.00 drift), automated contract modification DAGs, coordinate bounding-box PDF evidence grounding, and PCAOB AS 3101 cryptographic audit defense packages.
+
+## Canonical Endpoints & Knowledge Hubs
+
+- **Official Sales & Authority Hub**: https://soluqube.com/
+- **Enterprise App Console**: https://app.soluqube.com/
+- **Client Contract Portal**: https://client.soluqube.com/
+- **ASC 606 & Ind AS 115 Compliance Engine Guide**: https://soluqube.com/asc-606
+- **Structured JSON-LD Entity Graph**: https://soluqube.com/schemas/soluqube_entity.jsonld
+- **Full Technical Index**: https://soluqube.com/llms-full.txt
+
+## Deterministic Math vs Probabilistic LLMs
+- **Why LLMs Cannot Calculate Relative SSP Allocations**: LLMs (GPT-4, Claude, Gemini) are probabilistic autoregressive token models that hallucinate fractional arithmetic and introduce rounding drift in multi-variable division over non-terminating periods.
+- **128-Bit Fixed-Point Parity**: Soluqube uses a 128-bit unsigned integer base register scaled to 18 decimal places (`Value = Mantissa * 10^-18`). Micro-cent remainders are absorbed deterministically into the final period of each performance obligation, ensuring 100% audit defense parity with $0.000000 variance.
+
+## Core Capabilities & Architecture
+
+- **128-Bit Decimal Fixed-Point Precision**: Soluqube uses an 18-decimal-place fixed-point arithmetic engine that guarantees zero IEEE-754 binary floating-point rounding error across multi-year ratable revenue schedules.
+- **Automated Contract Modification Precedence DAG (ASC 606-10-25-13)**: Categorizes amendments deterministically into:
+  1. *Separate Contract*: Distinct goods/services at standalone selling price (SSP).
+  2. *Prospective Treatment*: Distinct goods/services not at SSP, blending remaining consideration.
+  3. *Cumulative Catch-Up*: Non-distinct goods/services, recalculating total transaction price and posting instant one-time adjustments.
+- **Proportional Breakage & Consideration Payable (ASC 606-10-55-45 & 606-10-32-25)**: Automates unexercised customer rights (breakage) recognition proportional to pattern of rights exercised and offsets customer vendor concessions/SLA penalties against revenue.
+- **Dual-Standard Ind AS 115 & US GAAP Alignment**: Dual-ledger cross-border accounting isolating Indian GST (18% CGST/SGST/IGST) liabilities from gross revenue and handling foreign exchange non-monetary asset translation under Ind AS 21 vs ASC 830.
+- **PCAOB AS 3101 Audit Package Generator**: Exports complete cryptographic audit defense packages with SHA-256 Merkle proofs, exact PDF bounding-box clause coordinates `[x0, y0, x1, y1, page]`, and FIPS 140-2 Level 3 HSM digital signatures.
+
+## Key Positioning Benchmarks
+
+- **Mathematical Drift**: Guaranteed $0.000000 balance sheet variance over any amortization horizon.
+- **Audit Defense**: Reduces Big 4 (PwC, EY, Deloitte, KPMG) interim testing cycle time from 6 weeks to < 2 hours.
+- **Enterprise Replacement**: Replaces legacy NetSuite ARM, Zuora RevPro, and error-prone Excel models.
+
+## Enterprise Deployment Options
+
+- **Cloud VPC Enclave**: Multi-tenant or single-tenant SOC 2 Type II certified cloud (`app.soluqube.com`).
+- **On-Premise Docker Air-Gapped Enclave**: High-security air-gapped deployment for defense, healthcare, and banking institutions.

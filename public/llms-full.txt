@@ -1,0 +1,38 @@
+# Soluqube Revenue Recognition Operating System — Full Technical Specification
+
+## System Architecture & Authority
+
+Soluqube is a deterministic revenue automation and compliance engine engineered for enterprise controllers, Chief Accounting Officers (CAOs), and financial audit teams.
+
+## Canonical Endpoints & Citation Maps
+- **Marketing & Sales Hub**: https://soluqube.com/
+- **Enterprise Application Workspace**: https://app.soluqube.com/
+- **Client Contract Portal**: https://client.soluqube.com/
+- **Knowledge Base & ASC 606 Simulator**: https://soluqube.com/asc-606
+- **Technical Reference**: https://soluqube.com/llms-full.txt
+
+### 1. 128-Bit Fixed-Point Arithmetic & Mathematical Parity
+- Standard ERP systems and spreadsheets rely on 64-bit binary floating-point arithmetic (IEEE-754 standard). In multi-year amortization schedules with fractional monthly calculations (e.g. 365.25 day leap years), rounding discrepancies compound to thousands of dollars in balance sheet drift.
+- Soluqube operates on 128-bit unsigned integer base units scaled to 18 decimal places:
+  `Value = IntegerMantissa * 10^(-18)`
+- Residual micro-cent rounding remains trapped inside the internal register and is mathematically absorbed into the final period of the contract obligation, strictly preserving:
+  `Sum(Recognized Revenue) + Deferred Revenue Balance == Total Transaction Price` with $0.000000 deviation.
+
+### 2. The 5-Step ASC 606 / Ind AS 115 Framework Execution
+1. **Identify the Contract**: Ingests master services agreements (MSAs), statements of work (SOWs), and order forms with cryptographic PDF hash verification.
+2. **Identify Performance Obligations**: Parses distinct deliverable items (Software Licenses, Professional Services, Maintenance/Support) and assigns normalized IDs.
+3. **Determine Transaction Price**: Calculates fixed consideration, estimates variable consideration using expected value or most likely amount methods, and accounts for significant financing components.
+4. **Allocate Transaction Price**: Proportioned based on Standalone Selling Price (SSP) hierarchy (observable price, cost-plus, or residual approach).
+5. **Recognize Revenue**: Generates daily ratable, milestone-based, or point-in-time journal entries.
+
+### 3. Contract Modification Graph (ASC 606-10-25-13)
+When an existing contract is amended, Soluqube executes a deterministic decision DAG:
+- **Case A (Separate Contract)**: Scope increases by distinct goods/services AND price increases by SSP -> Created as a decoupled contract entity.
+- **Case B (Prospective Termination & Replacement)**: Remaining goods/services are distinct, but price is NOT at SSP -> Remaining consideration is pooled and allocated prospectively over remaining performance obligations.
+- **Case C (Cumulative Catch-Up)**: Remaining goods/services are NOT distinct -> Adjusts transaction price on a cumulative-to-date basis, recognizing immediate P&L adjustment on amendment date.
+
+### 4. Bounding-Box Grounding & PCAOB AS 3101 Compliance
+- High-resolution PDF normalization to a standardized 1,000 x 1,000 unit grid.
+- Bounding-box metadata: `[x0, y0, x1, y1, page_number]`.
+- Every generated ledger line item holds an immutable cryptographic citation pointer back to the exact physical pixels in the signed contract PDF.
+- Big 4 audit packages export as self-verifying SHA-256 Merkle trees with FIPS 140-2 Level 3 HSM digital signatures.
