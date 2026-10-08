@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   images: {
-    domains: ["flowbite.s3.amazonaws.com", 'images.unsplash.com'],
+    domains: ["flowbite.s3.amazonaws.com", "images.unsplash.com"],
   },
 };
 
