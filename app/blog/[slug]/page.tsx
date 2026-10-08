@@ -143,11 +143,9 @@ export default function BlogPostPage({ params }: Props) {
 
           {/* Author Byline */}
           <div className="pt-4 flex items-center gap-3 border-t border-slate-100 max-w-xl">
-            <img
-              src={post.author.avatar}
-              alt={post.author.name}
-              className="w-10 h-10 rounded-full border border-slate-200 object-cover"
-            />
+            <div className="w-10 h-10 rounded-full bg-slate-900 text-white font-bold font-mono flex items-center justify-center text-xs shadow-xs">
+              {post.author.name.split(" ").map(n => n[0]).join("")}
+            </div>
             <div>
               <div className="text-xs font-bold text-slate-900">{post.author.name}</div>
               <div className="text-[11px] text-slate-500">{post.author.role}</div>

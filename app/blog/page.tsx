@@ -105,11 +105,9 @@ export default function BlogIndexPage() {
 
               <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
                 <div className="flex items-center gap-3">
-                  <img
-                    src={featuredPost.author.avatar}
-                    alt={featuredPost.author.name}
-                    className="w-9 h-9 rounded-full border border-slate-200 object-cover"
-                  />
+                  <div className="w-9 h-9 rounded-full bg-slate-200 text-slate-800 font-bold font-mono flex items-center justify-center text-xs border border-slate-300">
+                    {featuredPost.author.name.split(" ").map(n => n[0]).join("")}
+                  </div>
                   <div>
                     <div className="text-xs font-bold text-slate-900">
                       {featuredPost.author.name}
