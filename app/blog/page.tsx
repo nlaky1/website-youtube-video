@@ -224,12 +224,14 @@ export default function BlogIndexPage() {
             <span>|</span>
             <span>Deterministic Contract-to-Ledger Revenue Engine</span>
           </div>
-          <div className="flex items-center gap-6 text-slate-600">
-            <span>&copy; {new Date().getFullYear()} Soluqube Technologies Inc.</span>
+          <div className="flex items-center gap-5 text-slate-600">
+            <span>&copy; {new Date().getFullYear()} Soluqube</span>
             <Link href="/" className="hover:text-slate-950">Home</Link>
             <Link href="/blog" className="text-slate-900 font-bold">Blog</Link>
             <Link href="/asc-606" className="hover:text-slate-950">ASC 606 Hub</Link>
             <Link href="/asc-606-vs-ind-as-115" className="hover:text-slate-950">Dual Standard</Link>
+            <a href="https://www.crunchbase.com/organization/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950">Crunchbase</a>
+            <a href="https://www.linkedin.com/company/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950">LinkedIn</a>
           </div>
         </div>
       </footer>

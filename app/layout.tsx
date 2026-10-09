@@ -101,6 +101,8 @@ const structuredData = {
       sameAs: [
         "https://app.soluqube.com",
         "https://client.soluqube.com",
+        "https://www.crunchbase.com/organization/soluqube",
+        "https://www.linkedin.com/company/soluqube"
       ],
       description:
         "Deterministic contract-to-ledger revenue recognition engine with closed-form fixed-point parity and statutory audit defense.",

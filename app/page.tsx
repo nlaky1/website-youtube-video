@@ -1149,6 +1149,8 @@ export default function Home() {
               <ul className="space-y-2 text-xs">
                 <li><a href="/contact" className="hover:text-slate-950 transition-colors">Technical Desk</a></li>
                 <li><a href="/book-demo" className="hover:text-slate-950 transition-colors">Book Drift Audit</a></li>
+                <li><a href="https://www.crunchbase.com/organization/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Crunchbase <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
+                <li><a href="https://www.linkedin.com/company/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">LinkedIn <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
                 <li><span className="text-slate-500">Mutual NDA Protection</span></li>
                 <li><span className="text-slate-500">Enclave Zero Retention</span></li>
                 <li><span className="text-slate-500">&copy; 2026 Soluqube</span></li>
