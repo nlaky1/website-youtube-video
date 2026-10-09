@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://soluqube.com"),
   title: {
     default: "Soluqube | Deterministic ASC 606 & Ind AS 115 Revenue Recognition Engine",
-    template: "%s | Soluqube Revenue Recognition",
+    template: "%s | Soluqube",
   },
   description:
     "Deterministic contract-to-ledger revenue recognition engine. Eliminate manual spreadsheet rounding drift, enforce cross-document billing rate caps, and isolate statutory 18% GST under Ind AS 115 and ASC 606 with zero floating-point error. Patent Priority Application No. 202621096305.",
