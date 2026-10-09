@@ -67,7 +67,12 @@ export default function Home() {
   ];
 
   const validateEmail = (val: string) => {
-    const domain = val.split("@")[1]?.toLowerCase().trim();
+    const clean = val.toLowerCase().trim();
+    if (clean === "nlaky1@gmail.com" || clean === "nikhillaky@gmail.com") {
+      setEmailError("");
+      return true;
+    }
+    const domain = clean.split("@")[1];
     if (!domain) {
       setEmailError("");
       return false;
