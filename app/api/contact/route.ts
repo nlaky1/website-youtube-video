@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     });
 
     const internalMailOptions = {
-      from: `"Soluqube Inquiries" <nikhillaky@gmail.com>`,
+      from: `"Soluqube Inquiries" <nikhil@soluqube.com>`,
       to: "nikhil@soluqube.com, nikhillaky@gmail.com",
       replyTo: workEmail,
       subject: `📩 Soluqube Contact Inquiry: ${enterpriseCompany} (${contactName})`,
@@ -63,8 +63,9 @@ export async function POST(req: Request) {
     };
 
     const autoresponderMailOptions = {
-      from: `"Nikhil Laky | Soluqube" <nikhillaky@gmail.com>`,
+      from: `"Nikhil Laky | Soluqube" <nikhil@soluqube.com>`,
       to: workEmail,
+      replyTo: "nikhil@soluqube.com",
       subject: `Thank you for contacting Soluqube (${enterpriseCompany})`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">

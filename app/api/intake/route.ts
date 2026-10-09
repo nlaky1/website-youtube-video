@@ -50,7 +50,7 @@ export async function POST(req: Request) {
 
     // 1. Internal Notification (To Nikhil at Soluqube)
     const internalMailOptions = {
-      from: `"Soluqube Audit Enclave" <nikhillaky@gmail.com>`,
+      from: `"Soluqube Audit Enclave" <nikhil@soluqube.com>`,
       to: "nikhil@soluqube.com, nikhillaky@gmail.com",
       replyTo: workEmail,
       subject: `🚨 New Historical Drift Audit Request: ${enterpriseCompany} (${jobTitle})`,
@@ -117,8 +117,9 @@ export async function POST(req: Request) {
 
     // 2. Autoresponder (To the Prospect)
     const autoresponderMailOptions = {
-      from: `"Nikhil Laky | Soluqube" <nikhillaky@gmail.com>`,
+      from: `"Nikhil Laky | Soluqube" <nikhil@soluqube.com>`,
       to: workEmail,
+      replyTo: "nikhil@soluqube.com",
       subject: `Deterministic Audit Initialization: Soluqube Engine Tie-Out Prep (${enterpriseCompany})`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
