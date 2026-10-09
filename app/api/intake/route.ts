@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
     const contactName = fullName || `${first_name || ""} ${last_name || ""}`.trim() || "Finance Executive";
     const enterpriseCompany = company || company_name || "Enterprise Lead";
-    const workEmail = (email || "").trim().toLowerCase();
+    const workEmail = (body.workEmail || body.email || body.work_email || "").trim().toLowerCase();
     const jobTitle = job_title || title || "Finance / Accounting Leader";
     const erp = revrecStack || erp_system || "Oracle NetSuite (ARM)";
     const standard = accountingStandard || accounting_standard || "Both / Cross-Border (ASC 606 & Ind AS 115)";
