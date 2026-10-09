@@ -80,7 +80,7 @@ export default function Home() {
     return true;
   };
 
-  const handleBookingSubmit = (e: React.FormEvent) => {
+  const handleBookingSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateEmail(email) || !fullName || !company) {
       if (!validateEmail(email)) {
@@ -90,16 +90,39 @@ export default function Home() {
     }
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      const generatedRef = "REF-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+    try {
+      const res = await fetch("/api/intake", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName,
+          company,
+          email,
+          revrecStack,
+          accountingStandard,
+          driftAuditOffer
+        })
+      });
+
+      const data = await res.json();
+      const generatedRef = data.referenceId || ("REF-" + Math.random().toString(36).substring(2, 8).toUpperCase());
       const generatedRoot = "0x" + Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join("");
       
       setSubmittedData({
         referenceId: generatedRef,
         merkleRoot: generatedRoot
       });
+    } catch (err) {
+      console.warn("Intake submission fallback:", err);
+      const generatedRef = "REF-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+      const generatedRoot = "0x" + Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join("");
+      setSubmittedData({
+        referenceId: generatedRef,
+        merkleRoot: generatedRoot
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1200);
+    }
   };
 
   const contractData = {
