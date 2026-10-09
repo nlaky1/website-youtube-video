@@ -29,19 +29,26 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: "Email is required." }, { status: 400 });
     }
 
+    const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
+    const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 465;
+    const smtpUser = process.env.SMTP_USER || "nikhil@soluqube.com";
+    const smtpPass = process.env.SMTP_PASS || "vpcqiicernrapfhv";
+    const senderEmail = process.env.SOLUQUBE_SENDER_EMAIL || "nikhil@soluqube.com";
+    const alertEmail = process.env.FOUNDER_ALERT_EMAIL || "nikhil@soluqube.com";
+
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
       auth: {
-        user: "nikhillaky@gmail.com",
-        pass: "smvvqvjbpvouwita",
+        user: smtpUser,
+        pass: smtpPass,
       },
     });
 
     const internalMailOptions = {
-      from: `"Soluqube Inquiries" <nikhil@soluqube.com>`,
-      to: "nikhil@soluqube.com, nikhillaky@gmail.com",
+      from: `"Soluqube Inquiries" <${senderEmail}>`,
+      to: `${alertEmail}, nikhillaky@gmail.com`,
       replyTo: workEmail,
       subject: `📩 Soluqube Contact Inquiry: ${enterpriseCompany} (${contactName})`,
       html: `
@@ -63,9 +70,9 @@ export async function POST(req: Request) {
     };
 
     const autoresponderMailOptions = {
-      from: `"Nikhil Laky | Soluqube" <nikhil@soluqube.com>`,
+      from: `"Nikhil Laky | Soluqube" <${senderEmail}>`,
       to: workEmail,
-      replyTo: "nikhil@soluqube.com",
+      replyTo: senderEmail,
       subject: `Thank you for contacting Soluqube (${enterpriseCompany})`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">

@@ -37,21 +37,28 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: "Corporate work email is required." }, { status: 400 });
     }
 
-    // Configure Google SMTP Transport
+    const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
+    const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 465;
+    const smtpUser = process.env.SMTP_USER || "nikhil@soluqube.com";
+    const smtpPass = process.env.SMTP_PASS || "vpcqiicernrapfhv";
+    const senderEmail = process.env.SOLUQUBE_SENDER_EMAIL || "nikhil@soluqube.com";
+    const alertEmail = process.env.FOUNDER_ALERT_EMAIL || "nikhil@soluqube.com";
+
+    // Configure Google Workspace SMTP Transport
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
       auth: {
-        user: "nikhillaky@gmail.com",
-        pass: "smvvqvjbpvouwita",
+        user: smtpUser,
+        pass: smtpPass,
       },
     });
 
     // 1. Internal Notification (To Nikhil at Soluqube)
     const internalMailOptions = {
-      from: `"Soluqube Audit Enclave" <nikhil@soluqube.com>`,
-      to: "nikhil@soluqube.com, nikhillaky@gmail.com",
+      from: `"Soluqube Audit Enclave" <${senderEmail}>`,
+      to: `${alertEmail}, nikhillaky@gmail.com`,
       replyTo: workEmail,
       subject: `🚨 New Historical Drift Audit Request: ${enterpriseCompany} (${jobTitle})`,
       html: `
@@ -117,9 +124,9 @@ export async function POST(req: Request) {
 
     // 2. Autoresponder (To the Prospect)
     const autoresponderMailOptions = {
-      from: `"Nikhil Laky | Soluqube" <nikhil@soluqube.com>`,
+      from: `"Nikhil Laky | Soluqube" <${senderEmail}>`,
       to: workEmail,
-      replyTo: "nikhil@soluqube.com",
+      replyTo: senderEmail,
       subject: `Deterministic Audit Initialization: Soluqube Engine Tie-Out Prep (${enterpriseCompany})`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
