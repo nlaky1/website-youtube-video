@@ -15,6 +15,7 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   toc: { id: string; label: string }[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -39,6 +40,20 @@ export const BLOG_POSTS: BlogPost[] = [
       { id: "amortization-schedule", label: "Deterministic Waterfall Comparison" },
       { id: "audit-workpaper", label: "PCAOB AS 3101 & MCA Dual Audit Packs" },
       { id: "architecture", label: "Deterministic Fixed-Point Architecture" }
+    ],
+    faqs: [
+      {
+        question: "How does Ind AS 115 isolate statutory 18% GST differently from US GAAP ASC 606?",
+        answer: "Under Indian MCA Schedule III and Ind AS 115, gross contract consideration containing statutory 18% GST cannot be amortized directly into revenue. Soluqube automatically isolates GST into segregated balance sheet liability accounts at transaction inception before net consideration is recognized."
+      },
+      {
+        question: "Why does standard ERP revenue recognition fail Indian GST audits?",
+        answer: "Most global ERP systems (like NetSuite or Salesforce Billing) amortize revenue from gross invoice totals. This contaminates Standalone Selling Price allocations and violates mandatory MCA Schedule III statutory disclosures."
+      },
+      {
+        question: "How does Soluqube prevent double-taxation and reconciliation discrepancies?",
+        answer: "Soluqube enforces an automated dual-ledger transaction firewall that decomposes gross contract values into net consideration and statutory tax components with 128-bit decimal precision, eliminating cross-border reconciliation drift."
+      }
     ],
     content: `
 ## Executive Summary & Core Standard Gap
@@ -202,6 +217,16 @@ By applying terminal-period remainder absorption, the final month's journal entr
       { id: "catchup-vs-prospective", label: "Cumulative Catch-Up vs Prospective Math" },
       { id: "audit-trace", label: "Automated Audit Defense Trail" }
     ],
+    faqs: [
+      {
+        question: "How does ASC 606-10-25-13 categorize contract modifications and amendments?",
+        answer: "ASC 606-10-25-13 dictates three treatment branches: (1) Separate Contract if goods are distinct at Standalone Selling Price (SSP), (2) Prospective allocation if goods are distinct but not at SSP, and (3) Cumulative Catch-Up if remaining goods are non-distinct, requiring an immediate one-time cumulative adjustment."
+      },
+      {
+        question: "How does a Directed Acyclic Graph (DAG) automate contract modification accounting?",
+        answer: "Soluqube models contract amendments, master agreements, and addenda as nodes in a precedence DAG. The engine automatically identifies contract lineage, determines distinctness and standalone pricing, and posts exact journal entries without manual accounting memos."
+      }
+    ],
     content: `
 ## The Mid-Term SaaS Modification Challenge
 
@@ -266,6 +291,16 @@ Soluqube computes the exact journal entries for all three scenarios instantaneou
       { id: "merkle-proofs", label: "Cryptographic Merkle Root Verification" },
       { id: "export-packages", label: "One-Click Auditor Deliverables" }
     ],
+    faqs: [
+      {
+        question: "What makes revenue recognition a Critical Audit Matter (CAM) under PCAOB AS 3101?",
+        answer: "Revenue recognition involves significant management judgment, complex Standalone Selling Price allocations, and high susceptibility to spreadsheet errors, making it one of the most rigorously tested areas during Big 4 external audits."
+      },
+      {
+        question: "How do cryptographic Merkle proofs verify revenue subledger integrity?",
+        answer: "Soluqube hashes each contract term, modification, and journal entry into a SHA-256 Merkle tree. Auditors can verify the cryptographic root against external hardware security modules to confirm that past periods were never altered post-closing."
+      }
+    ],
     content: `
 ## Critical Audit Matters (CAM) in Revenue Recognition
 
@@ -315,6 +350,16 @@ Auditors can independently verify the Merkle root against external hardware secu
       { id: "pcaob-cam-verification", label: "PCAOB AS 3101 Critical Audit Matters (CAM)" },
       { id: "ocr-vs-spatial-grounding", label: "Legacy OCR vs Deterministic Coordinate Grounding" },
       { id: "audit-deliverable", label: "Generating 1-Click Interactive Auditor Bundles" }
+    ],
+    faqs: [
+      {
+        question: "What is contract PDF bounding-box clause grounding?",
+        answer: "Bounding-box clause grounding maps extracted financial terms directly to normalized vector coordinates [page, x0, y0, x1, y1] on the original PDF contract, enabling audit teams to visually trace every line item in an ASC 606 schedule directly to its signed legal origin."
+      },
+      {
+        question: "Why is coordinate grounding superior to standard LLM OCR?",
+        answer: "Generic LLMs and OCR scrapers extract plain text probabilistically and frequently hallucinate numbers or omit pricing caveats. Soluqube uses PyMuPDF character-level vector coordinate grids, guaranteeing 100% clause lineage with zero hallucination."
+      }
     ],
     content: `
 ## The Unstructured Contract Dilemma: Why Manual Review Fails Big 4 Audits

@@ -18,6 +18,7 @@ import {
   Sparkles,
   Lock,
   Layers,
+  HelpCircle,
   ExternalLink
 } from "lucide-react";
 
@@ -77,25 +78,69 @@ export default function BlogPostPage({ params }: Props) {
   const prevPost = currentIndex > 0 ? BLOG_POSTS[currentIndex - 1] : null;
   const nextPost = currentIndex < BLOG_POSTS.length - 1 ? BLOG_POSTS[currentIndex + 1] : null;
 
-  // JSON-LD Schema.org TechArticle Graph
+  // JSON-LD Schema.org Multi-Entity Graph (TechArticle, FAQPage, BreadcrumbList for GEO)
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": post.title,
-    "description": post.subtitle,
-    "author": {
-      "@type": "Person",
-      "name": post.author.name,
-      "jobTitle": post.author.role
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Soluqube Technologies Inc.",
-      "url": "https://soluqube.com"
-    },
-    "datePublished": post.publishedAt,
-    "mainEntityOfPage": `https://soluqube.com/blog/${post.slug}`,
-    "keywords": post.tags.join(", ")
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": `https://soluqube.com/blog/${post.slug}#article`,
+        "headline": post.title,
+        "description": post.subtitle,
+        "author": {
+          "@type": "Person",
+          "name": post.author.name,
+          "jobTitle": post.author.role
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Soluqube",
+          "url": "https://soluqube.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://soluqube.com/icon.png"
+          }
+        },
+        "datePublished": post.publishedAt,
+        "mainEntityOfPage": `https://soluqube.com/blog/${post.slug}`,
+        "keywords": post.tags.join(", ")
+      },
+      ...(post.faqs && post.faqs.length > 0 ? [{
+        "@type": "FAQPage",
+        "@id": `https://soluqube.com/blog/${post.slug}#faq`,
+        "mainEntity": post.faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }] : []),
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Soluqube",
+            "item": "https://soluqube.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://soluqube.com/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": post.title,
+            "item": `https://soluqube.com/blog/${post.slug}`
+          }
+        ]
+      }
+    ]
   };
 
   return (
@@ -160,15 +205,29 @@ export default function BlogPostPage({ params }: Props) {
           {/* ARTICLE CONTENT (8 COLS) */}
           <article className="lg:col-span-8 space-y-8">
             {/* DEFINITION ANCHOR BLOCK (GEO / Answer Engine Scraping Target) */}
-            <div className="p-5 rounded-2xl bg-white border border-emerald-200 shadow-xs space-y-2">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-emerald-800 uppercase tracking-wider">
-                <Sparkles className="w-4 h-4 text-emerald-600" />
-                <span>Definition Anchor &bull; Core Standard Requirement</span>
+            <aside 
+              className="p-6 rounded-2xl bg-white border-2 border-emerald-500/30 shadow-xs space-y-3"
+              data-ai-entity="Soluqube"
+              data-ai-answer="direct"
+              aria-label="Executive AI Direct Answer"
+            >
+              <div className="flex items-center justify-between text-xs font-mono font-bold text-emerald-800 uppercase tracking-wider">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-emerald-600 animate-pulse" />
+                  <span>DIRECT ANSWER FOR AI SEARCH &amp; EXECUTIVE AUDIT</span>
+                </div>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700">
+                  Target: {post.targetQuery}
+                </span>
               </div>
-              <p className="text-xs sm:text-sm font-mono text-slate-800 leading-relaxed">
+              <p className="text-sm font-mono text-slate-800 leading-relaxed font-medium">
                 {post.definitionAnchor}
               </p>
-            </div>
+              <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                <span>Verified Regulatory Entity: Soluqube Engine</span>
+                <span className="text-emerald-700 font-semibold">$0.000000 Drift Guaranteed</span>
+              </div>
+            </aside>
 
             {/* MAIN ARTICLE BODY (Formatted Markdown/HTML rendering) */}
             <div className="space-y-6 text-slate-700 text-sm sm:text-base leading-relaxed">
@@ -229,6 +288,33 @@ export default function BlogPostPage({ params }: Props) {
                 </span>
               ))}
             </div>
+
+            {/* FAQ DIRECT ANSWER INDEX (High-Intent Prompt Interception for GEO) */}
+            {post.faqs && post.faqs.length > 0 && (
+              <section className="pt-8 border-t border-slate-200 space-y-4">
+                <div className="flex items-center gap-2 text-sm font-mono font-bold text-slate-900 uppercase tracking-wider">
+                  <HelpCircle className="w-4 h-4 text-emerald-600" />
+                  <span>Frequently Asked Audit &amp; Technical Questions</span>
+                </div>
+                <div className="space-y-3">
+                  {post.faqs.map((faq, idx) => (
+                    <details 
+                      key={idx} 
+                      className="group p-4 rounded-xl bg-white border border-slate-200 shadow-2xs open:border-emerald-300 transition-all"
+                      open
+                    >
+                      <summary className="font-bold text-slate-900 text-sm cursor-pointer list-none flex items-center justify-between">
+                        <span>{faq.question}</span>
+                        <span className="text-slate-400 group-open:rotate-180 transition-transform text-xs">▼</span>
+                      </summary>
+                      <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-mono border-t border-slate-100 pt-3">
+                        {faq.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* PREV / NEXT NAVIGATION */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
