@@ -18,8 +18,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Soluqube Knowledge Hub & Technical Accounting Articles | ASC 606 & Ind AS 115",
-  description: "In-depth technical guides on deterministic ASC 606 revenue recognition, Ind AS 115 dual-standard GST isolation, PCAOB AS 3101 audit defense, and fixed-point math.",
+  title: "ASC 606 & Ind AS 115 Technical Accounting Hub | Soluqube",
+  description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, PCAOB AS 3101 audit defense, and fixed-point math architecture.",
   keywords: [
     "ASC 606 blog",
     "Ind AS 115 technical guide",
@@ -32,11 +32,26 @@ export const metadata: Metadata = {
     canonical: "https://soluqube.com/blog"
   },
   openGraph: {
-    title: "Soluqube Technical Accounting & Compliance Knowledge Hub",
-    description: "Engineering guides for Chief Accounting Officers, Controllers, and Big 4 auditors on deterministic contract-to-ledger revenue recognition.",
+    title: "ASC 606 & Ind AS 115 Technical Accounting Hub | Soluqube",
+    description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, and PCAOB AS 3101 audit defense.",
     url: "https://soluqube.com/blog",
     siteName: "Soluqube",
+    images: [
+      {
+        url: "/icon.png",
+        width: 512,
+        height: 512,
+        alt: "Soluqube Deterministic Accounting Hub"
+      }
+    ],
+    locale: "en_US",
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ASC 606 & Ind AS 115 Technical Accounting Hub | Soluqube",
+    description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, and PCAOB AS 3101 audit defense.",
+    images: ["/icon.png"]
   }
 };
 
