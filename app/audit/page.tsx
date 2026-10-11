@@ -35,7 +35,8 @@ export default function AuditSimulatorPage() {
   const [termMonths, setTermMonths] = useState<number>(36);
   const [elementsCount, setElementsCount] = useState<number>(3);
 
-  // Form State
+  // Form & Checkout State
+  const [auditTier, setAuditTier] = useState<"free" | "paid_499">("paid_499");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
   const [formCompany, setFormCompany] = useState("");
@@ -43,6 +44,20 @@ export default function AuditSimulatorPage() {
   const [formNotes, setFormNotes] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
+  const [isPaidSuccess, setIsPaidSuccess] = useState(false);
+  const [sessionId, setSessionId] = useState<string | null>(null);
+
+  // Check URL params for Stripe redirection status
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("status") === "success") {
+        setIsPaidSuccess(true);
+        setSessionId(params.get("session_id"));
+      }
+    }
+  }, []);
 
   // Math Calculations
   // 1. Floating-Point Binary Rounding (Standard Excel / NetSuite IEEE-754)
@@ -62,6 +77,38 @@ export default function AuditSimulatorPage() {
     if (!formEmail || !formName) return;
 
     setIsSubmitting(true);
+    setCheckoutError(null);
+
+    // If Paid Tier selected -> redirect to Stripe Checkout
+    if (auditTier === "paid_499") {
+      try {
+        const res = await fetch("/api/checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formName,
+            email: formEmail,
+            company: formCompany,
+            erp: formErp,
+            contractValue,
+            notes: formNotes,
+          }),
+        });
+        const data = await res.json();
+        if (data.success && data.url) {
+          window.location.href = data.url;
+          return;
+        } else {
+          setCheckoutError(data.error || "Unable to initiate Stripe checkout. Falling back to manual intake.");
+        }
+      } catch {
+        setCheckoutError("Network error while connecting to payment gateway.");
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
+
+    // Free Tier submission
     try {
       await fetch("/api/contact", {
         method: "POST",
@@ -77,7 +124,6 @@ export default function AuditSimulatorPage() {
       });
       setFormSubmitted(true);
     } catch {
-      // Fallback display
       setFormSubmitted(true);
     } finally {
       setIsSubmitting(false);
@@ -312,22 +358,50 @@ export default function AuditSimulatorPage() {
 
         </div>
 
-        {/* INTAKE FORM: FREE 3-CONTRACT HISTORICAL AUDIT */}
+        {/* INTAKE SECTION: DUAL-TIER FREE AUDIT & $499 INSTANT WORKPAPER PACKAGE */}
         <section id="audit-intake" className="rounded-3xl bg-slate-900 text-white p-8 sm:p-12 shadow-xl border border-slate-800">
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="text-center space-y-3">
               <span className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-mono font-semibold uppercase tracking-wider border border-indigo-500/30">
-                Complimentary Historical Audit
+                Audit Defense Intake & Instant Tie-Out
               </span>
               <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
-                Request Your 3-Contract Historical Drift Audit
+                Request Your Contract Drift Audit Package
               </h2>
               <p className="text-slate-400 text-sm max-w-xl mx-auto">
-                Send us 2 or 3 of your most complex multi-element or ramp-up contracts. We will run them through Soluqube (completely blinded) and send you full 8-tab PCAOB AS 3101 workpapers within 24 hours.
+                Submit 2 or 3 of your most complex multi-element or ramp contracts. Choose between our complimentary 24-hour review or unlock instant priority AS 3101 workpapers.
               </p>
             </div>
 
-            {formSubmitted ? (
+            {/* PAID SUCCESS BANNER */}
+            {isPaidSuccess ? (
+              <div className="p-8 rounded-2xl bg-emerald-950/70 border border-emerald-500/50 text-center space-y-4">
+                <div className="w-14 h-14 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center mx-auto text-emerald-400">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <div className="space-y-1">
+                  <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">Payment Verified ($499.00 USD)</span>
+                  <h3 className="text-2xl font-bold text-white">Priority Audit Package Unlocked!</h3>
+                </div>
+                <p className="text-emerald-200/90 text-sm max-w-lg mx-auto">
+                  Your transaction has completed successfully. Our 128-bit BigInt engine is processing your contract schedules. A certified 8-tab PCAOB AS 3101 defensible workpaper suite will be dispatched to your email within 4 hours.
+                </p>
+                {sessionId && (
+                  <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-700 text-xs font-mono text-slate-400 max-w-md mx-auto">
+                    Session Reference: <span className="text-emerald-400">{sessionId}</span>
+                  </div>
+                )}
+                <div className="pt-2">
+                  <Link 
+                    href="/asc-606"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors"
+                  >
+                    <span>View ASC 606 Knowledge Hub</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            ) : formSubmitted ? (
               <div className="p-8 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
                 <h3 className="text-xl font-bold text-white">Audit Request Received!</h3>
@@ -336,7 +410,97 @@ export default function AuditSimulatorPage() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmitAudit} className="space-y-4">
+              <form onSubmit={handleSubmitAudit} className="space-y-6">
+                
+                {/* TIER SELECTION TABS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div 
+                    onClick={() => setAuditTier("paid_499")}
+                    className={`cursor-pointer rounded-2xl p-5 border transition-all text-left relative ${
+                      auditTier === "paid_499" 
+                        ? "bg-indigo-950/60 border-indigo-400 shadow-lg shadow-indigo-950/50 ring-2 ring-indigo-500/30" 
+                        : "bg-slate-800/40 border-slate-700/70 hover:border-slate-600"
+                    }`}
+                  >
+                    <div className="absolute top-4 right-4">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500 text-white uppercase tracking-wider">
+                        Most Popular
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${auditTier === "paid_499" ? "border-indigo-400 bg-indigo-500" : "border-slate-500"}`}>
+                        {auditTier === "paid_499" && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
+                      </div>
+                      <h4 className="font-bold text-white text-base">Priority Tie-Out Package</h4>
+                    </div>
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <span className="text-2xl font-black text-white">$499</span>
+                      <span className="text-xs text-slate-400">/ one-time payment</span>
+                    </div>
+                    <ul className="text-xs text-slate-300 space-y-1.5 pt-1">
+                      <li className="flex items-center gap-1.5 text-emerald-400">
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                        <span>Instant Priority Queue (4-hr turnaround)</span>
+                      </li>
+                      <li className="flex items-center gap-1.5 text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
+                        <span>Full 8-Tab PCAOB AS 3101 Defensible Workpapers</span>
+                      </li>
+                      <li className="flex items-center gap-1.5 text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
+                        <span>PyMuPDF Contract Clause Bounding-Box Map</span>
+                      </li>
+                      <li className="flex items-center gap-1.5 text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
+                        <span>Stripe receipt & enterprise tax invoice</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div 
+                    onClick={() => setAuditTier("free")}
+                    className={`cursor-pointer rounded-2xl p-5 border transition-all text-left relative ${
+                      auditTier === "free" 
+                        ? "bg-slate-800 border-slate-400 shadow-md ring-2 ring-slate-400/20" 
+                        : "bg-slate-800/40 border-slate-700/70 hover:border-slate-600"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${auditTier === "free" ? "border-slate-300 bg-slate-300" : "border-slate-500"}`}>
+                        {auditTier === "free" && <div className="w-1.5 h-1.5 rounded-full bg-slate-900" />}
+                      </div>
+                      <h4 className="font-bold text-white text-base">Complimentary Audit</h4>
+                    </div>
+                    <div className="flex items-baseline gap-1.5 mb-2">
+                      <span className="text-2xl font-black text-white">$0</span>
+                      <span className="text-xs text-slate-400">/ free review</span>
+                    </div>
+                    <ul className="text-xs text-slate-300 space-y-1.5 pt-1">
+                      <li className="flex items-center gap-1.5 text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-slate-400" />
+                        <span>Standard 24-hr turnaround</span>
+                      </li>
+                      <li className="flex items-center gap-1.5 text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-slate-400" />
+                        <span>3-Contract Blinded Recalculation</span>
+                      </li>
+                      <li className="flex items-center gap-1.5 text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-slate-400" />
+                        <span>Variance Summary Report</span>
+                      </li>
+                      <li className="flex items-center gap-1.5 text-slate-400">
+                        <span>Requires email intake coordination</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                {checkoutError && (
+                  <div className="p-3 rounded-xl bg-rose-950/80 border border-rose-500/50 text-rose-300 text-xs">
+                    {checkoutError}
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1">
                     <label htmlFor={nameId} className="text-xs font-semibold text-slate-300">Your Name *</label>
@@ -421,16 +585,38 @@ export default function AuditSimulatorPage() {
                 <button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full mt-2 py-3 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg shadow-indigo-600/30 disabled:opacity-50"
+                  className={`w-full mt-3 py-3.5 px-6 rounded-xl text-white font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg disabled:opacity-50 ${
+                    auditTier === "paid_499"
+                      ? "bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/30 ring-2 ring-indigo-400/50"
+                      : "bg-slate-700 hover:bg-slate-600 shadow-slate-900/50"
+                  }`}
                 >
-                  <Send className="w-4 h-4" />
-                  <span>{isSubmitting ? "Submitting Request..." : "Request Zero-Cost 3-Contract Drift Audit"}</span>
+                  {isSubmitting ? (
+                    <span>Processing Request...</span>
+                  ) : auditTier === "paid_499" ? (
+                    <>
+                      <Sparkles className="w-4 h-4 text-indigo-300" />
+                      <span>Unlock Priority Audit Package ($499 via Stripe)</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Request Free 3-Contract Drift Audit</span>
+                    </>
+                  )}
                 </button>
 
-                <p className="text-[11px] text-center text-slate-500 flex items-center justify-center gap-1.5 pt-1">
-                  <Lock className="w-3 h-3 text-slate-400" />
-                  <span>Strict NDA Protected. Never shared with third parties or models.</span>
-                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2 pt-1 border-t border-slate-800">
+                  <div className="flex items-center gap-1.5">
+                    <Lock className="w-3.5 h-3.5 text-slate-400" />
+                    <span>256-Bit SSL Encrypted. Strict NDA protected.</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-400">
+                    <span>Powered by Stripe Payments</span>
+                    <span>•</span>
+                    <span>100% Audit Defensibility Guarantee</span>
+                  </div>
+                </div>
               </form>
             )}
           </div>
