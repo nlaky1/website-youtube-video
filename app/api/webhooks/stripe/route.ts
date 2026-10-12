@@ -35,9 +35,14 @@ export async function POST(req: NextRequest) {
       const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
       const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 465;
       const smtpUser = process.env.SMTP_USER || "nikhil@soluqube.com";
-      const smtpPass = process.env.SMTP_PASS || "vpcqiicernrapfhv";
+      const smtpPass = process.env.SMTP_PASS || "";
       const senderEmail = process.env.SOLUQUBE_SENDER_EMAIL || "nikhil@soluqube.com";
       const alertEmail = process.env.FOUNDER_ALERT_EMAIL || "nikhil@soluqube.com";
+
+      if (!smtpPass) {
+        console.warn("SMTP_PASS is not configured in environment; skipping email dispatch.");
+        return NextResponse.json({ received: true, type: event.type, emailSent: false });
+      }
 
       try {
         const transporter = nodemailer.createTransport({
