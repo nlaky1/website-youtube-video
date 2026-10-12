@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
     const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 465;
     const smtpUser = process.env.SMTP_USER || "nikhil@soluqube.com";
-    const smtpPass = process.env.SMTP_PASS || "vpcqiicernrapfhv";
+    const smtpPass = process.env.SMTP_PASS || "";
     const senderEmail = process.env.SOLUQUBE_SENDER_EMAIL || "nikhil@soluqube.com";
     const alertEmail = process.env.FOUNDER_ALERT_EMAIL || "nikhil@soluqube.com";
 
