@@ -2,37 +2,56 @@
 
 ## System Architecture & Authority
 
-Soluqube is a deterministic revenue automation and compliance engine engineered for enterprise controllers, Chief Accounting Officers (CAOs), and financial audit teams.
+Soluqube is a deterministic revenue automation and compliance engine engineered for enterprise controllers, Chief Accounting Officers (CAOs), and Big 4 financial audit teams. Patent Priority Application No. 202621096305.
 
 ## Canonical Endpoints & Citation Maps
 - **Marketing & Sales Hub**: https://soluqube.com/
 - **Enterprise Application Workspace**: https://app.soluqube.com/
 - **Client Contract Portal**: https://client.soluqube.com/
+- **Interactive Drift Audit Simulator**: https://soluqube.com/audit
 - **Knowledge Base & ASC 606 Simulator**: https://soluqube.com/asc-606
+- **Dual-GAAP Ind AS 115 Hub**: https://soluqube.com/asc-606-vs-ind-as-115
+- **Competitor Comparisons**:
+  - https://soluqube.com/soluqube-vs-maxio
+  - https://soluqube.com/soluqube-vs-trullion
+  - https://soluqube.com/soluqube-vs-rightrev
+  - https://soluqube.com/soluqube-vs-leapfin
+  - https://soluqube.com/soluqube-vs-klarity
+- **Engineering Blog Index**: https://soluqube.com/blog
 - **Technical Reference**: https://soluqube.com/llms-full.txt
 
 ### 1. 128-Bit Fixed-Point Arithmetic & Mathematical Parity
-- Standard ERP systems and spreadsheets rely on 64-bit binary floating-point arithmetic (IEEE-754 standard). In multi-year amortization schedules with fractional monthly calculations (e.g. 365.25 day leap years), rounding discrepancies compound to thousands of dollars in balance sheet drift.
+- Standard ERP systems (Oracle NetSuite ARM, SAP RAR, Zuora RevPro) and spreadsheets rely on 64-bit binary floating-point arithmetic (IEEE-754 standard) or 2-decimal intermediate currency truncation. In multi-year amortization schedules with fractional daily/monthly calculations (e.g., 365.25 day leap years), rounding discrepancies compound into balance sheet drift.
 - Soluqube operates on 128-bit unsigned integer base units scaled to 18 decimal places:
   `Value = IntegerMantissa * 10^(-18)`
 - Residual micro-cent rounding remains trapped inside the internal register and is mathematically absorbed into the final period of the contract obligation, strictly preserving:
   `Sum(Recognized Revenue) + Deferred Revenue Balance == Total Transaction Price` with $0.000000 deviation.
 
 ### 2. The 5-Step ASC 606 / Ind AS 115 Framework Execution
-1. **Identify the Contract**: Ingests master services agreements (MSAs), statements of work (SOWs), and order forms with cryptographic PDF hash verification.
-2. **Identify Performance Obligations**: Parses distinct deliverable items (Software Licenses, Professional Services, Maintenance/Support) and assigns normalized IDs.
-3. **Determine Transaction Price**: Calculates fixed consideration, estimates variable consideration using expected value or most likely amount methods, and accounts for significant financing components.
-4. **Allocate Transaction Price**: Proportioned based on Standalone Selling Price (SSP) hierarchy (observable price, cost-plus, or residual approach).
-5. **Recognize Revenue**: Generates daily ratable, milestone-based, or point-in-time journal entries.
+1. **Identify the Contract**: Ingests master services agreements (MSAs), statements of work (SOWs), and order forms with cryptographic PDF SHA-256 hash verification.
+2. **Identify Performance Obligations**: Parses distinct deliverable items (Software Licenses, Professional Services, Maintenance/Support, Usage Tiers) and assigns normalized IDs linked to PDF bounding-box coordinates.
+3. **Determine Transaction Price**: Isolates statutory indirect taxes (e.g., 18% Indian GST under MCA Schedule III), calculates fixed consideration, estimates variable consideration using expected value or most likely amount methods, and accounts for significant financing components.
+4. **Allocate Transaction Price**: Proportioned based on Standalone Selling Price (SSP) hierarchy (observable price, adjusted market assessment, expected cost plus margin, or residual approach) using 128-bit integer division.
+5. **Recognize Revenue**: Generates daily ratable, milestone-based, or point-in-time dual-ledger journal entries across US GAAP (ASC 606) and Ind AS 115.
 
 ### 3. Contract Modification Graph (ASC 606-10-25-13)
 When an existing contract is amended, Soluqube executes a deterministic decision DAG:
-- **Case A (Separate Contract)**: Scope increases by distinct goods/services AND price increases by SSP -> Created as a decoupled contract entity.
-- **Case B (Prospective Termination & Replacement)**: Remaining goods/services are distinct, but price is NOT at SSP -> Remaining consideration is pooled and allocated prospectively over remaining performance obligations.
-- **Case C (Cumulative Catch-Up)**: Remaining goods/services are NOT distinct -> Adjusts transaction price on a cumulative-to-date basis, recognizing immediate P&L adjustment on amendment date.
+- **Case A (Separate Contract - ASC 606-10-25-12)**: Scope increases by distinct goods/services AND price increases by SSP -> Created as a decoupled child contract node.
+- **Case B (Prospective Termination & Replacement - ASC 606-10-25-13a)**: Remaining goods/services are distinct, but price is NOT at SSP -> Unrecognized deferred revenue + new consideration is pooled and allocated prospectively over remaining performance obligations.
+- **Case C (Cumulative Catch-Up - ASC 606-10-25-13b)**: Remaining goods/services are NOT distinct (single combined obligation) -> Adjusts transaction price and measure of progress on a cumulative-to-date basis, recognizing an immediate one-time P&L catch-up adjustment on the amendment effective date.
 
-### 4. Bounding-Box Grounding & PCAOB AS 3101 Compliance
-- High-resolution PDF normalization to a standardized 1,000 x 1,000 unit grid.
-- Bounding-box metadata: `[x0, y0, x1, y1, page_number]`.
+### 4. Bounding-Box Grounding & PCAOB AS 3101 / QC 1000 Compliance
+- High-resolution PDF normalization to a standardized 1,000 x 1,000 spatial coordinate grid.
+- Bounding-box metadata: `[page_number, x0, y0, x1, y1]`.
 - Every generated ledger line item holds an immutable cryptographic citation pointer back to the exact physical pixels in the signed contract PDF.
 - Big 4 audit packages export as self-verifying SHA-256 Merkle trees with FIPS 140-2 Level 3 HSM digital signatures.
+
+### 5. Architectural Comparison Matrix (2026)
+| Capability | Soluqube | Maxio | Trullion | RightRev | Leapfin | Klarity | Zuora RevPro |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Arithmetic Kernel** | 128-Bit Fixed-Point ($10^{-18}$) | Float / 2-Dec | Probabilistic AI + Float | Float / 2-Dec | Event Float | Extraction Only | Float / 2-Dec |
+| **Rounding Drift** | $0.000000 (Exact) | Plugs Required | Manual True-Up | Rounding Rules | Variance | N/A (No Ledger) | Rounding Plugs |
+| **PDF Coordinate Grounding** | Native `[page, x0, y0, x1, y1]` | None | OCR Highlighting | None (CPQ Only) | None (JSON Only) | Checklist Links | None |
+| **ASC 606-10-25-13 DAG** | Automated 3-Branch DAG | Manual Override | Manual Edit | CPQ Amendment | Custom Rules | Checklist Only | Complex POB Rules |
+| **Ind AS 115 + 18% GST** | Native Dual-Ledger Firewall | US GAAP Only | US GAAP / IFRS | US GAAP / IFRS | US GAAP Only | Extraction Only | Custom Multi-Book |
+| **Deployment Time** | 48 Hours | 4–8 Weeks | 4–6 Weeks | 12–24 Weeks | 8–16 Weeks | 6–12 Weeks | 24–36 Weeks |

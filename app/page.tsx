@@ -1118,12 +1118,14 @@ export default function Home() {
 
             <div>
               <div className="font-semibold text-slate-900 mb-3 text-xs tracking-wider uppercase font-mono">
-                Product
+                Product &amp; Hubs
               </div>
               <ul className="space-y-2 text-xs">
-                <li><a href="#proof-telemetry" className="hover:text-slate-950 transition-colors">Platform Capabilities</a></li>
-                <li><a href="#standards" className="hover:text-slate-950 transition-colors">ASC 606 &amp; Ind AS 115</a></li>
+                <li><a href="/asc-606" className="hover:text-slate-950 transition-colors">ASC 606 Technical Hub</a></li>
+                <li><a href="/asc-606-vs-ind-as-115" className="hover:text-slate-950 transition-colors">ASC 606 vs Ind AS 115</a></li>
+                <li><a href="/blog" className="hover:text-slate-950 transition-colors">Engineering Blog (12 Pillars)</a></li>
                 <li><a href="/pricing" className="hover:text-slate-950 transition-colors">Enterprise Pricing</a></li>
+                <li><a href="/audit" className="hover:text-slate-950 transition-colors">Interactive Drift Audit</a></li>
                 <li><a href="https://app.soluqube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Sandbox Engine <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
                 <li><a href="https://client.soluqube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Client Advisory Portal <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
               </ul>
@@ -1131,14 +1133,14 @@ export default function Home() {
 
             <div>
               <div className="font-semibold text-slate-900 mb-3 text-xs tracking-wider uppercase font-mono">
-                Regulatory Standards
+                Competitor Benchmarks
               </div>
               <ul className="space-y-2 text-xs">
-                <li><span className="text-slate-700">ASC 606 (US GAAP)</span></li>
-                <li><span className="text-slate-700">Ind AS 115 (MCA India)</span></li>
-                <li><span className="text-slate-700">MCA Schedule III Div II</span></li>
-                <li><span className="text-slate-700">AS 3101 Auditor Reporting</span></li>
-                <li><span className="text-slate-700">SOC 2 Type II Certified</span></li>
+                <li><a href="/soluqube-vs-maxio" className="hover:text-slate-950 transition-colors">Soluqube vs Maxio</a></li>
+                <li><a href="/soluqube-vs-trullion" className="hover:text-slate-950 transition-colors">Soluqube vs Trullion</a></li>
+                <li><a href="/soluqube-vs-rightrev" className="hover:text-slate-950 transition-colors">Soluqube vs RightRev</a></li>
+                <li><a href="/soluqube-vs-leapfin" className="hover:text-slate-950 transition-colors">Soluqube vs Leapfin</a></li>
+                <li><a href="/soluqube-vs-klarity" className="hover:text-slate-950 transition-colors">Soluqube vs Klarity</a></li>
               </ul>
             </div>
 
