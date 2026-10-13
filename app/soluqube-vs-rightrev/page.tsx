@@ -316,7 +316,7 @@ export default function SoluqubeVsRightRevPage() {
             Audit Your Complex Contracts with Zero Vendor Lock-In
           </h3>
           <p className="text-sm text-slate-400 max-w-xl mx-auto mb-6">
-            Upload your signed enterprise MSA or SOW. Inspect bounding-box performance obligations and zero-drift integer (BigInt) schedules in under 60 seconds.
+            Upload your signed enterprise MSA or SOW. Confirm the performance obligations and stated prices, then get integer (BigInt) schedules that tie to the cent, with clause references.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

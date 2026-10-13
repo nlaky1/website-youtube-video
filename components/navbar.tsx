@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     {
       title: "Audit-Ready Evidence Workpapers",
       href: "/blog/pcaob-as-3101-audit-workpapers-merkle-proofs",
-      desc: "SHA-256 Merkle proofs with coordinate PDF bounding-box grounding."
+      desc: "SHA-256 integrity hashes with clause references back to the contract PDF."
     }
   ];
 

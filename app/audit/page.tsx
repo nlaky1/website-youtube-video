@@ -448,7 +448,7 @@ export default function AuditSimulatorPage() {
                       </li>
                       <li className="flex items-center gap-1.5 text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
-                        <span>PyMuPDF Contract Clause Bounding-Box Map</span>
+                        <span>Contract Clause Evidence Map</span>
                       </li>
                       <li className="flex items-center gap-1.5 text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />

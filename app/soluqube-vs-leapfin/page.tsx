@@ -55,7 +55,7 @@ export default function SoluqubeVsLeapfinPage() {
             "name": "What is the primary difference between Soluqube and Leapfin?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Leapfin is built as a financial data pipeline that consolidates millions of high-volume digital micro-transactions (e.g., Stripe, Shopify, consumer apps) into NetSuite journal entries. Soluqube is a contract audit subledger that reads complex, unstructured PDF legal agreements (MSAs, SOWs, order forms) and extracts ASC 606 & Ind AS 115 revenue schedules with visual bounding-box proof."
+              "text": "Leapfin is built as a financial data pipeline that consolidates millions of high-volume digital micro-transactions (e.g., Stripe, Shopify, consumer apps) into NetSuite journal entries. Soluqube is a contract audit subledger that reads complex, unstructured PDF legal agreements (MSAs, SOWs, order forms) and extracts ASC 606 & Ind AS 115 revenue schedules with visual with clause excerpts proof."
             }
           },
           {
@@ -301,7 +301,7 @@ export default function SoluqubeVsLeapfinPage() {
             Deterministic Revenue Recognition for Enterprise Contracts
           </h3>
           <p className="text-sm text-slate-400 max-w-xl mx-auto mb-6">
-            Upload your signed customer agreements. Get visual bounding-box clause grounding and zero-drift integer (BigInt) schedules instantly.
+            Upload your signed customer agreements. Confirm the obligations and stated prices; get clause references and integer (BigInt) schedules that tie to the cent.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
