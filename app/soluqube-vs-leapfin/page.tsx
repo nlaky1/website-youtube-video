@@ -55,7 +55,7 @@ export default function SoluqubeVsLeapfinPage() {
             "name": "What is the primary difference between Soluqube and Leapfin?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Leapfin is built as a financial data pipeline that consolidates millions of high-volume digital micro-transactions (e.g., Stripe, Shopify, consumer apps) into NetSuite journal entries. Soluqube is a contract audit subledger that reads complex, unstructured PDF legal agreements (MSAs, SOWs, order forms) and extracts ASC 606 & Ind AS 115 revenue schedules with visual with clause excerpts proof."
+              "text": "Leapfin is built as a financial data pipeline that consolidates millions of high-volume digital micro-transactions (e.g., Stripe, Shopify, consumer apps) into NetSuite journal entries. Soluqube is a contract audit subledger: you confirm the performance obligations and stated prices from your MSAs, SOWs and order forms, and it produces the ASC 606 & Ind AS 115 allocation and recognition schedule, with clause excerpts linked back to the source agreement."
             }
           },
           {
