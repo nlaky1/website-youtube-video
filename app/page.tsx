@@ -206,30 +206,30 @@ export default function Home() {
     waterfall: {
       title: "Revenue Waterfall & 18% GST Isolation",
       badge: "GATE 3 & 4 ACTIVE",
-      description: "Closed-form 128-bit decimal parity with terminal-period remainder absorption, isolating statutory 18% GST under MCA Schedule III without balance sheet drift.",
+      description: "Integer (BigInt) fixed-point parity, rounded to cents, with terminal-period remainder absorption, isolating statutory 18% GST under MCA Schedule III without balance sheet drift.",
       image: "/images/product/actual-waterfall-ledger.png",
       telemetry: "Compounded Drift: $0.000000 • 18% GST Isolated: ₹1,51,93,220.34 • Zero Mantissa Leakage"
     },
     client_portal: {
       title: "Multi-Entity Client Advisory Hub",
       badge: "ENTERPRISE VAULT",
-      description: "Secure onboarding portal with append-only contract versioning (`DOC:rev2.0`), zero-retention session telemetry, and automated Big 4 audit workpaper center.",
+      description: "Secure onboarding portal with append-only contract versioning (`DOC:rev2.0`), zero-retention session telemetry, and automated audit-ready evidence center.",
       image: "/images/product/actual-client-portal.png",
-      telemetry: "SOC 2 CC6 Data Governance • Zero-Retention Telemetry • FIPS 140-2 Level 3 HSM"
+      telemetry: "Encrypted in Transit • Zero-Retention Telemetry • SHA-256 Integrity Hashes on Exports"
     },
     erp_defense: {
-      title: "ERP Subledger Integration & Big 4 Audit Center",
+      title: "ERP Subledger Integration & Audit Evidence Center",
       badge: "GATE 5 ACTIVE",
-      description: "Bi-directional subledger sync for Oracle NetSuite ARM and SAP S/4HANA RAR, producing 8-Tab Excel variance models and AS 3101 JSON-LD compliance packs.",
+      description: "Bi-directional subledger sync for Oracle NetSuite ARM and SAP S/4HANA RAR, producing 8-Tab Excel variance models and audit-ready JSON-LD evidence packs.",
       image: "/images/product/soluqube-audit-erp-defense.jpg",
-      telemetry: "NetSuite SuiteTalk REST: SYNCED • SAP OData: CONNECTED • AS 3101 Merkle Root Verified"
+      telemetry: "NetSuite SuiteTalk REST: SYNCED • SAP OData: CONNECTED • Export Integrity Hash Verified"
     }
   };
 
   const faqs = [
     {
       q: "How does Soluqube eliminate floating-point rounding drift in ASC 606 revenue schedules?",
-      a: "Standard enterprise ERPs (NetSuite, SAP, Zuora) and spreadsheets calculate 36-month ratable schedules using standard 64-bit binary floating-point numbers (IEEE-754). This leads to minute fractions compounding across thousands of contracts (e.g. $33,333.333... recurring), resulting in accumulated cent discrepancies during annual auditor sampling. Soluqube enforces closed-form 128-bit decimal fixed-point arithmetic with an automated terminal-period remainder absorption algorithm, guaranteeing exact mathematical balance sheet parity ($0.000000)."
+      a: "Standard enterprise ERPs (NetSuite, SAP, Zuora) and spreadsheets calculate 36-month ratable schedules using standard 64-bit binary floating-point numbers (IEEE-754). This leads to minute fractions compounding across thousands of contracts (e.g. $33,333.333... recurring), resulting in accumulated cent discrepancies during annual auditor sampling. Soluqube enforces integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with an automated terminal-period remainder absorption algorithm, so schedules tie to the contract value."
     },
     {
       q: "How does Soluqube handle Indian GST isolation under Ind AS 115 and MCA Schedule III?",
@@ -244,8 +244,8 @@ export default function Home() {
       a: "Soluqube provides native bi-directional connectors for Oracle NetSuite Advanced Revenue Management (ARM) via SuiteTalk REST web services, SAP S/4HANA Revenue Accounting and Reporting (RAR) via OData APIs, QuickBooks Online, and Tally Prime for statutory compliance. It also exports structured CSV journal entry batches for custom on-premise ERPs."
     },
     {
-      q: "What deliverables does Soluqube produce for Big 4 audit readiness?",
-      a: "Soluqube generates an 8-tab variance Excel workpaper with formula-driven clause amortizations and an AS 3101 JSON-LD compliance pack containing SHA-256 clause hashes, spatial token coordinates, and cryptographic Merkle tree roots for instant auditor verification."
+      q: "What deliverables does Soluqube produce for audit readiness?",
+      a: "Soluqube generates an 8-tab variance Excel workpaper with formula-driven clause amortizations and an audit-ready JSON-LD evidence pack containing SHA-256 clause hashes, spatial token coordinates, and cryptographic Merkle tree roots for instant auditor verification."
     }
   ];
 
@@ -324,7 +324,7 @@ export default function Home() {
                   Closed-Form Parity
                 </div>
                 <div className="text-[11px] text-slate-500 mt-0.5 leading-snug">
-                  128-bit fixed-point arithmetic eliminating IEEE-754 mantissa leakage.
+                  Integer (BigInt) fixed-point arithmetic eliminating IEEE-754 mantissa leakage.
                 </div>
               </div>
 
@@ -342,10 +342,10 @@ export default function Home() {
 
               <div className="text-left pt-4 lg:pt-0 lg:px-4">
                 <div className="text-2xl sm:text-3xl font-extrabold font-mono text-purple-600 tracking-tight">
-                  AS 3101 Ready
+                  Audit Ready
                 </div>
                 <div className="text-xs font-semibold text-slate-800 mt-1.5">
-                  Big 4 Audit Artifacts
+                  Audit-Ready Evidence
                 </div>
                 <div className="text-[11px] text-slate-500 mt-0.5 leading-snug">
                   Cryptographic Merkle tree anchors for clause audit defense.
@@ -433,7 +433,7 @@ export default function Home() {
               Inside the Deterministic Validation Platform
             </h2>
             <p className="mt-3 text-base text-slate-600 leading-relaxed">
-              Explore the actual interfaces driving zero-drift revenue calculations across contract spatial analysis, dual-standard waterfalls, and Big 4 audit readiness.
+              Explore the actual interfaces driving zero-drift revenue calculations across contract spatial analysis, dual-standard waterfalls, and audit readiness.
             </p>
           </div>
 
@@ -565,7 +565,7 @@ export default function Home() {
                     <span className="font-bold text-slate-800">The Vulnerability:</span> Standard floating-point engines calculate 36-month ratable schedules using 64-bit binary floats (0.1 + 0.2 ≠ 0.3). Fractional cent residues compound across thousands of customer contracts, creating unexplained balance-sheet variances during annual auditor sampling.
                   </div>
                   <div className="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950 font-sans">
-                    <span className="font-bold text-emerald-900">Soluqube Solution:</span> Closed-form 128-bit decimal parity with terminal-period remainder absorption, guaranteeing exact balance sheet zero-drift ($0.000000).
+                    <span className="font-bold text-emerald-900">Soluqube Solution:</span> Soluqube uses integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value.
                   </div>
                 </div>
               </div>
@@ -668,7 +668,7 @@ export default function Home() {
                     <div className="text-[11px] text-slate-500 font-normal">Prevention of fractional cent accumulation</div>
                   </td>
                   <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
-                    $0.000000 (Closed-Form 128-Bit Parity)
+                    $0.00 (Integer BigInt Parity)
                   </td>
                   <td className="py-4 px-5 text-center text-rose-600 font-medium">
                     Severe (Compounds over 36 Mo)
@@ -728,11 +728,11 @@ export default function Home() {
 
                 <tr>
                   <td className="py-4 px-5 font-semibold text-slate-900">
-                    <div>Big 4 Audit Artifact Pack</div>
+                    <div>Audit-Ready Evidence Pack</div>
                     <div className="text-[11px] text-slate-500 font-normal">Cryptographic proof for audit committee sampling</div>
                   </td>
                   <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
-                    8-Tab Excel &amp; AS 3101 Merkle Pack
+                    8-Tab Excel &amp; JSON-LD Evidence Pack
                   </td>
                   <td className="py-4 px-5 text-center text-rose-600 font-medium">
                     Manual Workpaper Preparation
@@ -1110,7 +1110,7 @@ export default function Home() {
                 <span className="text-base font-bold tracking-tight text-slate-900">SOLUQUBE</span>
               </div>
               <p className="text-xs text-slate-500 leading-relaxed max-w-sm mb-3">
-                Deterministic contract-to-ledger revenue recognition engine. Closed-form 128-bit mathematical parity and spatial character token grounding.
+                Deterministic contract-to-ledger revenue recognition engine. Integer (BigInt) mathematical parity and spatial character token grounding.
               </p>
               <div className="font-mono text-[11px] text-slate-500">
                 Patent Priority Application No. 202621096305

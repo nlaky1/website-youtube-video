@@ -30,7 +30,7 @@ export default function SoluqubeVsKlarityPage() {
         "@type": "TechArticle",
         "@id": "https://soluqube.com/soluqube-vs-klarity#article",
         "headline": "Soluqube vs Klarity: Complete Revenue Subledger vs Checklist-Only Review",
-        "description": "Comparison between Soluqube and Klarity for ASC 606 revenue accounting. Learn why Soluqube's full amortization DAG, 128-bit micro-cent math, and ready-to-post journal vouchers solve the workflow gap that Klarity leaves behind.",
+        "description": "Comparison between Soluqube and Klarity for ASC 606 revenue accounting. Learn why Soluqube's full amortization DAG, integer (BigInt) micro-cent math, and ready-to-post journal vouchers solve the workflow gap that Klarity leaves behind.",
         "author": {
           "@type": "Organization",
           "name": "Soluqube Systems",
@@ -52,7 +52,7 @@ export default function SoluqubeVsKlarityPage() {
             "name": "What is the primary difference between Soluqube and Klarity?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Klarity is an AI contract review and metadata checklist tool that extracts terms for human verification, leaving the revenue calculation and waterfall generation to downstream ERPs like NetSuite. Soluqube is an end-to-end revenue subledger that extracts obligations, executes the 128-bit amortization DAG, and outputs certified, ready-to-post general ledger journal vouchers."
+              "text": "Klarity is an AI contract review and metadata checklist tool that extracts terms for human verification, leaving the revenue calculation and waterfall generation to downstream ERPs like NetSuite. Soluqube is an end-to-end revenue subledger that extracts obligations, executes the integer (BigInt) amortization DAG, and outputs ready-to-post general ledger journal vouchers."
             }
           },
           {
@@ -68,7 +68,7 @@ export default function SoluqubeVsKlarityPage() {
             "name": "How does Soluqube ensure zero mathematical drift?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Soluqube utilizes a 128-bit micro-cent fixed-point DAG engine that eliminates IEEE-754 floating-point rounding drift, guaranteeing that multi-period deferred revenue monotonically amortizes to exact $0.00."
+              "text": "Soluqube utilizes integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, eliminating IEEE-754 floating-point rounding drift so multi-period deferred revenue amortizes to exactly $0.00."
             }
           }
         ]
@@ -124,7 +124,7 @@ export default function SoluqubeVsKlarityPage() {
             Complete Revenue Subledger vs. Checklist-Only Review.
           </h1>
           <p className="text-base text-slate-300 leading-relaxed">
-            Klarity uses AI to read Order Forms and populate human review checklists—but <strong className="text-white">stops short of calculating your revenue schedules</strong>, leaving you dependent on spreadsheets or complex ERP custom scripts. Soluqube is an <span className="text-purple-400 font-semibold">autonomous contract-to-ledger subledger</span>: it extracts POBs, runs the 128-bit amortization DAG, and outputs certified, ready-to-post journal vouchers.
+            Klarity uses AI to read Order Forms and populate human review checklists—but <strong className="text-white">stops short of calculating your revenue schedules</strong>, leaving you dependent on spreadsheets or complex ERP custom scripts. Soluqube is an <span className="text-purple-400 font-semibold">autonomous contract-to-ledger subledger</span>: it extracts POBs, runs the integer (BigInt) amortization DAG, and outputs ready-to-post journal vouchers.
           </p>
         </div>
 
@@ -216,8 +216,8 @@ export default function SoluqubeVsKlarityPage() {
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Mathematical Precision</td>
-                  <td className="p-3.5 text-purple-400 font-mono font-bold bg-purple-950/20">128-bit micro-cent fixed-point ($0.00 drift)</td>
-                  <td className="p-3.5 text-slate-400 font-mono">Standard floating-point representation</td>
+                  <td className="p-3.5 text-purple-400 font-mono font-bold bg-purple-950/20">Integer (BigInt) micro-cent fixed-point ($0.00 drift)</td>
+                  <td className="p-3.5 text-slate-400 font-mono">Not published</td>
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">General Ledger Journal Vouchers</td>

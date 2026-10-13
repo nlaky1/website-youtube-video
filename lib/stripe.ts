@@ -7,4 +7,4 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_place
 
 export const AUDIT_PACKAGE_PRICE_CENTS = 49900; // $499.00 USD
 export const AUDIT_PACKAGE_NAME = "Soluqube PCAOB Defensible 3-Contract Audit Tie-Out Package";
-export const AUDIT_PACKAGE_DESCRIPTION = "128-bit decimal fixed-point recalculation, PDF clause bounding-box grounding, and 8-tab AS 3101 workpaper package.";
+export const AUDIT_PACKAGE_DESCRIPTION = "Deterministic fixed-point recalculation, PDF clause bounding-box grounding, and an audit-ready ASC 606 workpaper package.";

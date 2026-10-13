@@ -19,13 +19,13 @@ import {
 
 export const metadata: Metadata = {
   title: "ASC 606 & Ind AS 115 Technical Accounting Hub | Soluqube",
-  description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, PCAOB AS 3101 audit defense, and fixed-point math architecture.",
+  description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, audit-ready evidence packages, and fixed-point math architecture.",
   keywords: [
     "ASC 606 blog",
     "Ind AS 115 technical guide",
     "revenue recognition audit workpapers",
     "contract modification DAG",
-    "PCAOB AS 3101 compliance",
+    "audit-ready evidence package",
     "fixed point accounting math"
   ],
   alternates: {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "ASC 606 & Ind AS 115 Technical Accounting Hub | Soluqube",
-    description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, and PCAOB AS 3101 audit defense.",
+    description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, and audit-ready evidence packages.",
     url: "https://soluqube.com/blog",
     siteName: "Soluqube",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ASC 606 & Ind AS 115 Technical Accounting Hub | Soluqube",
-    description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, and PCAOB AS 3101 audit defense.",
+    description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, and audit-ready evidence packages.",
     images: ["/icon.png"]
   }
 };
@@ -76,7 +76,7 @@ export default function BlogIndexPage() {
           </h1>
 
           <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed pt-2">
-            Rigorous engineering breakdowns on eliminating floating-point drift, automating contract modification DAGs, and generating PCAOB AS 3101 audit-ready workpapers.
+            Rigorous engineering breakdowns on eliminating floating-point drift, automating contract modification DAGs, and generating audit-ready evidence packages.
           </p>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function BlogIndexPage() {
         <section className="rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-12 text-center space-y-4 text-white">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-emerald-400 text-xs font-mono font-bold border border-slate-700">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>PCAOB AS 3101 &bull; SOC 1 Type II Ready</span>
+            <span>Audit-Ready Evidence &bull; SHA-256 Integrity Hashes</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight max-w-2xl mx-auto">
@@ -209,7 +209,7 @@ export default function BlogIndexPage() {
           </h2>
 
           <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
-            Ingest complex multi-year enterprise contracts, extract spatial PDF clauses, and generate Big 4 audit defense workpapers in under 60 seconds.
+            Ingest complex multi-year enterprise contracts, extract spatial PDF clauses, and generate audit-ready evidence packages in under 60 seconds.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">

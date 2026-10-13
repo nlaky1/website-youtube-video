@@ -125,7 +125,7 @@ export default function BookDemoPage() {
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="font-bold text-slate-900">Spatial Token Bounding Boxes:</span> Pinned to raw contract PDF coordinates for instantaneous Big 4 audit substantiation.
+                  <span className="font-bold text-slate-900">Spatial Token Bounding Boxes:</span> Pinned to raw contract PDF coordinates for instantaneous audit substantiation.
                 </div>
               </div>
 
@@ -142,7 +142,7 @@ export default function BookDemoPage() {
             {/* Patent Callout */}
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/90 font-mono text-xs text-slate-600">
               <span className="font-bold text-slate-900 block mb-1">Patent Application: 202621096305</span>
-              Deterministic Revenue Recognition Engine with 128-bit Closed-Form Parity.
+              Deterministic Revenue Recognition Engine with Integer (BigInt) Closed-Form Parity.
             </div>
 
             {/* Security Assurance */}

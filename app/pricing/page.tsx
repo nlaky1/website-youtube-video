@@ -64,7 +64,7 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Executive findings presentation with Big 4-trained CPA</span>
+                  <span>Executive findings presentation with a member of the Soluqube team</span>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function PricingPage() {
               </div>
               <h2 className="text-xl font-bold text-slate-900">On-Demand Contract Audit</h2>
               <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                Drop a complex MSA + SOW stack for immediate 128-bit amortization and Big 4 AS 3101 workpaper generation.
+                Drop a complex MSA + SOW stack for immediate integer (BigInt) amortization and audit-ready evidence package generation.
               </p>
 
               <div className="my-6 pb-6 border-b border-slate-100">
@@ -105,11 +105,11 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Complete 8-Tab PCAOB AS 3101 Excel workpaper (.xlsx)</span>
+                  <span>Complete 8-Tab audit-ready Excel workpaper (.xlsx)</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>128-bit micro-cent waterfall ($0.000000 ending drift)</span>
+                  <span>Integer (BigInt) micro-cent waterfall, rounded to cents ($0.00 ending drift)</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -174,11 +174,11 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Big 4 auditor portal with cryptographic Merkle tree anchors</span>
+                  <span>Auditor portal with cryptographic Merkle tree anchors</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Dedicated technical accounting onboarding &amp; SLA guarantee</span>
+                  <span>Dedicated technical accounting onboarding; custom terms and service levels available on request</span>
                 </div>
               </div>
             </div>
@@ -219,7 +219,7 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>FIPS 140-2 Level 3 Hardware Security Module (HSM) signing</span>
+                  <span>SHA-256 integrity hashes on all exports</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -227,7 +227,7 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>SOC 2 Type II, HIPAA, and ISO 27001 audit defense collateral</span>
+                  <span>Security questionnaire and encryption-in-transit documentation on request</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -295,7 +295,7 @@ export default function PricingPage() {
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">Direct DB / OData</td>
                 </tr>
                 <tr>
-                  <td className="py-3.5 px-4 font-semibold text-slate-800">Big 4 Auditor Merkle Tree Pack (AS 3101)</td>
+                  <td className="py-3.5 px-4 font-semibold text-slate-800">Auditor Merkle Tree Pack (JSON-LD)</td>
                   <td className="py-3.5 px-4 text-center text-slate-700">Sample Report</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-emerald-50/20">Full 8-Tab Pack</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Full 8-Tab Pack</td>
@@ -305,7 +305,7 @@ export default function PricingPage() {
                   <td className="py-3.5 px-4 font-semibold text-slate-800">Deployment Architecture</td>
                   <td className="py-3.5 px-4 text-center text-slate-700">Advisory Review</td>
                   <td className="py-3.5 px-4 text-center text-slate-700 bg-emerald-50/20">Instant Self-Serve</td>
-                  <td className="py-3.5 px-4 text-center text-slate-700 bg-blue-50/30">SOC 2 Multi-Tenant Cloud</td>
+                  <td className="py-3.5 px-4 text-center text-slate-700 bg-blue-50/30">Multi-Tenant Cloud (encrypted in transit)</td>
                   <td className="py-3.5 px-4 text-center text-slate-700">Air-gapped VPC / Bare Metal</td>
                 </tr>
               </tbody>

@@ -13,22 +13,22 @@
       "url": "https://soluqube.com",
       "applicationCategory": "FinancialApplication, BusinessApplication",
       "operatingSystem": "Web, Cloud VPC, Self-Hosted Docker Enclave",
-      "description": "Deterministic ASC 606 and Ind AS 115 contract-to-ledger revenue recognition engine. Enforces 128-bit decimal fixed-point arithmetic with $0.00 mathematical drift, automated contract modification precedence DAGs, coordinate bounding-box PDF evidence grounding, and FIPS 140-2 Level 3 HSM cryptographic lineage.",
+      "description": "Deterministic ASC 606 and Ind AS 115 contract-to-ledger revenue recognition engine. Enforces integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, automated contract modification precedence DAGs, coordinate bounding-box PDF evidence grounding, and SHA-256 integrity hashes on exports.",
       "softwareVersion": "2.4.0",
       "license": "Proprietary",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "30-Day Zero-Risk Enterprise Audit Sandbox with SOC 2 Type II Compliance"
+        "description": "30-Day Zero-Risk Enterprise Audit Sandbox (encrypted in transit, SHA-256 integrity hashes on exports)"
       },
       "featureList": [
-        "128-bit Fixed-Point Contract DAG Engine with zero IEEE-754 rounding drift",
+        "Integer (BigInt) Fixed-Point Contract DAG Engine (10^6 scale, rounded to cents, terminal-period remainder absorption)",
         "ASC 606-10-25-13 Contract Modification Engine (Cumulative Catch-Up & Prospective Reallocation)",
         "ASC 606-10-55-45 Proportional Breakage & Conditional Rollover Reserve Calculation",
         "ASC 606-10-32-25 Consideration Payable & SLA Penalty Revenue Reduction Accounting",
         "Dual-Reporting US GAAP (ASC 830) & Indian GAAP (Ind AS 21) Cross-Border FX Isolation",
-        "PCAOB AS 3101 Cryptographic Audit Trail with Multi-DPI PDF Bounding-Box Coordinate Grounding",
+        "Audit-Ready Evidence Package with Multi-DPI PDF Bounding-Box Coordinate Grounding",
         "OpenLineage JSON-LD Export with SHA-256 Merkle Verification"
       ],
       "provider": {
@@ -39,12 +39,12 @@
       "@type": "AccountingService",
       "@id": "https://soluqube.com/#accounting-service",
       "name": "Soluqube Deterministic Revenue Accounting & Audit Defense",
-      "serviceType": "ASC 606 & Ind AS 115 Revenue Recognition & PCAOB AS 3101 Audit Automation",
+      "serviceType": "ASC 606 & Ind AS 115 Revenue Recognition & Audit Documentation Support",
       "provider": {
         "@id": "https://soluqube.com/#org"
       },
       "areaServed": "Global (US, India, UK, Singapore, EU)",
-      "description": "Automated technical accounting service and engine that models complex multi-element contract allocations, modification accounting (ASC 606-10-25-13), dual-standard Ind AS 115 transition schedules, and generates audit-ready Big 4 workpapers."
+      "description": "Automated technical accounting service and engine that models complex multi-element contract allocations, modification accounting (ASC 606-10-25-13), dual-standard Ind AS 115 transition schedules, and generates audit-ready evidence packages."
     },
     {
       "@type": "FinancialProduct",
@@ -76,7 +76,7 @@
       "@type": "TechArticle",
       "@id": "https://soluqube.com/asc-606#article",
       "headline": "Deterministic ASC 606 & Ind AS 115 Revenue Recognition Architecture",
-      "description": "Technical specification for eliminating IEEE-754 binary floating-point rounding drift in multi-year enterprise contracts using 128-bit fixed-point arithmetic and automated contract modification precedence DAGs.",
+      "description": "Technical specification for eliminating IEEE-754 binary floating-point rounding drift in multi-year enterprise contracts using integer (BigInt) fixed-point arithmetic and automated contract modification precedence DAGs.",
       "author": {
         "@id": "https://soluqube.com/#org"
       },
@@ -88,8 +88,8 @@
     {
       "@type": "HowTo",
       "@id": "https://soluqube.com/audit-workpapers#howto",
-      "name": "How to Generate PCAOB AS 3101 Audit Workpapers with PDF Bounding-Box Grounding",
-      "description": "Step-by-step workflow for exporting cryptographic audit defense bundles directly to Big 4 audit teams.",
+      "name": "How to Generate Audit-Ready Evidence Packages with PDF Bounding-Box Grounding",
+      "description": "Step-by-step workflow for exporting audit-ready evidence packages for external audit teams.",
       "step": [
         {
           "@type": "HowToStep",
@@ -103,8 +103,8 @@
         },
         {
           "@type": "HowToStep",
-          "name": "Export Cryptographic Audit Package",
-          "text": "Download the PCAOB AS 3101 compliant audit package complete with SHA-256 Merkle proofs and FIPS 140-2 Level 3 HSM digital signatures."
+          "name": "Export Audit-Ready Evidence Package",
+          "text": "Download the audit-ready evidence package (schedule, source-clause references, calculation log) with SHA-256 integrity hashes to support documentation for auditor review."
         }
       ]
     },
@@ -117,7 +117,7 @@
           "name": "Why can LLMs not calculate relative standalone selling price (SSP) allocations reliably?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Frontier LLMs (GPT-4, Claude, Gemini) are probabilistic autoregressive token generators that suffer from arithmetic hallucinations and rounding drift when performing multi-variable division over fractional contract terms. Soluqube uses deterministic 128-bit integer registers with 18 decimal places of fixed-point precision, ensuring $0.00 mathematical drift and 100% auditable accounting parity."
+            "text": "Frontier LLMs (GPT-4, Claude, Gemini) are probabilistic autoregressive token generators that suffer from arithmetic hallucinations and rounding drift when performing multi-variable division over fractional contract terms. Soluqube uses deterministic integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value."
           }
         },
         {
@@ -125,15 +125,15 @@
           "name": "How does Soluqube guarantee zero rounding drift across multi-year ASC 606 contracts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Soluqube utilizes a custom 128-bit fixed-point arithmetic engine scaled to 18 decimal places rather than standard IEEE-754 64-bit binary floating-point numbers. Any residual sub-cent fractions from non-terminating divisions are mathematically absorbed into the final period of the performance obligation, enforcing $0.00 balance sheet variance."
+            "text": "Soluqube uses integer (BigInt) fixed-point arithmetic at 10^6 scale, rounded to cents, rather than standard IEEE-754 64-bit binary floating-point numbers. Any residual rounding remainder from non-terminating divisions is absorbed into the terminal period of the performance obligation, so the schedule ties to the contract value."
           }
         },
         {
           "@type": "Question",
-          "name": "How does Soluqube ground revenue performance obligations to contract PDFs for Big 4 auditors?",
+          "name": "How does Soluqube ground revenue performance obligations to contract PDFs for external auditors?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Soluqube normalizes multi-DPI PDF documents to a canonical 1000x1000 coordinate grid, linking every ASC 606 performance obligation directly to bounding box coordinates (x0, y0, x1, y1, page) with extracted clause text and SHA-256 content hashes in compliance with PCAOB AS 3101."
+            "text": "Soluqube normalizes multi-DPI PDF documents to a canonical 1000x1000 coordinate grid, linking every ASC 606 performance obligation directly to bounding box coordinates (x0, y0, x1, y1, page) with extracted clause text and SHA-256 content hashes to support audit documentation."
           }
         },
         {

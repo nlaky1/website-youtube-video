@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
               <p><strong>ERP System:</strong> ${metadata.erp_system || "NetSuite"}</p>
               <p><strong>Contract Scope Value:</strong> $${metadata.contract_value || "100,000"}</p>
               <p><strong>Stripe Session ID:</strong> ${session.id}</p>
-              <p>Action: Generate 8-Tab PCAOB AS 3101 Defensible Workpaper Package and deliver within 4 hours.</p>
+              <p>Action: Generate 8-Tab audit-ready workpaper package and deliver within 1 business day.</p>
             </div>
           `,
         });

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Contact Soluqube Technical Desk",
-    description: "Direct engagement intake for Chief Accounting Officers, Controllers, and Big 4 audit readiness teams.",
+    description: "Direct engagement intake for Chief Accounting Officers, Controllers, and audit readiness teams.",
     url: "https://soluqube.com/contact",
   },
 };

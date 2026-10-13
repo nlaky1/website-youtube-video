@@ -34,7 +34,7 @@ export default function SoluqubeVsRightRevPage() {
         "@type": "TechArticle",
         "@id": "https://soluqube.com/soluqube-vs-rightrev#article",
         "headline": "Soluqube vs RightRev: Standalone Contract Subledger vs Salesforce CPQ Engine",
-        "description": "Comprehensive architectural comparison between Soluqube and RightRev for ASC 606 & IFRS 15 revenue recognition. Learn how Soluqube eliminates Salesforce platform lock-in with raw PDF contract grounding and 128-bit micro-cent math.",
+        "description": "Comprehensive architectural comparison between Soluqube and RightRev for ASC 606 & IFRS 15 revenue recognition. Learn how Soluqube eliminates Salesforce platform lock-in with raw PDF contract grounding and integer (BigInt) micro-cent math.",
         "author": {
           "@type": "Organization",
           "name": "Soluqube Systems",
@@ -64,7 +64,7 @@ export default function SoluqubeVsRightRevPage() {
             "name": "How does Soluqube prevent revenue rounding errors compared to RightRev?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "RightRev uses standard Apex and Salesforce platform database math, which relies on floating-point arithmetic prone to penny drift over multi-year contracts. Soluqube uses a 128-bit micro-cent fixed-point DAG engine that guarantees exact $0.000000 rounding drift across all accounting periods."
+              "text": "RightRev runs on the Salesforce platform; its arithmetic internals are not published. Soluqube uses integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value across all accounting periods."
             }
           },
           {
@@ -126,7 +126,7 @@ export default function SoluqubeVsRightRevPage() {
             </span>
           </h1>
           <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
-            RightRev binds your revenue accounting directly inside Salesforce CPQ. Soluqube gives finance teams a standalone, contract-grounded subledger with 128-bit micro-cent precision, zero Salesforce dependency, and native Dual-GAAP (ASC 606 + Ind AS 115) compliance.
+            RightRev binds your revenue accounting directly inside Salesforce CPQ. Soluqube gives finance teams a standalone, contract-grounded subledger with integer (BigInt) micro-cent precision, zero Salesforce dependency, and native Dual-GAAP (ASC 606 + Ind AS 115) compliance.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
@@ -142,7 +142,7 @@ export default function SoluqubeVsRightRevPage() {
               <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Math Engine</div>
               <div className="text-base font-semibold text-white flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-                128-Bit Fixed Point
+                Integer Fixed Point
               </div>
               <p className="text-xs text-slate-500 mt-1">Absorbs micro-cent remainders with $0.00 periodic drift.</p>
             </div>
@@ -195,7 +195,7 @@ export default function SoluqubeVsRightRevPage() {
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Calculation Precision</td>
                 <td className="py-4 px-6">Apex / SOQL standard double float</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">128-bit micro-cent fixed-point DAG</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">Integer (BigInt) micro-cent fixed-point DAG</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Zero cumulative rounding variance</td>
               </tr>
               <tr>
@@ -214,7 +214,7 @@ export default function SoluqubeVsRightRevPage() {
                 <td className="py-4 px-6 font-medium text-white">Contract Clause Grounding</td>
                 <td className="py-4 px-6">Manual reference text field</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">Sub-millimeter [page, x, y] BBoxes</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Instant visual proof for Big 4 auditors</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Instant visual proof for external auditors</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Implementation Duration</td>
@@ -302,10 +302,10 @@ export default function SoluqubeVsRightRevPage() {
           </div>
           <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/40">
             <h3 className="text-lg font-semibold text-white mb-2">
-              What workpapers does Soluqube export for Big 4 auditors?
+              What workpapers does Soluqube export for external auditors?
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Soluqube exports PCAOB AS 3101 defensible workpapers including the 8-tab variance schedule, click-through bounding box links to the contract PDF, and a cryptographic SHA-256 Merkle root sealing the schedule against retroactive tampering.
+              Soluqube exports audit-ready evidence packages including the 8-tab variance schedule, click-through bounding box links to the contract PDF, and a cryptographic SHA-256 Merkle root sealing the schedule against retroactive tampering.
             </p>
           </div>
         </div>
@@ -316,7 +316,7 @@ export default function SoluqubeVsRightRevPage() {
             Audit Your Complex Contracts with Zero Vendor Lock-In
           </h3>
           <p className="text-sm text-slate-400 max-w-xl mx-auto mb-6">
-            Upload your signed enterprise MSA or SOW. Inspect bounding-box performance obligations and zero-drift 128-bit schedules in under 60 seconds.
+            Upload your signed enterprise MSA or SOW. Inspect bounding-box performance obligations and zero-drift integer (BigInt) schedules in under 60 seconds.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

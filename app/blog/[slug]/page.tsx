@@ -378,7 +378,7 @@ export default function BlogPostPage({ params }: Props) {
               <div className="p-6 rounded-2xl bg-slate-900 text-white shadow-md space-y-3">
                 <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-800 text-emerald-400 text-[10px] font-mono font-bold uppercase">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>PCAOB AS 3101 Verified</span>
+                  <span>Audit-Ready Evidence</span>
                 </div>
                 <h3 className="text-base font-bold text-white">
                   Launch Revenue Sandbox

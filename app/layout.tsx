@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "ASC 606 revenue recognition software",
     "Ind AS 115 automated compliance",
     "contract to ledger revenue engine",
-    "Big 4 audit readiness revenue recognition",
+    "audit readiness revenue recognition",
     "B2B SaaS revenue waterfall engine",
     "zero drift fixed point parity",
     "ERP revenue subledger sync NetSuite SAP",
     "MCA Schedule III GST isolation",
     "contract modification accounting ASC 606-10-25",
-    "AS 3101 compliance pack",
+    "audit-ready evidence pack",
     "deterministic contract clause parsing",
     "Zuora RevPro alternative",
     "revenue accounting automation",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Soluqube | Deterministic ASC 606 & Ind AS 115 Revenue Recognition",
     description:
-      "Closed-form fixed-point arithmetic, spatial contract token grounding, and automated Big 4 audit readiness.",
+      "Closed-form fixed-point arithmetic, spatial contract token grounding, and automated audit-ready evidence packages.",
     images: ["/og-image.jpg"],
     creator: "@soluqube",
   },
@@ -122,12 +122,12 @@ const structuredData = {
       },
       featureList: [
         "Spatial Token Character Grounding (PyMuPDF Integer Grid)",
-        "Closed-Form 128-Bit Fixed-Point Parity ($0.00 Mathematical Drift)",
+        "Integer (BigInt) Fixed-Point Parity (10^6 scale, rounded to cents, terminal-period remainder absorption)",
         "Dual Standard ASC 606 & Ind AS 115 Amortization Schedules",
         "Statutory 18% GST Isolation under MCA Schedule III",
         "Cross-Document Precedence DAG Rate Cap Enforcement",
         "Oracle NetSuite ARM & SAP S/4HANA RAR Automated Subledger Sync",
-        "Big 4 Audit Workpaper Generator (8-Tab Excel & AS 3101 JSON-LD)",
+        "Audit-Ready Evidence Package Generator (8-Tab Excel & JSON-LD)",
       ],
     },
     {
@@ -139,7 +139,7 @@ const structuredData = {
           name: "How does Soluqube eliminate floating-point rounding drift in ASC 606 revenue schedules?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Standard ERPs and spreadsheets use IEEE-754 64-bit binary floating-point numbers where fractional cent residues compound over 36-month terms. Soluqube replaces binary floats with 128-bit fixed-point decimal arithmetic and terminal-period remainder absorption, guaranteeing exact balance sheet zero-drift ($0.000000).",
+            text: "Standard ERPs and spreadsheets use IEEE-754 64-bit binary floating-point numbers where fractional cent residues compound over 36-month terms. Soluqube replaces binary floats with integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value.",
           },
         },
         {
@@ -160,10 +160,10 @@ const structuredData = {
         },
         {
           "@type": "Question",
-          name: "What compliance deliverables does Soluqube provide for Big 4 audit readiness?",
+          name: "What compliance deliverables does Soluqube provide for audit readiness?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Soluqube generates an 8-tab variance Excel workpaper with embedded contract clause formulas and an AS 3101 JSON-LD compliance pack containing SHA-256 clause hashes and cryptographic Merkle roots for auditor verification.",
+            text: "Soluqube generates an 8-tab variance Excel workpaper with embedded contract clause formulas and an audit-ready JSON-LD evidence pack containing SHA-256 clause hashes and cryptographic Merkle roots for auditor verification.",
           },
         },
       ],

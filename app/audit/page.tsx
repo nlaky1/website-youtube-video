@@ -68,7 +68,7 @@ export default function AuditSimulatorPage() {
   const multiElementFactor = elementsCount * 1.8;
   const accumulatedFloatDrift = (floatDriftCents * multiElementFactor).toFixed(2);
 
-  // 2. Soluqube 128-bit Integer Remainder Absorption
+  // 2. Soluqube BigInt Integer Remainder Absorption
   const soluqubeMonthly = (contractValue / termMonths).toFixed(2);
   const soluqubeDrift = "0.000000";
 
@@ -145,7 +145,7 @@ export default function AuditSimulatorPage() {
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Interactive PCAOB AS 3101 & Ind AS 115 Drift Diagnostic</span>
+            <span>Interactive ASC 606 & Ind AS 115 Drift Diagnostic</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 max-w-4xl">
@@ -281,10 +281,10 @@ export default function AuditSimulatorPage() {
               {/* Card 2: Soluqube Engine */}
               <div className="p-6 rounded-2xl bg-white border border-emerald-300 shadow-xs space-y-4 relative overflow-hidden">
                 <div className="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-bold px-3 py-0.5 rounded-bl-lg font-mono">
-                  PCAOB AS 3101 READY
+                  AUDIT-READY EVIDENCE
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase tracking-wider font-bold text-emerald-700">Soluqube 128-bit DAG</span>
+                  <span className="text-xs font-mono uppercase tracking-wider font-bold text-emerald-700">Soluqube BigInt DAG</span>
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
                 </div>
                 <div>
@@ -298,11 +298,11 @@ export default function AuditSimulatorPage() {
                 <div className="space-y-1.5 text-xs text-slate-600 pt-2 border-t border-slate-100">
                   <div className="flex justify-between">
                     <span>Arithmetic:</span>
-                    <span className="font-mono text-emerald-700 font-semibold">128-bit Scaled Fixed</span>
+                    <span className="font-mono text-emerald-700 font-semibold">BigInt Scaled Fixed</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Audit Defense:</span>
-                    <span className="font-semibold text-emerald-700">100% Big 4 Defensible</span>
+                    <span className="font-semibold text-emerald-700">Built for audit review</span>
                   </div>
                   <div className="flex justify-between">
                     <span>GST Firewall:</span>
@@ -326,7 +326,7 @@ export default function AuditSimulatorPage() {
                     <tr className="border-b border-slate-200 text-slate-600">
                       <th className="py-2">Period</th>
                       <th className="py-2">Standard Float (Excel)</th>
-                      <th className="py-2">Soluqube 128-bit</th>
+                      <th className="py-2">Soluqube BigInt</th>
                       <th className="py-2 text-right">Audit Variance</th>
                     </tr>
                   </thead>
@@ -369,7 +369,7 @@ export default function AuditSimulatorPage() {
                 Request Your Contract Drift Audit Package
               </h2>
               <p className="text-slate-400 text-sm max-w-xl mx-auto">
-                Submit 2 or 3 of your most complex multi-element or ramp contracts. Choose between our complimentary 24-hour review or unlock instant priority AS 3101 workpapers.
+                Submit 2 or 3 of your most complex multi-element or ramp contracts. Choose between our complimentary 24-hour review or unlock instant priority audit-ready workpapers.
               </p>
             </div>
 
@@ -384,7 +384,7 @@ export default function AuditSimulatorPage() {
                   <h3 className="text-2xl font-bold text-white">Priority Audit Package Unlocked!</h3>
                 </div>
                 <p className="text-emerald-200/90 text-sm max-w-lg mx-auto">
-                  Your transaction has completed successfully. Our 128-bit BigInt engine is processing your contract schedules. A certified 8-tab PCAOB AS 3101 defensible workpaper suite will be dispatched to your email within 4 hours.
+                  Your transaction has completed successfully. Our BigInt engine is processing your contract schedules. Your audit-ready workpaper package (schedule, source clauses, calculation log) will be emailed within 1 business day.
                 </p>
                 {sessionId && (
                   <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-700 text-xs font-mono text-slate-400 max-w-md mx-auto">
@@ -444,7 +444,7 @@ export default function AuditSimulatorPage() {
                       </li>
                       <li className="flex items-center gap-1.5 text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
-                        <span>Full 8-Tab PCAOB AS 3101 Defensible Workpapers</span>
+                        <span>Full 8-Tab Audit-Ready Workpapers</span>
                       </li>
                       <li className="flex items-center gap-1.5 text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />

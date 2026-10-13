@@ -37,14 +37,14 @@ const FormSchema = z.object({
     "Evaluate Soluqube for my enterprise",
     "Request 3-Contract Historical Drift Audit",
     "NetSuite / SAP Subledger Integration",
-    "Big 4 Audit Preparation",
+    "External Audit Preparation",
     "Other Technical Inquiry",
   ]),
   services: z.enum([
     "ASC 606 & Ind AS 115 Dual Audit",
     "NetSuite / SAP ERP Subledger Sync",
     "Historical Drift Analysis (Complimentary)",
-    "Big 4 Workpaper & AS 3101 Compliance",
+    "Audit Workpaper & Evidence Package",
     "Sovereign Private Cloud On-Premise",
   ]),
   info: z.string(),
@@ -113,7 +113,7 @@ export default function ContactForm() {
             </h1>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Whether you need to eliminate 64-bit floating-point drift, isolate 18% statutory GST under Ind AS 115, or connect NetSuite ARM with automated 8-tab Big 4 workpapers, our technical accounting desk is available.
+              Whether you need to eliminate 64-bit floating-point drift, isolate 18% statutory GST under Ind AS 115, or connect NetSuite ARM with automated 8-tab audit-ready workpapers, our technical accounting desk is available.
             </p>
 
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 font-mono text-xs">
@@ -130,7 +130,7 @@ export default function ContactForm() {
               </div>
               <div className="flex items-center gap-3 text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Big 4 Technical Accounting Desk Response within 24h</span>
+                <span>Technical Accounting Desk: we aim to reply within 1 business day</span>
               </div>
             </div>
 
@@ -233,7 +233,7 @@ export default function ContactForm() {
                               <SelectItem value="Evaluate Soluqube for my enterprise">Evaluate Soluqube for my enterprise</SelectItem>
                               <SelectItem value="Request 3-Contract Historical Drift Audit">Request 3-Contract Historical Drift Audit</SelectItem>
                               <SelectItem value="NetSuite / SAP Subledger Integration">NetSuite / SAP Subledger Integration</SelectItem>
-                              <SelectItem value="Big 4 Audit Preparation">Big 4 Audit Preparation</SelectItem>
+                              <SelectItem value="External Audit Preparation">External Audit Preparation</SelectItem>
                               <SelectItem value="Other Technical Inquiry">Other Technical Inquiry</SelectItem>
                             </SelectContent>
                           </Select>
@@ -258,7 +258,7 @@ export default function ContactForm() {
                               <SelectItem value="Historical Drift Analysis (Complimentary)">Historical Drift Analysis (Complimentary)</SelectItem>
                               <SelectItem value="ASC 606 & Ind AS 115 Dual Audit">ASC 606 &amp; Ind AS 115 Dual Audit</SelectItem>
                               <SelectItem value="NetSuite / SAP ERP Subledger Sync">NetSuite / SAP ERP Subledger Sync</SelectItem>
-                              <SelectItem value="Big 4 Workpaper & AS 3101 Compliance">Big 4 Workpaper &amp; AS 3101 Compliance</SelectItem>
+                              <SelectItem value="Audit Workpaper & Evidence Package">Audit Workpaper &amp; Evidence Package</SelectItem>
                               <SelectItem value="Sovereign Private Cloud On-Premise">Sovereign Private Cloud On-Premise</SelectItem>
                             </SelectContent>
                           </Select>

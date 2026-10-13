@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Book Soluqube Demo & Historical Drift Audit",
-    description: "Experience deterministic 128-bit contract-to-ledger revenue recognition live in action.",
+    description: "Experience deterministic integer (BigInt) contract-to-ledger revenue recognition live in action.",
     url: "https://soluqube.com/book-demo",
   },
 };

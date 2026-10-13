@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     {
       title: "Eliminating IEEE-754 Floating-Point Drift",
       href: "/blog/eliminating-ieee-754-floating-point-rounding-drift-asc-606",
-      desc: "128-bit scaled integer arithmetic and terminal remainder absorption."
+      desc: "Integer arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption."
     },
     {
       title: "Contract Modification Precedence DAG",
@@ -43,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       desc: "Deterministic routing between Catch-Up and Prospective reallocation."
     },
     {
-      title: "PCAOB AS 3101 Big 4 Audit Workpapers",
+      title: "Audit-Ready Evidence Workpapers",
       href: "/blog/pcaob-as-3101-audit-workpapers-merkle-proofs",
       desc: "SHA-256 Merkle proofs with coordinate PDF bounding-box grounding."
     }

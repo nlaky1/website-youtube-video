@@ -25,7 +25,6 @@ export default function SoluqubeVsLeapfinPage() {
 
   // Price comparison math
   const soluqubePayAsYouGo = contractCount * 499;
-  const leapfinEstimatedMin = 35000; // $35k+ annual enterprise platform
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -34,7 +33,7 @@ export default function SoluqubeVsLeapfinPage() {
         "@type": "TechArticle",
         "@id": "https://soluqube.com/soluqube-vs-leapfin#article",
         "headline": "Soluqube vs Leapfin: Contract Audit Engine vs Transaction Data Subledger",
-        "description": "Technical comparison between Soluqube and Leapfin. Soluqube specializes in B2B enterprise contract ingestion, visual PDF clause grounding, and 128-bit micro-cent math, while Leapfin focuses on high-volume B2C payment pipelines.",
+        "description": "Technical comparison between Soluqube and Leapfin. Soluqube specializes in B2B enterprise contract ingestion, visual PDF clause grounding, and integer (BigInt) micro-cent math, while Leapfin focuses on high-volume B2C payment pipelines.",
         "author": {
           "@type": "Organization",
           "name": "Soluqube Systems",
@@ -64,7 +63,7 @@ export default function SoluqubeVsLeapfinPage() {
             "name": "Can Soluqube operate alongside Leapfin?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Enterprises managing high-volume consumer subscriptions and high-value bespoke enterprise contracts often use Leapfin for high-velocity payment streaming and Soluqube for deterministic auditing of non-standard, six-figure enterprise contracts requiring PCAOB AS 3101 defensibility."
+              "text": "Yes. Enterprises managing high-volume consumer subscriptions and high-value bespoke enterprise contracts often use Leapfin for high-velocity payment streaming and Soluqube for deterministic auditing of non-standard, six-figure enterprise contracts requiring audit-ready evidence packages."
             }
           },
           {
@@ -126,7 +125,7 @@ export default function SoluqubeVsLeapfinPage() {
             </span>
           </h1>
           <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
-            Leapfin was built to solve payment event pipelines for high-volume B2C apps. Soluqube is engineered for B2B finance leaders who need to audit unstructured, bespoke legal contracts with sub-millimeter visual grounding and zero-drift 128-bit micro-cent math.
+            Leapfin was built to solve payment event pipelines for high-volume B2C apps. Soluqube is engineered for B2B finance leaders who need to audit unstructured, bespoke legal contracts with sub-millimeter visual grounding and zero-drift integer (BigInt) micro-cent math.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
@@ -196,12 +195,12 @@ export default function SoluqubeVsLeapfinPage() {
                 <td className="py-4 px-6 font-medium text-white">Visual Clause Grounding</td>
                 <td className="py-4 px-6 text-rose-400">❌ No PDF bounding boxes</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">✅ [page, x, y] Visual Coordinate BBoxes</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Instant audit defense for Big 4 sampling</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Instant audit evidence for auditor sampling</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Calculation Precision</td>
                 <td className="py-4 px-6">Standard database SQL decimals</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">128-bit micro-cent fixed-point DAG</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">Integer (BigInt) micro-cent fixed-point DAG</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Guarantees exact $0.00 rounding drift</td>
               </tr>
               <tr>
@@ -218,7 +217,7 @@ export default function SoluqubeVsLeapfinPage() {
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Self-Serve Pricing</td>
-                <td className="py-4 px-6">$35,000–$50,000+/yr enterprise sales</td>
+                <td className="py-4 px-6">Enterprise sales (pricing not published)</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">$499/audit or $999/mo continuous</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">No sales procurement roadblocks</td>
               </tr>
@@ -254,7 +253,7 @@ export default function SoluqubeVsLeapfinPage() {
               <div>
                 <div className="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Leapfin (Annual Contract)</div>
                 <div className="text-2xl sm:text-3xl font-extrabold text-slate-300">
-                  ${leapfinEstimatedMin.toLocaleString()}
+                  Not published
                 </div>
                 <div className="text-xs text-rose-400 mt-1">Lengthy setup & pipeline fees</div>
               </div>
@@ -264,7 +263,7 @@ export default function SoluqubeVsLeapfinPage() {
                   ${soluqubePayAsYouGo.toLocaleString()}
                 </div>
                 <div className="text-xs text-emerald-400 mt-1">
-                  Save ${(leapfinEstimatedMin - soluqubePayAsYouGo).toLocaleString()} ({(100 - (soluqubePayAsYouGo / leapfinEstimatedMin * 100)).toFixed(0)}% savings)
+                  Leapfin does not publish pricing; compare against your own quote.
                 </div>
               </div>
             </div>
@@ -291,7 +290,7 @@ export default function SoluqubeVsLeapfinPage() {
               How does Soluqube ensure cryptographic audit defensibility?
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Every audit pack generated by Soluqube seals the extracted contract text, bounding box coordinates, and resulting amortization waterfall with an immutable SHA-256 Merkle root. External Big 4 auditors can verify that the calculations have not experienced post-close modification.
+              Every audit pack generated by Soluqube seals the extracted contract text, bounding box coordinates, and resulting amortization waterfall with an immutable SHA-256 Merkle root. External auditors can verify that the calculations have not experienced post-close modification.
             </p>
           </div>
         </div>
@@ -302,7 +301,7 @@ export default function SoluqubeVsLeapfinPage() {
             Deterministic Revenue Recognition for Enterprise Contracts
           </h3>
           <p className="text-sm text-slate-400 max-w-xl mx-auto mb-6">
-            Upload your signed customer agreements. Get visual bounding-box clause grounding and zero-drift 128-bit schedules instantly.
+            Upload your signed customer agreements. Get visual bounding-box clause grounding and zero-drift integer (BigInt) schedules instantly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -26,19 +26,19 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "October 8, 2026",
     readTime: "8 min read",
     author: {
-      name: "Dr. Arvind Subramanian",
-      role: "Chief Compliance Architect & Former Big 4 Partner",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606", "Ind AS 115", "GST Isolation", "Dual Standard", "Enterprise Audit"],
     targetQuery: "Ind AS 115 dual standard transition adjustments software",
     definitionAnchor: "ASC 606 and Ind AS 115 dual-standard revenue recognition is the automated process of calculating GAAP-compliant revenue amortization schedules under US GAAP while simultaneously quarantining statutory 18% Indian GST (CGST/SGST/IGST) liabilities into segregated MCA Schedule III balance sheet accounts with zero rounding discrepancy.",
-    excerpt: "Learn how cross-border CFOs eliminate double-taxation and reconciliation drift between US GAAP ASC 606 and MCA Schedule III Ind AS 115 ledgers using deterministic 128-bit decimal isolation.",
+    excerpt: "Learn how cross-border CFOs eliminate double-taxation and reconciliation drift between US GAAP ASC 606 and MCA Schedule III Ind AS 115 ledgers using deterministic integer (BigInt) fixed-point isolation.",
     toc: [
       { id: "overview", label: "Executive Summary & Core Standard Gap" },
       { id: "gst-quarantine", label: "Statutory 18% GST Balance Sheet Quarantine" },
       { id: "amortization-schedule", label: "Deterministic Waterfall Comparison" },
-      { id: "audit-workpaper", label: "PCAOB AS 3101 & MCA Dual Audit Packs" },
+      { id: "audit-workpaper", label: "Audit-Ready Evidence & MCA Dual Audit Packs" },
       { id: "architecture", label: "Deterministic Fixed-Point Architecture" }
     ],
     faqs: [
@@ -52,7 +52,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         question: "How does Soluqube prevent double-taxation and reconciliation discrepancies?",
-        answer: "Soluqube enforces an automated dual-ledger transaction firewall that decomposes gross contract values into net consideration and statutory tax components with 128-bit decimal precision, eliminating cross-border reconciliation drift."
+        answer: "Soluqube enforces an automated dual-ledger transaction firewall that decomposes gross contract values into net consideration and statutory tax components with integer (BigInt) fixed-point precision, eliminating cross-border reconciliation drift."
       }
     ],
     content: `
@@ -100,9 +100,9 @@ monthly_rev = 100000.00 / 12.0 # yields 8333.333333333334
 # After 12 months, sum equals 99999.96 (4 cents lost!)
 \`\`\`
 
-Soluqube's **128-bit decimal fixed-point engine** allocates amortization across daily discrete intervals, absorbing fractional remainders into the terminal period:
+Soluqube's **integer (BigInt) fixed-point engine** (10^6 scale, rounded to cents) allocates amortization across daily discrete intervals, absorbing fractional remainders into the terminal period:
 \`\`\`typescript
-// DETERMINISTIC 128-BIT SCALED ARITHMETIC
+// DETERMINISTIC BIGINT SCALED ARITHMETIC
 const NET_CENTS = 8474576n; // $84,745.76 net after 18% GST
 const PERIODS = 12n;
 const BASE_MONTHLY = NET_CENTS / PERIODS; // 706214n ($7,062.14)
@@ -113,9 +113,9 @@ This guarantees **$0.000000 drift** across multi-year amortization schedules und
 
 ---
 
-## PCAOB AS 3101 & MCA Dual Audit Packs
+## Audit-Ready Evidence & MCA Dual Audit Packs
 
-When Big 4 audit teams or statutory Indian tax inspectors request verification, Soluqube generates an immutable audit bundle containing:
+When external audit teams or statutory Indian tax inspectors request verification, Soluqube generates an immutable audit bundle containing:
 * **Bounding-Box Grounding**: Every line item in the waterfall links directly to normalized pixel coordinates on the signed PDF.
 * **Dual Workpaper Excel**: 8-tab workbook with active Excel formulas, reconciling US GAAP Deferred Revenue and Indian MCA GST Payable.
 * **Cryptographic Merkle Proof**: SHA-256 hash tree validating that historical amortizations have never been altered.
@@ -124,7 +124,7 @@ When Big 4 audit teams or statutory Indian tax inspectors request verification, 
   {
     slug: "eliminating-ieee-754-floating-point-rounding-drift-asc-606",
     title: "Eliminating IEEE-754 Floating-Point Rounding Drift in Enterprise ASC 606 Subledgers",
-    subtitle: "Why binary 64-bit floating point numbers corrupt multi-million dollar SaaS revenue recognition waterfalls and how 128-bit fixed-point math restores exact balance sheet parity.",
+    subtitle: "Why binary 64-bit floating point numbers corrupt multi-million dollar SaaS revenue recognition waterfalls and how integer (BigInt) fixed-point math restores exact balance sheet parity.",
     publishedAt: "October 7, 2026",
     readTime: "7 min read",
     author: {
@@ -139,7 +139,7 @@ When Big 4 audit teams or statutory Indian tax inspectors request verification, 
     toc: [
       { id: "ieee-flaw", label: "The IEEE-754 Binary Floating-Point Flaw" },
       { id: "compound-drift", label: "How Fractional Cents Compound into Audit Deficiencies" },
-      { id: "fixed-point-solution", label: "128-Bit Scaled Integer Engine" },
+      { id: "fixed-point-solution", label: "Scaled Integer (BigInt) Engine" },
       { id: "reconciliation", label: "Zero-Drift General Ledger Postings" }
     ],
     content: `
@@ -158,16 +158,16 @@ When an enterprise contract worth **$1,500,000.00** with 5 distinct performance 
 
 ## How Fractional Cents Compound into Audit Deficiencies
 
-External auditors under **PCAOB AS 3101** test contract subledgers against trial balances. When automated subledgers produce a cumulative discrepancy between:
+External auditors test contract subledgers against trial balances. When automated subledgers produce a cumulative discrepancy between:
 $$\\sum_{t=1}^{T} \\text{Recognized Revenue}_t \\neq \\text{Total Transaction Price}$$
 
 Controllers are forced to book manual adjusting journal entries (*\"Rounding Suspense\"* or *\"Plug Accounts\"*). These manual entries trigger red flags during SOX 404 internal control audits and PCAOB inspections.
 
 ---
 
-## 128-Bit Scaled Integer Engine
+## Scaled Integer (BigInt) Engine
 
-Soluqube completely bypasses binary floating-point arithmetic. All monetary values and standalone selling prices (SSP) are stored and manipulated as **128-bit scaled integers** with fixed scaling factors ($10^{6}$ micro-cents):
+Soluqube completely bypasses binary floating-point arithmetic. All monetary values and standalone selling prices (SSP) are stored and manipulated as **scaled integers (BigInt)** with a fixed scaling factor ($10^{6}$ micro-cents), rounded to cents with terminal-period remainder absorption:
 
 \`\`\`typescript
 export class FixedPointDecimal {
@@ -203,8 +203,8 @@ By applying terminal-period remainder absorption, the final month's journal entr
     publishedAt: "October 6, 2026",
     readTime: "9 min read",
     author: {
-      name: "Marcus Vance, CPA",
-      role: "Director of Technical Revenue Accounting",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606-10-25", "Contract Modifications", "Directed Acyclic Graph", "SaaS Accounting"],
@@ -272,19 +272,19 @@ Soluqube computes the exact journal entries for all three scenarios instantaneou
   },
   {
     slug: "pcaob-as-3101-audit-workpapers-merkle-proofs",
-    title: "PCAOB AS 3101 Audit Readiness: Cryptographic Merkle Proofs for Revenue Subledgers",
-    subtitle: "How cryptographic hashing, PDF spatial token bounding boxes, and immutable logs satisfy Big 4 Critical Audit Matters (CAM) testing.",
+    title: "Audit-Ready Evidence: Cryptographic Merkle Proofs for Revenue Subledgers",
+    subtitle: "How cryptographic hashing, PDF spatial token bounding boxes, and immutable logs support external auditors' Critical Audit Matters (CAM) testing.",
     publishedAt: "October 5, 2026",
     readTime: "6 min read",
     author: {
-      name: "Dr. Arvind Subramanian",
-      role: "Chief Compliance Architect & Former Big 4 Partner",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["PCAOB AS 3101", "Merkle Trees", "Audit Readiness", "Big 4", "SOX Compliance"],
-    targetQuery: "PCAOB AS 3101 automated audit defense package",
-    definitionAnchor: "PCAOB AS 3101 audit readiness for revenue recognition requires immutable, tamper-evident verification linking general ledger journal entries directly to primary source contract PDF clauses via cryptographic Merkle trees and normalized spatial coordinate bounding boxes.",
-    excerpt: "Learn how Soluqube provides cryptographic Merkle proofs and bounding-box audit packs to satisfy PCAOB AS 3101 revenue recognition compliance.",
+    tags: ["PCAOB", "Merkle Trees", "Audit Readiness", "External Audit", "SOX Compliance"],
+    targetQuery: "automated audit-ready evidence package revenue recognition",
+    definitionAnchor: "Audit readiness for revenue recognition means providing immutable, tamper-evident verification linking general ledger journal entries directly to primary source contract PDF clauses via cryptographic Merkle trees and normalized spatial coordinate bounding boxes.",
+    excerpt: "Learn how Soluqube provides cryptographic Merkle proofs and bounding-box audit packs that support documentation for auditor review of revenue recognition.",
     toc: [
       { id: "cam-requirement", label: "Critical Audit Matters (CAM) in Revenue Recognition" },
       { id: "spatial-grounding", label: "Spatial PDF Token Bounding Boxes" },
@@ -294,11 +294,11 @@ Soluqube computes the exact journal entries for all three scenarios instantaneou
     faqs: [
       {
         question: "What makes revenue recognition a Critical Audit Matter (CAM) under PCAOB AS 3101?",
-        answer: "Revenue recognition involves significant management judgment, complex Standalone Selling Price allocations, and high susceptibility to spreadsheet errors, making it one of the most rigorously tested areas during Big 4 external audits."
+        answer: "Revenue recognition involves significant management judgment, complex Standalone Selling Price allocations, and high susceptibility to spreadsheet errors, making it one of the most rigorously tested areas during external audits."
       },
       {
         question: "How do cryptographic Merkle proofs verify revenue subledger integrity?",
-        answer: "Soluqube hashes each contract term, modification, and journal entry into a SHA-256 Merkle tree. Auditors can verify the cryptographic root against external hardware security modules to confirm that past periods were never altered post-closing."
+        answer: "Soluqube hashes each contract term, modification, and journal entry into a SHA-256 Merkle tree. Auditors can recompute and verify the cryptographic root to confirm that past periods were never altered post-closing."
       }
     ],
     content: `
@@ -325,7 +325,7 @@ When an auditor clicks on any cell in the Soluqube workpaper, the UI highlights 
 
 Every transaction, modification, and amortization event is hashed using SHA-256 and appended to a cryptographic Merkle tree. 
 
-Auditors can independently verify the Merkle root against external hardware security modules (HSM) or public ledgers to prove beyond doubt that past revenue figures were never silently altered.
+Auditors can independently recompute the Merkle root to verify that past revenue figures were never silently altered.
     `
   },
   {
@@ -335,14 +335,14 @@ Auditors can independently verify the Merkle root against external hardware secu
     publishedAt: "October 9, 2026",
     readTime: "8 min read",
     author: {
-      name: "Dr. Arvind Subramanian",
-      role: "Chief Compliance Architect & Former Big 4 Partner",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["PDF Grounding", "PCAOB AS 3101", "Audit Workpapers", "MSA Parsing", "Big 4"],
+    tags: ["PDF Grounding", "Audit Evidence", "Audit Workpapers", "MSA Parsing", "External Audit"],
     targetQuery: "Contract PDF bounding-box clause grounding for auditors",
     definitionAnchor: "Contract PDF bounding-box clause grounding is the automated mathematical extraction and spatial mapping of unstructured legal text to normalized page coordinates [page, x0, y0, x1, y1], linking every line item in an ASC 606 revenue waterfall schedule directly to its signed contractual origin for zero-defect audit verification.",
-    excerpt: "Learn how Soluqube uses PyMuPDF normalized bounding-box coordinates to link ASC 606 revenue schedules directly to signed contract clauses for Big 4 audit readiness.",
+    excerpt: "Learn how Soluqube uses PyMuPDF normalized bounding-box coordinates to link ASC 606 revenue schedules directly to signed contract clauses for audit readiness.",
     toc: [
       { id: "the-unstructured-contract-gap", label: "The Unstructured Contract Dilemma" },
       { id: "definition-anchor-block", label: "Definition & Spatial Grounding Architecture" },
@@ -362,11 +362,11 @@ Auditors can independently verify the Merkle root against external hardware secu
       }
     ],
     content: `
-## The Unstructured Contract Dilemma: Why Manual Review Fails Big 4 Audits
+## The Unstructured Contract Dilemma: Why Manual Review Fails External Audits
 
 For enterprise finance departments, revenue recognition errors rarely originate in the arithmetic—they originate in **clause misinterpretation**. When an enterprise closes a $5,000,000 Master Services Agreement (MSA) with three non-standard addenda, terms like *\"contingent SLA rebates,\" \"termination for convenience refund clauses,\"* or *\"tiered volume discounts\"* are frequently overlooked by junior accountants.
 
-During annual PCAOB AS 3101 audits, external partners (PwC, EY, Deloitte, KPMG) perform substantive testing by manually tracing revenue subledger journal entries back to signed PDF documents. If an auditor cannot instantly verify the underlying contractual clause supporting a Standalone Selling Price (SSP) allocation, the deficiency is escalated as a **Material Weakness in Internal Controls (SOX 404)**.
+During annual external audits, audit partners (PwC, EY, Deloitte, KPMG) perform substantive testing by manually tracing revenue subledger journal entries back to signed PDF documents. If an auditor cannot instantly verify the underlying contractual clause supporting a Standalone Selling Price (SSP) allocation, the deficiency is escalated as a **Material Weakness in Internal Controls (SOX 404)**.
 
 ---
 
@@ -387,7 +387,7 @@ Soluqube solves this by treating every ingested contract PDF not as a flat image
   - Contingency: 10% SLA cap     - SHA-256 Text Hash
                    |
                    v
-[ ASC 606 / Ind AS 115 128-Bit Ledger Entry ]
+[ ASC 606 / Ind AS 115 BigInt Ledger Entry ]
 \`\`\`
 
 ---
@@ -418,9 +418,9 @@ When an auditor or controller inspects an amortization row in the Soluqube inter
 
 ## PCAOB AS 3101 Critical Audit Matters (CAM) Testing
 
-Under **PCAOB Auditing Standard AS 3101**, auditors must document significant judgment areas. Soluqube generates an audit defense bundle linking:
+Under **PCAOB AS 3101**, auditors communicate Critical Audit Matters in their report; the supporting evidence is documented under the PCAOB documentation standards. Soluqube generates an audit-ready evidence package that supports this documentation by linking:
 1. **Clause Origin**: Visual bounding-box proof on the signed document.
-2. **Deterministic Math**: 128-bit scaled integer amortization ($0.00 drift).
+2. **Deterministic Math**: integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption.
 3. **Cryptographic Immutability**: SHA-256 Merkle root validating that neither the contract PDF nor the ledger schedule has been altered post-signature.
 
 ---
@@ -432,7 +432,7 @@ Under **PCAOB Auditing Standard AS 3101**, auditors must document significant ju
 | **Clause Traceability** | Probabilistic text extraction without source grounding | Sub-millimeter [page, x, y] coordinate vector mapping |
 | **Audit Verification Speed** | 4–6 hours of manual PDF cross-referencing per contract | Instant 1-click visual clause highlighting |
 | **Hallucination Risk** | High (LLMs invent non-existent discount terms) | 0% (Strict character-level token verification) |
-| **Audit Defense Output** | Static Excel sheets with manual comments | AS 3101 JSON-LD bundle with embedded SHA-256 Merkle proofs |
+| **Audit Defense Output** | Static Excel sheets with manual comments | Audit-ready JSON-LD evidence bundle with embedded SHA-256 Merkle proofs |
 
 ---
 
@@ -448,14 +448,14 @@ Soluqube exports complete 8-tab variance workpapers and self-contained HTML audi
     publishedAt: "October 10, 2026",
     readTime: "9 min read",
     author: {
-      name: "Dr. Arvind Subramanian",
-      role: "Chief Compliance Architect & Former Big 4 Partner",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["PCAOB QC 1000", "FASB ASC 606", "AI Revenue Recognition", "Audit Deficiencies", "Enterprise Audit"],
     targetQuery: "PCAOB QC 1000 revenue recognition audit deficiencies software",
-    definitionAnchor: "PCAOB QC 1000 compliance in revenue recognition requires auditable, deterministic internal controls over financial reporting (ICFR) that eliminate spreadsheet judgment risk and probabilistic AI hallucinations in ASC 606 performance obligation allocations.",
-    excerpt: "With the PCAOB enforcing QC 1000 and zeroing in on recurring revenue audit deficiencies, finance leaders are forced to abandon manual spreadsheets and ungrounded LLMs in favor of deterministic, coordinate-verified subledgers.",
+    definitionAnchor: "PCAOB QC 1000 is the quality-control standard for registered audit firms; its practical effect for preparers is that audit teams increasingly look for reproducible, documented revenue calculations rather than spreadsheet judgment or probabilistic AI outputs in ASC 606 performance obligation allocations.",
+    excerpt: "With PCAOB QC 1000 raising quality-control expectations for audit firms and inspections continuing to focus on revenue, finance leaders are moving from manual spreadsheets and ungrounded LLMs toward deterministic, coordinate-verified subledgers.",
     toc: [
       { id: "regulatory-shift", label: "The 2026 Regulatory Pivot: PCAOB QC 1000" },
       { id: "audit-deficiencies", label: "Top Revenue Recognition Inspection Deficiencies" },
@@ -466,7 +466,7 @@ Soluqube exports complete 8-tab variance workpapers and self-contained HTML audi
     faqs: [
       {
         question: "What is PCAOB QC 1000 and how does it affect revenue recognition?",
-        answer: "PCAOB QC 1000 is the new quality control standard requiring audit firms and preparers to enforce proactive, continuous risk-assessment controls over complex financial reporting areas. Because revenue recognition remains the #1 source of audit deficiencies, firms are strictly inspecting whether subledgers and schedules rely on fragile spreadsheets or untracked manual overrides."
+        answer: "PCAOB QC 1000 is the quality control standard for registered audit firms' systems of quality control; it does not apply directly to preparers or software. Its practical effect for finance teams is that audit firms increasingly scrutinize whether subledgers and schedules rely on fragile spreadsheets or untracked manual overrides."
       },
       {
         question: "Does FASB have a specific accounting standard for Artificial Intelligence in 2026?",
@@ -474,17 +474,17 @@ Soluqube exports complete 8-tab variance workpapers and self-contained HTML audi
       },
       {
         question: "Why do enterprise auditors reject probabilistic AI tools for ASC 606 revenue recognition?",
-        answer: "Generative AI models are non-deterministic and prone to token hallucinations, making it impossible to satisfy PCAOB AS 3101 Critical Audit Matter (CAM) verification. Soluqube resolves this by combining bounding-box spatial grounding with 128-bit fixed-point math and SHA-256 Merkle proofs, guaranteeing 100% reproducible mathematical results."
+        answer: "Generative AI models are non-deterministic and prone to token hallucinations, making them difficult to support as evidence in Critical Audit Matter (CAM) review. Soluqube addresses this by combining bounding-box spatial grounding with integer (BigInt) fixed-point math and SHA-256 Merkle proofs, producing reproducible mathematical results."
       }
     ],
     content: `
 ## The 2026 Regulatory Pivot: PCAOB QC 1000
 
-In 2026, the Public Company Accounting Oversight Board (PCAOB) introduced its most consequential structural transformation in two decades: **Standard QC 1000 (A Firm's System of Quality Control)**. 
+The Public Company Accounting Oversight Board (PCAOB) standard **QC 1000 (A Firm's System of Quality Control)** sets requirements for registered audit firms' systems of quality control.
 
-While historical audit reviews operated post-hoc, QC 1000 holds accounting firms and corporate preparers accountable for the systemic integrity of their financial evaluation tools. At the center of this regulatory crosshair sits a perennial challenge: **ASC 606 Revenue Recognition from Contracts with Customers**.
+QC 1000 applies to audit firms, not to corporate preparers or software, but it shapes what audit teams expect from the evidence and calculations they test. At the center of that expectation sits a perennial challenge: **ASC 606 Revenue Recognition from Contracts with Customers**.
 
-Year after year, PCAOB inspection reports cite revenue recognition as the single most frequent area of audit deficiencies across both Big 4 and global network firms. Inspectors routinely identify failures in:
+Year after year, PCAOB inspection reports cite revenue recognition as the single most frequent area of audit deficiencies across both the largest audit firms and global network firms. Inspectors routinely identify failures in:
 - Testing management's estimates for Standalone Selling Price (SSP).
 - Validating the completeness and mathematical accuracy of spreadsheet-based amortization waterfalls.
 - Documenting the legal grounding behind contract modifications and multi-element arrangements.
@@ -518,27 +518,27 @@ Generic Large Language Models (LLMs) operate on probabilistic token prediction. 
 
 | Audit Dimension | Probabilistic Generative AI | Soluqube Deterministic Engine |
 |---|---|---|
-| **Mathematical Parity** | Floating-point drift & hallucinations | 128-bit decimal fixed-point math ($0.00 drift) |
+| **Mathematical Parity** | Floating-point drift & hallucinations | Integer (BigInt) fixed-point math, rounded to cents, with terminal-period remainder absorption |
 | **Source Grounding** | Text summaries without coordinate proof | Normalized sub-millimeter [x0, y0, x1, y1] PDF coordinates |
-| **PCAOB AS 3101 Defense** | Inadmissible in SEC inspection reviews | Cryptographic SHA-256 Merkle-sealed workpapers |
+| **Audit Evidence Package** | Difficult to support as audit evidence | Cryptographic SHA-256 Merkle-sealed workpapers |
 | **Standard Coverage** | Generic text generation | Full ASC 606 & Ind AS 115 dual-standard ledgers |
 
 ---
 
 ## The Soluqube Deterministic Defense Architecture
 
-Soluqube was engineered from the ground up to satisfy the rigorous evidentiary thresholds demanded by PCAOB QC 1000 and Big 4 audit teams:
+Soluqube was engineered to support the documentation and reproducibility that external audit teams look for:
 
 1. **Directed Acyclic Graph (DAG) for Contract Modifications:** Encodes ASC 606-10-25-13 decision logic deterministically, generating instant catch-up journal entries without manual memo delays.
 2. **Sub-Millimeter PDF Clause Grounding:** Links every line item in the revenue waterfall to exact integer coordinates on the signed legal contract.
-3. **128-Bit Scaled Integer Core:** Eliminates IEEE-754 floating-point inaccuracies, guaranteeing balance sheet parity to 18 decimal places.
+3. **Scaled Integer (BigInt) Core:** Avoids IEEE-754 floating-point inaccuracies with integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value.
 4. **Self-Contained Audit Packages:** Allows external auditors to independently recalculate schedules and verify cryptographic Merkle proofs in seconds.
     `
   },
   {
     slug: "netsuite-arm-vs-soluqube-floating-point-rounding-drift-asc-606",
-    title: "NetSuite ARM vs Soluqube: Why IEEE-754 Floating-Point Drift Fails Big-4 Audits",
-    subtitle: "How 64-bit double-precision binary floating point creates silent cent rounding discrepancies in multi-year ASC 606 ratable schedules—and why 128-bit decimal fixed-point math is required for PCAOB compliance.",
+    title: "NetSuite ARM vs Soluqube: Why IEEE-754 Floating-Point Drift Fails Revenue Audits",
+    subtitle: "How 64-bit double-precision binary floating point creates silent cent rounding discrepancies in multi-year ASC 606 ratable schedules—and why integer (BigInt) fixed-point math with terminal-period remainder absorption keeps schedules tied to the cent.",
     publishedAt: "October 10, 2026",
     readTime: "9 min read",
     author: {
@@ -546,16 +546,16 @@ Soluqube was engineered from the ground up to satisfy the rigorous evidentiary t
       role: "Founder & Lead Architect",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["NetSuite ARM", "ASC 606", "Floating Point Drift", "IEEE-754", "Big 4 Audit", "PCAOB"],
+    tags: ["NetSuite ARM", "ASC 606", "Floating Point Drift", "IEEE-754", "External Audit", "PCAOB"],
     targetQuery: "NetSuite ARM revenue recognition rounding cent drift audit",
     definitionAnchor: "Floating-point rounding drift under ASC 606 occurs when accounting software calculates monthly revenue amortization using 64-bit binary floating-point numbers (IEEE-754 standard). Because fractions like 1/3, 1/12, and 1/36 cannot be represented cleanly in binary, periodic rounding produces fractional-cent discrepancies that compound across multi-year ratable schedules, failing general ledger tie-out checks.",
-    excerpt: "Discover why standard ERPs like NetSuite ARM and Excel fail PCAOB revenue sampling tests due to binary floating-point rounding—and how Soluqube achieves $0.000000 exact ledger parity using 128-bit scaled arithmetic.",
+    excerpt: "Discover why standard ERPs like NetSuite ARM and Excel fail PCAOB revenue sampling tests due to binary floating-point rounding—and how Soluqube keeps ledger schedules tied to the contract value using integer (BigInt) scaled arithmetic, rounded to cents.",
     toc: [
       { id: "the-floating-point-problem", label: "The IEEE-754 Binary Floating-Point Dilemma" },
       { id: "how-drift-accumulates", label: "How Cent Variance Compounds Across 36 Months" },
       { id: "arm-vs-soluqube-comparison", label: "NetSuite ARM vs. Soluqube Architecture" },
-      { id: "terminal-absorption", label: "Terminal Remainder Absorption & 128-Bit Parity" },
-      { id: "pcaob-audit-defense", label: "PCAOB AS 3101 & Big 4 Audit Defensibility" }
+      { id: "terminal-absorption", label: "Terminal Remainder Absorption & Integer Parity" },
+      { id: "pcaob-audit-defense", label: "Audit-Ready Evidence for External Auditors" }
     ],
     faqs: [
       {
@@ -564,10 +564,10 @@ Soluqube was engineered from the ground up to satisfy the rigorous evidentiary t
       },
       {
         question: "How does Soluqube eliminate revenue schedule rounding drift?",
-        answer: "Soluqube replaces binary floating-point calculations with 128-bit fixed-point BigInt arithmetic and terminal remainder absorption. In the final period of an amortization term, Soluqube calculates the exact remainder: Total Consideration minus Cumulative Prior Amortization, guaranteeing mathematically exact $0.000000 balance sheet parity."
+        answer: "Soluqube replaces binary floating-point calculations with integer (BigInt) fixed-point arithmetic at 10^6 scale, rounded to cents, and terminal-period remainder absorption. In the final period of an amortization term, Soluqube calculates the exact remainder: Total Consideration minus Cumulative Prior Amortization, so the schedule ties exactly to the contract value."
       },
       {
-        question: "Does Big 4 auditor sampling flag sub-dollar cent drift?",
+        question: "Does external auditor sampling flag sub-dollar cent drift?",
         answer: "Yes. While a few cents may appear immaterial on an isolated contract, PCAOB inspectors treat recurring computational discrepancies as a failure of automated application controls under SOX 404, requiring manual reconciliation memos and partner review hours."
       }
     ],
@@ -600,7 +600,7 @@ The problem intensifies when contracts involve **multi-element arrangements** un
 2. **Periodic Amortization Noise:** Each element is amortized over differing service periods (e.g., SaaS over 36 months ratable, implementation upon milestone delivery, support over 12 months).
 3. **Mid-Term Contract Modifications (ASC 606-10-25-13):** When a client upsells or alters seat count mid-term, legacy ERPs rerun the schedule without reconciling prior rounded pennies, compounding the drift across prior closed accounting periods.
 
-During year-end audit testing under **PCAOB Auditing Standard AS 3101**, Big-4 audit teams run automated reconciliation scripts across the general ledger. Unexplained discrepancies in ratable waterfalls trigger control deficiency inquiries and manual reconciliation memos.
+During year-end audit testing, external audit teams run automated reconciliation scripts across the general ledger. Unexplained discrepancies in ratable waterfalls trigger control deficiency inquiries and manual reconciliation memos.
 
 ---
 
@@ -608,25 +608,25 @@ During year-end audit testing under **PCAOB Auditing Standard AS 3101**, Big-4 a
 
 | Architectural Dimension | NetSuite Advanced Revenue Management (ARM) | Soluqube Deterministic Engine |
 |---|---|---|
-| **Underlying Math Core** | 64-bit IEEE-754 Binary Floating-Point | 128-bit Scaled Fixed-Point BigInt ($0.000000 Drift) |
+| **Underlying Math Core** | 64-bit IEEE-754 Binary Floating-Point | Integer (BigInt) scaled fixed-point, rounded to cents (terminal-period remainder absorption) |
 | **Terminal Remainder Policy** | Manual spreadsheet adjustment or unabsorbed drift | Automated closed-form terminal remainder absorption |
 | **Contract Clause Grounding** | Text memo fields without coordinate proof | Normalized [x0, y0, x1, y1] PDF bounding-box vector links |
 | **Contract Modification DAG** | Manual multi-step workflow / catch-up journal rules | Deterministic ASC 606-10-25-13 directed acyclic graph |
 | **MCA / Ind AS 115 GST Firewall** | Gross consideration amortization (tax contamination) | Automated statutory 18% GST balance sheet quarantine |
-| **Audit Defense Output** | Standard general ledger reports | Cryptographically signed 8-tab PCAOB AS 3101 workpapers |
+| **Audit Defense Output** | Standard general ledger reports | Audit-ready evidence packages with SHA-256 integrity hashes |
 
 ---
 
-## Terminal Remainder Absorption & 128-Bit Parity
+## Terminal Remainder Absorption & Integer Parity
 
 Soluqube eliminates floating-point drift through two fundamental mathematical mechanisms:
 
-### 1. 128-Bit Scaled Integer Representation
-All currency amounts and exchange rates are represented internally as 128-bit integers scaled by $10^{18}$ (18 decimal places of fixed precision), completely bypassing floating-point binary approximations:
+### 1. Scaled Integer (BigInt) Representation
+All currency amounts are represented internally as integers (BigInt) scaled by $10^{6}$ (micro-cents) and rounded to cents, completely bypassing floating-point binary approximations:
 
 \`\`\`typescript
-// Scaled 128-bit fixed representation
-const SCALE = 10n ** 18n;
+// Scaled BigInt fixed representation (micro-cents)
+const SCALE = 10n ** 6n;
 const totalConsideration = 100000n * SCALE;
 const termPeriods = 36n;
 const basePeriodRecognition = totalConsideration / termPeriods;
@@ -648,13 +648,13 @@ with mathematical certainty.
 
 ---
 
-## PCAOB AS 3101 & Big 4 Audit Defensibility
+## Audit-Ready Evidence for External Auditors
 
-By combining 128-bit fixed arithmetic with spatial contract PDF bounding-box clause grounding, Soluqube produces audit workpapers that withstand the strictest regulatory scrutiny:
+By combining integer (BigInt) fixed-point arithmetic with spatial contract PDF bounding-box clause grounding, Soluqube produces audit-ready evidence packages that support auditor review:
 
 * **Zero Reconciliation Exceptions:** $0.000000 variance between general ledger postings and contract consideration.
 * **Cryptographic Evidence Seals:** Every workpaper is hashed with SHA-256 Merkle proofs linking journal entries to original signed agreements.
-* **Instant Auditor Hand-off:** Export self-contained audit packages that allow Big-4 audit teams to verify 36-month schedules in seconds.
+* **Instant Auditor Hand-off:** Export self-contained audit packages that allow external audit teams to verify 36-month schedules in seconds.
     `
   },
   {
@@ -664,20 +664,20 @@ By combining 128-bit fixed arithmetic with spatial contract PDF bounding-box cla
     publishedAt: "October 11, 2026",
     readTime: "9 min read",
     author: {
-      name: "Dr. Arvind Subramanian",
-      role: "Chief Compliance Architect & Former Big 4 Partner",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606", "Standalone Selling Price", "SSP Allocation", "Multi-Element Bundles", "PCAOB QC 1000", "Ind AS 115"],
     targetQuery: "ASC 606 Standalone Selling Price SSP allocation formula audit software",
-    definitionAnchor: "ASC 606 Standalone Selling Price (SSP) allocation is the mandatory accounting methodology of allocating transaction price across bundled performance obligations based on relative standalone selling prices, requiring deterministic mathematical formulas that eliminate spreadsheet rounding drift and maintain strict audit trail defensibility under PCAOB QC 1000.",
-    excerpt: "Discover how enterprise revenue teams calculate relative Standalone Selling Price (SSP) across multi-element SaaS contracts, eliminate spreadsheet rounding variances, and satisfy Big 4 and PCAOB audit inspections with deterministic 128-bit decimal subledgers.",
+    definitionAnchor: "ASC 606 Standalone Selling Price (SSP) allocation is the mandatory accounting methodology of allocating transaction price across bundled performance obligations based on relative standalone selling prices, requiring deterministic mathematical formulas that eliminate spreadsheet rounding drift and maintain a documented audit trail for external auditor review.",
+    excerpt: "Discover how enterprise revenue teams calculate relative Standalone Selling Price (SSP) across multi-element SaaS contracts, eliminate spreadsheet rounding variances, and support external audit review with deterministic integer (BigInt) fixed-point subledgers.",
     toc: [
       { id: "ssp-regulatory-framework", label: "The ASC 606 Step 4 Mandate: Relative SSP Allocation" },
       { id: "methods-of-determination", label: "Three Accepted Methods for Determining SSP" },
       { id: "multi-element-mathematics", label: "The Mathematics of Relative Allocation & Rounding Drift" },
-      { id: "pcaob-audit-scrutiny", label: "PCAOB QC 1000 Scrutiny on Management SSP Estimates" },
-      { id: "soluqube-deterministic-engine", label: "The Soluqube Deterministic 128-Bit SSP Engine" },
+      { id: "pcaob-audit-scrutiny", label: "Auditor Scrutiny on Management SSP Estimates" },
+      { id: "soluqube-deterministic-engine", label: "The Soluqube Deterministic Integer SSP Engine" },
       { id: "conclusion-audit-readiness", label: "Checklist for Audit-Defensible SSP Governance" }
     ],
     faqs: [
@@ -690,8 +690,8 @@ By combining 128-bit fixed arithmetic with spatial contract PDF bounding-box cla
         answer: "Under ASC 606-10-32-31 to 35, the three approved estimation methods are: 1) Adjusted Market Assessment Approach (evaluating competitor pricing and market demand), 2) Expected Cost Plus a Margin Approach (projecting delivery costs plus reasonable profit), and 3) Residual Approach (strictly limited to highly variable or uncertain pricing)."
       },
       {
-        question: "Why do Excel spreadsheets fail Big 4 audit inspections on relative SSP allocations?",
-        answer: "Excel spreadsheets rely on IEEE-754 64-bit binary floating-point numbers. When multi-element contract consideration is allocated proportionately across multiple performance obligations and ratable terms, rounding remainders create penny and cent mismatches between the allocated total and the executed contract invoice, failing PCAOB QC 1000 substantive audit tests."
+        question: "Why do Excel spreadsheets fail external audit inspections on relative SSP allocations?",
+        answer: "Excel spreadsheets rely on IEEE-754 64-bit binary floating-point numbers. When multi-element contract consideration is allocated proportionately across multiple performance obligations and ratable terms, rounding remainders create penny and cent mismatches between the allocated total and the executed contract invoice, failing substantive audit tests."
       }
     ],
     content: `
@@ -747,9 +747,9 @@ Across hundreds of multi-element contracts, these unabsorbed fractional remainde
 
 ---
 
-## PCAOB QC 1000 Scrutiny on Management SSP Estimates
+## Auditor Scrutiny on Management SSP Estimates
 
-With the enforcement of **PCAOB QC 1000** (Quality Control Standard), independent auditors are required to rigorously test management estimates and subledger internal controls:
+Independent auditors rigorously test management estimates and subledger internal controls (PCAOB QC 1000 governs audit firms' own quality-control systems, which raises the bar for the evidence they accept):
 
 1. **Defensible Corridor Policies:** Auditors inspect historical discount ranges to verify that SSP price points fall within documented corridors (e.g., 80% to 120% of median standalone sales).
 2. **Mathematical Reproducibility:** Spreadsheets lacking automated remainder absorption fail completeness and accuracy testing under PCAOB AS 1105.
@@ -757,12 +757,12 @@ With the enforcement of **PCAOB QC 1000** (Quality Control Standard), independen
 
 ---
 
-## The Soluqube Deterministic 128-Bit SSP Engine
+## The Soluqube Deterministic Integer SSP Engine
 
 Soluqube eliminates relative SSP allocation drift through a three-stage deterministic pipeline:
 
 ### 1. Integer-Scaled Fixed-Point Allocation
-Consideration is scaled by $10^{18}$ and evaluated using deterministic BigInt arithmetic:
+Consideration is scaled by $10^{6}$ (micro-cents) and evaluated using deterministic BigInt arithmetic, rounded to cents:
 
 \`\`\`typescript
 // Soluqube Relative SSP Allocation Formula
@@ -781,17 +781,17 @@ const allocatedC = totalConsiderationBigInt - (allocatedA + allocatedB); // Exac
 ### 2. PyMuPDF Spatial Clause Grounding
 Every performance obligation in Soluqube is linked to precise normalized coordinate bounding boxes $[x_0, y_0, x_1, y_1]$ on the underlying signed PDF contract. When an auditor clicks an allocation figure, the exact contract clause and discount table light up instantly.
 
-### 3. Automated PCAOB AS 3101 Defensible Workpapers
-Soluqube automatically compiles eight-tab audit defense workpapers containing mathematical proofs, Merkle tree execution hashes, and journal entry schedules with **guaranteed $0.000000 general ledger parity**.
+### 3. Automated Audit-Ready Evidence Packages
+Soluqube automatically compiles audit-ready evidence packages containing mathematical proofs, Merkle tree execution hashes, and journal entry schedules with **guaranteed $0.000000 general ledger parity**.
 
 ---
 
 ## Checklist for Audit-Defensible SSP Governance
 
-To prepare your finance organization for smooth Big 4 and statutory audit cycles:
+To prepare your finance organization for smooth external and statutory audit cycles:
 
 * [x] **Establish Formal SSP Corridors:** Review standalone selling transactions annually and define standard discount bands for all product SKUs.
-* [x] **Eliminate Manual Spreadsheets:** Replace error-prone Excel calculation sheets with deterministic, 128-bit subledger automation.
+* [x] **Eliminate Manual Spreadsheets:** Replace error-prone Excel calculation sheets with deterministic, integer (BigInt) subledger automation.
 * [x] **Enforce Terminal Period Absorption:** Ensure amortization waterfalls absorb rounding remainders in the final contract period rather than spreading rounding errors across the balance sheet.
 * [x] **Ground Allocations to Executed Contracts:** Maintain bi-directional linkages between general ledger debit/credit postings and original signed contract clauses.
 * [x] **Automate Dual Standard Tax Quarantine:** For Indian operations under Ind AS 115, ensure 18% statutory GST is quarantined from consideration prior to SSP allocation.
@@ -804,8 +804,8 @@ To prepare your finance organization for smooth Big 4 and statutory audit cycles
     publishedAt: "October 12, 2026",
     readTime: "10 min read",
     author: {
-      name: "Sarah Jenkins, CPA",
-      role: "Head of Technical Accounting Research & Advisory",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["Maxio Alternatives", "ASC 606 Software", "Revenue Subledger", "SaaSOptics Replacement", "Audit Readiness"],
@@ -825,23 +825,23 @@ To prepare your finance organization for smooth Big 4 and statutory audit cycles
 Maxio (formed by the 2022 merger of **Chargify** and **SaaSOptics**) has long been a fixture in the SaaS billing ecosystem. However, as enterprise contract structures evolve from simple flat-rate subscriptions to complex multi-element arrangements—combining upfront platform access, tiered usage, professional services, milestone deliverables, and custom SLA penalty clauses—finance teams encounter critical structural limitations:
 
 1. **Invoice-Centric Rather Than Contract-Grounded**: Maxio recognizes revenue based on invoices created in billing systems or CRM quote data. If the signed Master Services Agreement (MSA) or custom Statement of Work (SOW) contains non-standard terms, termination clauses, or variable consideration, manual intervention is required to translate legal language into accounting schedules.
-2. **Double-Precision Rounding Drift**: Maxio relies on standard SQL floating-point and IEEE-754 decimal arithmetic. Over 36 to 60-month multi-year contracts with irregular recognition intervals, micro-cent rounding errors compound into multi-dollar discrepancies that trigger auditor inquiries.
+2. **Rounding Drift Exposure**: Maxio does not publish its arithmetic internals. Any engine that rounds each period to two decimals without remainder absorption can, over 36 to 60-month multi-year contracts with irregular recognition intervals, compound rounding errors into discrepancies that trigger auditor inquiries.
 3. **Absence of Dual-GAAP Statutory Support**: Maxio does not natively isolate Indian statutory 18% GST (CGST/SGST/IGST) from transaction consideration or generate MCA Schedule III balance sheet disclosures required for cross-border US-India SaaS operations.
-4. **Lengthy Implementation & Opaque Pricing**: Enterprise onboarding typically takes 2 to 4 months, accompanied by %-of-revenue platform fees ($15,000 to $40,000+/year) that penalize business growth.
+4. **Lengthy Implementation & Opaque Pricing**: Enterprise onboarding timelines and %-of-revenue platform fees (pricing not published) can penalize business growth.
 
 ---
 
 ## Top Maxio Alternatives Evaluated
 
 ### 1. Soluqube — Best for Deterministic Contract Audits & Dual-GAAP Accuracy
-Soluqube is a purpose-built contract audit subledger that ingests raw PDF customer agreements, grounds every performance obligation (POB) to visual page coordinates, and executes 128-bit micro-cent fixed-point math with guaranteed $0.00 rounding drift.
+Soluqube is a purpose-built contract audit subledger that ingests raw PDF customer agreements, grounds every performance obligation (POB) to visual page coordinates, and executes integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption.
 * **Key Strengths**: Sub-millimeter PDF bounding-box verification, dual-standard ASC 606 and Ind AS 115 engine, Merkle tree cryptographic audit seals, and self-serve instant onboarding ($499 full audit pack).
-* **Best For**: Mid-market to enterprise SaaS, cross-border US-India operations, and high-scrutiny Big 4 audit readiness.
+* **Best For**: Mid-market to enterprise SaaS, cross-border US-India operations, and high-scrutiny external audit readiness.
 
 ### 2. Trullion — Best for Enterprise Lease (ASC 842) + Basic RevRec
 Trullion leverages AI document extraction to read PDF contracts and extract financial terms.
 * **Key Strengths**: Unified platform for both ASC 842 lease accounting and ASC 606 revenue recognition.
-* **Limitations**: High enterprise pricing ($25k–$50k+/yr), 3-month sales cycle, no Ind AS 115 dual-standard engine, standard floating-point database math.
+* **Limitations**: Enterprise pricing and sales cycle (not published); no Ind AS 115 dual-standard engine advertised (check current vendor documentation).
 
 ### 3. Leapfin — Best for High-Volume B2C Transaction Data Pipelines
 Leapfin acts as a financial data platform that consolidates millions of daily micro-transactions from Stripe, Shopify, and in-app purchases into NetSuite-ready journal entries.
@@ -873,9 +873,9 @@ The defining architectural distinction between Maxio and next-generation engines
                |                                           |
      Invoice Generation Timing                  Relative SSP Allocation DAG
                |                                           |
-   IEEE-754 Float Math (Drift)                 128-Bit Micro-Cent ($0.00 Drift)
+   Per-Period Rounding (Drift)                 BigInt Micro-Cent (Cents, Absorbed)
                |                                           |
-     Manual Audit Defense                        Merkle-Sealed AS 3101 Proof
+     Manual Audit Defense                        Merkle-Sealed Evidence Pack
 \`\`\`
 
 ---
@@ -886,11 +886,11 @@ The defining architectural distinction between Maxio and next-generation engines
 | :--- | :---: | :---: | :---: | :---: |
 | **Ingestion Source** | Invoices / CRM Quotes | PDF / Excel | Webhooks / Events | **Raw Contract PDF** |
 | **Visual Bounding-Box Proof** | No | Partial | No | **Sub-millimeter BBoxes** |
-| **Math Engine Precision** | 64-bit IEEE-754 Float | Standard SQL Decimal | SQL Decimal | **128-bit Fixed-Point DAG** |
-| **Rounding Drift Guarantee** | No | No | No | **Guaranteed $0.00 Drift** |
+| **Math Engine Precision** | Not published | Not published | Not published | **Integer (BigInt) Fixed-Point DAG** |
+| **Terminal-Period Remainder Absorption** | Not published | Not published | Not published | **Yes (ties to the cent)** |
 | **Dual-GAAP (ASC 606 + Ind AS 115)** | No | No | No | **Native Dual Standard** |
 | **Indian 18% GST Isolation** | No | No | No | **MCA Schedule III Ready** |
-| **Implementation Timeline** | 8–16 Weeks | 8–12 Weeks | 6–10 Weeks | **Instant / 24 Hours** |
+| **Implementation Timeline** | Not published | Not published | Not published | **Instant / 24 Hours** |
 | **Self-Serve Access** | Enterprise Sales | Enterprise Sales | Enterprise Sales | **Instant ($499 Audit)** |
 
 ---
@@ -911,14 +911,14 @@ When selecting a modern revenue recognition engine to replace or complement Maxi
     publishedAt: "October 12, 2026",
     readTime: "12 min read",
     author: {
-      name: "Dr. Arvind Subramanian",
-      role: "Chief Compliance Architect & Former Big 4 Partner",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["Ind AS 115", "ASC 606", "Dual-GAAP", "GST Quarantine", "MCA Schedule III", "Cross-Border SaaS"],
     targetQuery: "Ind AS 115 vs ASC 606 Dual-GAAP revenue recognition guide",
     definitionAnchor: "Ind AS 115 vs ASC 606 dual-GAAP accounting is the regulatory methodology by which multinational entities reconcile revenue recognized under US GAAP standards with Indian MCA Ind AS 115 statutory requirements, specifically isolating non-revenue tax liabilities (such as 18% GST) into segregated balance sheet accounts.",
-    excerpt: "Master the essential differences between Ind AS 115 and ASC 606. Learn how multinational SaaS enterprises isolate 18% GST and automate MCA Schedule III compliance with 128-bit micro-cent precision.",
+    excerpt: "Master the essential differences between Ind AS 115 and ASC 606. Learn how multinational SaaS enterprises isolate 18% GST and automate MCA Schedule III compliance with integer (BigInt) micro-cent precision.",
     toc: [
       { id: "standard-convergence", label: "Harmonization & The Critical Divergence" },
       { id: "five-step-analysis", label: "The 5-Step Model Under Ind AS 115" },
@@ -1002,8 +1002,8 @@ For US parent companies utilizing Indian subsidiaries under a **Cost Plus Transf
   },
   {
     slug: "netsuite-arm-and-excel-rounding-errors-in-asc-606",
-    title: "Why Excel Spreadsheets and ERP Rounding Errors Fail Big 4 Revenue Audits (The 128-Bit Solution)",
-    subtitle: "An engineering teardown of IEEE-754 floating-point truncation in ERP revenue subledgers, the mathematics of cumulative drift, and how 128-bit micro-cent fixed-point DAGs ensure $0.00 audit variance.",
+    title: "Why Excel Spreadsheets and ERP Rounding Errors Fail Revenue Audits (The Integer Math Solution)",
+    subtitle: "An engineering teardown of IEEE-754 floating-point truncation in ERP revenue subledgers, the mathematics of cumulative drift, and how integer (BigInt) micro-cent fixed-point DAGs with terminal-period remainder absorption keep schedules tied to the cent.",
     publishedAt: "October 12, 2026",
     readTime: "11 min read",
     author: {
@@ -1011,16 +1011,16 @@ For US parent companies utilizing Indian subsidiaries under a **Cost Plus Transf
       role: "Principal Systems Architect & Computational Ledger Specialist",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["NetSuite ARM", "Revenue Rounding Errors", "IEEE-754", "ASC 606 Audit", "Big 4 Workpapers", "Micro-Cent Math"],
-    targetQuery: "Excel spreadsheet revenue recognition rounding error Big 4 audit",
+    tags: ["NetSuite ARM", "Revenue Rounding Errors", "IEEE-754", "ASC 606 Audit", "Audit Workpapers", "Micro-Cent Math"],
+    targetQuery: "Excel spreadsheet revenue recognition rounding error audit",
     definitionAnchor: "Revenue rounding drift is the cumulative numerical variance between contractual transaction price and recognized revenue schedules caused by binary floating-point representation (IEEE-754) or arbitrary decimal truncation in ERP database systems over multi-period amortization schedules.",
-    excerpt: "Discover why standard ERP subledgers and Excel spreadsheets introduce penny rounding errors in ASC 606 schedules that trigger Big 4 audit delays—and how 128-bit micro-cent fixed-point DAGs guarantee zero variance.",
+    excerpt: "Discover why standard ERP subledgers and Excel spreadsheets introduce penny rounding errors in ASC 606 schedules that trigger audit delays—and how integer (BigInt) micro-cent fixed-point DAGs with terminal-period remainder absorption keep schedules tied to the cent.",
     toc: [
       { id: "the-penny-problem", label: "The Hidden Penny Drift in Enterprise ERPs" },
       { id: "ieee-754-breakdown", label: "The Physics of IEEE-754 Binary Floating-Point Error" },
       { id: "netsuite-arm-truncation", label: "NetSuite ARM & Database Decimal Pitfalls" },
-      { id: "micro-cent-dag", label: "The 128-Bit Micro-Cent DAG Solution" },
-      { id: "audit-tie-out-proof", label: "Passing Big 4 Audits with Deterministic Proof" }
+      { id: "micro-cent-dag", label: "The Integer Micro-Cent DAG Solution" },
+      { id: "audit-tie-out-proof", label: "Passing External Audits with Deterministic Proof" }
     ],
     content: `
 ## The Hidden Penny Drift in Enterprise ERPs
@@ -1029,7 +1029,7 @@ Every accounting team that has managed a multi-million-dollar ASC 606 revenue re
 
 An enterprise contract valued at exactly **$1,000,000.00** amortized across 36 monthly periods results in recognized revenue of **$999,999.96** or **$1,000,000.04**. 
 
-While a four-cent variance might appear immaterial on a headline income statement, during a PCAOB-governed Big 4 financial audit, it triggers a chain reaction:
+While a four-cent variance might appear immaterial on a headline income statement, during a PCAOB-governed external financial audit, it triggers a chain reaction:
 * **The Trial Balance Fails to Tie Out to Contract Face Value.**
 * **Variance Suspense Accounts Require Manual Adjusting Journal Entries.**
 * **Audit Workpaper Sampling Fails Automated Reconciliation Thresholds.**
@@ -1080,14 +1080,14 @@ If each allocated POB is rounded individually to 2 decimal places prior to water
 
 ---
 
-## The 128-Bit Micro-Cent DAG Solution
+## The Integer Micro-Cent DAG Solution
 
-Soluqube solves the rounding drift problem deterministically using a **128-bit micro-cent fixed-point Directed Acyclic Graph (DAG)**.
+Soluqube solves the rounding drift problem deterministically using an **integer (BigInt) micro-cent fixed-point Directed Acyclic Graph (DAG)**, rounded to cents with terminal-period remainder absorption.
 
 \`\`\`
                      [ Raw Contract Consideration ]
                                    │
-              Scaled to 128-Bit Micro-Cents (Factor: 10^6)
+              Scaled to BigInt Micro-Cents (Factor: 10^6)
                                    │
                      ┌─────────────┴─────────────┐
                      ▼                           ▼
@@ -1102,13 +1102,13 @@ Soluqube solves the rounding drift problem deterministically using a **128-bit m
                      Exact $0.000000 Variance Ledger
 \`\`\`
 
-1. **Micro-Cent Scaling**: Values are scaled by a factor of 1,000,000 and computed exclusively using integer arithmetic (JavaScript \`BigInt\` / Rust \`i128\`).
+1. **Micro-Cent Scaling**: Values are scaled by a factor of 1,000,000 and computed exclusively using integer arithmetic (JavaScript \`BigInt\`).
 2. **Remainder Conservation**: For any division P / N, the quotient Q and integer remainder R are preserved:
    $$P = (N \\times Q) + R$$
 3. **Terminal Period Absorption**: The integer remainder R is deterministically absorbed into the final period of the performance obligation.
 
 \`\`\`typescript
-// SOLUQUBE DETERMINISTIC 128-BIT INTEGER EXECUTION
+// SOLUQUBE DETERMINISTIC BIGINT INTEGER EXECUTION
 export function calculateZeroDriftWaterfall(totalCents: bigint, periods: bigint): bigint[] {
   const baseMonthly = totalCents / periods;
   const remainder = totalCents % periods;
@@ -1128,42 +1128,42 @@ export function calculateZeroDriftWaterfall(totalCents: bigint, periods: bigint)
 
 ---
 
-## Passing Big 4 Audits with Deterministic Proof
+## Passing External Audits with Deterministic Proof
 
 By eliminating floating-point imprecision at the core architectural level, Soluqube guarantees:
 * **Strict Balance Sheet Parity**: The sum of recognized revenue across all periods plus remaining deferred revenue equals exactly 100.00% of contractual transaction price at all times.
-* **PCAOB AS 3101 Defensible Workpapers**: Mathematical tie-out schedules export with embedded SHA-256 Merkle proofs, allowing external audit teams to independently verify zero penny discrepancy in seconds.
+* **Audit-Ready Evidence Packages**: Mathematical tie-out schedules export with embedded SHA-256 Merkle proofs, allowing external audit teams to independently verify zero penny discrepancy in seconds.
 * **Zero Manual Journal Entries**: Controllers eliminate month-end variance plug entries and pass SOX 404 ITGC controls effortlessly.
     `
   },
   {
     slug: "zuora-revpro-vs-soluqube-6-month-erp-implementation-trap",
     title: "Zuora RevPro vs Soluqube: Escaping the 6-Month Enterprise RevRec Implementation Trap",
-    subtitle: "Why CFOs and corporate controllers are bypassing $250,000+ Zuora RevPro consulting deployments in favor of deterministic, self-serve PDF contract subledgers.",
+    subtitle: "Why CFOs and corporate controllers are bypassing multi-month Zuora RevPro consulting deployments in favor of deterministic, self-serve PDF contract subledgers.",
     publishedAt: "October 13, 2026",
     readTime: "9 min read",
     author: {
-      name: "Sarah Jenkins, CPA",
-      role: "Head of Technical Accounting Research & Advisory",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["Zuora RevPro Alternative", "ASC 606 Implementation", "Enterprise Subledger", "CFO Advisory", "Ind AS 115"],
     targetQuery: "Zuora RevPro alternative implementation cost ASC 606",
-    definitionAnchor: "A Zuora RevPro alternative is a modern, deterministic revenue recognition subledger that automates ASC 606 and Ind AS 115 compliance directly from executed PDF contracts in hours rather than requiring a 6-to-12-month system integrator implementation and proprietary upstream billing schemas.",
-    excerpt: "Evaluate Zuora RevPro against Soluqube. Learn why enterprise finance teams are replacing 6-month ERP consulting projects with instant 128-bit deterministic contract audits.",
+    definitionAnchor: "A Zuora RevPro alternative is a modern, deterministic revenue recognition subledger that automates ASC 606 and Ind AS 115 compliance directly from executed PDF contracts in hours rather than requiring a lengthy system integrator implementation and proprietary upstream billing schemas.",
+    excerpt: "Evaluate Zuora RevPro against Soluqube. Learn why enterprise finance teams are replacing 6-month ERP consulting projects with instant integer (BigInt) deterministic contract audits.",
     toc: [
-      { id: "the-revpro-trap", label: "The $250k+ Zuora RevPro Implementation Reality" },
+      { id: "the-revpro-trap", label: "The Zuora RevPro Implementation Reality" },
       { id: "schema-brittleness", label: "Why Upstream Billing Schemas Break on Bespoke MSAs" },
-      { id: "deterministic-dag", label: "128-Bit Fixed-Point DAG vs Legacy Rules Engines" },
+      { id: "deterministic-dag", label: "Integer Fixed-Point DAG vs Legacy Rules Engines" },
       { id: "comparison-matrix", label: "Zuora RevPro vs Soluqube Head-to-Head Matrix" },
       { id: "migration-playbook", label: "24-Hour Parallel Audit Playbook for Controllers" }
     ],
     content: `
-## The $250k+ Zuora RevPro Implementation Reality
+## The Zuora RevPro Implementation Reality
 
 For over a decade, **Zuora RevPro** (formerly Leeyo RevPro) was treated as the default enterprise revenue management module for pre-IPO technology companies. Yet when mid-market and enterprise CFOs sign a RevPro licensing contract today, they immediately confront a harsh operational reality:
 
-1. **6 to 12 Months of System Integrator Consulting**: Before a single dollar of deferred revenue is amortized, external advisory firms charge $150,000 to $350,000+ to map custom fields between Salesforce CPQ, Zuora Billing, and your core ERP.
+1. **System Integrator Consulting**: Before a single dollar of deferred revenue is amortized, external advisory firms are typically engaged (fees and timelines not published) to map custom fields between Salesforce CPQ, Zuora Billing, and your core ERP.
 2. **Manual Contract Translation Bottlenecks**: RevPro cannot read an unstructured Master Services Agreement (MSA) or Statement of Work (SOW). Accountants must manually read PDF legal agreements and translate performance obligations into rigid CSV upload templates or custom POB rules.
 3. **Zero Dual-GAAP Indian Statutory Isolation**: Multinational enterprises operating Global Capability Centers (GCCs) or billing customers in India must maintain separate manual spreadsheets to quarantine 18% GST (CGST/SGST/IGST) under **MCA Schedule III** and **Ind AS 115**.
 
@@ -1181,12 +1181,12 @@ When these non-standard clauses are forced into rigid Zuora RevPro rules tables,
 
 ---
 
-## 128-Bit Fixed-Point DAG vs Legacy Rules Engines
+## Integer Fixed-Point DAG vs Legacy Rules Engines
 
 Soluqube eliminates the middleware translation layer entirely by ingesting the signed PDF contract as the primary accounting artifact:
 
 \`\`\`typescript
-// DETERMINISTIC 128-BIT MICRO-CENT ALLOCATION ($0.00 DRIFT)
+// DETERMINISTIC BIGINT MICRO-CENT ALLOCATION (TERMINAL-PERIOD ABSORPTION)
 const CONTRACT_CONSIDERATION_MICROCENTS = 250000000000n; // $250,000.00
 const RATABLE_PERIODS = 36n;
 
@@ -1195,7 +1195,7 @@ const terminalRemainder = CONTRACT_CONSIDERATION_MICROCENTS % RATABLE_PERIODS;
 // Remainder absorbed deterministically in Period 36 -> Exact $0.000000 variance
 \`\`\`
 
-Every performance obligation is anchored directly to \`[page, x0, y0, x1, y1]\` spatial coordinates on the signed PDF, sealed with a cryptographic SHA-256 Merkle root for instant Big 4 audit verification.
+Every performance obligation is anchored directly to \`[page, x0, y0, x1, y1]\` spatial coordinates on the signed PDF, sealed with a cryptographic SHA-256 Merkle root for instant external audit verification.
 
 ---
 
@@ -1203,12 +1203,12 @@ Every performance obligation is anchored directly to \`[page, x0, y0, x1, y1]\` 
 
 | Dimension | Zuora RevPro | Soluqube |
 | :--- | :--- | :--- |
-| **Deployment Timeline** | 6–12 Months (SI Required) | **Instant Self-Serve (< 24 Hours)** |
+| **Deployment Timeline** | SI implementation (timeline not published) | **Instant Self-Serve (< 24 Hours)** |
 | **Primary Ingestion Source** | Normalized ERP / Billing CSVs | **Raw Executed Contract PDF (MSA/SOW)** |
 | **PDF Clause Grounding** | None (Manual voucher references) | **Sub-millimeter [page, x, y] BBoxes** |
-| **Arithmetic Engine** | Standard RDBMS Decimal Float | **128-Bit Micro-Cent Fixed-Point DAG** |
+| **Arithmetic Engine** | Not published | **Integer (BigInt) Micro-Cent Fixed-Point DAG** |
 | **Dual-GAAP (ASC 606 + Ind AS 115)** | US GAAP / IFRS 15 Only | **Native Dual-GAAP + 18% GST Firewall** |
-| **Total Year-1 Cost (TCO)** | $150,000 – $400,000+ | **$499/audit or predictable flat tier** |
+| **Total Year-1 Cost (TCO)** | Pricing not published | **$499/audit or predictable flat tier** |
 
 ---
 
@@ -1216,8 +1216,8 @@ Every performance obligation is anchored directly to \`[page, x0, y0, x1, y1]\` 
 
 You do not need to rip out your existing ERP to eliminate revenue audit risk. Finance teams deploy Soluqube in three steps:
 1. **Upload Your Top 10 Complex Contracts**: Drop your highest-value enterprise MSAs and amendments into the Soluqube audit console.
-2. **Verify Spatial BBoxes & 128-Bit Schedules**: Inspect the extracted performance obligations, relative SSP allocations, and zero-drift amortization waterfalls.
-3. **Export PCAOB AS 3101 Audit Packs**: Hand your external Big 4 auditors cryptographically sealed workpapers with one click.
+2. **Verify Spatial BBoxes & Integer Schedules**: Inspect the extracted performance obligations, relative SSP allocations, and zero-drift amortization waterfalls.
+3. **Export Audit-Ready Evidence Packs**: Hand your external auditors workpapers with SHA-256 integrity hashes in one click.
     `
   }
 ];

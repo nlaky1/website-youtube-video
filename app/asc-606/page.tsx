@@ -17,7 +17,7 @@ import {
 
 export const metadata: Metadata = {
   title: "ASC 606 Deterministic Revenue Recognition Engine | Soluqube",
-  description: "Eliminate floating-point rounding drift, automate contract modification DAGs (ASC 606-10-25-13), and generate Big 4 audit workpapers with zero drift.",
+  description: "Eliminate floating-point rounding drift, automate contract modification DAGs (ASC 606-10-25-13), and generate audit-ready evidence packages with zero drift.",
   alternates: {
     canonical: "https://soluqube.com/asc-606",
   },
@@ -41,7 +41,7 @@ export default function ASC606HubPage() {
             Deterministic ASC 606 Contract-to-Ledger Engine
           </h1>
           <p className="text-slate-600 text-base max-w-3xl leading-relaxed">
-            Eliminating IEEE-754 binary floating-point rounding discrepancies across multi-year SaaS contracts with closed-form 128-bit decimal parity and automated PCAOB AS 3101 Big 4 audit packages.
+            Eliminating IEEE-754 binary floating-point rounding discrepancies across multi-year SaaS contracts with integer (BigInt) fixed-point parity and automated audit-ready evidence packages.
           </p>
         </div>
       </section>
@@ -85,7 +85,7 @@ export default function ASC606HubPage() {
           <div className="space-y-2 text-left">
             <h3 className="text-xl font-bold">Access the Live Engine &amp; Calculator</h3>
             <p className="text-xs text-slate-300 max-w-xl">
-              Launch the interactive 128-bit calculation workspace on the Soluqube cloud app.
+              Launch the interactive BigInt calculation workspace on the Soluqube cloud app.
             </p>
           </div>
           <a

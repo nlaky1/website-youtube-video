@@ -22,7 +22,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Soluqube vs Maxio: The Contract Auditor Alternative for ASC 606 & GAAP | Soluqube",
-  description: "Compare Soluqube and Maxio (formerly SaaSOptics / Chargify). Why CFOs and controllers choose Soluqube's deterministic 128-bit contract-to-ledger audit engine over invoice-based billing tools.",
+  description: "Compare Soluqube and Maxio (formerly SaaSOptics / Chargify). Why CFOs and controllers choose Soluqube's deterministic integer (BigInt) contract-to-ledger audit engine over invoice-based billing tools.",
   alternates: {
     canonical: "https://soluqube.com/soluqube-vs-maxio",
   },
@@ -50,8 +50,8 @@ export default function SoluqubeVsMaxioPage() {
     },
     {
       feature: "Math Precision Engine",
-      maxio: "Standard SQL Decimal / 64-bit IEEE-754 binary float",
-      soluqube: "128-bit Micro-Cent Fixed-Point DAG Engine",
+      maxio: "Not published",
+      soluqube: "Integer (BigInt) Micro-Cent Fixed-Point DAG Engine",
       advantage: "Guaranteed $0.000000 rounding drift across 36-month schedules",
     },
     {
@@ -63,8 +63,8 @@ export default function SoluqubeVsMaxioPage() {
     {
       feature: "Audit Defensibility & Workpapers",
       maxio: "Static reports & CSV exports (manual auditor vouching)",
-      soluqube: "PCAOB AS 3101 cryptographically sealed workpapers with Merkle roots",
-      advantage: "One-click Big-4 / SOX 404 audit package generation",
+      soluqube: "Audit-ready evidence packages with SHA-256 integrity hashes",
+      advantage: "One-click audit-ready evidence package generation",
     },
     {
       feature: "Internal Controls (SOX 404)",
@@ -116,7 +116,7 @@ export default function SoluqubeVsMaxioPage() {
           <p className="text-slate-600 text-lg max-w-3xl leading-relaxed">
             Maxio (formerly Chargify + SaaSOptics) manages subscriptions and charges credit cards. 
             Soluqube is your <strong>contract-to-ledger audit governor</strong>: reading executed legal PDFs, 
-            eliminating IEEE-754 cent drift with 128-bit math, and producing Big-4 defensible PCAOB AS 3101 workpapers in seconds.
+            eliminating IEEE-754 cent drift with integer (BigInt) math, and producing audit-ready evidence packages in seconds.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
@@ -176,7 +176,7 @@ export default function SoluqubeVsMaxioPage() {
             </div>
             <h3 className="text-2xl font-bold text-white">Soluqube</h3>
             <p className="text-indigo-200 text-sm leading-relaxed">
-              The contract-to-ledger revenue subledger. Ingests raw signed legal PDFs, maps performance obligations to spatial coordinates, guarantees zero penny drift via 128-bit math, and delivers PCAOB AS 3101 workpapers.
+              The contract-to-ledger revenue subledger. Ingests raw signed legal PDFs, maps performance obligations to spatial coordinates, guarantees zero penny drift via integer (BigInt) math, and delivers audit-ready evidence packages.
             </p>
             <ul className="space-y-2 text-xs text-indigo-200 pt-2 border-t border-white/10">
               <li className="flex items-center gap-2">
@@ -261,7 +261,7 @@ export default function SoluqubeVsMaxioPage() {
               <span>Zero IEEE-754 Floating-Point Drift</span>
             </div>
             <p className="text-slate-600 text-xs leading-relaxed">
-              Multi-year SaaS contracts split across 36 ratable periods create recurring fractional pennies (e.g. $100,000 / 36 = $2,777.7777...). Standard databases accumulate cent drift that requires manual plug journal entries at close. Soluqube&apos;s 128-bit DAG absorbs remainder fractions deterministically so ending deferred revenue amortizes to exactly $0.00.
+              Multi-year SaaS contracts split across 36 ratable periods create recurring fractional pennies (e.g. $100,000 / 36 = $2,777.7777...). Standard databases accumulate cent drift that requires manual plug journal entries at close. Soluqube&apos;s integer (BigInt) DAG absorbs remainder fractions deterministically so ending deferred revenue amortizes to exactly $0.00.
             </p>
           </div>
 
@@ -293,7 +293,7 @@ export default function SoluqubeVsMaxioPage() {
           <div className="space-y-2 max-w-2xl">
             <h3 className="text-xl font-bold">Already Using Maxio or Stripe Billing?</h3>
             <p className="text-slate-300 text-xs leading-relaxed">
-              You don&apos;t have to replace your billing stack. You can keep Maxio or Stripe to bill your customers and charge cards, and use Soluqube as your <strong>contract-to-ledger audit governor</strong> so your Big-4 auditor signs off on your revenue schedules without exceptions.
+              You don&apos;t have to replace your billing stack. You can keep Maxio or Stripe to bill your customers and charge cards, and use Soluqube as your <strong>contract-to-ledger audit governor</strong> so your external auditor has full evidence when reviewing your revenue schedules.
             </p>
           </div>
           <Link

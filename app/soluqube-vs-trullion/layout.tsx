@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Soluqube vs. Trullion | Self-Serve Dual-GAAP ASC 606 & Ind AS 115 Alternative',
-  description: 'Compare Soluqube vs. Trullion for revenue recognition. Soluqube offers self-serve $499 contract audits, 128-bit fixed-point math, Ind AS 115 GST statutory isolation, and raw PDF clause bounding boxes.',
+  description: 'Compare Soluqube vs. Trullion for revenue recognition. Soluqube offers self-serve $499 contract audits, integer (BigInt) fixed-point math, Ind AS 115 GST statutory isolation, and raw PDF clause bounding boxes.',
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-trullion',
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Soluqube vs. Trullion: Autonomous Revenue Recognition',
-    description: 'Deterministic 128-bit fixed-point math, Ind AS 115 GST tax isolation, and instant PDF contract audits.',
+    description: 'Deterministic integer (BigInt) fixed-point math, Ind AS 115 GST tax isolation, and instant PDF contract audits.',
   },
 };
 

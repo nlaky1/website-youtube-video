@@ -154,11 +154,11 @@ export async function POST(req: Request) {
             <ol style="padding-left: 20px; font-size: 13px; color: #475569; line-height: 1.7;">
               <li>Our technical accounting team will provision your transient upload vault within <strong>1 business day</strong>.</li>
               <li>You can stage up to 3 customer MSAs or billing schedules.</li>
-              <li>Our 128-bit fixed-point DAG will generate your comprehensive <strong>Historical Drift & PCAOB AS 3101 Tie-Out Workpaper</strong> with spatial PDF bounding boxes and $0.00 cent reconciliation.</li>
+              <li>Our integer (BigInt) fixed-point DAG will generate your comprehensive <strong>Historical Drift Tie-Out Workpaper</strong> with spatial PDF bounding boxes and $0.00 cent reconciliation.</li>
             </ol>
 
             <p style="margin-top: 24px; font-size: 13px; color: #475569;">
-              If you have urgent audit workpapers or upcoming Big 4 quarterly review deadlines, feel free to reply directly to this email.
+              If you have urgent audit workpapers or upcoming external audit review deadlines, feel free to reply directly to this email.
             </p>
 
             <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #64748b;">

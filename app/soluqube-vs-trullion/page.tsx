@@ -26,7 +26,6 @@ export default function SoluqubeVsTrullionPage() {
   // Price comparison math
   const soluqubePayAsYouGo = contractCount * 499;
   const soluqubeAnnualRetainer = 999 * 12; // $11,988/yr
-  const trullionEstimatedMin = 35000; // $35,000/yr minimum
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -35,7 +34,7 @@ export default function SoluqubeVsTrullionPage() {
         "@type": "TechArticle",
         "@id": "https://soluqube.com/soluqube-vs-trullion#article",
         "headline": "Soluqube vs Trullion: Self-Serve Dual-GAAP Revenue Recognition Alternative",
-        "description": "Comparison between Soluqube and Trullion for ASC 606 & Ind AS 115 revenue recognition. Learn why Soluqube's self-serve $499 audit model, 128-bit micro-cent math, and statutory Indian GST isolation outperform legacy $35k+ enterprise contracts.",
+        "description": "Comparison between Soluqube and Trullion for ASC 606 & Ind AS 115 revenue recognition. Learn why Soluqube's self-serve $499 audit model, integer (BigInt) micro-cent math, and statutory Indian GST isolation compare with enterprise contracts (pricing not published).",
         "author": {
           "@type": "Organization",
           "name": "Soluqube Systems",
@@ -57,7 +56,7 @@ export default function SoluqubeVsTrullionPage() {
             "name": "How does Soluqube's pricing compare to Trullion?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Trullion requires annual enterprise contracts typically starting at $35,000 to $50,000+ per year with lengthy procurement. Soluqube offers an on-demand, self-serve model starting at $499 per contract audit or $999/month for continuous SaaS compliance with zero upfront commitment."
+              "text": "Trullion sells annual enterprise contracts through a procurement process (pricing not published). Soluqube offers an on-demand, self-serve model starting at $499 per contract audit or $999/month for continuous SaaS compliance with zero upfront commitment."
             }
           },
           {
@@ -73,7 +72,7 @@ export default function SoluqubeVsTrullionPage() {
             "name": "What is the difference in mathematical precision between Soluqube and Trullion?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Trullion uses standard database floating-point math (IEEE-754), which causes cumulative rounding drift on multi-year contracts with odd monthly splits. Soluqube uses a 128-bit micro-cent fixed-point DAG engine that guarantees exact $0.00 rounding drift and monotonic amortization to zero."
+              "text": "Trullion does not publish its arithmetic internals. Soluqube uses integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value and amortize to zero."
             }
           }
         ]
@@ -129,7 +128,7 @@ export default function SoluqubeVsTrullionPage() {
             The Self-Serve Dual-GAAP Alternative to Trullion.
           </h1>
           <p className="text-base text-slate-300 leading-relaxed">
-            Trullion charges <span className="text-rose-400 font-semibold">$35,000–$50,000+/year</span> in rigid enterprise minimums, forces months of sales qualification, and has <strong className="text-white">zero support for Indian GAAP (Ind AS 115)</strong> or statutory GST isolation. Soluqube gives finance leaders instant, self-serve contract verification with 128-bit micro-cent precision starting at <span className="text-emerald-400 font-semibold">$499 per audit</span>.
+            Trullion sells <span className="text-rose-400 font-semibold">annual enterprise contracts</span> (pricing not published) through a sales-qualification process, and does not advertise <strong className="text-white">Indian GAAP (Ind AS 115)</strong> support or statutory GST isolation. Soluqube gives finance leaders instant, self-serve contract verification with integer (BigInt) micro-cent precision starting at <span className="text-emerald-400 font-semibold">$499 per audit</span>.
           </p>
         </div>
 
@@ -159,7 +158,7 @@ export default function SoluqubeVsTrullionPage() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>128-Bit Mathematical Invariant:</strong> Zero IEEE-754 floating-point drift. Monotonic $0.00 ending deferred revenue.</span>
+                <span><strong>Integer Mathematical Invariant:</strong> Zero IEEE-754 floating-point drift. Monotonic $0.00 ending deferred revenue.</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -190,7 +189,7 @@ export default function SoluqubeVsTrullionPage() {
             <ul className="space-y-2.5 text-xs text-slate-400">
               <li className="flex items-start gap-2">
                 <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span><strong>Heavy Enterprise Minimums:</strong> $35k–$50k+ upfront annual commitment; multi-week sales process.</span>
+                <span><strong>Enterprise Minimums:</strong> Annual commitment (pricing not published); multi-week sales process.</span>
               </li>
               <li className="flex items-start gap-2">
                 <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
@@ -230,7 +229,7 @@ export default function SoluqubeVsTrullionPage() {
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Pricing Model</td>
                   <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">$499 per audit / $999/mo SaaS</td>
-                  <td className="p-3.5 text-slate-400 font-mono">$35,000–$50,000+/year minimum</td>
+                  <td className="p-3.5 text-slate-400 font-mono">Enterprise contract (pricing not published)</td>
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Time-to-Value</td>
@@ -249,8 +248,8 @@ export default function SoluqubeVsTrullionPage() {
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Mathematical Precision Engine</td>
-                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">128-bit micro-cent fixed point (0.00 drift)</td>
-                  <td className="p-3.5 text-slate-400 font-mono">Standard floating-point / SQL decimal</td>
+                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">Integer (BigInt) micro-cent fixed point (0.00 drift)</td>
+                  <td className="p-3.5 text-slate-400 font-mono">Not published</td>
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Terminal Deferred Revenue Guarantee</td>
@@ -259,7 +258,7 @@ export default function SoluqubeVsTrullionPage() {
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Audit Grounding &amp; Workpapers</td>
-                  <td className="p-3.5 text-emerald-400 font-bold bg-emerald-950/20">PCAOB AS 3101 + Merkle Root PDF BBoxes</td>
+                  <td className="p-3.5 text-emerald-400 font-bold bg-emerald-950/20">Audit-ready evidence pack + Merkle Root PDF BBoxes</td>
                   <td className="p-3.5 text-slate-300">Standard audit trail exports</td>
                 </tr>
                 <tr>
@@ -311,8 +310,8 @@ export default function SoluqubeVsTrullionPage() {
 
             <div className="p-4 rounded-lg bg-rose-950/20 border border-rose-500/20 space-y-1">
               <span className="text-[10px] uppercase text-rose-400 block font-bold">Trullion Enterprise</span>
-              <span className="text-2xl font-black text-rose-400">${trullionEstimatedMin.toLocaleString()}+</span>
-              <span className="text-[10px] text-slate-400 block">Rigid platform minimum</span>
+              <span className="text-2xl font-black text-rose-400">Not published</span>
+              <span className="text-[10px] text-slate-400 block">Enterprise contract pricing</span>
             </div>
           </div>
         </div>
@@ -320,7 +319,7 @@ export default function SoluqubeVsTrullionPage() {
         {/* CTA Footer */}
         <div className="bg-gradient-to-r from-emerald-950/40 via-slate-900 to-indigo-950/40 border border-emerald-500/30 rounded-2xl p-8 text-center space-y-4">
           <h2 className="text-2xl sm:text-3xl font-black text-white">
-            Ready to Verify Your Contracts Without the $35k Lock-In?
+            Ready to Verify Your Contracts Without the Enterprise Lock-In?
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
             Drop your contract PDF and get a complete 5-gate verified ASC 606 &amp; Ind AS 115 revenue schedule with cryptographic Merkle proof in seconds.
