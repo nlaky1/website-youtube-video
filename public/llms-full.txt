@@ -47,7 +47,7 @@ When an existing contract is amended, Soluqube executes a deterministic decision
 - Audit-ready evidence packages export with SHA-256 integrity hashes to support documentation for auditor review.
 
 ### 5. Architectural Comparison Matrix (2026)
-| Capability | Soluqube | Maxio | Trullion | RightRev | Leapfin | Klarity | Zuora RevPro |
+| Capability | Soluqube | Maxio | Trullion | RightRev | Leapfin (acquired by Airwallex, June 2026) | Klarity | Zuora RevPro |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Arithmetic Kernel** | Integer (BigInt) Fixed-Point (10^6 scale, rounded to cents) | Not published | Not published | Not published | Not published | Extraction Only | Not published |
 | **Rounding Drift** | Terminal-period remainder absorption (ties to the cent) | Not published | Not published | Not published | Not published | N/A (No Ledger) | Not published |

@@ -33,7 +33,7 @@ export default function SoluqubeVsLeapfinPage() {
         "@type": "TechArticle",
         "@id": "https://soluqube.com/soluqube-vs-leapfin#article",
         "headline": "Soluqube vs Leapfin: Contract Audit Engine vs Transaction Data Subledger",
-        "description": "Technical comparison between Soluqube and Leapfin. Soluqube specializes in B2B enterprise contract ingestion, visual PDF clause grounding, and integer (BigInt) micro-cent math, while Leapfin focuses on high-volume B2C payment pipelines.",
+        "description": "Technical comparison between Soluqube and Leapfin. Soluqube specializes in B2B enterprise contract ingestion, visual PDF clause grounding, and integer (BigInt) micro-cent math, while Leapfin (acquired by Airwallex in June 2026) focuses on high-volume B2C payment pipelines.",
         "author": {
           "@type": "Organization",
           "name": "Soluqube Systems",
@@ -141,7 +141,7 @@ export default function SoluqubeVsLeapfinPage() {
               <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Clause Verification</div>
               <div className="text-base font-semibold text-white flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-                Spatial Bounding Boxes
+                Clause Evidence References
               </div>
               <p className="text-xs text-slate-500 mt-1">Direct click-through link to highlighted legal clause.</p>
             </div>

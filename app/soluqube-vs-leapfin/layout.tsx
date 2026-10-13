@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Soluqube vs. Leapfin | Contract Audit Subledger vs. Transaction Data Pipeline',
-  description: 'Compare Soluqube vs. Leapfin for revenue accounting. Soluqube ingests raw PDF customer contracts with sub-millimeter visual grounding and integer (BigInt) micro-cent math, eliminating high-volume B2C pipeline complexity for B2B contracts.',
+  description: 'Compare Soluqube vs. Leapfin for revenue accounting. Soluqube pairs PDF customer contracts with clause evidence and deterministic integer (BigInt) arithmetic, eliminating high-volume B2C pipeline complexity for B2B contracts.',
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-leapfin',
   },

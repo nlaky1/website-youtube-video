@@ -52,11 +52,11 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Spatial token character bounding box extraction report</span>
+                  <span>Clause evidence references (page and excerpt) for each obligation</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>IEEE-754 64-bit floating-point variance analysis</span>
+                  <span>Allocation and schedule tie-out to the cent</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -274,7 +274,7 @@ export default function PricingPage() {
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Continuous</td>
                 </tr>
                 <tr>
-                  <td className="py-3.5 px-4 font-semibold text-slate-800">Spatial Character Bounding Box Grounding</td>
+                  <td className="py-3.5 px-4 font-semibold text-slate-800">Clause evidence references</td>
                   <td className="py-3.5 px-4 text-center text-slate-700">Up to 3 Contracts</td>
                   <td className="py-3.5 px-4 text-center text-emerald-700 font-semibold bg-emerald-50/20">Full Contract Stack</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Unlimited Ingestion</td>

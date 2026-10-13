@@ -45,7 +45,7 @@ export default function SoluqubeVsMaxioPage() {
     {
       feature: "Contract Ingestion & Verification",
       maxio: "Manual deal desk data entry or CPQ sync",
-      soluqube: "Automated OCR with Spatial Bounding-Box Grounding ([x0, y0, x1, y1])",
+      soluqube: "Clause evidence (page + excerpt) kept with every performance obligation",
       advantage: "Every Performance Obligation links to exact PDF clause",
     },
     {

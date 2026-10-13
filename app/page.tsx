@@ -199,7 +199,7 @@ export default function Home() {
     canvas: {
       title: "Spatial Contract Review Canvas",
       badge: "GATE 1 & 2 ACTIVE",
-      description: "Dual-pane review canvas linking financial commitments directly to [1000x1000] character token bounding boxes on contract PDFs with zero OCR hallucination.",
+      description: "Dual-pane review canvas that shows each performance obligation next to the contract clause it came from, so every allocation row has a page and an excerpt behind it.",
       image: "/images/product/actual-contract-canvas.png",
       telemetry: "5-Gate Verification: PASSED • Integer Grid: 1000x1000 • SEC Edgar CIK #0001640147"
     },
@@ -271,12 +271,12 @@ export default function Home() {
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 max-w-5xl mx-auto leading-[1.08]">
-            Deterministic Contract-to-Ledger Revenue Recognition.
+            Defensible Revenue Allocation, Tied to the Cent.
           </h1>
 
           {/* Subheading */}
           <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal">
-            Eliminate manual spreadsheet rounding drift, enforce cross-document billing rate caps, and isolate statutory 18% GST under Ind AS 115 and ASC 606 with zero floating-point error.
+            When your auditor questions a standalone selling price allocation or a contract amendment, Soluqube produces the deterministic allocation, the full-term schedule that ties to $0.00, and a hashed evidence workpaper — integer arithmetic under ASC 606 and Ind AS 115, not a spreadsheet.
           </p>
 
           {/* Dual Call-to-Action */}
@@ -285,7 +285,7 @@ export default function Home() {
               href="#audit-intake"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 shadow-md shadow-slate-900/10 hover:shadow-lg transition-all"
             >
-              <span>Request Complimentary 3-Contract Drift Audit</span>
+              <span>Request a Free 3-Contract Audit-Defense Workpaper</span>
               <ArrowRight className="w-4 h-4 text-slate-300" />
             </a>
 
@@ -684,7 +684,7 @@ export default function Home() {
                     <div className="text-[11px] text-slate-500 font-normal">Traceability to original signed PDF clause</div>
                   </td>
                   <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
-                    Integer [1000x1000] Bounding Boxes
+                    Clause Evidence Per Obligation
                   </td>
                   <td className="py-4 px-5 text-center text-rose-600 font-medium">
                     None (Manual Copy-Paste)
@@ -859,7 +859,7 @@ export default function Home() {
                     ✓
                   </div>
                   <div>
-                    <strong className="text-slate-900">Formal Variance Report:</strong> Complete with spatial character bounding boxes, 18% GST audit isolation, and closed-form reconciliation.
+                    <strong className="text-slate-900">Formal Variance Report:</strong> Complete with clause references for every obligation, Ind AS 115 GST isolation where applicable, and closed-form reconciliation.
                   </div>
                 </div>
               </div>
@@ -1006,7 +1006,7 @@ export default function Home() {
                     />
                     <label className="text-xs text-slate-700 cursor-pointer select-none">
                       <span className="font-bold text-slate-900 block">Complimentary 3-Contract Historical Drift Audit</span>
-                      Include our complimentary historical floating-point variance analysis report ($4,500 value) at zero charge.
+                      Includes a written summary of SSP-allocation and schedule exposure across the three contracts at no charge.
                     </label>
                   </div>
 
