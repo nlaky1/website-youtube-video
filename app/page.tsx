@@ -201,7 +201,7 @@ export default function Home() {
       badge: "GATE 1 & 2 ACTIVE",
       description: "Dual-pane review canvas that shows each performance obligation next to the contract clause it came from, so every allocation row has a page and an excerpt behind it.",
       image: "/images/product/actual-contract-canvas.png",
-      telemetry: "5-Gate Verification: PASSED • Integer Grid: 1000x1000 • SEC Edgar CIK #0001640147"
+      telemetry: "5-Gate Verification: PASSED • SEC Edgar CIK #0001640147"
     },
     waterfall: {
       title: "Revenue Waterfall & 18% GST Isolation",

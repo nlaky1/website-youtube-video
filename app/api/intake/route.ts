@@ -98,7 +98,7 @@ export async function POST(req: Request) {
               </tr>
               <tr style="border-bottom: 1px solid #f1f5f9;">
                 <td style="padding: 10px 0; color: #64748b; font-weight: 600;">3-Contract Drift Audit:</td>
-                <td style="padding: 10px 0; color: #059669; font-weight: bold;">${driftAuditOffer !== false ? "✓ Included ($4,500 value waived)" : "Custom Inquiry"}</td>
+                <td style="padding: 10px 0; color: #059669; font-weight: bold;">${driftAuditOffer !== false ? "✓ Included at no charge" : "Custom Inquiry"}</td>
               </tr>
               ${info || notes || help || services ? `
               <tr>
@@ -154,7 +154,7 @@ export async function POST(req: Request) {
             <ol style="padding-left: 20px; font-size: 13px; color: #475569; line-height: 1.7;">
               <li>Our technical accounting team will provision your transient upload vault within <strong>1 business day</strong>.</li>
               <li>You can stage up to 3 customer MSAs or billing schedules.</li>
-              <li>Our integer (BigInt) fixed-point DAG will generate your comprehensive <strong>Historical Drift Tie-Out Workpaper</strong> with spatial PDF bounding boxes and $0.00 cent reconciliation.</li>
+              <li>Our integer (BigInt) fixed-point DAG will generate your comprehensive <strong>Audit-Defense Workpaper</strong> with clause references for each obligation and reconciliation to the cent.</li>
             </ol>
 
             <p style="margin-top: 24px; font-size: 13px; color: #475569;">

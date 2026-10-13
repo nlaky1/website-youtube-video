@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Soluqube vs. Trullion | Self-Serve Dual-GAAP ASC 606 & Ind AS 115 Alternative',
-  description: 'Compare Soluqube vs. Trullion for revenue recognition. Soluqube offers self-serve $499 contract audits, integer (BigInt) fixed-point math, Ind AS 115 GST statutory isolation, and raw PDF clause bounding boxes.',
+  description: 'Compare Soluqube vs. Trullion for revenue recognition. Soluqube offers self-serve $499 contract audits, integer (BigInt) fixed-point math, Ind AS 115 GST statutory isolation, and raw PDF clause clause evidencees.',
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-trullion',
   },

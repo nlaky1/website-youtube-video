@@ -305,7 +305,7 @@ export default function SoluqubeVsRightRevPage() {
               What workpapers does Soluqube export for external auditors?
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Soluqube exports audit-ready evidence packages including the 8-tab variance schedule, click-through bounding box links to the contract PDF, and a cryptographic SHA-256 Merkle root sealing the schedule against retroactive tampering.
+              Soluqube exports audit-ready evidence packages including the allocation and amortisation schedules, clause references back to the contract PDF, and a SHA-256 integrity hash over the schedule.
             </p>
           </div>
         </div>
