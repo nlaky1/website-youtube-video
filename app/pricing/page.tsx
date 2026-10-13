@@ -1,13 +1,9 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import { Check, ArrowRight, ShieldCheck, HelpCircle, Layers, Cpu, ExternalLink } from "lucide-react";
 
 export default function PricingPage() {
-  const [billingCycle, setBillingCycle] = useState<"annual" | "quarterly">("annual");
-
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       <Navbar />

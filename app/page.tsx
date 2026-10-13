@@ -420,7 +420,8 @@ export default function Home() {
       </section>
 
       {/* 3. INTERACTIVE PRODUCT TOUR & REAL PLATFORM CAPABILITIES */}
-      <section id="proof-telemetry" className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
+      <section id="architecture" className="py-20 sm:py-28 bg-white border-b border-slate-200/80">
+        <div id="proof-telemetry"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-12">

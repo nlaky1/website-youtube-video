@@ -132,8 +132,8 @@ const Navbar: React.FC<NavbarProps> = () => {
             )}
           </div>
 
-          <Link href="/#pilot" className="hover:text-slate-950 transition-colors">
-            Pricing / Pilot
+          <Link href="/pricing" className="hover:text-slate-950 transition-colors">
+            Pricing
           </Link>
         </nav>
 
@@ -261,11 +261,11 @@ const Navbar: React.FC<NavbarProps> = () => {
             Engine Architecture
           </Link>
           <Link
-            href="/#pilot"
+            href="/pricing"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-slate-700 hover:text-slate-950 py-1 text-xs"
           >
-            Pricing / Pilot
+            Pricing
           </Link>
           
           <div className="pt-4 border-t border-slate-200 space-y-2.5">
