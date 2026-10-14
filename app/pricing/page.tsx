@@ -19,22 +19,22 @@ export default function PricingPage() {
             Institutional Pricing for Deterministic RevRec Precision
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Eliminate floating-point rounding drift, enforce cross-document rate caps, and isolate statutory 18% GST with mathematically verifiable balance sheet parity.
+            Defend SSP allocations with a deterministic schedule that ties to the cent, enforce cross-document rate caps, and isolate statutory 18% GST on INR contracts.
           </p>
         </div>
 
         {/* 4 Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mb-20">
           
-          {/* Tier 1: Historical Drift Audit (Complimentary) */}
+          {/* Tier 1: Free 3-Contract Audit-Defense Workpaper */}
           <div className="bg-white border border-slate-200 rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
             <div>
               <div className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 mb-4">
                 PROOF OF VALUE
               </div>
-              <h2 className="text-xl font-bold text-slate-900">Historical Drift Diagnostic</h2>
+              <h2 className="text-xl font-bold text-slate-900">Free 3-Contract Audit-Defense Workpaper</h2>
               <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                Validate historical NetSuite, SAP, or spreadsheet revrec accuracy across sample multi-element contracts.
+                Your three hardest multi-element contracts: the SSP allocation, a schedule that ties to the cent, and a hashed workpaper you can hand to your auditor.
               </p>
 
               <div className="my-6 pb-6 border-b border-slate-100">
@@ -60,7 +60,7 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Statutory 18% GST isolation &amp; Schedule III check</span>
+                  <span>Statutory 18% GST isolation &amp; Schedule III check (INR contracts)</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -74,7 +74,7 @@ export default function PricingPage() {
                 href="/book-demo"
                 className="w-full py-3.5 px-4 rounded-xl text-center text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200 block shadow-xs"
               >
-                Request Free Diagnostic &rarr;
+                Request Free Workpaper &rarr;
               </Link>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function PricingPage() {
               </div>
               <h2 className="text-xl font-bold text-slate-900">On-Demand Contract Audit</h2>
               <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                Drop a complex MSA + SOW stack for immediate integer (BigInt) amortization and audit-ready evidence package generation.
+                Upload an MSA + SOW stack, confirm the obligations and prices, and get an integer (BigInt) amortization schedule and audit-ready evidence package.
               </p>
 
               <div className="my-6 pb-6 border-b border-slate-100">
@@ -109,15 +109,15 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Integer (BigInt) micro-cent waterfall, rounded to cents ($0.00 ending drift)</span>
+                  <span>Integer (BigInt) waterfall at 10^6 scale, rounded to cents (ties to $0.00 deferred)</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Ready-to-post NetSuite ARM &amp; SAP RAR journal CSVs</span>
+                  <span>Excel and CSV schedule exports</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>SHA-256 cryptographic Merkle proof &amp; PDF token pins</span>
+                  <span>SHA-256 hashed export with clause evidence (page + excerpt)</span>
                 </div>
               </div>
             </div>
@@ -135,16 +135,16 @@ export default function PricingPage() {
           {/* Tier 3: Continuous Enterprise RevRec Engine ($999/mo - Featured) */}
           <div className="bg-white border-2 border-slate-900 rounded-3xl p-7 shadow-xl relative flex flex-col justify-between">
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-slate-900 text-white font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
-              MOST POPULAR FOR B2B SAAS
+              RECOMMENDED FOR B2B SAAS
             </div>
 
             <div>
               <div className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-blue-50 text-blue-700 border border-blue-200 mb-4">
                 CONTINUOUS SUBLEDGER
               </div>
-              <h2 className="text-xl font-bold text-slate-900">Continuous RevRec Sync</h2>
+              <h2 className="text-xl font-bold text-slate-900">Continuous RevRec Engine</h2>
               <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                Unlimited contract-to-ledger processing with live webhook sync to NetSuite, SAP, and QuickBooks.
+                Unlimited contract-to-schedule processing with ERP-ready exports for NetSuite, SAP, and QuickBooks. Live connectors are on the roadmap.
               </p>
 
               <div className="my-6 pb-6 border-b border-slate-100">
@@ -158,7 +158,7 @@ export default function PricingPage() {
               <div className="space-y-3 text-xs text-slate-700">
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Unlimited contract ingestion with 5.8 ms/page latency</span>
+                  <span>Unlimited contracts with assisted extraction and manual confirmation</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -170,11 +170,11 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Live bi-directional subledger sync (NetSuite ARM / SAP RAR)</span>
+                  <span>ERP-ready schedule exports for NetSuite ARM / SAP RAR (live connectors on the roadmap)</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Auditor portal with cryptographic Merkle tree anchors</span>
+                  <span>SHA-256 hashed evidence packs to share with your auditor</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -261,13 +261,13 @@ export default function PricingPage() {
                   <th className="py-3 px-4">Feature / Capability</th>
                   <th className="py-3 px-4 text-center">Free Diagnostic ($0)</th>
                   <th className="py-3 px-4 text-center font-bold text-emerald-800 bg-emerald-50/40">Self-Serve Audit ($499)</th>
-                  <th className="py-3 px-4 text-center font-bold text-slate-900 bg-blue-50/50">Continuous Sync ($999/mo)</th>
+                  <th className="py-3 px-4 text-center font-bold text-slate-900 bg-blue-50/50">Continuous Engine ($999/mo)</th>
                   <th className="py-3 px-4 text-center">Sovereign On-Prem</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">
                 <tr>
-                  <td className="py-3.5 px-4 font-semibold text-slate-800">Floating-Point Zero Drift ($0.000000)</td>
+                  <td className="py-3.5 px-4 font-semibold text-slate-800">Ties to the cent (terminal-period absorption)</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Included</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-emerald-50/20">✓ Included</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">✓ Continuous</td>
@@ -281,18 +281,18 @@ export default function PricingPage() {
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">Unlimited Ingestion</td>
                 </tr>
                 <tr>
-                  <td className="py-3.5 px-4 font-semibold text-slate-800">Ind AS 115 Statutory 18% GST Quarantine</td>
+                  <td className="py-3.5 px-4 font-semibold text-slate-800">Ind AS 115 Statutory 18% GST Quarantine (INR contracts)</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Included</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-emerald-50/20">✓ Included</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">✓ Automated</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Automated</td>
                 </tr>
                 <tr>
-                  <td className="py-3.5 px-4 font-semibold text-slate-800">NetSuite ARM / SAP RAR Subledger Sync</td>
-                  <td className="py-3.5 px-4 text-center text-slate-400">Summary Only</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-700 font-semibold bg-emerald-50/20">Ready-to-Post CSV</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Live Webhooks / REST</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">Direct DB / OData</td>
+                  <td className="py-3.5 px-4 font-semibold text-slate-800">ERP-ready schedule export</td>
+                  <td className="py-3.5 px-4 text-center text-slate-400">Sample Schedule</td>
+                  <td className="py-3.5 px-4 text-center text-emerald-700 font-semibold bg-emerald-50/20">Excel + CSV Export</td>
+                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Excel + CSV Export (Live Sync on Roadmap)</td>
+                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">Custom Adapter (Scoped per Engagement)</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 font-semibold text-slate-800">Auditor Merkle Tree Pack (JSON-LD)</td>
@@ -316,17 +316,17 @@ export default function PricingPage() {
         {/* Bottom CTA */}
         <div className="text-center bg-slate-900 text-white rounded-3xl p-10 sm:p-14 shadow-xl">
           <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-            Ready to Verify Your Current Balance Sheet Parity?
+            Ready to Defend Your Next SSP Allocation?
           </h3>
           <p className="mt-3 text-slate-300 text-sm max-w-xl mx-auto">
-            Book a complimentary 3-contract historical drift audit. Our technical accounting team will run your contracts through the 5-Gate engine and deliver a formal variance report.
+            Request a Free 3-Contract Audit-Defense Workpaper. We run your three hardest contracts through the 5-Gate engine and deliver the SSP allocation, the schedule that ties to the cent, and a hashed evidence workpaper.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/book-demo"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-xs font-semibold text-slate-900 bg-white hover:bg-slate-100 shadow-md transition-all"
             >
-              <span>Request Free Drift Audit</span>
+              <span>Request Free Workpaper</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a

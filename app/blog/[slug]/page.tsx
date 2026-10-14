@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${post.title} | Soluqube`,
+    title: post.title, // root layout template appends " | Soluqube"
     description: post.subtitle,
     keywords: post.tags,
     alternates: {

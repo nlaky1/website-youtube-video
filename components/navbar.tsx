@@ -33,14 +33,14 @@ const Navbar: React.FC<NavbarProps> = () => {
       desc: "Dual-ledger accounting isolating 18% Indian GST with US GAAP parity."
     },
     {
-      title: "Eliminating IEEE-754 Floating-Point Drift",
+      title: "Tying Revenue Schedules to the Cent",
       href: "/blog/eliminating-ieee-754-floating-point-rounding-drift-asc-606",
       desc: "Integer arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption."
     },
     {
       title: "Contract Modification Precedence DAG",
       href: "/blog/contract-modification-precedence-dag-asc-606-10-25-13",
-      desc: "Deterministic routing between Catch-Up and Prospective reallocation."
+      desc: "How catch-up vs prospective treatment is chosen (engine support on the roadmap)."
     },
     {
       title: "Audit-Ready Evidence Workpapers",
@@ -63,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = () => {
               <span className="text-base font-bold tracking-tight text-slate-900">SOLUQUBE</span>
               <span className="text-[11px] font-mono font-medium px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200 hidden sm:inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                Patent App: 202621096305
+                Patent Pending (App. No. 202621096305)
               </span>
             </div>
           </Link>
@@ -162,7 +162,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             href="/#audit-intake"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 shadow-xs hover:shadow transition-all"
           >
-            <span>Book Historical Audit</span>
+            <span>Free Audit-Defense Workpaper</span>
             <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
           </a>
         </div>
@@ -294,7 +294,7 @@ const Navbar: React.FC<NavbarProps> = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 shadow-sm transition-colors"
             >
-              <span>Book Historical Drift Audit</span>
+              <span>Free Audit-Defense Workpaper</span>
               <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
             </a>
           </div>
