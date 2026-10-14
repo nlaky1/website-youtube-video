@@ -176,7 +176,7 @@ export default function SoluqubeVsMaxioPage() {
             </div>
             <h3 className="text-2xl font-bold text-white">Soluqube</h3>
             <p className="text-indigo-200 text-sm leading-relaxed">
-              The contract-to-ledger revenue subledger. Ingests raw signed legal PDFs, maps performance obligations to spatial coordinates, guarantees zero penny drift via integer (BigInt) math, and delivers audit-ready evidence packages.
+              The contract-to-ledger revenue subledger. Takes your signed contracts, records clause evidence (page + excerpt) for each performance obligation, allocates by relative SSP in integer (BigInt) math so the schedule ties to the cent, and delivers audit-ready evidence packages.
             </p>
             <ul className="space-y-2 text-xs text-indigo-200 pt-2 border-t border-white/10">
               <li className="flex items-center gap-2">

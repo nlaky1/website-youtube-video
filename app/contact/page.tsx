@@ -122,7 +122,7 @@ export default function ContactForm() {
               </div>
               <div className="flex items-center gap-3 text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Zero Floating-Point Drift Parity Guarantee</span>
+                <span>Schedules That Tie to the Cent</span>
               </div>
               <div className="flex items-center gap-3 text-slate-700">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
