@@ -384,7 +384,7 @@ export default function BlogPostPage({ params }: Props) {
                   Launch Revenue Sandbox
                 </h3>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Ingest enterprise contracts and test fixed-point amortization math with zero drift.
+                  Ingest enterprise contracts and test fixed-point amortization math that ties to the cent.
                 </p>
                 <a
                   href="https://app.soluqube.com/"

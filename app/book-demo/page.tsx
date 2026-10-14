@@ -116,7 +116,7 @@ export default function BookDemoPage() {
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="font-bold text-slate-900">Complimentary Historical Drift Audit:</span> Receive a mathematical verification certificate certifying balance sheet zero-drift down to the exact cent.
+                  <span className="font-bold text-slate-900">Free 3-Contract Audit-Defense Workpaper:</span> Receive the SSP allocation, a full-term schedule that ties to the cent, and clause evidence (page + excerpt) for each obligation.
                 </div>
               </div>
 
@@ -306,7 +306,7 @@ export default function BookDemoPage() {
                         className="mt-0.5 rounded border-slate-300 text-slate-900 focus:ring-slate-900 cursor-pointer"
                       />
                       <label className="text-xs text-slate-700 cursor-pointer select-none">
-                        <span className="font-bold text-slate-900 block">Complimentary 3-Contract Historical Drift Audit</span>
+                        <span className="font-bold text-slate-900 block">Free 3-Contract Audit-Defense Workpaper</span>
                         Includes a written summary of SSP-allocation and schedule exposure across the three contracts at no charge.
                       </label>
                     </div>
@@ -372,7 +372,7 @@ export default function BookDemoPage() {
                         <span className="text-blue-700 font-semibold">{accountingStandard}</span>
                       </div>
                       <div className="flex justify-between text-slate-500">
-                        <span>Historical Drift Offer:</span>
+                        <span>Audit-Defense Workpaper:</span>
                         <span className="text-emerald-700 font-bold">CLAIMED ($0.00)</span>
                       </div>
                     </div>

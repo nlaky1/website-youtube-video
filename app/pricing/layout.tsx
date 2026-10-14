@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pricing & Pilot Deployment Plans",
-  description: "Explore Soluqube deployment tiers: Complimentary 3-contract historical drift audit, enterprise subledger sync, and dedicated sovereign instances.",
+  description: "Soluqube pricing: a Free 3-Contract Audit-Defense Workpaper, then per-contract or continuous plans with ERP-ready schedule exports and hashed evidence packs.",
   alternates: {
     canonical: "https://soluqube.com/pricing",
   },

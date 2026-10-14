@@ -60,12 +60,12 @@ export async function POST(req: Request) {
       from: `"Soluqube Audit Enclave" <${senderEmail}>`,
       to: `${alertEmail}, nikhillaky@gmail.com`,
       replyTo: workEmail,
-      subject: `🚨 New Historical Drift Audit Request: ${enterpriseCompany} (${jobTitle})`,
+      subject: `🚨 New Audit-Defense Workpaper Request: ${enterpriseCompany} (${jobTitle})`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
           <div style="background: #0f172a; padding: 20px 24px; color: #ffffff;">
             <div style="font-size: 11px; font-weight: bold; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Soluqube Deterministic Engine • Executive Intake</div>
-            <h2 style="margin: 0; font-size: 18px; font-weight: 700;">🚨 New Historical Drift Audit Ingest Request</h2>
+            <h2 style="margin: 0; font-size: 18px; font-weight: 700;">🚨 New Audit-Defense Workpaper Request</h2>
           </div>
           
           <div style="padding: 24px; color: #1e293b; font-size: 14px; line-height: 1.6;">
@@ -138,7 +138,7 @@ export async function POST(req: Request) {
           <div style="padding: 24px; color: #1e293b; font-size: 14px; line-height: 1.6;">
             <p>Dear ${contactName},</p>
             
-            <p>Thank you for initializing your <strong>Complimentary 3-Contract Historical Drift Audit</strong> with Soluqube. We have logged your request under reference <strong>${referenceId}</strong>.</p>
+            <p>Thank you for initializing your <strong>Free 3-Contract Audit-Defense Workpaper</strong> with Soluqube. We have logged your request under reference <strong>${referenceId}</strong>.</p>
             
             <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 20px 0;">
               <h4 style="margin: 0 0 10px 0; font-size: 13px; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em;">Engagement Parameters Confirmed:</h4>

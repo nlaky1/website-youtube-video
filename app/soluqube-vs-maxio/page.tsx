@@ -172,7 +172,7 @@ export default function SoluqubeVsMaxioPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
             <div className="flex items-center justify-between">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-400">The Contract Auditor</span>
-              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono font-bold border border-emerald-500/30">Zero Drift</span>
+              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono font-bold border border-emerald-500/30">Ties to the Cent</span>
             </div>
             <h3 className="text-2xl font-bold text-white">Soluqube</h3>
             <p className="text-indigo-200 text-sm leading-relaxed">

@@ -17,7 +17,7 @@ import {
 
 export const metadata: Metadata = {
   title: "ASC 606 Deterministic Revenue Recognition Engine | Soluqube",
-  description: "Eliminate floating-point rounding drift, automate contract modification DAGs (ASC 606-10-25-13), and generate audit-ready evidence packages with zero drift.",
+  description: "Relative-SSP allocation, full-term ASC 606 schedules that tie to the cent, and audit-ready evidence packages with clause references per obligation.",
   alternates: {
     canonical: "https://soluqube.com/asc-606",
   },
@@ -55,7 +55,7 @@ export default function ASC606HubPage() {
             </div>
             <h3 className="text-base font-bold text-slate-900">Zero Mathematical Drift</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Scaled integer arithmetic with terminal-period remainder absorption guarantees exact balance sheet zero-drift ($0.000000).
+              Scaled integer arithmetic with terminal-period remainder absorption: the full-term schedule ends at $0.00 deferred.
             </p>
           </div>
 

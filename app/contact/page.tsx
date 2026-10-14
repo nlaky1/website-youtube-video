@@ -35,15 +35,15 @@ const FormSchema = z.object({
   company_name: z.string().min(1, "Company name is required"),
   help: z.enum([
     "Evaluate Soluqube for my enterprise",
-    "Request 3-Contract Historical Drift Audit",
+    "Request a Free 3-Contract Audit-Defense Workpaper",
     "NetSuite / SAP Subledger Integration",
     "External Audit Preparation",
     "Other Technical Inquiry",
   ]),
   services: z.enum([
     "ASC 606 & Ind AS 115 Dual Audit",
-    "NetSuite / SAP ERP Subledger Sync",
-    "Historical Drift Analysis (Complimentary)",
+    "NetSuite / SAP Schedule Export",
+    "Audit-Defense Workpaper (Free)",
     "Audit Workpaper & Evidence Package",
     "Sovereign Private Cloud On-Premise",
   ]),
@@ -65,8 +65,8 @@ export default function ContactForm() {
       email: "",
       job_title: "",
       company_name: "",
-      help: "Request 3-Contract Historical Drift Audit",
-      services: "Historical Drift Analysis (Complimentary)",
+      help: "Request a Free 3-Contract Audit-Defense Workpaper",
+      services: "Audit-Defense Workpaper (Free)",
       info: "",
     },
   });
@@ -231,7 +231,7 @@ export default function ContactForm() {
                             </FormControl>
                             <SelectContent>
                               <SelectItem value="Evaluate Soluqube for my enterprise">Evaluate Soluqube for my enterprise</SelectItem>
-                              <SelectItem value="Request 3-Contract Historical Drift Audit">Request 3-Contract Historical Drift Audit</SelectItem>
+                              <SelectItem value="Request a Free 3-Contract Audit-Defense Workpaper">Request a Free 3-Contract Audit-Defense Workpaper</SelectItem>
                               <SelectItem value="NetSuite / SAP Subledger Integration">NetSuite / SAP Subledger Integration</SelectItem>
                               <SelectItem value="External Audit Preparation">External Audit Preparation</SelectItem>
                               <SelectItem value="Other Technical Inquiry">Other Technical Inquiry</SelectItem>
@@ -255,9 +255,9 @@ export default function ContactForm() {
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value="Historical Drift Analysis (Complimentary)">Historical Drift Analysis (Complimentary)</SelectItem>
+                              <SelectItem value="Audit-Defense Workpaper (Free)">Audit-Defense Workpaper (Free)</SelectItem>
                               <SelectItem value="ASC 606 & Ind AS 115 Dual Audit">ASC 606 &amp; Ind AS 115 Dual Audit</SelectItem>
-                              <SelectItem value="NetSuite / SAP ERP Subledger Sync">NetSuite / SAP ERP Subledger Sync</SelectItem>
+                              <SelectItem value="NetSuite / SAP Schedule Export">NetSuite / SAP Schedule Export</SelectItem>
                               <SelectItem value="Audit Workpaper & Evidence Package">Audit Workpaper &amp; Evidence Package</SelectItem>
                               <SelectItem value="Sovereign Private Cloud On-Premise">Sovereign Private Cloud On-Premise</SelectItem>
                             </SelectContent>
