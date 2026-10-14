@@ -1219,5 +1219,147 @@ You do not need to rip out your existing ERP to eliminate revenue audit risk. Fi
 2. **Verify Spatial BBoxes & Integer Schedules**: Inspect the extracted performance obligations, relative SSP allocations, and zero-drift amortization waterfalls.
 3. **Export Audit-Ready Evidence Packs**: Hand your external auditors workpapers with SHA-256 integrity hashes in one click.
     `
+  },
+  {
+    slug: "ssp-allocation-rounding-residual-cent-asc-606",
+    title: "SSP Allocation Rounding in ASC 606: Where the Cent Goes",
+    subtitle: "Allocating a bundle by relative SSP leaves fractions of a cent. Worked 3-element example and a defensible policy for the residual.",
+    publishedAt: "October 14, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Rounding Policy", "Standalone Selling Price", "Ind AS 115"],
+    targetQuery: "ASC 606 SSP allocation rounding",
+    definitionAnchor: "Allocating a transaction price by relative standalone selling price usually gives each performance obligation a share with fractions of a cent. Rounding every line on its own can make the allocations sum to a cent more or less than the contract. A residual-cent policy names which obligation absorbs that difference, so the allocation ties to the transaction price exactly.",
+    excerpt: "A $100,000 bundle with SSPs of $30,000, $30,000 and $120,000 rounds to $100,000.01 if every line is rounded on its own. Here is where the cent comes from, which obligation should absorb it, and the policy wording that lets a reviewer re-perform the allocation.",
+    toc: [
+      { id: "why-does-relative-ssp-allocation-leave-a-residual-cent-", label: "Why relative SSP allocation leaves a residual cent" },
+      { id: "what-does-asc-606-say-about-rounding-the-allocation-", label: "What ASC 606 says about rounding" },
+      { id: "worked-example-100-000-across-three-performance-obligations", label: "Worked example: $100,000, three obligations" },
+      { id: "which-obligation-should-absorb-the-residual-cent-", label: "Which obligation absorbs the cent" },
+      { id: "how-does-the-residual-flow-into-the-revenue-schedule-", label: "How the residual flows into the schedule" },
+      { id: "what-should-an-ssp-rounding-policy-say-", label: "What an SSP rounding policy should say" }
+    ],
+    faqs: [
+      {
+        question: "Is the residual cent the same as the residual approach in ASC 606?",
+        answer: "No. The residual approach in ASC 606-10-32-34(c) is a method for estimating a standalone selling price when that price is highly variable or uncertain. The residual cent is a rounding artefact: the one-cent difference left when relative-SSP allocations are rounded to the cent and no longer sum to the transaction price."
+      },
+      {
+        question: "Does ASC 606 prescribe a rounding method for SSP allocation?",
+        answer: "The allocation guidance in ASC 606-10-32-28 through 32-41 sets the objective and the relative standalone selling price basis, but it does not specify a cent-level rounding convention. An entity chooses one, documents it, and applies it consistently so the allocation can be re-performed."
+      },
+      {
+        question: "Which obligation absorbs the residual cent in Soluqube?",
+        answer: "Soluqube rounds every obligation half-up to the cent except the one listed last, which receives the transaction price minus the sum of the others. Ratable schedules give each month the floored amount and the final month absorbs the remaining cents. If allocations or the schedule fail to tie to the transaction price, the engine rejects the result."
+      }
+    ],
+    content: `
+## Why does relative SSP allocation leave a residual cent?
+
+Relative SSP allocation multiplies the transaction price by each obligation's share of total standalone selling price. Those shares are rarely whole cents. Round each line half-up on its own and the rounded lines can add up to one cent more, or one cent less, than the contract. That leftover cent is the residual, and it has to land somewhere.
+
+The formula is the one in every Step 4 memo: allocation for obligation i = transaction price × SSP of i ÷ sum of all SSPs. With two obligations and round numbers, such as $120,000 split by SSPs of $100,000 and $25,000, the shares come out clean at $96,000 and $24,000. With three or more obligations, or with SSPs that do not divide evenly, they usually do not.
+
+A one-cent residual is not material on its own. The reason to settle it is mechanical: if the allocated amounts do not sum to the transaction price, the contract liability never fully unwinds, someone books a plug, and the next reviewer has to work out where the plug came from.
+
+---
+
+## What does ASC 606 say about rounding the allocation?
+
+ASC 606-10-32-28 through 32-41 set the allocation objective, require a relative standalone selling price basis, and govern how discounts and variable consideration are allocated. They do not specify how to round an allocation to the cent. That choice is left to the entity, which is why it belongs in a written, consistently applied policy.
+
+The relevant paragraphs, for reference:
+
+- ASC 606-10-32-28 and 32-29: the allocation objective, and the relative standalone selling price basis as the default.
+- ASC 606-10-32-31 to 32-35: determining standalone selling price at contract inception and estimating it when it is not directly observable.
+- ASC 606-10-32-36 to 32-38: a discount is allocated proportionately to all obligations unless the stated criteria for allocating it to only some are met.
+- IFRS 15 paragraphs 73–86 and the corresponding paragraphs of Ind AS 115 carry the same allocation model.
+
+None of these paragraphs mentions cents. Read the primary text rather than a summary when you write the policy; the point here is only that the rounding convention is an entity-level choice.
+
+---
+
+## Worked example: $100,000 across three performance obligations
+
+A $100,000 contract bundles implementation (SSP $30,000), premium support (SSP $30,000) and a platform subscription (SSP $120,000). Total SSP is $180,000, so the $80,000 discount is spread proportionately. Each raw allocation ends in a repeating 6. Rounding every line half-up gives $100,000.01. Soluqube's engine allocates $16,666.67, $16,666.67 and $66,666.66, which sums to exactly $100,000.00.
+
+Step one, round every line independently:
+
+\`\`\`text
+Transaction price                                  $100,000.00
+Obligation           SSP         Share   Raw allocation      Rounded half-up
+Implementation       $30,000     1/6     $16,666.666666...   $16,666.67
+Premium support      $30,000     1/6     $16,666.666666...   $16,666.67
+Platform subscription $120,000   2/3     $66,666.666666...   $66,666.67
+Total                $180,000                                $100,000.01   (+$0.01)
+\`\`\`
+
+Step two, the same contract through the Soluqube engine (integer arithmetic at 10^6 scale, rounded to cents), obligations listed in the order above:
+
+\`\`\`text
+Implementation         $16,666.67   rounded half-up
+Premium support        $16,666.67   rounded half-up
+Platform subscription  $66,666.66   = $100,000.00 − $33,333.34 (absorbs the residual)
+Total allocated        $100,000.00
+\`\`\`
+
+List the obligations in the opposite order (subscription first, implementation last) and the engine returns $66,666.67, $16,666.67 and $16,666.66. The total is still $100,000.00; only the obligation carrying the cent changes. That is the whole policy decision in one line, and it is why the order has to be fixed in writing.
+
+---
+
+## Which obligation should absorb the residual cent?
+
+Any rule that is written down, applied consistently and re-performable will tie the allocation to the transaction price. Three are common: the last-listed obligation absorbs the difference, the largest allocation absorbs it, or the cents go to the lines with the largest fractional remainders. Pick one, record it in the SSP policy, and do not change it contract by contract.
+
+- Last-listed absorbs (what the Soluqube engine does today): round every line half-up except the last, which receives the transaction price minus the others. Easy to re-perform; the order of obligations becomes part of the policy.
+- Largest allocation absorbs: the cent lands where it is the smallest fraction of the balance. With the last-listed rule, you get this by listing the largest obligation last, as in the first ordering above.
+- Largest remainder: floor every line to the cent, then hand the leftover cents to the lines with the biggest fractional parts. Arguably the most even-handed, slightly harder to re-perform by hand.
+
+Whichever rule you choose, the answer should not depend on who ran the spreadsheet or which cell was edited last.
+
+---
+
+## How does the residual flow into the revenue schedule?
+
+The allocation is only half of it. Each ratable obligation then has its own schedule, and dividing an allocation by the number of months raises the same question again. Soluqube gives every month the floored amount and lets the final month absorb the remaining cents, so each obligation's schedule sums to its allocation and the deferred balance reaches $0.00.
+
+For the first ordering above, the engine produces:
+
+\`\`\`text
+Platform subscription   36 months   35 × $1,851.85 + $1,851.91 = $66,666.66
+Premium support         36 months   35 × $462.96   + $463.07   = $16,666.67
+Implementation          Month 1     $16,666.67 (point in time)
+Total recognised                                               $100,000.00
+Deferred balance after month 36                                $0.00
+\`\`\`
+
+The same terminal-period rule on a single $100,000, 36-month subscription gives 35 × $2,777.77 + $2,778.05. The engine also runs a reconciliation check on every contract: if the allocations or the recognised total do not equal the transaction price in integer cents, or any obligation ends with a deferred balance, it rejects the result instead of returning it. To vary the contract value and term yourself, use the simulator at https://soluqube.com/audit.
+
+---
+
+## What should an SSP rounding policy say?
+
+A short paragraph in the SSP policy is enough: the unit of rounding, the rounding rule, which obligation absorbs the residual and how the obligation order is fixed, how ratable schedules handle their own remainder, and the reconciliation check performed. Written that way, a reviewer can take the inputs, re-perform the allocation and schedule, and get the same cents.
+
+Illustrative wording, to adapt with your technical accounting reviewer:
+
+\`\`\`text
+Residual-cent policy (illustrative)
+1. Allocate the transaction price on a relative SSP basis (ASC 606-10-32-29, 32-31), in integer cents.
+2. Round each obligation's allocation half-up to the cent, except the obligation listed last.
+3. The last-listed obligation receives the transaction price minus the sum of the others.
+4. Obligations are listed so the largest ratable obligation is last.
+5. Ratable schedules: each period receives the floored periodic amount; the final period absorbs the remaining cents.
+6. Check: allocations and the full schedule each sum to the transaction price; the final deferred balance is $0.00.
+\`\`\`
+
+The policy covers the rounding. The judgement auditors spend their time on is the SSP itself: how it was estimated, the evidence behind it, and whether the discount was allocated proportionately. For that side, see our guide to relative SSP allocation at https://soluqube.com/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations and the ASC 606 hub at https://soluqube.com/asc-606.
+
+To run your own bundle, enter the transaction price, obligations and SSPs at https://app.soluqube.com/onboarding; you confirm the obligations and prices, and the engine returns the allocation, the full-term schedule and a hashed workpaper. Or send us your three hardest contracts for a free 3-Contract Audit-Defense Workpaper: https://soluqube.com/book-demo.
+    `
   }
 ];

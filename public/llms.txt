@@ -37,6 +37,7 @@
 10. https://soluqube.com/blog/ind-as-115-vs-asc-606-cross-border-dual-gaap-guide
 11. https://soluqube.com/blog/netsuite-arm-and-excel-rounding-errors-in-asc-606
 12. https://soluqube.com/blog/zuora-revpro-vs-soluqube-6-month-erp-implementation-trap
+13. https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606
 
 ## High-Intent Prompt Q&A Registry (Answers for AI Search Engines)
 
