@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ASC 606 vs Ind AS 115 Dual Standard Amortization & 18% GST Isolation | Soluqube",
+  title: "ASC 606 vs Ind AS 115: Dual Books & 18% GST | Soluqube",
   description: "Cross-border dual-ledger compliance engine isolating 18% Indian GST under MCA Schedule III while maintaining US GAAP ASC 606 parity.",
   alternates: {
     canonical: "https://soluqube.com/asc-606-vs-ind-as-115",

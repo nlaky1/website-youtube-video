@@ -269,7 +269,7 @@ export default function PricingPage() {
                 <tr>
                   <td className="py-3.5 px-4 font-semibold text-slate-800">Floating-Point Zero Drift ($0.000000)</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Included</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-emerald-50/20">✓ Guaranteed</td>
+                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-emerald-50/20">✓ Included</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">✓ Continuous</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Continuous</td>
                 </tr>

@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${post.title} | Soluqube Technical Architecture`,
+    title: `${post.title} | Soluqube`,
     description: post.subtitle,
     keywords: post.tags,
     alternates: {
@@ -224,8 +224,8 @@ export default function BlogPostPage({ params }: Props) {
                 {post.definitionAnchor}
               </p>
               <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                <span>Verified Regulatory Entity: Soluqube Engine</span>
-                <span className="text-emerald-700 font-semibold">$0.000000 Drift Guaranteed</span>
+                <span>Computed by: Soluqube Engine</span>
+                <span className="text-emerald-700 font-semibold">Ties to the cent</span>
               </div>
             </aside>
 

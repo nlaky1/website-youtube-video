@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Soluqube vs Maxio: The Contract Auditor Alternative for ASC 606 & GAAP | Soluqube",
+  title: "Maxio Alternative: Soluqube vs Maxio for ASC 606",
   description: "Compare Soluqube and Maxio (formerly SaaSOptics / Chargify). Why CFOs and controllers choose Soluqube's deterministic integer (BigInt) contract-to-ledger audit engine over invoice-based billing tools.",
   alternates: {
     canonical: "https://soluqube.com/soluqube-vs-maxio",
@@ -52,7 +52,7 @@ export default function SoluqubeVsMaxioPage() {
       feature: "Math Precision Engine",
       maxio: "Not published",
       soluqube: "Integer (BigInt) Micro-Cent Fixed-Point DAG Engine",
-      advantage: "Guaranteed $0.000000 rounding drift across 36-month schedules",
+      advantage: "Ties to the cent: terminal-period remainder absorption leaves $0.00 deferred at term end",
     },
     {
       feature: "Statutory Accounting Scope",
