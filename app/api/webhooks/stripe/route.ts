@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import nodemailer from "nodemailer";
+import { escapeHtml, stripCrlf } from "@/lib/formSecurity";
 
 export async function POST(req: NextRequest) {
   try {
@@ -8,28 +9,27 @@ export async function POST(req: NextRequest) {
     const rawBody = await req.text();
     const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
-    let event;
+    // Fail closed (security review H3): no event is processed without a verified signature.
+    if (!webhookSecret) {
+      console.error("STRIPE_WEBHOOK_SECRET is not configured; rejecting webhook.");
+      return NextResponse.json({ error: "webhook not configured" }, { status: 500 });
+    }
+    if (!sig) {
+      return NextResponse.json({ error: "Webhook signature verification failed" }, { status: 400 });
+    }
 
-    if (webhookSecret && sig) {
-      try {
-        event = stripe.webhooks.constructEvent(rawBody, sig, webhookSecret);
-      } catch (err: unknown) {
-        const message = err instanceof Error ? err.message : "Webhook signature verification failed";
-        return NextResponse.json({ error: message }, { status: 400 });
-      }
-    } else {
-      // Direct JSON parse for testing or local simulation
-      try {
-        event = JSON.parse(rawBody);
-      } catch {
-        return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
-      }
+    let event;
+    try {
+      event = stripe.webhooks.constructEvent(rawBody, sig, webhookSecret);
+    } catch (err: unknown) {
+      console.error("Stripe webhook signature verification failed:", err instanceof Error ? err.message : err);
+      return NextResponse.json({ error: "Webhook signature verification failed" }, { status: 400 });
     }
 
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
       const customerEmail = session.customer_details?.email || session.customer_email;
-      const metadata = session.metadata || {};
+      const metadata: Record<string, string> = session.metadata || {};
 
       // Send confirmation notification via SMTP
       const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
@@ -55,15 +55,15 @@ export async function POST(req: NextRequest) {
         await transporter.sendMail({
           from: `"Soluqube Billing" <${senderEmail}>`,
           to: `${alertEmail}, nikhillaky@gmail.com`,
-          subject: `💰 $499 Paid Audit Package Unlocked: ${metadata.lead_company || "Enterprise"} (${customerEmail})`,
+          subject: stripCrlf(`💰 $499 Paid Audit Package Unlocked: ${metadata.lead_company || "Enterprise"} (${customerEmail})`),
           html: `
             <div style="font-family: sans-serif; padding: 20px; color: #1e293b;">
               <h2 style="color: #059669;">🎉 $499 Audit Tie-Out Package Purchased!</h2>
-              <p><strong>Customer:</strong> ${metadata.lead_name || "Lead"} &lt;${customerEmail}&gt;</p>
-              <p><strong>Company:</strong> ${metadata.lead_company || "N/A"}</p>
-              <p><strong>ERP System:</strong> ${metadata.erp_system || "NetSuite"}</p>
-              <p><strong>Contract Scope Value:</strong> $${metadata.contract_value || "100,000"}</p>
-              <p><strong>Stripe Session ID:</strong> ${session.id}</p>
+              <p><strong>Customer:</strong> ${escapeHtml(metadata.lead_name || "Lead")} &lt;${escapeHtml(customerEmail)}&gt;</p>
+              <p><strong>Company:</strong> ${escapeHtml(metadata.lead_company || "N/A")}</p>
+              <p><strong>ERP System:</strong> ${escapeHtml(metadata.erp_system || "NetSuite")}</p>
+              <p><strong>Contract Scope Value:</strong> $${escapeHtml(metadata.contract_value || "100,000")}</p>
+              <p><strong>Stripe Session ID:</strong> ${escapeHtml(session.id)}</p>
               <p>Action: Generate 8-Tab audit-ready workpaper package and deliver within 1 business day.</p>
             </div>
           `,
@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ received: true, type: event.type });
   } catch (err: unknown) {
-    const message = err instanceof Error ? err.message : "Webhook handler failed";
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error("Stripe webhook handler error:", err);
+    return NextResponse.json({ error: "Webhook handler failed" }, { status: 500 });
   }
 }

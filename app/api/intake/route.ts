@@ -1,9 +1,23 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { checkRateLimit, clampField, escapeHtml, getClientIp, isValidSingleEmail, stripCrlf } from "@/lib/formSecurity";
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    // Per-IP limit: 3 requests / 10 min (in-memory, per serverless instance).
+    if (!checkRateLimit(`intake:${getClientIp(req)}`)) {
+      return NextResponse.json({ success: false, error: "Too many requests. Please try again later." }, { status: 429 });
+    }
+
+    let body: any;
+    try {
+      body = await req.json();
+    } catch {
+      return NextResponse.json({ success: false, error: "Invalid request body." }, { status: 400 });
+    }
+    if (!body || typeof body !== "object") {
+      return NextResponse.json({ success: false, error: "Invalid request body." }, { status: 400 });
+    }
     const {
       fullName,
       first_name,
@@ -24,17 +38,30 @@ export async function POST(req: Request) {
       notes
     } = body;
 
-    const contactName = fullName || `${first_name || ""} ${last_name || ""}`.trim() || "Finance Executive";
-    const enterpriseCompany = company || company_name || "Enterprise Lead";
-    const workEmail = (body.workEmail || body.email || body.work_email || "").trim().toLowerCase();
-    const jobTitle = job_title || title || "Finance / Accounting Leader";
-    const erp = revrecStack || erp_system || "Oracle NetSuite (ARM)";
-    const standard = accountingStandard || accounting_standard || "Both / Cross-Border (ASC 606 & Ind AS 115)";
+    // Length-capped, CR/LF-free values (used in subject / headers); HTML-escaped copies for email bodies.
+    const contactName = stripCrlf(clampField(fullName, 200) || `${clampField(first_name, 100)} ${clampField(last_name, 100)}`.trim() || "Finance Executive");
+    const enterpriseCompany = stripCrlf(clampField(company, 200) || clampField(company_name, 200) || "Enterprise Lead");
+    const workEmail = clampField(body.workEmail || body.email || body.work_email, 320).toLowerCase();
+    const jobTitle = stripCrlf(clampField(job_title, 200) || clampField(title, 200) || "Finance / Accounting Leader");
+    const erp = clampField(revrecStack, 200) || clampField(erp_system, 200) || "Oracle NetSuite (ARM)";
+    const standard = clampField(accountingStandard, 200) || clampField(accounting_standard, 200) || "Both / Cross-Border (ASC 606 & Ind AS 115)";
+    const extraScope = clampField(info, 5000) || clampField(notes, 5000) || `${clampField(help, 500)} ${clampField(services, 500)}`.trim();
+    const h = {
+      contactName: escapeHtml(contactName),
+      enterpriseCompany: escapeHtml(enterpriseCompany),
+      jobTitle: escapeHtml(jobTitle),
+      erp: escapeHtml(erp),
+      standard: escapeHtml(standard),
+      extraScope: escapeHtml(extraScope),
+    };
     const referenceId = "REF-" + Math.random().toString(36).substring(2, 8).toUpperCase();
     const timestamp = new Date().toUTCString();
 
     if (!workEmail) {
       return NextResponse.json({ success: false, error: "Corporate work email is required." }, { status: 400 });
+    }
+    if (!isValidSingleEmail(workEmail)) {
+      return NextResponse.json({ success: false, error: "Please provide a single valid work email address." }, { status: 400 });
     }
 
     const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
@@ -78,11 +105,11 @@ export async function POST(req: Request) {
               </tr>
               <tr style="border-bottom: 1px solid #f1f5f9;">
                 <td style="padding: 10px 0; color: #64748b; font-weight: 600;">Full Name & Title:</td>
-                <td style="padding: 10px 0; font-weight: 600; color: #0f172a;">${contactName} (${jobTitle})</td>
+                <td style="padding: 10px 0; font-weight: 600; color: #0f172a;">${h.contactName} (${h.jobTitle})</td>
               </tr>
               <tr style="border-bottom: 1px solid #f1f5f9;">
                 <td style="padding: 10px 0; color: #64748b; font-weight: 600;">Enterprise Company:</td>
-                <td style="padding: 10px 0; font-weight: bold; color: #0f172a;">${enterpriseCompany}</td>
+                <td style="padding: 10px 0; font-weight: bold; color: #0f172a;">${h.enterpriseCompany}</td>
               </tr>
               <tr style="border-bottom: 1px solid #f1f5f9;">
                 <td style="padding: 10px 0; color: #64748b; font-weight: 600;">Corporate Work Email:</td>
@@ -90,20 +117,20 @@ export async function POST(req: Request) {
               </tr>
               <tr style="border-bottom: 1px solid #f1f5f9;">
                 <td style="padding: 10px 0; color: #64748b; font-weight: 600;">Current ERP / Subledger:</td>
-                <td style="padding: 10px 0; color: #0f172a;">${erp}</td>
+                <td style="padding: 10px 0; color: #0f172a;">${h.erp}</td>
               </tr>
               <tr style="border-bottom: 1px solid #f1f5f9;">
                 <td style="padding: 10px 0; color: #64748b; font-weight: 600;">Accounting Standard:</td>
-                <td style="padding: 10px 0; color: #0f172a; font-weight: 600;">${standard}</td>
+                <td style="padding: 10px 0; color: #0f172a; font-weight: 600;">${h.standard}</td>
               </tr>
               <tr style="border-bottom: 1px solid #f1f5f9;">
                 <td style="padding: 10px 0; color: #64748b; font-weight: 600;">3-Contract Drift Audit:</td>
                 <td style="padding: 10px 0; color: #059669; font-weight: bold;">${driftAuditOffer !== false ? "✓ Included at no charge" : "Custom Inquiry"}</td>
               </tr>
-              ${info || notes || help || services ? `
+              ${extraScope ? `
               <tr>
                 <td style="padding: 10px 0; color: #64748b; font-weight: 600; vertical-align: top;">Additional Scope:</td>
-                <td style="padding: 10px 0; color: #334155;">${info || notes || `${help || ""} ${services || ""}`.trim()}</td>
+                <td style="padding: 10px 0; color: #334155;">${h.extraScope}</td>
               </tr>
               ` : ""}
             </table>
@@ -122,53 +149,29 @@ export async function POST(req: Request) {
       `,
     };
 
-    // 2. Autoresponder (To the Prospect)
+    // 2. Autoresponder (To the Prospect) — plain text with no user-supplied fields,
+    // sent only to the single validated address above (security review H4).
     const autoresponderMailOptions = {
       from: `"Nikhil Laky | Soluqube" <${senderEmail}>`,
       to: workEmail,
       replyTo: senderEmail,
-      subject: `Deterministic Audit Initialization: Soluqube Engine Tie-Out Prep (${enterpriseCompany})`,
-      html: `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
-          <div style="background: #0f172a; padding: 24px; color: #ffffff;">
-            <div style="font-size: 11px; font-weight: bold; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Soluqube Deterministic Verification Engine</div>
-            <h2 style="margin: 0; font-size: 20px; font-weight: 700;">Audit Request Confirmed</h2>
-          </div>
-          
-          <div style="padding: 24px; color: #1e293b; font-size: 14px; line-height: 1.6;">
-            <p>Dear ${contactName},</p>
-            
-            <p>Thank you for initializing your <strong>Free 3-Contract Audit-Defense Workpaper</strong> with Soluqube. We have logged your request under reference <strong>${referenceId}</strong>.</p>
-            
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 20px 0;">
-              <h4 style="margin: 0 0 10px 0; font-size: 13px; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em;">Engagement Parameters Confirmed:</h4>
-              <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #334155; space-y: 4px;">
-                <li><strong>Enterprise Entity:</strong> ${enterpriseCompany}</li>
-                <li><strong>Target Standard:</strong> ${standard}</li>
-                <li><strong>General Ledger Subledger:</strong> ${erp}</li>
-                <li><strong>Confidentiality:</strong> Protected under strict Mutual NDA & Zero-Retention Memory Enclave</li>
-              </ul>
-            </div>
-
-            <h3 style="font-size: 15px; font-weight: 700; color: #0f172a; margin-top: 24px;">What Happens Next:</h3>
-            <ol style="padding-left: 20px; font-size: 13px; color: #475569; line-height: 1.7;">
-              <li>Our technical accounting team will provision your transient upload vault within <strong>1 business day</strong>.</li>
-              <li>You can stage up to 3 customer MSAs or billing schedules.</li>
-              <li>Our integer (BigInt) fixed-point DAG will generate your comprehensive <strong>Audit-Defense Workpaper</strong> with clause references for each obligation and reconciliation to the cent.</li>
-            </ol>
-
-            <p style="margin-top: 24px; font-size: 13px; color: #475569;">
-              If you have urgent audit workpapers or upcoming external audit review deadlines, feel free to reply directly to this email.
-            </p>
-
-            <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #64748b;">
-              <strong>Nikhil Laky</strong><br>
-              Founder & Chief Architect, Soluqube<br>
-              <a href="https://soluqube.com" style="color: #4f46e5; text-decoration: none;">soluqube.com</a> • Dual ASC 606 & Ind AS 115 Compliance
-            </div>
-          </div>
-        </div>
-      `,
+      subject: `Soluqube: audit request received (${referenceId})`,
+      text: [
+        "Hello,",
+        "",
+        `Thank you for requesting a Free 3-Contract Audit-Defense Workpaper with Soluqube. We have logged your request under reference ${referenceId}.`,
+        "",
+        "What happens next:",
+        "1. Our technical accounting team will provision your transient upload vault within 1 business day.",
+        "2. You can stage up to 3 customer MSAs or billing schedules.",
+        "3. Our integer (BigInt) fixed-point DAG will generate your Audit-Defense Workpaper with clause references for each obligation and reconciliation to the cent.",
+        "",
+        "If you have urgent audit workpapers or upcoming external audit review deadlines, feel free to reply directly to this email.",
+        "",
+        "Nikhil Laky",
+        "Founder, Soluqube",
+        "https://soluqube.com",
+      ].join("\n"),
     };
 
     // Send both emails in parallel
@@ -185,7 +188,7 @@ export async function POST(req: Request) {
   } catch (error: any) {
     console.error("Audit intake submission error:", error);
     return NextResponse.json(
-      { success: false, error: error.message || "Failed to process intake request" },
+      { success: false, error: "Failed to process intake request" },
       { status: 500 }
     );
   }
