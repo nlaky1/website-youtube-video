@@ -330,7 +330,7 @@ Auditors can independently recompute the Merkle root to verify that past revenue
   },
   {
     slug: "contract-pdf-bounding-box-clause-grounding-auditors",
-    title: "Contract PDF Bounding-Box Clause Grounding: Transforming Unstructured MSAs into Normalized Coordinates for Audit Teams",
+    title: "Contract Clause Evidence for ASC 606: Linking Each Obligation to Its Page and Excerpt",
     subtitle: "How sub-millimeter token coordinate extraction bridges the gap between unstructured signed Master Services Agreements and deterministic revenue recognition subledgers.",
     publishedAt: "October 9, 2026",
     readTime: "8 min read",

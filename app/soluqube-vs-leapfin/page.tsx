@@ -125,7 +125,7 @@ export default function SoluqubeVsLeapfinPage() {
             </span>
           </h1>
           <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
-            Leapfin was built to solve payment event pipelines for high-volume B2C apps. Soluqube is engineered for B2B finance leaders who need to audit unstructured, bespoke legal contracts with sub-millimeter visual grounding and zero-drift integer (BigInt) micro-cent math.
+            Leapfin was built to solve payment event pipelines for high-volume B2C apps. Soluqube is engineered for B2B finance leaders who need to audit unstructured, bespoke legal contracts with clause evidence (page + excerpt) per obligation and integer (BigInt) math that ties to the cent.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
@@ -201,7 +201,7 @@ export default function SoluqubeVsLeapfinPage() {
                 <td className="py-4 px-6 font-medium text-white">Calculation Precision</td>
                 <td className="py-4 px-6">Standard database SQL decimals</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">Integer (BigInt) micro-cent fixed-point DAG</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Guarantees exact $0.00 rounding drift</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Ties to the cent (terminal-period absorption)</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Dual-GAAP (ASC 606 + Ind AS 115)</td>
@@ -282,7 +282,7 @@ export default function SoluqubeVsLeapfinPage() {
               When should a company choose Soluqube over Leapfin?
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              If your business handles custom B2B enterprise software contracts (MSAs, SOWs) with bespoke termination rights, multi-element POB allocations, or cross-border Indian entities, Soluqube is built specifically to read the legal documents and ensure zero-drift audit tie-outs. Leapfin is better suited for consumer brands aggregating millions of micro-transactions from Stripe or Shopify.
+              If your business handles custom B2B enterprise software contracts (MSAs, SOWs) with bespoke termination rights, multi-element POB allocations, or cross-border Indian entities, Soluqube is built specifically to read the legal documents and produce audit tie-outs to the cent. Leapfin is better suited for consumer brands aggregating millions of micro-transactions from Stripe or Shopify.
             </p>
           </div>
           <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/40">

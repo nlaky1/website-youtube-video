@@ -238,7 +238,7 @@ export default function AuditSimulatorPage() {
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-1">
               <div className="font-semibold text-slate-800">Deterministic Model:</div>
-              <p>Terminal-period remainder absorption guarantees that any fractional cents are absorbed into the final period, keeping cumulative recognized revenue identical to total consideration.</p>
+              <p>Terminal-period remainder absorption means any fractional cents are absorbed into the final period, keeping cumulative recognized revenue identical to total consideration.</p>
             </div>
           </div>
 
@@ -614,7 +614,7 @@ export default function AuditSimulatorPage() {
                   <div className="flex items-center gap-2 text-slate-400">
                     <span>Powered by Stripe Payments</span>
                     <span>•</span>
-                    <span>100% Audit Defensibility Guarantee</span>
+                    <span>Hashed, Re-runnable Evidence Workpaper</span>
                   </div>
                 </div>
               </form>
