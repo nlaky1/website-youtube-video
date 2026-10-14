@@ -76,6 +76,12 @@ export default function PricingPage() {
               >
                 Request Free Workpaper &rarr;
               </Link>
+              <Link
+                href="/design-partners"
+                className="block mt-3 text-center text-[11px] font-semibold text-slate-500 hover:text-slate-900 transition-colors"
+              >
+                Or apply as a design partner &rarr;
+              </Link>
             </div>
           </div>
 
