@@ -111,7 +111,8 @@ const markdownComponents: Components = {
   ),
   td: ({ node, ...props }) => <td {...props} className="p-3 text-slate-700 border-b border-slate-100 align-top" />,
   a: ({ node, href = "", children, ...props }) => {
-    const internal = href.startsWith("/") || href.startsWith("#") || /^https:\/\/soluqube\.com(\/|$)/.test(href);
+    const isFile = /\.(csv|json|pdf|xlsx|zip)(\?|#|$)/i.test(href); // downloads must be plain <a>, not client routing
+    const internal = !isFile && (href.startsWith("/") || href.startsWith("#") || /^https:\/\/soluqube\.com(\/|$)/.test(href));
     if (internal) {
       const local = href.replace(/^https:\/\/soluqube\.com/, "") || "/";
       return (
