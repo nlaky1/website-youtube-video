@@ -136,7 +136,7 @@ export async function POST(req: Request) {
             </table>
 
             <div style="margin-top: 24px; padding: 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
-              <a href="mailto:${workEmail}?subject=Soluqube%20Audit%20Vault%20Initialization%20-%20${encodeURIComponent(enterpriseCompany)}&body=Hi%20${encodeURIComponent(contactName.split(' ')[0])},%0A%0AThank%20you%20for%20requesting%20a%20historical%20drift%20audit%20for%20${encodeURIComponent(enterpriseCompany)}.%20I%20have%20initialized%20your%20secure%20enclave%20reference%20${referenceId}.%0A%0ABest%20regards,%0ANikhil%20Laky%0AFounder,%20Soluqube" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none;">
+              <a href="mailto:${workEmail}?subject=Soluqube%20Audit%20Request%20-%20${encodeURIComponent(enterpriseCompany)}&body=Hi%20${encodeURIComponent(contactName.split(' ')[0])},%0A%0AThank%20you%20for%20requesting%20a%20historical%20drift%20audit%20for%20${encodeURIComponent(enterpriseCompany)}.%20I%20have%20logged%20your%20request%20under%20reference%20${referenceId}.%0A%0ABest%20regards,%0ANikhil%20Laky%0AFounder,%20Soluqube" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none;">
                 Reply to Prospect in 1-Click &rarr;
               </a>
             </div>
@@ -162,9 +162,9 @@ export async function POST(req: Request) {
         `Thank you for requesting a Free 3-Contract Audit-Defense Workpaper with Soluqube. We have logged your request under reference ${referenceId}.`,
         "",
         "What happens next:",
-        "1. Our technical accounting team will provision your transient upload vault within 1 business day.",
+        "1. I will reply within 1 business day with how to share your contracts (mutual NDA on request).",
         "2. You can stage up to 3 customer MSAs or billing schedules.",
-        "3. Our integer (BigInt) fixed-point DAG will generate your Audit-Defense Workpaper with clause references for each obligation and reconciliation to the cent.",
+        "3. The integer (BigInt) engine will generate your Audit-Defense Workpaper with clause references for each obligation and reconciliation to the cent.",
         "",
         "If you have urgent audit workpapers or upcoming external audit review deadlines, feel free to reply directly to this email.",
         "",

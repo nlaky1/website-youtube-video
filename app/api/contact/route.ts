@@ -108,9 +108,9 @@ export async function POST(req: Request) {
       text: [
         "Hello,",
         "",
-        "Thank you for reaching out to Soluqube. Our technical accounting team has received your message.",
+        "Thank you for reaching out to Soluqube. I have received your message.",
         "",
-        "We will review your requirements and respond within 1 business day.",
+        "I will review your requirements and respond within 1 business day.",
         "",
         "Nikhil Laky",
         "Founder, Soluqube",

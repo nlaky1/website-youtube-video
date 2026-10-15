@@ -40,7 +40,7 @@ export default function SoluqubeVsMaxioPage() {
       feature: "Primary Source of Truth",
       maxio: "CRM Quotes & Billing Line Items (Salesforce / HubSpot)",
       soluqube: "Signed Legal Agreement (terms you confirm)",
-      advantage: "Soluqube catches unbilled contract amendments & clauses",
+      advantage: "Soluqube starts from the signed contract's clauses, not billing lines",
     },
     {
       feature: "Contract Ingestion & Verification",
@@ -69,8 +69,8 @@ export default function SoluqubeVsMaxioPage() {
     {
       feature: "Internal Controls (SOX 404)",
       maxio: "Standard user permissions (RBAC)",
-      soluqube: "Maker-Checker Dual Control with Submitter Lockout & Schedule Freeze",
-      advantage: "Prevents restatements and unapproved schedule tampering",
+      soluqube: "Maker-checker review (identity-bound approval on the roadmap)",
+      advantage: "Separate submit and approve steps before export",
     },
     {
       feature: "Pricing Model",
@@ -81,8 +81,8 @@ export default function SoluqubeVsMaxioPage() {
     {
       feature: "Time to Value & Onboarding",
       maxio: "60 to 120 days implementation & ERP consultants",
-      soluqube: "< 10 seconds per contract drop (Instant Verification)",
-      advantage: "Instant audit readiness without ripping out existing billing stack",
+      soluqube: "Upload, confirm the extracted terms, then generate the schedule",
+      advantage: "Audit evidence without ripping out existing billing stack",
     },
   ];
 
@@ -181,11 +181,11 @@ export default function SoluqubeVsMaxioPage() {
             <ul className="space-y-2 text-xs text-indigo-200 pt-2 border-t border-white/10">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span>Instant drop-and-audit verification in &lt; 10 seconds</span>
+                <span>Upload a contract, confirm the extracted terms, get the schedule</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span>Predictable flat-fee pricing ($499 self-serve or monthly tiers)</span>
+                <span>Predictable flat-fee pricing ($499 per contract or monthly tiers)</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
@@ -281,7 +281,7 @@ export default function SoluqubeVsMaxioPage() {
               <span>No 4-Month Onboarding or Revenue Volume Tax</span>
             </div>
             <p className="text-slate-600 text-xs leading-relaxed">
-              Maxio charges based on your growing billing volume (punishing you for growing top-line revenue) and requires $5k–$15k in setup fees with 8–12 weeks of data migration. Soluqube operates alongside your existing billing system as an instant contract auditor—delivering results in seconds.
+              Maxio charges based on your growing billing volume (punishing you for growing top-line revenue) and requires $5k–$15k in setup fees with 8–12 weeks of data migration. Soluqube operates alongside your existing billing system: you confirm the extracted terms, then it generates the allocation and schedule.
             </p>
           </div>
         </div>

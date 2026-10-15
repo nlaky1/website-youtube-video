@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Zuora RevPro alternative",
     "revenue accounting automation",
   ],
-  authors: [{ name: "Soluqube Engineering Team", url: "https://soluqube.com" }],
+  authors: [{ name: "Soluqube", url: "https://soluqube.com" }],
   creator: "Soluqube",
   publisher: "Soluqube",
   formatDetection: {
@@ -127,7 +127,7 @@ const structuredData = {
         "Dual Standard ASC 606 & Ind AS 115 Amortization Schedules",
         "Statutory 18% GST Isolation for INR Contracts (Ind AS 115)",
         "ERP-Ready Schedule Export for NetSuite ARM & SAP RAR (Excel + CSV)",
-        "Audit-Ready Evidence Package Generator (8-Tab Excel & JSON-LD)",
+        "Audit-Ready Evidence Package Generator (5-Sheet Excel & JSON)",
       ],
     },
   ],

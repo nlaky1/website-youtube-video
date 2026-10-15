@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
               <p><strong>ERP System:</strong> ${escapeHtml(metadata.erp_system || "NetSuite")}</p>
               <p><strong>Contract Scope Value:</strong> $${escapeHtml(metadata.contract_value || "100,000")}</p>
               <p><strong>Stripe Session ID:</strong> ${escapeHtml(session.id)}</p>
-              <p>Action: Generate 8-Tab audit-ready workpaper package and deliver within 1 business day.</p>
+              <p>Action: Generate the 5-sheet Excel workbook and deliver within 1 business day.</p>
             </div>
           `,
         });

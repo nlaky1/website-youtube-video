@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Engineering & Technical Desk",
-  description: "Get in touch with the Soluqube accounting architecture and engineering team for ERP subledger integration and enterprise POC scoping.",
+  description: "Get in touch with Soluqube's founder about SSP allocation workbooks, ERP schedule exports and pilot scoping.",
   alternates: {
     canonical: "https://soluqube.com/contact",
   },

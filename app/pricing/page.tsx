@@ -13,18 +13,18 @@ export default function PricingPage() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold uppercase font-mono tracking-wider mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            Enterprise Deployment &amp; Audit Advisory Tiers
+            Per-Contract &amp; Subscription Tiers
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
             Institutional Pricing for Deterministic RevRec Precision
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Defend SSP allocations with a deterministic schedule that ties to the cent, enforce cross-document rate caps, and isolate statutory 18% GST on INR contracts.
+            Defend SSP allocations with a deterministic schedule that ties to the cent, a SHA-256-hashed Excel workbook, and statutory 18% GST isolation on INR contracts.
           </p>
         </div>
 
-        {/* 4 Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mb-20">
+        {/* 3 Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch mb-20">
           
           {/* Tier 1: Free 3-Contract Audit-Defense Workpaper */}
           <div className="bg-white border border-slate-200 rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
@@ -64,7 +64,7 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Executive findings presentation with a member of the Soluqube team</span>
+                  <span>Findings walkthrough with the founder</span>
                 </div>
               </div>
             </div>
@@ -89,29 +89,29 @@ export default function PricingPage() {
           <div className="bg-white border border-slate-300 rounded-3xl p-7 shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between">
             <div>
               <div className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-amber-50 text-amber-800 border border-amber-200 mb-4">
-                INSTANT SELF-SERVE
+                PER CONTRACT
               </div>
               <h2 className="text-xl font-bold text-slate-900">On-Demand Contract Audit</h2>
               <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                Upload an MSA + SOW stack, confirm the obligations and prices, and get an integer (BigInt) amortization schedule and audit-ready evidence package.
+                Upload a USD or INR contract PDF, confirm the extracted obligations and prices, and get an integer (BigInt) amortization schedule and a hashed evidence workbook.
               </p>
 
               <div className="my-6 pb-6 border-b border-slate-100">
                 <span className="text-4xl font-extrabold font-mono text-slate-900">$499</span>
-                <span className="text-xs text-slate-500 ml-1.5 font-mono">/ Contract Stack</span>
+                <span className="text-xs text-slate-500 ml-1.5 font-mono">/ Contract</span>
                 <div className="text-[11px] text-amber-700 font-semibold mt-1">
-                  Zero Annual Lock-In • Corporate Card Ready
+                  No annual lock-in
                 </div>
               </div>
 
               <div className="space-y-3 text-xs text-slate-700">
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Full MSA + SOW + Amendment precedence DAG audit</span>
+                  <span>Relative-SSP allocation per obligation (amendments are not supported yet)</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Complete 8-Tab audit-ready Excel workpaper (.xlsx)</span>
+                  <span>5-sheet Excel workbook (.xlsx): Summary, Allocation, Schedule, Clause Evidence, Event Log</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -130,10 +130,10 @@ export default function PricingPage() {
 
             <div className="pt-8">
               <Link
-                href="/audit"
+                href="/book-demo"
                 className="w-full py-3.5 px-4 rounded-xl text-center text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors block shadow-sm"
               >
-                Start $499 Contract Audit &rarr;
+                Book a walkthrough &rarr;
               </Link>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Temporal Precedence DAG cross-document rate cap enforcement</span>
+                  <span>USD and INR contracts; redacted prices, scans, invoices and amendments are refused</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -184,7 +184,7 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Dedicated technical accounting onboarding; custom terms and service levels available on request</span>
+                  <span>Onboarding with the founder; custom terms on request</span>
                 </div>
               </div>
             </div>
@@ -194,60 +194,7 @@ export default function PricingPage() {
                 href="/book-demo"
                 className="w-full py-3.5 px-4 rounded-xl text-center text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 transition-colors block shadow-md"
               >
-                Deploy Continuous Engine &rarr;
-              </Link>
-            </div>
-          </div>
-
-          {/* Tier 4: Sovereign Cloud / On-Premise */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-7 shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-purple-50 text-purple-700 border border-purple-200 mb-4">
-                REGULATED &amp; DEFENSE
-              </div>
-              <h2 className="text-xl font-bold text-slate-900">Sovereign On-Premise</h2>
-              <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                Air-gapped deployment in your private cloud or bare metal for regulated financial and defense entities.
-              </p>
-
-              <div className="my-6 pb-6 border-b border-slate-100">
-                <span className="text-4xl font-extrabold font-mono text-slate-900">Custom</span>
-                <span className="text-xs text-slate-500 ml-1.5 font-mono">/ Annual License</span>
-                <div className="text-[11px] text-purple-700 font-semibold mt-1">
-                  Zero data leaves your security perimeter
-                </div>
-              </div>
-
-              <div className="space-y-3 text-xs text-slate-700">
-                <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Air-gapped deployment in AWS GovCloud, Azure, or On-Prem</span>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>SHA-256 integrity hashes on all exports</span>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Custom ERP adapter engineering &amp; database schema mapping</span>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Security questionnaire and encryption-in-transit documentation on request</span>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>24/7 dedicated engineering support &amp; custom SLAs</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-8">
-              <Link
-                href="/contact"
-                className="w-full py-3.5 px-4 rounded-xl text-center text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200 block shadow-xs"
-              >
-                Contact Enterprise Security &rarr;
+                Book a walkthrough &rarr;
               </Link>
             </div>
           </div>
@@ -266,9 +213,8 @@ export default function PricingPage() {
                 <tr className="border-b border-slate-200 font-mono text-[11px] text-slate-500 uppercase bg-white/70">
                   <th className="py-3 px-4">Feature / Capability</th>
                   <th className="py-3 px-4 text-center">Free Diagnostic ($0)</th>
-                  <th className="py-3 px-4 text-center font-bold text-emerald-800 bg-emerald-50/40">Self-Serve Audit ($499)</th>
+                  <th className="py-3 px-4 text-center font-bold text-emerald-800 bg-emerald-50/40">Per Contract ($499)</th>
                   <th className="py-3 px-4 text-center font-bold text-slate-900 bg-blue-50/50">Continuous Engine ($999/mo)</th>
-                  <th className="py-3 px-4 text-center">Sovereign On-Prem</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">
@@ -277,42 +223,36 @@ export default function PricingPage() {
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Included</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-emerald-50/20">✓ Included</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">✓ Continuous</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Continuous</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 font-semibold text-slate-800">Clause evidence references</td>
                   <td className="py-3.5 px-4 text-center text-slate-700">Up to 3 Contracts</td>
                   <td className="py-3.5 px-4 text-center text-emerald-700 font-semibold bg-emerald-50/20">Full Contract Stack</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Unlimited Ingestion</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">Unlimited Ingestion</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 font-semibold text-slate-800">Ind AS 115 Statutory 18% GST Quarantine (INR contracts)</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Included</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-emerald-50/20">✓ Included</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">✓ Automated</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">✓ Automated</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 font-semibold text-slate-800">ERP-ready schedule export</td>
                   <td className="py-3.5 px-4 text-center text-slate-400">Sample Schedule</td>
                   <td className="py-3.5 px-4 text-center text-emerald-700 font-semibold bg-emerald-50/20">Excel + CSV Export</td>
                   <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Excel + CSV Export (Live Sync on Roadmap)</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">Custom Adapter (Scoped per Engagement)</td>
                 </tr>
                 <tr>
-                  <td className="py-3.5 px-4 font-semibold text-slate-800">Auditor Merkle Tree Pack (JSON-LD)</td>
+                  <td className="py-3.5 px-4 font-semibold text-slate-800">SHA-256-hashed evidence workbook</td>
                   <td className="py-3.5 px-4 text-center text-slate-700">Sample Report</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-emerald-50/20">Full 8-Tab Pack</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Full 8-Tab Pack</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold">Air-gapped Cryptography</td>
+                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-emerald-50/20">Full 5-Sheet Workbook</td>
+                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Full 5-Sheet Workbook</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 font-semibold text-slate-800">Deployment Architecture</td>
                   <td className="py-3.5 px-4 text-center text-slate-700">Advisory Review</td>
-                  <td className="py-3.5 px-4 text-center text-slate-700 bg-emerald-50/20">Instant Self-Serve</td>
+                  <td className="py-3.5 px-4 text-center text-slate-700 bg-emerald-50/20">Hosted app + walkthrough</td>
                   <td className="py-3.5 px-4 text-center text-slate-700 bg-blue-50/30">Multi-Tenant Cloud (encrypted in transit)</td>
-                  <td className="py-3.5 px-4 text-center text-slate-700">Air-gapped VPC / Bare Metal</td>
                 </tr>
               </tbody>
             </table>

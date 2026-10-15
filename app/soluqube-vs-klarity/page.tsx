@@ -75,10 +75,10 @@ export default function SoluqubeVsKlarityPage() {
             </div>
           </div>
           <Link
-            href="/audit"
+            href="/book-demo"
             className="px-3.5 py-1.5 rounded-lg bg-purple-500 hover:bg-purple-400 text-slate-950 text-xs font-semibold transition-all shadow-sm"
           >
-            Start $499 Contract Audit
+            Book a walkthrough
           </Link>
         </div>
       </header>
@@ -196,7 +196,7 @@ export default function SoluqubeVsKlarityPage() {
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Pricing &amp; Contract Terms</td>
-                  <td className="p-3.5 text-purple-400 font-mono font-bold bg-purple-950/20">$499 self-serve / $999/mo SaaS</td>
+                  <td className="p-3.5 text-purple-400 font-mono font-bold bg-purple-950/20">$499 per contract / $999/mo SaaS</td>
                   <td className="p-3.5 text-slate-400 font-mono">Enterprise quotes ($50k–$100k+/year)</td>
                 </tr>
               </tbody>
@@ -214,10 +214,10 @@ export default function SoluqubeVsKlarityPage() {
           </p>
           <div className="pt-2 flex flex-wrap justify-center gap-3">
             <Link
-              href="/audit"
+              href="/book-demo"
               className="px-6 py-3 rounded-lg bg-purple-500 hover:bg-purple-400 text-slate-950 font-bold text-xs transition-colors shadow-lg shadow-purple-500/20"
             >
-              Start Instant Contract Audit ($499)
+              Book a walkthrough
             </Link>
             <Link
               href="/"

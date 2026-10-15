@@ -55,7 +55,7 @@ const steps = [
   },
   {
     title: "Send contracts",
-    body: "Send real contracts, redacted if you prefer. You confirm the obligations and stated prices; the engine does the allocation and schedule.",
+    body: "Send real USD or INR contracts; you may redact names, but prices must stay visible. You confirm the obligations and stated prices; the engine does the allocation and schedule.",
   },
   {
     title: "Get the workpaper",
@@ -66,7 +66,7 @@ const steps = [
 const faqs = [
   {
     q: "How do you handle confidentiality?",
-    a: "You can redact names, counterparties and anything else that isn't needed for the allocation. We use your contracts only to produce your workpapers, and we delete them on request.",
+    a: "You can redact names and counterparties, but the prices must stay visible: the app refuses contracts with redacted prices. We use your contracts only to produce your workpapers, and we delete them on request.",
   },
   {
     q: "What happens after 60 days?",
@@ -147,7 +147,7 @@ export default function DesignPartnersPage() {
               ))}
             </div>
             <p className="mt-6 text-xs text-slate-500 leading-relaxed">
-              Contracts can be redacted. We delete them on request.
+              Names can be redacted; prices must stay visible. We delete contracts on request.
             </p>
           </div>
         </div>

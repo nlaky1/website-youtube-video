@@ -45,7 +45,7 @@ const FormSchema = z.object({
     "NetSuite / SAP Schedule Export",
     "Audit-Defense Workpaper (Free)",
     "Audit Workpaper & Evidence Package",
-    "Sovereign Private Cloud On-Premise",
+    "Self-Hosted Deployment (Not Yet Available)",
   ]),
   info: z.string(),
 });
@@ -259,7 +259,7 @@ export default function ContactForm() {
                               <SelectItem value="ASC 606 & Ind AS 115 Dual Audit">ASC 606 &amp; Ind AS 115 Dual Audit</SelectItem>
                               <SelectItem value="NetSuite / SAP Schedule Export">NetSuite / SAP Schedule Export</SelectItem>
                               <SelectItem value="Audit Workpaper & Evidence Package">Audit Workpaper &amp; Evidence Package</SelectItem>
-                              <SelectItem value="Sovereign Private Cloud On-Premise">Sovereign Private Cloud On-Premise</SelectItem>
+                              <SelectItem value="Self-Hosted Deployment (Not Yet Available)">Self-Hosted Deployment (Not Yet Available)</SelectItem>
                             </SelectContent>
                           </Select>
                           <FormMessage className="text-[11px]" />

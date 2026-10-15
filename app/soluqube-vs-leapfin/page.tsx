@@ -71,10 +71,10 @@ export default function SoluqubeVsLeapfinPage() {
               Architecture Teardown
             </span>
             <Link
-              href="/audit"
+              href="/book-demo"
               className="text-xs font-semibold px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-sm"
             >
-              Audit Contract ($499)
+              Book a walkthrough
             </Link>
           </div>
         </div>
@@ -186,9 +186,9 @@ export default function SoluqubeVsLeapfinPage() {
                 <td className="py-4 px-6 text-emerald-400 font-medium">No data pipeline to build</td>
               </tr>
               <tr>
-                <td className="py-4 px-6 font-medium text-white">Self-Serve Pricing</td>
+                <td className="py-4 px-6 font-medium text-white">Published Pricing</td>
                 <td className="py-4 px-6">Enterprise sales (pricing not published)</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">$499/audit or $999/mo continuous</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">$499/contract or $999/mo continuous</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">No sales procurement roadblocks</td>
               </tr>
             </tbody>
@@ -200,10 +200,10 @@ export default function SoluqubeVsLeapfinPage() {
       <section className="py-16 bg-slate-900/40 border-y border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-            Self-Serve ROI vs. Heavy Data Pipeline
+            Per-Contract Pricing vs. Heavy Data Pipeline
           </h2>
           <p className="text-sm text-slate-400 mb-8">
-            Compare annual spend for Leapfin annual enterprise contracts versus Soluqube self-serve contract audits.
+            Compare annual spend for Leapfin annual enterprise contracts versus Soluqube per-contract workbooks.
           </p>
 
           <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 text-left max-w-2xl mx-auto">
@@ -228,7 +228,7 @@ export default function SoluqubeVsLeapfinPage() {
                 <div className="text-xs text-rose-400 mt-1">Lengthy setup & pipeline fees</div>
               </div>
               <div className="border-l border-slate-800 pl-6">
-                <div className="text-xs uppercase tracking-wider text-cyan-400 font-semibold mb-1">Soluqube (Self-Serve)</div>
+                <div className="text-xs uppercase tracking-wider text-cyan-400 font-semibold mb-1">Soluqube (Per Contract)</div>
                 <div className="text-2xl sm:text-3xl font-extrabold text-cyan-300">
                   ${soluqubePayAsYouGo.toLocaleString()}
                 </div>
@@ -275,10 +275,10 @@ export default function SoluqubeVsLeapfinPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/audit"
+              href="/book-demo"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-sm transition-all shadow-lg"
             >
-              Start Instant Contract Audit ($499)
+              Book a walkthrough
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link

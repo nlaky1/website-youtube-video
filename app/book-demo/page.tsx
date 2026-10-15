@@ -134,7 +134,7 @@ export default function BookDemoPage() {
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="font-bold text-slate-900">18% GST Statutory Firewall:</span> MCA Schedule III isolation protecting US GAAP revenue from tax commingling.
+                  <span className="font-bold text-slate-900">18% GST Statutory Firewall:</span> MCA Schedule III isolation for INR contracts, keeping tax out of revenue.
                 </div>
               </div>
             </div>
@@ -149,8 +149,8 @@ export default function BookDemoPage() {
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center gap-3">
               <Lock className="w-5 h-5 text-slate-600 shrink-0" />
               <div className="text-xs text-slate-600">
-                <span className="font-semibold text-slate-900 block">Bank-Grade Confidentiality</span>
-                Protected under mutual enterprise NDA prior to data review. Zero training on customer contract data.
+                <span className="font-semibold text-slate-900 block">Confidentiality</span>
+                Mutual NDA on request before you share any contract. Uploaded contracts are not used to train models.
               </div>
             </div>
           </div>
@@ -331,7 +331,7 @@ export default function BookDemoPage() {
                     </button>
 
                     <p className="text-[11px] text-slate-400 text-center leading-relaxed">
-                      By submitting, you agree to our Enterprise Audit terms. Confidentiality protected under mutual NDA.
+                      Mutual NDA on request before you share any contract.
                     </p>
                   </form>
                 ) : (
@@ -343,13 +343,13 @@ export default function BookDemoPage() {
 
                     <div>
                       <span className="text-xs font-mono uppercase font-bold text-emerald-700 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 inline-block mb-2">
-                        Audit Request Logged — Merkle Anchor Initialized
+                        Request Logged
                       </span>
                       <h3 className="text-xl font-bold text-slate-900">
-                        Verification Parameters Cryptographically Anchored
+                        Request Received
                       </h3>
                       <p className="text-xs text-slate-600 max-w-md mx-auto mt-2 leading-relaxed">
-                        Our technical accounting team will review your contract parameters and reach out within 1 business day with your secure upload vault.
+                        Nikhil, the founder, will review your details and reply within 1 business day with next steps.
                       </p>
                     </div>
 
@@ -360,12 +360,8 @@ export default function BookDemoPage() {
                         <span className="font-bold text-slate-900">{submittedData.referenceId}</span>
                       </div>
                       <div className="flex justify-between text-slate-500">
-                        <span>Assigned Desk:</span>
-                        <span className="text-slate-800 font-semibold">Priority Accounting Queue #1</span>
-                      </div>
-                      <div className="flex justify-between text-slate-500 truncate">
-                        <span>Merkle Root:</span>
-                        <span className="text-slate-800 font-semibold truncate max-w-[200px]">{submittedData.merkleRoot}</span>
+                        <span>Reviewed by:</span>
+                        <span className="text-slate-800 font-semibold">Nikhil (founder)</span>
                       </div>
                       <div className="flex justify-between text-slate-500">
                         <span>Selected Standard:</span>

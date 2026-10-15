@@ -32,7 +32,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "8 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606", "Ind AS 115", "GST Isolation", "Dual Standard", "External Audit"],
@@ -139,7 +139,7 @@ For the wider differences between the standards, see the [Ind AS 115 vs ASC 606 
     readTime: "6 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606", "Rounding Policy", "Revenue Schedules", "Integer Arithmetic"],
@@ -206,7 +206,7 @@ It proves the schedule ties to the contract value and that the result is reprodu
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606-10-25", "Contract Modifications", "SaaS Accounting", "Decision Tree"],
@@ -317,7 +317,7 @@ For related judgements, see [principal vs agent under ASC 606](/blog/principal-v
     readTime: "6 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["Audit Evidence", "Merkle Trees", "External Audit", "Revenue Recognition"],
@@ -390,7 +390,7 @@ Judgement memos, such as a [principal vs agent assessment](/blog/principal-vs-ag
     readTime: "7 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["Clause Evidence", "Audit Evidence", "Contract Review", "External Audit"],
@@ -479,7 +479,7 @@ An Excel workpaper and a JSON evidence pack with the page and excerpt for every 
     readTime: "8 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["PCAOB QC 1000", "ASC 606", "AI in Finance", "External Audit"],
@@ -575,7 +575,7 @@ Contract-modification accounting is on the roadmap and is not automated today. F
     readTime: "8 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["NetSuite ARM", "ASC 606", "Rounding Policy", "Revenue Schedules", "External Audit"],
@@ -710,7 +710,7 @@ The cents are the easy part. The judgement auditors test is the SSP behind the a
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606", "Standalone Selling Price", "SSP Allocation", "Multi-Element Bundles", "Ind AS 115"],
@@ -839,7 +839,7 @@ For a gross vs net question that comes before the allocation, see [principal vs 
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["Maxio Alternatives", "ASC 606 Software", "Revenue Subledger", "SaaSOptics Replacement", "Audit Readiness"],
@@ -951,7 +951,7 @@ When choosing a tool to replace or sit beside Maxio, ask four questions:
     readTime: "12 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["Ind AS 115", "ASC 606", "Dual-GAAP", "GST Isolation", "MCA Schedule III", "Cross-Border SaaS"],
@@ -1052,7 +1052,7 @@ A related point on gross vs net: GST is excluded because it is collected for the
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["Revenue Rounding", "ASC 606", "Excel", "NetSuite ARM", "Audit Workpapers"],
@@ -1156,7 +1156,7 @@ The cents are the easy part; auditors spend their time on the SSP behind the all
     readTime: "8 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["Zuora RevPro Alternative", "ASC 606 Implementation", "Revenue Subledger", "CFO Advisory", "Ind AS 115"],
@@ -1249,7 +1249,7 @@ Request it as a [free 3-contract audit-defense workpaper](/book-demo). For other
     readTime: "6 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606", "SSP Allocation", "Rounding Policy", "Standalone Selling Price", "Ind AS 115"],
@@ -1391,7 +1391,7 @@ To run your own bundle, enter the transaction price, obligations and SSPs in the
     readTime: "8 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606", "Principal vs Agent", "Gross vs Net", "IFRS 15", "Ind AS 115"],
@@ -1567,7 +1567,7 @@ To try it on a sample contract, open the [Soluqube sandbox](https://app.soluqube
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
+      role: "Technical Accounting Content",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
     tags: ["ASC 606", "Standalone Selling Price", "SSP Disclosure", "10-K Analysis", "Original Research"],

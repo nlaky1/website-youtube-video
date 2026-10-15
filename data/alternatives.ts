@@ -340,7 +340,7 @@ export const VENDORS: Record<string, VendorProfile> = {
       "Free 3-contract audit-defense workpaper to start; no implementation project.",
     ],
     limits: [
-      "Early-stage product with a small customer base.",
+      "Early-stage product built by a solo founder; no published customer references yet.",
       "You confirm the obligations and stated prices; contract extraction is heuristic, not automatic.",
       "No billing or usage-based billing, and no ERP integration: you review and post Excel/CSV exports yourself.",
       "Contract-modification accounting (prospective and cumulative catch-up) is on the roadmap, not built.",

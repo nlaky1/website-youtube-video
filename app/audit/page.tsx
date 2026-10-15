@@ -79,33 +79,26 @@ export default function AuditSimulatorPage() {
     setIsSubmitting(true);
     setCheckoutError(null);
 
-    // If Paid Tier selected -> redirect to Stripe Checkout
+    // Paid tier: no self-serve checkout yet. Log the request, then send the buyer to book a walkthrough.
     if (auditTier === "paid_499") {
       try {
-        const res = await fetch("/api/checkout", {
+        await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             name: formName,
             email: formEmail,
             company: formCompany,
+            brand: "soluqube",
             erp: formErp,
-            contractValue,
-            notes: formNotes,
+            message: `Interested in the $499 per-contract workbook for ${formCompany}. Primary ERP: ${formErp}. Scope Notes: ${formNotes}`
           }),
         });
-        const data = await res.json();
-        if (data.success && data.url) {
-          window.location.href = data.url;
-          return;
-        } else {
-          setCheckoutError(data.error || "Unable to initiate Stripe checkout. Falling back to manual intake.");
-        }
       } catch {
-        setCheckoutError("Network error while connecting to payment gateway.");
-      } finally {
-        setIsSubmitting(false);
+        // best effort; the booking page captures the details again
       }
+      window.location.href = "https://soluqube.com/book-demo";
+      return;
     }
 
     // Free Tier submission
@@ -284,7 +277,7 @@ export default function AuditSimulatorPage() {
                   AUDIT-READY EVIDENCE
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase tracking-wider font-bold text-emerald-700">Soluqube BigInt DAG</span>
+                  <span className="text-xs font-mono uppercase tracking-wider font-bold text-emerald-700">Soluqube BigInt Engine</span>
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
                 </div>
                 <div>
@@ -363,13 +356,13 @@ export default function AuditSimulatorPage() {
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="text-center space-y-3">
               <span className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-mono font-semibold uppercase tracking-wider border border-indigo-500/30">
-                Audit Defense Intake & Instant Tie-Out
+                Audit Defense Intake
               </span>
               <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
                 Request Your Contract Drift Audit Package
               </h2>
               <p className="text-slate-400 text-sm max-w-xl mx-auto">
-                Submit 2 or 3 of your most complex multi-element or ramp contracts. Choose between our complimentary 24-hour review or unlock instant priority audit-ready workpapers.
+                Submit 2 or 3 of your most complex multi-element or ramp contracts. Choose a complimentary review, or book a walkthrough of the $499 per-contract workbook.
               </p>
             </div>
 
@@ -406,7 +399,7 @@ export default function AuditSimulatorPage() {
                 <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
                 <h3 className="text-xl font-bold text-white">Audit Request Received!</h3>
                 <p className="text-emerald-200 text-sm max-w-md mx-auto">
-                  Thank you, {formName}. Nikhil from the Soluqube audit defense team will reach out directly at <span className="font-mono underline">{formEmail}</span> to coordinate your contract tie-out package.
+                  Thank you, {formName}. Nikhil, Soluqube's founder, will reach out directly at <span className="font-mono underline">{formEmail}</span> to coordinate your contract tie-out package.
                 </p>
               </div>
             ) : (
@@ -424,35 +417,31 @@ export default function AuditSimulatorPage() {
                   >
                     <div className="absolute top-4 right-4">
                       <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500 text-white uppercase tracking-wider">
-                        Most Popular
+                        Per Contract
                       </span>
                     </div>
                     <div className="flex items-center gap-2 mb-2">
                       <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${auditTier === "paid_499" ? "border-indigo-400 bg-indigo-500" : "border-slate-500"}`}>
                         {auditTier === "paid_499" && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
                       </div>
-                      <h4 className="font-bold text-white text-base">Priority Tie-Out Package</h4>
+                      <h4 className="font-bold text-white text-base">Per-Contract Workbook</h4>
                     </div>
                     <div className="flex items-baseline gap-1.5 mb-2">
                       <span className="text-2xl font-black text-white">$499</span>
-                      <span className="text-xs text-slate-400">/ one-time payment</span>
+                      <span className="text-xs text-slate-400">/ contract</span>
                     </div>
                     <ul className="text-xs text-slate-300 space-y-1.5 pt-1">
                       <li className="flex items-center gap-1.5 text-emerald-400">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                        <span>Instant Priority Queue (4-hr turnaround)</span>
+                        <span>Walkthrough with the founder</span>
                       </li>
                       <li className="flex items-center gap-1.5 text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
-                        <span>Full 8-Tab Audit-Ready Workpapers</span>
+                        <span>5-Sheet Excel Workbook (SHA-256 hashed)</span>
                       </li>
                       <li className="flex items-center gap-1.5 text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
-                        <span>Contract Clause Evidence Map</span>
-                      </li>
-                      <li className="flex items-center gap-1.5 text-slate-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
-                        <span>Stripe receipt & enterprise tax invoice</span>
+                        <span>Clause Evidence (page + excerpt)</span>
                       </li>
                     </ul>
                   </div>
@@ -596,7 +585,7 @@ export default function AuditSimulatorPage() {
                   ) : auditTier === "paid_499" ? (
                     <>
                       <Sparkles className="w-4 h-4 text-indigo-300" />
-                      <span>Unlock Priority Audit Package ($499 via Stripe)</span>
+                      <span>Book a walkthrough</span>
                     </>
                   ) : (
                     <>
@@ -609,10 +598,10 @@ export default function AuditSimulatorPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2 pt-1 border-t border-slate-800">
                   <div className="flex items-center gap-1.5">
                     <Lock className="w-3.5 h-3.5 text-slate-400" />
-                    <span>256-Bit SSL Encrypted. Strict NDA protected.</span>
+                    <span>Encrypted in transit (HTTPS). Mutual NDA on request.</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-400">
-                    <span>Powered by Stripe Payments</span>
+                    <span>No payment is taken on this page</span>
                     <span>•</span>
                     <span>Hashed, Re-runnable Evidence Workpaper</span>
                   </div>

@@ -72,10 +72,10 @@ export default function SoluqubeVsRightRevPage() {
               Competitive Breakdown
             </span>
             <Link
-              href="/audit"
+              href="/book-demo"
               className="text-xs font-semibold px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black transition-all shadow-sm"
             >
-              Audit Contract ($499)
+              Book a walkthrough
             </Link>
           </div>
         </div>
@@ -195,8 +195,8 @@ export default function SoluqubeVsRightRevPage() {
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Pricing Model</td>
                 <td className="py-4 px-6">$30,000–$60,000/yr + implementation fees</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">$499/audit or $999/mo continuous</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Predictable self-serve ROI</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">$499/contract or $999/mo continuous</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Published per-contract pricing</td>
               </tr>
             </tbody>
           </table>
@@ -210,7 +210,7 @@ export default function SoluqubeVsRightRevPage() {
             Interactive Cost & Commitment Calculator
           </h2>
           <p className="text-sm text-slate-400 mb-8">
-            Compare annual spend for RightRev enterprise contracts versus Soluqube self-serve contract audits.
+            Compare annual spend for RightRev enterprise contracts versus Soluqube per-contract workbooks.
           </p>
 
           <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 text-left max-w-2xl mx-auto">
@@ -290,10 +290,10 @@ export default function SoluqubeVsRightRevPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/audit"
+              href="/book-demo"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold text-sm transition-all shadow-lg"
             >
-              Start Instant Contract Audit ($499)
+              Book a walkthrough
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link

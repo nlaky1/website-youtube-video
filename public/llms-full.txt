@@ -2,7 +2,7 @@
 
 ## System Architecture & Authority
 
-Soluqube is a deterministic ASC 606 and Ind AS 115 revenue allocation and amortisation engine for Controllers, revenue accountants, CPA firms and the external auditors who review their work. When an auditor questions a standalone selling price (SSP) allocation or a contract amendment, Soluqube produces the deterministic allocation, the full-term schedule that ties to $0.00, and a hashed evidence workpaper. Patent Pending (App. No. 202621096305).
+Soluqube is a deterministic ASC 606 and Ind AS 115 revenue allocation and amortisation engine for Controllers, revenue accountants, CPA firms and the external auditors who review their work. When an auditor questions a standalone selling price (SSP) allocation, Soluqube produces the deterministic allocation, the full-term schedule that ties to $0.00, and a hashed evidence workpaper. Patent Pending (App. No. 202621096305).
 
 ## Canonical Endpoints & Citation Maps
 - **Marketing & Sales Hub**: https://soluqube.com/

@@ -211,11 +211,11 @@ export default function Home() {
       telemetry: "Ending deferred: $0.00 • terminal-period absorption • 18% GST isolated (INR contracts)"
     },
     client_portal: {
-      title: "Multi-Entity Client Advisory Hub",
-      badge: "ENTERPRISE VAULT",
-      description: "Secure onboarding portal with append-only contract versioning (`DOC:rev2.0`), zero-retention session telemetry, and automated audit-ready evidence center.",
+      title: "Client Portal",
+      badge: "ACCOUNT PORTAL",
+      description: "Upload a contract, confirm the extracted terms, and download the hashed workbook. Uploaded PDFs are processed in memory and are not stored in the database.",
       image: "/images/product/actual-client-portal.png",
-      telemetry: "Encrypted in Transit • Zero-Retention Telemetry • SHA-256 Integrity Hashes on Exports"
+      telemetry: "Encrypted in Transit • Uploads Not Stored • SHA-256 Integrity Hashes on Exports"
     },
     erp_defense: {
       title: "ERP-Ready Schedule Export & Audit Evidence Center",
@@ -236,8 +236,8 @@ export default function Home() {
       a: "Cross-border software contracts often commingle gross customer billing with Indian indirect taxes (18% IGST / CGST / SGST). Under Ind AS 115.47 and MCA Schedule III Division II, statutory taxes cannot be recognized as revenue. For INR contracts, Soluqube isolates the 18% GST into segregated general ledger liability accounts before net consideration is allocated across standalone performance obligations."
     },
     {
-      q: "How does Soluqube enforce cross-document rate caps between MSAs, SOWs, and Amendments?",
-      a: "Instead of relying on manual reconciliations where contractor invoices exceed negotiated master hourly rate caps, Soluqube models contract hierarchies as Directed Acyclic Graphs (DAGs). The engine evaluates parent Master Services Agreements first, validating temporal precedence before any downstream SOW or amendment line item is included in the allocation."
+      q: "Does Soluqube handle contract amendments and modifications?",
+      a: "Not yet. Soluqube processes one USD or INR customer contract at a time: it allocates the transaction price on relative standalone selling prices and builds the full-term schedule. It refuses amendments, invoices, scanned PDFs and contracts with redacted prices. Contract-modification accounting is on the roadmap; today you assess a modification under ASC 606-10-25-10 to 25-13 yourself."
     },
     {
       q: "What integrations are supported for ERP general ledgers and billing engines?",
@@ -245,18 +245,16 @@ export default function Home() {
     },
     {
       q: "What deliverables does Soluqube produce for audit readiness?",
-      a: "Soluqube generates an 8-tab variance Excel workpaper with formula-driven clause amortizations and an audit-ready JSON evidence pack containing clause evidence (page + excerpt) per obligation, SHA-256 hashes, and a Merkle root computed on the export, so your auditor can re-run it and get identical output."
+      a: "Soluqube generates a 5-sheet Excel workbook (Summary, Allocation, Schedule, Clause Evidence, Event Log) and a JSON evidence pack containing clause evidence (page + excerpt) per obligation, SHA-256 hashes, and a Merkle root computed on the export, so your auditor can re-run it and get identical output."
     }
   ];
 
   // FAQPage JSON-LD for the FAQ that is visible on this page only (SEO audit 2026-10-15, C1).
-  // The rate-cap DAG answer is left out of the schema: that route has no UI today.
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": "https://soluqube.com/#faq",
     mainEntity: faqs
-      .filter((_, i) => i !== 2)
       .map((faq) => ({
         "@type": "Question",
         name: faq.q,
@@ -295,7 +293,7 @@ export default function Home() {
 
           {/* Subheading */}
           <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal">
-            When your auditor questions a standalone selling price allocation or a contract amendment, Soluqube produces the deterministic allocation, the full-term schedule that ties to $0.00, and a hashed evidence workpaper — integer arithmetic under ASC 606 and Ind AS 115, not a spreadsheet.
+            When your auditor questions a standalone selling price allocation, Soluqube produces the deterministic allocation, the full-term schedule that ties to $0.00, and a hashed evidence workpaper — integer arithmetic under ASC 606 and Ind AS 115, not a spreadsheet.
           </p>
 
           {/* Dual Call-to-Action */}
@@ -601,23 +599,23 @@ export default function Home() {
                   <Layers className="w-5 h-5" />
                 </div>
                 <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-purple-50 text-purple-700 border border-purple-200 mb-3">
-                  UNAUTHORIZED MARGIN LEAKAGE
+                  EVIDENCE GAP RISK
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">
-                  Cross-Document Rate-Cap Overbilling
+                  Allocations Detached from the Contract
                 </h3>
                 <div className="text-xs text-slate-600 leading-relaxed space-y-3">
                   <div className="p-3 rounded-lg bg-slate-50 border border-slate-200/80 font-sans">
-                    <span className="font-bold text-slate-800">The Vulnerability:</span> Individual Statements of Work (SOWs) and vendor contractor invoices often submit line items that exceed negotiated master hourly rate caps in the foundational MSA, escaping manual spreadsheet reconciliations.
+                    <span className="font-bold text-slate-800">The Vulnerability:</span> Spreadsheet allocations rarely record which clause each obligation and price came from, so the auditor has to re-trace the contract by hand.
                   </div>
                   <div className="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950 font-sans">
-                    <span className="font-bold text-emerald-900">Soluqube Solution:</span> Directed Acyclic Graph (DAG) temporal precedence engine evaluates parent agreements first, flagging SOW line items that exceed the MSA rate cap before they enter the schedule.
+                    <span className="font-bold text-emerald-900">Soluqube Solution:</span> Soluqube records the page and excerpt behind each obligation and price, and you confirm the terms before the schedule is built.
                   </div>
                 </div>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                <span>Audit Risk: SEVERE</span>
-                <span className="text-emerald-700 font-bold">DAG Precedence Lock</span>
+                <span>Audit Risk: HIGH</span>
+                <span className="text-emerald-700 font-bold">Page + Excerpt Evidence</span>
               </div>
             </div>
 
@@ -638,7 +636,7 @@ export default function Home() {
                     <span className="font-bold text-slate-800">The Vulnerability:</span> Cross-border enterprise software groups frequently contaminate US GAAP revenue recognition by commingling 18% Indian GST within gross bookings, overstating revenue under Ind AS 115 and MCA Schedule III.
                   </div>
                   <div className="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950 font-sans">
-                    <span className="font-bold text-emerald-900">Soluqube Solution:</span> For INR contracts, Soluqube isolates CGST, SGST, and IGST into separate Schedule III liability lines before net consideration is allocated and amortised.
+                    <span className="font-bold text-emerald-900">Soluqube Solution:</span> For INR contracts, Soluqube isolates the 18% GST into a Schedule III liability line before net consideration is allocated and amortised.
                   </div>
                 </div>
               </div>
@@ -731,27 +729,11 @@ export default function Home() {
 
                 <tr>
                   <td className="py-4 px-5 font-semibold text-slate-900">
-                    <div>Cross-Document Rate Cap Enforcement</div>
-                    <div className="text-[11px] text-slate-500 font-normal">MSA vs. SOW hourly rate override control</div>
-                  </td>
-                  <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
-                    Temporal Precedence DAGs
-                  </td>
-                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
-                    Manual Cross-Referencing
-                  </td>
-                  <td className="py-4 px-5 text-center text-rose-600 font-medium">
-                    Siloed by Transaction Record
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="py-4 px-5 font-semibold text-slate-900">
                     <div>Audit-Ready Evidence Pack</div>
-                    <div className="text-[11px] text-slate-500 font-normal">Cryptographic proof for audit committee sampling</div>
+                    <div className="text-[11px] text-slate-500 font-normal">SHA-256 hash your auditor can re-compute</div>
                   </td>
                   <td className="py-4 px-5 text-center text-emerald-700 font-bold bg-blue-50/30">
-                    8-Tab Excel &amp; JSON-LD Evidence Pack
+                    5-Sheet Excel &amp; JSON Evidence Pack
                   </td>
                   <td className="py-4 px-5 text-center text-rose-600 font-medium">
                     Manual Workpaper Preparation
@@ -851,7 +833,7 @@ export default function Home() {
                 Request a Free 3-Contract Audit-Defense Workpaper
               </h2>
               <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-                Provide your corporate parameters below. Our technical accounting team will run up to 3 of your complex customer agreements through our 5-Gate deterministic engine and deliver the SSP allocation, the full-term schedule that ties to the cent, and a hashed evidence workpaper.
+                Provide your corporate parameters below. Nikhil, the founder, will personally run up to 3 of your complex customer agreements through our 5-Gate deterministic engine and deliver the SSP allocation, the full-term schedule that ties to the cent, and a hashed evidence workpaper.
               </p>
 
               <div className="mt-8 space-y-4 text-xs text-slate-700">
@@ -860,7 +842,7 @@ export default function Home() {
                     ✓
                   </div>
                   <div>
-                    <strong className="text-slate-900">Mutual NDA Protection:</strong> All uploaded agreements, pricing tables, and amendment schedules remain under strict legal privilege.
+                    <strong className="text-slate-900">Mutual NDA on Request:</strong> We sign a mutual NDA before you share any agreement.
                   </div>
                 </div>
 
@@ -869,7 +851,7 @@ export default function Home() {
                     ✓
                   </div>
                   <div>
-                    <strong className="text-slate-900">Zero-Retention Enclave:</strong> Contracts are parsed in transient, memory-only enclaves with zero persistent file exposure.
+                    <strong className="text-slate-900">In-Memory Processing:</strong> Uploaded contract PDFs are processed in memory and are not stored in our database.
                   </div>
                 </div>
 
@@ -1067,7 +1049,7 @@ export default function Home() {
                       Request Received
                     </h3>
                     <p className="text-xs text-slate-600 max-w-md mx-auto mt-2 leading-relaxed">
-                      Our technical accounting team will reach out within 1 business day with your secure upload vault.
+                      Nikhil, the founder, will reply within 1 business day with next steps for sharing your contracts.
                     </p>
                   </div>
 
@@ -1175,8 +1157,8 @@ export default function Home() {
                 <li><a href="/book-demo" className="hover:text-slate-950 transition-colors">Free Audit-Defense Workpaper</a></li>
                 <li><a href="https://www.crunchbase.com/organization/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Crunchbase <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
                 <li><a href="https://www.linkedin.com/company/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">LinkedIn <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
-                <li><span className="text-slate-500">Mutual NDA Protection</span></li>
-                <li><span className="text-slate-500">Enclave Zero Retention</span></li>
+                <li><span className="text-slate-500">Mutual NDA on Request</span></li>
+                <li><span className="text-slate-500">Uploads Processed in Memory</span></li>
                 <li><span className="text-slate-500">&copy; 2026 Soluqube</span></li>
               </ul>
             </div>

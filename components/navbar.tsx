@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       desc: "Integer arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption."
     },
     {
-      title: "Contract Modification Precedence DAG",
+      title: "Contract Modification Decision Tree",
       href: "/blog/contract-modification-precedence-dag-asc-606-10-25-13",
       desc: "How catch-up vs prospective treatment is chosen (engine support on the roadmap)."
     },

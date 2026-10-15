@@ -33,8 +33,8 @@ export default function SoluqubeVsTrullionPage() {
       {
         "@type": "TechArticle",
         "@id": "https://soluqube.com/soluqube-vs-trullion#article",
-        "headline": "Soluqube vs Trullion: Self-Serve Dual-GAAP Revenue Recognition Alternative",
-        "description": "Comparison between Soluqube and Trullion for ASC 606 & Ind AS 115 revenue recognition. Learn why Soluqube's self-serve $499 audit model, integer (BigInt) micro-cent math, and statutory Indian GST isolation compare with enterprise contracts (pricing not published).",
+        "headline": "Soluqube vs Trullion: Per-Contract Dual-GAAP Revenue Recognition Alternative",
+        "description": "Comparison between Soluqube and Trullion for ASC 606 & Ind AS 115 revenue recognition. Learn why Soluqube's $499 per-contract model, integer (BigInt) micro-cent math, and statutory Indian GST isolation compare with enterprise contracts (pricing not published).",
         "author": {
           "@type": "Organization",
           "name": "Soluqube Systems",
@@ -79,10 +79,10 @@ export default function SoluqubeVsTrullionPage() {
             </div>
           </div>
           <Link
-            href="/audit"
+            href="/book-demo"
             className="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-semibold transition-all shadow-sm"
           >
-            Start $499 Contract Audit
+            Book a walkthrough
           </Link>
         </div>
       </header>
@@ -95,10 +95,10 @@ export default function SoluqubeVsTrullionPage() {
             <span>EXECUTIVE COMPETITIVE ANALYSIS &bull; 2026 EDITION</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-            The Self-Serve Dual-GAAP Alternative to Trullion.
+            The Per-Contract Dual-GAAP Alternative to Trullion.
           </h1>
           <p className="text-base text-slate-300 leading-relaxed">
-            Trullion sells <span className="text-rose-400 font-semibold">annual enterprise contracts</span> (pricing not published) through a sales-qualification process, and does not advertise <strong className="text-white">Indian GAAP (Ind AS 115)</strong> support or statutory GST isolation. Soluqube gives finance leaders instant, self-serve contract verification with integer (BigInt) micro-cent precision starting at <span className="text-emerald-400 font-semibold">$499 per audit</span>.
+            Trullion sells <span className="text-rose-400 font-semibold">annual enterprise contracts</span> (pricing not published) through a sales-qualification process, and does not advertise <strong className="text-white">Indian GAAP (Ind AS 115)</strong> support or statutory GST isolation. Soluqube gives finance leaders per-contract SSP allocation with integer (BigInt) micro-cent precision starting at <span className="text-emerald-400 font-semibold">$499 per contract</span>.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ export default function SoluqubeVsTrullionPage() {
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Instant Self-Serve:</strong> $499 per contract audit or $999/mo flat. No mandatory 6-figure contracts.</span>
+                <span><strong>Per-Contract Pricing:</strong> $499 per contract or $999/mo flat. No mandatory 6-figure contracts.</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -198,7 +198,7 @@ export default function SoluqubeVsTrullionPage() {
               <tbody className="divide-y divide-slate-800/60">
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Pricing Model</td>
-                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">$499 per audit / $999/mo SaaS</td>
+                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">$499 per contract / $999/mo SaaS</td>
                   <td className="p-3.5 text-slate-400 font-mono">Enterprise contract (pricing not published)</td>
                 </tr>
                 <tr>
@@ -296,10 +296,10 @@ export default function SoluqubeVsTrullionPage() {
           </p>
           <div className="pt-2 flex flex-wrap justify-center gap-3">
             <Link
-              href="/audit"
+              href="/book-demo"
               className="px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-colors shadow-lg shadow-emerald-500/20"
             >
-              Start Instant Contract Audit ($499)
+              Book a walkthrough
             </Link>
             <Link
               href="/"
