@@ -1557,5 +1557,164 @@ The allocation and schedule run in integer arithmetic, rounded to cents, with a 
 
 To try it on a sample contract, open the [Soluqube sandbox](https://app.soluqube.com/). Finance teams who want to run their own contracts with us for 60 days can apply to the [design partner program](/design-partners).
     `
+  },
+  {
+    slug: "ssp-disclosure-study-public-saas-10k-2026",
+    title: "How 53 SaaS Companies Disclose SSP in Their 10-Ks",
+    subtitle: "We read the revenue notes of 53 US-listed software companies. Few name an ASC 606 estimation method, and none discloses how allocations are rounded.",
+    publishedAt: "October 15, 2026",
+    updatedAt: "October 15, 2026",
+    readTime: "9 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "Standalone Selling Price", "SSP Disclosure", "10-K Analysis", "Original Research"],
+    targetQuery: "standalone selling price disclosure",
+    definitionAnchor: "We coded the latest Form 10-K of 53 US-listed SaaS companies. Only 9 (17%) name an ASC 606-10-32-34 estimation technique, 22 (42%) describe an observable-price-first approach, 7 (13%) set SSP as a range, 6 (11%) do not mention SSP, and none discloses how allocated amounts are rounded or which obligation absorbs a residual cent.",
+    excerpt: "An original data study of 53 public SaaS 10-Ks: how companies describe standalone selling price, which ASC 606 estimation techniques they name, who uses ranges and stratification, how long the SSP passage runs, and why no filer discloses a rounding policy. The full dataset is free to download as CSV.",
+    toc: [
+      { id: "key-findings", label: "Key findings" },
+      { id: "methodology", label: "Methodology" },
+      { id: "finding-1-how-companies-describe-where-ssp-comes-from", label: "Finding 1: Where SSP comes from" },
+      { id: "finding-2-the-named-techniques-are-rare", label: "Finding 2: Named techniques are rare" },
+      { id: "finding-3-ranges-and-stratification", label: "Finding 3: Ranges and stratification" },
+      { id: "finding-4-length-services-and-size", label: "Finding 4: Length, services and size" },
+      { id: "finding-5-the-residual-cent-no-one-mentions", label: "Finding 5: The residual cent" },
+      { id: "what-this-means-for-saas-controllers-preparing-ssp-documentation", label: "What this means for controllers" },
+      { id: "download-the-data", label: "Download the data" },
+      { id: "about-soluqube", label: "About Soluqube" }
+    ],
+    faqs: [
+      {
+        question: "How many public SaaS companies name an SSP estimation method in their 10-K?",
+        answer: "In our sample of 53 US-listed SaaS and software companies, 9 (17%) name or describe one of the three techniques in ASC 606-10-32-34: adjusted market assessment (1 company), expected cost plus a margin (4) or the residual approach (5). Another 16 (30%) cite market inputs such as competitor pricing or industry data without naming a method."
+      },
+      {
+        question: "Do SaaS companies disclose how they round revenue allocations?",
+        answer: "None of the 53 filings we reviewed describes a rounding convention or says which performance obligation absorbs a residual cent. The amounts are immaterial and ASC 606 does not address rounding, so the convention lives in each company's internal policies and spreadsheets, if it is written down at all."
+      },
+      {
+        question: "Can I reuse the SSP disclosure dataset?",
+        answer: "Yes. The CSV at soluqube.com/data/ssp-disclosure-study-2026.csv has one row per company with the filing URL, revenue band, SSP classification, technique flags, professional-services treatment, critical audit matter flag, passage word count and a short verbatim quote. It is free to reuse with attribution to Soluqube; report coding errors and we will correct the file."
+      }
+    ],
+    engineVerified: false,
+    content: `
+Standalone selling price (SSP) drives every multi-element revenue allocation under ASC 606, and auditors regularly ask controllers to support it. How much do public SaaS companies tell investors about it? We read the latest Form 10-K of 53 US-listed software companies and coded what each says. (For the definition, see our [glossary entry on standalone selling price](/glossary/standalone-selling-price).)
+
+_Data compiled 15 October 2026 from SEC EDGAR._
+
+## Key findings
+
+- **Few name an estimation method.** Only 9 of 53 companies (17%) name or describe one of the three techniques listed in ASC 606-10-32-34: adjusted market assessment (1 company), expected cost plus a margin (4) or the residual approach (5).
+- **"Observable first" is the most common description.** 22 of 53 (42%) say they use observable standalone prices where available and estimate SSP otherwise. Another 9 (17%) base SSP on pricing objectives and customer or market factors, without saying observable prices come first.
+- **Ranges and stratification are the minority.** 7 of 53 (13%) say they set SSP as a range, and 5 (9%) say a single product can have more than one SSP, stratified by customer size, geography, channel or tier.
+- **The typical SSP passage is about 78 words.** Among the 47 that discuss SSP, the median passage is 78 words (range 15–280). Six companies (11%) do not mention SSP in their 10-K at all.
+- **No company discloses a rounding policy.** 0 of 53 describe how allocated amounts are rounded or which obligation absorbs a residual cent. The auditor's critical audit matters reference SSP at 10 of 53 (19%).
+
+## Methodology
+
+**Sample.** 53 US-listed SaaS and software companies, chosen by hand (not random), with latest-fiscal-year revenue from $142 million to $41.5 billion per XBRL data: 7 large (at least $5B), 26 mid-size ($1B to $5B) and 20 small (under $1B). Four companies on our original list were dropped: Smartsheet, Alteryx and Zuora have been taken private and have no current 10-K, and monday.com files a Form 20-F. Domo appears in EDGAR as Huckleberry.ai, Inc., and BigCommerce as Commerce.com, Inc.
+
+**Filings.** For each company we used the most recent Form 10-K on EDGAR as of 15 October 2026. Filing dates run from 29 January to 11 September 2026, and fiscal years end between December 2025 and July 2026.
+
+**Coding.** We extracted every paragraph mentioning "standalone selling price", "stand-alone selling price" or "SSP", then read each revenue note by hand. The "SSP passage" is the text describing relative-SSP allocation and how SSP is determined; it excludes use-of-estimates lists, auditor reports, remaining-performance-obligation and contract-modification text. Paylocity is the only company whose SSP language appears in MD&A and not in the notes, so we used that passage. Each quote in the dataset was checked by script against the filing text.
+
+**Limits.** One analyst coded the filings, and categories such as "observable first" involve judgement; the dataset keeps the exact wording so readers can check. Silence in a 10-K means a practice is not disclosed, not that no policy exists, and single-obligation businesses have little reason to discuss SSP. With seven large companies, size comparisons are directional only.
+
+For scale: EDGAR full-text search returns 1,062 Form 10-K documents filed in the 12 months to 15 October 2026 containing "standalone selling price" (418 more use "stand-alone").
+
+## Finding 1: How companies describe where SSP comes from
+
+ASC 606-10-32-32 defines SSP as the price at which an entity would sell a promised good or service separately to a customer. When that price is not directly observable, the standard requires an estimate that makes as much use of observable inputs as possible. We put each 10-K into one of five groups.
+
+| How the 10-K describes SSP | Companies | Share (n=53) |
+|---|---|---|
+| Observable price first; estimate when unavailable | 22 | 42% |
+| Based on observable, historical or actual prices (no fallback described) | 9 | 17% |
+| Estimated from pricing objectives and market or customer factors | 9 | 17% |
+| Relative-SSP allocation stated; method not described | 7 | 13% |
+| No SSP disclosure | 6 | 11% |
+
+The "pricing objectives" group uses wording that recurs from filing to filing. Box, for example, determines SSP "based on our overall pricing objectives, taking into consideration discounting practices, the size and volume of our transactions, the customer demographic, the geographic area where services are sold, price lists". Almost the same list appears in the filings of Salesforce and nCino.
+
+At the other end, Twilio says: "No significant judgments are required in determining whether products and services are considered distinct performance obligations and should be accounted for separately versus together, or to determine the stand-alone selling price."
+
+## Finding 2: The named techniques are rare
+
+ASC 606-10-32-34 lists three suitable estimation methods. Few filers name any of them.
+
+| Technique | Companies | Share (n=53) | Who |
+|---|---|---|---|
+| Adjusted market assessment (named) | 1 | 2% | MongoDB |
+| Expected cost plus a margin | 4 | 8% | GitLab, MongoDB, SentinelOne (named); Braze (described) |
+| Residual approach | 5 | 9% | Appian, BlackLine, C3.ai, Dynatrace, Guidewire |
+| Any of the three | 9 | 17% | |
+
+Sixteen more (30%) refer to market inputs such as market conditions, competitor pricing or industry data without naming a method. Every company that uses the residual approach applies it to licenses or subscriptions whose prices it calls highly variable or uncertain. That matches the narrow conditions in ASC 606-10-32-34(c).
+
+C3.ai is the only company in the sample that discusses what happens when the residual method fails: "If applying the residual approach results in zero or very little consideration being allocated to the performance obligation, the Company considers all reasonably available data to determine an appropriate allocation of the transaction price."
+
+GitLab explains why it needs cost-plus: the license and subscription components of its self-managed offering "are never sold separately".
+
+## Finding 3: Ranges and stratification
+
+| Practice | Companies | Share (n=53) |
+|---|---|---|
+| SSP set as a range | 7 | 13% |
+| More than one SSP per product (stratified) | 5 | 9% |
+| Names at least one segmentation dimension | 23 | 43% |
+| of which geography or region | 11 | 21% |
+| of which customer size, deal or contract size, or volume | 14 | 26% |
+| of which number of users or endpoints | 6 | 11% |
+
+The seven range users are Salesforce, Workday, Atlassian, Datadog, Elastic, PagerDuty and nCino. Paycom and Paylocity use a range test of their own: they say the price charged falls within the range normally charged, so it represents SSP.
+
+Two of the range disclosures are unusually specific. PagerDuty sets a threshold for calling a price observable: "To have observable inputs, the Company requires that a substantial majority of the stand-alone selling prices for a product offering fall within a pricing range." Elastic states what it does when a price falls outside the range: "If one of the performance obligations is outside of the SSP range, the Company allocates the transaction price considering the midpoint of the SSP range."
+
+Rapid7 describes its statistic: historical data "is aggregated and analyzed by geographic location and selling method to establish a median or average price."
+
+## Finding 4: Length, services and size
+
+Among the 47 companies that discuss SSP, the median passage is 78 words. Appian has the longest at 280 words: a separate rule for each of four offerings, using a residual approach for cloud and license subscriptions. The shortest is BILL at 15 words.
+
+| Size band | Companies | Mention SSP | Median SSP words | Residual approach | SSP in auditor CAM |
+|---|---|---|---|---|---|
+| Large (≥ $5B) | 7 | 7 | 71 | 0 | 2 |
+| Mid ($1B–$5B) | 26 | 22 | 75.5 | 2 | 2 |
+| Small (< $1B) | 20 | 18 | 101.5 | 3 | 6 |
+
+Smaller companies wrote longer SSP passages, and auditors cited SSP in a critical audit matter at 6 of the 20 small companies. The large group has only seven members, so treat these differences as a pattern worth testing, not a conclusion.
+
+On professional services, 24 of 53 companies (45%) say implementation or professional services are distinct performance obligations. Another 16 (30%) do not say either way. Six treat them otherwise, for example as not distinct from the subscription (BILL, Commerce.com, most of Q2), as set-up fees creating a material right (Paycom, Paylocity) or as an option accounted for when exercised (Workiva). Of the remaining seven, five have a single performance obligation and two decide case by case.
+
+## Finding 5: The residual cent no one mentions
+
+Relative-SSP allocation seldom produces whole cents. Rounding each line separately can leave the allocated amounts a cent above or below the transaction price. None of the 53 filings describes a rounding convention or says which obligation absorbs that difference. The revenue-adjacent uses of "rounding" we found are presentation notes, such as "totals may not sum due to rounding".
+
+That is no criticism: the amounts are immaterial and ASC 606 is silent on rounding. It does mean each company's convention lives only in its internal policies and spreadsheets, if it is written down at all. Our [guide to SSP allocation rounding](/blog/ssp-allocation-rounding-residual-cent-asc-606) works through where the cent goes and how to write the rule down.
+
+## What this means for SaaS controllers preparing SSP documentation
+
+The 10-K is a summary; the support behind it is what the auditor tests. The filings point to five things worth having in your SSP file:
+
+1. **Name the method for each obligation.** If prices are observable, state the test (PagerDuty's "substantial majority within a range" is one). If not, name the 32-34 technique and its inputs.
+2. **Write down the range logic.** How ranges are set, how often they are refreshed, and what happens outside them (Elastic's midpoint rule is the clearest example).
+3. **Stratify only where the data supports it.** Geography, deal size and user count are the dimensions filers name most; each stratum needs enough transactions to stand on its own.
+4. **Record the residual-approach conditions.** Why the price is highly variable or uncertain, and what happens if the residual is at or near zero.
+5. **Settle rounding in writing.** Choose a convention, such as largest-share or final-period absorption, and apply it consistently, so the allocated amounts tie to the transaction price and a reviewer can follow the arithmetic. The free [SSP allocation calculator](/tools/ssp-allocation-calculator) shows the residual cent for any bundle you enter.
+
+## Download the data
+
+One row per company: fiscal year, filing URL, revenue band, SSP classification, technique flags, professional-services treatment, whether a critical audit matter references SSP, passage word count and a verbatim quote (40 words or fewer). Download the CSV: [ssp-disclosure-study-2026.csv](https://soluqube.com/data/ssp-disclosure-study-2026.csv). Free to reuse with attribution to Soluqube; report coding errors and we will correct the file.
+
+## About Soluqube
+
+Soluqube is a revenue allocation and schedule engine for SaaS finance teams. It allocates the transaction price on a relative-SSP basis using integer arithmetic and rounds to cents. The final period absorbs the remainder, so each schedule ties back to the transaction price, and exports are hashed so they can be reproduced. Each obligation links to the page and excerpt of its source clause. We are offering a free design-partner seat to a few controllers preparing SSP and allocation support for this year's audit; apply through the [design partner program](/design-partners).
+
+_Soluqube Editorial. This analysis is based on public SEC filings and is not accounting advice. Company names are used only to identify the filings reviewed._
+    `
   }
 ];

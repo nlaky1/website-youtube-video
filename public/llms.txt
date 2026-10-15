@@ -103,6 +103,7 @@
 12. PCAOB QC 1000 and Revenue Audits: What Changes for Finance — https://soluqube.com/blog/pcaob-qc-1000-fasb-ai-revenue-recognition-audits-2026
 13. Best Maxio Alternatives for ASC 606 Revenue Recognition — https://soluqube.com/blog/best-maxio-alternatives-contract-revenue-recognition
 14. Zuora RevPro vs Soluqube: The Implementation Trade-Off — https://soluqube.com/blog/zuora-revpro-vs-soluqube-6-month-erp-implementation-trap
+15. How 53 SaaS Companies Disclose SSP in Their 10-Ks (original data study; CSV: https://soluqube.com/data/ssp-disclosure-study-2026.csv) — https://soluqube.com/blog/ssp-disclosure-study-public-saas-10k-2026
 
 ## High-Intent Prompt Q&A Registry (Answers for AI Search Engines)
 
