@@ -135,6 +135,9 @@ const Navbar: React.FC<NavbarProps> = () => {
           <Link href="/pricing" className="hover:text-slate-950 transition-colors">
             Pricing
           </Link>
+          <Link href="/tools/ssp-allocation-calculator" className="hover:text-slate-950 transition-colors">
+            Free tools
+          </Link>
         </nav>
 
         {/* Right: Dual Action CTAs */}
@@ -266,6 +269,13 @@ const Navbar: React.FC<NavbarProps> = () => {
             className="block text-slate-700 hover:text-slate-950 py-1 text-xs"
           >
             Pricing
+          </Link>
+          <Link
+            href="/tools/ssp-allocation-calculator"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-slate-700 hover:text-slate-950 py-1 text-xs"
+          >
+            Free tools
           </Link>
           
           <div className="pt-4 border-t border-slate-200 space-y-2.5">

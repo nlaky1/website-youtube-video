@@ -1144,6 +1144,7 @@ export default function Home() {
                 <li><a href="/asc-606" className="hover:text-slate-950 transition-colors">ASC 606 Technical Hub</a></li>
                 <li><a href="/asc-606-vs-ind-as-115" className="hover:text-slate-950 transition-colors">ASC 606 vs Ind AS 115</a></li>
                 <li><a href="/blog" className="hover:text-slate-950 transition-colors">Engineering Blog (12 Pillars)</a></li>
+                <li><a href="/glossary" className="hover:text-slate-950 transition-colors">Revenue Recognition Glossary</a></li>
                 <li><a href="/pricing" className="hover:text-slate-950 transition-colors">Enterprise Pricing</a></li>
                 <li><a href="/audit" className="hover:text-slate-950 transition-colors">Interactive Audit Simulator</a></li>
                 <li><a href="https://app.soluqube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Sandbox Engine <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
@@ -1161,6 +1162,7 @@ export default function Home() {
                 <li><a href="/soluqube-vs-rightrev" className="hover:text-slate-950 transition-colors">Soluqube vs RightRev</a></li>
                 <li><a href="/soluqube-vs-leapfin" className="hover:text-slate-950 transition-colors">Soluqube vs Leapfin</a></li>
                 <li><a href="/soluqube-vs-klarity" className="hover:text-slate-950 transition-colors">Soluqube vs Klarity</a></li>
+                <li><a href="/alternatives" className="hover:text-slate-950 transition-colors">Alternatives Guides</a></li>
               </ul>
             </div>
 

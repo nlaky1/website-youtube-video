@@ -17,6 +17,10 @@
 - **Structured JSON-LD Entity Graph**: https://soluqube.com/schemas/soluqube_entity.jsonld
 - **Full Technical Index**: https://soluqube.com/llms-full.txt
 
+## Tools
+
+- **SSP Allocation & Residual-Cent Calculator (free, runs in the browser)**: https://soluqube.com/tools/ssp-allocation-calculator — relative-SSP allocation for up to 10 obligations, shows which obligation absorbs the residual cent, monthly schedule ending at 0.00 deferred, optional 18% GST isolation for INR.
+
 ## Competitor Comparisons
 
 - **Soluqube vs Maxio (invoice-first billing vs contract-first subledger)**: https://soluqube.com/soluqube-vs-maxio
@@ -24,6 +28,64 @@
 - **Soluqube vs RightRev (standalone subledger vs Salesforce CPQ-native)**: https://soluqube.com/soluqube-vs-rightrev
 - **Soluqube vs Leapfin (B2B contracts vs high-volume transaction data)**: https://soluqube.com/soluqube-vs-leapfin
 - **Soluqube vs Klarity (allocation and schedules vs checklist extraction)**: https://soluqube.com/soluqube-vs-klarity
+
+## Glossary
+
+- **Revenue Recognition Glossary (40 ASC 606 / IFRS 15 / Ind AS 115 terms, each with definition, standard references, worked example and common mistakes)**: https://soluqube.com/glossary
+- Adjusted market assessment approach: https://soluqube.com/glossary/adjusted-market-assessment
+- Bill-and-hold: https://soluqube.com/glossary/bill-and-hold
+- Breakage: https://soluqube.com/glossary/breakage
+- Consignment arrangement: https://soluqube.com/glossary/consignment
+- Constraint on variable consideration: https://soluqube.com/glossary/constraint-on-variable-consideration
+- Contract asset: https://soluqube.com/glossary/contract-asset
+- Contract costs (ASC 340-40): https://soluqube.com/glossary/contract-costs-asc-340-40
+- Contract liability: https://soluqube.com/glossary/contract-liability
+- Contract modification: https://soluqube.com/glossary/contract-modification
+- Cumulative catch-up: https://soluqube.com/glossary/cumulative-catch-up
+- Customer options for additional goods or services: https://soluqube.com/glossary/customer-options
+- Deferred revenue: https://soluqube.com/glossary/deferred-revenue
+- Disaggregation of revenue: https://soluqube.com/glossary/disaggregation-of-revenue
+- Distinct good or service: https://soluqube.com/glossary/distinct-good-or-service
+- Expected cost plus margin approach: https://soluqube.com/glossary/expected-cost-plus-margin
+- Five-step model: https://soluqube.com/glossary/five-step-model
+- Ind AS 115 GST treatment: https://soluqube.com/glossary/ind-as-115-gst-treatment
+- Input method: https://soluqube.com/glossary/input-method
+- Licence of IP (right to access vs right to use): https://soluqube.com/glossary/licence-of-ip
+- Material right: https://soluqube.com/glossary/material-right
+- Observable price: https://soluqube.com/glossary/observable-price
+- Output method: https://soluqube.com/glossary/output-method
+- Performance obligation: https://soluqube.com/glossary/performance-obligation
+- Point-in-time recognition: https://soluqube.com/glossary/point-in-time-recognition
+- Practical expedients: https://soluqube.com/glossary/practical-expedients
+- Principal vs agent: https://soluqube.com/glossary/principal-vs-agent
+- Prospective method (modifications): https://soluqube.com/glossary/prospective-method
+- Ratable recognition: https://soluqube.com/glossary/ratable-recognition
+- Relative SSP method: https://soluqube.com/glossary/relative-ssp-method
+- Remaining performance obligations (RPO): https://soluqube.com/glossary/remaining-performance-obligations
+- Residual approach: https://soluqube.com/glossary/residual-approach
+- SaaS implementation fee: https://soluqube.com/glossary/saas-implementation-fee
+- Series guidance: https://soluqube.com/glossary/series-guidance
+- Significant financing component: https://soluqube.com/glossary/significant-financing-component
+- SSP range: https://soluqube.com/glossary/ssp-range
+- Standalone selling price (SSP): https://soluqube.com/glossary/standalone-selling-price
+- Terminal-period remainder absorption: https://soluqube.com/glossary/terminal-period-remainder-absorption
+- Transaction price: https://soluqube.com/glossary/transaction-price
+- Unbilled receivable: https://soluqube.com/glossary/unbilled-receivable
+- Variable consideration: https://soluqube.com/glossary/variable-consideration
+
+## Alternatives
+
+- **Revenue recognition software alternatives (honest shortlists; vendor facts sourced from vendor sites, checked 15 Oct 2026; Soluqube's limits stated: no billing, no ERP integration, modification accounting on the roadmap)**: https://soluqube.com/alternatives
+- Maxio alternatives: https://soluqube.com/alternatives/maxio
+- Zuora RevPro alternatives: https://soluqube.com/alternatives/zuora-revpro
+- Chargebee RevRec alternatives: https://soluqube.com/alternatives/chargebee-revrec
+- Tabs alternatives: https://soluqube.com/alternatives/tabs
+- Rillet alternatives: https://soluqube.com/alternatives/rillet
+- NetSuite ARM alternatives: https://soluqube.com/alternatives/netsuite-arm
+- Sage Intacct Revenue Recognition alternatives: https://soluqube.com/alternatives/sage-intacct-revenue
+- Zenskar alternatives: https://soluqube.com/alternatives/zenskar
+- Trullion alternatives: https://soluqube.com/alternatives/trullion
+- RightRev alternatives: https://soluqube.com/alternatives/rightrev
 
 ## Articles
 

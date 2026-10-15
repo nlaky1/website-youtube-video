@@ -1,5 +1,7 @@
 import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/blogPosts";
+import { GLOSSARY_TERMS } from "@/data/glossary";
+import { ALTERNATIVES_PAGES } from "@/data/alternatives";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://soluqube.com";
@@ -10,6 +12,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.85,
+  }));
+
+  const glossaryUrls: MetadataRoute.Sitemap = GLOSSARY_TERMS.map((t) => ({
+    url: `${baseUrl}/glossary/${t.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  const alternativesUrls: MetadataRoute.Sitemap = ALTERNATIVES_PAGES.map((p) => ({
+    url: `${baseUrl}/alternatives/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.75,
   }));
 
   return [
@@ -80,6 +96,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/tools/ssp-allocation-calculator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: now,
       changeFrequency: "daily",
@@ -97,6 +119,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/glossary`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/alternatives`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     ...blogUrls,
+    ...glossaryUrls,
+    ...alternativesUrls,
   ];
 }
