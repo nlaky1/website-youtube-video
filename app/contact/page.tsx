@@ -318,7 +318,7 @@ export default function ContactForm() {
                 </p>
                 <div className="pt-4">
                   <a
-                    href="https://calendly.com/nlaky1/15min"
+                    href="https://calendly.com/nikhil-soluqube/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-all"

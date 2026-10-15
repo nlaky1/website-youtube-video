@@ -387,7 +387,7 @@ export default function BookDemoPage() {
               ) : (
                 /* Calendly Embed */
                 <div className="min-h-[600px] w-full rounded-xl overflow-hidden">
-                  <InlineWidget url="https://calendly.com/nlaky1/15min" />
+                  <InlineWidget url="https://calendly.com/nikhil-soluqube/30min" />
                 </div>
               )}
 

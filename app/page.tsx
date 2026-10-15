@@ -1079,7 +1079,7 @@ export default function Home() {
 
                   <div className="pt-2">
                     <a
-                      href="https://calendly.com/nlaky1/15min"
+                      href="https://calendly.com/nikhil-soluqube/30min"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-all"
