@@ -18,22 +18,22 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ASC 606 & Ind AS 115 Technical Accounting Hub | Soluqube",
-  description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, audit-ready evidence packages, and fixed-point math architecture.",
+  title: { absolute: "ASC 606 & Ind AS 115 Accounting Guides | Soluqube" },
+  description: "Worked ASC 606 and Ind AS 115 guides for SaaS controllers: SSP allocation, rounding policy, principal vs agent, contract modifications and GST isolation.",
   keywords: [
     "ASC 606 blog",
     "Ind AS 115 technical guide",
     "revenue recognition audit workpapers",
-    "contract modification DAG",
+    "ASC 606 contract modifications",
     "audit-ready evidence package",
-    "fixed point accounting math"
+    "SSP allocation"
   ],
   alternates: {
     canonical: "https://soluqube.com/blog"
   },
   openGraph: {
-    title: "ASC 606 & Ind AS 115 Technical Accounting Hub | Soluqube",
-    description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, and audit-ready evidence packages.",
+    title: "ASC 606 & Ind AS 115 Accounting Guides | Soluqube",
+    description: "Worked ASC 606 and Ind AS 115 guides: SSP allocation, rounding policy, principal vs agent, contract modifications and GST isolation.",
     url: "https://soluqube.com/blog",
     siteName: "Soluqube",
     images: [
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ASC 606 & Ind AS 115 Technical Accounting Hub | Soluqube",
-    description: "Deterministic ASC 606 & Ind AS 115 revenue recognition guides, 18% GST isolation, and audit-ready evidence packages.",
+    title: "ASC 606 & Ind AS 115 Accounting Guides | Soluqube",
+    description: "Worked ASC 606 and Ind AS 115 guides: SSP allocation, rounding policy, principal vs agent, contract modifications and GST isolation.",
     images: ["/icon.png"]
   }
 };
@@ -76,7 +76,7 @@ export default function BlogIndexPage() {
           </h1>
 
           <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed pt-2">
-            Rigorous engineering breakdowns on eliminating floating-point drift, automating contract modification DAGs, and generating audit-ready evidence packages.
+            Worked examples on SSP allocation, residual-cent rounding policy, principal vs agent, contract modifications and Ind AS 115 GST isolation.
           </p>
         </div>
       </section>
@@ -205,11 +205,11 @@ export default function BlogIndexPage() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight max-w-2xl mx-auto">
-            Ready to eliminate spreadsheet rounding drift in your revenue subledger?
+            Ready to defend your next SSP allocation?
           </h2>
 
           <p className="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
-            Ingest complex multi-year enterprise contracts, extract spatial PDF clauses, and generate audit-ready evidence packages in under 60 seconds.
+            Confirm the obligations and prices on a multi-year contract and get the relative-SSP allocation, a full-term schedule that ties to the cent, and a hashed evidence workpaper.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -113,7 +113,7 @@ export default function ContactForm() {
             </h1>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Whether you need to eliminate 64-bit floating-point drift, isolate 18% statutory GST under Ind AS 115, or connect NetSuite ARM with automated 8-tab audit-ready workpapers, our technical accounting desk is available.
+              Whether you need to defend an SSP allocation, isolate 18% statutory GST under Ind AS 115, or prepare schedules for NetSuite ARM with an audit-ready workpaper, our technical accounting desk is available.
             </p>
 
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 font-mono text-xs">

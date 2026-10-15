@@ -29,6 +29,12 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // SEO audit 2026-10-15 (M3): /book duplicated /book-demo with canonical -> home.
+      {
+        source: "/book",
+        destination: "/book-demo",
+        permanent: true,
+      },
       {
         source: "/onboarding",
         destination: "https://app.soluqube.com/onboarding",

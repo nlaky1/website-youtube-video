@@ -1,22 +1,22 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Soluqube vs. Klarity | Complete Revenue Subledger vs. Checklist Review',
-  description: 'Compare Soluqube vs. Klarity. Soluqube provides complete integer (BigInt) deterministic subledger amortization schedules, Merkle-root audit proof, and dual-GAAP compliance, not just checklist extraction.',
+  title: "Soluqube vs Klarity: Subledger vs Contract Review",
+  description: "Klarity turns Order Forms into review checklists. Soluqube adds relative-SSP allocation, full-term schedules that tie to the cent and a hashed workpaper.",
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-klarity',
   },
   openGraph: {
-    title: 'Soluqube vs. Klarity | Complete Revenue Subledger vs. Review Tool',
-    description: 'Compare automated contract ingestion and deterministic ledger execution between Soluqube and Klarity.',
+    title: "Soluqube vs Klarity: Subledger vs Contract Review | Soluqube",
+    description: "Klarity turns Order Forms into review checklists. Soluqube adds relative-SSP allocation, full-term schedules that tie to the cent and a hashed workpaper.",
     url: 'https://soluqube.com/soluqube-vs-klarity',
     siteName: 'Soluqube',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Soluqube vs. Klarity: Revenue Subledger Comparison',
-    description: 'Full integer (BigInt) fixed-point math DAG subledger schedules with dual-GAAP ASC 606 & Ind AS 115 compliance.',
+    title: "Soluqube vs Klarity: Subledger vs Contract Review | Soluqube",
+    description: "Klarity turns Order Forms into review checklists. Soluqube adds relative-SSP allocation, full-term schedules that tie to the cent and a hashed workpaper.",
   },
 };
 

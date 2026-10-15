@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Book a Demo | Free Audit-Defense Workpaper",
-  description: "Book a walk-through and request a Free 3-Contract Audit-Defense Workpaper: SSP allocation, a schedule that ties to the cent, and clause evidence per obligation.",
+  description: "Book a walk-through and request a Free 3-Contract Audit-Defense Workpaper: SSP allocation, a schedule that ties to the cent, and clause evidence.",
   alternates: {
     canonical: "https://soluqube.com/book-demo",
   },

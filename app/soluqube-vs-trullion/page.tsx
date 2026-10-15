@@ -46,36 +46,6 @@ export default function SoluqubeVsTrullionPage() {
           "url": "https://soluqube.com"
         },
         "mainEntityOfPage": "https://soluqube.com/soluqube-vs-trullion"
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://soluqube.com/soluqube-vs-trullion#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does Soluqube's pricing compare to Trullion?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Trullion sells annual enterprise contracts through a procurement process (pricing not published). Soluqube offers an on-demand, self-serve model starting at $499 per contract audit or $999/month for continuous SaaS compliance with zero upfront commitment."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does Trullion support Indian GAAP (Ind AS 115) and GST subledger isolation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Trullion is designed exclusively for US GAAP (ASC 606) and IFRS 15. It lacks support for Indian Companies Act 2013 Schedule III Division II reporting and cannot segregate statutory 18% GST (CGST/SGST/IGST) from operating revenue. Soluqube natively supports Dual-GAAP side-by-side comparison with automated tax isolation."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the difference in mathematical precision between Soluqube and Trullion?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Trullion does not publish its arithmetic internals. Soluqube uses integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value and amortize to zero."
-            }
-          }
-        ]
       }
     ]
   };
@@ -158,11 +128,11 @@ export default function SoluqubeVsTrullionPage() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Integer Mathematical Invariant:</strong> Zero IEEE-754 floating-point drift. Monotonic $0.00 ending deferred revenue.</span>
+                <span><strong>Integer Arithmetic:</strong> BigInt at 10^6 scale, rounded to cents; the final period absorbs the remainder, so deferred revenue ends at $0.00.</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>SOX 404 Maker-Checker:</strong> Interactive schedule lockbar enforcing submitter !== approver constraints.</span>
+                <span><strong>Maker-Checker Review:</strong> Separate submit and approve steps in the review screen. Identity-bound approval is on the roadmap.</span>
               </li>
             </ul>
             <div className="pt-2">
@@ -170,7 +140,7 @@ export default function SoluqubeVsTrullionPage() {
                 href="/audit"
                 className="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-colors gap-2"
               >
-                <span>Audit a Contract in 5 Seconds</span>
+                <span>Try the Schedule Simulator</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -193,11 +163,11 @@ export default function SoluqubeVsTrullionPage() {
               </li>
               <li className="flex items-start gap-2">
                 <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span><strong>Zero Indian GAAP Support:</strong> ASC 606 & IFRS 15 only. Cannot isolate Indian GST (CGST/SGST/IGST).</span>
+                <span><strong>No Ind AS 115 Advertised:</strong> ASC 606 & IFRS 15 per public materials; no Indian GST (CGST/SGST/IGST) isolation advertised.</span>
               </li>
               <li className="flex items-start gap-2">
                 <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span><strong>Floating-Point Math:</strong> Standard SQL decimal/float subject to penny-rounding drift on odd multi-period splits.</span>
+                <span><strong>Rounding Policy Not Published:</strong> No public documentation of how residual cents are allocated on odd multi-period splits.</span>
               </li>
               <li className="flex items-start gap-2">
                 <XCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
@@ -233,7 +203,7 @@ export default function SoluqubeVsTrullionPage() {
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Time-to-Value</td>
-                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">&lt; 5 seconds (Instant PDF drop)</td>
+                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">Same day (you confirm obligations &amp; prices)</td>
                   <td className="p-3.5 text-slate-400 font-mono">30–60 days implementation</td>
                 </tr>
                 <tr>
@@ -248,22 +218,22 @@ export default function SoluqubeVsTrullionPage() {
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Mathematical Precision Engine</td>
-                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">Integer (BigInt) micro-cent fixed point (0.00 drift)</td>
+                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">Integer (BigInt), rounded to cents (ties to the cent)</td>
                   <td className="p-3.5 text-slate-400 font-mono">Not published</td>
                 </tr>
                 <tr>
-                  <td className="p-3.5 font-semibold text-slate-200">Terminal Deferred Revenue Guarantee</td>
-                  <td className="p-3.5 text-emerald-400 font-bold bg-emerald-950/20">Exact $0.00 / ₹0.00 Monotonic Invariant</td>
-                  <td className="p-3.5 text-slate-400">Subject to standard decimal rounding drift</td>
+                  <td className="p-3.5 font-semibold text-slate-200">Terminal-Period Remainder Absorption</td>
+                  <td className="p-3.5 text-emerald-400 font-bold bg-emerald-950/20">Final deferred balance ends at $0.00 / ₹0.00</td>
+                  <td className="p-3.5 text-slate-400">Not published</td>
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Audit Grounding &amp; Workpapers</td>
-                  <td className="p-3.5 text-emerald-400 font-bold bg-emerald-950/20">Audit-ready evidence pack + Merkle Root PDF BBoxes</td>
+                  <td className="p-3.5 text-emerald-400 font-bold bg-emerald-950/20">Audit-ready evidence pack: clause evidence (page + excerpt) + SHA-256 hashes</td>
                   <td className="p-3.5 text-slate-300">Standard audit trail exports</td>
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">SOX 404 Internal Controls</td>
-                  <td className="p-3.5 text-emerald-400 font-bold bg-emerald-950/20">Maker-Checker Dual Lockout (submitter !== approver)</td>
+                  <td className="p-3.5 text-emerald-400 font-bold bg-emerald-950/20">Maker-checker review (identity-bound approval on the roadmap)</td>
                   <td className="p-3.5 text-slate-300">Role-based access permissions</td>
                 </tr>
               </tbody>
@@ -322,7 +292,7 @@ export default function SoluqubeVsTrullionPage() {
             Ready to Verify Your Contracts Without the Enterprise Lock-In?
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
-            Drop your contract PDF and get a complete 5-gate verified ASC 606 &amp; Ind AS 115 revenue schedule with cryptographic Merkle proof in seconds.
+            Confirm the obligations and stated prices for a contract and get the SSP allocation, a full-term ASC 606 &amp; Ind AS 115 schedule that ties to the cent, and a hashed evidence workpaper.
           </p>
           <div className="pt-2 flex flex-wrap justify-center gap-3">
             <Link

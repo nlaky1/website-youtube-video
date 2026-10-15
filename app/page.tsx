@@ -249,8 +249,27 @@ export default function Home() {
     }
   ];
 
+  // FAQPage JSON-LD for the FAQ that is visible on this page only (SEO audit 2026-10-15, C1).
+  // The rate-cap DAG answer is left out of the schema: that route has no UI today.
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://soluqube.com/#faq",
+    mainEntity: faqs
+      .filter((_, i) => i !== 2)
+      .map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* 1. INSTITUTIONAL TOP NAVIGATION */}
       <Navbar />
 

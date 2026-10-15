@@ -85,18 +85,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/book-demo`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     ...blogUrls,
-    {
-      url: "https://client.soluqube.com/",
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: "https://app.soluqube.com/",
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
   ];
 }

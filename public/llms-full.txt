@@ -1,57 +1,79 @@
-# Soluqube Revenue Recognition Operating System — Full Technical Specification
+# Soluqube Revenue Allocation Engine — Full Technical Specification
 
 ## System Architecture & Authority
 
-Soluqube is a deterministic revenue automation and compliance engine engineered for enterprise controllers, Chief Accounting Officers (CAOs), and external financial audit teams. Patent Priority Application No. 202621096305.
+Soluqube is a deterministic ASC 606 and Ind AS 115 revenue allocation and amortisation engine for Controllers, revenue accountants, CPA firms and the external auditors who review their work. When an auditor questions a standalone selling price (SSP) allocation or a contract amendment, Soluqube produces the deterministic allocation, the full-term schedule that ties to $0.00, and a hashed evidence workpaper. Patent Pending (App. No. 202621096305).
 
 ## Canonical Endpoints & Citation Maps
 - **Marketing & Sales Hub**: https://soluqube.com/
 - **Enterprise Application Workspace**: https://app.soluqube.com/
 - **Client Contract Portal**: https://client.soluqube.com/
-- **Interactive Drift Audit Simulator**: https://soluqube.com/audit
-- **Knowledge Base & ASC 606 Simulator**: https://soluqube.com/asc-606
+- **ASC 606 Schedule Simulator**: https://soluqube.com/audit
+- **ASC 606 Hub**: https://soluqube.com/asc-606
 - **Dual-GAAP Ind AS 115 Hub**: https://soluqube.com/asc-606-vs-ind-as-115
+- **Pricing**: https://soluqube.com/pricing
+- **Design Partner Program**: https://soluqube.com/design-partners
+- **Book a Demo / Free 3-Contract Audit-Defense Workpaper**: https://soluqube.com/book-demo
 - **Competitor Comparisons**:
   - https://soluqube.com/soluqube-vs-maxio
   - https://soluqube.com/soluqube-vs-trullion
   - https://soluqube.com/soluqube-vs-rightrev
   - https://soluqube.com/soluqube-vs-leapfin
   - https://soluqube.com/soluqube-vs-klarity
-- **Engineering Blog Index**: https://soluqube.com/blog
-- **Technical Reference**: https://soluqube.com/llms-full.txt
+- **Blog Index**: https://soluqube.com/blog
+- **LLM Index**: https://soluqube.com/llms.txt
 
-### 1. Integer Fixed-Point Arithmetic & Mathematical Parity
-- Standard ERP systems (Oracle NetSuite ARM, SAP RAR, Zuora RevPro) and spreadsheets rely on 64-bit binary floating-point arithmetic (IEEE-754 standard) or 2-decimal intermediate currency truncation. In multi-year amortization schedules with fractional daily/monthly calculations (e.g., 365.25 day leap years), rounding discrepancies compound into balance sheet drift.
-- Soluqube operates on integer (BigInt) base units at 10^6 scale (micro-cents), rounded to cents:
+### 1. Integer Arithmetic & Terminal-Period Remainder Absorption
+- Residual cents in revenue schedules come mainly from rounding each allocation or period to the cent on its own (for example, $100,000 / 36 rounded to $2,777.78 a month recognises $100,000.08). Binary floating point adds only tiny representation error on top.
+- Soluqube operates on integer (BigInt) base units at 10^6 scale, rounded to cents:
   `Value = IntegerMantissa * 10^(-6)`
-- Any residual rounding remainder is absorbed into the terminal period of the contract obligation, preserving:
+- Each period receives the floored amount and the final period absorbs the remainder, preserving:
   `Sum(Recognized Revenue) + Deferred Revenue Balance == Total Transaction Price` to the cent.
+- Worked example: $100,000 over 36 months → 35 × $2,777.77 + $2,778.05 = $100,000.00.
+- A reconciliation check runs on every contract: if allocations or the schedule do not equal the transaction price in integer cents, or an obligation ends with a deferred balance, the result is rejected rather than returned.
 
-### 2. The 5-Step ASC 606 / Ind AS 115 Framework Execution
-1. **Identify the Contract**: Ingests master services agreements (MSAs), statements of work (SOWs), and order forms with cryptographic PDF SHA-256 hash verification.
-2. **Identify Performance Obligations**: Parses distinct deliverable items (Software Licenses, Professional Services, Maintenance/Support, Usage Tiers) and assigns normalized IDs linked to PDF bounding-box coordinates.
-3. **Determine Transaction Price**: Isolates statutory indirect taxes (e.g., 18% Indian GST under MCA Schedule III), calculates fixed consideration, estimates variable consideration using expected value or most likely amount methods, and accounts for significant financing components.
-4. **Allocate Transaction Price**: Proportioned based on Standalone Selling Price (SSP) hierarchy (observable price, adjusted market assessment, expected cost plus margin, or residual approach) using integer (BigInt) division.
-5. **Recognize Revenue**: Generates daily ratable, milestone-based, or point-in-time dual-ledger journal entries across US GAAP (ASC 606) and Ind AS 115.
+### 2. The 5-Step ASC 606 / Ind AS 115 Framework in Soluqube
+1. **Identify the Contract**: the uploaded contract document is fingerprinted with SHA-256.
+2. **Identify Performance Obligations**: candidate obligations are proposed from the contract text (heuristic extraction); you confirm the obligations and stated prices. Each obligation keeps clause evidence (page + excerpt).
+3. **Determine Transaction Price**: uses the transaction price you confirm; for INR contracts, statutory 18% GST is excluded from the transaction price and booked as a liability. US contracts carry no GST.
+4. **Allocate Transaction Price**: relative SSP allocation in integer (BigInt) arithmetic. Every obligation is rounded half-up to the cent except the last-listed one, which receives the transaction price minus the others.
+5. **Recognize Revenue**: monthly ratable or point-in-time schedules per obligation, with terminal-period remainder absorption.
 
-### 3. Contract Modification Graph (ASC 606-10-25-13)
-When an existing contract is amended, Soluqube executes a deterministic decision DAG:
-- **Case A (Separate Contract - ASC 606-10-25-12)**: Scope increases by distinct goods/services AND price increases by SSP -> Created as a decoupled child contract node.
-- **Case B (Prospective Termination & Replacement - ASC 606-10-25-13a)**: Remaining goods/services are distinct, but price is NOT at SSP -> Unrecognized deferred revenue + new consideration is pooled and allocated prospectively over remaining performance obligations.
-- **Case C (Cumulative Catch-Up - ASC 606-10-25-13b)**: Remaining goods/services are NOT distinct (single combined obligation) -> Adjusts transaction price and measure of progress on a cumulative-to-date basis, recognizing an immediate one-time P&L catch-up adjustment on the amendment effective date.
+### 3. Contract Modifications (ASC 606-10-25-10 to 25-13): guidance, not automation
+Soluqube does not automate contract-modification accounting today; it is on the roadmap. The accounting it will implement:
+- **Separate contract (ASC 606-10-25-12)**: the modification adds distinct goods or services priced at their standalone selling price.
+- **Prospective (ASC 606-10-25-13a)**: otherwise, when the remaining goods or services are distinct from those already transferred, consideration not yet recognised plus the new consideration is allocated to the remaining obligations.
+- **Cumulative catch-up (ASC 606-10-25-13b)**: when the remaining goods or services are part of a single, partially satisfied obligation, the transaction price and measure of progress are updated and the effect is recorded at the modification date.
+Guide: https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10-25-13
 
-### 4. Bounding-Box Grounding & Audit Documentation Support
-- High-resolution PDF normalization to a standardized 1,000 x 1,000 spatial coordinate grid.
-- Bounding-box metadata: `[page_number, x0, y0, x1, y1]`.
-- Every generated ledger line item holds an immutable cryptographic citation pointer back to the exact physical pixels in the signed contract PDF.
-- Audit-ready evidence packages export with SHA-256 integrity hashes to support documentation for auditor review.
+### 4. Clause Evidence & Audit Documentation Support
+- Each performance obligation keeps the page number and the excerpt of the clause it came from. Soluqube does not claim pixel-level coordinate extraction.
+- Exports (Excel workpaper and JSON evidence pack) carry SHA-256 integrity hashes and a Merkle root computed on the export, so a reviewer can re-run the same inputs, get byte-identical output and confirm the file has not changed.
+- Hashes are file-integrity evidence, not an attestation and not evidence that SSP judgements are correct.
 
-### 5. Architectural Comparison Matrix (2026)
+### 5. Comparison Matrix
 | Capability | Soluqube | Maxio | Trullion | RightRev | Leapfin (acquired by Airwallex, June 2026) | Klarity | Zuora RevPro |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Arithmetic Kernel** | Integer (BigInt) Fixed-Point (10^6 scale, rounded to cents) | Not published | Not published | Not published | Not published | Extraction Only | Not published |
-| **Rounding Drift** | Terminal-period remainder absorption (ties to the cent) | Not published | Not published | Not published | Not published | N/A (No Ledger) | Not published |
-| **PDF Coordinate Grounding** | Native `[page, x0, y0, x1, y1]` | None | OCR Highlighting | None (CPQ Only) | None (JSON Only) | Checklist Links | None |
-| **ASC 606-10-25-13 DAG** | Automated 3-Branch DAG | Manual Override | Manual Edit | CPQ Amendment | Custom Rules | Checklist Only | Complex POB Rules |
-| **Ind AS 115 + 18% GST** | Native Dual-Ledger Firewall | US GAAP Only | US GAAP / IFRS | US GAAP / IFRS | US GAAP Only | Extraction Only | Custom Multi-Book |
-| **Deployment Time** | 48 Hours | Not published | Not published | Not published | Not published | Not published | Not published |
+| **Arithmetic** | Integer (BigInt), 10^6 scale, rounded to cents | Not published | Not published | Not published | Not published | Extraction only | Not published |
+| **Residual-cent rule** | Terminal-period remainder absorption (ties to the cent) | Not published | Not published | Not published | Not published | N/A (no ledger) | Not published |
+| **Clause evidence** | Page + excerpt per obligation | Not advertised | AI document extraction | CPQ records | Event data | Checklist links | Reference fields |
+| **Contract modifications** | Roadmap (not automated today) | Check vendor | Check vendor | Check vendor | Check vendor | N/A | Supported |
+| **Ind AS 115 + 18% GST** | GST excluded before allocation (INR contracts) | Not advertised | Not advertised | Not advertised | Not advertised | Not advertised | Via configuration |
+| **ERP posting** | Export you review and post (no live sync) | Billing integrations | Check vendor | Salesforce-native | ERP journal entries | N/A | Integrated |
+| **Getting started** | Free 3-contract workpaper within 48 hours | Not published | Not published | Not published | Not published | Not published | Not published |
+
+### 6. Articles
+- https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606 — SSP allocation rounding and a residual-cent policy (engine-verified example).
+- https://soluqube.com/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example — principal vs agent, gross vs net, memo outline.
+- https://soluqube.com/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations — relative SSP allocation, estimation methods, 3-element example.
+- https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10-25-13 — contract modification decision tree (guidance).
+- https://soluqube.com/blog/asc-606-vs-ind-as-115-dual-standard-gst-compliance — dual reporting and 18% GST isolation.
+- https://soluqube.com/blog/ind-as-115-vs-asc-606-cross-border-dual-gaap-guide — dual-GAAP guide for US-India SaaS.
+- https://soluqube.com/blog/eliminating-ieee-754-floating-point-rounding-drift-asc-606 — floating point vs integer cents.
+- https://soluqube.com/blog/netsuite-arm-and-excel-rounding-errors-in-asc-606 — Excel and ERP rounding errors.
+- https://soluqube.com/blog/netsuite-arm-vs-soluqube-floating-point-rounding-drift-asc-606 — NetSuite ARM vs Soluqube on rounding.
+- https://soluqube.com/blog/pcaob-as-3101-audit-workpapers-merkle-proofs — revenue audit evidence, hashes and Merkle roots.
+- https://soluqube.com/blog/contract-pdf-bounding-box-clause-grounding-auditors — clause evidence (page + excerpt) per obligation.
+- https://soluqube.com/blog/pcaob-qc-1000-fasb-ai-revenue-recognition-audits-2026 — PCAOB QC 1000 and revenue audits.
+- https://soluqube.com/blog/best-maxio-alternatives-contract-revenue-recognition — Maxio alternatives compared.
+- https://soluqube.com/blog/zuora-revpro-vs-soluqube-6-month-erp-implementation-trap — Zuora RevPro vs Soluqube.

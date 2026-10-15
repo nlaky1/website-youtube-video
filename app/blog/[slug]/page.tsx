@@ -2,8 +2,12 @@ import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import ReactMarkdown, { type Components } from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
+import GithubSlugger from "github-slugger";
 import Navbar from "@/components/navbar";
-import { BLOG_POSTS } from "@/data/blogPosts";
+import { BLOG_POSTS, type BlogPost } from "@/data/blogPosts";
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -26,6 +30,104 @@ interface Props {
   params: { slug: string };
 }
 
+const SITE = "https://soluqube.com";
+const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+/** "October 8, 2026" -> "2026-10-08" (ISO 8601 date, no timezone shift). */
+function toIsoDate(human: string): string {
+  const m = human.trim().match(/^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/);
+  if (!m) return human;
+  const month = MONTHS.indexOf(m[1].toLowerCase()) + 1;
+  if (month === 0) return human;
+  return `${m[3]}-${String(month).padStart(2, "0")}-${m[2].padStart(2, "0")}`;
+}
+
+/** Rendered <title>: append the brand only when the result stays within 60 characters. */
+function seoTitle(post: BlogPost): string {
+  const branded = `${post.title} | Soluqube`;
+  return branded.length <= 60 ? branded : post.title;
+}
+
+/**
+ * Table of contents built from the H2s in the markdown, with ids from the same
+ * slugger rehype-slug uses, so every TOC anchor resolves. Curated labels from
+ * post.toc are kept if they match one-to-one with the headings.
+ */
+function buildToc(post: BlogPost): { id: string; label: string }[] {
+  const slugger = new GithubSlugger();
+  const headings: { depth: number; text: string; id: string }[] = [];
+  let inFence = false;
+  for (const line of post.content.split("\n")) {
+    if (line.trim().startsWith("```")) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence) continue;
+    const m = line.match(/^(#{1,6})\s+(.+?)\s*#*\s*$/);
+    if (!m) continue;
+    const text = m[2].replace(/\*\*|__|`/g, "").replace(/\[([^\]]+)\]\([^)]*\)/g, "$1");
+    headings.push({ depth: m[1].length, text, id: slugger.slug(text) });
+  }
+  const h2s = headings.filter((h) => h.depth === 2);
+  const curated = post.toc && post.toc.length === h2s.length ? post.toc : null;
+  return h2s.map((h, i) => ({ id: h.id, label: curated ? curated[i].label : h.text }));
+}
+
+const linkClass = "text-emerald-700 font-medium underline underline-offset-2 decoration-emerald-300 hover:text-emerald-900";
+
+const markdownComponents: Components = {
+  h2: ({ node, ...props }) => (
+    <h2 {...props} className="text-xl sm:text-2xl font-bold text-slate-900 pt-6 border-b border-slate-200 pb-2 scroll-mt-24" />
+  ),
+  h3: ({ node, ...props }) => (
+    <h3 {...props} className="text-lg font-bold text-slate-900 pt-2 scroll-mt-24" />
+  ),
+  p: ({ node, ...props }) => <p {...props} className="text-slate-700 leading-relaxed text-sm sm:text-base" />,
+  ul: ({ node, ...props }) => <ul {...props} className="space-y-2 pl-5 list-disc marker:text-emerald-600" />,
+  ol: ({ node, ...props }) => <ol {...props} className="space-y-2 pl-5 list-decimal marker:text-emerald-600" />,
+  li: ({ node, ...props }) => <li {...props} className="text-slate-700 text-sm sm:text-base leading-relaxed" />,
+  strong: ({ node, ...props }) => <strong {...props} className="font-semibold text-slate-900" />,
+  hr: () => <hr className="border-slate-200" />,
+  blockquote: ({ node, ...props }) => (
+    <blockquote {...props} className="border-l-4 border-emerald-300 pl-4 text-slate-600 italic" />
+  ),
+  pre: ({ node, children }) => (
+    <div className="rounded-xl bg-slate-900 border border-slate-800 p-4 font-mono text-xs text-emerald-300 overflow-x-auto my-4 shadow-sm">
+      <pre>{children}</pre>
+    </div>
+  ),
+  code: ({ node, className, children, ...props }) => (
+    <code {...props} className={className}>
+      {children}
+    </code>
+  ),
+  table: ({ node, ...props }) => (
+    <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
+      <table {...props} className="w-full text-left text-xs sm:text-sm border-collapse" />
+    </div>
+  ),
+  th: ({ node, ...props }) => (
+    <th {...props} className="p-3 font-semibold text-slate-900 bg-slate-50 border-b border-slate-200 align-top" />
+  ),
+  td: ({ node, ...props }) => <td {...props} className="p-3 text-slate-700 border-b border-slate-100 align-top" />,
+  a: ({ node, href = "", children, ...props }) => {
+    const internal = href.startsWith("/") || href.startsWith("#") || /^https:\/\/soluqube\.com(\/|$)/.test(href);
+    if (internal) {
+      const local = href.replace(/^https:\/\/soluqube\.com/, "") || "/";
+      return (
+        <Link href={local} className={linkClass}>
+          {children}
+        </Link>
+      );
+    }
+    return (
+      <a {...props} href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        {children}
+      </a>
+    );
+  },
+};
+
 export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({
     slug: post.slug,
@@ -42,27 +144,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const title = seoTitle(post);
+
   return {
-    title: post.title, // root layout template appends " | Soluqube"
+    title: { absolute: title },
     description: post.subtitle,
     keywords: post.tags,
     alternates: {
       canonical: `https://soluqube.com/blog/${post.slug}`,
     },
     openGraph: {
-      title: post.title,
+      title,
       description: post.subtitle,
       url: `https://soluqube.com/blog/${post.slug}`,
       siteName: "Soluqube",
       type: "article",
-      publishedTime: post.publishedAt,
+      publishedTime: toIsoDate(post.publishedAt),
+      modifiedTime: toIsoDate(post.updatedAt ?? post.publishedAt),
       authors: [post.author.name],
       tags: post.tags,
+      images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title,
       description: post.subtitle,
+      images: ["/og-image.jpg"],
     },
   };
 }
@@ -77,6 +184,7 @@ export default function BlogPostPage({ params }: Props) {
   const currentIndex = BLOG_POSTS.findIndex((p) => p.slug === params.slug);
   const prevPost = currentIndex > 0 ? BLOG_POSTS[currentIndex - 1] : null;
   const nextPost = currentIndex < BLOG_POSTS.length - 1 ? BLOG_POSTS[currentIndex + 1] : null;
+  const toc = buildToc(post);
 
   // JSON-LD Schema.org Multi-Entity Graph (TechArticle, FAQPage, BreadcrumbList for GEO)
   const jsonLd = {
@@ -88,9 +196,9 @@ export default function BlogPostPage({ params }: Props) {
         "headline": post.title,
         "description": post.subtitle,
         "author": {
-          "@type": "Person",
-          "name": post.author.name,
-          "jobTitle": post.author.role
+          "@type": "Organization",
+          "name": "Soluqube Editorial",
+          "url": SITE
         },
         "publisher": {
           "@type": "Organization",
@@ -101,7 +209,9 @@ export default function BlogPostPage({ params }: Props) {
             "url": "https://soluqube.com/icon.png"
           }
         },
-        "datePublished": post.publishedAt,
+        "datePublished": toIsoDate(post.publishedAt),
+        "dateModified": toIsoDate(post.updatedAt ?? post.publishedAt),
+        "image": `${SITE}/og-image.jpg`,
         "mainEntityOfPage": `https://soluqube.com/blog/${post.slug}`,
         "keywords": post.tags.join(", ")
       },
@@ -232,47 +342,14 @@ export default function BlogPostPage({ params }: Props) {
             </aside>
 
             {/* MAIN ARTICLE BODY (Formatted Markdown/HTML rendering) */}
-            <div className="space-y-6 text-slate-700 text-sm sm:text-base leading-relaxed">
-              {post.content.split("\n\n").map((chunk, idx) => {
-                const trimmed = chunk.trim();
-                if (trimmed.startsWith("## ")) {
-                  return (
-                    <h2
-                      key={idx}
-                      id={trimmed.replace("## ", "").toLowerCase().replace(/[^a-z0-9]+/g, "-")}
-                      className="text-xl sm:text-2xl font-bold text-slate-900 pt-6 border-b border-slate-200 pb-2"
-                    >
-                      {trimmed.replace("## ", "")}
-                    </h2>
-                  );
-                }
-
-                if (trimmed.startsWith("```")) {
-                  const codeContent = trimmed.replace(/^```[a-z]*\n/, "").replace(/\n```$/, "");
-                  return (
-                    <div key={idx} className="rounded-xl bg-slate-900 border border-slate-800 p-4 font-mono text-xs text-emerald-300 overflow-x-auto my-4 shadow-sm">
-                      <pre><code>{codeContent}</code></pre>
-                    </div>
-                  );
-                }
-
-                if (trimmed.startsWith("* ") || trimmed.startsWith("- ")) {
-                  const items = trimmed.split("\n").map(li => li.replace(/^[\*\-]\s+/, ""));
-                  return (
-                    <ul key={idx} className="space-y-2 pl-4 list-disc marker:text-emerald-600">
-                      {items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="text-slate-700 text-sm">{item}</li>
-                      ))}
-                    </ul>
-                  );
-                }
-
-                return (
-                  <p key={idx} className="text-slate-700 leading-relaxed text-sm sm:text-base">
-                    {trimmed}
-                  </p>
-                );
-              })}
+            <div className="space-y-6 text-slate-700 text-sm sm:text-base leading-relaxed [&_:not(pre)>code]:bg-slate-100 [&_:not(pre)>code]:text-slate-800 [&_:not(pre)>code]:px-1 [&_:not(pre)>code]:py-0.5 [&_:not(pre)>code]:rounded [&_:not(pre)>code]:text-[0.9em]">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeSlug]}
+                components={markdownComponents}
+              >
+                {post.content}
+              </ReactMarkdown>
             </div>
 
             {/* TAGS FOOTER */}
@@ -356,14 +433,14 @@ export default function BlogPostPage({ params }: Props) {
           <aside className="lg:col-span-4 space-y-6">
             <div className="sticky top-20 space-y-6">
               {/* TABLE OF CONTENTS */}
-              {post.toc && post.toc.length > 0 && (
+              {toc.length > 0 && (
                 <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs">
                   <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 mb-3 flex items-center gap-2">
                     <BookOpen className="w-3.5 h-3.5 text-emerald-600" />
                     <span>In This Guide</span>
                   </div>
                   <nav className="space-y-1.5 font-mono text-xs">
-                    {post.toc.map((item) => (
+                    {toc.map((item) => (
                       <a
                         key={item.id}
                         href={`#${item.id}`}

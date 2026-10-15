@@ -45,36 +45,6 @@ export default function SoluqubeVsLeapfinPage() {
           "url": "https://soluqube.com"
         },
         "mainEntityOfPage": "https://soluqube.com/soluqube-vs-leapfin"
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://soluqube.com/soluqube-vs-leapfin#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the primary difference between Soluqube and Leapfin?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Leapfin is built as a financial data pipeline that consolidates millions of high-volume digital micro-transactions (e.g., Stripe, Shopify, consumer apps) into NetSuite journal entries. Soluqube is a contract audit subledger: you confirm the performance obligations and stated prices from your MSAs, SOWs and order forms, and it produces the ASC 606 & Ind AS 115 allocation and recognition schedule, with clause excerpts linked back to the source agreement."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can Soluqube operate alongside Leapfin?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Enterprises managing high-volume consumer subscriptions and high-value bespoke enterprise contracts often use Leapfin for high-velocity payment streaming and Soluqube for deterministic auditing of non-standard, six-figure enterprise contracts requiring audit-ready evidence packages."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does Leapfin isolate Indian statutory GST (Ind AS 115)?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Leapfin focuses primarily on US GAAP and IFRS 15. It lacks native statutory logic to isolate Indian 18% GST (CGST/SGST/IGST) from transaction consideration or generate MCA Schedule III balance sheet workpapers."
-            }
-          }
-        ]
       }
     ]
   };
@@ -133,9 +103,9 @@ export default function SoluqubeVsLeapfinPage() {
               <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Source Ingestion</div>
               <div className="text-base font-semibold text-white flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Raw Contract PDFs
+                Signed Contract Terms
               </div>
-              <p className="text-xs text-slate-500 mt-1">Reads signed MSAs, SOWs, and Order Forms directly.</p>
+              <p className="text-xs text-slate-500 mt-1">Starts from signed MSAs, SOWs and Order Forms; you confirm obligations and prices.</p>
             </div>
             <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40">
               <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Clause Verification</div>
@@ -143,7 +113,7 @@ export default function SoluqubeVsLeapfinPage() {
                 <CheckCircle2 className="w-4 h-4 text-cyan-400" />
                 Clause Evidence References
               </div>
-              <p className="text-xs text-slate-500 mt-1">Direct click-through link to highlighted legal clause.</p>
+              <p className="text-xs text-slate-500 mt-1">Page and excerpt of the clause behind each obligation.</p>
             </div>
             <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40">
               <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Precision & Compliance</div>
@@ -183,24 +153,24 @@ export default function SoluqubeVsLeapfinPage() {
                 <td className="py-4 px-6 font-medium text-white">Primary Focus</td>
                 <td className="py-4 px-6">High-volume transaction event streaming</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">B2B Complex Contract Document Audits</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Different focus: Soluqube reads legal paper</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Different focus: Soluqube starts from the contract</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Contract PDF Ingestion</td>
                 <td className="py-4 px-6 text-rose-400">❌ No (Relies on upstream CRM/Billing)</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">✅ Sub-millimeter token OCR parser</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">✅ Contract upload; you confirm obligations and prices</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Soluqube verifies signed paper vs. CRM</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Visual Clause Grounding</td>
                 <td className="py-4 px-6 text-rose-400">❌ No clause evidence from contract PDFs</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">✅ [page, x, y] Visual Coordinate BBoxes</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Instant audit evidence for auditor sampling</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">✅ Clause evidence (page + excerpt)</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Each obligation traceable to its clause</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Calculation Precision</td>
-                <td className="py-4 px-6">Standard database SQL decimals</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">Integer (BigInt) micro-cent fixed-point DAG</td>
+                <td className="py-4 px-6">Not published</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">Integer (BigInt), 10^6 scale, rounded to cents</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Ties to the cent (terminal-period absorption)</td>
               </tr>
               <tr>
@@ -212,8 +182,8 @@ export default function SoluqubeVsLeapfinPage() {
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Implementation Overhead</td>
                 <td className="py-4 px-6">6 to 12 Weeks (Data pipeline engineering)</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">Instant self-serve or 24 hours</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Zero data engineering required</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">Free 3-contract workpaper in 48 hours</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">No data pipeline to build</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Self-Serve Pricing</td>
@@ -282,7 +252,7 @@ export default function SoluqubeVsLeapfinPage() {
               When should a company choose Soluqube over Leapfin?
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              If your business handles custom B2B enterprise software contracts (MSAs, SOWs) with bespoke termination rights, multi-element POB allocations, or cross-border Indian entities, Soluqube is built specifically to read the legal documents and produce audit tie-outs to the cent. Leapfin is better suited for consumer brands aggregating millions of micro-transactions from Stripe or Shopify.
+              If your business handles custom B2B enterprise software contracts (MSAs, SOWs) with bespoke termination rights, multi-element POB allocations, or cross-border Indian entities, Soluqube is built to work from those contract terms and produce allocations and schedules that tie to the cent. Leapfin is better suited for consumer brands aggregating millions of micro-transactions from Stripe or Shopify.
             </p>
           </div>
           <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/40">

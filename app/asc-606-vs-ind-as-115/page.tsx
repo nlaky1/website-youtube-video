@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ASC 606 vs Ind AS 115: Dual Books & 18% GST | Soluqube",
+  title: { absolute: "ASC 606 vs Ind AS 115: Dual Books & 18% GST | Soluqube" },
   description: "Cross-border dual-ledger compliance engine isolating 18% Indian GST under MCA Schedule III while maintaining US GAAP ASC 606 parity.",
   alternates: {
     canonical: "https://soluqube.com/asc-606-vs-ind-as-115",
@@ -77,9 +77,9 @@ export default function DualStandardHubPage() {
             </div>
 
             <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-              <h4 className="text-sm font-bold text-slate-900">2. Multi-Currency Dual General Ledger Sync</h4>
+              <h4 className="text-sm font-bold text-slate-900">2. Schedule Export for Both Ledgers</h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Posts parallel journal entries to US GAAP USD Ledgers and Indian MCA INR Ledgers with automated foreign currency translation and zero reconciliation discrepancies.
+                Exports the schedule for your US GAAP (USD) and Ind AS 115 (INR) ledgers as Excel and CSV you review and post. Live ERP posting is on the roadmap.
               </p>
             </div>
           </div>

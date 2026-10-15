@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ASC 606 Deterministic Revenue Recognition Engine | Soluqube",
+  title: { absolute: "ASC 606 SSP Allocation & Revenue Schedules | Soluqube" },
   description: "Relative-SSP allocation, full-term ASC 606 schedules that tie to the cent, and audit-ready evidence packages with clause references per obligation.",
   alternates: {
     canonical: "https://soluqube.com/asc-606",
@@ -41,7 +41,7 @@ export default function ASC606HubPage() {
             Deterministic ASC 606 Contract-to-Ledger Engine
           </h1>
           <p className="text-slate-600 text-base max-w-3xl leading-relaxed">
-            Eliminating IEEE-754 binary floating-point rounding discrepancies across multi-year SaaS contracts with integer (BigInt) fixed-point parity and automated audit-ready evidence packages.
+            Relative-SSP allocation and full-term ASC 606 schedules in integer (BigInt) arithmetic that tie to the cent, with clause evidence per obligation and hashed evidence workpapers.
           </p>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function ASC606HubPage() {
             <div className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold">
               $0
             </div>
-            <h3 className="text-base font-bold text-slate-900">Zero Mathematical Drift</h3>
+            <h3 className="text-base font-bold text-slate-900">Ties to the Cent</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Scaled integer arithmetic with terminal-period remainder absorption: the full-term schedule ends at $0.00 deferred.
             </p>
@@ -61,11 +61,11 @@ export default function ASC606HubPage() {
 
           <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
             <div className="w-9 h-9 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center font-bold">
-              DAG
+              25-13
             </div>
-            <h3 className="text-base font-bold text-slate-900">ASC 606-10-25-13 Routing</h3>
+            <h3 className="text-base font-bold text-slate-900">Contract Modifications (Roadmap)</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Deterministic graph evaluation routes mid-term contract amendments between Cumulative Catch-Up and Prospective reallocation.
+              Modification accounting under ASC 606-10-25-13 (prospective vs cumulative catch-up) is on the roadmap, not automated today. See the <Link href="/blog/contract-modification-precedence-dag-asc-606-10-25-13" className="text-blue-700 underline">decision tree guide</Link>.
             </p>
           </div>
 
@@ -73,9 +73,9 @@ export default function ASC606HubPage() {
             <div className="w-9 h-9 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center font-bold">
               PDF
             </div>
-            <h3 className="text-base font-bold text-slate-900">Spatial Token Grounding</h3>
+            <h3 className="text-base font-bold text-slate-900">Clause Evidence</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Every extracted pricing term links to normalized pixel coordinates on signed PDFs for 1-click auditor verification.
+              Each obligation keeps the page and excerpt of the clause it came from, so a reviewer can trace it to the signed contract.
             </p>
           </div>
         </div>

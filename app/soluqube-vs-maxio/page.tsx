@@ -22,7 +22,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Maxio Alternative: Soluqube vs Maxio for ASC 606",
-  description: "Compare Soluqube and Maxio (formerly SaaSOptics / Chargify). Why CFOs and controllers choose Soluqube's deterministic integer (BigInt) contract-to-ledger audit engine over invoice-based billing tools.",
+  description: "Compare Soluqube and Maxio (SaaSOptics / Chargify): contract-based SSP allocation and schedules that tie to the cent vs invoice-based billing.",
   alternates: {
     canonical: "https://soluqube.com/soluqube-vs-maxio",
   },
@@ -39,7 +39,7 @@ export default function SoluqubeVsMaxioPage() {
     {
       feature: "Primary Source of Truth",
       maxio: "CRM Quotes & Billing Line Items (Salesforce / HubSpot)",
-      soluqube: "Signed Legal Agreement (Physical PDF Text & OCR Layer)",
+      soluqube: "Signed Legal Agreement (terms you confirm)",
       advantage: "Soluqube catches unbilled contract amendments & clauses",
     },
     {
@@ -51,7 +51,7 @@ export default function SoluqubeVsMaxioPage() {
     {
       feature: "Math Precision Engine",
       maxio: "Not published",
-      soluqube: "Integer (BigInt) Micro-Cent Fixed-Point DAG Engine",
+      soluqube: "Integer (BigInt) Arithmetic, 10^6 Scale, Rounded to Cents",
       advantage: "Ties to the cent: terminal-period remainder absorption leaves $0.00 deferred at term end",
     },
     {
@@ -115,8 +115,8 @@ export default function SoluqubeVsMaxioPage() {
 
           <p className="text-slate-600 text-lg max-w-3xl leading-relaxed">
             Maxio (formerly Chargify + SaaSOptics) manages subscriptions and charges credit cards. 
-            Soluqube is your <strong>contract-to-ledger audit governor</strong>: reading executed legal PDFs, 
-            eliminating IEEE-754 cent drift with integer (BigInt) math, and producing audit-ready evidence packages in seconds.
+            Soluqube is your <strong>contract-to-ledger audit governor</strong>: starting from the executed contract, 
+            allocating by relative SSP with integer (BigInt) math that ties to the cent, and producing a hashed evidence workpaper.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
@@ -124,7 +124,7 @@ export default function SoluqubeVsMaxioPage() {
               href="/audit"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition shadow-sm"
             >
-              <span>Test 3-Contract Drift Audit ($0)</span>
+              <span>Free 3-Contract Audit-Defense Workpaper</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
@@ -251,17 +251,17 @@ export default function SoluqubeVsMaxioPage() {
               <span>The &quot;Contract-to-Quote&quot; Blindspot</span>
             </div>
             <p className="text-slate-600 text-xs leading-relaxed">
-              Maxio only knows what is configured in Salesforce CPQ or typed into invoice line items. If a bespoke PDF amendment promises customized delivery SLAs, termination for convenience, or ramp pricing, billing tools recognize restatable revenue. Soluqube reads the signed PDF text directly and pins obligations to spatial coordinates.
+              Maxio only knows what is configured in Salesforce CPQ or typed into invoice line items. If a bespoke PDF amendment promises customized delivery SLAs, termination for convenience, or ramp pricing, billing tools recognize restatable revenue. Soluqube starts from the signed contract: you confirm each obligation and price, and each carries the page and excerpt of its clause.
             </p>
           </div>
 
           <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
             <div className="flex items-center gap-2 text-indigo-600 font-bold text-sm">
               <span className="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center text-xs font-mono">2</span>
-              <span>Zero IEEE-754 Floating-Point Drift</span>
+              <span>Schedules That Tie to the Cent</span>
             </div>
             <p className="text-slate-600 text-xs leading-relaxed">
-              Multi-year SaaS contracts split across 36 ratable periods create recurring fractional pennies (e.g. $100,000 / 36 = $2,777.7777...). Standard databases accumulate cent drift that requires manual plug journal entries at close. Soluqube&apos;s integer (BigInt) DAG absorbs remainder fractions deterministically so ending deferred revenue amortizes to exactly $0.00.
+              Multi-year SaaS contracts split across 36 ratable periods create recurring fractional pennies (e.g. $100,000 / 36 = $2,777.7777...). Rounding each period on its own leaves residual cents that someone has to plug at close. Soluqube&apos;s integer (BigInt) engine absorbs the remainder in the final period so ending deferred revenue amortizes to exactly $0.00.
             </p>
           </div>
 

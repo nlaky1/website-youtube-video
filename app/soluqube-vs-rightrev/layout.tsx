@@ -1,22 +1,22 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Soluqube vs. RightRev | Standalone ASC 606 Subledger vs. Salesforce CPQ Lock-In',
-  description: 'Compare Soluqube vs. RightRev for ASC 606 and IFRS 15 revenue recognition. Soluqube ingests raw PDF customer contracts, provides integer (BigInt) micro-cent precision, and operates across any CRM or ERP with zero Salesforce lock-in.',
+  title: "Soluqube vs RightRev: ASC 606 Without CPQ Lock-In",
+  description: "RightRev runs inside Salesforce CPQ. Soluqube is a standalone subledger: relative-SSP allocation, schedules that tie to the cent, Ind AS 115 support.",
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-rightrev',
   },
   openGraph: {
-    title: 'Soluqube vs. RightRev | Standalone Contract Subledger vs. Salesforce Native Engine',
-    description: 'Decouple ASC 606 revenue recognition from Salesforce CPQ. Deterministic integer (BigInt) math, Ind AS 115 Dual-GAAP, and raw contract PDF grounding.',
+    title: "Soluqube vs RightRev: ASC 606 Without CPQ Lock-In | Soluqube",
+    description: "RightRev runs inside Salesforce CPQ. Soluqube is a standalone subledger: relative-SSP allocation, schedules that tie to the cent, Ind AS 115 support.",
     url: 'https://soluqube.com/soluqube-vs-rightrev',
     siteName: 'Soluqube',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Soluqube vs. RightRev: Revenue Recognition Engine Comparison',
-    description: 'Eliminate Salesforce CPQ lock-in and floating-point revenue drift with Soluqube deterministic contract audits.',
+    title: "Soluqube vs RightRev: ASC 606 Without CPQ Lock-In | Soluqube",
+    description: "RightRev runs inside Salesforce CPQ. Soluqube is a standalone subledger: relative-SSP allocation, schedules that tie to the cent, Ind AS 115 support.",
   },
 };
 

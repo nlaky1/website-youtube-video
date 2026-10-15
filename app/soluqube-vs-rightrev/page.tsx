@@ -46,36 +46,6 @@ export default function SoluqubeVsRightRevPage() {
           "url": "https://soluqube.com"
         },
         "mainEntityOfPage": "https://soluqube.com/soluqube-vs-rightrev"
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://soluqube.com/soluqube-vs-rightrev#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do I need Salesforce CPQ or Salesforce Billing to use Soluqube?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. While RightRev is tightly coupled to the Salesforce ecosystem, Soluqube is a standalone revenue subledger that operates directly on signed customer contract PDFs (MSAs, SOWs, Order Forms). It integrates via API with HubSpot, NetSuite, QuickBooks, Stripe, or Salesforce without vendor lock-in."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does Soluqube prevent revenue rounding errors compared to RightRev?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "RightRev runs on the Salesforce platform; its arithmetic internals are not published. Soluqube uses integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value across all accounting periods."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does RightRev support Indian GAAP (Ind AS 115) and statutory GST isolation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. RightRev is built strictly for US GAAP (ASC 606) and IFRS 15. Soluqube natively supports Dual-GAAP (ASC 606 + Ind AS 115) with automated 18% statutory GST balance sheet isolation and MCA Schedule III workpaper generation."
-            }
-          }
-        ]
       }
     ]
   };
@@ -136,7 +106,7 @@ export default function SoluqubeVsRightRevPage() {
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                 Zero Salesforce Lock-In
               </div>
-              <p className="text-xs text-slate-500 mt-1">Works on raw PDFs from any CRM, CPQ, or deal desk.</p>
+              <p className="text-xs text-slate-500 mt-1">Works from the signed contract, whatever CRM or CPQ you use.</p>
             </div>
             <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40">
               <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Math Engine</div>
@@ -144,7 +114,7 @@ export default function SoluqubeVsRightRevPage() {
                 <CheckCircle2 className="w-4 h-4 text-cyan-400" />
                 Integer Fixed Point
               </div>
-              <p className="text-xs text-slate-500 mt-1">Absorbs micro-cent remainders with $0.00 periodic drift.</p>
+              <p className="text-xs text-slate-500 mt-1">The final period absorbs the remainder, so schedules tie to the cent.</p>
             </div>
             <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40">
               <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Regulatory Scope</div>
@@ -189,14 +159,14 @@ export default function SoluqubeVsRightRevPage() {
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Salesforce Dependency</td>
                 <td className="py-4 px-6 text-rose-400">100% Native (Hard dependency)</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">0% Lock-in (Standalone API)</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Operates on HubSpot, NetSuite, Stripe</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Standalone (no CRM required)</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Works alongside any CRM or ERP</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Calculation Precision</td>
-                <td className="py-4 px-6">Apex / SOQL standard double float</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">Integer (BigInt) micro-cent fixed-point DAG</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Zero cumulative rounding variance</td>
+                <td className="py-4 px-6">Not published</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">Integer (BigInt), 10^6 scale, rounded to cents</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Schedules tie to the contract value</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Dual-GAAP (ASC 606 + Ind AS 115)</td>
@@ -213,14 +183,14 @@ export default function SoluqubeVsRightRevPage() {
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Contract Clause Grounding</td>
                 <td className="py-4 px-6">Manual reference text field</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">Sub-millimeter [page, x, y] BBoxes</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Instant visual proof for external auditors</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">Clause evidence (page + excerpt)</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">Each obligation traceable to its clause</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Implementation Duration</td>
                 <td className="py-4 px-6">8 to 16 Weeks (System integrator required)</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">Instant self-serve or 24 hours</td>
-                <td className="py-4 px-6 text-emerald-400 font-medium">Zero professional service drag</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">Free 3-contract workpaper in 48 hours</td>
+                <td className="py-4 px-6 text-emerald-400 font-medium">No system integrator needed</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Pricing Model</td>
@@ -289,7 +259,7 @@ export default function SoluqubeVsRightRevPage() {
               Why do finance teams decouple revenue recognition from Salesforce?
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Salesforce is built for pipeline and CRM tracking, not rigorous subledger accounting. Coupling your revrec engine to Salesforce CPQ creates severe vendor lock-in, increases seat license costs for accounting personnel, and introduces data drift whenever sales teams modify quote stages without informing the deal desk. Soluqube acts as an independent auditor evaluating actual signed contracts.
+              Salesforce is built for pipeline and CRM tracking, not rigorous subledger accounting. Coupling your revrec engine to Salesforce CPQ creates severe vendor lock-in, increases seat license costs for accounting personnel, and introduces data drift whenever sales teams modify quote stages without informing the deal desk. Soluqube works from the signed contract terms you confirm.
             </p>
           </div>
           <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/40">
@@ -297,7 +267,7 @@ export default function SoluqubeVsRightRevPage() {
               How does Soluqube handle mid-term contract modifications?
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Under ASC 606-10-25-13, contract modifications must be evaluated for prospective versus cumulative catch-up accounting. Soluqube executes a Directed Acyclic Graph (DAG) that ingests the addendum PDF, links it to the original master agreement, recalculates Standalone Selling Prices, and outputs compliant journal entries without requiring manual spreadsheets.
+              Under ASC 606-10-25-10 to 25-13, a modification is accounted for as a separate contract, prospectively, or with a cumulative catch-up. Soluqube does not automate that assessment yet: modification accounting is on the roadmap. Today your team makes the call; see our <Link href="/blog/contract-modification-precedence-dag-asc-606-10-25-13" className="text-cyan-400 underline">guide to how ASC 606-10-25-13 works</Link>.
             </p>
           </div>
           <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/40">

@@ -7,29 +7,28 @@
       "name": "Soluqube",
       "alternateName": [
         "Soluqube ASC 606 Revenue Recognition Engine",
-        "Soluqube Zero-Drift Contract-to-Ledger Engine",
-        "Soluqube Ind AS 115 Compliance System"
+        "Soluqube SSP Allocation Engine",
+        "Soluqube Ind AS 115 Revenue Schedules"
       ],
       "url": "https://soluqube.com",
       "applicationCategory": "FinancialApplication, BusinessApplication",
-      "operatingSystem": "Web, Cloud VPC, Self-Hosted Docker Enclave",
-      "description": "Deterministic ASC 606 and Ind AS 115 contract-to-ledger revenue recognition engine. Enforces integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, automated contract modification precedence DAGs, coordinate bounding-box PDF evidence grounding, and SHA-256 integrity hashes on exports.",
+      "operatingSystem": "Web",
+      "description": "Deterministic ASC 606 and Ind AS 115 revenue allocation engine. You confirm a contract's obligations and stated prices; it produces the relative-SSP allocation and a full-term schedule in integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, plus clause evidence (page + excerpt) per obligation and SHA-256 integrity hashes on exports.",
       "softwareVersion": "2.4.0",
       "license": "Proprietary",
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "30-Day Zero-Risk Enterprise Audit Sandbox (encrypted in transit, SHA-256 integrity hashes on exports)"
+        "description": "Free 3-Contract Audit-Defense Workpaper, delivered within 48 hours"
       },
       "featureList": [
-        "Integer (BigInt) Fixed-Point Contract DAG Engine (10^6 scale, rounded to cents, terminal-period remainder absorption)",
-        "ASC 606-10-25-13 Contract Modification Engine (Cumulative Catch-Up & Prospective Reallocation)",
-        "ASC 606-10-55-45 Proportional Breakage & Conditional Rollover Reserve Calculation",
-        "ASC 606-10-32-25 Consideration Payable & SLA Penalty Revenue Reduction Accounting",
-        "Dual-Reporting US GAAP (ASC 830) & Indian GAAP (Ind AS 21) Cross-Border FX Isolation",
-        "Audit-Ready Evidence Package with Multi-DPI PDF Bounding-Box Coordinate Grounding",
-        "OpenLineage JSON-LD Export with SHA-256 Merkle Verification"
+        "Relative-SSP allocation in integer (BigInt) arithmetic (10^6 scale, rounded to cents)",
+        "Full-term revenue schedules with terminal-period remainder absorption, ending at $0.00 deferred",
+        "Written residual-cent rule: the last-listed obligation absorbs the allocation remainder",
+        "Statutory 18% GST excluded from the transaction price for INR contracts (Ind AS 115)",
+        "Clause evidence (page + excerpt) per performance obligation",
+        "Excel workpaper and JSON evidence pack with SHA-256 hashes and a Merkle root computed on the export"
       ],
       "provider": {
         "@id": "https://soluqube.com/#org"
@@ -38,20 +37,20 @@
     {
       "@type": "AccountingService",
       "@id": "https://soluqube.com/#accounting-service",
-      "name": "Soluqube Deterministic Revenue Accounting & Audit Defense",
-      "serviceType": "ASC 606 & Ind AS 115 Revenue Recognition & Audit Documentation Support",
+      "name": "Soluqube Audit-Defense Workpaper",
+      "serviceType": "ASC 606 & Ind AS 115 SSP Allocation and Audit Documentation Support",
       "provider": {
         "@id": "https://soluqube.com/#org"
       },
       "areaServed": "Global (US, India, UK, Singapore, EU)",
-      "description": "Automated technical accounting service and engine that models complex multi-element contract allocations, modification accounting (ASC 606-10-25-13), dual-standard Ind AS 115 transition schedules, and generates audit-ready evidence packages."
+      "description": "Deterministic relative-SSP allocations, full-term ASC 606 and Ind AS 115 schedules that tie to the cent, and hashed evidence workpapers that support documentation for auditor review. Contract-modification accounting is on the roadmap and not automated today."
     },
     {
       "@type": "FinancialProduct",
       "@id": "https://soluqube.com/#dual-amortization-engine",
-      "name": "Soluqube Dual-Standard Revenue Amortization Engine",
-      "category": "ASC 606 / Ind AS 115 Dual Standard Amortization",
-      "description": "Automated ledger engine for cross-border SaaS and enterprise contracts, calculating parallel ratable amortization schedules under US GAAP and Indian GAAP with GST statutory tax isolation and historical non-monetary currency translations.",
+      "name": "Soluqube Dual-Standard Revenue Schedules",
+      "category": "ASC 606 / Ind AS 115 Revenue Schedules",
+      "description": "Ratable and point-in-time revenue schedules under US GAAP and Ind AS 115, with 18% GST excluded from the transaction price on INR contracts.",
       "brand": {
         "@id": "https://soluqube.com/#org"
       }
@@ -75,8 +74,8 @@
     {
       "@type": "TechArticle",
       "@id": "https://soluqube.com/asc-606#article",
-      "headline": "Deterministic ASC 606 & Ind AS 115 Revenue Recognition Architecture",
-      "description": "Technical specification for eliminating IEEE-754 binary floating-point rounding drift in multi-year enterprise contracts using integer (BigInt) fixed-point arithmetic and automated contract modification precedence DAGs.",
+      "headline": "Deterministic ASC 606 & Ind AS 115 Revenue Allocation",
+      "description": "How Soluqube allocates the transaction price by relative standalone selling price and builds full-term schedules in integer arithmetic that tie to the cent, with clause evidence and hashed workpapers.",
       "author": {
         "@id": "https://soluqube.com/#org"
       },
@@ -88,61 +87,23 @@
     {
       "@type": "HowTo",
       "@id": "https://soluqube.com/audit-workpapers#howto",
-      "name": "How to Generate Audit-Ready Evidence Packages with PDF Bounding-Box Grounding",
-      "description": "Step-by-step workflow for exporting audit-ready evidence packages for external audit teams.",
+      "name": "How to Produce an Audit-Ready SSP Allocation Workpaper",
+      "description": "Step-by-step workflow for exporting an audit-ready evidence workpaper for external audit teams.",
       "step": [
         {
           "@type": "HowToStep",
-          "name": "Ingest Signed Contract Documents",
-          "text": "Upload master services agreements and order forms; Soluqube normalizes document geometry onto a 1,000x1,000 coordinate grid."
+          "name": "Upload the Signed Contract",
+          "text": "Upload the master services agreement or order form; the document is fingerprinted with SHA-256."
         },
         {
           "@type": "HowToStep",
-          "name": "Execute 5-Step Model Verification",
-          "text": "The engine extracts distinct performance obligations, computes standalone selling prices, and resolves transaction pricing."
+          "name": "Confirm Obligations and Prices",
+          "text": "Confirm the performance obligations, stated prices and standalone selling prices; each obligation keeps the page and excerpt of its clause."
         },
         {
           "@type": "HowToStep",
-          "name": "Export Audit-Ready Evidence Package",
-          "text": "Download the audit-ready evidence package (schedule, source-clause references, calculation log) with SHA-256 integrity hashes to support documentation for auditor review."
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://soluqube.com/asc-606#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Why can LLMs not calculate relative standalone selling price (SSP) allocations reliably?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Frontier LLMs (GPT-4, Claude, Gemini) are probabilistic autoregressive token generators that suffer from arithmetic hallucinations and rounding drift when performing multi-variable division over fractional contract terms. Soluqube uses deterministic integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Soluqube guarantee zero rounding drift across multi-year ASC 606 contracts?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Soluqube uses integer (BigInt) fixed-point arithmetic at 10^6 scale, rounded to cents, rather than standard IEEE-754 64-bit binary floating-point numbers. Any residual rounding remainder from non-terminating divisions is absorbed into the terminal period of the performance obligation, so the schedule ties to the contract value."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Soluqube ground revenue performance obligations to contract PDFs for external auditors?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Soluqube normalizes multi-DPI PDF documents to a canonical 1000x1000 coordinate grid, linking every ASC 606 performance obligation directly to bounding box coordinates (x0, y0, x1, y1, page) with extracted clause text and SHA-256 content hashes to support audit documentation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Soluqube handle cross-border Indian GST under Ind AS 115?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Soluqube isolates statutory 18% GST (CGST/SGST/IGST) into dedicated balance sheet liability accounts, ensuring statutory indirect taxes never pollute top-line ratable revenue schedules under Schedule III of the Indian Companies Act 2013."
-          }
+          "name": "Export the Evidence Workpaper",
+          "text": "Download the allocation, full-term schedule, clause references and calculation log with SHA-256 integrity hashes to support documentation for auditor review."
         }
       ]
     }

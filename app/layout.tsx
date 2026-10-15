@@ -10,11 +10,11 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://soluqube.com"),
   title: {
-    default: "Soluqube | Deterministic ASC 606 & Ind AS 115 Revenue Recognition Engine",
+    default: "Soluqube | Defensible SSP Allocation for ASC 606",
     template: "%s | Soluqube",
   },
   description:
-    "Deterministic contract-to-ledger revenue recognition engine. Eliminate manual spreadsheet rounding drift, enforce cross-document billing rate caps, and isolate statutory 18% GST under Ind AS 115 and ASC 606 with zero floating-point error. Patent Priority Application No. 202621096305.",
+    "Auditor questioning an SSP allocation? Soluqube produces the allocation, a schedule that ties to the cent and a hashed workpaper. ASC 606 & Ind AS 115.",
   keywords: [
     "ASC 606 revenue recognition software",
     "Ind AS 115 automated compliance",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     canonical: "https://soluqube.com",
   },
   openGraph: {
-    title: "Soluqube | Deterministic Contract-to-Ledger Revenue Recognition Engine",
+    title: "Soluqube | Defensible SSP Allocation for ASC 606",
     description:
-      "Eliminate spreadsheet rounding drift, enforce cross-document rate caps, and isolate statutory 18% GST under Ind AS 115 & ASC 606 with zero floating-point error.",
+      "Deterministic SSP allocation, a full-term schedule that ties to the cent, and a hashed evidence workpaper your auditor can re-perform. ASC 606 and Ind AS 115.",
     url: "https://soluqube.com",
     siteName: "Soluqube",
     images: [
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soluqube | Deterministic ASC 606 & Ind AS 115 Revenue Recognition",
+    title: "Soluqube | Defensible SSP Allocation for ASC 606",
     description:
-      "Closed-form fixed-point arithmetic, spatial contract token grounding, and automated audit-ready evidence packages.",
+      "Deterministic SSP allocation, schedules that tie to the cent, clause evidence (page + excerpt) per obligation, and hashed evidence workpapers.",
     images: ["/og-image.jpg"],
     creator: "@soluqube",
   },
@@ -105,7 +105,7 @@ const structuredData = {
         "https://www.linkedin.com/company/soluqube"
       ],
       description:
-        "Deterministic contract-to-ledger revenue recognition engine with closed-form fixed-point parity and statutory audit defense.",
+        "Deterministic revenue allocation for ASC 606 and Ind AS 115: relative-SSP allocation, full-term schedules that tie to the cent, and hashed evidence workpapers.",
     },
     {
       "@type": "SoftwareApplication",
@@ -125,47 +125,8 @@ const structuredData = {
         "Integer (BigInt) Fixed-Point Parity (10^6 scale, rounded to cents, terminal-period remainder absorption)",
         "Dual Standard ASC 606 & Ind AS 115 Amortization Schedules",
         "Statutory 18% GST Isolation for INR Contracts (Ind AS 115)",
-        "Cross-Document Precedence DAG Rate Cap Enforcement",
         "ERP-Ready Schedule Export for NetSuite ARM & SAP RAR (Excel + CSV)",
         "Audit-Ready Evidence Package Generator (8-Tab Excel & JSON-LD)",
-      ],
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://soluqube.com/#faq",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "How does Soluqube eliminate floating-point rounding drift in ASC 606 revenue schedules?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Standard ERPs and spreadsheets use IEEE-754 64-bit binary floating-point numbers where fractional cent residues compound over 36-month terms. Soluqube replaces binary floats with integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How does Soluqube handle Indian GST isolation under Ind AS 115 and MCA Schedule III?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Soluqube establishes an automated transaction firewall that quarantines 18% CGST, SGST, and IGST liabilities directly from gross contract bookings into segregated Schedule III balance sheet accounts before net consideration is amortized under Ind AS 115.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can Soluqube sync with Oracle NetSuite and SAP S/4HANA?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. Soluqube connects directly with Oracle NetSuite ARM via SuiteTalk REST web services and SAP S/4HANA RAR via OData APIs to post journal entries with automated general ledger account mapping and zero reconciliation discrepancy.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What compliance deliverables does Soluqube provide for audit readiness?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Soluqube generates an 8-tab variance Excel workpaper with embedded contract clause formulas and an audit-ready JSON-LD evidence pack containing SHA-256 clause hashes and cryptographic Merkle roots for auditor verification.",
-          },
-        },
       ],
     },
   ],

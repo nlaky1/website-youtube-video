@@ -1,22 +1,22 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Soluqube vs. Leapfin | Contract Audit Subledger vs. Transaction Data Pipeline',
-  description: 'Compare Soluqube vs. Leapfin for revenue accounting. Soluqube pairs PDF customer contracts with clause evidence and deterministic integer (BigInt) arithmetic, eliminating high-volume B2C pipeline complexity for B2B contracts.',
+  title: "Soluqube vs Leapfin: B2B Contract Revenue",
+  description: "Leapfin streams high-volume transactions. Soluqube works from B2B contracts: SSP allocation, schedules that tie to the cent, clause evidence.",
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-leapfin',
   },
   openGraph: {
-    title: 'Soluqube vs. Leapfin | Contract Intelligence vs Transaction Streaming',
-    description: 'Deterministic contract audits vs. high-volume billing event pipelines. Compare pricing, Dual-GAAP scope, and audit-ready evidence packages.',
+    title: "Soluqube vs Leapfin: B2B Contract Revenue | Soluqube",
+    description: "Leapfin streams high-volume transactions. Soluqube works from B2B contracts: SSP allocation, schedules that tie to the cent, clause evidence.",
     url: 'https://soluqube.com/soluqube-vs-leapfin',
     siteName: 'Soluqube',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Soluqube vs. Leapfin: Revenue Subledger Architecture Comparison',
-    description: 'Direct contract PDF grounding, integer (BigInt) micro-cent precision, and Dual-GAAP Ind AS 115 isolation.',
+    title: "Soluqube vs Leapfin: B2B Contract Revenue | Soluqube",
+    description: "Leapfin streams high-volume transactions. Soluqube works from B2B contracts: SSP allocation, schedules that tie to the cent, clause evidence.",
   },
 };
 

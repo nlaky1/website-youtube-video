@@ -105,7 +105,7 @@ export default function BookDemoPage() {
                 Schedule an Audit Defense Deep-Dive
               </h1>
               <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
-                Discover how Soluqube automates contract-to-ledger revenue recognition under ASC 606 and Ind AS 115 with zero floating-point drift.
+                See how Soluqube produces SSP allocations and full-term schedules under ASC 606 and Ind AS 115 that tie to the cent, with a hashed evidence workpaper.
               </p>
             </div>
 

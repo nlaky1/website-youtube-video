@@ -3,6 +3,8 @@ export interface BlogPost {
   title: string;
   subtitle: string;
   publishedAt: string;
+  /** Last material content update, same format as publishedAt (feeds dateModified). */
+  updatedAt?: string;
   readTime: string;
   author: {
     name: string;
@@ -23,447 +25,473 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "asc-606-vs-ind-as-115-dual-standard-gst-compliance",
-    title: "ASC 606 vs Ind AS 115: Dual Standard SaaS Amortization & Statutory GST Isolation",
-    subtitle: "How multinational tech enterprises reconcile US GAAP revenue schedules with Indian MCA Schedule III and 18% GST tax firewalls.",
+    title: "ASC 606 vs Ind AS 115: Dual Reporting and GST Isolation",
+    subtitle: "How US-India SaaS groups keep ASC 606 schedules and Ind AS 115 books in step, and keep 18% GST out of the transaction price on INR contracts.",
     publishedAt: "October 8, 2026",
+    updatedAt: "October 15, 2026",
     readTime: "8 min read",
     author: {
       name: "Soluqube Editorial",
       role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["ASC 606", "Ind AS 115", "GST Isolation", "Dual Standard", "Enterprise Audit"],
-    targetQuery: "Ind AS 115 dual standard transition adjustments software",
-    definitionAnchor: "ASC 606 and Ind AS 115 dual-standard revenue recognition is the automated process of calculating GAAP-compliant revenue amortization schedules under US GAAP while simultaneously quarantining statutory 18% Indian GST (CGST/SGST/IGST) liabilities into segregated MCA Schedule III balance sheet accounts with zero rounding discrepancy.",
-    excerpt: "Learn how cross-border CFOs eliminate double-taxation and reconciliation drift between US GAAP ASC 606 and MCA Schedule III Ind AS 115 ledgers using deterministic integer (BigInt) fixed-point isolation.",
+    tags: ["ASC 606", "Ind AS 115", "GST Isolation", "Dual Standard", "External Audit"],
+    targetQuery: "Ind AS 115 dual standard GST revenue recognition",
+    definitionAnchor: "Dual-standard revenue recognition means running one contract through ASC 606 for US GAAP reporting and Ind AS 115 for Indian statutory books. The five-step model is the same. The practical difference is tax and presentation: on an INR contract, 18% GST is collected for the government, so it is excluded from the transaction price and booked as a liability before revenue is allocated.",
+    excerpt: "The five-step model is shared, but an INR invoice that includes 18% GST is not all revenue. How to split gross billing into net consideration and GST, schedule the net amount in integer arithmetic, and keep both sets of books tied out.",
     toc: [
-      { id: "overview", label: "Executive Summary & Core Standard Gap" },
-      { id: "gst-quarantine", label: "Statutory 18% GST Balance Sheet Quarantine" },
-      { id: "amortization-schedule", label: "Deterministic Waterfall Comparison" },
-      { id: "audit-workpaper", label: "Audit-Ready Evidence & MCA Dual Audit Packs" },
-      { id: "architecture", label: "Deterministic Fixed-Point Architecture" }
+      { id: "where-do-asc-606-and-ind-as-115-differ-in-practice", label: "Where the two standards differ" },
+      { id: "how-is-18-gst-kept-out-of-revenue", label: "Keeping 18% GST out of revenue" },
+      { id: "a-worked-schedule-in-integer-paise", label: "A worked schedule in integer paise" },
+      { id: "what-evidence-supports-both-audits", label: "Evidence for both audits" }
     ],
     faqs: [
       {
-        question: "How does Ind AS 115 isolate statutory 18% GST differently from US GAAP ASC 606?",
-        answer: "Under Indian MCA Schedule III and Ind AS 115, gross contract consideration containing statutory 18% GST cannot be amortized directly into revenue. Soluqube automatically isolates GST into segregated balance sheet liability accounts at transaction inception before net consideration is recognized."
+        question: "How does Ind AS 115 treat 18% GST differently from ASC 606?",
+        answer: "In principle it does not: Ind AS 115 excludes amounts collected on behalf of third parties from the transaction price, and ASC 606-10-32-2A lets an entity elect to exclude sales taxes. In practice GST on an INR invoice is 18%, so the split between net consideration and GST liability has to be made before allocation. For INR contracts Soluqube books GST to a liability and allocates only the net consideration."
       },
       {
-        question: "Why does standard ERP revenue recognition fail Indian GST audits?",
-        answer: "Most global ERP systems (like NetSuite or Salesforce Billing) amortize revenue from gross invoice totals. This contaminates Standalone Selling Price allocations and violates mandatory MCA Schedule III statutory disclosures."
+        question: "Why do some ERP set-ups get Indian GST wrong in revenue schedules?",
+        answer: "When revenue schedules are built from gross invoice totals, GST is spread into revenue and later reversed by hand. That overstates deferred revenue, distorts the relative SSP allocation, and leaves reconciling items between the GST ledger and the revenue subledger."
       },
       {
-        question: "How does Soluqube prevent double-taxation and reconciliation discrepancies?",
-        answer: "Soluqube enforces an automated dual-ledger transaction firewall that decomposes gross contract values into net consideration and statutory tax components with integer (BigInt) fixed-point precision, eliminating cross-border reconciliation drift."
+        question: "How does Soluqube keep the two sets of books reconciled?",
+        answer: "For INR contracts the engine splits gross consideration into net consideration and GST in integer arithmetic, allocates the net amount by relative SSP, and builds the schedule with the final period absorbing the remainder. The revenue schedule ties to net consideration and the GST liability ties to the invoices. US contracts carry no GST."
       }
     ],
     content: `
-## Executive Summary & Core Standard Gap
+## Where do ASC 606 and Ind AS 115 differ in practice?
 
-Multinational enterprise SaaS companies operating engineering hubs and client contracts in India face a compounding compliance headache: **US GAAP ASC 606** and **Indian MCA Ind AS 115** are harmonized in principle (the 5-step model), but diverged drastically in statutory tax treatment, invoice timing, and schedule presentation.
+**ASC 606** and **Ind AS 115** share the same five-step model; Ind AS 115 is converged with IFRS 15. For a US-India SaaS group the day-to-day differences are tax and presentation, not the recognition model. The [ASC 606 vs Ind AS 115 hub](/asc-606-vs-ind-as-115) summarises them; this article walks through the GST mechanics.
 
-Under **Ind AS 115 and MCA Schedule III**, gross transaction billing containing **18% Goods and Services Tax (GST)** cannot simply be recorded as deferred revenue. Gross billing must be deterministically decomposed at the point of contract execution:
+On an INR contract the invoice usually includes **18% Goods and Services Tax (GST)**. GST is collected on behalf of the government, so it is not consideration the entity is entitled to. Ind AS 115 excludes amounts collected on behalf of third parties from the transaction price, and ASC 606-10-32-2A allows an entity to elect to exclude sales taxes. Either way, gross billing is split before allocation:
 
-$$\\text{Net Consideration} = \\frac{\\text{Gross Contract Value}}{1.18}$$
-$$\\text{GST Liability (CGST + SGST or IGST)} = \\text{Gross Contract Value} - \\text{Net Consideration}$$
+\`\`\`text
+Net consideration = Gross invoice / 1.18
+GST liability     = Gross invoice - Net consideration
+\`\`\`
 
-If an ERP system amortizes revenue from the gross invoiced figure or handles tax on a cash-collected basis rather than transaction inception, company financial statements violate both **MCA Schedule III mandatory disclosure** and **ASC 606 Standalone Selling Price (SSP) allocation rules**.
+If revenue is scheduled from the gross invoice, both revenue and deferred revenue are overstated and the [relative SSP allocation](/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations) is computed on the wrong base.
 
 ---
 
-## Statutory 18% GST Balance Sheet Quarantine
+## How is 18% GST kept out of revenue?
 
-Soluqube automatically enforces a deterministic transaction firewall. The moment an unstructured Enterprise MSA or Order Form is ingested, the engine generates an isolated dual-ledger structure:
+The split happens once, when the contract is set up, and each ledger then works from its own figure:
 
 \`\`\`
-                     [ Enterprise Contract Ingestion ]
-                                     |
-                +--------------------+--------------------+
-                |                                         |
-     [ US GAAP ASC 606 Ledger ]               [ Ind AS 115 MCA Ledger ]
-                |                                         |
-     - 100% Net Consideration                 - Net Consideration Amortization
-     - Standalone Selling Price Allocation    - 18% GST Balance Sheet Quarantine
-     - USD Currency Basis                     - INR MCA Schedule III Tax Subledger
+                       [ Signed contract (INR) ]
+                                   |
+              +--------------------+--------------------+
+              |                                         |
+   [ Revenue subledger ]                      [ GST liability ]
+              |                                         |
+   - Net consideration only                  - CGST + SGST, or IGST
+   - Relative SSP allocation                 - Settled with the GST return
+   - Full-term schedule                      - Not revenue
 \`\`\`
 
-1. **Intra-State Supply (CGST 9% + SGST 9%)**: When service provider and client place of supply are in the same Indian state (e.g. Karnataka to Karnataka).
-2. **Inter-State Supply (IGST 18%)**: When place of supply crosses state borders (e.g. Maharashtra to Karnataka).
-3. **Cross-Border SEZ / Zero-Rated Export**: Validated with LUT (Letter of Undertaking) verification without tax leakage.
+Which GST applies depends on the place of supply:
+
+1. **Intra-state supply (CGST 9% + SGST 9%)**: supplier and place of supply in the same state, for example Karnataka to Karnataka.
+2. **Inter-state supply (IGST 18%)**: place of supply in another state, for example Maharashtra to Karnataka.
+3. **Export of services under a Letter of Undertaking (LUT)**: zero-rated, so no GST is charged.
+
+US contracts carry no GST, so the split applies to INR contracts only.
 
 ---
 
-## Deterministic Waterfall Comparison
+## A worked schedule in integer paise
 
-Traditional spreadsheet models compute monthly recognition using floating-point division:
-\`\`\`python
-# FLAWED BINARY FLOAT LOGIC
-monthly_rev = 100000.00 / 12.0 # yields 8333.333333333334
-# After 12 months, sum equals 99999.96 (4 cents lost!)
-\`\`\`
+Take a ₹1,00,000 invoice that includes GST. Net consideration is ₹84,745.76 and GST is ₹15,254.24. Schedule the net amount over 12 months and round each month to the paisa on its own: ₹7,062.15 × 12 = ₹84,745.80, four paise more than the contract. Small, but the deferred balance never reaches zero and someone books a plug.
 
-Soluqube's **integer (BigInt) fixed-point engine** (10^6 scale, rounded to cents) allocates amortization across daily discrete intervals, absorbing fractional remainders into the terminal period:
+Soluqube computes in integer arithmetic (10^6 scale, rounded to the cent or paisa), floors each period and lets the final period absorb the remainder:
+
 \`\`\`typescript
-// DETERMINISTIC BIGINT SCALED ARITHMETIC
-const NET_CENTS = 8474576n; // $84,745.76 net after 18% GST
+// Integer arithmetic, amounts in paise
+const NET = 8474576n;            // ₹84,745.76 net of 18% GST
 const PERIODS = 12n;
-const BASE_MONTHLY = NET_CENTS / PERIODS; // 706214n ($7,062.14)
-const REMAINDER = NET_CENTS % PERIODS;   // 8n ($0.08 absorbed in Month 12)
+const BASE = NET / PERIODS;      // 706214n -> ₹7,062.14 a month
+const LAST = NET - BASE * 11n;   // 706222n -> ₹7,062.22 in month 12
 \`\`\`
 
-This guarantees **$0.000000 drift** across multi-year amortization schedules under both US GAAP and Ind AS 115 audits.
+The twelve months sum to ₹84,745.76 exactly and the deferred balance ends at ₹0.00. The same rule applies to the allocation across obligations; the [residual-cent policy guide](/blog/ssp-allocation-rounding-residual-cent-asc-606) shows how to write it down.
 
 ---
 
-## Audit-Ready Evidence & MCA Dual Audit Packs
+## What evidence supports both audits?
 
-When external audit teams or statutory Indian tax inspectors request verification, Soluqube generates an immutable audit bundle containing:
-* **Bounding-Box Grounding**: Every line item in the waterfall links directly to normalized pixel coordinates on the signed PDF.
-* **Dual Workpaper Excel**: 8-tab workbook with active Excel formulas, reconciling US GAAP Deferred Revenue and Indian MCA GST Payable.
-* **Cryptographic Merkle Proof**: SHA-256 hash tree validating that historical amortizations have never been altered.
+When the external auditor or the statutory auditor asks how a figure was reached, the package should let them re-perform it:
+
+* **Clause evidence (page + excerpt)** for each performance obligation, so price and term trace to the signed contract.
+* **An Excel workpaper** showing net consideration, the GST liability, the allocation and the month-by-month schedule.
+* **SHA-256 hashes** on the export, with a Merkle root computed on it, so a re-run can be compared with the file that was delivered.
+
+For the wider differences between the standards, see the [Ind AS 115 vs ASC 606 dual-GAAP guide](/blog/ind-as-115-vs-asc-606-cross-border-dual-gaap-guide). To run your own INR contracts with us for 60 days, apply to the [design partner program](/design-partners).
     `
   },
   {
     slug: "eliminating-ieee-754-floating-point-rounding-drift-asc-606",
-    title: "Eliminating IEEE-754 Floating-Point Rounding Drift in Enterprise ASC 606 Subledgers",
-    subtitle: "Why binary 64-bit floating point numbers corrupt multi-million dollar SaaS revenue recognition waterfalls and how integer (BigInt) fixed-point math restores exact balance sheet parity.",
+    title: "Floating Point vs Integer Cents in ASC 606 Schedules",
+    subtitle: "What binary floating point does to revenue schedules, why the rounding rule matters more, and how integer arithmetic makes a schedule re-performable.",
     publishedAt: "October 7, 2026",
-    readTime: "7 min read",
+    updatedAt: "October 15, 2026",
+    readTime: "6 min read",
     author: {
-      name: "Soluqube Core Math Group",
-      role: "Deterministic Ledger Research Team",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["ASC 606", "Fixed-Point Math", "ERP Subledger", "Audit Deficiencies", "NetSuite ARM"],
-    targetQuery: "ASC 606 5-step revenue recognition fixed-point math",
-    definitionAnchor: "Deterministic fixed-point revenue recognition is a mathematical architecture that replaces IEEE-754 binary floating-point calculations with arbitrary-precision scaled integer arithmetic, ensuring that cumulative revenue allocations across multi-year contracts match total contract consideration with exact zero-drift ($0.000000).",
-    excerpt: "Explore the technical breakdown of binary floating-point rounding errors in modern ERP subledgers and how Soluqube guarantees zero-drift ASC 606 compliance.",
+    tags: ["ASC 606", "Rounding Policy", "Revenue Schedules", "Integer Arithmetic"],
+    targetQuery: "ASC 606 revenue schedule rounding integer arithmetic",
+    definitionAnchor: "Integer-cent scheduling stores money as whole units instead of binary floating point and applies a written rounding rule, such as letting the final period absorb the remainder. Floating point adds tiny representation error; the bigger source of unexplained cents is rounding each period on its own. Integer arithmetic plus a written rule makes a schedule tie to the contract and re-perform identically.",
+    excerpt: "0.1 + 0.2 is not exactly 0.3 in binary floating point, but that is rarely why a revenue schedule is a few cents off. Where the cents really come from, and how integer arithmetic with a terminal-period rule settles them.",
     toc: [
-      { id: "ieee-flaw", label: "The IEEE-754 Binary Floating-Point Flaw" },
-      { id: "compound-drift", label: "How Fractional Cents Compound into Audit Deficiencies" },
-      { id: "fixed-point-solution", label: "Scaled Integer (BigInt) Engine" },
-      { id: "reconciliation", label: "Zero-Drift General Ledger Postings" }
+      { id: "what-does-binary-floating-point-do-to-money", label: "What floating point does to money" },
+      { id: "where-do-the-unexplained-cents-really-come-from", label: "Where the cents really come from" },
+      { id: "how-do-integer-arithmetic-and-a-terminal-period-rule-fix-it", label: "Integer arithmetic and a terminal-period rule" },
+      { id: "what-does-this-prove-and-what-not", label: "What this does and does not prove" }
     ],
     content: `
-## The IEEE-754 Binary Floating-Point Flaw
+## What does binary floating point do to money?
 
-Modern web applications and legacy ERP extensions commonly represent currency using standard 64-bit IEEE-754 floating-point numbers (\`double\` or JavaScript \`number\`). In binary floating-point representation, fractions like \`0.1\` or \`0.01\` cannot be represented with exact finite precision:
+Most software stores numbers as 64-bit binary floating point (\`double\` in most languages, \`number\` in JavaScript). Decimal fractions such as \`0.1\` or \`0.01\` have no exact binary representation:
 
 \`\`\`javascript
-// Classic floating point artifact:
 0.1 + 0.2 === 0.30000000000000004 // true
 \`\`\`
 
-When an enterprise contract worth **$1,500,000.00** with 5 distinct performance obligations is amortized over 36 months across leap years and contract amendments, tiny rounding errors compound into discrepancies exceeding thousands of dollars on quarterly balance sheets.
+The error is tiny, around one part in 10^16, far below a cent on any realistic contract. On its own it rarely changes a figure once it is rounded to the cent. It matters when results are compared for exact equality, or when many unrounded values are accumulated and only rounded at the end.
 
 ---
 
-## How Fractional Cents Compound into Audit Deficiencies
+## Where do the unexplained cents really come from?
 
-External auditors test contract subledgers against trial balances. When automated subledgers produce a cumulative discrepancy between:
-$$\\sum_{t=1}^{T} \\text{Recognized Revenue}_t \\neq \\text{Total Transaction Price}$$
+From the rounding rule. $100,000 over 36 months is $2,777.777... a month. Round every month to $2,777.78 and the schedule recognises $100,000.08; round every month down and it recognises $99,999.72. That happens with decimal arithmetic too: it is a policy question, not a hardware one.
 
-Controllers are forced to book manual adjusting journal entries (*\"Rounding Suspense\"* or *\"Plug Accounts\"*). These manual entries trigger red flags during SOX 404 internal control audits and PCAOB inspections.
+A few cents are far below materiality, and auditors spend their time on SSP judgement, modifications and cutoff rather than pennies. The reason to settle the cents is mechanical: if the schedule does not sum to the contract, the deferred balance never reaches zero, someone books a plug, and the next reviewer has to explain it. The [residual-cent guide](/blog/ssp-allocation-rounding-residual-cent-asc-606) covers the same question for the SSP allocation itself.
 
 ---
 
-## Scaled Integer (BigInt) Engine
+## How do integer arithmetic and a terminal-period rule fix it?
 
-Soluqube completely bypasses binary floating-point arithmetic. All monetary values and standalone selling prices (SSP) are stored and manipulated as **scaled integers (BigInt)** with a fixed scaling factor ($10^{6}$ micro-cents), rounded to cents with terminal-period remainder absorption:
+Store amounts as integers at a fixed scale, floor each period to the cent, and let the final period absorb whatever is left. Soluqube works at 10^6 units per dollar and rounds to cents:
 
 \`\`\`typescript
-export class FixedPointDecimal {
-  private readonly value: bigint;
-  private static readonly SCALE = 1_000_000n; // 6 decimal places
+const SCALE = 1_000_000n;            // 10^6 units per dollar
+const CENT = SCALE / 100n;
+const total = 100_000n * SCALE;      // $100,000.00
+const months = 36n;
 
-  constructor(units: string | number) {
-    this.value = BigInt(Math.round(Number(units) * 1_000_000));
-  }
-
-  public divideWithRemainder(divisor: bigint): { quotient: FixedPointDecimal; remainder: bigint } {
-    const q = this.value / divisor;
-    const r = this.value % divisor;
-    return {
-      quotient: new FixedPointDecimal(Number(q) / 1_000_000),
-      remainder: r
-    };
-  }
-}
+const monthly = (total / months / CENT) * CENT;  // floor to the cent: $2,777.77
+const last = total - monthly * (months - 1n);    // final month: $2,778.05
+// 35 x $2,777.77 + $2,778.05 = $100,000.00
 \`\`\`
+
+Every run with the same inputs gives the same cents, so a reviewer can re-perform the schedule. Try different values and terms in the [schedule simulator](/audit).
 
 ---
 
-## Zero-Drift General Ledger Postings
+## What does this prove, and what not?
 
-By applying terminal-period remainder absorption, the final month's journal entry absorbs any atomic residue, guaranteeing that every single penny of deferred revenue reconciles to recognized revenue with **mathematical perfection**.
+It proves the schedule ties to the contract value and that the result is reproducible. It does not prove the accounting judgements are right: whether the obligations are distinct, whether the standalone selling prices are supportable, or how a modification should be treated. Those are where audit time goes; see the [SSP allocation example](/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations) and the [ASC 606 hub](/asc-606).
     `
   },
   {
     slug: "contract-modification-precedence-dag-asc-606-10-25-13",
-    title: "Contract Modification Precedence DAG: Automating ASC 606-10-25-13 Decisions",
-    subtitle: "A deterministic graph theory approach to classifying mid-term SaaS amendments, seat expansions, and pricing concessions without manual accountant interpretation.",
+    title: "ASC 606-10-25-13 Contract Modifications: Decision Tree",
+    subtitle: "How ASC 606-10-25-10 to 25-13 sort a SaaS amendment into a separate contract, a prospective change or a cumulative catch-up. Guidance, not automation.",
     publishedAt: "October 6, 2026",
+    updatedAt: "October 15, 2026",
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
       role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["ASC 606-10-25", "Contract Modifications", "Directed Acyclic Graph", "SaaS Accounting"],
+    tags: ["ASC 606-10-25", "Contract Modifications", "SaaS Accounting", "Decision Tree"],
     targetQuery: "ASC 606-10-25-13 contract modification decision tree",
-    definitionAnchor: "The Contract Modification Precedence DAG is a deterministic decision engine that evaluates mid-term contract amendments against ASC 606-10-25-13 criteria (distinct goods vs. standalone selling price) to automatically route accounting treatments between Cumulative Catch-Up, Prospective Amortization, or Separate Contract creation without human error.",
-    excerpt: "Discover how Soluqube uses Directed Acyclic Graphs (DAGs) to automate complex mid-term contract modifications under ASC 606-10-25-13.",
+    definitionAnchor: "Under ASC 606-10-25-12, a contract modification is a separate contract if it adds distinct goods or services priced at their standalone selling price. Otherwise ASC 606-10-25-13 applies: account for it prospectively when the remaining goods or services are distinct from those already transferred, or by cumulative catch-up when they constitute part of a single, partially satisfied performance obligation.",
+    excerpt: "Seat expansions, early renewals and scope changes all raise the same question: separate contract, prospective, or cumulative catch-up? A decision tree for ASC 606-10-25-10 to 25-13 with three SaaS examples. This is accounting guidance; Soluqube does not automate modifications yet.",
     toc: [
-      { id: "mod-problem", label: "The Mid-Term SaaS Modification Challenge" },
-      { id: "dag-routing", label: "ASC 606-10-25-13 Decision DAG" },
-      { id: "catchup-vs-prospective", label: "Cumulative Catch-Up vs Prospective Math" },
-      { id: "audit-trace", label: "Automated Audit Defense Trail" }
+      { id: "what-counts-as-a-contract-modification", label: "What counts as a modification" },
+      { id: "when-is-a-modification-a-separate-contract", label: "When it is a separate contract (25-12)" },
+      { id: "the-decision-tree", label: "The decision tree" },
+      { id: "how-do-prospective-treatment-and-cumulative-catch-up-differ", label: "Prospective vs cumulative catch-up (25-13)" },
+      { id: "three-saas-examples-illustrative", label: "Three SaaS examples" },
+      { id: "what-does-soluqube-do-today", label: "What Soluqube does today" }
     ],
     faqs: [
       {
-        question: "How does ASC 606-10-25-13 categorize contract modifications and amendments?",
-        answer: "ASC 606-10-25-13 dictates three treatment branches: (1) Separate Contract if goods are distinct at Standalone Selling Price (SSP), (2) Prospective allocation if goods are distinct but not at SSP, and (3) Cumulative Catch-Up if remaining goods are non-distinct, requiring an immediate one-time cumulative adjustment."
+        question: "How does ASC 606 classify a contract modification?",
+        answer: "First ask whether it is a separate contract under ASC 606-10-25-12: the added goods or services are distinct and priced at their standalone selling price. If not, 25-13 applies: account for it prospectively, as a termination of the old contract and creation of a new one, when the remaining goods or services are distinct from those already transferred; or as a cumulative catch-up when they are part of a single, partially satisfied performance obligation. A mix of both is possible."
       },
       {
-        question: "How does a Directed Acyclic Graph (DAG) automate contract modification accounting?",
-        answer: "Soluqube models contract amendments, master agreements, and addenda as nodes in a precedence DAG. The engine automatically identifies contract lineage, determines distinctness and standalone pricing, and posts exact journal entries without manual accounting memos."
+        question: "Is a SaaS seat upsell usually a separate contract?",
+        answer: "Often, when the added seats are distinct and priced at their standalone selling price, adjusted for the circumstances of the contract. If the price carries a discount that those adjustments do not explain, the upsell usually fails 25-12 and, because the remaining subscription months are distinct, is accounted for prospectively under 25-13(a)."
+      },
+      {
+        question: "Does Soluqube automate contract modification accounting?",
+        answer: "Not yet. Modification accounting (prospective treatment and cumulative catch-up) is on the Soluqube roadmap. Today your team assesses the modification under ASC 606-10-25-10 to 25-13, and Soluqube produces the relative-SSP allocation and full-term schedule for the contract terms you confirm."
       }
     ],
     content: `
-## The Mid-Term SaaS Modification Challenge
+## What counts as a contract modification?
 
-Enterprise SaaS contracts rarely remain static for 36 months. Customers add seats, upgrade tiers, negotiate early renewal discounts, or restructure SLA commitments mid-flight.
+A contract modification is a change in the scope or price, or both, that the parties approve (ASC 606-10-25-10). Approval can be written, oral or implied by customary business practice. Under 25-11, a modification can exist before the price is settled: if the parties have approved a change in scope but not the price, estimate the change in transaction price using the variable consideration guidance.
 
-Under **ASC 606-10-25-12 through 25-13**, accountants must evaluate two mandatory questions:
-1. Are the additional promised goods or services **distinct** from original obligations?
-2. Is the additional price reflective of the **Standalone Selling Price (SSP)**?
-
-Answering these questions incorrectly leads to restatements of previously reported quarters.
+In SaaS the common cases are added seats or usage, a tier upgrade, an early renewal or term extension, a price concession, and added professional services. Each one needs the same analysis, and the conclusion should be written down; a reviewer will ask for it.
 
 ---
 
-## ASC 606-10-25-13 Decision DAG
+## When is a modification a separate contract?
 
-Soluqube models the standard as a Directed Acyclic Graph (DAG):
+ASC 606-10-25-12 treats a modification as a separate contract when both conditions hold:
 
-\`\`\`
-                       [ Contract Amendment Ingested ]
-                                      |
-                       [ Distinct Goods / Services? ]
-                               /              \\
-                            (YES)             (NO)
-                             /                  \\
-                 [ Priced at SSP? ]      [ Cumulative Catch-Up ]
-                    /          \\         (ASC 606-10-25-13b)
-                 (YES)         (NO)
-                  /              \\
-      [ Separate Contract ]   [ Prospective Allocation ]
-      (ASC 606-10-25-12)      (ASC 606-10-25-13a)
-\`\`\`
+1. The scope increases because **distinct** goods or services are added.
+2. The price increases by an amount that reflects the entity's **standalone selling prices** of the added goods or services, with appropriate adjustments for the circumstances of the contract (for example, a discount because the entity avoids selling costs it would incur for a new customer).
+
+If both are met, the original contract is left alone and the modification is accounted for on its own. If either fails, go to 25-13. The SSP evidence matters here as much as in the original allocation; see the [SSP allocation example](/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations).
 
 ---
 
-## Cumulative Catch-Up vs Prospective Math
+## The decision tree
 
-* **Separate Contract (25-12)**: Original schedule remains untouched. A new independent amortization schedule is generated for the amendment.
-* **Prospective Termination & Replacement (25-13a)**: Unrecognized remaining consideration is pooled with the amendment price and reallocated over the remaining term.
-* **Cumulative Catch-Up (25-13b)**: The entire contract lifecycle is retroactively re-evaluated. A one-time catch-up adjustment is posted in the current period.
+\`\`\`
+              [ Modification approved (25-10, 25-11) ]
+                                 |
+     [ Adds distinct goods or services, priced at SSP? (25-12) ]
+                    /                          \\
+                  YES                           NO
+                   |                             |
+       [ Separate contract ]     [ Are the remaining goods or services distinct
+                                   from those already transferred? (25-13) ]
+                                        /                        \\
+                                      YES                         NO
+                                       |                           |
+                     [ Prospective: terminate the      [ Cumulative catch-up on the
+                       old contract, create a new        single, partially satisfied
+                       one (25-13a) ]                    performance obligation (25-13b) ]
+\`\`\`
 
-Soluqube computes the exact journal entries for all three scenarios instantaneously, eliminating dozens of hours of manual spreadsheet rework.
+If the remaining promises are a mix of both, apply each treatment to the relevant part (25-13c).
+
+---
+
+## How do prospective treatment and cumulative catch-up differ?
+
+* **Prospective (25-13a)**: the modification is treated as the end of the old contract and the start of a new one. The amount allocated to the remaining performance obligations is the consideration promised by the customer that was included in the transaction price but not yet recognised as revenue, plus the consideration promised in the modification. Revenue already recognised is not adjusted.
+* **Cumulative catch-up (25-13b)**: the transaction price and the measure of progress for the single performance obligation are updated, and the effect is recorded as an adjustment to revenue at the date of the modification, up or down.
+
+SaaS subscriptions are usually a series of distinct monthly service periods (ASC 606-10-25-14(b)), so most subscription modifications that fail 25-12 are accounted for prospectively. Catch-up is more common on implementation or customisation work measured over time as one performance obligation.
+
+---
+
+## Three SaaS examples (illustrative)
+
+Round numbers, not from a real contract.
+
+**1. Seat upsell at list price: separate contract.** A 12-month subscription for 100 seats at $1,200 a seat per year ($120,000). In month 7 the customer adds 20 seats for the remaining 6 months at $600 a seat ($12,000), which matches the current price for a half-year. The seats are distinct and priced at SSP, so the $12,000 is a separate contract recognised at $2,000 a month over months 7 to 12. The original schedule is unchanged.
+
+**2. Discounted early renewal: prospective.** Same contract. In month 7 the customer extends by 12 months for $96,000, below the $120,000 standalone price, and the discount is not explained by contract-specific adjustments. The added months are distinct but not priced at SSP, so 25-12 fails. The remaining months are distinct from those already delivered, so 25-13(a) applies: $60,000 not yet recognised plus $96,000 = $156,000 over the remaining 18 months. In integer cents that is 17 × $8,666.66 + $8,666.78.
+
+**3. Added scope on an implementation project: cumulative catch-up.** A $100,000 implementation is one performance obligation measured by cost incurred. At the modification, $32,000 of an estimated $80,000 cost has been incurred (40%), so $40,000 of revenue has been recognised. The customer adds integrated work that is not distinct, for $20,000, and the total cost estimate rises to $100,000. Progress is now 32%, so cumulative revenue should be 32% of $120,000 = $38,400. The catch-up is a $1,600 reduction of revenue in the period of the modification.
+
+---
+
+## What does Soluqube do today?
+
+**Soluqube does not automate contract-modification accounting yet.** Prospective treatment and cumulative catch-up are on the roadmap. Today the assessment above stays with your team and your technical accounting reviewers.
+
+What Soluqube does: for the contract terms you confirm, it produces the relative-SSP allocation and the full-term schedule in integer arithmetic, with clause evidence (page + excerpt) per obligation and a hashed workpaper. Example 2 above, once you have decided it is prospective, is a new allocation and schedule over the remaining term, which the engine can produce.
+
+For related judgements, see [principal vs agent under ASC 606](/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example) and the [ASC 606 hub](/asc-606). If modifications are your hardest audit area, tell us which pattern bites you most through the [design partner program](/design-partners).
     `
   },
   {
     slug: "pcaob-as-3101-audit-workpapers-merkle-proofs",
-    title: "Audit-Ready Evidence: Cryptographic Merkle Proofs for Revenue Subledgers",
-    subtitle: "How cryptographic hashing, PDF spatial token bounding boxes, and immutable logs support external auditors' Critical Audit Matters (CAM) testing.",
+    title: "Revenue Audit Evidence: Hashes and Merkle Roots Explained",
+    subtitle: "What external auditors test on revenue, and how SHA-256 hashes and a Merkle root on an export let a reviewer confirm a schedule has not changed.",
     publishedAt: "October 5, 2026",
+    updatedAt: "October 15, 2026",
     readTime: "6 min read",
     author: {
       name: "Soluqube Editorial",
       role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["PCAOB", "Merkle Trees", "Audit Readiness", "External Audit", "SOX Compliance"],
-    targetQuery: "automated audit-ready evidence package revenue recognition",
-    definitionAnchor: "Audit readiness for revenue recognition means providing immutable, tamper-evident verification linking general ledger journal entries directly to primary source contract PDF clauses via cryptographic Merkle trees and normalized spatial coordinate bounding boxes.",
-    excerpt: "Learn how Soluqube provides cryptographic Merkle proofs and bounding-box audit packs that support documentation for auditor review of revenue recognition.",
+    tags: ["Audit Evidence", "Merkle Trees", "External Audit", "Revenue Recognition"],
+    targetQuery: "audit-ready evidence package revenue recognition",
+    definitionAnchor: "Audit-ready revenue evidence is a package an external auditor can re-perform: the contract terms behind each obligation, the SSP inputs, the allocation and the full schedule, plus a hash of the exported file. A SHA-256 hash, or a Merkle root over the rows, lets a reviewer confirm the file they tested is the file delivered. It does not prove the accounting judgements are right.",
+    excerpt: "Revenue is often a critical audit matter. What auditors actually test, and what a SHA-256 hash or a Merkle root on a workpaper does, and does not, prove.",
     toc: [
-      { id: "cam-requirement", label: "Critical Audit Matters (CAM) in Revenue Recognition" },
-      { id: "spatial-grounding", label: "Spatial PDF Token Bounding Boxes" },
-      { id: "merkle-proofs", label: "Cryptographic Merkle Root Verification" },
-      { id: "export-packages", label: "One-Click Auditor Deliverables" }
+      { id: "what-do-auditors-test-on-revenue", label: "What auditors test on revenue" },
+      { id: "clause-evidence-per-obligation", label: "Clause evidence per obligation" },
+      { id: "what-do-hashes-and-merkle-roots-add", label: "Hashes and Merkle roots" },
+      { id: "what-goes-in-the-package", label: "What goes in the package" }
     ],
     faqs: [
       {
-        question: "What makes revenue recognition a Critical Audit Matter (CAM) under PCAOB AS 3101?",
-        answer: "Revenue recognition involves significant management judgment, complex Standalone Selling Price allocations, and high susceptibility to spreadsheet errors, making it one of the most rigorously tested areas during external audits."
+        question: "Why is revenue recognition often a critical audit matter?",
+        answer: "Critical audit matters are communicated in the auditor's report for public companies. Revenue often qualifies because it involves significant management judgement, such as identifying performance obligations, estimating standalone selling prices and variable consideration, across a large volume of contracts."
       },
       {
-        question: "How do cryptographic Merkle proofs verify revenue subledger integrity?",
-        answer: "Soluqube hashes each contract term, modification, and journal entry into a SHA-256 Merkle tree. Auditors can recompute and verify the cryptographic root to confirm that past periods were never altered post-closing."
+        question: "What does a Merkle root prove for a revenue workpaper?",
+        answer: "That the exported rows are the rows that were hashed. Soluqube computes SHA-256 hashes and a Merkle root on the export, so a reviewer can re-hash the file and detect any change. It is a file-integrity check, not evidence that the allocation or SSP judgement is correct, and not an attestation."
       }
     ],
     content: `
-## Critical Audit Matters (CAM) in Revenue Recognition
+## What do auditors test on revenue?
 
-For public and growth-stage private enterprises, revenue recognition is almost universally classified as a **Critical Audit Matter (CAM)** by independent audit firms (PwC, EY, Deloitte, KPMG).
+For many companies revenue is a critical audit matter, because it combines judgement with volume. Audit teams typically test:
 
-Auditors must test:
-1. **Contract Inception**: Verification that stated contract values match signed PDF clauses.
-2. **Performance Obligations**: Documentation for why professional services were unbundled from software licenses.
-3. **Allocation Accuracy**: Standalone Selling Price allocation verification.
+1. **Contract terms**: that the price, term and parties in the subledger agree to the signed contract.
+2. **Performance obligations**: why services were treated as distinct from, or combined with, the subscription.
+3. **Standalone selling prices and allocation**: the evidence behind each SSP and whether the allocation re-performs. See the [SSP allocation example](/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations).
+4. **Schedule accuracy and cutoff**: that revenue lands in the right period and the deferred balance unwinds.
+5. **Controls** over all of the above.
 
----
-
-## Spatial PDF Token Bounding Boxes
-
-Instead of presenting auditors with static database records, Soluqube attaches normalized spatial bounding box coordinates \`[page, x0, y0, x1, y1]\` to every single extracted pricing term.
-
-When an auditor clicks on any cell in the Soluqube workpaper, the UI highlights the exact clause inside the signed Master Services Agreement PDF with sub-millimeter precision.
+The auditor documents its own work under PCAOB AS 1215. What the finance team can do is hand over support that makes each of these steps fast to test.
 
 ---
 
-## Cryptographic Merkle Root Verification
+## Clause evidence per obligation
 
-Every transaction, modification, and amortization event is hashed using SHA-256 and appended to a cryptographic Merkle tree. 
+For each performance obligation, Soluqube keeps the page number and the excerpt of the clause it came from, so a reviewer can go straight to the paragraph instead of searching a 40-page agreement. You confirm the obligations and prices; the engine does the allocation and schedule. The [clause evidence guide](/blog/contract-pdf-bounding-box-clause-grounding-auditors) covers what to capture for non-standard clauses.
 
-Auditors can independently recompute the Merkle root to verify that past revenue figures were never silently altered.
+---
+
+## What do hashes and Merkle roots add?
+
+A SHA-256 hash is a fingerprint of a file: change one cell and the hash changes. A Merkle root goes one step further, hashing rows in pairs up to a single root, so a reviewer can check one row against the root without re-hashing everything.
+
+Soluqube hashes the exported workpaper and computes a Merkle root on it. A reviewer who re-runs the same inputs gets identical output and the same hash, and can see if a delivered file was altered afterwards.
+
+What a hash does not do: it does not show that the SSP estimate is supportable, that the obligations were identified correctly, or that the right contract was used. It is integrity, not correctness.
+
+---
+
+## What goes in the package?
+
+* The contract terms you confirmed, with clause evidence (page + excerpt) per obligation.
+* The SSP inputs and the relative-SSP allocation, including which obligation absorbs the residual cent. See the [residual-cent policy](/blog/ssp-allocation-rounding-residual-cent-asc-606).
+* The full-term schedule, ending at a $0.00 deferred balance per obligation.
+* An Excel workpaper and a JSON evidence pack, SHA-256 hashed, with a Merkle root.
+
+Judgement memos, such as a [principal vs agent assessment](/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example), sit alongside the package. To get one built on three of your own contracts, request the [free 3-contract workpaper](/book-demo).
     `
   },
   {
     slug: "contract-pdf-bounding-box-clause-grounding-auditors",
-    title: "Contract Clause Evidence for ASC 606: Linking Each Obligation to Its Page and Excerpt",
-    subtitle: "How sub-millimeter token coordinate extraction bridges the gap between unstructured signed Master Services Agreements and deterministic revenue recognition subledgers.",
+    title: "Clause Evidence for ASC 606: Page and Excerpt per Obligation",
+    subtitle: "Why each performance obligation in a revenue schedule should point back to the clause it came from, and what a reviewer needs to trace it quickly.",
     publishedAt: "October 9, 2026",
+    updatedAt: "October 15, 2026",
+    readTime: "7 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["Clause Evidence", "Audit Evidence", "Contract Review", "External Audit"],
+    targetQuery: "ASC 606 contract clause evidence for auditors",
+    definitionAnchor: "Clause evidence links each line of an ASC 606 allocation or schedule to the contract clause it came from, recorded as the page number and the clause excerpt. A reviewer can then trace an obligation, its price and its term to the signed contract without searching the whole document. In Soluqube you confirm the obligations and prices; each one keeps its page and excerpt.",
+    excerpt: "Most revenue errors start in the contract, not the arithmetic. How linking each obligation to a page and excerpt shortens tracing, what to capture for non-standard clauses, and where automated extraction still needs a person.",
+    toc: [
+      { id: "why-do-revenue-errors-start-in-the-contract", label: "Why revenue errors start in the contract" },
+      { id: "what-should-clause-evidence-capture", label: "What clause evidence should capture" },
+      { id: "which-clauses-change-the-accounting", label: "Clauses that change the accounting" },
+      { id: "extraction-vs-confirmation", label: "Extraction vs confirmation" },
+      { id: "what-goes-to-the-auditor", label: "What goes to the auditor" }
+    ],
+    faqs: [
+      {
+        question: "What is clause evidence in revenue recognition?",
+        answer: "A reference from each performance obligation, price or term in the revenue schedule to the clause in the signed contract that supports it, usually the page number and the excerpt. It lets a reviewer trace the schedule to the contract quickly."
+      },
+      {
+        question: "Can software extract obligations from any contract automatically?",
+        answer: "Not reliably. Extraction from real contracts is heuristic and makes mistakes on non-standard documents, so a person should confirm the obligations, prices and terms. In Soluqube you confirm them; the engine does the allocation and schedule, and each obligation keeps its page and excerpt."
+      }
+    ],
+    content: `
+## Why do revenue errors start in the contract?
+
+Revenue errors rarely start in the arithmetic. They start in **clause interpretation**. A $5,000,000 Master Services Agreement with three addenda can carry *contingent SLA credits*, *termination for convenience refunds* or *tiered volume discounts* that change the accounting and are easy to miss.
+
+In substantive testing, auditors trace subledger entries back to the signed documents. If the clause behind a price or a standalone selling price cannot be found quickly, the question becomes a finding to resolve, and repeated gaps can become a control deficiency.
+
+---
+
+## What should clause evidence capture?
+
+For each performance obligation, enough for a reviewer to find and read the supporting clause:
+
+\`\`\`typescript
+interface ClauseEvidence {
+  obligationId: string;
+  clauseType: "TERM" | "FEE_STRUCTURE" | "SLA_CREDIT" | "TERMINATION_RIGHT";
+  pageNumber: number;
+  excerpt: string;     // the clause text, quoted
+  sha256: string;      // hash of the excerpt, so a later edit is visible
+}
+\`\`\`
+
+Page and excerpt are what a reviewer actually uses. Pair them with the price and term you confirmed, and the line in the schedule now points to its source.
+
+---
+
+## Which clauses change the accounting?
+
+* **SLA credits and penalties**: variable consideration, which may need to be estimated and constrained.
+* **Termination for convenience**: can shorten the enforceable contract term, which changes the schedule.
+* **Tiered or volume discounts and renewal options**: may create a material right that takes part of the allocation.
+* **Acceptance clauses**: can move the point at which control transfers.
+* **Third-party components**: may raise a [principal vs agent](/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example) question.
+
+Capture the excerpt for each, even when the conclusion is "no effect"; the reviewer will want to see that it was considered.
+
+---
+
+## Extraction vs confirmation
+
+| Approach | Strength | Risk |
+|---|---|---|
+| **Manual review** | Judgement on every clause | Slow; references often missing from the spreadsheet |
+| **Automated extraction (OCR / LLM)** | Fast first draft | Misreads numbers and misses caveats on non-standard contracts |
+| **Assisted extraction with confirmation** | Fast, with a person confirming each obligation and price | Still depends on the reviewer reading the clauses |
+
+Soluqube takes the third approach: you confirm the obligations and stated prices, and the engine does the allocation and schedule. Automated extraction with human confirmation kept in the loop is the next release, not a claim about today.
+
+---
+
+## What goes to the auditor?
+
+An Excel workpaper and a JSON evidence pack with the page and excerpt for every obligation, the [relative-SSP allocation](/blog/ssp-allocation-rounding-residual-cent-asc-606), the full schedule and SHA-256 hashes on the export. The [audit evidence guide](/blog/pcaob-as-3101-audit-workpapers-merkle-proofs) explains what the hashes do and do not prove. If you are comparing tools that only extract terms into a checklist, see [Soluqube vs Klarity](/soluqube-vs-klarity), or try it on your own contracts through the [design partner program](/design-partners).
+    `
+  },
+  {
+    slug: "pcaob-qc-1000-fasb-ai-revenue-recognition-audits-2026",
+    title: "PCAOB QC 1000 and Revenue Audits: What Changes for Finance",
+    subtitle: "QC 1000 applies to audit firms, not preparers. What it changes in how revenue evidence is tested, and why reproducible math beats unreviewed AI output.",
+    publishedAt: "October 10, 2026",
+    updatedAt: "October 15, 2026",
     readTime: "8 min read",
     author: {
       name: "Soluqube Editorial",
       role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["PDF Grounding", "Audit Evidence", "Audit Workpapers", "MSA Parsing", "External Audit"],
-    targetQuery: "Contract PDF bounding-box clause grounding for auditors",
-    definitionAnchor: "Contract PDF bounding-box clause grounding is the automated mathematical extraction and spatial mapping of unstructured legal text to normalized page coordinates [page, x0, y0, x1, y1], linking every line item in an ASC 606 revenue waterfall schedule directly to its signed contractual origin for zero-defect audit verification.",
-    excerpt: "Learn how Soluqube uses PyMuPDF normalized bounding-box coordinates to link ASC 606 revenue schedules directly to signed contract clauses for audit readiness.",
-    toc: [
-      { id: "the-unstructured-contract-gap", label: "The Unstructured Contract Dilemma" },
-      { id: "definition-anchor-block", label: "Definition & Spatial Grounding Architecture" },
-      { id: "how-coordinate-extraction-works", label: "Sub-Millimeter PDF Token Extraction" },
-      { id: "pcaob-cam-verification", label: "PCAOB AS 3101 Critical Audit Matters (CAM)" },
-      { id: "ocr-vs-spatial-grounding", label: "Legacy OCR vs Deterministic Coordinate Grounding" },
-      { id: "audit-deliverable", label: "Generating 1-Click Interactive Auditor Bundles" }
-    ],
-    faqs: [
-      {
-        question: "What is contract PDF bounding-box clause grounding?",
-        answer: "Bounding-box clause grounding maps extracted financial terms directly to normalized vector coordinates [page, x0, y0, x1, y1] on the original PDF contract, enabling audit teams to visually trace every line item in an ASC 606 schedule directly to its signed legal origin."
-      },
-      {
-        question: "Why is coordinate grounding superior to standard LLM OCR?",
-        answer: "Generic LLMs and OCR scrapers extract plain text probabilistically and frequently hallucinate numbers or omit pricing caveats. Soluqube uses PyMuPDF character-level vector coordinate grids, guaranteeing 100% clause lineage with zero hallucination."
-      }
-    ],
-    content: `
-## The Unstructured Contract Dilemma: Why Manual Review Fails External Audits
-
-For enterprise finance departments, revenue recognition errors rarely originate in the arithmetic—they originate in **clause misinterpretation**. When an enterprise closes a $5,000,000 Master Services Agreement (MSA) with three non-standard addenda, terms like *\"contingent SLA rebates,\" \"termination for convenience refund clauses,\"* or *\"tiered volume discounts\"* are frequently overlooked by junior accountants.
-
-During annual external audits, audit partners (PwC, EY, Deloitte, KPMG) perform substantive testing by manually tracing revenue subledger journal entries back to signed PDF documents. If an auditor cannot instantly verify the underlying contractual clause supporting a Standalone Selling Price (SSP) allocation, the deficiency is escalated as a **Material Weakness in Internal Controls (SOX 404)**.
-
----
-
-## Spatial Grounding Architecture: Normalized Bounding Box Coordinates
-
-Soluqube solves this by treating every ingested contract PDF not as a flat image or raw text string, but as a **2-dimensional vector coordinate grid**:
-
-\`\`\`
-[ Signed Contract PDF (MSA / Order Form) ]
-                   |
-     [ PyMuPDF Text & Vector Extractor ]
-                   |
-  +----------------+----------------+
-  |                                 |
-[ Extracted Text Stream ]      [ Spatial Token Coordinates ]
-  - Clause: Term & Price         - Page: 3
-  - Value: $1,200,000            - Normalized Box: [x0: 72.4, y0: 310.2, x1: 520.1, y1: 345.8]
-  - Contingency: 10% SLA cap     - SHA-256 Text Hash
-                   |
-                   v
-[ ASC 606 / Ind AS 115 BigInt Ledger Entry ]
-\`\`\`
-
----
-
-## Sub-Millimeter PDF Token Extraction Under the Hood
-
-When a contract is ingested, Soluqube's parser extracts character-level bounding boxes and normalizes coordinates across differing PDF DPI resolutions:
-
-\`\`\`typescript
-interface BoundingBoxClause {
-  clauseId: string;
-  clauseType: "TERM" | "FEE_STRUCTURE" | "SLA_PENALTY" | "TERMINATION_RIGHT";
-  pageNumber: number;
-  coordinates: {
-    x0: number; // Left normalized point
-    y0: number; // Top normalized point
-    x1: number; // Right normalized point
-    y1: number; // Bottom normalized point
-  };
-  extractedText: string;
-  sha256Hash: string;
-}
-\`\`\`
-
-When an auditor or controller inspects an amortization row in the Soluqube interactive ledger, clicking any numeric cell automatically renders the original PDF with a high-contrast bounding highlight around the exact legal sentence.
-
----
-
-## PCAOB AS 3101 Critical Audit Matters (CAM) Testing
-
-Under **PCAOB AS 3101**, auditors communicate Critical Audit Matters in their report; the supporting evidence is documented under the PCAOB documentation standards. Soluqube generates an audit-ready evidence package that supports this documentation by linking:
-1. **Clause Origin**: Visual bounding-box proof on the signed document.
-2. **Deterministic Math**: integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption.
-3. **Cryptographic Immutability**: SHA-256 Merkle root validating that neither the contract PDF nor the ledger schedule has been altered post-signature.
-
----
-
-## Legacy OCR vs Deterministic Coordinate Grounding
-
-| Feature / Capability | Legacy OCR / Generic LLM Scrapers | Soluqube Spatial Bounding-Box Engine |
-|---|---|---|
-| **Clause Traceability** | Probabilistic text extraction without source grounding | Sub-millimeter [page, x, y] coordinate vector mapping |
-| **Audit Verification Speed** | 4–6 hours of manual PDF cross-referencing per contract | Instant 1-click visual clause highlighting |
-| **Hallucination Risk** | High (LLMs invent non-existent discount terms) | 0% (Strict character-level token verification) |
-| **Audit Defense Output** | Static Excel sheets with manual comments | Audit-ready JSON-LD evidence bundle with embedded SHA-256 Merkle proofs |
-
----
-
-## Generating 1-Click Interactive Auditor Bundles
-
-Soluqube exports complete 8-tab variance workpapers and self-contained HTML audit packages. External auditors can inspect and verify complete revenue schedules without requiring access to your core ERP or confidential billing systems.
-    `
-  },
-  {
-    slug: "pcaob-qc-1000-fasb-ai-revenue-recognition-audits-2026",
-    title: "PCAOB QC 1000 Enforcement & FASB AI Guidance: Why Enterprise Spreadsheets Are Failing 2026 Revenue Audits",
-    subtitle: "A regulatory analysis of PCAOB's new quality control mandate, recurring revenue inspection deficiencies, and why probabilistic AI models fail auditor verification.",
-    publishedAt: "October 10, 2026",
-    readTime: "9 min read",
-    author: {
-      name: "Soluqube Editorial",
-      role: "Technical Accounting Content Team",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
-    },
-    tags: ["PCAOB QC 1000", "FASB ASC 606", "AI Revenue Recognition", "Audit Deficiencies", "Enterprise Audit"],
-    targetQuery: "PCAOB QC 1000 revenue recognition audit deficiencies software",
+    tags: ["PCAOB QC 1000", "ASC 606", "AI in Finance", "External Audit"],
+    targetQuery: "PCAOB QC 1000 revenue recognition audit",
     definitionAnchor: "PCAOB QC 1000 is the quality-control standard for registered audit firms; its practical effect for preparers is that audit teams increasingly look for reproducible, documented revenue calculations rather than spreadsheet judgment or probabilistic AI outputs in ASC 606 performance obligation allocations.",
-    excerpt: "With PCAOB QC 1000 raising quality-control expectations for audit firms and inspections continuing to focus on revenue, finance leaders are moving from manual spreadsheets and ungrounded LLMs toward deterministic, coordinate-verified subledgers.",
+    excerpt: "QC 1000 raises quality-control expectations for audit firms, and inspections keep finding revenue issues. What that means for a SaaS finance team's SSP support, schedules and any AI used in the close.",
     toc: [
-      { id: "regulatory-shift", label: "The 2026 Regulatory Pivot: PCAOB QC 1000" },
-      { id: "audit-deficiencies", label: "Top Revenue Recognition Inspection Deficiencies" },
-      { id: "fasb-ai-boundary", label: "FASB's Stance on AI in Financial Reporting" },
-      { id: "probabilistic-vs-deterministic", label: "Why Probabilistic LLMs Fail Audit Standards" },
-      { id: "the-deterministic-solution", label: "The Soluqube Deterministic Defense Architecture" }
+      { id: "what-is-qc-1000", label: "What QC 1000 is" },
+      { id: "where-do-revenue-audits-find-problems", label: "Where revenue audits find problems" },
+      { id: "ai-in-the-close-is-there-a-special-standard", label: "AI in the close: no special standard" },
+      { id: "generative-vs-deterministic-output", label: "Generative vs deterministic output" },
+      { id: "what-does-soluqube-do", label: "What Soluqube does" }
     ],
     faqs: [
       {
@@ -471,216 +499,231 @@ Soluqube exports complete 8-tab variance workpapers and self-contained HTML audi
         answer: "PCAOB QC 1000 is the quality control standard for registered audit firms' systems of quality control; it does not apply directly to preparers or software. Its practical effect for finance teams is that audit firms increasingly scrutinize whether subledgers and schedules rely on fragile spreadsheets or untracked manual overrides."
       },
       {
-        question: "Does FASB have a specific accounting standard for Artificial Intelligence in 2026?",
-        answer: "No. FASB requires companies to account for AI-embedded arrangements under existing GAAP standards, primarily ASC 606 for contract deliverables and ASC 350-40 for internal-use software. Regulators mandate that any AI utilized in financial close workflows must feature complete documentation of inputs, versioning, and deterministic audit trails."
+        question: "Does FASB have a specific accounting standard for Artificial Intelligence?",
+        answer: "No. There is no AI-specific revenue standard. Arrangements involving AI are accounted for under existing GAAP, such as ASC 606 for customer contracts and ASC 350-40 for internal-use software. If AI is used in the close, expect auditors to ask how its output was reviewed and how the result can be reproduced."
       },
       {
-        question: "Why do enterprise auditors reject probabilistic AI tools for ASC 606 revenue recognition?",
-        answer: "Generative AI models are non-deterministic and prone to token hallucinations, making them difficult to support as evidence in Critical Audit Matter (CAM) review. Soluqube addresses this by combining bounding-box spatial grounding with integer (BigInt) fixed-point math and SHA-256 Merkle proofs, producing reproducible mathematical results."
+        question: "Why are auditors cautious about generative AI output in revenue work?",
+        answer: "Generative models can return different answers to the same input and can misread numbers, so their output is hard to re-perform. A defensible approach keeps a person confirming the contract terms and uses deterministic calculations for allocation and schedules, so the same inputs always give the same output. That is how Soluqube works: you confirm the terms, the engine computes in integer arithmetic, and the export is hashed."
       }
     ],
     content: `
-## The 2026 Regulatory Pivot: PCAOB QC 1000
+## What is QC 1000?
 
 The Public Company Accounting Oversight Board (PCAOB) standard **QC 1000 (A Firm's System of Quality Control)** sets requirements for registered audit firms' systems of quality control.
 
-QC 1000 applies to audit firms, not to corporate preparers or software, but it shapes what audit teams expect from the evidence and calculations they test. At the center of that expectation sits a perennial challenge: **ASC 606 Revenue Recognition from Contracts with Customers**.
-
-Year after year, PCAOB inspection reports cite revenue recognition as the single most frequent area of audit deficiencies across both the largest audit firms and global network firms. Inspectors routinely identify failures in:
-- Testing management's estimates for Standalone Selling Price (SSP).
-- Validating the completeness and mathematical accuracy of spreadsheet-based amortization waterfalls.
-- Documenting the legal grounding behind contract modifications and multi-element arrangements.
+QC 1000 applies to audit firms, not to corporate preparers or software, but it shapes what audit teams expect from the evidence and calculations they test. Revenue under **ASC 606** is one of the areas where that expectation shows most.
 
 ---
 
-## Top Revenue Recognition Inspection Deficiencies in 2026
+## Where do revenue audits find problems?
 
-Recent PCAOB findings highlight three systematic breakdown patterns in enterprise accounting departments:
+PCAOB inspection reports regularly list revenue among the areas with the most audit deficiencies. The recurring themes are:
 
-1. **Spreadsheet Version Fragmentation:** Financial teams managing ratable SaaS or multi-year enterprise deliverables inside Microsoft Excel inherit hidden formula errors, floating-point cent drift, and untracked manual journal adjustments.
-2. **Unsupported Modification Assumptions:** When contracts undergo renewals or mid-term scope expansions, accounting memos frequently fail to prove whether new deliverables are *distinct* under ASC 606-10-25-13, leading to material cumulative catch-up misstatements.
-3. **Black-Box ERP Calculation Engines:** Legacy ERP revenue recognition modules (such as standard NetSuite ARM or SAP revenue accounting) output aggregated general ledger numbers without providing transaction-level coordinate ties back to executed Master Services Agreements (MSAs).
+- Testing management's estimates of standalone selling price (SSP).
+- Testing the completeness and accuracy of the data and spreadsheets behind revenue schedules.
+- Supporting conclusions on contract modifications and multi-element arrangements.
 
----
+On the preparer side, three patterns make those tests harder:
 
-## FASB's Stance on AI in Financial Reporting
-
-As tech enterprises rush to deploy AI into corporate finance, the Financial Accounting Standards Board (FASB) has issued explicit guidance: **there is no 'AI exemption' in US GAAP**.
-
-Companies deploying AI platforms must strictly account for deliverables under ASC 606:
-- **Embedded Generative Features:** Must be evaluated as distinct or bundled performance obligations based on customer utility.
-- **Consumption vs Subscription Pools:** Hybrid consumption tiers require real-time usage event ingestion rather than arbitrary ratable recognition.
-- **Audit Documentation Mandate:** When AI tools assist in contract abstraction or ledger journal creation, audit teams must inspect the model version, temperature constraints, prompt architecture, and evidence coordinates.
+1. **Spreadsheet version sprawl**: several copies of a schedule, manual overrides with no trail, and per-period rounding that leaves a balance someone has to plug.
+2. **Unsupported modification conclusions**: no memo showing why an amendment was treated as a separate contract, prospectively or by catch-up. The [contract modification decision tree](/blog/contract-modification-precedence-dag-asc-606-10-25-13) sets out the analysis.
+3. **Schedules with no route back to the contract**: subledger output that cannot be traced to the clause behind each price and term.
 
 ---
 
-## Why Probabilistic LLMs Fail Audit Standards
+## AI in the close: is there a special standard?
 
-Generic Large Language Models (LLMs) operate on probabilistic token prediction. For marketing copy or customer support, 95% accuracy is sufficient. For SEC reporting and statutory MCA Schedule III balance sheets, a 1-cent discrepancy constitutes audit non-compliance.
+No. The FASB has not issued an AI-specific revenue standard. Arrangements involving AI are accounted for under existing GAAP:
 
-| Audit Dimension | Probabilistic Generative AI | Soluqube Deterministic Engine |
+- **AI features sold to customers** are evaluated under ASC 606 like any other promise: distinct or combined, and how they are priced.
+- **Usage-based AI pricing** is variable consideration, recognised as usage occurs or estimated and constrained, depending on the facts.
+- **AI used in the close** is a tool, not a standard. Expect auditors to ask what was reviewed, by whom, and whether the result can be reproduced.
+
+---
+
+## Generative vs deterministic output
+
+Generative models predict text. That is useful for drafting, but revenue schedules have to re-perform to the cent.
+
+| Audit dimension | Generative AI | Deterministic engine (Soluqube) |
 |---|---|---|
-| **Mathematical Parity** | Floating-point drift & hallucinations | Integer (BigInt) fixed-point math, rounded to cents, with terminal-period remainder absorption |
-| **Source Grounding** | Text summaries without coordinate proof | Normalized sub-millimeter [x0, y0, x1, y1] PDF coordinates |
-| **Audit Evidence Package** | Difficult to support as audit evidence | Cryptographic SHA-256 Merkle-sealed workpapers |
-| **Standard Coverage** | Generic text generation | Full ASC 606 & Ind AS 115 dual-standard ledgers |
+| **Same input, same output** | Not assured | Yes, byte-identical |
+| **Arithmetic** | Can misread or miscompute numbers | Integer (BigInt) arithmetic, rounded to cents, terminal-period remainder absorption |
+| **Source trace** | Summaries without clause references | Clause evidence (page + excerpt) per obligation |
+| **Evidence** | Hard to re-perform | SHA-256 hashed export with a Merkle root |
+| **Standards** | General text | ASC 606; Ind AS 115 with GST isolation for INR contracts |
 
 ---
 
-## The Soluqube Deterministic Defense Architecture
+## What does Soluqube do?
 
-Soluqube was engineered to support the documentation and reproducibility that external audit teams look for:
+1. **Relative-SSP allocation** in integer arithmetic, with a written rule for the residual cent ([how the residual is handled](/blog/ssp-allocation-rounding-residual-cent-asc-606)).
+2. **A full-term schedule** that ties to the contract value and ends at a $0.00 deferred balance.
+3. **Clause evidence (page + excerpt)** for each obligation; you confirm the obligations and prices.
+4. **A hashed workpaper** an auditor can re-run and compare.
 
-1. **Directed Acyclic Graph (DAG) for Contract Modifications:** Encodes ASC 606-10-25-13 decision logic deterministically, generating instant catch-up journal entries without manual memo delays.
-2. **Sub-Millimeter PDF Clause Grounding:** Links every line item in the revenue waterfall to exact integer coordinates on the signed legal contract.
-3. **Scaled Integer (BigInt) Core:** Avoids IEEE-754 floating-point inaccuracies with integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, so schedules tie to the contract value.
-4. **Self-Contained Audit Packages:** Allows external auditors to independently recalculate schedules and verify cryptographic Merkle proofs in seconds.
+Contract-modification accounting is on the roadmap and is not automated today. For the platform view, see the [ASC 606 hub](/asc-606); to test it on your own contracts, see the [design partner program](/design-partners).
     `
   },
   {
     slug: "netsuite-arm-vs-soluqube-floating-point-rounding-drift-asc-606",
-    title: "NetSuite ARM vs Soluqube: Why IEEE-754 Floating-Point Drift Fails Revenue Audits",
-    subtitle: "How 64-bit double-precision binary floating point creates silent cent rounding discrepancies in multi-year ASC 606 ratable schedules—and why integer (BigInt) fixed-point math with terminal-period remainder absorption keeps schedules tied to the cent.",
+    title: "NetSuite ARM vs Soluqube: Rounding in ASC 606 Schedules",
+    subtitle: "Why per-period rounding leaves residual cents in multi-year ratable schedules, how to test any system for it, and how a terminal-period rule fixes it.",
     publishedAt: "October 10, 2026",
-    readTime: "9 min read",
+    updatedAt: "October 15, 2026",
+    readTime: "8 min read",
     author: {
-      name: "Nikhil @ Soluqube",
-      role: "Founder & Lead Architect",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["NetSuite ARM", "ASC 606", "Floating Point Drift", "IEEE-754", "External Audit", "PCAOB"],
-    targetQuery: "NetSuite ARM revenue recognition rounding cent drift audit",
-    definitionAnchor: "Floating-point rounding drift under ASC 606 occurs when accounting software calculates monthly revenue amortization using 64-bit binary floating-point numbers (IEEE-754 standard). Because fractions like 1/3, 1/12, and 1/36 cannot be represented cleanly in binary, periodic rounding produces fractional-cent discrepancies that compound across multi-year ratable schedules, failing general ledger tie-out checks.",
-    excerpt: "Discover why standard ERPs like NetSuite ARM and Excel fail PCAOB revenue sampling tests due to binary floating-point rounding—and how Soluqube keeps ledger schedules tied to the contract value using integer (BigInt) scaled arithmetic, rounded to cents.",
+    tags: ["NetSuite ARM", "ASC 606", "Rounding Policy", "Revenue Schedules", "External Audit"],
+    targetQuery: "NetSuite ARM revenue recognition rounding",
+    definitionAnchor: "Residual cents in an ASC 606 schedule appear when each period's revenue is rounded to the cent on its own. $100,000 over 36 months is $2,777.777... a month; rounding every month to $2,777.78 recognises $100,000.08 in total. The fix is a written rounding rule, such as flooring each period and letting the final period absorb the remainder, applied the same way every time.",
+    excerpt: "Round $100,000 over 36 months to the cent each month and you recognise $100,000.08. How to test whether your NetSuite ARM set-up, or any schedule, has this problem, and how Soluqube's terminal-period rule handles it.",
     toc: [
-      { id: "the-floating-point-problem", label: "The IEEE-754 Binary Floating-Point Dilemma" },
-      { id: "how-drift-accumulates", label: "How Cent Variance Compounds Across 36 Months" },
-      { id: "arm-vs-soluqube-comparison", label: "NetSuite ARM vs. Soluqube Architecture" },
-      { id: "terminal-absorption", label: "Terminal Remainder Absorption & Integer Parity" },
-      { id: "pcaob-audit-defense", label: "Audit-Ready Evidence for External Auditors" }
+      { id: "where-do-residual-cents-come-from", label: "Where residual cents come from" },
+      { id: "how-does-the-remainder-grow-in-multi-element-contracts", label: "Multi-element contracts" },
+      { id: "four-checks-for-any-schedule", label: "Four checks for any schedule" },
+      { id: "netsuite-arm-vs-soluqube", label: "NetSuite ARM vs Soluqube" },
+      { id: "how-does-terminal-period-remainder-absorption-work", label: "Terminal-period remainder absorption" },
+      { id: "what-to-hand-the-auditor", label: "What to hand the auditor" }
     ],
     faqs: [
       {
-        question: "Why do NetSuite ARM and Excel produce cent rounding errors in revenue schedules?",
-        answer: "NetSuite and Excel execute calculations using 64-bit IEEE-754 binary floating-point numbers. In binary math, decimal fractions like 0.10 or 1/36 have repeating expansions, creating microscopic rounding noise (e.g., $2,777.777777777778). When rounded to 2 decimal places per month over a 36-month term, the sum of monthly revenues diverges from the original contract consideration by pennies, creating audit sampling exceptions."
+        question: "Why can revenue schedules be a few cents off the contract value?",
+        answer: "Because each period is rounded to the cent on its own. $100,000 / 36 is $2,777.777...; rounding each month to $2,777.78 sums to $100,000.08. The difference comes from the rounding rule, whichever system does the arithmetic. A written rule that assigns the remainder to one period removes it."
       },
       {
-        question: "How does Soluqube eliminate revenue schedule rounding drift?",
-        answer: "Soluqube replaces binary floating-point calculations with integer (BigInt) fixed-point arithmetic at 10^6 scale, rounded to cents, and terminal-period remainder absorption. In the final period of an amortization term, Soluqube calculates the exact remainder: Total Consideration minus Cumulative Prior Amortization, so the schedule ties exactly to the contract value."
+        question: "How does Soluqube handle the remainder?",
+        answer: "Soluqube uses integer (BigInt) arithmetic at 10^6 scale, rounded to cents, and terminal-period remainder absorption. In the final period it recognises the total consideration minus everything recognised before, so the schedule ties exactly to the contract value."
       },
       {
-        question: "Does external auditor sampling flag sub-dollar cent drift?",
-        answer: "Yes. While a few cents may appear immaterial on an isolated contract, PCAOB inspectors treat recurring computational discrepancies as a failure of automated application controls under SOX 404, requiring manual reconciliation memos and partner review hours."
+        question: "Do auditors care about a few cents?",
+        answer: "Not as a misstatement: a few cents are far below materiality. The cost is mechanical: a deferred balance that never reaches zero needs a manual plug, and every plug needs an explanation. Auditors spend their time on SSP judgement, modifications, cutoff and controls; a schedule that ties to the cent removes a distraction."
       }
     ],
     content: `
-## The IEEE-754 Binary Floating-Point Dilemma
+## Where do residual cents come from?
 
-Most modern enterprise ERP systems—including **NetSuite Advanced Revenue Management (ARM)**, Salesforce Billing, and standard Microsoft Excel workpapers—rely on IEEE-754 double-precision 64-bit binary floating-point math to compute ratable revenue schedules.
-
-In binary arithmetic (base-2), fractional numbers that are simple in decimal (base-10)—such as \`0.10\`, \`0.20\`, or \`1/36\`—have infinite repeating representations. For example, dividing an annual contract of \`$100,000\` across 36 monthly performance periods produces an ideal monthly revenue of:
+Divide a $100,000 contract across 36 monthly periods and the ideal monthly amount has no end:
 
 \`\`\`
-100,000 / 36 = 2,777.7777777777777777...
+100,000 / 36 = 2,777.7777777...
 \`\`\`
 
-When an ERP rounds each monthly journal entry to standard currency precision (\`$2,777.78\`), multiplying this rounded monthly figure across 36 periods yields:
+Round each monthly entry to the cent ($2,777.78) and the 36 entries add up to more than the contract:
 
 \`\`\`
-$2,777.78 * 36 = $100,000.08
+$2,777.78 × 36 = $100,000.08
 \`\`\`
 
-That **8-cent variance** represents unexplained phantom revenue. In a corporate general ledger managing thousands of multi-element enterprise contracts with custom start dates and mid-term amendments, these floating-point errors accumulate into hundreds of dollars of irreconcilable variance between deferred revenue liability and cumulative recognized revenue.
+That is eight cents of revenue with no contract behind it. It comes from the rounding rule, not from any one product: the same thing happens in a spreadsheet, an ERP or a custom script that rounds each period independently. How a given NetSuite Advanced Revenue Management (ARM) set-up handles it depends on its configuration, so test it rather than assume.
 
 ---
 
-## How Cent Variance Compounds Across 36 Months
+## How does the remainder grow in multi-element contracts?
 
-The problem intensifies when contracts involve **multi-element arrangements** under ASC 606 Step 4 (allocating transaction price based on relative standalone selling prices):
+It appears at every step that divides:
 
-1. **Element Allocation Rounding:** A 3-element contract ($150,000 total) split across SaaS access (70%), Implementation (20%), and Tiered Support (10%) undergoes initial rounding when dividing relative SSP percentages.
-2. **Periodic Amortization Noise:** Each element is amortized over differing service periods (e.g., SaaS over 36 months ratable, implementation upon milestone delivery, support over 12 months).
-3. **Mid-Term Contract Modifications (ASC 606-10-25-13):** When a client upsells or alters seat count mid-term, legacy ERPs rerun the schedule without reconciling prior rounded pennies, compounding the drift across prior closed accounting periods.
+1. **Allocation**: a $150,000 bundle split across subscription, implementation and support by relative SSP rarely gives whole cents per obligation.
+2. **Scheduling**: each obligation is then divided over its own service period (36 months ratable, a milestone, 12 months of support).
+3. **Modifications**: if a schedule is rebuilt after an amendment without a remainder rule, the cents left over from the first schedule are not carried into the new one.
 
-During year-end audit testing, external audit teams run automated reconciliation scripts across the general ledger. Unexplained discrepancies in ratable waterfalls trigger control deficiency inquiries and manual reconciliation memos.
+The amounts stay small, but they leave deferred balances that do not reach zero, and each one is a reconciling item to explain at close.
 
 ---
 
-## NetSuite ARM vs. Soluqube Architecture
+## Four checks for any schedule
 
-| Architectural Dimension | NetSuite Advanced Revenue Management (ARM) | Soluqube Deterministic Engine |
+Run these on an ARM revenue plan export or a spreadsheet alike:
+
+1. The allocations across obligations sum to the transaction price, to the cent.
+2. Each obligation's schedule sums to its allocation.
+3. Each obligation's deferred balance is $0.00 after its final period.
+4. Re-running the same inputs gives the same cents.
+
+If any check fails, write down a remainder rule and apply it consistently. The [residual-cent policy guide](/blog/ssp-allocation-rounding-residual-cent-asc-606) has illustrative wording.
+
+---
+
+## NetSuite ARM vs Soluqube
+
+They solve different problems. ARM is the revenue module of an ERP; Soluqube is a standalone engine for the allocation, schedule and evidence on contracts you want to defend.
+
+| Dimension | NetSuite ARM | Soluqube |
 |---|---|---|
-| **Underlying Math Core** | 64-bit IEEE-754 Binary Floating-Point | Integer (BigInt) scaled fixed-point, rounded to cents (terminal-period remainder absorption) |
-| **Terminal Remainder Policy** | Manual spreadsheet adjustment or unabsorbed drift | Automated closed-form terminal remainder absorption |
-| **Contract Clause Grounding** | Text memo fields without coordinate proof | Normalized [x0, y0, x1, y1] PDF bounding-box vector links |
-| **Contract Modification DAG** | Manual multi-step workflow / catch-up journal rules | Deterministic ASC 606-10-25-13 directed acyclic graph |
-| **MCA / Ind AS 115 GST Firewall** | Gross consideration amortization (tax contamination) | Automated statutory 18% GST balance sheet quarantine |
-| **Audit Defense Output** | Standard general ledger reports | Audit-ready evidence packages with SHA-256 integrity hashes |
+| **Scope** | ERP revenue module with billing and GL posting | Allocation, schedule and evidence workpaper; export only, no live ERP sync |
+| **Rounding rule** | Depends on configuration; document what yours does | Floor each period; final period absorbs the remainder |
+| **Clause evidence** | Memo and reference fields | Page + excerpt per obligation |
+| **Contract modifications** | Handled in the ERP workflow | Not automated yet (on the roadmap) |
+| **Ind AS 115 GST** | Via tax configuration | GST isolated before allocation for INR contracts |
+| **Output** | GL postings and reports | Excel/CSV you review and post, SHA-256 hashed |
 
 ---
 
-## Terminal Remainder Absorption & Integer Parity
+## How does terminal-period remainder absorption work?
 
-Soluqube eliminates floating-point drift through two fundamental mathematical mechanisms:
+Two mechanisms, both simple enough to re-perform by hand.
 
-### 1. Scaled Integer (BigInt) Representation
-All currency amounts are represented internally as integers (BigInt) scaled by $10^{6}$ (micro-cents) and rounded to cents, completely bypassing floating-point binary approximations:
+### 1. Integer amounts
+
+Amounts are held as integers at 10^6 units per dollar and rounded to cents, so there is no binary fraction to round:
 
 \`\`\`typescript
-// Scaled BigInt fixed representation (micro-cents)
 const SCALE = 10n ** 6n;
-const totalConsideration = 100000n * SCALE;
-const termPeriods = 36n;
-const basePeriodRecognition = totalConsideration / termPeriods;
+const total = 100_000n * SCALE;   // $100,000.00
+const months = 36n;
 \`\`\`
 
-### 2. Exact Terminal Remainder Absorption
-Rather than assuming equal monthly rounding across all periods, Soluqube deterministically absorbs the residual balance in the terminal period:
+### 2. The final period takes the remainder
+
+Each period gets the floored amount; the last one gets whatever is left:
 
 \`\`\`typescript
-function calculateTerminalPeriod(total: bigint, monthly: bigint, term: number): bigint {
-  const cumulativePrior = monthly * BigInt(term - 1);
-  return total - cumulativePrior; // Absorbs exact mathematical remainder
+function finalPeriod(total: bigint, perPeriod: bigint, periods: bigint): bigint {
+  return total - perPeriod * (periods - 1n); // absorbs the remainder
 }
+// 35 × $2,777.77 + $2,778.05 = $100,000.00
 \`\`\`
 
-This guarantees that:
-$$\sum_{t=1}^{T} \text{PeriodRevenue}_t \equiv \text{TotalContractConsideration}$$
-with mathematical certainty.
+The schedule sums to the contract value every time. Try other amounts in the [schedule simulator](/audit).
 
 ---
 
-## Audit-Ready Evidence for External Auditors
+## What to hand the auditor
 
-By combining integer (BigInt) fixed-point arithmetic with spatial contract PDF bounding-box clause grounding, Soluqube produces audit-ready evidence packages that support auditor review:
+* **A schedule that ties**: allocations and every period sum to the transaction price, and the deferred balance ends at $0.00.
+* **Clause evidence**: the page and excerpt behind each obligation and price.
+* **A hashed workpaper**: SHA-256 hashes and a Merkle root on the export, so a re-run can be compared.
 
-* **Zero Reconciliation Exceptions:** $0.000000 variance between general ledger postings and contract consideration.
-* **Cryptographic Evidence Seals:** Every workpaper is hashed with SHA-256 Merkle proofs linking journal entries to original signed agreements.
-* **Instant Auditor Hand-off:** Export self-contained audit packages that allow external audit teams to verify 36-month schedules in seconds.
+The cents are the easy part. The judgement auditors test is the SSP behind the allocation; see the [SSP allocation example](/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations). To run your own contracts, see the [design partner program](/design-partners).
     `
   },
   {
     slug: "mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations",
-    title: "Mastering ASC 606 Standalone Selling Price (SSP) Allocations: Relative Fair Value Math & Audit Defensibility",
-    subtitle: "How CFOs and revenue accounting teams automate relative Standalone Selling Price allocation across bundled software, professional services, and usage tiers without spreadsheet rounding drift.",
+    title: "ASC 606 SSP Allocation Example: 3-Element SaaS Bundle",
+    subtitle: "How relative SSP allocation works under ASC 606 Step 4, the three SSP estimation methods, a worked 3-element example, and what auditors test.",
     publishedAt: "October 11, 2026",
+    updatedAt: "October 15, 2026",
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
       role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["ASC 606", "Standalone Selling Price", "SSP Allocation", "Multi-Element Bundles", "PCAOB QC 1000", "Ind AS 115"],
-    targetQuery: "ASC 606 Standalone Selling Price SSP allocation formula audit software",
-    definitionAnchor: "ASC 606 Standalone Selling Price (SSP) allocation is the mandatory accounting methodology of allocating transaction price across bundled performance obligations based on relative standalone selling prices, requiring deterministic mathematical formulas that eliminate spreadsheet rounding drift and maintain a documented audit trail for external auditor review.",
-    excerpt: "Discover how enterprise revenue teams calculate relative Standalone Selling Price (SSP) across multi-element SaaS contracts, eliminate spreadsheet rounding variances, and support external audit review with deterministic integer (BigInt) fixed-point subledgers.",
+    tags: ["ASC 606", "Standalone Selling Price", "SSP Allocation", "Multi-Element Bundles", "Ind AS 115"],
+    targetQuery: "ASC 606 SSP allocation example",
+    definitionAnchor: "Under ASC 606 Step 4, the transaction price is allocated to each performance obligation in proportion to its standalone selling price (SSP). Observable prices come first; otherwise management estimates SSP by adjusted market assessment, expected cost plus a margin or, in narrow cases, the residual approach. A bundle discount is allocated proportionately unless the ASC 606-10-32-37 criteria are met.",
+    excerpt: "A $100,000 bundle with $200,000 of total SSP: how the discount is spread, how each allocation is computed, how SSP is estimated without standalone sales, and what auditors test in management's SSP.",
     toc: [
-      { id: "ssp-regulatory-framework", label: "The ASC 606 Step 4 Mandate: Relative SSP Allocation" },
-      { id: "methods-of-determination", label: "Three Accepted Methods for Determining SSP" },
-      { id: "multi-element-mathematics", label: "The Mathematics of Relative Allocation & Rounding Drift" },
-      { id: "pcaob-audit-scrutiny", label: "Auditor Scrutiny on Management SSP Estimates" },
-      { id: "soluqube-deterministic-engine", label: "The Soluqube Deterministic Integer SSP Engine" },
-      { id: "conclusion-audit-readiness", label: "Checklist for Audit-Defensible SSP Governance" }
+      { id: "step-4-relative-ssp-allocation", label: "Step 4: relative SSP allocation" },
+      { id: "three-methods-for-estimating-ssp", label: "Three methods for estimating SSP" },
+      { id: "worked-example-100000-across-three-obligations", label: "Worked example: three obligations" },
+      { id: "what-do-auditors-test-in-managements-ssp", label: "What auditors test in SSP" },
+      { id: "how-does-soluqube-compute-the-allocation", label: "How Soluqube computes it" },
+      { id: "ssp-governance-checklist", label: "SSP governance checklist" }
     ],
     faqs: [
       {
@@ -692,119 +735,108 @@ By combining integer (BigInt) fixed-point arithmetic with spatial contract PDF b
         answer: "Under ASC 606-10-32-31 to 35, the three approved estimation methods are: 1) Adjusted Market Assessment Approach (evaluating competitor pricing and market demand), 2) Expected Cost Plus a Margin Approach (projecting delivery costs plus reasonable profit), and 3) Residual Approach (strictly limited to highly variable or uncertain pricing)."
       },
       {
-        question: "Why do Excel spreadsheets fail external audit inspections on relative SSP allocations?",
-        answer: "Excel spreadsheets rely on IEEE-754 64-bit binary floating-point numbers. When multi-element contract consideration is allocated proportionately across multiple performance obligations and ratable terms, rounding remainders create penny and cent mismatches between the allocated total and the executed contract invoice, failing substantive audit tests."
+        question: "Why do spreadsheet SSP allocations raise audit questions?",
+        answer: "Usually because of the SSP inputs rather than the arithmetic: stale price lists, no documented range, or a discount pushed onto one element without meeting ASC 606-10-32-37. Arithmetic issues are smaller but avoidable: rounding each line on its own can leave the allocations a cent off the transaction price unless a residual rule is written down."
       }
     ],
     content: `
-## The ASC 606 Step 4 Mandate: Relative SSP Allocation
+## Step 4: relative SSP allocation
 
-Step 4 of the FASB and IASB five-step revenue recognition model requires entities to allocate the transaction price to each performance obligation identified in the contract on a **relative standalone selling price (SSP) basis**.
+Step 4 of the five-step model allocates the transaction price to each performance obligation on a **relative standalone selling price (SSP) basis**.
 
-In modern enterprise B2B SaaS, enterprise agreements rarely consist of a single SKU. Typical contracts bundle:
-1. **Core SaaS Subscription** (Ratable over 12, 36, or 60 months).
-2. **Implementation & Onboarding Services** (Point-in-time or milestone completion).
-3. **Premium 24/7 SLA Support** (Ratable over term).
-4. **Custom API Consumption Tiers** (Variable consideration subject to constraint).
+SaaS contracts rarely contain a single SKU. A typical bundle includes:
+1. **Core SaaS subscription** (ratable over 12, 36 or 60 months).
+2. **Implementation and onboarding** (point in time or over the project).
+3. **Premium support** (ratable over the term).
+4. **Usage or API tiers** (variable consideration, subject to the constraint).
 
-When sales teams offer contractual bundle discounts (e.g., $150,000 package with standard list prices totaling $200,000), accounting teams are prohibited from allocating the 25% discount arbitrarily. ASC 606 mandates that the discount must be allocated proportionately across all performance obligations unless clear observable evidence exists that the discount belongs to a specific element.
-
----
-
-## Three Accepted Methods for Determining SSP
-
-Under ASC 606-10-32-31, entities must first seek **observable standalone selling prices**. When observable prices are not available, management must establish an objective estimation methodology:
-
-### 1. Adjusted Market Assessment Approach
-Evaluates the market in which goods or services are sold and estimates the price that customers in that market would be willing to pay. This includes benchmark competitor pricing, list price discounting corridors, and regional price adjustments.
-
-### 2. Expected Cost Plus a Margin Approach
-Projects direct and indirect costs of satisfying the performance obligation (e.g., engineering hours for custom integrations) and adds an appropriate commercial margin reflecting market realities.
-
-### 3. Residual Approach
-Calculates SSP by deducting the sum of observable SSPs of other goods/services from the total contract consideration. **Caution:** Under ASC 606-10-32-34, this method is strictly restricted to situations where selling prices are highly variable or uncertain.
+When sales offers a bundle discount, say a $150,000 package against $200,000 of list prices, the 25% discount cannot be placed wherever is convenient. ASC 606 allocates it proportionately across all obligations unless observable evidence shows it belongs to specific ones (ASC 606-10-32-37).
 
 ---
 
-## The Mathematics of Relative Allocation & Rounding Drift
+## Three methods for estimating SSP
 
-The formula for allocating consideration to Performance Obligation $i$ is:
+Under ASC 606-10-32-31, start with **observable standalone selling prices**. When there are none, estimate SSP with a method that maximises observable inputs:
 
-$$\\text{Allocated Consideration}_i = \\text{Total Transaction Price} \\times \\left( \\frac{\\text{SSP}_i}{\\sum_{k=1}^{N} \\text{SSP}_k} \\right)$$
+### 1. Adjusted market assessment
+Estimate what customers in the market would pay: competitor pricing, your own list-price discounting bands, and regional adjustments.
 
-### The Multi-Year Rounding Defect
-Consider an enterprise contract with a **$100,000.00** transaction price bundled across 3 distinct obligations:
-* **Element A (SaaS Core):** SSP = $70,000 (35.0%)
-* **Element B (Professional Services):** SSP = $20,000 (10.0%)
-* **Element C (SLA Support):** SSP = $110,000 (55.0%)
-* **Total SSP:** $200,000 (Contract has a 50% bundle discount)
+### 2. Expected cost plus a margin
+Forecast the cost of satisfying the obligation (for example, engineering hours for an integration) and add a margin the market would accept.
 
-When allocated and subsequently amortized across 36 monthly periods using standard 64-bit IEEE-754 floating-point numbers in Excel or legacy ERPs:
-* The monthly allocation for Element C yields: $\\frac{\\$55,000}{36} = \\$1,527.7777777777778$
-* Standard spreadsheet cell formatting rounds this to **$1,527.78**.
-* Over 36 months, total recognized revenue compounds to **$55,000.08**.
-* **Variance:** +$0.08 cent drift on a single line item.
-
-Across hundreds of multi-element contracts, these unabsorbed fractional remainders compound into thousands of dollars in unreconciled subledger variance that trigger PCAOB audit comment letters.
+### 3. Residual approach
+Total transaction price minus the observable SSPs of the other goods or services. Under ASC 606-10-32-34(c) it is only allowed when the selling price is highly variable or uncertain.
 
 ---
 
-## Auditor Scrutiny on Management SSP Estimates
+## Worked example: $100,000 across three obligations
 
-Independent auditors rigorously test management estimates and subledger internal controls (PCAOB QC 1000 governs audit firms' own quality-control systems, which raises the bar for the evidence they accept):
+The allocation formula: allocation to obligation i = transaction price × SSP of i ÷ sum of all SSPs.
 
-1. **Defensible Corridor Policies:** Auditors inspect historical discount ranges to verify that SSP price points fall within documented corridors (e.g., 80% to 120% of median standalone sales).
-2. **Mathematical Reproducibility:** Spreadsheets lacking automated remainder absorption fail completeness and accuracy testing under PCAOB AS 1105.
-3. **Contract Clause Linkage:** General ledger entries must link back to executed contract terms without ungrounded manual adjustments.
+A **$100,000** contract bundles three obligations:
+* **Element A (SaaS subscription):** SSP $70,000 (35%)
+* **Element B (professional services):** SSP $20,000 (10%)
+* **Element C (premium support):** SSP $110,000 (55%)
+* **Total SSP:** $200,000, so the bundle carries a 50% discount
+
+The allocations are $35,000, $10,000 and $55,000. These come out in whole cents; most real bundles do not, and the [residual-cent guide](/blog/ssp-allocation-rounding-residual-cent-asc-606) shows what to do when they don't.
+
+The schedule raises the same question again. Element C over 36 months is $1,527.777... a month. Round every month to $1,527.78 and Element C recognises $55,000.08. Floor each month and let the final month absorb the remainder, and it recognises 35 × $1,527.77 + $1,528.05 = $55,000.00.
 
 ---
 
-## The Soluqube Deterministic Integer SSP Engine
+## What do auditors test in management's SSP?
 
-Soluqube eliminates relative SSP allocation drift through a three-stage deterministic pipeline:
+Most audit time goes on the SSP inputs, not the arithmetic:
 
-### 1. Integer-Scaled Fixed-Point Allocation
-Consideration is scaled by $10^{6}$ (micro-cents) and evaluated using deterministic BigInt arithmetic, rounded to cents:
+1. **Documented ranges**: auditors compare SSPs with historical standalone sales and discount bands (for example, 80% to 120% of the median standalone price).
+2. **Re-performance**: the allocation and schedule should re-perform from the stated inputs; evidence that cannot be reproduced is weak evidence under PCAOB AS 1105.
+3. **Link to the contract**: each price and obligation should trace to the signed contract.
+
+---
+
+## How does Soluqube compute the allocation?
+
+### 1. Integer arithmetic
+Amounts are integers at 10^6 units per dollar, rounded to cents:
 
 \`\`\`typescript
-// Soluqube Relative SSP Allocation Formula
-const totalConsiderationBigInt = 10000000n * (SCALE / 100n); // $100,000.00
-const sspA = 7000000n;
-const sspB = 2000000n;
-const sspC = 11000000n;
-const totalSSP = sspA + sspB + sspC; // 200,000.00
+const SCALE = 1_000_000n;
+const price = 100_000n * SCALE;                          // $100,000.00
+const ssp = [70_000n, 20_000n, 110_000n].map((d) => d * SCALE);
+const totalSsp = ssp.reduce((a, b) => a + b, 0n);        // $200,000.00
 
-// Proportional allocation with BigInt precision
-const allocatedA = (totalConsiderationBigInt * sspA) / totalSSP;
-const allocatedB = (totalConsiderationBigInt * sspB) / totalSSP;
-const allocatedC = totalConsiderationBigInt - (allocatedA + allocatedB); // Exact residual absorption
+// every obligation but the last: price × SSP ÷ total SSP, rounded to the cent
+// the last obligation: price minus the others, so the total ties exactly
 \`\`\`
 
-### 2. PyMuPDF Spatial Clause Grounding
-Every performance obligation in Soluqube is linked to precise normalized coordinate bounding boxes $[x_0, y_0, x_1, y_1]$ on the underlying signed PDF contract. When an auditor clicks an allocation figure, the exact contract clause and discount table light up instantly.
+### 2. Clause evidence
+Each obligation keeps the page and excerpt of the clause it came from. You confirm the obligations and stated prices; the engine does the allocation and schedule.
 
-### 3. Automated Audit-Ready Evidence Packages
-Soluqube automatically compiles audit-ready evidence packages containing mathematical proofs, Merkle tree execution hashes, and journal entry schedules with **guaranteed $0.000000 general ledger parity**.
+### 3. Hashed workpaper
+The export carries the SSP inputs, the allocation, the full schedule and SHA-256 hashes with a Merkle root. Allocations sum to the transaction price and each obligation ends at a $0.00 deferred balance; if they don't, the engine rejects the result instead of returning it.
 
 ---
 
-## Checklist for Audit-Defensible SSP Governance
+## SSP governance checklist
 
-To prepare your finance organization for smooth external and statutory audit cycles:
+* **Set SSP ranges**: review standalone sales at least annually and document a band for each SKU.
+* **Write down the method**: observable price, adjusted market, cost plus margin or residual, and why.
+* **Allocate discounts proportionately** unless the ASC 606-10-32-37 criteria are documented.
+* **Write a residual-cent rule**: which obligation absorbs the rounding difference, and how schedules handle their own remainder.
+* **Keep the clause behind every price**: page and excerpt.
+* **For Ind AS 115 INR contracts**: exclude 18% GST from the transaction price before allocating; see the [ASC 606 vs Ind AS 115 hub](/asc-606-vs-ind-as-115).
 
-* [x] **Establish Formal SSP Corridors:** Review standalone selling transactions annually and define standard discount bands for all product SKUs.
-* [x] **Eliminate Manual Spreadsheets:** Replace error-prone Excel calculation sheets with deterministic, integer (BigInt) subledger automation.
-* [x] **Enforce Terminal Period Absorption:** Ensure amortization waterfalls absorb rounding remainders in the final contract period rather than spreading rounding errors across the balance sheet.
-* [x] **Ground Allocations to Executed Contracts:** Maintain bi-directional linkages between general ledger debit/credit postings and original signed contract clauses.
-* [x] **Automate Dual Standard Tax Quarantine:** For Indian operations under Ind AS 115, ensure 18% statutory GST is quarantined from consideration prior to SSP allocation.
+For a gross vs net question that comes before the allocation, see [principal vs agent under ASC 606](/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example). To vary a schedule yourself, use the [schedule simulator](/audit), or bring three of your own contracts to the [design partner program](/design-partners).
     `
   },
   {
     slug: "best-maxio-alternatives-contract-revenue-recognition",
-    title: "Best Maxio Alternatives for ASC 606 Contract Revenue Recognition in 2026",
-    subtitle: "Why modern finance teams are replacing legacy subscription billing subledgers with deterministic AI contract audit engines that eliminate manual quote-to-cash friction and rounding drift.",
+    title: "Best Maxio Alternatives for ASC 606 Revenue Recognition",
+    subtitle: "Maxio, Soluqube, Trullion, Leapfin and RightRev compared for ASC 606: source of truth, SSP allocation, rounding policy, Ind AS 115 and how each is bought.",
     publishedAt: "October 12, 2026",
-    readTime: "10 min read",
+    updatedAt: "October 15, 2026",
+    readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
       role: "Technical Accounting Content Team",
@@ -813,131 +845,135 @@ To prepare your finance organization for smooth external and statutory audit cyc
     tags: ["Maxio Alternatives", "ASC 606 Software", "Revenue Subledger", "SaaSOptics Replacement", "Audit Readiness"],
     targetQuery: "Best Maxio alternatives for ASC 606 revenue recognition 2026",
     definitionAnchor: "A Maxio alternative is a specialized revenue accounting subledger or contract audit engine designed to automate ASC 606 and IFRS 15 revenue recognition directly from executed customer contracts rather than relying solely on billing line items, CPQ quotes, or manual spreadsheet workpapers.",
-    excerpt: "Compare top Maxio alternatives in 2026 for ASC 606 revenue recognition. Discover why finance teams are moving from invoice-first billing tools to contract-grounded subledgers with zero rounding drift.",
+    excerpt: "Comparing Maxio alternatives for ASC 606 in 2026: invoice-first billing tools versus contract-first revenue subledgers, what each is best for, and the questions to ask before you switch.",
     toc: [
-      { id: "why-replace-maxio", label: "Why Finance Teams Outgrow Maxio" },
-      { id: "top-alternatives", label: "Top Maxio Alternatives Evaluated" },
-      { id: "architectural-gap", label: "Contract-to-Ledger vs. Invoice-to-Ledger" },
-      { id: "feature-matrix", label: "2026 Comparative Feature Matrix" },
-      { id: "selection-checklist", label: "CFO Buyer Guide & Evaluation Framework" }
+      { id: "why-do-finance-teams-outgrow-maxio", label: "Why finance teams outgrow Maxio" },
+      { id: "maxio-alternatives-evaluated", label: "Maxio alternatives evaluated" },
+      { id: "contract-to-ledger-vs-invoice-to-ledger", label: "Contract-to-ledger vs invoice-to-ledger" },
+      { id: "comparison-matrix", label: "Comparison matrix" },
+      { id: "buyer-questions", label: "Buyer questions" }
     ],
     content: `
-## Why Finance Teams Outgrow Maxio
+## Why do finance teams outgrow Maxio?
 
-Maxio (formed by the 2022 merger of **Chargify** and **SaaSOptics**) has long been a fixture in the SaaS billing ecosystem. However, as enterprise contract structures evolve from simple flat-rate subscriptions to complex multi-element arrangements—combining upfront platform access, tiered usage, professional services, milestone deliverables, and custom SLA penalty clauses—finance teams encounter critical structural limitations:
+Maxio (formed by the 2022 merger of **Chargify** and **SaaSOptics**) is a fixture in SaaS billing. As contracts move from flat subscriptions to multi-element arrangements, with platform access, usage tiers, professional services, milestones and SLA credits, some teams hit limits:
 
-1. **Invoice-Centric Rather Than Contract-Grounded**: Maxio recognizes revenue based on invoices created in billing systems or CRM quote data. If the signed Master Services Agreement (MSA) or custom Statement of Work (SOW) contains non-standard terms, termination clauses, or variable consideration, manual intervention is required to translate legal language into accounting schedules.
-2. **Rounding Drift Exposure**: Maxio does not publish its arithmetic internals. Any engine that rounds each period to two decimals without remainder absorption can, over 36 to 60-month multi-year contracts with irregular recognition intervals, compound rounding errors into discrepancies that trigger auditor inquiries.
-3. **Absence of Dual-GAAP Statutory Support**: Maxio does not natively isolate Indian statutory 18% GST (CGST/SGST/IGST) from transaction consideration or generate MCA Schedule III balance sheet disclosures required for cross-border US-India SaaS operations.
-4. **Lengthy Implementation & Opaque Pricing**: Enterprise onboarding timelines and %-of-revenue platform fees (pricing not published) can penalize business growth.
+1. **Invoice-first rather than contract-first**: revenue follows invoices and CRM quote data. Non-standard terms in the signed MSA or SOW, such as termination clauses or variable consideration, have to be translated into schedules by hand.
+2. **Rounding policy not published**: Maxio does not document how it assigns residual cents. Any engine that rounds each period without a remainder rule leaves small differences that someone has to reconcile.
+3. **No Ind AS 115 GST handling advertised**: Maxio does not advertise isolating Indian 18% GST (CGST/SGST/IGST) from the transaction price for US-India groups.
+4. **Pricing not published**: plans are quoted, and some are based on revenue under management.
 
----
-
-## Top Maxio Alternatives Evaluated
-
-### 1. Soluqube — Best for Deterministic Contract Audits & Dual-GAAP Accuracy
-Soluqube is a purpose-built contract audit subledger that ingests raw PDF customer agreements, grounds every performance obligation (POB) to visual page coordinates, and executes integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption.
-* **Key Strengths**: Sub-millimeter PDF bounding-box verification, dual-standard ASC 606 and Ind AS 115 engine, Merkle tree cryptographic audit seals, and self-serve instant onboarding ($499 full audit pack).
-* **Best For**: Mid-market to enterprise SaaS, cross-border US-India operations, and high-scrutiny external audit readiness.
-
-### 2. Trullion — Best for Enterprise Lease (ASC 842) + Basic RevRec
-Trullion leverages AI document extraction to read PDF contracts and extract financial terms.
-* **Key Strengths**: Unified platform for both ASC 842 lease accounting and ASC 606 revenue recognition.
-* **Limitations**: Enterprise pricing and sales cycle (not published); no Ind AS 115 dual-standard engine advertised (check current vendor documentation).
-
-### 3. Leapfin — Best for High-Volume B2C Transaction Data Pipelines
-Leapfin acts as a financial data platform that consolidates millions of daily micro-transactions from Stripe, Shopify, and in-app purchases into NetSuite-ready journal entries.
-* **Key Strengths**: High throughput for massive transactional data volumes.
-* **Limitations**: Focuses on transaction event streaming rather than raw PDF contract clause extraction and spatial audit grounding.
-
-### 4. RightRev — Best for Native Salesforce CPQ Environments
-RightRev is built directly on Salesforce and integrates seamlessly with Salesforce CPQ and Billing.
-* **Key Strengths**: Deep Salesforce native architecture and automated revenue rule triggers from CPQ quote approvals.
-* **Limitations**: Heavy platform lock-in; non-Salesforce contracts require extensive custom API engineering.
+For a head-to-head view, see [Soluqube vs Maxio](/soluqube-vs-maxio).
 
 ---
 
-## Contract-to-Ledger vs. Invoice-to-Ledger
+## Maxio alternatives evaluated
 
-The defining architectural distinction between Maxio and next-generation engines like Soluqube is the underlying source of truth:
+### 1. Soluqube: for defensible SSP allocation and Ind AS 115
+Soluqube is a contract-first engine. You confirm the obligations and stated prices from the signed contract; it allocates by relative SSP in integer (BigInt) arithmetic at 10^6 scale, rounded to cents, and builds the full schedule with terminal-period remainder absorption.
+* **Strengths**: clause evidence (page + excerpt) per obligation, ASC 606 and Ind AS 115 with GST isolation for INR contracts, hashed evidence workpapers, a free 3-contract workpaper to start.
+* **Limits today**: no live ERP sync (you review and post the export), and contract-modification accounting is on the roadmap.
+* **Best for**: SaaS finance teams that need to defend SSP allocations, and US-India groups.
+
+### 2. Trullion: for lease (ASC 842) plus revenue
+Trullion uses AI document extraction on contracts. See [Soluqube vs Trullion](/soluqube-vs-trullion).
+* **Strengths**: one platform for ASC 842 lease accounting and ASC 606.
+* **Limits**: enterprise pricing and sales cycle (pricing not published); no Ind AS 115 support advertised (check current vendor documentation).
+
+### 3. Leapfin: for high-volume transaction data
+Leapfin consolidates large volumes of payment and billing events, such as Stripe or app-store transactions, into ERP-ready journal entries. See [Soluqube vs Leapfin](/soluqube-vs-leapfin).
+* **Strengths**: throughput on very large transaction volumes.
+* **Limits**: built around event data rather than individual negotiated contracts.
+
+### 4. RightRev: for Salesforce CPQ environments
+RightRev is built on Salesforce and works with Salesforce CPQ and Billing. See [Soluqube vs RightRev](/soluqube-vs-rightrev).
+* **Strengths**: native Salesforce data model and revenue rules triggered from CPQ.
+* **Limits**: tied to the Salesforce platform.
+
+---
+
+## Contract-to-ledger vs invoice-to-ledger
+
+The main difference is the source of truth:
 
 \`\`\`
-                     [ Signed Enterprise Contract PDF ]
-                                     |
-               +---------------------+---------------------+
-               |                                           |
-      [ INVOICE-TO-LEDGER ]                       [ CONTRACT-TO-LEDGER ]
-         (Maxio / Billing)                          (Soluqube Engine)
-               |                                           |
-    Manual Deal Desk Entry                      Spatial OCR & Token BBoxes
-               |                                           |
-      CRM Quote Line Items                      Legal Clause Grounding
-               |                                           |
-     Invoice Generation Timing                  Relative SSP Allocation DAG
-               |                                           |
-   Per-Period Rounding (Drift)                 BigInt Micro-Cent (Cents, Absorbed)
-               |                                           |
-     Manual Audit Defense                        Merkle-Sealed Evidence Pack
+                     [ Signed customer contract ]
+                                  |
+              +-------------------+-------------------+
+              |                                       |
+     [ INVOICE-TO-LEDGER ]                  [ CONTRACT-TO-LEDGER ]
+       (billing-led tools)                    (Soluqube)
+              |                                       |
+     Deal desk data entry                  You confirm obligations and prices
+              |                                       |
+     CRM quote line items                  Clause evidence (page + excerpt)
+              |                                       |
+     Invoice timing                        Relative SSP allocation
+              |                                       |
+     Per-period rounding                   Integer cents, remainder in final period
+              |                                       |
+     Manual audit support                  Hashed evidence workpaper
 \`\`\`
 
 ---
 
-## 2026 Comparative Feature Matrix
+## Comparison matrix
 
 | Capability | Maxio | Trullion | Leapfin | Soluqube |
 | :--- | :---: | :---: | :---: | :---: |
-| **Ingestion Source** | Invoices / CRM Quotes | PDF / Excel | Webhooks / Events | **Raw Contract PDF** |
-| **Visual Bounding-Box Proof** | No | Partial | No | **Sub-millimeter BBoxes** |
-| **Math Engine Precision** | Not published | Not published | Not published | **Integer (BigInt) Fixed-Point DAG** |
-| **Terminal-Period Remainder Absorption** | Not published | Not published | Not published | **Yes (ties to the cent)** |
-| **Dual-GAAP (ASC 606 + Ind AS 115)** | No | No | No | **Native Dual Standard** |
-| **Indian 18% GST Isolation** | No | No | No | **MCA Schedule III Ready** |
-| **Implementation Timeline** | Not published | Not published | Not published | **Instant / 24 Hours** |
-| **Self-Serve Access** | Enterprise Sales | Enterprise Sales | Enterprise Sales | **Instant ($499 Audit)** |
+| **Source of truth** | Invoices / CRM quotes | Contract documents | Transaction events | **Contract terms you confirm** |
+| **Clause evidence per obligation** | Not advertised | AI extraction (check vendor) | Not applicable | **Page + excerpt** |
+| **Arithmetic** | Not published | Not published | Not published | **Integer (BigInt), rounded to cents** |
+| **Terminal-period remainder rule** | Not published | Not published | Not published | **Yes (ties to the cent)** |
+| **Ind AS 115 + 18% GST** | Not advertised | Not advertised | Not advertised | **For INR contracts** |
+| **Live ERP sync** | Yes (billing integrations) | Check vendor | Yes | **No: export you review and post** |
+| **How to start** | Sales-led | Sales-led | Sales-led | **Free 3-contract workpaper** |
+
+Soluqube pricing is on the [pricing page](/pricing).
 
 ---
 
-## CFO Buyer Guide & Evaluation Framework
+## Buyer questions
 
-When selecting a modern revenue recognition engine to replace or complement Maxio, evaluate candidate systems against four critical criteria:
-1. **Can the system prove clause origin during an audit?** Ask vendors whether their system provides click-through coordinate proof linking journal line items back to the signed contract PDF.
-2. **How does the calculation engine handle fractional pennies?** Confirm whether the database uses scaled BigInt/fixed-point mathematics or standard floating-point decimals that cause cumulative drift.
-3. **Does the platform impose revenue taxation?** Choose platforms with transparent, fixed pricing rather than penalty fees scaling with your gross billings.
-4. **Is cross-border statutory compliance supported?** If your company employs developers or operates subsidiaries in India, ensure native Ind AS 115 isolation is built into the core ledger.
+When choosing a tool to replace or sit beside Maxio, ask four questions:
+1. **Can it show where each obligation came from?** Ask for the page and excerpt behind a line in the schedule.
+2. **How does it assign the residual cent?** Ask for the written rule, and check that allocations and schedules sum to the transaction price.
+3. **How is it priced?** Prefer published, predictable pricing to fees that scale with billings.
+4. **Do you need Ind AS 115?** If you bill Indian customers in INR, check that GST is excluded from the transaction price before allocation.
     `
   },
   {
     slug: "ind-as-115-vs-asc-606-cross-border-dual-gaap-guide",
-    title: "The Definitive Ind AS 115 vs ASC 606 Dual-GAAP Guide for US-India SaaS Enterprises",
-    subtitle: "A practical accounting blueprint for controllers managing cross-border software revenue, MCA Schedule III balance sheet disclosures, and 18% GST statutory tax isolation.",
+    title: "Ind AS 115 vs ASC 606: Dual-GAAP Guide for US-India SaaS",
+    subtitle: "A practical guide for controllers handling cross-border software revenue, Schedule III presentation and 18% GST under Ind AS 115 and ASC 606.",
     publishedAt: "October 12, 2026",
+    updatedAt: "October 15, 2026",
     readTime: "12 min read",
     author: {
       name: "Soluqube Editorial",
       role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["Ind AS 115", "ASC 606", "Dual-GAAP", "GST Quarantine", "MCA Schedule III", "Cross-Border SaaS"],
+    tags: ["Ind AS 115", "ASC 606", "Dual-GAAP", "GST Isolation", "MCA Schedule III", "Cross-Border SaaS"],
     targetQuery: "Ind AS 115 vs ASC 606 Dual-GAAP revenue recognition guide",
     definitionAnchor: "Ind AS 115 vs ASC 606 dual-GAAP accounting is the regulatory methodology by which multinational entities reconcile revenue recognized under US GAAP standards with Indian MCA Ind AS 115 statutory requirements, specifically isolating non-revenue tax liabilities (such as 18% GST) into segregated balance sheet accounts.",
-    excerpt: "Master the essential differences between Ind AS 115 and ASC 606. Learn how multinational SaaS enterprises isolate 18% GST and automate MCA Schedule III compliance with integer (BigInt) micro-cent precision.",
+    excerpt: "The essential differences between Ind AS 115 and ASC 606 for US-India SaaS groups: how 18% GST is kept out of the transaction price, how Schedule III presents contract balances, and where transfer pricing fits.",
     toc: [
-      { id: "standard-convergence", label: "Harmonization & The Critical Divergence" },
-      { id: "five-step-analysis", label: "The 5-Step Model Under Ind AS 115" },
-      { id: "gst-quarantine-rules", label: "Statutory 18% GST Isolation & Accounting Mechanics" },
-      { id: "mca-schedule-iii", label: "MCA Schedule III Balance Sheet Disclosures" },
-      { id: "intercompany-fx", label: "Cross-Border Transfer Pricing & FX Revaluation" }
+      { id: "harmonization--the-critical-divergence", label: "Harmonisation and the critical divergence" },
+      { id: "the-5-step-model-under-ind-as-115", label: "The 5-step model under Ind AS 115" },
+      { id: "mca-schedule-iii-balance-sheet-disclosures", label: "Schedule III balance sheet presentation" },
+      { id: "intercompany-transfer-pricing--fx-revaluation", label: "Transfer pricing and FX" }
     ],
     content: `
 ## Harmonization & The Critical Divergence
 
-On the surface, **Ind AS 115** (*Revenue from Contracts with Customers*, notified by the Ministry of Corporate Affairs in India) and **US GAAP ASC 606** (FASB Topic 606) appear virtually identical. Both frameworks adopted the core converged **5-Step Revenue Recognition Model** originally co-authored by the FASB and IASB.
+On the surface, **Ind AS 115** (*Revenue from Contracts with Customers*, notified by the Ministry of Corporate Affairs in India) and **US GAAP ASC 606** (FASB Topic 606) look almost identical. Both adopted the converged **5-step revenue recognition model** developed by the FASB and IASB. The [ASC 606 vs Ind AS 115 hub](/asc-606-vs-ind-as-115) has a one-page summary.
 
-However, in actual cross-border practice, US-headquartered software companies with Indian development subsidiaries, Global Capability Centers (GCCs), or direct Indian customer contracts encounter severe operational divergences:
+In cross-border practice, US-headquartered software companies with Indian subsidiaries, Global Capability Centers (GCCs) or Indian customers run into operational differences:
 
-1. **Gross Consideration & Statutory Indirect Taxes**: Under US GAAP, state sales taxes collected on behalf of taxing jurisdictions are routinely excluded from transaction price without altering contractual standalone selling prices (SSPs). Under Indian law, contracts executed in gross terms must strictly isolate **18% Goods and Services Tax (GST)** into statutory pass-through accounts at transaction inception.
-2. **Balance Sheet Presentation (MCA Schedule III)**: Indian statutory filings mandate rigid classification under Schedule III of the Companies Act, requiring distinct disclosure of unbilled revenue, contract liabilities, trade receivables, and deferred revenue broken down by current versus non-current portions.
-3. **Penalties, Rebates, and Withholding Tax (TDS)**: Section 194J/194C Tax Deducted at Source (TDS) under the Indian Income Tax Act impacts cash settlement and reconciliation timing, requiring rigorous subledger clearing accounts.
+1. **Gross consideration and indirect taxes**: Under US GAAP, an entity can elect to exclude sales taxes collected from customers from the transaction price (ASC 606-10-32-2A). Under Ind AS 115, amounts collected on behalf of third parties are excluded from the transaction price, so **18% Goods and Services Tax (GST)** on an INR invoice is booked as a liability, not revenue.
+2. **Balance sheet presentation (Schedule III)**: Indian statutory filings follow Schedule III of the Companies Act, 2013, which sets the line items for receivables, contract assets and contract liabilities, split between current and non-current.
+3. **Withholding tax (TDS)**: Tax Deducted at Source under sections 194J/194C of the Income Tax Act changes the cash received and needs clearing accounts in the subledger.
 
 ---
 
@@ -955,271 +991,253 @@ However, in actual cross-border practice, US-headquartered software companies wi
             (Platform access vs. customizations vs. professional services)
                                │
             Step 3: Determine Transaction Price
-            (Isolates 18% GST from Gross Invoiced Consideration)
+            (Excludes 18% GST from gross invoiced consideration)
                                │
             Step 4: Allocate Transaction Price to POBs
-            (Relative Standalone Selling Price [SSP] allocation DAG)
+            (Relative standalone selling price allocation)
                                │
             Step 5: Recognize Revenue as POBs are Satisfied
-            (Over-time ratable vs. point-in-time milestone completion)
+            (Over time, ratable, or at a point in time)
 \`\`\`
 
-### Step 3 Deep-Dive: Isolating 18% GST from Consideration
+### Step 3 deep-dive: excluding 18% GST from consideration
 
-When an Indian client signs a contract for **₹11,800,000**, conventional accounting software often records the full ₹11.8M as deferred revenue and calculates monthly amortization as ₹11.8M / 12 = ₹983,333.33.
+When an Indian customer signs a contract for **₹11,800,000** including GST, some systems record the full ₹11.8M as deferred revenue and recognise ₹983,333.33 a month.
 
-**This is a critical regulatory violation under Ind AS 115.**
+**That overstates revenue and deferred revenue under Ind AS 115.**
 
-GST collected on behalf of the government does not represent consideration to which the entity is entitled. The calculation must decouple tax at inception:
+GST collected on behalf of the government is not consideration the entity is entitled to. Split it out at inception:
 
-$$\\text{Net Consideration} = \\frac{\\text{Gross Consideration}}{1 + \\text{GST Rate}} = \\frac{₹11,800,000}{1.18} = ₹10,000,000$$
+\`\`\`text
+Net consideration = Gross consideration / (1 + GST rate) = ₹11,800,000 / 1.18 = ₹10,000,000
+GST liability     = ₹11,800,000 - ₹10,000,000           = ₹1,800,000
+\`\`\`
 
-$$\\text{Statutory Tax Liability} = ₹11,800,000 - ₹10,000,000 = ₹1,800,000$$
+* If intra-state (e.g. Karnataka to Karnataka): **₹900,000 CGST (9%) + ₹900,000 SGST (9%)**
+* If inter-state (e.g. Karnataka to Maharashtra): **₹1,800,000 IGST (18%)**
+* If export of services under a Letter of Undertaking (LUT): **0% GST (zero-rated)**
 
-* If Intra-State (e.g. Karnataka to Karnataka): **₹900,000 CGST (9%) + ₹900,000 SGST (9%)**
-* If Inter-State (e.g. Karnataka to Maharashtra): **₹1,800,000 IGST (18%)**
-* If Export of Services under LUT (Letter of Undertaking): **0% GST (Zero-Rated)**
+The [dual-standard GST article](/blog/asc-606-vs-ind-as-115-dual-standard-gst-compliance) works the same split through a 12-month schedule in integer paise.
 
 ---
 
 ## MCA Schedule III Balance Sheet Disclosures
 
-Under Schedule III of the Indian Companies Act, 2013, contract assets and liabilities cannot be netted into a single deferred revenue line. Financial statements must present:
+Under Schedule III of the Companies Act, 2013, contract balances are presented by nature rather than as one deferred revenue line:
 
-1. **Contract Assets (Unbilled Revenue)**: Consideration earned by fulfilling performance obligations before invoice issuance rights crystallize.
-2. **Contract Liabilities (Deferred Revenue)**: Upfront cash collected or unconditioned billing for obligations yet to be delivered.
-3. **Maturity Splitting**: Rigorous segregation between **Current Liabilities** (to be satisfied within 12 months) and **Non-Current Liabilities** (multi-year contract periods beyond 12 months).
+1. **Contract assets (unbilled revenue)**: revenue earned by performing before the right to invoice is unconditional.
+2. **Contract liabilities (deferred revenue)**: consideration received or due for obligations not yet satisfied.
+3. **Current vs non-current**: the part to be recognised within 12 months is current; the rest is non-current.
 
-Soluqube generates automated MCA Schedule III compliance workpapers with dual USD and INR statutory tie-outs directly from the ingested contract terms.
+A month-by-month schedule per obligation gives the deferred balance at any date, which is the input for the current and non-current split. For INR contracts, Soluqube builds that schedule on net consideration, after excluding GST.
 
 ---
 
 ## Intercompany Transfer Pricing & FX Revaluation
 
-For US parent companies utilizing Indian subsidiaries under a **Cost Plus Transfer Pricing Model** (typically Cost + 15% to 18% under safe harbor provisions):
-* The Indian entity recognizes revenue based on local operating expenditures plus markup.
-* The US parent recognizes revenue from third-party enterprise customers under ASC 606.
-* Month-end foreign exchange revaluations under **Ind AS 21** and **ASC 830** must synchronize with the underlying contract amortization schedule to eliminate cumulative intercompany reconciliation imbalances.
+For US parents with Indian subsidiaries on a **cost-plus transfer pricing model** (often cost plus 15% to 18%, depending on the safe harbour rules in force):
+* The Indian entity recognises revenue on its costs plus the markup.
+* The US parent recognises revenue from third-party customers under ASC 606.
+* Month-end FX revaluation under **Ind AS 21** and **ASC 830** should use the same contract balances as the revenue schedule, so intercompany balances reconcile.
+
+A related point on gross vs net: GST is excluded because it is collected for the government, which is a different question from [principal vs agent](/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example). To run your own INR contracts through the engine, see the [design partner program](/design-partners).
     `
   },
   {
     slug: "netsuite-arm-and-excel-rounding-errors-in-asc-606",
-    title: "Why Excel Spreadsheets and ERP Rounding Errors Fail Revenue Audits (The Integer Math Solution)",
-    subtitle: "An engineering teardown of IEEE-754 floating-point truncation in ERP revenue subledgers, the mathematics of cumulative drift, and how integer (BigInt) micro-cent fixed-point DAGs with terminal-period remainder absorption keep schedules tied to the cent.",
+    title: "Excel and ERP Rounding Errors in ASC 606 Schedules",
+    subtitle: "Why spreadsheet and ERP schedules end a few cents off the contract value, why it is a rounding-policy problem, and how a remainder rule makes them tie.",
     publishedAt: "October 12, 2026",
-    readTime: "11 min read",
+    updatedAt: "October 15, 2026",
+    readTime: "9 min read",
     author: {
-      name: "Alex Chen",
-      role: "Principal Systems Architect & Computational Ledger Specialist",
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["NetSuite ARM", "Revenue Rounding Errors", "IEEE-754", "ASC 606 Audit", "Audit Workpapers", "Micro-Cent Math"],
+    tags: ["Revenue Rounding", "ASC 606", "Excel", "NetSuite ARM", "Audit Workpapers"],
     targetQuery: "Excel spreadsheet revenue recognition rounding error audit",
-    definitionAnchor: "Revenue rounding drift is the cumulative numerical variance between contractual transaction price and recognized revenue schedules caused by binary floating-point representation (IEEE-754) or arbitrary decimal truncation in ERP database systems over multi-period amortization schedules.",
-    excerpt: "Discover why standard ERP subledgers and Excel spreadsheets introduce penny rounding errors in ASC 606 schedules that trigger audit delays—and how integer (BigInt) micro-cent fixed-point DAGs with terminal-period remainder absorption keep schedules tied to the cent.",
+    definitionAnchor: "Revenue rounding error is the difference between a contract's transaction price and the sum of its recognised revenue when each allocation or period is rounded to the cent on its own. It is usually a few cents, far below materiality, but it leaves a deferred balance that never reaches zero. A written rule that assigns the remainder to one line or one period removes it.",
+    excerpt: "A $100,000 contract over 36 months can recognise $100,000.08 or $99,999.72 depending on how each month is rounded. Where the cents come from, why it is a policy issue more than a floating-point issue, and how to fix it.",
     toc: [
-      { id: "the-penny-problem", label: "The Hidden Penny Drift in Enterprise ERPs" },
-      { id: "ieee-754-breakdown", label: "The Physics of IEEE-754 Binary Floating-Point Error" },
-      { id: "netsuite-arm-truncation", label: "NetSuite ARM & Database Decimal Pitfalls" },
-      { id: "micro-cent-dag", label: "The Integer Micro-Cent DAG Solution" },
-      { id: "audit-tie-out-proof", label: "Passing External Audits with Deterministic Proof" }
+      { id: "the-phantom-penny", label: "The phantom penny" },
+      { id: "what-does-floating-point-do-and-what-doesnt-it", label: "What floating point does, and doesn't" },
+      { id: "how-does-rounding-compound-in-multi-element-contracts", label: "Rounding in multi-element contracts" },
+      { id: "integer-arithmetic-with-a-remainder-rule", label: "Integer arithmetic with a remainder rule" },
+      { id: "what-changes-at-audit", label: "What changes at audit" }
     ],
     content: `
-## The Hidden Penny Drift in Enterprise ERPs
+## The phantom penny
 
-Every accounting team that has managed a multi-million-dollar ASC 606 revenue recognition schedule in **NetSuite Advanced Revenue Management (ARM)**, **Workday**, or **Microsoft Excel** has encountered the notorious *"phantom penny"*:
+Anyone who has run a multi-year ASC 606 schedule in **Excel**, an ERP such as **NetSuite Advanced Revenue Management (ARM)** or **Workday**, or a custom script has seen it: a **$1,000,000.00** contract over 36 months recognises **$1,000,000.08** or **$999,999.72**, depending on whether each month is rounded half-up or down.
 
-An enterprise contract valued at exactly **$1,000,000.00** amortized across 36 monthly periods results in recognized revenue of **$999,999.96** or **$1,000,000.04**. 
-
-While a four-cent variance might appear immaterial on a headline income statement, during a PCAOB-governed external financial audit, it triggers a chain reaction:
-* **The Trial Balance Fails to Tie Out to Contract Face Value.**
-* **Variance Suspense Accounts Require Manual Adjusting Journal Entries.**
-* **Audit Workpaper Sampling Fails Automated Reconciliation Thresholds.**
-* **SOX 404 IT General Controls (ITGC) Over Automated Financial Systems Are Flagged.**
+A few cents are not a misstatement. They are a nuisance with a cost:
+* The schedule does not tie to the contract value.
+* The deferred balance never reaches zero, so someone books a plug.
+* Each plug is a reconciling item to explain to the reviewer and the auditor.
+* Recurring manual adjustments invite questions about the controls around the schedule.
 
 ---
 
-## The Physics of IEEE-754 Binary Floating-Point Error
+## What does floating point do, and what doesn't it?
 
-Why does this happen in multi-billion-dollar enterprise software systems? The failure originates in computer hardware architecture.
+Most software stores numbers in binary floating point, and decimal fractions such as 0.10 have no exact binary form. That representation error is around one part in 10^16, which is far too small to move a figure rounded to the cent. The cents come from rounding each period on its own:
 
-Standard programming languages and relational database engines represent decimal fractions using the **IEEE-754 binary floating-point standard**. In base 2 (binary), decimal fractions like 0.10 or 0.01 cannot be represented precisely—they become infinite repeating binary fractions:
-
-$$0.10_{10} = 0.00011001100110011..._2$$
-
-When an ERP calculates daily or monthly amortization:
 \`\`\`javascript
-// THE FATAL IEEE-754 FLOAT OPERATION
-let contractTotal = 100000.00;
-let periods = 36;
-let monthly = contractTotal / periods; // 2777.777777777778
+// Rounding each month to the cent
+const contractTotal = 100000.00;
+const periods = 36;
+const monthly = contractTotal / periods;          // 2777.777...
 
-// Re-accumulating over 36 months:
 let sum = 0;
 for (let i = 0; i < 36; i++) {
-  sum += Number(monthly.toFixed(2));
+  sum += Number(monthly.toFixed(2));               // 2777.78 every month
 }
-console.log(sum); // Output: 99999.96 ($0.04 DRIFT ERROR!)
+console.log(sum.toFixed(2));                       // "100000.08": eight cents over
 \`\`\`
+
+Decimal arithmetic gives the same eight cents. The fix is a rule for the remainder, not a different number type alone.
 
 ---
 
-## NetSuite ARM & Database Decimal Pitfalls
+## How does rounding compound in multi-element contracts?
 
-NetSuite ARM utilizes SuiteScript and SQL decimal representations that round intermediary recognition schedules to two decimal places at each posting interval. 
+Take a contract with:
+1. **Platform subscription** ($120,000 over 12 months)
+2. **Implementation services** ($35,000, milestone-based)
+3. **Premium support** ($15,000 over 12 months)
+4. **Mid-term upsell** ($25,000, prorated)
 
-When a multi-element contract includes:
-1. **Platform SaaS License** ($120,000 / 12 mo)
-2. **Professional Implementation Services** ($35,000 milestone-based)
-3. **Premium 24/7 Support SLA** ($15,000 / 12 mo)
-4. **Contract Modification (Mid-Term Up-sell)** ($25,000 pro-rated)
-
-The relative Standalone Selling Price (SSP) allocation formula requires non-linear fractional division:
-
-$$\\text{Allocated Consideration}_i = \\text{Total Transaction Price} \\times \\left( \\frac{\\text{SSP}_i}{\\sum \\text{SSP}} \\right)$$
-
-If each allocated POB is rounded individually to 2 decimal places prior to waterfall amortization, the sum of POBs deviates from total contractual cash consideration before the first journal entry is posted!
+Relative SSP allocation divides the transaction price by each obligation's share: allocation to obligation i = transaction price × SSP of i ÷ sum of all SSPs. If each allocation is rounded to the cent on its own before scheduling, the allocations can already differ from the transaction price by a cent, before the first month is posted. Then each schedule divides again. The [residual-cent guide](/blog/ssp-allocation-rounding-residual-cent-asc-606) works through a three-obligation example.
 
 ---
 
-## The Integer Micro-Cent DAG Solution
+## Integer arithmetic with a remainder rule
 
-Soluqube solves the rounding drift problem deterministically using an **integer (BigInt) micro-cent fixed-point Directed Acyclic Graph (DAG)**, rounded to cents with terminal-period remainder absorption.
+Soluqube computes in integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption:
 
-\`\`\`
-                     [ Raw Contract Consideration ]
-                                   │
-              Scaled to BigInt Micro-Cents (Factor: 10^6)
-                                   │
-                     ┌─────────────┴─────────────┐
-                     ▼                           ▼
-            POB 1 (Platform License)    POB 2 (Support SLA)
-                     │                           │
-            Discrete Daily Slots        Discrete Daily Slots
-                     │                           │
-                     └─────────────┬─────────────┘
-                                   │
-                     Terminal Period Remainder Catch-Up
-                                   │
-                     Exact $0.000000 Variance Ledger
-\`\`\`
-
-1. **Micro-Cent Scaling**: Values are scaled by a factor of 1,000,000 and computed exclusively using integer arithmetic (JavaScript \`BigInt\`).
-2. **Remainder Conservation**: For any division P / N, the quotient Q and integer remainder R are preserved:
-   $$P = (N \\times Q) + R$$
-3. **Terminal Period Absorption**: The integer remainder R is deterministically absorbed into the final period of the performance obligation.
+1. **Integer amounts**: values are scaled by 1,000,000 and computed with integer arithmetic only (JavaScript \`BigInt\`).
+2. **Keep the remainder**: for any division P / N, keep both the quotient Q and the remainder R, so that P = N × Q + R.
+3. **Assign the remainder**: the final period of each obligation absorbs R.
 
 \`\`\`typescript
-// SOLUQUBE DETERMINISTIC BIGINT INTEGER EXECUTION
-export function calculateZeroDriftWaterfall(totalCents: bigint, periods: bigint): bigint[] {
-  const baseMonthly = totalCents / periods;
+// Amounts in cents; the final period absorbs the remainder
+export function buildSchedule(totalCents: bigint, periods: bigint): bigint[] {
+  const base = totalCents / periods;
   const remainder = totalCents % periods;
-  
+
   const schedule: bigint[] = [];
   for (let i = 0n; i < periods; i++) {
-    if (i === periods - 1n) {
-      // Final period absorbs exact remainder
-      schedule.push(baseMonthly + remainder);
-    } else {
-      schedule.push(baseMonthly);
-    }
+    schedule.push(i === periods - 1n ? base + remainder : base);
   }
-  return schedule;
+  return schedule; // sums to totalCents exactly
 }
 \`\`\`
 
+Try other contract values and terms in the [schedule simulator](/audit).
+
 ---
 
-## Passing External Audits with Deterministic Proof
+## What changes at audit?
 
-By eliminating floating-point imprecision at the core architectural level, Soluqube guarantees:
-* **Strict Balance Sheet Parity**: The sum of recognized revenue across all periods plus remaining deferred revenue equals exactly 100.00% of contractual transaction price at all times.
-* **Audit-Ready Evidence Packages**: Mathematical tie-out schedules export with embedded SHA-256 Merkle proofs, allowing external audit teams to independently verify zero penny discrepancy in seconds.
-* **Zero Manual Journal Entries**: Controllers eliminate month-end variance plug entries and pass SOX 404 ITGC controls effortlessly.
+* **Schedules that tie**: allocations and every period sum to the transaction price, and each obligation ends at a $0.00 deferred balance.
+* **Fewer plugs to explain**: no month-end rounding adjustments on these contracts.
+* **Re-performable output**: the same inputs give the same cents, and the export carries SHA-256 hashes with a Merkle root so a reviewer can confirm it has not changed.
+
+The cents are the easy part; auditors spend their time on the SSP behind the allocation. For a system-by-system view, see [NetSuite ARM vs Soluqube](/blog/netsuite-arm-vs-soluqube-floating-point-rounding-drift-asc-606) and the [ASC 606 hub](/asc-606), or bring three contracts to the [design partner program](/design-partners).
     `
   },
   {
     slug: "zuora-revpro-vs-soluqube-6-month-erp-implementation-trap",
-    title: "Zuora RevPro vs Soluqube: Escaping the 6-Month Enterprise RevRec Implementation Trap",
-    subtitle: "Why CFOs and corporate controllers are bypassing multi-month Zuora RevPro consulting deployments in favor of deterministic, self-serve PDF contract subledgers.",
+    title: "Zuora RevPro vs Soluqube: The Implementation Trade-Off",
+    subtitle: "When a full Zuora RevPro deployment is worth it, when it is not, and how a contract-first engine can run beside your ERP for SSP allocation and schedules.",
     publishedAt: "October 13, 2026",
-    readTime: "9 min read",
+    updatedAt: "October 15, 2026",
+    readTime: "8 min read",
     author: {
       name: "Soluqube Editorial",
       role: "Technical Accounting Content Team",
       avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
     },
-    tags: ["Zuora RevPro Alternative", "ASC 606 Implementation", "Enterprise Subledger", "CFO Advisory", "Ind AS 115"],
+    tags: ["Zuora RevPro Alternative", "ASC 606 Implementation", "Revenue Subledger", "CFO Advisory", "Ind AS 115"],
     targetQuery: "Zuora RevPro alternative implementation cost ASC 606",
-    definitionAnchor: "A Zuora RevPro alternative is a modern, deterministic revenue recognition subledger that automates ASC 606 and Ind AS 115 compliance directly from executed PDF contracts in hours rather than requiring a lengthy system integrator implementation and proprietary upstream billing schemas.",
-    excerpt: "Evaluate Zuora RevPro against Soluqube. Learn why enterprise finance teams are replacing 6-month ERP consulting projects with instant integer (BigInt) deterministic contract audits.",
+    definitionAnchor: "A Zuora RevPro alternative is a revenue tool that produces ASC 606 allocations and schedules without a full revenue-automation deployment. RevPro suits high-volume, standardised billing at scale. A contract-first engine such as Soluqube suits a smaller set of complex contracts: you confirm the obligations and prices, and get the allocation, schedule and evidence workpaper back.",
+    excerpt: "Zuora RevPro is built for high-volume revenue automation and typically involves an implementation partner. When that is the right call, when it is not, and how to run a parallel check on your hardest contracts first.",
     toc: [
-      { id: "the-revpro-trap", label: "The Zuora RevPro Implementation Reality" },
-      { id: "schema-brittleness", label: "Why Upstream Billing Schemas Break on Bespoke MSAs" },
-      { id: "deterministic-dag", label: "Integer Fixed-Point DAG vs Legacy Rules Engines" },
-      { id: "comparison-matrix", label: "Zuora RevPro vs Soluqube Head-to-Head Matrix" },
-      { id: "migration-playbook", label: "24-Hour Parallel Audit Playbook for Controllers" }
+      { id: "the-zuora-revpro-implementation-reality", label: "The RevPro implementation reality" },
+      { id: "why-do-bespoke-msas-strain-rules-engines", label: "Why bespoke MSAs strain rules engines" },
+      { id: "how-does-a-contract-first-engine-work", label: "How a contract-first engine works" },
+      { id: "zuora-revpro-vs-soluqube", label: "Zuora RevPro vs Soluqube" },
+      { id: "a-parallel-check-for-controllers", label: "A parallel check for controllers" }
     ],
     content: `
-## The Zuora RevPro Implementation Reality
+## The Zuora RevPro implementation reality
 
-For over a decade, **Zuora RevPro** (formerly Leeyo RevPro) was treated as the default enterprise revenue management module for pre-IPO technology companies. Yet when mid-market and enterprise CFOs sign a RevPro licensing contract today, they immediately confront a harsh operational reality:
+**Zuora RevPro** (formerly Leeyo RevPro) has long been a default revenue automation choice for pre-IPO and public technology companies. It is built for scale, and buying it usually means a project:
 
-1. **System Integrator Consulting**: Before a single dollar of deferred revenue is amortized, external advisory firms are typically engaged (fees and timelines not published) to map custom fields between Salesforce CPQ, Zuora Billing, and your core ERP.
-2. **Manual Contract Translation Bottlenecks**: RevPro cannot read an unstructured Master Services Agreement (MSA) or Statement of Work (SOW). Accountants must manually read PDF legal agreements and translate performance obligations into rigid CSV upload templates or custom POB rules.
-3. **Zero Dual-GAAP Indian Statutory Isolation**: Multinational enterprises operating Global Capability Centers (GCCs) or billing customers in India must maintain separate manual spreadsheets to quarantine 18% GST (CGST/SGST/IGST) under **MCA Schedule III** and **Ind AS 115**.
+1. **An implementation partner**: external advisers are typically engaged (fees and timelines not published) to map fields between the CRM, billing and the ERP.
+2. **Structured inputs**: like most revenue automation, RevPro works from structured order and billing data. Terms in a bespoke MSA or SOW have to be translated into that data, and into performance obligation rules, by someone.
+3. **Ind AS 115 GST**: groups billing Indian customers in INR have to design how 18% GST (CGST/SGST/IGST) is kept out of the transaction price, under **Ind AS 115** and **Schedule III**.
+
+For high volumes of standard contracts, that investment pays back. For a smaller number of complex contracts, it may not.
 
 ---
 
-## Why Upstream Billing Schemas Break on Bespoke MSAs
+## Why do bespoke MSAs strain rules engines?
 
-Legacy revenue subledgers assume every customer transaction follows a clean, standardized product catalog skew. In reality, B2B enterprise deals are closed in the final week of the quarter via redlined PDF agreements containing:
+Rules engines assume transactions follow a product catalogue. Enterprise deals often close at quarter-end on redlined agreements with:
 * Custom milestone acceptance gates
 * Retroactive volume tier resets
 * Co-termed multi-subsidiary carve-outs
 * Termination-for-convenience refund clauses
 
-When these non-standard clauses are forced into rigid Zuora RevPro rules tables, the upstream connector breaks—forcing revenue accountants back into offline Excel workbooks to calculate manual journal true-ups.
+When those terms do not fit the rules tables, accountants go back to spreadsheets for true-ups, and the spreadsheet becomes the support the auditor tests.
 
 ---
 
-## Integer Fixed-Point DAG vs Legacy Rules Engines
+## How does a contract-first engine work?
 
-Soluqube eliminates the middleware translation layer entirely by ingesting the signed PDF contract as the primary accounting artifact:
+Soluqube starts from the signed contract. You confirm the obligations and stated prices; the engine allocates by relative SSP and builds the full schedule in integer (BigInt) arithmetic at 10^6 scale, rounded to cents:
 
 \`\`\`typescript
-// DETERMINISTIC BIGINT MICRO-CENT ALLOCATION (TERMINAL-PERIOD ABSORPTION)
-const CONTRACT_CONSIDERATION_MICROCENTS = 250000000000n; // $250,000.00
-const RATABLE_PERIODS = 36n;
+// Integer arithmetic, final period absorbs the remainder
+const SCALE = 1_000_000n;
+const CENT = SCALE / 100n;
+const total = 250_000n * SCALE;                    // $250,000.00
+const months = 36n;
 
-const periodBase = CONTRACT_CONSIDERATION_MICROCENTS / RATABLE_PERIODS;
-const terminalRemainder = CONTRACT_CONSIDERATION_MICROCENTS % RATABLE_PERIODS;
-// Remainder absorbed deterministically in Period 36 -> Exact $0.000000 variance
+const monthly = (total / months / CENT) * CENT;    // $6,944.44
+const last = total - monthly * (months - 1n);      // $6,944.60
+// 35 × $6,944.44 + $6,944.60 = $250,000.00
 \`\`\`
 
-Every performance obligation is anchored directly to \`[page, x0, y0, x1, y1]\` spatial coordinates on the signed PDF, sealed with a cryptographic SHA-256 Merkle root for instant external audit verification.
+Each obligation keeps the page and excerpt of its clause, and the export is SHA-256 hashed with a Merkle root computed on it. The output is a workpaper and CSV you review and post; there is no live ERP sync.
 
 ---
 
-## Zuora RevPro vs Soluqube Head-to-Head Matrix
+## Zuora RevPro vs Soluqube
 
 | Dimension | Zuora RevPro | Soluqube |
 | :--- | :--- | :--- |
-| **Deployment Timeline** | SI implementation (timeline not published) | **Instant Self-Serve (< 24 Hours)** |
-| **Primary Ingestion Source** | Normalized ERP / Billing CSVs | **Raw Executed Contract PDF (MSA/SOW)** |
-| **PDF Clause Grounding** | None (Manual voucher references) | **Sub-millimeter [page, x, y] BBoxes** |
-| **Arithmetic Engine** | Not published | **Integer (BigInt) Micro-Cent Fixed-Point DAG** |
-| **Dual-GAAP (ASC 606 + Ind AS 115)** | US GAAP / IFRS 15 Only | **Native Dual-GAAP + 18% GST Firewall** |
-| **Total Year-1 Cost (TCO)** | Pricing not published | **$499/audit or predictable flat tier** |
+| **Deployment** | Implementation partner typical (timeline not published) | **Free 3-contract workpaper in 48 hours; self-serve sandbox** |
+| **Input** | Structured order and billing data | **Contract terms you confirm** |
+| **Clause trace** | Reference fields | **Clause evidence (page + excerpt)** |
+| **Arithmetic** | Not published | **Integer (BigInt), rounded to cents** |
+| **Contract modifications** | Supported | **Not automated yet (on the roadmap)** |
+| **Ind AS 115 GST** | Via configuration | **GST isolated before allocation for INR contracts** |
+| **ERP posting** | Integrated | **Export you review and post** |
+| **Cost** | Pricing not published | **Published; see [pricing](/pricing)** |
 
 ---
 
-## 24-Hour Parallel Audit Playbook for Controllers
+## A parallel check for controllers
 
-You do not need to rip out your existing ERP to eliminate revenue audit risk. Finance teams deploy Soluqube in three steps:
-1. **Upload Your Top 10 Complex Contracts**: Drop your highest-value enterprise MSAs and amendments into the Soluqube audit console.
-2. **Verify Spatial BBoxes & Integer Schedules**: Inspect the extracted performance obligations, relative SSP allocations, and zero-drift amortization waterfalls.
-3. **Export Audit-Ready Evidence Packs**: Hand your external auditors workpapers with SHA-256 integrity hashes in one click.
+You do not need to replace your ERP to get a second, re-performable calculation on the contracts that worry you. Three steps:
+1. **Pick your three hardest contracts**: the bundles and amendments your auditor asked about last year.
+2. **Confirm the obligations and prices**: then compare the relative SSP allocation and schedules, which tie to the cent, with what is in the ledger today.
+3. **Hand over the workpaper**: an Excel file and JSON evidence pack with SHA-256 hashes.
+
+Request it as a [free 3-contract audit-defense workpaper](/book-demo). For other tools in this category, see the [Maxio alternatives comparison](/blog/best-maxio-alternatives-contract-revenue-recognition) and [Soluqube vs RightRev](/soluqube-vs-rightrev); for how the residual cent is handled, see the [rounding policy guide](/blog/ssp-allocation-rounding-residual-cent-asc-606).
     `
   },
   {
@@ -1239,12 +1257,12 @@ You do not need to rip out your existing ERP to eliminate revenue audit risk. Fi
     definitionAnchor: "Allocating a transaction price by relative standalone selling price usually gives each performance obligation a share with fractions of a cent. Rounding every line on its own can make the allocations sum to a cent more or less than the contract. A residual-cent policy names which obligation absorbs that difference, so the allocation ties to the transaction price exactly.",
     excerpt: "A $100,000 bundle with SSPs of $30,000, $30,000 and $120,000 rounds to $100,000.01 if every line is rounded on its own. Here is where the cent comes from, which obligation should absorb it, and the policy wording that lets a reviewer re-perform the allocation.",
     toc: [
-      { id: "why-does-relative-ssp-allocation-leave-a-residual-cent-", label: "Why relative SSP allocation leaves a residual cent" },
-      { id: "what-does-asc-606-say-about-rounding-the-allocation-", label: "What ASC 606 says about rounding" },
-      { id: "worked-example-100-000-across-three-performance-obligations", label: "Worked example: $100,000, three obligations" },
-      { id: "which-obligation-should-absorb-the-residual-cent-", label: "Which obligation absorbs the cent" },
-      { id: "how-does-the-residual-flow-into-the-revenue-schedule-", label: "How the residual flows into the schedule" },
-      { id: "what-should-an-ssp-rounding-policy-say-", label: "What an SSP rounding policy should say" }
+      { id: "why-does-relative-ssp-allocation-leave-a-residual-cent", label: "Why relative SSP allocation leaves a residual cent" },
+      { id: "what-does-asc-606-say-about-rounding-the-allocation", label: "What ASC 606 says about rounding" },
+      { id: "worked-example-100000-across-three-performance-obligations", label: "Worked example: $100,000, three obligations" },
+      { id: "which-obligation-should-absorb-the-residual-cent", label: "Which obligation absorbs the cent" },
+      { id: "how-does-the-residual-flow-into-the-revenue-schedule", label: "How the residual flows into the schedule" },
+      { id: "what-should-an-ssp-rounding-policy-say", label: "What an SSP rounding policy should say" }
     ],
     faqs: [
       {
@@ -1340,7 +1358,7 @@ Total recognised                                               $100,000.00
 Deferred balance after month 36                                $0.00
 \`\`\`
 
-The same terminal-period rule on a single $100,000, 36-month subscription gives 35 × $2,777.77 + $2,778.05. The engine also runs a reconciliation check on every contract: if the allocations or the recognised total do not equal the transaction price in integer cents, or any obligation ends with a deferred balance, it rejects the result instead of returning it. To vary the contract value and term yourself, use the simulator at https://soluqube.com/audit.
+The same terminal-period rule on a single $100,000, 36-month subscription gives 35 × $2,777.77 + $2,778.05. The engine also runs a reconciliation check on every contract: if the allocations or the recognised total do not equal the transaction price in integer cents, or any obligation ends with a deferred balance, it rejects the result instead of returning it. To vary the contract value and term yourself, use the [schedule simulator](/audit).
 
 ---
 
@@ -1360,9 +1378,9 @@ Residual-cent policy (illustrative)
 6. Check: allocations and the full schedule each sum to the transaction price; the final deferred balance is $0.00.
 \`\`\`
 
-The policy covers the rounding. The judgement auditors spend their time on is the SSP itself: how it was estimated, the evidence behind it, and whether the discount was allocated proportionately. For that side, see our guide to relative SSP allocation at https://soluqube.com/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations and the ASC 606 hub at https://soluqube.com/asc-606.
+The policy covers the rounding. The judgement auditors spend their time on is the SSP itself: how it was estimated, the evidence behind it, and whether the discount was allocated proportionately. For that side, see our [guide to relative SSP allocation](/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations) and the [ASC 606 hub](/asc-606).
 
-To run your own bundle, enter the transaction price, obligations and SSPs at https://app.soluqube.com/onboarding; you confirm the obligations and prices, and the engine returns the allocation, the full-term schedule and a hashed workpaper. Or send us your three hardest contracts for a free 3-Contract Audit-Defense Workpaper: https://soluqube.com/book-demo.
+To run your own bundle, enter the transaction price, obligations and SSPs in the [Soluqube sandbox](https://app.soluqube.com/onboarding); you confirm the obligations and prices, and the engine returns the allocation, the full-term schedule and a hashed workpaper. Or send us your three hardest contracts for a [free 3-Contract Audit-Defense Workpaper](/book-demo).
     `
   },
   {
@@ -1381,15 +1399,15 @@ To run your own bundle, enter the transaction price, obligations and SSPs at htt
     definitionAnchor: "Under ASC 606-10-55-36 to 55-40, an entity is a principal if it controls the specified good or service before it is transferred to the customer, and reports revenue gross. If its promise is only to arrange for another party to provide it, the entity is an agent and reports its fee or commission net. Gross profit is the same either way; reported revenue is not.",
     excerpt: "A $1,000 sale with a $900 supplier cost is $1,000 of revenue if you are the principal and $100 if you are the agent. Here is the control test in ASC 606-10-55-36 to 55-40, how the 55-39 indicators fit, how SaaS marketplaces and resellers apply it, and how to document a conclusion when the indicators point both ways.",
     toc: [
-      { id: "what-does-principal-vs-agent-decide-under-asc-606-", label: "What principal vs agent decides" },
-      { id: "how-do-you-identify-the-specified-good-or-service-", label: "Identifying the specified good or service" },
-      { id: "when-does-an-entity-control-the-good-or-service-before-transfer-", label: "Control before transfer" },
-      { id: "which-indicators-in-asc-606-10-55-39-support-the-assessment-", label: "The 55-39 indicators" },
-      { id: "worked-example-gross-vs-net-on-a-1-000-sale-illustrative-", label: "Worked example: gross vs net" },
-      { id: "how-do-saas-marketplaces-and-resellers-apply-the-guidance-", label: "SaaS, marketplace and reseller cases" },
-      { id: "how-do-you-document-the-assessment-when-indicators-conflict-", label: "Documenting conflicting indicators" },
-      { id: "what-are-the-ifrs-15-and-ind-as-115-equivalents-", label: "IFRS 15 and Ind AS 115 equivalents" },
-      { id: "what-does-soluqube-do-once-you-have-reached-a-conclusion-", label: "Where Soluqube fits" }
+      { id: "what-does-principal-vs-agent-decide-under-asc-606", label: "What principal vs agent decides" },
+      { id: "how-do-you-identify-the-specified-good-or-service", label: "Identifying the specified good or service" },
+      { id: "when-does-an-entity-control-the-good-or-service-before-transfer", label: "Control before transfer" },
+      { id: "which-indicators-in-asc-606-10-55-39-support-the-assessment", label: "The 55-39 indicators" },
+      { id: "worked-example-gross-vs-net-on-a-1000-sale-illustrative", label: "Worked example: gross vs net" },
+      { id: "how-do-saas-marketplaces-and-resellers-apply-the-guidance", label: "SaaS, marketplace and reseller cases" },
+      { id: "how-do-you-document-the-assessment-when-indicators-conflict", label: "Documenting conflicting indicators" },
+      { id: "what-are-the-ifrs-15-and-ind-as-115-equivalents", label: "IFRS 15 and Ind AS 115 equivalents" },
+      { id: "what-does-soluqube-do-once-you-have-reached-a-conclusion", label: "Where Soluqube fits" }
     ],
     faqs: [
       {
@@ -1527,7 +1545,7 @@ Relevance of indicators                    606-10-55-39A     B37A
 Another party assumes the obligation       606-10-55-40      B38
 \`\`\`
 
-For Indian entities there is a related but separate point: amounts collected on behalf of third parties, such as GST, are excluded from the transaction price under the Ind AS 115 definition of transaction price. That is not a principal versus agent conclusion, but it is another reason the invoice total and reported revenue differ.
+For Indian entities there is a related but separate point: amounts collected on behalf of third parties, such as GST, are excluded from the transaction price under the Ind AS 115 definition of transaction price. That is not a principal versus agent conclusion, but it is another reason the invoice total and reported revenue differ; the [ASC 606 vs Ind AS 115 hub](/asc-606-vs-ind-as-115) covers the GST mechanics.
 
 ---
 
@@ -1535,9 +1553,9 @@ For Indian entities there is a related but separate point: amounts collected on 
 
 Soluqube does not decide whether you are principal or agent; that judgement belongs to the entity and its reviewers. Once it is made, you enter the transaction price that follows from it, gross consideration or your net fee, and the engine allocates it across performance obligations by relative standalone selling price and builds the full-term schedule.
 
-The allocation and schedule run in integer arithmetic, rounded to cents, with a written residual-cent rule and the final period absorbing the remainder so each obligation's deferred balance reaches $0.00. Each obligation carries the page and excerpt of the clause it came from, and exports are SHA-256 hashed so a reviewer can confirm the file has not changed. For how the residual cent is handled, see https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606, and for the wider standard, the ASC 606 hub at https://soluqube.com/asc-606.
+The allocation and schedule run in integer arithmetic, rounded to cents, with a written residual-cent rule and the final period absorbing the remainder so each obligation's deferred balance reaches $0.00. Each obligation carries the page and excerpt of the clause it came from, and exports are SHA-256 hashed so a reviewer can confirm the file has not changed. For how the residual cent is handled, see the [SSP rounding guide](/blog/ssp-allocation-rounding-residual-cent-asc-606), and for the wider standard, the [ASC 606 hub](/asc-606).
 
-To try it on a sample contract, open https://app.soluqube.com/. Finance teams who want to run their own contracts with us for 60 days can apply to the design partner program at https://soluqube.com/design-partners.
+To try it on a sample contract, open the [Soluqube sandbox](https://app.soluqube.com/). Finance teams who want to run their own contracts with us for 60 days can apply to the [design partner program](/design-partners).
     `
   }
 ];
