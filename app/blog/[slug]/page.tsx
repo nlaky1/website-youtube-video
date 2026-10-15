@@ -223,10 +223,12 @@ export default function BlogPostPage({ params }: Props) {
               <p className="text-sm font-mono text-slate-800 leading-relaxed font-medium">
                 {post.definitionAnchor}
               </p>
-              <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                <span>Computed by: Soluqube Engine</span>
-                <span className="text-emerald-700 font-semibold">Ties to the cent</span>
-              </div>
+              {post.engineVerified && (
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                  <span>Computed by: Soluqube Engine</span>
+                  <span className="text-emerald-700 font-semibold">Ties to the cent</span>
+                </div>
+              )}
             </aside>
 
             {/* MAIN ARTICLE BODY (Formatted Markdown/HTML rendering) */}

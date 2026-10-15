@@ -16,6 +16,8 @@ export interface BlogPost {
   content: string;
   toc: { id: string; label: string }[];
   faqs?: { question: string; answer: string }[];
+  /** True only when the article's numbers were produced by the Soluqube engine (shows the "Computed by" footer). */
+  engineVerified?: boolean;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -1222,6 +1224,7 @@ You do not need to rip out your existing ERP to eliminate revenue audit risk. Fi
   },
   {
     slug: "ssp-allocation-rounding-residual-cent-asc-606",
+    engineVerified: true,
     title: "SSP Allocation Rounding in ASC 606: Where the Cent Goes",
     subtitle: "Allocating a bundle by relative SSP leaves fractions of a cent. Worked 3-element example and a defensible policy for the residual.",
     publishedAt: "October 14, 2026",
@@ -1360,6 +1363,181 @@ Residual-cent policy (illustrative)
 The policy covers the rounding. The judgement auditors spend their time on is the SSP itself: how it was estimated, the evidence behind it, and whether the discount was allocated proportionately. For that side, see our guide to relative SSP allocation at https://soluqube.com/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations and the ASC 606 hub at https://soluqube.com/asc-606.
 
 To run your own bundle, enter the transaction price, obligations and SSPs at https://app.soluqube.com/onboarding; you confirm the obligations and prices, and the engine returns the allocation, the full-term schedule and a hashed workpaper. Or send us your three hardest contracts for a free 3-Contract Audit-Defense Workpaper: https://soluqube.com/book-demo.
+    `
+  },
+  {
+    slug: "principal-vs-agent-asc-606-gross-vs-net-worked-example",
+    title: "Principal vs Agent Under ASC 606: Gross vs Net Revenue",
+    subtitle: "Principal or agent under ASC 606? The control test, the 55-39 indicators, a gross vs net worked example, SaaS and reseller cases, and a memo outline.",
+    publishedAt: "October 15, 2026",
+    readTime: "8 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content Team",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "Principal vs Agent", "Gross vs Net", "IFRS 15", "Ind AS 115"],
+    targetQuery: "principal vs agent ASC 606",
+    definitionAnchor: "Under ASC 606-10-55-36 to 55-40, an entity is a principal if it controls the specified good or service before it is transferred to the customer, and reports revenue gross. If its promise is only to arrange for another party to provide it, the entity is an agent and reports its fee or commission net. Gross profit is the same either way; reported revenue is not.",
+    excerpt: "A $1,000 sale with a $900 supplier cost is $1,000 of revenue if you are the principal and $100 if you are the agent. Here is the control test in ASC 606-10-55-36 to 55-40, how the 55-39 indicators fit, how SaaS marketplaces and resellers apply it, and how to document a conclusion when the indicators point both ways.",
+    toc: [
+      { id: "what-does-principal-vs-agent-decide-under-asc-606-", label: "What principal vs agent decides" },
+      { id: "how-do-you-identify-the-specified-good-or-service-", label: "Identifying the specified good or service" },
+      { id: "when-does-an-entity-control-the-good-or-service-before-transfer-", label: "Control before transfer" },
+      { id: "which-indicators-in-asc-606-10-55-39-support-the-assessment-", label: "The 55-39 indicators" },
+      { id: "worked-example-gross-vs-net-on-a-1-000-sale-illustrative-", label: "Worked example: gross vs net" },
+      { id: "how-do-saas-marketplaces-and-resellers-apply-the-guidance-", label: "SaaS, marketplace and reseller cases" },
+      { id: "how-do-you-document-the-assessment-when-indicators-conflict-", label: "Documenting conflicting indicators" },
+      { id: "what-are-the-ifrs-15-and-ind-as-115-equivalents-", label: "IFRS 15 and Ind AS 115 equivalents" },
+      { id: "what-does-soluqube-do-once-you-have-reached-a-conclusion-", label: "Where Soluqube fits" }
+    ],
+    faqs: [
+      {
+        question: "Does principal vs agent change gross profit?",
+        answer: "No. A principal reports the full consideration as revenue and the supplier cost as cost of revenue; an agent reports only its fee or commission. In both cases the amount left after paying the supplier is the same. What changes is reported revenue, the gross margin percentage and any metric calculated on revenue."
+      },
+      {
+        question: "Are the ASC 606-10-55-39 indicators a checklist?",
+        answer: "No. ASC 606-10-55-39A says the indicators may be more or less relevant depending on the facts, and that they support the control assessment rather than replace it. The question is always whether the entity controls the specified good or service before it is transferred to the customer."
+      },
+      {
+        question: "Can one contract contain both principal and agent obligations?",
+        answer: "Yes. The assessment is made for each specified good or service. A contract can include a service the entity provides itself, reported gross, and a third-party item the entity only arranges, reported net. Each conclusion is documented separately."
+      },
+      {
+        question: "Does Soluqube decide whether we are principal or agent?",
+        answer: "No. Principal versus agent is a judgement made by the entity and its technical accounting reviewers. Soluqube takes the transaction price that follows from that conclusion and allocates it across performance obligations by relative standalone selling price, then builds the full-term revenue schedule in integer cents."
+      }
+    ],
+    content: `
+## What does principal vs agent decide under ASC 606?
+
+When another party is involved in providing goods or services to a customer, ASC 606-10-55-36 asks whether the entity's promise is to provide the specified good or service itself, making it the principal, or to arrange for the other party to provide it, making it an agent. The answer decides whether revenue is reported gross or as a net fee.
+
+The question is not whether the entity is "the seller of record" or who issues the invoice. It is a control question, asked separately for each specified good or service in the contract. An entity can be principal for one item and agent for another under the same contract.
+
+The guidance sits in ASC 606-10-55-36 through 55-40, as amended by ASU 2016-08. Read the primary text alongside this summary; the paragraph references below are there so you can go straight to it.
+
+---
+
+## How do you identify the specified good or service?
+
+Start by naming the specified good or service from the customer's point of view: the distinct good or service, or bundle, that the customer is buying. ASC 606-10-55-36A makes this the first step. Get it wrong and the control analysis answers the wrong question, such as who controls a licence when the customer is buying a right to a service.
+
+The unit can be a physical good, a right to a service to be performed by another party, or a combined output the entity produces by integrating several inputs. Two practical tests help:
+
+- What would the customer say it bought? A seat on a flight, an app licence, a managed service, a delivered report.
+- What does the contract make the entity responsible for? Read the fulfilment, acceptance, refund and support clauses, not only the pricing schedule.
+
+Write the specified good or service down in one sentence before moving on. Every later step refers back to it.
+
+---
+
+## When does an entity control the good or service before transfer?
+
+An entity is a principal if it controls the specified good or service before transfer to the customer (ASC 606-10-55-37). Under 55-37A, it does so when it obtains a good or asset from the other party and transfers it, obtains a right to a service the other party performs, or integrates the other party's input into a combined output.
+
+Control has its ordinary ASC 606 meaning: the ability to direct the use of, and obtain substantially all of the remaining benefits from, the good or service. Momentary legal title passing through the entity's hands is not enough on its own.
+
+If the entity does not control the specified good or service before transfer, its performance obligation is to arrange for the other party to provide it, and it is an agent (ASC 606-10-55-38). Its revenue is the fee or commission it expects to be entitled to, which may be the net amount it keeps after paying the other party. ASC 606-10-55-40 adds that if another entity assumes the performance obligation so the entity is no longer obliged to provide it, the entity does not recognise revenue for that obligation and instead considers whether it acted as an agent.
+
+---
+
+## Which indicators in ASC 606-10-55-39 support the assessment?
+
+ASC 606-10-55-39 lists three indicators that an entity controls the specified good or service before transfer: it is primarily responsible for fulfilling the promise, it has inventory risk before or after transfer, and it has discretion in establishing the price. They are evidence for the control assessment, not a scorecard; 55-39A says their relevance depends on the facts.
+
+- Primary responsibility: who the customer looks to for fulfilment and for acceptability of the good or service, including who handles defects, refunds and support.
+- Inventory risk: whether the entity bears the risk of holding the good or committing to the service before a customer contract exists, or bears it after transfer through returns.
+- Pricing discretion: whether the entity sets the price the customer pays. An agent can sometimes set its own commission, so pricing discretion is weaker evidence when the margin is fixed by the other party.
+
+ASU 2016-08 removed two older indicators, credit risk and the form of consideration being a commission. Collecting the cash and bearing the credit loss does not, on its own, make an entity the principal.
+
+---
+
+## Worked example: gross vs net on a $1,000 sale (illustrative)
+
+Illustrative round numbers, not from a real contract. A platform sells an item to a customer for $1,000 and pays the supplier $900. As principal it reports $1,000 of revenue and $900 of cost of revenue. As agent it reports $100 of net revenue. Gross profit is $100 either way; the revenue line and margin percentage change.
+
+\`\`\`text
+Illustrative only: round numbers, one sale
+                         Principal (gross)   Agent (net)
+Revenue                  $1,000              $100
+Cost of revenue          ($900)              $0
+Gross profit             $100                $100
+Gross margin             10%                 100%
+\`\`\`
+
+Scale the same illustrative sale to 1,000 transactions in a quarter and the reported revenue is $1,000,000 as principal or $100,000 as agent, with $100,000 of gross profit in both cases. That is why the conclusion matters to anyone reading revenue growth, revenue multiples or revenue-based covenants, even though profit does not move.
+
+Timing can also differ. A principal recognises revenue when it transfers the good or service to the customer. An agent recognises its fee when it satisfies its own promise to arrange the transfer, which in some arrangements is earlier, for example when the order is placed with the supplier.
+
+---
+
+## How do SaaS marketplaces and resellers apply the guidance?
+
+The same control test applies, but the facts differ. A marketplace listing third-party apps that the developer delivers, supports and prices often points to agent. A SaaS company integrating a third-party service into the product it is responsible for often points to principal. Resellers sit in between and depend on who fulfils, who prices and who bears unsold-capacity risk.
+
+Patterns that come up often, each still a facts-and-circumstances call:
+
+- App or integration marketplace: the developer hosts the app, handles support and sets the list price; the platform collects payment and keeps a percentage. The indicators tend to point to agent, with revenue reported as the platform fee.
+- SaaS product with embedded third-party inputs: a data feed, messaging delivery or cloud hosting that the SaaS company combines into the service it sells and is responsible for. Under 55-37A the entity may control a combined output, which tends to point to principal and gross presentation.
+- Pass-through usage charges: third-party costs re-billed at or near cost. Ask whether the customer sees them as a separate specified service and who is responsible if delivery fails before deciding gross or net.
+- Software licence or cloud capacity reseller: committing to capacity up front, setting customer prices and being the first line of support point towards principal; vendor-delivered keys, vendor support and a fixed margin with no unsold stock point towards agent.
+
+Payment collection, invoicing in the entity's own name and bearing credit risk do not settle any of these on their own.
+
+---
+
+## How do you document the assessment when indicators conflict?
+
+When indicators point both ways, the memo should go back to the control question for the specified good or service, explain which facts carry the most weight and why, and tie each fact to a contract term. A reviewer should be able to follow the reasoning from the contract to the conclusion without asking for a meeting.
+
+A structure that keeps the reasoning re-traceable, to adapt with your technical accounting reviewer:
+
+\`\`\`text
+Principal vs agent memo (illustrative outline)
+1. Arrangement: parties, contract references, the goods or services involved.
+2. Specified good or service (ASC 606-10-55-36A), in one sentence.
+3. Control before transfer (55-37, 55-37A): which route, if any, gives control.
+4. Indicators (55-39): for each, the facts, the clause, and whether it supports principal, agent or neither.
+5. Weighting: where indicators conflict, why some facts carry more weight (55-39A).
+6. Conclusion: principal or agent, gross or net, and the transaction price that follows.
+7. Presentation and disclosure: revenue line, and the 606-10-50-12(c) disclosure if acting as agent.
+8. Consistency: similar contracts this conclusion applies to, and what change in terms would trigger a reassessment.
+\`\`\`
+
+ASC 606-10-50-12(c) requires disclosure of performance obligations to arrange for another party to transfer goods or services, so an agent conclusion also feeds the notes. Auditors document their own evaluation under PCAOB AS 1215; a memo that cites contract clauses gives them something specific to test.
+
+---
+
+## What are the IFRS 15 and Ind AS 115 equivalents?
+
+IFRS 15 covers principal versus agent in paragraphs B34 to B38, aligned with ASC 606 through the IASB's April 2016 clarifications, which were issued alongside ASU 2016-08. Ind AS 115 carries the same Appendix B paragraphs. The control principle, the three indicators and the gross versus net outcome are the same under all three standards.
+
+\`\`\`text
+Topic                                      ASC 606           IFRS 15 / Ind AS 115
+Nature of the promise                      606-10-55-36      B34
+Identify the specified good or service     606-10-55-36A     B34A
+Principal controls before transfer         606-10-55-37      B35
+Ways a principal obtains control           606-10-55-37A     B35A
+Agent: fee or commission                   606-10-55-38      B36
+Indicators of control                      606-10-55-39      B37
+Relevance of indicators                    606-10-55-39A     B37A
+Another party assumes the obligation       606-10-55-40      B38
+\`\`\`
+
+For Indian entities there is a related but separate point: amounts collected on behalf of third parties, such as GST, are excluded from the transaction price under the Ind AS 115 definition of transaction price. That is not a principal versus agent conclusion, but it is another reason the invoice total and reported revenue differ.
+
+---
+
+## What does Soluqube do once you have reached a conclusion?
+
+Soluqube does not decide whether you are principal or agent; that judgement belongs to the entity and its reviewers. Once it is made, you enter the transaction price that follows from it, gross consideration or your net fee, and the engine allocates it across performance obligations by relative standalone selling price and builds the full-term schedule.
+
+The allocation and schedule run in integer arithmetic, rounded to cents, with a written residual-cent rule and the final period absorbing the remainder so each obligation's deferred balance reaches $0.00. Each obligation carries the page and excerpt of the clause it came from, and exports are SHA-256 hashed so a reviewer can confirm the file has not changed. For how the residual cent is handled, see https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606, and for the wider standard, the ASC 606 hub at https://soluqube.com/asc-606.
+
+To try it on a sample contract, open https://app.soluqube.com/. Finance teams who want to run their own contracts with us for 60 days can apply to the design partner program at https://soluqube.com/design-partners.
     `
   }
 ];
