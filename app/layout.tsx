@@ -102,10 +102,11 @@ const structuredData = {
         "https://app.soluqube.com",
         "https://client.soluqube.com",
         "https://www.crunchbase.com/organization/soluqube",
-        "https://www.linkedin.com/company/soluqube"
+        "https://www.linkedin.com/company/soluqube",
+        "https://www.saashub.com/soluqube"
       ],
       description:
-        "Deterministic revenue allocation for ASC 606 and Ind AS 115: relative-SSP allocation, full-term schedules that tie to the cent, and hashed evidence workpapers.",
+        "Soluqube is a revenue allocation and schedule engine for ASC 606 and Ind AS 115: relative-SSP allocation that ties to the cent, with clause evidence for each performance obligation.",
     },
     {
       "@type": "SoftwareApplication",

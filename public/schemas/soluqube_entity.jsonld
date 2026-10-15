@@ -58,12 +58,14 @@
     {
       "@type": "Organization",
       "@id": "https://soluqube.com/#org",
-      "name": "Soluqube Systems",
+      "name": "Soluqube",
       "url": "https://soluqube.com",
-      "logo": "https://soluqube.com/favicon.ico",
+      "logo": "https://soluqube.com/icon.png",
+      "description": "Soluqube is a revenue allocation and schedule engine for ASC 606 and Ind AS 115: relative-SSP allocation that ties to the cent, with clause evidence for each performance obligation.",
       "sameAs": [
         "https://www.linkedin.com/company/soluqube",
-        "https://github.com/soluqube"
+        "https://www.crunchbase.com/organization/soluqube",
+        "https://www.saashub.com/soluqube"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
