@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pricing & Pilot Deployment Plans",
-  description: "Soluqube pricing: a Free 3-Contract Audit-Defense Workpaper, then per-contract or continuous plans with schedule exports and hashed evidence packs.",
+  description: "Soluqube pricing: a free 3-contract sample, a $475 audit workpaper, a $1,750 QoE deal pack, and $49/month tool access for accounting firms.",
   alternates: {
     canonical: "https://soluqube.com/pricing",
   },
   openGraph: {
-    title: "Soluqube Enterprise Pricing & Deployment Plans",
-    description: "Deterministic ASC 606 & Ind AS 115 revenue recognition pricing for enterprise finance and accounting teams.",
+    title: "Soluqube Pricing",
+    description: "Free 3-contract sample, $475 audit workpaper, $1,750 QoE deal pack, $49/month firm tool access. SSP allocation that ties to the cent.",
     url: "https://soluqube.com/pricing",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
   },
