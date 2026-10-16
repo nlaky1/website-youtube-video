@@ -46,7 +46,7 @@ const TIERS: Tier[] = [
       "For a client's audit or diligence request: the SSP allocation, full-term schedules and a hashed evidence workpaper across the contracts in scope.",
     price: "$475",
     unit: "/ client event",
-    note: "Founding price until 31 Oct • list $950",
+    note: "Founding price for the first 10 customers • list $950",
     features: [
       "Up to 10 contracts per client event",
       "Delivered within 48 hours",
@@ -66,7 +66,7 @@ const TIERS: Tier[] = [
       "For a quality-of-earnings or diligence review of a SaaS target: the same allocation, schedule and hashed workpaper across the target's contract stack.",
     price: "$1,750",
     unit: "/ deal",
-    note: "Founding price until 31 Oct • list $3,500",
+    note: "Founding price for the first 10 customers • list $3,500",
     features: [
       "Up to 25 contracts per deal",
       "Delivered within 5 business days",
@@ -86,7 +86,7 @@ const TIERS: Tier[] = [
       "For offshore and outsourced accounting firms doing ASC 606 work for US SaaS clients: run the allocation and schedule yourselves in the app.",
     price: "$49",
     unit: "/ month per firm",
-    note: "Founding price until 31 Oct • or $490 / year • list $99 / month",
+    note: "Founding price for the first 10 customers • or $490 / year • list $99 / month",
     features: [
       "Upload USD or INR contract PDFs at app.soluqube.com",
       "You confirm the obligations and prices; the engine does the allocation and schedule",
