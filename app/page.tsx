@@ -1157,6 +1157,9 @@ export default function Home() {
                 <li><a href="/book-demo" className="hover:text-slate-950 transition-colors">Free Audit-Defense Workpaper</a></li>
                 <li><a href="https://www.crunchbase.com/organization/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">Crunchbase <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
                 <li><a href="https://www.linkedin.com/company/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950 transition-colors flex items-center gap-1">LinkedIn <ExternalLink className="w-3 h-3 text-slate-400" /></a></li>
+                <li><a href="/privacy" className="hover:text-slate-950 transition-colors">Privacy Policy</a></li>
+                <li><a href="/terms" className="hover:text-slate-950 transition-colors">Terms of Service</a></li>
+                <li><a href="/security" className="hover:text-slate-950 transition-colors">How We Handle Your Contracts</a></li>
                 <li><span className="text-slate-500">Mutual NDA on Request</span></li>
                 <li><span className="text-slate-500">Uploads Processed in Memory</span></li>
                 <li><span className="text-slate-500">&copy; 2026 Soluqube</span></li>
@@ -1167,7 +1170,7 @@ export default function Home() {
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
             <div>
-              &copy; 2026 Soluqube Technologies. All rights reserved. Deterministic Revenue Recognition Engine.
+              &copy; 2026 Soluqube (Nikhil Laky, sole proprietor). All rights reserved. Deterministic Revenue Recognition Engine.
             </div>
             <div className="flex items-center gap-6 font-mono text-[10px]">
               <span>PATENT PENDING (APP. NO. 202621096305)</span>

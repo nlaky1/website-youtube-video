@@ -1,6 +1,6 @@
 # How we handle your contracts
 
-> DRAFT, not published. Planned route: /security. Do not route or link this page until the founder has filled every placeholder and a lawyer has reviewed it.
+> PUBLISHED 16 Oct 2026 at https://soluqube.com/security. Live text is app/security/page.tsx; this draft is the source with placeholders. Placeholders were filled with: Nikhil Laky (sole proprietor) trading as Soluqube; Indore, Madhya Pradesh, India; nikhil@soluqube.com; governing law India, courts of Indore.
 > Placeholders: {{ENTITY_NAME}}, {{ADDRESS}}, {{CONTACT_EMAIL}}, {{FOUNDER_TO_CONFIRM}}.
 > Facts below were checked in the smart_contracts repo on 16 Oct 2026 (file references are in the HTML comments). Update this page whenever that code changes.
 

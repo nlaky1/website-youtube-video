@@ -17,6 +17,9 @@ export default function ResourceFooter() {
           <Link href="/blog" className="hover:text-slate-950">Blog</Link>
           <Link href="/asc-606" className="hover:text-slate-950">ASC 606 Hub</Link>
           <Link href="/design-partners" className="hover:text-slate-950">Design Partners</Link>
+          <Link href="/privacy" className="hover:text-slate-950">Privacy</Link>
+          <Link href="/terms" className="hover:text-slate-950">Terms</Link>
+          <Link href="/security" className="hover:text-slate-950">Security</Link>
         </nav>
       </div>
     </footer>

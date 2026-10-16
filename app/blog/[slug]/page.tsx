@@ -499,6 +499,9 @@ export default function BlogPostPage({ params }: Props) {
             <Link href="/alternatives" className="hover:text-slate-950">Alternatives</Link>
             <a href="https://www.crunchbase.com/organization/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950">Crunchbase</a>
             <a href="https://www.linkedin.com/company/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950">LinkedIn</a>
+            <Link href="/privacy" className="hover:text-slate-950">Privacy</Link>
+            <Link href="/terms" className="hover:text-slate-950">Terms</Link>
+            <Link href="/security" className="hover:text-slate-950">Security</Link>
           </div>
         </div>
       </footer>

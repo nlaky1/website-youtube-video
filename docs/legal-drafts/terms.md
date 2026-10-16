@@ -1,6 +1,6 @@
 # Terms of Service
 
-> DRAFT, not published. Planned route: /terms. Do not route or link this page until the founder has filled every placeholder and a lawyer has reviewed it.
+> PUBLISHED 16 Oct 2026 at https://soluqube.com/terms. Live text is app/terms/page.tsx; this draft is the source with placeholders. Placeholders were filled with: Nikhil Laky (sole proprietor) trading as Soluqube; Indore, Madhya Pradesh, India; nikhil@soluqube.com; governing law India, courts of Indore.
 > Placeholders: {{ENTITY_NAME}}, {{ADDRESS}}, {{CONTACT_EMAIL}}, {{FOUNDER_TO_CONFIRM}}.
 
 These terms apply to soluqube.com, app.soluqube.com and any workbook or service we deliver ("Soluqube"). Soluqube is provided by {{ENTITY_NAME}}, {{ADDRESS}}.

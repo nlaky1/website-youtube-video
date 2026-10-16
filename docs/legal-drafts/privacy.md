@@ -1,6 +1,6 @@
 # Privacy Policy
 
-> DRAFT, not published. Planned route: /privacy. Do not route or link this page until the founder has filled every placeholder and a lawyer has reviewed it (India DPDP Act 2023; GDPR/UK GDPR and US state laws if you market to those users).
+> PUBLISHED 16 Oct 2026 at https://soluqube.com/privacy. Live text is app/privacy/page.tsx; this draft is the source with placeholders. Placeholders were filled with: Nikhil Laky (sole proprietor) trading as Soluqube; Indore, Madhya Pradesh, India; nikhil@soluqube.com; governing law India, courts of Indore.
 > Placeholders: {{ENTITY_NAME}}, {{ADDRESS}}, {{CONTACT_EMAIL}}, {{FOUNDER_TO_CONFIRM}}.
 
 This policy explains how {{ENTITY_NAME}} ("Soluqube", "we"), {{ADDRESS}}, handles personal data on soluqube.com and app.soluqube.com.
