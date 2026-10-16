@@ -177,7 +177,7 @@ export default function PricingPage() {
         </div>
 
         <p className="text-center text-xs text-slate-500 max-w-3xl mx-auto -mt-12 mb-16">
-          Prices in USD, excluding applicable taxes. Every engagement covers USD and INR contracts; amendments, invoices, scans without a text layer and contracts with redacted prices are refused. Mutual NDA on request.
+          Prices in USD, excluding applicable taxes. Every engagement covers USD and INR contracts; invoices, scans without a text layer and contracts with redacted prices are refused; amendments are flagged for manual review and not accounted for. Mutual NDA on request.
         </p>
 
         {/* Bottom CTA */}

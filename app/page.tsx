@@ -237,7 +237,7 @@ export default function Home() {
     },
     {
       q: "Does Soluqube handle contract amendments and modifications?",
-      a: "Not yet. Soluqube processes one USD or INR customer contract at a time: it allocates the transaction price on relative standalone selling prices and builds the full-term schedule. It refuses amendments, invoices, scanned PDFs and contracts with redacted prices. Contract-modification accounting is on the roadmap; today you assess a modification under ASC 606-10-25-10 to 25-13 yourself."
+      a: "Not yet. Soluqube processes one USD or INR customer contract at a time: it allocates the transaction price on relative standalone selling prices and builds the full-term schedule. It refuses invoices, scanned PDFs and contracts with redacted prices; amendments are flagged for manual review and not accounted for. Contract-modification accounting is on the roadmap; today you assess a modification under ASC 606-10-25-10 to 25-13 yourself."
     },
     {
       q: "What integrations are supported for ERP general ledgers and billing engines?",

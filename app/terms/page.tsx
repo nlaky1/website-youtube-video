@@ -38,8 +38,8 @@ export default function TermsPage() {
         <P>
           Soluqube calculates a relative standalone selling price (SSP) allocation and a full-term revenue schedule for
           one customer contract at a time, under ASC 606 or Ind AS 115, and exports the results with SHA-256 hashes. It
-          accepts USD and INR contracts. It refuses contracts with redacted prices, scanned PDFs without a text layer,
-          invoices and amendments. Contract-modification accounting is not supported.
+          accepts USD and INR contracts. It refuses contracts with redacted prices, scanned PDFs without a text layer
+          and invoices; amendments are flagged for manual review and not accounted for. Contract-modification accounting is not supported.
         </P>
 
         <H2>2. Not accounting, audit or legal advice</H2>

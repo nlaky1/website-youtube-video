@@ -119,8 +119,8 @@ export default function SecurityPage() {
         <UL>
           <li>
             Redact names and counterparties if you prefer. Prices must stay visible: the app refuses contracts with
-            redacted prices, as well as scans without a text layer, invoices, amendments and currencies other than USD
-            and INR.
+            redacted prices, as well as scans without a text layer, invoices and currencies other than USD
+            and INR. Amendments are flagged for manual review and not accounted for.
           </li>
           <li>To test without any confidential data, use a public contract from SEC EDGAR.</li>
           <li>We sign a mutual NDA on request. A data processing agreement (DPA) is available on request.</li>
