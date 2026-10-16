@@ -24,8 +24,8 @@ export default function SoluqubeVsTrullionPage() {
   const [contractCount, setContractCount] = useState<number>(10);
 
   // Price comparison math
-  const soluqubePayAsYouGo = contractCount * 499;
-  const soluqubeAnnualRetainer = 999 * 12; // $11,988/yr
+  const soluqubePayAsYouGo = Math.ceil(contractCount / 10) * 475; // $475 audit workpaper per 10 contracts
+  const soluqubeAnnualRetainer = 490; // firm tool access, $490/yr
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -34,7 +34,7 @@ export default function SoluqubeVsTrullionPage() {
         "@type": "TechArticle",
         "@id": "https://soluqube.com/soluqube-vs-trullion#article",
         "headline": "Soluqube vs Trullion: Per-Contract Dual-GAAP Revenue Recognition Alternative",
-        "description": "Comparison between Soluqube and Trullion for ASC 606 & Ind AS 115 revenue recognition. Learn why Soluqube's $499 per-contract model, integer (BigInt) micro-cent math, and statutory Indian GST isolation compare with enterprise contracts (pricing not published).",
+        "description": "Comparison between Soluqube and Trullion for ASC 606 & Ind AS 115 revenue recognition. Learn why Soluqube's published pricing ($475 audit workpaper for up to 10 contracts), integer (BigInt) micro-cent math, and statutory Indian GST isolation compare with enterprise contracts (pricing not published).",
         "author": {
           "@type": "Organization",
           "name": "Soluqube Systems",
@@ -98,7 +98,7 @@ export default function SoluqubeVsTrullionPage() {
             The Per-Contract Dual-GAAP Alternative to Trullion.
           </h1>
           <p className="text-base text-slate-300 leading-relaxed">
-            Trullion sells <span className="text-rose-400 font-semibold">annual enterprise contracts</span> (pricing not published) through a sales-qualification process, and does not advertise <strong className="text-white">Indian GAAP (Ind AS 115)</strong> support or statutory GST isolation. Soluqube gives finance leaders per-contract SSP allocation with integer (BigInt) micro-cent precision starting at <span className="text-emerald-400 font-semibold">$499 per contract</span>.
+            Trullion sells <span className="text-rose-400 font-semibold">annual enterprise contracts</span> (pricing not published) through a sales-qualification process, and does not advertise <strong className="text-white">Indian GAAP (Ind AS 115)</strong> support or statutory GST isolation. Soluqube gives finance leaders per-contract SSP allocation with integer (BigInt) micro-cent precision starting at <span className="text-emerald-400 font-semibold">$475 for up to 10 contracts</span>.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ export default function SoluqubeVsTrullionPage() {
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Per-Contract Pricing:</strong> $499 per contract or $999/mo flat. No mandatory 6-figure contracts.</span>
+                <span><strong>Published Pricing:</strong> $475 per audit workpaper (up to 10 contracts), $1,750 per QoE deal pack, or $49/month firm tool access. No mandatory 6-figure contracts.</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -198,7 +198,7 @@ export default function SoluqubeVsTrullionPage() {
               <tbody className="divide-y divide-slate-800/60">
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Pricing Model</td>
-                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">$499 per contract / $999/mo SaaS</td>
+                  <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">$475 per workpaper (10 contracts) / $49/mo firm access</td>
                   <td className="p-3.5 text-slate-400 font-mono">Enterprise contract (pricing not published)</td>
                 </tr>
                 <tr>
@@ -267,15 +267,15 @@ export default function SoluqubeVsTrullionPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800 font-mono text-center">
             <div className="p-4 rounded-lg bg-emerald-950/30 border border-emerald-500/30 space-y-1">
-              <span className="text-[10px] uppercase text-emerald-400 block font-bold">Soluqube On-Demand</span>
+              <span className="text-[10px] uppercase text-emerald-400 block font-bold">Soluqube Audit Workpaper</span>
               <span className="text-2xl font-black text-white">${soluqubePayAsYouGo.toLocaleString()}</span>
-              <span className="text-[10px] text-slate-400 block">$499 per contract flat</span>
+              <span className="text-[10px] text-slate-400 block">$475 per 10 contracts</span>
             </div>
 
             <div className="p-4 rounded-lg bg-slate-800/40 border border-slate-700 space-y-1">
-              <span className="text-[10px] uppercase text-slate-400 block font-bold">Soluqube Growth SaaS</span>
+              <span className="text-[10px] uppercase text-slate-400 block font-bold">Soluqube Firm Tool Access</span>
               <span className="text-2xl font-black text-emerald-400">${soluqubeAnnualRetainer.toLocaleString()}</span>
-              <span className="text-[10px] text-slate-400 block">$999/mo unlimited audits</span>
+              <span className="text-[10px] text-slate-400 block">$490/yr per firm; you run the app</span>
             </div>
 
             <div className="p-4 rounded-lg bg-rose-950/20 border border-rose-500/20 space-y-1">

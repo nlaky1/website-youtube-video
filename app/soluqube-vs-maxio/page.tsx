@@ -75,7 +75,7 @@ export default function SoluqubeVsMaxioPage() {
     {
       feature: "Pricing Model",
       maxio: "Billing volume tax (% of MRR / GMV) starting at $15k–$40k+/yr",
-      soluqube: "Predictable flat tiers ($499 single audit or predictable monthly)",
+      soluqube: "Published flat prices ($475 audit workpaper for up to 10 contracts, or $49/month firm tool access)",
       advantage: "Zero tax on your top-line revenue growth",
     },
     {
@@ -185,7 +185,7 @@ export default function SoluqubeVsMaxioPage() {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span>Predictable flat-fee pricing ($499 per contract or monthly tiers)</span>
+                <span>Published flat-fee pricing ($475 per audit workpaper for up to 10 contracts, or $49/month firm tool access)</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />

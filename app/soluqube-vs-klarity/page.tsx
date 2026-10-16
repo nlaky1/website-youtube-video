@@ -196,7 +196,7 @@ export default function SoluqubeVsKlarityPage() {
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Pricing &amp; Contract Terms</td>
-                  <td className="p-3.5 text-purple-400 font-mono font-bold bg-purple-950/20">$499 per contract / $999/mo SaaS</td>
+                  <td className="p-3.5 text-purple-400 font-mono font-bold bg-purple-950/20">$475 per workpaper (10 contracts) / $49/mo firm access</td>
                   <td className="p-3.5 text-slate-400 font-mono">Enterprise quotes ($50k–$100k+/year)</td>
                 </tr>
               </tbody>

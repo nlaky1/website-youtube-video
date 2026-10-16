@@ -24,7 +24,7 @@ export default function SoluqubeVsRightRevPage() {
   const [contractCount, setContractCount] = useState<number>(12);
 
   // Price comparison
-  const soluqubePayAsYouGo = contractCount * 499;
+  const soluqubePayAsYouGo = Math.ceil(contractCount / 10) * 475; // $475 audit workpaper per 10 contracts
   const rightrevEstimatedMin = 30000; // $30k+ annual contract + implementation
 
   const jsonLd = {
@@ -195,7 +195,7 @@ export default function SoluqubeVsRightRevPage() {
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Pricing Model</td>
                 <td className="py-4 px-6">$30,000–$60,000/yr + implementation fees</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">$499/contract or $999/mo continuous</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">$475 per workpaper (up to 10 contracts) or $49/mo firm access</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Published per-contract pricing</td>
               </tr>
             </tbody>

@@ -24,7 +24,7 @@ export default function SoluqubeVsLeapfinPage() {
   const [contractCount, setContractCount] = useState<number>(10);
 
   // Price comparison math
-  const soluqubePayAsYouGo = contractCount * 499;
+  const soluqubePayAsYouGo = Math.ceil(contractCount / 10) * 475; // $475 audit workpaper per 10 contracts
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -188,7 +188,7 @@ export default function SoluqubeVsLeapfinPage() {
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Published Pricing</td>
                 <td className="py-4 px-6">Enterprise sales (pricing not published)</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">$499/contract or $999/mo continuous</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">$475 per workpaper (up to 10 contracts) or $49/mo firm access</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">No sales procurement roadblocks</td>
               </tr>
             </tbody>
@@ -228,7 +228,7 @@ export default function SoluqubeVsLeapfinPage() {
                 <div className="text-xs text-rose-400 mt-1">Lengthy setup & pipeline fees</div>
               </div>
               <div className="border-l border-slate-800 pl-6">
-                <div className="text-xs uppercase tracking-wider text-cyan-400 font-semibold mb-1">Soluqube (Per Contract)</div>
+                <div className="text-xs uppercase tracking-wider text-cyan-400 font-semibold mb-1">Soluqube (Audit Workpaper)</div>
                 <div className="text-2xl sm:text-3xl font-extrabold text-cyan-300">
                   ${soluqubePayAsYouGo.toLocaleString()}
                 </div>
