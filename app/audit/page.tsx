@@ -23,7 +23,6 @@ import {
 export default function AuditSimulatorPage() {
   const contractValueId = useId();
   const termMonthsId = useId();
-  const elementsCountId = useId();
   const nameId = useId();
   const emailId = useId();
   const companyId = useId();
@@ -33,10 +32,9 @@ export default function AuditSimulatorPage() {
   // Simulator State
   const [contractValue, setContractValue] = useState<number>(100000);
   const [termMonths, setTermMonths] = useState<number>(36);
-  const [elementsCount, setElementsCount] = useState<number>(3);
 
   // Form & Checkout State
-  const [auditTier, setAuditTier] = useState<"free" | "paid_499">("paid_499");
+  const [auditTier, setAuditTier] = useState<"free" | "paid_499">("free");
   const [formName, setFormName] = useState("");
   const [formEmail, setFormEmail] = useState("");
   const [formCompany, setFormCompany] = useState("");
@@ -60,17 +58,18 @@ export default function AuditSimulatorPage() {
   }, []);
 
   // Math Calculations
-  // 1. Floating-Point Binary Rounding (Standard Excel / NetSuite IEEE-754)
+  // 1. Per-period rounding: every month rounded to the cent, no final true-up
   const monthlyIdeal = contractValue / termMonths;
   const monthlyFloatRounded = Math.round(monthlyIdeal * 100) / 100;
   const totalRecognizedFloat = monthlyFloatRounded * termMonths;
-  const floatDriftCents = Math.abs(contractValue - totalRecognizedFloat);
-  const multiElementFactor = elementsCount * 1.8;
-  const accumulatedFloatDrift = (floatDriftCents * multiElementFactor).toFixed(2);
+  const accumulatedFloatDrift = Math.abs(contractValue - totalRecognizedFloat).toFixed(2);
 
-  // 2. Soluqube BigInt Integer Remainder Absorption
-  const soluqubeMonthly = (contractValue / termMonths).toFixed(2);
-  const soluqubeDrift = "0.000000";
+  // 2. Soluqube: months 1..n-1 truncated to the cent, the final month absorbs the remainder
+  const contractCents = Math.round(contractValue * 100);
+  const soluqubeRegularCents = Math.floor(contractCents / termMonths);
+  const soluqubeMonthly = (soluqubeRegularCents / 100).toFixed(2);
+  const soluqubeTerminal = ((contractCents - soluqubeRegularCents * (termMonths - 1)) / 100).toFixed(2);
+  const soluqubeDrift = "0.00";
 
   const handleSubmitAudit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -112,7 +111,7 @@ export default function AuditSimulatorPage() {
           company: formCompany,
           brand: "soluqube",
           erp: formErp,
-          message: `Requested 3-Contract Drift Audit for ${formCompany}. Primary ERP: ${formErp}. Scope Notes: ${formNotes}`
+          message: `Requested Free 3-Contract Audit-Defense Workpaper for ${formCompany}. Primary ERP: ${formErp}. Scope Notes: ${formNotes}`
         }),
       });
       setFormSubmitted(true);
@@ -133,19 +132,19 @@ export default function AuditSimulatorPage() {
           <nav className="flex items-center gap-2 text-xs font-mono text-slate-500">
             <Link href="/" className="hover:text-slate-900">Soluqube</Link>
             <ChevronRight className="w-3 h-3 text-slate-400" />
-            <span className="text-slate-900 font-semibold">3-Contract Drift Simulator</span>
+            <span className="text-slate-900 font-semibold">ASC 606 Schedule Simulator</span>
           </nav>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Interactive ASC 606 & Ind AS 115 Drift Diagnostic</span>
+            <span>Interactive ASC 606 Schedule Simulator</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 max-w-4xl">
-            Simulate Your Revenue Schedule Cent Drift
+            Defensible Revenue Allocation, Tied to the Cent.
           </h1>
           <p className="text-slate-600 text-base max-w-3xl leading-relaxed">
-            See how standard IEEE-754 64-bit floating-point arithmetic in Excel and ERPs compounds into balance sheet discrepancies across multi-element ratable contracts—and how Soluqube eliminates it deterministically.
+            When your auditor questions a standalone selling price allocation or a contract amendment, Soluqube produces the deterministic allocation, the full-term schedule that ties to $0.00, and a hashed evidence workpaper — integer arithmetic under ASC 606 and Ind AS 115, not a spreadsheet.
           </p>
         </div>
       </section>
@@ -208,27 +207,6 @@ export default function AuditSimulatorPage() {
               </div>
             </div>
 
-            {/* Slider 3: Performance Obligations */}
-            <div className="space-y-2">
-              <div className="flex justify-between items-center text-sm font-semibold">
-                <label htmlFor={elementsCountId} className="text-slate-700">Multi-Element Deliverables</label>
-                <span className="font-mono text-indigo-600 text-base">{elementsCount} Elements</span>
-              </div>
-              <input 
-                id={elementsCountId}
-                type="range" 
-                min="1" 
-                max="5" 
-                step="1"
-                value={elementsCount}
-                onChange={(e) => setElementsCount(Number(e.target.value))}
-                className="w-full accent-indigo-600 cursor-pointer"
-              />
-              <p className="text-[11px] text-slate-600">
-                (e.g., Platform Access + Implementation + Tiered SLA Support)
-              </p>
-            </div>
-
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-1">
               <div className="font-semibold text-slate-800">Deterministic Model:</div>
               <p>Terminal-period remainder absorption means any fractional cents are absorbed into the final period, keeping cumulative recognized revenue identical to total consideration.</p>
@@ -244,29 +222,21 @@ export default function AuditSimulatorPage() {
               {/* Card 1: Standard ERP / Excel */}
               <div className="p-6 rounded-2xl bg-white border border-rose-200 shadow-xs space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase tracking-wider font-bold text-rose-600">Standard ERP / Excel</span>
+                  <span className="text-xs font-mono uppercase tracking-wider font-bold text-rose-600">Per-period rounding</span>
                   <AlertTriangle className="w-4 h-4 text-rose-500" />
                 </div>
                 <div>
                   <div className="text-2xl font-black text-rose-600 font-mono">
-                    ±${accumulatedFloatDrift}
+                    ${accumulatedFloatDrift}
                   </div>
                   <div className="text-xs text-slate-600 mt-1 font-semibold">
-                    Accumulated Cent Drift
+                    Residual left in deferred revenue
                   </div>
                 </div>
                 <div className="space-y-1.5 text-xs text-slate-600 pt-2 border-t border-slate-100">
                   <div className="flex justify-between">
-                    <span>IEEE-754 Math:</span>
-                    <span className="font-mono text-rose-600">64-bit Binary Float</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Audit Finding Risk:</span>
-                    <span className="font-semibold text-rose-600">HIGH (Sampling Flag)</span>
-                  </div>
-                  <div className="flex justify-between">
                     <span>Terminal Remainder:</span>
-                    <span className="text-rose-600">Unabsorbed Variance</span>
+                    <span className="text-rose-600">Not absorbed</span>
                   </div>
                 </div>
               </div>
@@ -285,7 +255,7 @@ export default function AuditSimulatorPage() {
                     ${soluqubeDrift}
                   </div>
                   <div className="text-xs text-slate-600 mt-1 font-semibold">
-                    Zero Mathematical Discrepancy
+                    Ending deferred: ties to the cent
                   </div>
                 </div>
                 <div className="space-y-1.5 text-xs text-slate-600 pt-2 border-t border-slate-100">
@@ -298,8 +268,8 @@ export default function AuditSimulatorPage() {
                     <span className="font-semibold text-emerald-700">Built for audit review</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>GST Firewall:</span>
-                    <span className="text-emerald-700 font-semibold">MCA Sched III Quarantined</span>
+                    <span>GST (INR contracts only):</span>
+                    <span className="text-emerald-700 font-semibold">18% isolated before allocation</span>
                   </div>
                 </div>
               </div>
@@ -309,7 +279,7 @@ export default function AuditSimulatorPage() {
             {/* WATERFALL BREAKDOWN PREVIEW */}
             <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-bold text-slate-900">36-Month Ratable Schedule Trace</h3>
+                <h3 className="text-sm font-bold text-slate-900">{termMonths}-Month Ratable Schedule Trace</h3>
                 <span className="text-xs font-mono text-slate-600">Base Monthly: ${soluqubeMonthly}/mo</span>
               </div>
 
@@ -318,29 +288,29 @@ export default function AuditSimulatorPage() {
                   <thead>
                     <tr className="border-b border-slate-200 text-slate-600">
                       <th className="py-2">Period</th>
-                      <th className="py-2">Standard Float (Excel)</th>
+                      <th className="py-2">Per-period rounding</th>
                       <th className="py-2">Soluqube BigInt</th>
-                      <th className="py-2 text-right">Audit Variance</th>
+                      <th className="py-2 text-right">Ending deferred</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 text-slate-700">
                     <tr>
                       <td className="py-2 text-slate-900 font-semibold">Month 1</td>
                       <td className="py-2">${monthlyFloatRounded.toFixed(2)}</td>
-                      <td className="py-2 text-emerald-700 font-semibold">${(contractValue / termMonths).toFixed(2)}</td>
-                      <td className="py-2 text-right text-emerald-700">$0.00</td>
+                      <td className="py-2 text-emerald-700 font-semibold">${soluqubeMonthly}</td>
+                      <td className="py-2 text-right text-slate-500">—</td>
                     </tr>
                     <tr>
                       <td className="py-2 text-slate-900 font-semibold">Month 18 (Mid-Term)</td>
-                      <td className="py-2">${monthlyFloatRounded.toFixed(2)} <span className="text-rose-600">(round noise)</span></td>
-                      <td className="py-2 text-emerald-700 font-semibold">${(contractValue / termMonths).toFixed(2)}</td>
-                      <td className="py-2 text-right text-rose-600">+0.01¢ / elem</td>
+                      <td className="py-2">${monthlyFloatRounded.toFixed(2)}</td>
+                      <td className="py-2 text-emerald-700 font-semibold">${soluqubeMonthly}</td>
+                      <td className="py-2 text-right text-slate-500">—</td>
                     </tr>
                     <tr className="bg-slate-50 font-bold">
                       <td className="py-2 text-slate-900">Month {termMonths} (Terminal)</td>
-                      <td className="py-2">${monthlyFloatRounded.toFixed(2)} <span className="text-rose-600">(-${accumulatedFloatDrift})</span></td>
-                      <td className="py-2 text-emerald-700">${(contractValue / termMonths).toFixed(2)} <span className="text-xs text-emerald-600">(Exact Tie)</span></td>
-                      <td className="py-2 text-right text-emerald-700">$0.000000</td>
+                      <td className="py-2">${monthlyFloatRounded.toFixed(2)} <span className="text-rose-600">(residual ${accumulatedFloatDrift})</span></td>
+                      <td className="py-2 text-emerald-700">${soluqubeTerminal} <span className="text-xs text-emerald-600">(absorbs remainder)</span></td>
+                      <td className="py-2 text-right text-emerald-700">$0.00</td>
                     </tr>
                   </tbody>
                 </table>
@@ -359,10 +329,10 @@ export default function AuditSimulatorPage() {
                 Audit Defense Intake
               </span>
               <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
-                Request Your Contract Drift Audit Package
+                Request a Free 3-Contract Audit-Defense Workpaper
               </h2>
               <p className="text-slate-400 text-sm max-w-xl mx-auto">
-                Submit 2 or 3 of your most complex multi-element or ramp contracts. Choose a complimentary review, or book a walkthrough of the $499 per-contract workbook.
+                Send your three hardest contracts. You receive the SSP allocation, the schedule that ties to the cent, and a hashed evidence workpaper, delivered within 48 hours.
               </p>
             </div>
 
@@ -373,7 +343,7 @@ export default function AuditSimulatorPage() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <div className="space-y-1">
-                  <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">Payment Verified ($499.00 USD)</span>
+                  <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">Payment received</span>
                   <h3 className="text-2xl font-bold text-white">Priority Audit Package Unlocked!</h3>
                 </div>
                 <p className="text-emerald-200/90 text-sm max-w-lg mx-auto">
@@ -405,47 +375,8 @@ export default function AuditSimulatorPage() {
             ) : (
               <form onSubmit={handleSubmitAudit} className="space-y-6">
                 
-                {/* TIER SELECTION TABS */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div 
-                    onClick={() => setAuditTier("paid_499")}
-                    className={`cursor-pointer rounded-2xl p-5 border transition-all text-left relative ${
-                      auditTier === "paid_499" 
-                        ? "bg-indigo-950/60 border-indigo-400 shadow-lg shadow-indigo-950/50 ring-2 ring-indigo-500/30" 
-                        : "bg-slate-800/40 border-slate-700/70 hover:border-slate-600"
-                    }`}
-                  >
-                    <div className="absolute top-4 right-4">
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500 text-white uppercase tracking-wider">
-                        Per Contract
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${auditTier === "paid_499" ? "border-indigo-400 bg-indigo-500" : "border-slate-500"}`}>
-                        {auditTier === "paid_499" && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
-                      </div>
-                      <h4 className="font-bold text-white text-base">Per-Contract Workbook</h4>
-                    </div>
-                    <div className="flex items-baseline gap-1.5 mb-2">
-                      <span className="text-2xl font-black text-white">$499</span>
-                      <span className="text-xs text-slate-400">/ contract</span>
-                    </div>
-                    <ul className="text-xs text-slate-300 space-y-1.5 pt-1">
-                      <li className="flex items-center gap-1.5 text-emerald-400">
-                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                        <span>Walkthrough with the founder</span>
-                      </li>
-                      <li className="flex items-center gap-1.5 text-slate-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
-                        <span>5-Sheet Excel Workbook (SHA-256 hashed)</span>
-                      </li>
-                      <li className="flex items-center gap-1.5 text-slate-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
-                        <span>Clause Evidence (page + excerpt)</span>
-                      </li>
-                    </ul>
-                  </div>
-
+                {/* OFFER */}
+                <div className="grid grid-cols-1 gap-4">
                   <div 
                     onClick={() => setAuditTier("free")}
                     className={`cursor-pointer rounded-2xl p-5 border transition-all text-left relative ${
@@ -458,27 +389,24 @@ export default function AuditSimulatorPage() {
                       <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${auditTier === "free" ? "border-slate-300 bg-slate-300" : "border-slate-500"}`}>
                         {auditTier === "free" && <div className="w-1.5 h-1.5 rounded-full bg-slate-900" />}
                       </div>
-                      <h4 className="font-bold text-white text-base">Complimentary Audit</h4>
+                      <h4 className="font-bold text-white text-base">Free 3-Contract Audit-Defense Workpaper</h4>
                     </div>
                     <div className="flex items-baseline gap-1.5 mb-2">
-                      <span className="text-2xl font-black text-white">$0</span>
-                      <span className="text-xs text-slate-400">/ free review</span>
+                      <span className="text-2xl font-black text-white">Free</span>
+                      <span className="text-xs text-slate-400">/ up to 3 contracts</span>
                     </div>
                     <ul className="text-xs text-slate-300 space-y-1.5 pt-1">
                       <li className="flex items-center gap-1.5 text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-slate-400" />
-                        <span>Standard 24-hr turnaround</span>
+                        <span>Delivered within 48 hours</span>
                       </li>
                       <li className="flex items-center gap-1.5 text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-slate-400" />
-                        <span>3-Contract Blinded Recalculation</span>
+                        <span>SSP allocation and full-term schedule</span>
                       </li>
                       <li className="flex items-center gap-1.5 text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-slate-400" />
-                        <span>Variance Summary Report</span>
-                      </li>
-                      <li className="flex items-center gap-1.5 text-slate-400">
-                        <span>Requires email intake coordination</span>
+                        <span>Hashed evidence workpaper</span>
                       </li>
                     </ul>
                   </div>
@@ -590,7 +518,7 @@ export default function AuditSimulatorPage() {
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      <span>Request Free 3-Contract Drift Audit</span>
+                      <span>Request the Free Workpaper</span>
                     </>
                   )}
                 </button>
