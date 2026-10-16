@@ -201,7 +201,7 @@ export default function Home() {
       badge: "GATE 1 & 2 ACTIVE",
       description: "Dual-pane review canvas that shows each performance obligation next to the contract clause it came from, so every allocation row has a page and an excerpt behind it.",
       image: "/images/product/actual-contract-canvas.png",
-      telemetry: "5-Gate Verification: PASSED • SEC Edgar CIK #0001640147"
+      telemetry: "Reconciliation gate: PASSED • SEC Edgar CIK #0001640147"
     },
     waterfall: {
       title: "Revenue Waterfall & 18% GST Isolation",
@@ -411,7 +411,7 @@ export default function Home() {
               <div className="relative bg-slate-950 aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden group">
                 <Image
                   src="/images/product/actual-contract-canvas.png"
-                  alt="Soluqube Contract Spatial Review Canvas live application screenshot showing PDF contract review and 5-gate mathematical verification"
+                  alt="Soluqube Contract Spatial Review Canvas live application screenshot showing PDF contract review and the reconciliation gate (allocation and schedule tie to the contract price)"
                   width={1540}
                   height={980}
                   priority
@@ -833,7 +833,7 @@ export default function Home() {
                 Request a Free 3-Contract Audit-Defense Workpaper
               </h2>
               <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-                Provide your corporate parameters below. Nikhil, the founder, will personally run up to 3 of your complex customer agreements through our 5-Gate deterministic engine and deliver the SSP allocation, the full-term schedule that ties to the cent, and a hashed evidence workpaper.
+                Provide your corporate parameters below. Nikhil, the founder, will personally run up to 3 of your complex customer agreements through our deterministic engine, with a reconciliation gate on every run (allocation and schedule tie to the contract price; deferred ends at $0.00), and deliver the SSP allocation, the full-term schedule that ties to the cent, and a hashed evidence workpaper.
               </p>
 
               <div className="mt-8 space-y-4 text-xs text-slate-700">
