@@ -1716,5 +1716,72 @@ Soluqube is a revenue allocation and schedule engine for SaaS finance teams. It 
 
 _Soluqube Editorial. This analysis is based on public SEC filings and is not accounting advice. Company names are used only to identify the filings reviewed._
     `
+  },
+  {
+    slug: "why-finance-teams-reject-black-box-ai",
+    title: "Why Finance Teams Reject Black-Box AI in Revenue Accounting",
+    subtitle: "Controllers and QoE teams reject black-box AI: their name is on the workpapers. What passes an audit: confirmed inputs, clause evidence, integer math.",
+    publishedAt: "October 16, 2026",
+    updatedAt: "October 16, 2026",
+    readTime: "4 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "Audit Evidence", "SSP Allocation", "Outsourced Accounting", "Quality of Earnings"],
+    targetQuery: "black box AI revenue recognition audit",
+    definitionAnchor: "Finance teams reject black-box AI for revenue recognition because an auditor needs each allocation traced to a contract clause, a confirmed input and a calculation that re-runs to the same cent.",
+    excerpt: "Controllers and QoE teams reject black-box AI: their name is on the workpapers. What passes an audit: confirmed inputs, clause evidence, integer math.",
+    toc: [
+      { id: "the-audit-problem-with-black-boxes", label: "The Audit Problem with Black Boxes" },
+      { id: "black-box-vs-evidence-trail", label: "Black Box vs. Evidence Trail" },
+      { id: "built-for-the-teams-doing-the-work", label: "Built for the Teams Doing the Work" },
+      { id: "worked-example-what-ties-out-means", label: "Worked example: what \"ties out\" means" },
+      { id: "see-it-on-a-real-contract", label: "See it on a real contract" }
+    ],
+    engineVerified: true,
+    content: `
+Every week, another platform promises to "automate technical accounting with AI." The pitch usually suggests an LLM can read complex enterprise agreements, suggest revenue allocations, and remove the friction from the close.
+
+Yet when experienced Controllers, outsourced accounting partners, and Quality of Earnings (QoE) analysts evaluate these tools, they stay with spreadsheets.
+
+It isn't resistance to software. It's accountability: their name is on the workpapers.
+
+When an auditor asks how an allocation was determined, the software vendor isn't in the room. The accounting team is.
+
+## The Audit Problem with Black Boxes
+
+Whether conducting an annual audit or performing sell-side QoE analysis, accounting teams run into the same barrier when tools rely on unstructured machine learning:
+
+- **Unverifiable Rationale:** "The AI model suggested this split" is not an acceptable audit workpaper.
+- **Re-Verification Overhead:** If an analyst has to re-read the entire contract to verify that the software didn't miss a clause or misstate an obligation, the software hasn't saved time—it has simply added another step.
+- **Reproducibility Risks:** If a calculation cannot be re-run with identical results down to the cent, it cannot serve as a reliable audit schedule.
+
+## Black Box vs. Evidence Trail
+
+For outsourced firms handling dozens of client closes, the requirement isn't an "autonomous agent." It is structured software that preserves the evidence trail:
+
+| Black-Box Tool | Verifiable Evidence Trail |
+|---|---|
+| **Statistical Suggestions:** Guesses allocations based on pattern matching. | **Human-Confirmed Inputs:** The user reviews and confirms extracted obligations and prices before calculation. |
+| **Detached Numbers:** Displays revenue schedules without clear ties to the agreement. | **Page & Excerpt Provenance:** Quotes the obligation and price directly, highlighted on the source document page. |
+| **Opaque Schedules:** Hard to reconcile or audit independently. | **Integer Math:** Relative-SSP calculations rounded to cents that tie out consistently every time. |
+| **Unanchored Exports:** Workbooks that cannot be verified for post-export tampering. | **Hashed Workpapers:** Exported workbooks that an auditor can independently inspect and re-run. |
+
+## Built for the Teams Doing the Work
+
+Outsourced accounting practices and transaction advisory teams don't need tools that pretend to replace professional judgment.
+
+They need tools that remove manual transcription, highlight the contract evidence clearly, and produce clean, defensible workpapers their clients' auditors can verify immediately.
+
+## Worked example: what "ties out" means
+
+A $100,000 contract bundles implementation (SSP $30,000), premium support (SSP $30,000) and a platform subscription (SSP $120,000). Total SSP is $180,000, so the $80,000 discount is spread in proportion. Round each line on its own and the three allocations sum to $100,000.01. Soluqube's engine allocates $16,666.67, $16,666.67 and $66,666.66, which sums to exactly $100,000.00, and the exported workbook carries the page and excerpt for each obligation plus a SHA-256 hash. Re-run it and you get the same cents. Full walk-through: [SSP allocation rounding and the residual cent](https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606). Try your own numbers in the [free SSP allocation calculator](https://soluqube.com/tools/ssp-allocation-calculator).
+
+## See it on a real contract
+
+Download the [one-page sample contract (PDF)](https://soluqube.com/samples/soluqube-ssp-sample.pdf), then open it in the [Soluqube app](https://app.soluqube.com/) to see confirmed inputs, page-and-excerpt evidence and the hashed export on a schedule you can re-run. Outsourced firms and QoE teams can [join the design-partner list](https://soluqube.com/design-partners) for a free 3-contract audit-defense workpaper.
+    `
   }
 ];

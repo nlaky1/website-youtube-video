@@ -345,7 +345,7 @@ export const VENDORS: Record<string, VendorProfile> = {
       "No billing or usage-based billing, and no ERP integration: you review and post Excel/CSV exports yourself.",
       "Contract-modification accounting (prospective and cumulative catch-up) is on the roadmap, not built.",
     ],
-    pricing: "Published: free 3-contract workpaper; $499 single-contract audit; $999/month continuous plan (soluqube.com/pricing).",
+    pricing: "Founding prices until 31 Oct 2026: free 3-contract workpaper; $475 audit workpaper for up to 10 contracts; $1,750 QoE deal pack; $49/month firm tool access (soluqube.com/pricing).",
     standards: "ASC 606, Ind AS 115",
     ssp: "Yes (relative SSP, documented residual-cent rule)",
     sources: [{ label: "Soluqube pricing", url: "https://soluqube.com/pricing" }],
