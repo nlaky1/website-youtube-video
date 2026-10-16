@@ -168,7 +168,7 @@ export default function PricingPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Continuous 5-Gate deterministic mathematical validation</span>
+                  <span>Reconciliation gate on every run: allocation and schedule tie to the contract price; deferred ends at $0.00</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -228,7 +228,7 @@ export default function PricingPage() {
                   <td className="py-3.5 px-4 font-semibold text-slate-800">Clause evidence references</td>
                   <td className="py-3.5 px-4 text-center text-slate-700">Up to 3 Contracts</td>
                   <td className="py-3.5 px-4 text-center text-emerald-700 font-semibold bg-emerald-50/20">Full Contract Stack</td>
-                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Unlimited Ingestion</td>
+                  <td className="py-3.5 px-4 text-center text-emerald-600 font-bold bg-blue-50/30">Included</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 px-4 font-semibold text-slate-800">Ind AS 115 Statutory 18% GST Quarantine (INR contracts)</td>
@@ -265,7 +265,7 @@ export default function PricingPage() {
             Ready to Defend Your Next SSP Allocation?
           </h3>
           <p className="mt-3 text-slate-300 text-sm max-w-xl mx-auto">
-            Request a Free 3-Contract Audit-Defense Workpaper. We run your three hardest contracts through the 5-Gate engine and deliver the SSP allocation, the schedule that ties to the cent, and a hashed evidence workpaper.
+            Request a Free 3-Contract Audit-Defense Workpaper. We run your three hardest contracts through the engine, with a reconciliation gate on every run (allocation and schedule tie to the contract price; deferred ends at $0.00), and deliver the SSP allocation, the schedule that ties to the cent, and a hashed evidence workpaper.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
