@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       "Allocate a transaction price by relative SSP, see where the residual cent goes, and get a schedule that ties to the cent. Free, runs in your browser.",
     url: "https://soluqube.com/tools/ssp-allocation-calculator",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
   },
 };
 

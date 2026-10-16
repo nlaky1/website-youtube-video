@@ -313,6 +313,7 @@ export default function SoluqubeVsMaxioPage() {
             <Link href="/asc-606" className="hover:text-slate-900">ASC 606 Guide</Link>
             <Link href="/asc-606-vs-ind-as-115" className="hover:text-slate-900">Dual Standard</Link>
             <Link href="/pricing" className="hover:text-slate-900">Pricing</Link>
+            <Link href="/alternatives/maxio" className="hover:text-slate-900">Maxio Alternatives</Link>
           </div>
         </div>
       </footer>

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Book a Soluqube Demo & Free Audit-Defense Workpaper",
     description: "Experience deterministic integer (BigInt) contract-to-ledger revenue recognition live in action.",
     url: "https://soluqube.com/book-demo",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
   },
 };
 

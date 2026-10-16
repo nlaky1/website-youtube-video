@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Contact Soluqube Technical Desk",
     description: "Direct engagement intake for Chief Accounting Officers, Controllers, and audit readiness teams.",
     url: "https://soluqube.com/contact",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
   },
 };
 

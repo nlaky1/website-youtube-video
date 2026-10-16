@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Soluqube Enterprise Pricing & Deployment Plans",
     description: "Deterministic ASC 606 & Ind AS 115 revenue recognition pricing for enterprise finance and accounting teams.",
     url: "https://soluqube.com/pricing",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
   },
 };
 

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       "Compare per-period rounding with an integer-cent ASC 606 schedule whose final period absorbs the remainder, so it ties to the contract value.",
     url: "https://soluqube.com/audit",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
     siteName: "Soluqube",
     type: "website",
   },

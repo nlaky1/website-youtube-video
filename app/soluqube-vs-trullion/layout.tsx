@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Soluqube vs Trullion: ASC 606 and Ind AS 115 | Soluqube",
     description: "Compare Soluqube and Trullion: per-contract pricing, integer arithmetic that ties to the cent, and Ind AS 115 GST isolation for INR contracts.",
     url: 'https://soluqube.com/soluqube-vs-trullion',
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
     siteName: 'Soluqube',
     type: 'website',
   },

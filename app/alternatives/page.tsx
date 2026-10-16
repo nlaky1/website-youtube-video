@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "Alternatives to 10 revenue recognition and billing products, with who each fits, strengths, limits and published pricing.",
     url: `${SITE}/alternatives`,
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
     siteName: "Soluqube",
   },
 };

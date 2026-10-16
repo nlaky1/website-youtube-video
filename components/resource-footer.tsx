@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ALTERNATIVES_PAGES } from "@/data/alternatives";
 
 /** Minimal footer for the glossary and alternatives pages. */
 export default function ResourceFooter() {
@@ -17,11 +18,20 @@ export default function ResourceFooter() {
           <Link href="/blog" className="hover:text-slate-950">Blog</Link>
           <Link href="/asc-606" className="hover:text-slate-950">ASC 606 Hub</Link>
           <Link href="/design-partners" className="hover:text-slate-950">Design Partners</Link>
+          <Link href="/contact" className="hover:text-slate-950">Contact</Link>
           <Link href="/privacy" className="hover:text-slate-950">Privacy</Link>
           <Link href="/terms" className="hover:text-slate-950">Terms</Link>
           <Link href="/security" className="hover:text-slate-950">Security</Link>
         </nav>
       </div>
+      <nav aria-label="Alternatives guides" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-2 text-slate-500">
+        <span className="font-semibold text-slate-700">Alternatives to:</span>
+        {ALTERNATIVES_PAGES.map((p) => (
+          <Link key={p.slug} href={`/alternatives/${p.slug}`} className="hover:text-slate-950">
+            {p.subjectName}
+          </Link>
+        ))}
+      </nav>
     </footer>
   );
 }

@@ -309,6 +309,9 @@ export default function SoluqubeVsTrullionPage() {
             </Link>
           </div>
         </div>
+        <p className="max-w-4xl mx-auto px-4 pb-12 text-center text-sm text-slate-400">
+          Comparing more vendors? See <Link href="/alternatives/trullion" className="text-cyan-400 underline">Trullion alternatives</Link>.
+        </p>
       </main>
     </div>
   );

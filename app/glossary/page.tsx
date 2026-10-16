@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "40 revenue recognition terms with definitions, standard references and worked examples: SSP, performance obligations, contract balances and more.",
     url: `${SITE}/glossary`,
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
     siteName: "Soluqube",
   },
 };

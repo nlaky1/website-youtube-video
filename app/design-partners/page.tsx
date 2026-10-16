@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "60 days free on your real contracts: SSP allocation, a schedule that ties to the cent, and a hashed evidence workpaper. 10 seats.",
     url: "https://soluqube.com/design-partners",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }],
   },
 };
 

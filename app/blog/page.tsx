@@ -247,6 +247,7 @@ export default function BlogIndexPage() {
             <Link href="/asc-606-vs-ind-as-115" className="hover:text-slate-950">Dual Standard</Link>
             <a href="https://www.crunchbase.com/organization/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950">Crunchbase</a>
             <a href="https://www.linkedin.com/company/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950">LinkedIn</a>
+            <Link href="/contact" className="hover:text-slate-950">Contact</Link>
             <Link href="/privacy" className="hover:text-slate-950">Privacy</Link>
             <Link href="/terms" className="hover:text-slate-950">Terms</Link>
             <Link href="/security" className="hover:text-slate-950">Security</Link>

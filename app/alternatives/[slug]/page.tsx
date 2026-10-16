@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: title },
     description: p.description,
     alternates: { canonical: url },
-    openGraph: { title, description: p.description, url, type: "article", siteName: "Soluqube" },
+    openGraph: { title, description: p.description, url, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }], type: "article", siteName: "Soluqube" },
     twitter: { card: "summary", title, description: p.description },
   };
 }
