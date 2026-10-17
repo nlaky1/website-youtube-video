@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/analytics";
 
 import React, { useState, useId } from "react";
 import Link from "next/link";
@@ -102,18 +103,18 @@ export default function AuditSimulatorPage() {
 
     // Free Tier submission
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: formName,
+          fullName: formName,
           email: formEmail,
           company: formCompany,
-          brand: "soluqube",
-          erp: formErp,
-          message: `Requested Free 3-Contract Audit-Defense Workpaper for ${formCompany}. Primary ERP: ${formErp}. Scope Notes: ${formNotes}`
+          help: "Free 3-Contract Audit-Defense Workpaper (/audit)",
+          info: `Requested Free 3-Contract Audit-Defense Workpaper for ${formCompany}. Primary ERP: ${formErp}. Scope Notes: ${formNotes}`
         }),
       });
+      if (res.ok) track("generate_lead", { form: "audit_workpaper" });
       setFormSubmitted(true);
     } catch {
       setFormSubmitted(true);

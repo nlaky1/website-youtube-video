@@ -129,7 +129,9 @@ export default function PrivacyPage() {
         <H2>Cookies</H2>
         <P>
           The app sets one session cookie (HttpOnly, Secure, 7-day expiry) to keep you signed in. soluqube.com uses
-          analytics cookies from Google Analytics. soluqube.com does not show a cookie banner today; you can block or
+          analytics cookies from Google Analytics. We also send Google Analytics events when a form is submitted, a booking link is
+          clicked or a sample is downloaded, to measure which pages lead to enquiries; these events carry no names or email
+          addresses. soluqube.com does not show a cookie banner today; you can block or
           delete cookies in your browser settings.
         </P>
 

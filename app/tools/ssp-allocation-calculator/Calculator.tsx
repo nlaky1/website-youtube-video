@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import { Plus, Trash2, Copy, Check, ChevronDown, RotateCcw, ArrowUp } from "lucide-react";
+import { track } from "@/lib/analytics";
 import {
   CalcCurrency,
   CalcRecognition,
@@ -542,6 +543,7 @@ function EmailAllocation({ input }: { input: { price: number; currency: CalcCurr
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.success) throw new Error(data.error || "Could not send the email. Please try again.");
+      track("calculator_email", { form: "ssp_calculator" });
       setState("sent");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not send the email. Please try again.");

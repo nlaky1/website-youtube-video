@@ -155,6 +155,8 @@ export default function PricingPage() {
                 {t.external ? (
                   <a
                     href={t.href}
+                    data-ga-event="pricing_cta"
+                    data-ga-tier={t.name}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`w-full py-3.5 px-4 rounded-xl text-center text-xs font-semibold block shadow-sm transition-colors ${
@@ -166,6 +168,8 @@ export default function PricingPage() {
                 ) : (
                   <Link
                     href={t.href}
+                    data-ga-event="pricing_cta"
+                    data-ga-tier={t.name}
                     className="w-full py-3.5 px-4 rounded-xl text-center text-xs font-semibold text-slate-900 bg-slate-100 hover:bg-slate-200 transition-colors border border-slate-200 block shadow-xs"
                   >
                     {t.cta} &rarr;

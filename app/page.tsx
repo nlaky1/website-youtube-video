@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/analytics";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -109,22 +110,13 @@ export default function Home() {
         })
       });
 
-      const data = await res.json();
-      const generatedRef = data.referenceId || ("REF-" + Math.random().toString(36).substring(2, 8).toUpperCase());
-      const generatedRoot = "0x" + Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join("");
-      
-      setSubmittedData({
-        referenceId: generatedRef,
-        merkleRoot: generatedRoot
-      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) throw new Error(data.error || "Request failed");
+      track("generate_lead", { form: "home_intake" });
+      setSubmittedData({ referenceId: data.referenceId, merkleRoot: "" });
     } catch (err) {
-      console.warn("Intake submission fallback:", err);
-      const generatedRef = "REF-" + Math.random().toString(36).substring(2, 8).toUpperCase();
-      const generatedRoot = "0x" + Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join("");
-      setSubmittedData({
-        referenceId: generatedRef,
-        merkleRoot: generatedRoot
-      });
+      console.warn("Intake submission failed:", err);
+      setEmailError("We could not send your request. Please try again or email nikhil@soluqube.com.");
     } finally {
       setIsSubmitting(false);
     }
@@ -1062,10 +1054,6 @@ export default function Home() {
                     <div className="flex justify-between text-slate-500">
                       <span>Assigned Desk:</span>
                       <span className="text-slate-800 font-semibold">Priority Accounting Queue #1</span>
-                    </div>
-                    <div className="flex justify-between text-slate-500 truncate">
-                      <span>Request Token:</span>
-                      <span className="text-slate-800 font-semibold truncate max-w-[200px]">{submittedData.merkleRoot}</span>
                     </div>
                     <div className="flex justify-between text-slate-500">
                       <span>Selected Standard:</span>

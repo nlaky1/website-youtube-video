@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import AnalyticsClicks from "@/components/analytics-clicks";
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -153,6 +154,7 @@ export default function RootLayout({
         <Analytics />
         {children}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-61QYXZFGCG"} />
+        <AnalyticsClicks />
       </body>
     </html>
   );

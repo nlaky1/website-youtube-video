@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/analytics";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -66,13 +67,20 @@ export default function BookDemoPage() {
       return;
     }
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmittedData({
-        referenceId: "SLQ-" + Math.floor(100000 + Math.random() * 900000),
-        merkleRoot: "0x" + Array.from({length: 32}, () => Math.floor(Math.random()*16).toString(16)).join("")
-      });
-    }, 700);
+    // Was a 700 ms simulation that sent nothing (found 17 Oct 2026); now posts to the same route as the home form.
+    fetch("/api/intake", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fullName, company, email, revrecStack, accountingStandard, driftAuditOffer, info: "Source: /book-demo form" })
+    })
+      .then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) throw new Error(data.error || "Request failed");
+        track("generate_lead", { form: "book_demo" });
+        setSubmittedData({ referenceId: data.referenceId, merkleRoot: "" });
+      })
+      .catch(() => setEmailError("We could not send your request. Please try again or email nikhil@soluqube.com."))
+      .finally(() => setIsSubmitting(false));
   };
 
   return (

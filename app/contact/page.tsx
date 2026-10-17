@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@/lib/analytics";
 
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -83,6 +84,8 @@ export default function ContactForm() {
       if (!res.ok) {
         // Fallback for demo / offline logging
         console.warn("Contact API returned non-200, logging offline");
+      } else {
+        track("generate_lead", { form: "contact" });
       }
 
       setSubmitted(true);
