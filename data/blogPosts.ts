@@ -303,7 +303,7 @@ Round numbers, not from a real contract.
 
 **Soluqube does not automate contract-modification accounting yet.** Prospective treatment and cumulative catch-up are on the roadmap. Today the assessment above stays with your team and your technical accounting reviewers.
 
-What Soluqube does: for the contract terms you confirm, it produces the relative-SSP allocation and the full-term schedule in integer arithmetic, with clause evidence (page + excerpt) per obligation and a hashed workpaper. Example 2 above, once you have decided it is prospective, is a new allocation and schedule over the remaining term, which the engine can produce.
+What Soluqube does: for the contract terms you confirm, it produces the relative-SSP allocation and the full-term schedule in integer arithmetic, with clause evidence (page, verbatim excerpt and a highlight on the cited line) per obligation and a hashed workpaper. Example 2 above, once you have decided it is prospective, is a new allocation and schedule over the remaining term, which the engine can produce.
 
 For related judgements, see [principal vs agent under ASC 606](/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example) and the [ASC 606 hub](/asc-606). If modifications are your hardest audit area, tell us which pattern bites you most through the [design partner program](/design-partners).
     `
@@ -357,7 +357,7 @@ The auditor documents its own work under PCAOB AS 1215. What the finance team ca
 
 ## Clause evidence per obligation
 
-For each performance obligation, Soluqube keeps the page number and the excerpt of the clause it came from, so a reviewer can go straight to the paragraph instead of searching a 40-page agreement. You confirm the obligations and prices; the engine does the allocation and schedule. The [clause evidence guide](/blog/contract-pdf-bounding-box-clause-grounding-auditors) covers what to capture for non-standard clauses.
+For each performance obligation, Soluqube keeps the page, the verbatim excerpt and a highlight on the cited line, drawn from the PDF's text layer for uploaded PDFs, so a reviewer can go straight to the paragraph instead of searching a 40-page agreement. You confirm the obligations and prices; the engine does the allocation and schedule. The [clause evidence guide](/blog/contract-pdf-bounding-box-clause-grounding-auditors) covers what to capture for non-standard clauses.
 
 ---
 
@@ -373,7 +373,7 @@ What a hash does not do: it does not show that the SSP estimate is supportable, 
 
 ## What goes in the package?
 
-* The contract terms you confirmed, with clause evidence (page + excerpt) per obligation.
+* The contract terms you confirmed, with clause evidence (page, verbatim excerpt and a highlight on the cited line) per obligation.
 * The SSP inputs and the relative-SSP allocation, including which obligation absorbs the residual cent. See the [residual-cent policy](/blog/ssp-allocation-rounding-residual-cent-asc-606).
 * The full-term schedule, ending at a $0.00 deferred balance per obligation.
 * An Excel workpaper and a JSON evidence pack, SHA-256 hashed, with a Merkle root.
@@ -395,7 +395,7 @@ Judgement memos, such as a [principal vs agent assessment](/blog/principal-vs-ag
     },
     tags: ["Clause Evidence", "Audit Evidence", "Contract Review", "External Audit"],
     targetQuery: "ASC 606 contract clause evidence for auditors",
-    definitionAnchor: "Clause evidence links each line of an ASC 606 allocation or schedule to the contract clause it came from, recorded as the page number and the clause excerpt. A reviewer can then trace an obligation, its price and its term to the signed contract without searching the whole document. In Soluqube you confirm the obligations and prices; each one keeps its page and excerpt.",
+    definitionAnchor: "Clause evidence links each line of an ASC 606 allocation or schedule to the contract clause it came from, recorded as the page number and the clause excerpt. A reviewer can then trace an obligation, its price and its term to the signed contract without searching the whole document. In Soluqube you confirm the obligations and prices; each one keeps its page, verbatim excerpt and a highlight on the cited line.",
     excerpt: "Most revenue errors start in the contract, not the arithmetic. How linking each obligation to a page and excerpt shortens tracing, what to capture for non-standard clauses, and where automated extraction still needs a person.",
     toc: [
       { id: "why-do-revenue-errors-start-in-the-contract", label: "Why revenue errors start in the contract" },
@@ -411,7 +411,7 @@ Judgement memos, such as a [principal vs agent assessment](/blog/principal-vs-ag
       },
       {
         question: "Can software extract obligations from any contract automatically?",
-        answer: "Not reliably. Extraction from real contracts is heuristic and makes mistakes on non-standard documents, so a person should confirm the obligations, prices and terms. In Soluqube you confirm them; the engine does the allocation and schedule, and each obligation keeps its page and excerpt."
+        answer: "Not reliably. Extraction from real contracts is heuristic and makes mistakes on non-standard documents, so a person should confirm the obligations, prices and terms. In Soluqube you confirm them; the engine does the allocation and schedule, and each obligation keeps its page, verbatim excerpt and a highlight on the cited line."
       }
     ],
     content: `
@@ -467,7 +467,7 @@ Soluqube takes the third approach: you confirm the obligations and stated prices
 
 ## What goes to the auditor?
 
-An Excel workpaper and a JSON evidence pack with the page and excerpt for every obligation, the [relative-SSP allocation](/blog/ssp-allocation-rounding-residual-cent-asc-606), the full schedule and SHA-256 hashes on the export. The [audit evidence guide](/blog/pcaob-as-3101-audit-workpapers-merkle-proofs) explains what the hashes do and do not prove. If you are comparing tools that only extract terms into a checklist, see [Soluqube vs Klarity](/soluqube-vs-klarity), or try it on your own contracts through the [design partner program](/design-partners).
+An Excel workpaper and a JSON evidence pack with the page and verbatim excerpt for every obligation (the in-app viewer adds a highlight on the cited line for uploaded PDFs with a text layer), the [relative-SSP allocation](/blog/ssp-allocation-rounding-residual-cent-asc-606), the full schedule and SHA-256 hashes on the export. The [audit evidence guide](/blog/pcaob-as-3101-audit-workpapers-merkle-proofs) explains what the hashes do and do not prove. If you are comparing tools that only extract terms into a checklist, see [Soluqube vs Klarity](/soluqube-vs-klarity), or try it on your own contracts through the [design partner program](/design-partners).
     `
   },
   {
@@ -550,7 +550,7 @@ Generative models predict text. That is useful for drafting, but revenue schedul
 |---|---|---|
 | **Same input, same output** | Not assured | Yes, byte-identical |
 | **Arithmetic** | Can misread or miscompute numbers | Integer (BigInt) arithmetic, rounded to cents, terminal-period remainder absorption |
-| **Source trace** | Summaries without clause references | Clause evidence (page + excerpt) per obligation |
+| **Source trace** | Summaries without clause references | Clause evidence (page, verbatim excerpt and line highlight) per obligation |
 | **Evidence** | Hard to re-perform | SHA-256 hashed export with a Merkle root |
 | **Standards** | General text | ASC 606; Ind AS 115 with GST isolation for INR contracts |
 
@@ -560,7 +560,7 @@ Generative models predict text. That is useful for drafting, but revenue schedul
 
 1. **Relative-SSP allocation** in integer arithmetic, with a written rule for the residual cent ([how the residual is handled](/blog/ssp-allocation-rounding-residual-cent-asc-606)).
 2. **A full-term schedule** that ties to the contract value and ends at a $0.00 deferred balance.
-3. **Clause evidence (page + excerpt)** for each obligation; you confirm the obligations and prices.
+3. **Clause evidence (page, verbatim excerpt and a highlight on the cited line)** for each obligation; you confirm the obligations and prices.
 4. **A hashed workpaper** an auditor can re-run and compare.
 
 Contract-modification accounting is on the roadmap and is not automated today. For the platform view, see the [ASC 606 hub](/asc-606); to test it on your own contracts, see the [design partner program](/design-partners).
@@ -656,7 +656,7 @@ They solve different problems. ARM is the revenue module of an ERP; Soluqube is 
 |---|---|---|
 | **Scope** | ERP revenue module with billing and GL posting | Allocation, schedule and evidence workpaper; export only, no live ERP sync |
 | **Rounding rule** | Depends on configuration; document what yours does | Floor each period; final period absorbs the remainder |
-| **Clause evidence** | Memo and reference fields | Page + excerpt per obligation |
+| **Clause evidence** | Memo and reference fields | Page, verbatim excerpt and line highlight per obligation |
 | **Contract modifications** | Handled in the ERP workflow | Not automated yet (on the roadmap) |
 | **Ind AS 115 GST** | Via tax configuration | GST isolated before allocation for INR contracts |
 | **Output** | GL postings and reports | Excel/CSV you review and post, SHA-256 hashed |
@@ -811,7 +811,7 @@ const totalSsp = ssp.reduce((a, b) => a + b, 0n);        // $200,000.00
 \`\`\`
 
 ### 2. Clause evidence
-Each obligation keeps the page and excerpt of the clause it came from. You confirm the obligations and stated prices; the engine does the allocation and schedule.
+Each obligation keeps the page, the verbatim excerpt and a highlight on the cited line, drawn from the PDF's text layer for uploaded PDFs. You confirm the obligations and stated prices; the engine does the allocation and schedule.
 
 ### 3. Hashed workpaper
 The export carries the SSP inputs, the allocation, the full schedule and SHA-256 hashes with a Merkle root. Allocations sum to the transaction price and each obligation ends at a $0.00 deferred balance; if they don't, the engine rejects the result instead of returning it.
@@ -871,7 +871,7 @@ For a head-to-head view, see [Soluqube vs Maxio](/soluqube-vs-maxio).
 
 ### 1. Soluqube: for defensible SSP allocation and Ind AS 115
 Soluqube is a contract-first engine. You confirm the obligations and stated prices from the signed contract; it allocates by relative SSP in integer (BigInt) arithmetic at 10^6 scale, rounded to cents, and builds the full schedule with terminal-period remainder absorption.
-* **Strengths**: clause evidence (page + excerpt) per obligation, ASC 606 and Ind AS 115 with GST isolation for INR contracts, hashed evidence workpapers, a free 3-contract workpaper to start.
+* **Strengths**: clause evidence (page, verbatim excerpt and a highlight on the cited line) per obligation, ASC 606 and Ind AS 115 with GST isolation for INR contracts, hashed evidence workpapers, a free 3-contract workpaper to start.
 * **Limits today**: no live ERP sync (you review and post the export), and contract-modification accounting is on the roadmap.
 * **Best for**: SaaS finance teams that need to defend SSP allocations, and US-India groups.
 
@@ -906,7 +906,7 @@ The main difference is the source of truth:
               |                                       |
      Deal desk data entry                  You confirm obligations and prices
               |                                       |
-     CRM quote line items                  Clause evidence (page + excerpt)
+     CRM quote line items                  Clause evidence (page, excerpt, line highlight)
               |                                       |
      Invoice timing                        Relative SSP allocation
               |                                       |
@@ -922,7 +922,7 @@ The main difference is the source of truth:
 | Capability | Maxio | Trullion | Leapfin | Soluqube |
 | :--- | :---: | :---: | :---: | :---: |
 | **Source of truth** | Invoices / CRM quotes | Contract documents | Transaction events | **Contract terms you confirm** |
-| **Clause evidence per obligation** | Not advertised | AI extraction (check vendor) | Not applicable | **Page + excerpt** |
+| **Clause evidence per obligation** | Not advertised | AI extraction (check vendor) | Not applicable | **Page, verbatim excerpt and line highlight** |
 | **Arithmetic** | Not published | Not published | Not published | **Integer (BigInt), rounded to cents** |
 | **Terminal-period remainder rule** | Not published | Not published | Not published | **Yes (ties to the cent)** |
 | **Ind AS 115 + 18% GST** | Not advertised | Not advertised | Not advertised | **For INR contracts** |
@@ -1211,7 +1211,7 @@ const last = total - monthly * (months - 1n);      // $6,944.60
 // 35 × $6,944.44 + $6,944.60 = $250,000.00
 \`\`\`
 
-Each obligation keeps the page and excerpt of its clause, and the export is SHA-256 hashed with a Merkle root computed on it. The output is a workpaper and CSV you review and post; there is no live ERP sync.
+Each obligation keeps the page, verbatim excerpt and a highlight on the cited line (uploaded text-layer PDFs), and the export is SHA-256 hashed with a Merkle root computed on it. The output is a workpaper and CSV you review and post; there is no live ERP sync.
 
 ---
 
@@ -1221,7 +1221,7 @@ Each obligation keeps the page and excerpt of its clause, and the export is SHA-
 | :--- | :--- | :--- |
 | **Deployment** | Implementation partner typical (timeline not published) | **Free 3-contract workpaper in 48 hours; self-serve sandbox** |
 | **Input** | Structured order and billing data | **Contract terms you confirm** |
-| **Clause trace** | Reference fields | **Clause evidence (page + excerpt)** |
+| **Clause trace** | Reference fields | **Clause evidence (page, verbatim excerpt and line highlight)** |
 | **Arithmetic** | Not published | **Integer (BigInt), rounded to cents** |
 | **Contract modifications** | Supported | **Not automated yet (on the roadmap)** |
 | **Ind AS 115 GST** | Via configuration | **GST isolated before allocation for INR contracts** |
@@ -1553,7 +1553,7 @@ For Indian entities there is a related but separate point: amounts collected on 
 
 Soluqube does not decide whether you are principal or agent; that judgement belongs to the entity and its reviewers. Once it is made, you enter the transaction price that follows from it, gross consideration or your net fee, and the engine allocates it across performance obligations by relative standalone selling price and builds the full-term schedule.
 
-The allocation and schedule run in integer arithmetic, rounded to cents, with a written residual-cent rule and the final period absorbing the remainder so each obligation's deferred balance reaches $0.00. Each obligation carries the page and excerpt of the clause it came from, and exports are SHA-256 hashed so a reviewer can confirm the file has not changed. For how the residual cent is handled, see the [SSP rounding guide](/blog/ssp-allocation-rounding-residual-cent-asc-606), and for the wider standard, the [ASC 606 hub](/asc-606).
+The allocation and schedule run in integer arithmetic, rounded to cents, with a written residual-cent rule and the final period absorbing the remainder so each obligation's deferred balance reaches $0.00. Each obligation carries the page, the verbatim clause and a highlight on that line, drawn from the PDF's text layer, and exports are SHA-256 hashed so a reviewer can confirm the file has not changed. For how the residual cent is handled, see the [SSP rounding guide](/blog/ssp-allocation-rounding-residual-cent-asc-606), and for the wider standard, the [ASC 606 hub](/asc-606).
 
 To try it on a sample contract, open the [Soluqube sandbox](https://app.soluqube.com/). Finance teams who want to run their own contracts with us for 60 days can apply to the [design partner program](/design-partners).
     `
@@ -1712,7 +1712,7 @@ One row per company: fiscal year, filing URL, revenue band, SSP classification, 
 
 ## About Soluqube
 
-Soluqube is a revenue allocation and schedule engine for SaaS finance teams. It allocates the transaction price on a relative-SSP basis using integer arithmetic and rounds to cents. The final period absorbs the remainder, so each schedule ties back to the transaction price, and exports are hashed so they can be reproduced. Each obligation links to the page and excerpt of its source clause. We are offering a free design-partner seat to a few controllers preparing SSP and allocation support for this year's audit; apply through the [design partner program](/design-partners).
+Soluqube is a revenue allocation and schedule engine for SaaS finance teams. It allocates the transaction price on a relative-SSP basis using integer arithmetic and rounds to cents. The final period absorbs the remainder, so each schedule ties back to the transaction price, and exports are hashed so they can be reproduced. Each obligation links to the exact page, the verbatim clause and a highlight on that line, drawn from the PDF's own text layer. We are offering a free design-partner seat to a few controllers preparing SSP and allocation support for this year's audit; apply through the [design partner program](/design-partners).
 
 _Soluqube Editorial. This analysis is based on public SEC filings and is not accounting advice. Company names are used only to identify the filings reviewed._
     `

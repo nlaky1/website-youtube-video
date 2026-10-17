@@ -335,7 +335,7 @@ export const VENDORS: Record<string, VendorProfile> = {
     whoFor: "Controllers, revenue accountants and CPA or fractional-CFO firms who defend SSP allocations on negotiated B2B contracts to external auditors, in the US and India.",
     strengths: [
       "Relative-SSP allocation and a full-term schedule in integer arithmetic (10^6 scale, rounded to cents) with the final period absorbing the remainder, so the schedule ties to the allocation and deferred revenue ends at $0.00.",
-      "Clause evidence per obligation (page + excerpt) and a SHA-256-hashed export: same input, same output, re-runnable in front of an auditor.",
+      "Clause evidence per obligation (page, verbatim excerpt and a highlight on the cited line, for text-layer PDFs) and a SHA-256-hashed export: same input, same output, re-runnable in front of an auditor.",
       "Ind AS 115 treatment with 18% GST kept out of the transaction price for INR contracts.",
       "Free 3-contract audit-defense workpaper to start; no implementation project.",
     ],
@@ -627,7 +627,7 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
       { vendor: "chargebee", fit: "Subledger with an SSP library, modification handling and named ERP integrations." },
       { vendor: "leapfin", fit: "For high transaction volume rather than contract review; published pricing. Leapfin is joining Airwallex." },
       { vendor: "zenskar", fit: "Also extracts obligations from contracts with AI, and adds billing, SSP allocation and modification recalculation." },
-      { vendor: "soluqube", fit: "Clause evidence (page + excerpt) per obligation like an audit tool, but the numbers come from a deterministic integer engine you can re-run. No lease accounting." },
+      { vendor: "soluqube", fit: "Clause evidence (page, verbatim excerpt and line highlight) per obligation like an audit tool, but the numbers come from a deterministic integer engine you can re-run. No lease accounting." },
     ],
     versusPage: "/soluqube-vs-trullion",
   },

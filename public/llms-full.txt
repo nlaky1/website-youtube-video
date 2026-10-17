@@ -34,7 +34,7 @@ Soluqube is a deterministic ASC 606 and Ind AS 115 revenue allocation and amorti
 
 ### 2. The 5-Step ASC 606 / Ind AS 115 Framework in Soluqube
 1. **Identify the Contract**: the uploaded contract document is fingerprinted with SHA-256.
-2. **Identify Performance Obligations**: candidate obligations are proposed from the contract text (heuristic extraction); you confirm the obligations and stated prices. Each obligation keeps clause evidence (page + excerpt).
+2. **Identify Performance Obligations**: candidate obligations are proposed from the contract text (heuristic extraction); you confirm the obligations and stated prices. Each obligation keeps clause evidence: page, verbatim excerpt and a highlight on the cited line.
 3. **Determine Transaction Price**: uses the transaction price you confirm; for INR contracts, statutory 18% GST is excluded from the transaction price and booked as a liability. US contracts carry no GST.
 4. **Allocate Transaction Price**: relative SSP allocation in integer (BigInt) arithmetic. Every obligation is rounded half-up to the cent except the last-listed one, which receives the transaction price minus the others.
 5. **Recognize Revenue**: monthly ratable or point-in-time schedules per obligation, with terminal-period remainder absorption.
@@ -47,7 +47,7 @@ Soluqube does not automate contract-modification accounting today; it is on the 
 Guide: https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10-25-13
 
 ### 4. Clause Evidence & Audit Documentation Support
-- Each performance obligation keeps the page number and the excerpt of the clause it came from. Soluqube does not claim pixel-level coordinate extraction.
+- Each performance obligation links to the exact page, the verbatim clause and a highlight on that line, drawn from the PDF's own text layer (uploaded PDFs with a text layer). Scanned PDFs without a text layer are refused; built-in samples use an approximate overlay.
 - Exports (Excel workpaper and JSON evidence pack) carry SHA-256 integrity hashes and a Merkle root computed on the export, so a reviewer can re-run the same inputs, get byte-identical output and confirm the file has not changed.
 - Hashes are file-integrity evidence, not an attestation and not evidence that SSP judgements are correct.
 
@@ -56,7 +56,7 @@ Guide: https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Arithmetic** | Integer (BigInt), 10^6 scale, rounded to cents | Not published | Not published | Not published | Not published | Extraction only | Not published |
 | **Residual-cent rule** | Terminal-period remainder absorption (ties to the cent) | Not published | Not published | Not published | Not published | N/A (no ledger) | Not published |
-| **Clause evidence** | Page + excerpt per obligation | Not advertised | AI document extraction | CPQ records | Event data | Checklist links | Reference fields |
+| **Clause evidence** | Page, verbatim excerpt and line highlight per obligation | Not advertised | AI document extraction | CPQ records | Event data | Checklist links | Reference fields |
 | **Contract modifications** | Roadmap (not automated today) | Check vendor | Check vendor | Check vendor | Check vendor | N/A | Supported |
 | **Ind AS 115 + 18% GST** | GST excluded before allocation (INR contracts) | Not advertised | Not advertised | Not advertised | Not advertised | Not advertised | Via configuration |
 | **ERP posting** | Export you review and post (no live sync) | Billing integrations | Check vendor | Salesforce-native | ERP journal entries | N/A | Integrated |
@@ -73,7 +73,7 @@ Guide: https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10
 - https://soluqube.com/blog/netsuite-arm-and-excel-rounding-errors-in-asc-606 — Excel and ERP rounding errors.
 - https://soluqube.com/blog/netsuite-arm-vs-soluqube-floating-point-rounding-drift-asc-606 — NetSuite ARM vs Soluqube on rounding.
 - https://soluqube.com/blog/pcaob-as-3101-audit-workpapers-merkle-proofs — revenue audit evidence, hashes and Merkle roots.
-- https://soluqube.com/blog/contract-pdf-bounding-box-clause-grounding-auditors — clause evidence (page + excerpt) per obligation.
+- https://soluqube.com/blog/contract-pdf-bounding-box-clause-grounding-auditors — clause evidence (page, verbatim excerpt and line highlight) per obligation.
 - https://soluqube.com/blog/pcaob-qc-1000-fasb-ai-revenue-recognition-audits-2026 — PCAOB QC 1000 and revenue audits.
 - https://soluqube.com/blog/best-maxio-alternatives-contract-revenue-recognition — Maxio alternatives compared.
 - https://soluqube.com/blog/zuora-revpro-vs-soluqube-6-month-erp-implementation-trap — Zuora RevPro vs Soluqube.

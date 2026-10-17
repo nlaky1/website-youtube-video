@@ -13,7 +13,7 @@
       "url": "https://soluqube.com",
       "applicationCategory": "FinancialApplication, BusinessApplication",
       "operatingSystem": "Web",
-      "description": "Deterministic ASC 606 and Ind AS 115 revenue allocation engine. You confirm a contract's obligations and stated prices; it produces the relative-SSP allocation and a full-term schedule in integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, plus clause evidence (page + excerpt) per obligation and SHA-256 integrity hashes on exports.",
+      "description": "Deterministic ASC 606 and Ind AS 115 revenue allocation engine. You confirm a contract's obligations and stated prices; it produces the relative-SSP allocation and a full-term schedule in integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, plus clause evidence (page, verbatim excerpt and a highlight on the cited line, from the PDF's text layer) per obligation and SHA-256 integrity hashes on exports.",
       "softwareVersion": "2.4.0",
       "license": "Proprietary",
       "offers": {
@@ -27,7 +27,7 @@
         "Full-term revenue schedules with terminal-period remainder absorption, ending at $0.00 deferred",
         "Written residual-cent rule: the last-listed obligation absorbs the allocation remainder",
         "Statutory 18% GST excluded from the transaction price for INR contracts (Ind AS 115)",
-        "Clause evidence (page + excerpt) per performance obligation",
+        "Clause evidence (page, verbatim excerpt and line highlight from the PDF text layer) per performance obligation",
         "Excel workpaper and JSON evidence pack with SHA-256 hashes and a Merkle root computed on the export"
       ],
       "provider": {
@@ -100,7 +100,7 @@
         {
           "@type": "HowToStep",
           "name": "Confirm Obligations and Prices",
-          "text": "Confirm the performance obligations, stated prices and standalone selling prices; each obligation keeps the page and excerpt of its clause."
+          "text": "Confirm the performance obligations, stated prices and standalone selling prices; each obligation links to the page, the verbatim clause and a highlight on that line."
         },
         {
           "@type": "HowToStep",
