@@ -75,7 +75,7 @@ export default function ASC606HubPage() {
             </div>
             <h3 className="text-base font-bold text-slate-900">Clause Evidence</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Each obligation keeps the page and excerpt of the clause it came from, so a reviewer can trace it to the signed contract.
+              Each obligation keeps the page and verbatim excerpt of the clause it came from, highlighted on the cited line for uploaded PDFs, so a reviewer can trace it to the signed contract.
             </p>
           </div>
         </div>

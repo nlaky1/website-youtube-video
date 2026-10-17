@@ -95,7 +95,7 @@ export default function SoluqubeVsLeapfinPage() {
             </span>
           </h1>
           <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
-            Leapfin was built to solve payment event pipelines for high-volume B2C apps. Soluqube is engineered for B2B finance leaders who need to audit unstructured, bespoke legal contracts with clause evidence (page + excerpt) per obligation and integer (BigInt) math that ties to the cent.
+            Leapfin was built to solve payment event pipelines for high-volume B2C apps. Soluqube is engineered for B2B finance leaders who need to audit unstructured, bespoke legal contracts with clause evidence per obligation (page, verbatim excerpt and a highlighted line) and integer (BigInt) math that ties to the cent.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
@@ -113,7 +113,7 @@ export default function SoluqubeVsLeapfinPage() {
                 <CheckCircle2 className="w-4 h-4 text-cyan-400" />
                 Clause Evidence References
               </div>
-              <p className="text-xs text-slate-500 mt-1">Page and excerpt of the clause behind each obligation.</p>
+              <p className="text-xs text-slate-500 mt-1">Page, verbatim excerpt and a highlighted line for the clause behind each obligation.</p>
             </div>
             <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40">
               <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Precision & Compliance</div>
@@ -164,7 +164,7 @@ export default function SoluqubeVsLeapfinPage() {
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Visual Clause Grounding</td>
                 <td className="py-4 px-6 text-rose-400">❌ No clause evidence from contract PDFs</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">✅ Clause evidence (page + excerpt)</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">✅ Clause evidence: page, excerpt, highlighted line</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Each obligation traceable to its clause</td>
               </tr>
               <tr>

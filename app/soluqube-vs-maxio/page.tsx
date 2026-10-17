@@ -45,7 +45,7 @@ export default function SoluqubeVsMaxioPage() {
     {
       feature: "Contract Ingestion & Verification",
       maxio: "Manual deal desk data entry or CPQ sync",
-      soluqube: "Clause evidence (page + excerpt) kept with every performance obligation",
+      soluqube: "Clause evidence kept with every performance obligation: page, verbatim excerpt and a highlight on the cited line (uploaded PDFs)",
       advantage: "Every Performance Obligation links to exact PDF clause",
     },
     {
@@ -176,7 +176,7 @@ export default function SoluqubeVsMaxioPage() {
             </div>
             <h3 className="text-2xl font-bold text-white">Soluqube</h3>
             <p className="text-indigo-200 text-sm leading-relaxed">
-              The contract-to-ledger revenue subledger. Takes your signed contracts, records clause evidence (page + excerpt) for each performance obligation, allocates by relative SSP in integer (BigInt) math so the schedule ties to the cent, and delivers audit-ready evidence packages.
+              The contract-to-ledger revenue subledger. Takes your signed contracts, records clause evidence for each performance obligation (page, verbatim excerpt and a highlight on the cited line), allocates by relative SSP in integer (BigInt) math so the schedule ties to the cent, and delivers audit-ready evidence packages.
             </p>
             <ul className="space-y-2 text-xs text-indigo-200 pt-2 border-t border-white/10">
               <li className="flex items-center gap-2">
@@ -251,7 +251,7 @@ export default function SoluqubeVsMaxioPage() {
               <span>The &quot;Contract-to-Quote&quot; Blindspot</span>
             </div>
             <p className="text-slate-600 text-xs leading-relaxed">
-              Maxio only knows what is configured in Salesforce CPQ or typed into invoice line items. If a bespoke PDF amendment promises customized delivery SLAs, termination for convenience, or ramp pricing, billing tools recognize restatable revenue. Soluqube starts from the signed contract: you confirm each obligation and price, and each carries the page and excerpt of its clause.
+              Maxio only knows what is configured in Salesforce CPQ or typed into invoice line items. If a bespoke PDF amendment promises customized delivery SLAs, termination for convenience, or ramp pricing, billing tools recognize restatable revenue. Soluqube starts from the signed contract: you confirm each obligation and price, and each carries the page, the verbatim excerpt and a highlight on the cited line of its clause.
             </p>
           </div>
 

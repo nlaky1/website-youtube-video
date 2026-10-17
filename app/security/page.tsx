@@ -47,7 +47,7 @@ export default function SecurityPage() {
           <li>You upload one PDF at app.soluqube.com while signed in. The upload limit is 4.5 MB.</li>
           <li>
             The server reads the file in memory, checks that it is a PDF, and extracts the parties, price, performance
-            obligations, term and the page and excerpt each value came from.
+            obligations, term and the page and excerpt each value came from, with the position of that text on the page (from the PDF's text layer) so the cited line can be highlighted.
           </li>
           <li>You review and confirm the extracted terms. Only then is the allocation and schedule calculated.</li>
           <li>You download the results (Excel workbook, CSV or JSON). They are built in memory for that download.</li>

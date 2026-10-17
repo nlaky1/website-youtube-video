@@ -417,7 +417,7 @@ export default function Home() {
                     <span>100% DETERMINISTIC</span>
                   </div>
                   <p className="text-xs text-slate-200">
-                    Each performance obligation carries clause evidence (page + excerpt) from the agreement. You confirm obligations and prices; the engine allocates and schedules.
+                    Each performance obligation links to its page, the verbatim clause and, for uploaded text PDFs, a highlight box on the cited line measured from the PDF's text layer. You confirm obligations and prices; the engine allocates and schedules.
                   </p>
                 </div>
               </div>
@@ -601,13 +601,13 @@ export default function Home() {
                     <span className="font-bold text-slate-800">The Vulnerability:</span> Spreadsheet allocations rarely record which clause each obligation and price came from, so the auditor has to re-trace the contract by hand.
                   </div>
                   <div className="p-3 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950 font-sans">
-                    <span className="font-bold text-emerald-900">Soluqube Solution:</span> Soluqube records the page and excerpt behind each obligation and price, and you confirm the terms before the schedule is built.
+                    <span className="font-bold text-emerald-900">Soluqube Solution:</span> Soluqube records the page, the verbatim excerpt and a highlight on the cited line behind each obligation and price, and you confirm the terms before the schedule is built.
                   </div>
                 </div>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
                 <span>Audit Risk: HIGH</span>
-                <span className="text-emerald-700 font-bold">Page + Excerpt Evidence</span>
+                <span className="text-emerald-700 font-bold">Page, Excerpt + Highlighted Line</span>
               </div>
             </div>
 
@@ -1099,7 +1099,7 @@ export default function Home() {
                 <span className="text-base font-bold tracking-tight text-slate-900">SOLUQUBE</span>
               </div>
               <p className="text-xs text-slate-500 leading-relaxed max-w-sm mb-3">
-                Deterministic contract-to-ledger revenue recognition engine. Integer (BigInt) arithmetic and clause evidence (page + excerpt) per obligation.
+                Deterministic contract-to-ledger revenue recognition engine. Integer (BigInt) arithmetic and clause evidence per obligation: page, verbatim excerpt and a highlight on the cited line.
               </p>
               <div className="font-mono text-[11px] text-slate-500">
                 Patent Pending (App. No. 202621096305)

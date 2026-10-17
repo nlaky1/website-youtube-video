@@ -133,7 +133,7 @@ export default function BookDemoPage() {
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="font-bold text-slate-900">Clause Evidence:</span> Every obligation keeps the page and excerpt it was taken from, for audit substantiation.
+                  <span className="font-bold text-slate-900">Clause Evidence:</span> Every obligation keeps the page and verbatim excerpt it was taken from, and in the app a highlight on the cited line, for audit substantiation.
                 </div>
               </div>
 

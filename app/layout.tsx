@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Soluqube | Defensible SSP Allocation for ASC 606",
     description:
-      "Deterministic SSP allocation, schedules that tie to the cent, clause evidence (page + excerpt) per obligation, and hashed evidence workpapers.",
+      "Deterministic SSP allocation, schedules that tie to the cent, clause evidence per obligation (page, verbatim excerpt and, on uploaded PDFs, a highlight on the cited line), and hashed evidence workpapers.",
     images: ["/og-image.jpg"],
     creator: "@soluqube",
   },
@@ -123,7 +123,7 @@ const structuredData = {
         name: "Free 3-Contract Audit-Defense Workpaper",
       },
       featureList: [
-        "Clause Evidence per Obligation (page + excerpt)",
+        "Clause Evidence per Obligation (page, verbatim excerpt, highlight on the cited line in uploaded text PDFs)",
         "Integer (BigInt) Fixed-Point Parity (10^6 scale, rounded to cents, terminal-period remainder absorption)",
         "Dual Standard ASC 606 & Ind AS 115 Amortization Schedules",
         "Statutory 18% GST Isolation for INR Contracts (Ind AS 115)",

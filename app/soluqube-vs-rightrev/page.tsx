@@ -183,7 +183,7 @@ export default function SoluqubeVsRightRevPage() {
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Contract Clause Grounding</td>
                 <td className="py-4 px-6">Manual reference text field</td>
-                <td className="py-4 px-6 text-cyan-300 font-medium">Clause evidence (page + excerpt)</td>
+                <td className="py-4 px-6 text-cyan-300 font-medium">Clause evidence: page, verbatim excerpt, highlighted line (uploaded PDFs)</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Each obligation traceable to its clause</td>
               </tr>
               <tr>
