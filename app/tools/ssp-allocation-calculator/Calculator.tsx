@@ -500,11 +500,96 @@ export default function SspCalculator() {
               )}
             </div>
             <p className="text-[11px] font-mono text-slate-500">
-              Computed in your browser. Nothing you enter is sent to a server.
+              Computed in your browser. Nothing you enter is sent anywhere unless you use &ldquo;Email me this allocation&rdquo; below.
             </p>
+            <EmailAllocation input={input} />
           </>
         )}
       </section>
+    </div>
+  );
+}
+
+// Optional lead step: emails the allocation (recomputed on the server) via the existing /api/contact route.
+function EmailAllocation({ input }: { input: { price: number; currency: CalcCurrency; termMonths: number; obligations: { name: string; ssp: number; recognition: CalcRecognition }[] } }) {
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState("");
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !email.trim() || !company.trim()) {
+      setError("Name, work email and company are required.");
+      setState("error");
+      return;
+    }
+    setState("sending");
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: name,
+          email,
+          company,
+          help: "SSP calculator: email me this allocation",
+          calculator: input,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) throw new Error(data.error || "Could not send the email. Please try again.");
+      setState("sent");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not send the email. Please try again.");
+      setState("error");
+    }
+  };
+
+  if (state === "sent") {
+    return (
+      <div id="calc-email-sent" className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900">
+        Sent. Check {email} for the allocation and the CSV workbook (opens in Excel).
+      </div>
+    );
+  }
+  return (
+    <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 space-y-3">
+      {!open ? (
+        <button
+          type="button"
+          id="calc-email-open"
+          onClick={() => setOpen(true)}
+          className="text-sm font-semibold text-slate-900 underline underline-offset-4 hover:text-slate-700"
+        >
+          Email me this allocation as a workbook (optional)
+        </button>
+      ) : (
+        <form onSubmit={submit} className="space-y-3" id="calc-email-form">
+          <div className="text-sm font-semibold text-slate-900">Email me this allocation as a workbook</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <input className={inputCls()} placeholder="Your name" aria-label="Your name" value={name} onChange={(e) => setName(e.target.value)} maxLength={200} />
+            <input className={inputCls()} type="email" placeholder="Work email" aria-label="Work email" value={email} onChange={(e) => setEmail(e.target.value)} maxLength={320} />
+            <input className={inputCls()} placeholder="Company" aria-label="Company" value={company} onChange={(e) => setCompany(e.target.value)} maxLength={200} />
+          </div>
+          <p className="text-[11px] text-slate-500">
+            We email you the allocation and a CSV schedule, and keep your name, email and company so the founder can follow up.
+            Obligation names you typed are not included in the email to you. See our{" "}
+            <a href="/privacy" className="underline">Privacy Policy</a>.
+          </p>
+          {state === "error" && <p className="text-xs text-rose-700" role="alert">{error}</p>}
+          <button
+            type="submit"
+            disabled={state === "sending"}
+            className="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800 disabled:opacity-50"
+          >
+            {state === "sending" ? "Sending…" : "Email it to me"}
+          </button>
+        </form>
+      )}
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { checkRateLimit, clampField, escapeHtml, getClientIp, isValidSingleEmail, stripCrlf } from "@/lib/formSecurity";
+import { buildCalculatorEmail } from "@/lib/ssp/calculatorEmail";
+import { formatCents } from "@/lib/ssp/calculator";
 
 export async function POST(req: Request) {
   try {
@@ -58,6 +60,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: "Please provide a single valid email address." }, { status: 400 });
     }
 
+    // Optional: SSP calculator "Email me this allocation". Recomputed server-side; see lib/ssp/calculatorEmail.ts.
+    const calc = body.calculator !== undefined ? buildCalculatorEmail(body.calculator) : null;
+    if (calc && "error" in calc) {
+      return NextResponse.json({ success: false, error: calc.error }, { status: 400 });
+    }
+    const calcHtml = calc
+      ? `<p><strong>SSP calculator result (${calc.namedResult.currency}, ${calc.namedResult.termMonths} months, price ${escapeHtml(formatCents(calc.namedResult.priceCents, calc.namedResult.currency))}):</strong></p><ul>${calc.namedResult.allocations
+          .map((a) => `<li>${escapeHtml(a.name)}: ${a.weightPct.toFixed(4)}% → ${escapeHtml(formatCents(a.engineCents, calc.namedResult.currency))}</li>`)
+          .join("")}</ul>`
+      : "";
+
     const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
     const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 465;
     const smtpUser = process.env.SMTP_USER || "nikhil@soluqube.com";
@@ -92,6 +105,7 @@ export async function POST(req: Request) {
             <p><strong>Email:</strong> <a href="mailto:${workEmail}">${workEmail}</a></p>
             <p><strong>Primary Need:</strong> ${h.primaryNeed}</p>
             ${details ? `<p><strong>Details:</strong> ${h.details}</p>` : ""}
+            ${calcHtml}
             <div style="margin-top: 20px; font-size: 11px; color: #94a3b8;">Ref: ${referenceId} • ${timestamp}</div>
           </div>
         </div>
@@ -104,18 +118,34 @@ export async function POST(req: Request) {
       from: `"Nikhil Laky | Soluqube" <${senderEmail}>`,
       to: workEmail,
       replyTo: senderEmail,
-      subject: "Thank you for contacting Soluqube",
-      text: [
-        "Hello,",
-        "",
-        "Thank you for reaching out to Soluqube. I have received your message.",
-        "",
-        "I will review your requirements and respond within 1 business day.",
-        "",
-        "Nikhil Laky",
-        "Founder, Soluqube",
-        "https://soluqube.com",
-      ].join("\n"),
+      subject: calc ? "Your SSP allocation workbook (Soluqube)" : "Thank you for contacting Soluqube",
+      text: calc
+        ? [
+            "Hello,",
+            "",
+            "Here is the allocation you ran in the Soluqube SSP calculator. The attached CSV opens in Excel and has the",
+            "allocation and the full month-by-month schedule. Obligations are numbered in the order you entered them.",
+            "",
+            calc.summaryText,
+            "",
+            "This is a calculation aid, not accounting advice; SSP estimates are your judgement.",
+            "",
+            "Nikhil Laky",
+            "Founder, Soluqube",
+            "https://soluqube.com",
+          ].join("\n")
+        : [
+            "Hello,",
+            "",
+            "Thank you for reaching out to Soluqube. I have received your message.",
+            "",
+            "I will review your requirements and respond within 1 business day.",
+            "",
+            "Nikhil Laky",
+            "Founder, Soluqube",
+            "https://soluqube.com",
+          ].join("\n"),
+      ...(calc ? { attachments: [{ filename: "soluqube-ssp-allocation.csv", content: calc.csv, contentType: "text/csv; charset=utf-8" }] } : {}),
     };
 
     await Promise.all([

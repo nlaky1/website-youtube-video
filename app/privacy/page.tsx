@@ -24,8 +24,8 @@ const UL = ({ children }: { children: React.ReactNode }) => (
 
 const collected = [
   {
-    where: "Forms on soluqube.com (contact, book a walkthrough, free workpaper, design partners)",
-    what: "Name, work email, company, role, the details you type, ERP and accounting standard choices",
+    where: "Forms on soluqube.com (contact, book a walkthrough, free workpaper, design partners, \"Email me this allocation\" on the SSP calculator)",
+    what: "Name, work email, company, role, the details you type, ERP and accounting standard choices; for the calculator, the inputs you choose to email yourself",
     why: "To reply to you and deliver what you asked for",
   },
   {
