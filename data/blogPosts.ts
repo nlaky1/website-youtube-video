@@ -2080,5 +2080,203 @@ GST is handled at invoice only; it is not a GST return or tax-liability schedule
 
 Run your own onboarding and subscription split, on the net amount after GST, in the [SSP allocation calculator](/tools/ssp-allocation-calculator) to see each allocation and the schedule. See the [relative SSP method](/glossary/relative-ssp-method) and [standalone selling price](/glossary/standalone-selling-price) glossary entries, or send three contracts for a [free 3-contract workpaper](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261017-worked-examples).
     `
+  },
+  {
+    slug: "revenue-contract-testing-qoe-ssp-allocation",
+    title: "How do QoE teams test SSP allocation on a contract sample?",
+    subtitle: "How QoE and diligence teams recompute SSP allocation and deferred revenue on a sample of a SaaS target's contracts, and document each difference.",
+    publishedAt: "October 18, 2026",
+    updatedAt: "October 18, 2026",
+    readTime: "5 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "Quality of Earnings", "Due Diligence", "SSP Allocation", "Deferred Revenue"],
+    targetQuery: "revenue contract testing quality of earnings SaaS",
+    definitionAnchor: "Revenue contract testing in a QoE is the re-performance, on a sample of a target's customer contracts, of the transaction-price allocation and the revenue schedule, compared against the target's reported revenue by period and deferred revenue balance.",
+    excerpt: "Pick a contract sample, re-perform the relative-SSP allocation and schedule, compare revenue by period and deferred revenue with the target's ledger, and document each difference with its clause.",
+    toc: [
+      { id: "why-does-saas-revenue-quality-hinge-on-contract-level-recomputation", label: "Why does SaaS revenue quality hinge on contract-level recomputation?" },
+      { id: "how-does-a-deal-team-select-a-sample-of-contracts", label: "How does a deal team select a sample of contracts?" },
+      { id: "how-do-you-recompute-the-allocation-and-schedule-for-each-sampled-contract", label: "How do you recompute the allocation and schedule for each sampled contract?" },
+      { id: "how-should-differences-be-documented", label: "How should differences be documented?" },
+      { id: "what-does-a-deterministic-hashed-workpaper-add-to-the-data-room-evidence", label: "What does a deterministic, hashed workpaper add to the data-room evidence?" },
+      { id: "what-does-contract-level-recomputation-not-cover", label: "What does contract-level recomputation not cover?" },
+      { id: "how-can-you-run-it-on-your-next-deal", label: "How can you run it on your next deal?" }
+    ],
+    faqs: [
+      {
+        question: "Is this a QoE report or an audit?",
+        answer: "No. It is a recomputation of allocation and schedules for the sampled contracts, with clause evidence and a hashed export. The deal team writes the QoE and makes the judgements."
+      },
+      {
+        question: "What if the target has amended contracts?",
+        answer: "Amendments are flagged on the exceptions list. Contract-modification accounting is not computed today."
+      },
+      {
+        question: "Which standards and currencies?",
+        answer: "ASC 606 and Ind AS 115, for USD and INR contracts. For INR contracts, 18% GST is isolated before allocation; US contracts carry no GST."
+      }
+    ],
+    engineVerified: true,
+    content: `
+In a quality of earnings (QoE) review of a SaaS target, revenue quality usually comes down to contracts. Billings say little until someone recomputes, contract by contract, how each price was allocated and spread over the term. This guide is for transaction advisory and financial due diligence teams. It covers picking a sample, re-performing the relative standalone selling price (SSP) allocation and schedule, comparing the result with the target's revenue by period and deferred revenue, documenting each difference with its clause, and where the work stops. For the rounding mechanics behind a schedule that ties to the cent, see [our residual-cent post](/blog/ssp-allocation-rounding-residual-cent-asc-606).
+
+## Why does SaaS revenue quality hinge on contract-level recomputation?
+
+Because reported SaaS revenue is the output of three judgements made per contract: how the price was allocated across obligations, how ratable revenue was spread over the term, and where the cutoff fell. A misallocated implementation fee, or ratable revenue started a month early, moves revenue between periods and changes the deferred balance a buyer inherits.
+
+Under ASC 606-10-32-28 to 32-41, the transaction price is allocated to each performance obligation in proportion to its standalone selling price. Recognising that allocation over time creates the contract liability (deferred revenue) presented under ASC 606-10-45-1 to 45-2. If the allocation is off, every later period is off too.
+
+## How does a deal team select a sample of contracts?
+
+Most teams combine coverage and risk: the largest contracts by annual value, plus contracts with bundled obligations, non-standard terms, large discounts or signing dates near period end. The sample has to be big enough to support a view on the population and small enough to re-perform properly in the diligence window.
+
+Bundles of subscription, implementation and support deserve extra weight, because allocation errors live there; so do late-period signings, where ratable revenue cutoff slips.
+
+## How do you recompute the allocation and schedule for each sampled contract?
+
+For each sampled contract, confirm the performance obligations, the stated prices, the SSP basis and the term. Then allocate the transaction price on a relative-SSP basis, build the full-term schedule, and compare revenue by period and the deferred balance at the cutoff date with the figures in the target's ledger.
+
+Take one contract in the sample: a $100,000 transaction price with three obligations whose SSPs are $30,000, $30,000 and $120,000.
+
+| Obligation | SSP | Allocated |
+|---|---:|---:|
+| Implementation | $30,000 | $16,666.67 |
+| Premium support | $30,000 | $16,666.67 |
+| Platform subscription | $120,000 | $66,666.66 |
+| **Total** | **$180,000** | **$100,000.00** |
+
+Rounding each line independently gives $100,000.01; assigning the residual cent by a fixed rule ties the allocation to the price. The schedule works the same way: a $100,000 ratable amount over 36 months schedules as 35 × $2,777.77 plus a final month of $2,778.05, exactly $100,000.00, so deferred revenue ends at $0.00. You can re-perform the allocation with the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## How should differences be documented?
+
+Each difference between the recomputed figures and the target's ledger goes on an exceptions list with the contract, the period, the amount and the cause. Attach the clause evidence: the contract page and the verbatim excerpt that sets the obligation, price or term. A reviewer can then trace the difference without reopening the data room.
+
+In the Soluqube app, uploaded text-layer PDFs also show a highlight on the cited line; the exported workpaper carries the page and excerpt. Scanned PDFs without a text layer are not accepted, and the built-in samples use an approximate overlay.
+
+Common causes: a different SSP basis, an implementation fee recognised up front, a start date that differs from the contract, or an amendment the ledger reflects but the sampled document does not.
+
+## What does a deterministic, hashed workpaper add to the data-room evidence?
+
+It makes the recomputation re-runnable. When the allocation and schedule are computed in integer arithmetic and exported with a SHA-256 hash, anyone with the same inputs gets byte-identical output. The buyer or the target's team can re-run a disputed contract and compare the hash, instead of arguing over whose spreadsheet is right.
+
+Opaque tools fail that test; see [why finance teams reject black-box AI](/blog/why-finance-teams-reject-black-box-ai).
+
+## What does contract-level recomputation not cover?
+
+It is a calculation and evidence trail, not a QoE opinion. SSP judgements, normalisation adjustments and the conclusions in the report stay with the deal team. Contract modifications are flagged, not accounted for, and usage-based fees are not scheduled. The extraction of contract terms is a starting point that a person confirms.
+
+Recomputation also cannot fix the data quality of the target's own ledger; it shows where the ledger and the contracts disagree.
+
+## How can you run it on your next deal?
+
+The QoE Deal Pack covers up to 25 contracts per deal, delivered within 5 business days: relative-SSP allocation per obligation, full-term schedules that tie to the cent, and a SHA-256 hashed evidence workbook per contract. It is $1,750 per deal, a founding price for the first 10 customers. You confirm the obligations and SSPs used.
+
+The list price is $3,500; see [pricing](/pricing). Want to see it first? Request a [free 3-contract workpaper](https://soluqube.com/design-partners) on three contracts of your choice.
+    `
+  },
+  {
+    slug: "outsourced-team-ssp-allocation-documentation-us-saas",
+    title: "How should an outsourced team document SSP allocation?",
+    subtitle: "A step-by-step SSP documentation pack for offshore accounting teams preparing ASC 606 revenue support for US SaaS clients and their auditors.",
+    publishedAt: "October 18, 2026",
+    updatedAt: "October 18, 2026",
+    readTime: "5 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Outsourced Accounting", "Audit Evidence", "Documentation"],
+    targetQuery: "how to document SSP allocation for an ASC 606 audit",
+    definitionAnchor: "An SSP documentation pack is the set of memos, source data, calculations and sign-offs that shows how a contract's transaction price was allocated to each performance obligation on a relative standalone selling price basis under ASC 606-10-32-28 to 32-41.",
+    excerpt: "What a US SaaS client's auditor asks for on SSP, the six-part documentation pack an outsourced team can build per contract, a worked example that ties to the cent, and who signs what.",
+    toc: [
+      { id: "what-will-the-us-clients-auditor-ask-for-on-ssp", label: "What will the US client's auditor ask for on SSP?" },
+      { id: "what-goes-in-the-ssp-documentation-pack", label: "What goes in the SSP documentation pack?" },
+      { id: "how-does-the-worked-example-tie-to-the-transaction-price", label: "How does the worked example tie to the transaction price?" },
+      { id: "what-should-the-handoff-checklist-confirm", label: "What should the handoff checklist confirm?" },
+      { id: "who-signs-what", label: "Who signs what?" },
+      { id: "how-can-your-firm-try-it-on-three-client-contracts", label: "How can your firm try it on three client contracts?" }
+    ],
+    faqs: [
+      {
+        question: "Can an outsourced team choose the SSP method for a client?",
+        answer: "The team can propose a method and document its basis. Choosing it is a management judgement under ASC 606-10-32-31 to 32-35, so the client's Controller approves it and the approval is recorded in the pack."
+      },
+      {
+        question: "Why record a hash of the export?",
+        answer: "A SHA-256 hash lets the client and auditor confirm the file under review is the approved version. Any change to the file changes the hash."
+      },
+      {
+        question: "What if the allocated lines are a cent off the transaction price?",
+        answer: "Assign the residual cent with a written, consistently applied rule, for example to the last-listed line. The allocation then ties exactly, as in the $100,000 example above. Our residual-cent post compares the different rules."
+      }
+    ],
+    engineVerified: true,
+    content: `
+If your firm in India, Pakistan or the Philippines prepares revenue support for a US SaaS client, the standalone selling price (SSP) allocation is the part the client's auditor is most likely to question. This guide sets out what that auditor generally asks for, the documentation pack an outsourced team can build for each contract, a worked example that ties to the cent, and who signs what. The rounding mechanics are covered in [our residual-cent post](/blog/ssp-allocation-rounding-residual-cent-asc-606), and the reasons reviewers distrust opaque tools are in [why finance teams reject black-box AI](/blog/why-finance-teams-reject-black-box-ai). This article covers the handoff: turning contracts into evidence a US Controller can review, approve and give to the auditor.
+
+## What will the US client's auditor ask for on SSP?
+
+Auditors generally look for evidence that each [standalone selling price](/glossary/standalone-selling-price) has a documented basis, that observable inputs were used where available, and that the allocation follows ASC 606-10-32-28 to 32-41. They also look for evidence that the client's numbers are complete and accurate, and that management reviewed the judgements.
+
+ASC 606-10-32-29 requires allocation on a [relative SSP basis](/glossary/relative-ssp-method). Under 32-31 to 32-35, SSP is the observable price where one exists, and otherwise an estimate that uses observable inputs as far as possible. Paragraphs 32-36 to 32-41 cover discounts and variable consideration.
+
+PCAOB AS 1105 asks auditors to evaluate whether information produced by the company is reliable enough, which usually means testing its accuracy and completeness. AS 1215 governs the auditor's own documentation. In practice, expect requests for source data, recalculations, and evidence of who approved what.
+
+## What goes in the SSP documentation pack?
+
+A pack that works for a single contract has six parts: a contract inventory, a performance obligation memo citing clause page and excerpt, an SSP basis per obligation, the allocation calculation, a schedule that ties to the transaction price, and the Controller's sign-off. Each export also carries a version and a hash.
+
+1. **Contract inventory.** Each contract, order form and SOW, with date, counterparty, currency and transaction price.
+2. **Performance obligation memo.** For each obligation, the clause page and a short verbatim excerpt that establishes it.
+3. **SSP basis per obligation.** The method (observable price, adjusted market assessment, expected cost plus margin, residual) and the source data, such as the price list version or the standalone sales range and period.
+4. **Allocation calculation.** Relative SSP weights, the allocated amounts, and a written rule for which line absorbs any residual cent.
+5. **Revenue schedule.** Period-by-period amounts that sum to each allocated amount and, in total, to the transaction price.
+6. **Review and version control.** The Controller's dated sign-off, plus a version number and SHA-256 hash of the export so the auditor can confirm it is the approved file.
+
+## How does the worked example tie to the transaction price?
+
+It ties when the residual cent is assigned by a fixed rule. A $100,000 contract with SSPs of $30,000, $30,000 and $120,000 allocates $16,666.67, $16,666.67 and $66,666.66, totalling $100,000.00. Rounding each line independently gives $100,000.01, which leaves a one-cent difference the reviewer has to explain.
+
+| Obligation | SSP | Allocated |
+|---|---:|---:|
+| Implementation | $30,000 | $16,666.67 |
+| Premium support | $30,000 | $16,666.67 |
+| Platform subscription | $120,000 | $66,666.66 |
+| **Total** | **$180,000** | **$100,000.00** |
+
+The schedule follows the same principle. Take a $100,000 ratable amount over 36 months: it schedules as 35 × $2,777.77 plus a final month of $2,778.05, which is exactly $100,000.00. The final period absorbs the remainder, so the deferred balance ends at $0.00. You can re-perform the allocation with the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## What should the handoff checklist confirm?
+
+Before the pack goes to the client, confirm that every number traces back to a source document and every judgement has an owner. The checklist below is the minimum we suggest for each contract. The client's Controller should be able to review it without having to rebuild anything.
+
+| Item | Prepared by | Check |
+|---|---|---|
+| Contract inventory complete | Outsourced team | Agrees to client's contract list |
+| POB memo with page + excerpt | Outsourced team | Every obligation cited |
+| SSP method and source data | Outsourced team, from client data | Method named per line |
+| Allocation ties to transaction price | Outsourced team | Difference = $0.00 |
+| Schedule ties to allocation | Outsourced team | Ending deferred = $0.00 |
+| Judgements approved | Client Controller | Signed and dated |
+| Export version + SHA-256 hash | Outsourced team | Hash recorded in sign-off |
+
+## Who signs what?
+
+The client owns every accounting judgement: which obligations exist, which SSP method applies, and which policies govern discounts and rounding. The outsourced team prepares the evidence, calculations and schedules and documents its sources. The Controller reviews and signs, and only the client's management represents the numbers to the auditor.
+
+Write this boundary into the engagement letter. Label any SSP estimate the team proposes as a proposal until the Controller approves it, and flag contract modifications to the client separately.
+
+## How can your firm try it on three client contracts?
+
+Your firm can get a free 3-contract workpaper through the [design partner programme](https://soluqube.com/design-partners). You confirm the obligations and stated prices, and you get back the allocation, a schedule that ties to the cent, page-and-excerpt clause evidence and a hashed export, ready for the Controller to review.
+
+Firm Tool Access is $49 a month per firm, a founding price for the first 10 customers ([pricing](https://soluqube.com/pricing)). In the app, uploaded text-layer PDFs also show a highlight on the cited line; built-in samples use an approximate overlay.
+    `
   }
 ];
