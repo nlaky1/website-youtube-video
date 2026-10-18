@@ -1783,5 +1783,302 @@ A $100,000 contract bundles implementation (SSP $30,000), premium support (SSP $
 
 Download the [one-page sample contract (PDF)](https://soluqube.com/samples/soluqube-ssp-sample.pdf), then open it in the [Soluqube app](https://app.soluqube.com/) to see confirmed inputs, page-and-excerpt evidence and the hashed export on a schedule you can re-run. Outsourced firms and QoE teams can [join the design-partner list](https://soluqube.com/design-partners) for a free 3-contract audit-defense workpaper.
     `
+  },
+  {
+    slug: "ssp-allocation-example-saas-subscription-implementation",
+    title: "How do you allocate SSP to subscription + implementation?",
+    subtitle: "A $126,000, 36-month SaaS contract with a platform subscription and implementation, allocated by relative SSP, with the full monthly schedule.",
+    publishedAt: "October 18, 2026",
+    updatedAt: "October 18, 2026",
+    readTime: "4 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Worked Example", "Implementation Services", "Subscription Revenue"],
+    targetQuery: "SSP allocation example SaaS subscription implementation",
+    definitionAnchor: "In a SaaS bundle, relative standalone selling price allocation splits the contract price between the subscription and implementation in proportion to what each would sell for on its own, so any discount is shared by both.",
+    excerpt: "A $126,000 bundle with $150,000 of total SSP: allocate $110,880.00 to the subscription and $15,120.00 to implementation, then schedule 36 equal months.",
+    toc: [
+      { id: "what-is-the-contract-in-this-example", label: "What is the contract in this example?" },
+      { id: "how-is-the-126000-allocated-by-relative-ssp", label: "How is the $126,000 allocated by relative SSP?" },
+      { id: "what-does-the-36-month-revenue-schedule-look-like", label: "What does the 36-month revenue schedule look like?" },
+      { id: "why-is-there-no-remainder-month-in-this-schedule", label: "Why is there no remainder month in this schedule?" },
+      { id: "what-does-this-example-not-cover", label: "What does this example not cover?" },
+      { id: "how-can-you-re-perform-it-on-your-own-contracts", label: "How can you re-perform it on your own contracts?" }
+    ],
+    faqs: [
+      {
+        question: "Is the $24,000 discount allocated only to implementation?",
+        answer: "Not in this example. ASC 606-10-32-36 to 32-38 require a discount to be allocated proportionately unless observable evidence shows it relates entirely to one or more, but not all, obligations. With no such evidence here, both obligations share it in proportion to their SSPs."
+      },
+      {
+        question: "Why is implementation recognised in month 1?",
+        answer: "The example treats implementation as a distinct service satisfied at a point in time, and the engine places point-in-time obligations in month 1. In practice, timing follows when control transfers, which is a judgement for the entity and its auditor."
+      },
+      {
+        question: "Does every SaaS schedule need a final-month remainder?",
+        answer: "No. A remainder month is only needed when the allocated amount does not divide evenly into whole cents across the term. Here $110,880 / 36 = $3,080 exactly, so every month is equal."
+      }
+    ],
+    engineVerified: true,
+    content: `
+A three-year SaaS deal that bundles a platform subscription with an implementation service is one of the most common Step 4 allocations a revenue team performs. This worked example takes a $126,000 contract, allocates it by relative standalone selling price (SSP) under ASC 606-10-32-28 to 32-41, and lays out the 36-month schedule. Every figure below comes from a run of the Soluqube engine, so you can re-perform it line by line.
+
+## What is the contract in this example?
+
+The customer signs a $126,000 contract for 36 months starting November 2026. It contains two performance obligations: a platform subscription recognised ratably, with an SSP of $132,000, and an implementation service recognised at a point in time in month 1, with an SSP of $18,000. Total SSP is $150,000.
+
+The stated price is $24,000 below the sum of the standalone selling prices. Nothing in the facts suggests the discount relates to only one obligation, so under ASC 606-10-32-36 to 32-38 it is spread proportionately across both. For whether implementation is distinct from the subscription in the first place, see ASC 606-10-25-19 to 25-22; this example assumes it is.
+
+## How is the $126,000 allocated by relative SSP?
+
+Each obligation receives the transaction price multiplied by its SSP over total SSP. The platform subscription gets $126,000 × 132,000 / 150,000, which is $110,880.00. Implementation gets $126,000 × 18,000 / 150,000, which is $15,120.00. The two allocations sum to $126,000.00, so the allocation ties to the transaction price.
+
+Transaction price: $126,000.00
+
+| Obligation | SSP | Share | Allocated |
+|---|---|---|---|
+| Platform subscription | $132,000 | 132,000 / 150,000 | $110,880.00 |
+| Implementation | $18,000 | 18,000 / 150,000 | $15,120.00 |
+| Total | $150,000 | | $126,000.00 |
+
+The shares are written as SSP over total SSP on purpose. Rounded percentages hide the cents; the ratio lets a reviewer re-perform the multiplication exactly. For the method itself, see the [relative SSP method](/glossary/relative-ssp-method) and [standalone selling price](/glossary/standalone-selling-price) glossary entries.
+
+## What does the 36-month revenue schedule look like?
+
+November 2026 recognises $18,200.00: the full $15,120.00 implementation allocation plus the first $3,080.00 of platform revenue. Every following month recognises $3,080.00 of platform revenue through October 2029. The unrecognised balance falls from $107,800.00 after month 1 to $0.00 after month 36, and total revenue is $126,000.00.
+
+| Month | Platform | Implementation | Revenue | Deferred |
+|---|---|---|---|---|
+| Nov 2026 | $3,080.00 | $15,120.00 | $18,200.00 | $107,800.00 |
+| Dec 2026 | $3,080.00 | — | $3,080.00 | $104,720.00 |
+| Jan 2027 | $3,080.00 | — | $3,080.00 | $101,640.00 |
+| ... | $3,080.00 every month | | | |
+| Aug 2029 | $3,080.00 | — | $3,080.00 | $6,160.00 |
+| Sep 2029 | $3,080.00 | — | $3,080.00 | $3,080.00 |
+| Oct 2029 | $3,080.00 | — | $3,080.00 | $0.00 |
+| Total | | | $126,000.00 | |
+
+"Deferred" here is the transaction price not yet recognised. Whether it sits on the balance sheet as a contract liability depends on billing and payment, which ASC 606-10-45-1 to 45-4 govern and this example does not model.
+
+## Why is there no remainder month in this schedule?
+
+Because $110,880 divided by 36 is exactly $3,080, the subscription spreads into 36 equal whole-cent months and nothing is left over. The last month does not need to absorb a remainder. That is a property of these particular numbers, not of the method, and most real contracts will not divide this cleanly.
+
+Compare the [residual-cent worked example](/blog/ssp-allocation-rounding-residual-cent-asc-606). There, the relative-SSP allocations end in repeating decimals, one obligation absorbs the rounding residual, and the ratable schedule gives the final month the leftover cents so the balance still reaches $0.00. A written policy should cover both cases, even when a given contract only exercises one of them.
+
+## What does this example not cover?
+
+This example is deliberately narrow. The engine applies one contract term to every obligation, recognises point-in-time obligations in month 1 with no delivery-date input, and spreads ratable obligations in equal monthly amounts with no daily proration. It has no billing or contract-asset modelling, no usage-based or variable consideration, and no contract modification accounting.
+
+If your implementation goes live in month 4, or the subscription starts mid-month, the timing in the schedule above will differ from yours. The allocation step itself does not change.
+
+## How can you re-perform it on your own contracts?
+
+Run your own subscription and implementation bundle through the [SSP allocation calculator](/tools/ssp-allocation-calculator) to see the allocation and the monthly schedule. Or send us your three hardest contracts for a [free 3-contract workpaper](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261017-worked-examples): the relative-SSP allocation, the schedule that ties to the cent, and a hashed export you can re-run.
+    `
+  },
+  {
+    slug: "ssp-allocation-example-multi-year-ramp-pricing",
+    title: "How is a multi-year SaaS deal with a price ramp recognised?",
+    subtitle: "A $270,000 three-year SaaS ramp deal ($60k, $90k, $120k) treated as one series obligation: the ratable schedule, and contract assets vs liabilities.",
+    publishedAt: "October 18, 2026",
+    updatedAt: "October 18, 2026",
+    readTime: "4 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "Ramp Pricing", "Series Obligation", "Contract Assets", "Worked Example"],
+    targetQuery: "ASC 606 ramp pricing revenue recognition example",
+    definitionAnchor: "A ramp deal charges a rising price each contract year for the same stand-ready service, and when the service is a single series obligation the total transaction price is recognised ratably across the whole term rather than following the invoices.",
+    excerpt: "A $60,000 / $90,000 / $120,000 ramp recognised at $7,500.00 a month, and why the invoices create a contract liability, then a contract asset, each year.",
+    toc: [
+      { id: "what-is-the-contract-in-this-example", label: "What is the contract in this example?" },
+      { id: "how-does-the-engine-recognise-a-270000-ramp", label: "How does the engine recognise a $270,000 ramp?" },
+      { id: "how-do-billing-and-revenue-diverge-on-a-ramp", label: "How do billing and revenue diverge on a ramp?" },
+      { id: "when-does-a-ramp-not-mean-straight-line-revenue", label: "When does a ramp not mean straight-line revenue?" },
+      { id: "what-does-this-example-not-cover", label: "What does this example not cover?" },
+      { id: "how-can-you-check-your-own-ramp-deals", label: "How can you check your own ramp deals?" }
+    ],
+    faqs: [
+      {
+        question: "Does revenue on a ramp deal follow the invoices?",
+        answer: "Not when the subscription is one series obligation delivering the same service each period. Revenue follows the transfer of the service over time, so it is recognised ratably, and the gap between invoices and revenue appears as a contract asset or contract liability."
+      },
+      {
+        question: "Is a price ramp variable consideration?",
+        answer: "In this example the ramp amounts are fixed in the contract, so the $270,000 is fixed consideration. Usage-based or other variable amounts, and the ASC 606-10-32-39 to 32-41 guidance on allocating them, are outside this example."
+      },
+      {
+        question: "Why does the year-1 contract asset reach $30,000?",
+        answer: "By October 2027 the entity has recognised $90,000 of revenue but billed only $60,000 under the assumed annual billing in advance. The $30,000 difference is revenue earned ahead of billing, presented as a contract asset until the year-2 invoice."
+      }
+    ],
+    engineVerified: true,
+    content: `
+Ramp pricing is common in multi-year SaaS deals: the customer pays less in year 1 and more in later years for the same subscription. The invoices rise, but revenue often does not follow them. This worked example takes a three-year ramp of $60,000, $90,000 and $120,000, treats it as one series performance obligation, and shows the engine's ratable schedule alongside the contract asset and contract liability that the billing creates.
+
+## What is the contract in this example?
+
+The customer signs a 36-month subscription starting November 2026 with a price ramp: $60,000 in year 1, $90,000 in year 2 and $120,000 in year 3, a total of $270,000. The service is the same stand-ready platform access in every year, so the example treats it as a single performance obligation made up of a series of distinct periods.
+
+Under ASC 606-10-25-14(b) and 25-15, a series of distinct services that are substantially the same and have the same pattern of transfer is accounted for as one performance obligation. Because there is only one obligation, the relative SSP allocation in ASC 606-10-32-28 to 32-41 assigns the full $270,000 to it; there is nothing to split.
+
+## How does the engine recognise a $270,000 ramp?
+
+The engine recognises the full $270,000 transaction price ratably over 36 months, at $7,500.00 every month from November 2026 to October 2029. The unrecognised balance falls from $262,500 after month 1 to $0 after month 36, and total revenue is $270,000.00, regardless of how the invoices are timed.
+
+| Month | Revenue | Unrecognised transaction price |
+|---|---|---|
+| Nov 2026 | $7,500.00 | $262,500.00 |
+| Dec 2026 | $7,500.00 | $255,000.00 |
+| Jan 2027 | $7,500.00 | $247,500.00 |
+| ... | $7,500.00 every month | |
+| Aug 2029 | $7,500.00 | $15,000.00 |
+| Sep 2029 | $7,500.00 | $7,500.00 |
+| Oct 2029 | $7,500.00 | $0.00 |
+| Total | $270,000.00 | |
+
+The year-1 invoice is $60,000, yet year-1 revenue is higher, because a ramp is a pricing pattern, not a change in what the customer receives.
+
+## How do billing and revenue diverge on a ramp?
+
+When revenue runs ahead of billing, the entity holds a contract asset; when billing runs ahead, it holds a contract liability (ASC 606-10-45-1 to 45-4). On this ramp, each annual invoice creates a liability that unwinds into an asset by year end, until billing and revenue both reach $270,000 in October 2029.
+
+The table below is **computed outside the engine; it assumes annual billing in advance at each contract-year start**. The engine does not model billing or contract assets.
+
+| Point | Cumulative revenue | Cumulative billing | Net position |
+|---|---|---|---|
+| Nov 2026, after bill 1 | 7,500 | 60,000 | 52,500 contract liability |
+| Oct 2027, year-1 end | 90,000 | 60,000 | 30,000 contract asset |
+| Nov 2027, after bill 2 | 97,500 | 150,000 | 52,500 contract liability |
+| Oct 2028, year-2 end | 180,000 | 150,000 | 30,000 contract asset |
+| Nov 2028, after bill 3 | 187,500 | 270,000 | 82,500 contract liability |
+| Oct 2029 | 270,000 | 270,000 | 0 |
+
+## When does a ramp not mean straight-line revenue?
+
+A ramp only supports one ratable schedule if the customer receives the same service every year. If later years add seats, a higher tier or extra modules, the price increase may reflect different standalone selling prices for different goods or services, and the answer changes. That is a judgement for the entity and its auditor.
+
+In that case, the analysis returns to identifying the performance obligations and estimating standalone selling price for each (ASC 606-10-32-31 to 32-35), and the allocation may no longer put the full $270,000 on one line. Document what the customer receives each year either way.
+
+## What does this example not cover?
+
+The engine applies one term to every obligation, recognises point-in-time obligations in month 1 with no delivery-date input, and spreads ratable months equally with no daily proration. It has no billing or contract-asset modelling, which is why the table above sits outside it, no variable consideration and no contract modifications.
+
+## How can you check your own ramp deals?
+
+Model the allocation for multi-obligation deals in the [SSP allocation calculator](/tools/ssp-allocation-calculator), read how the [residual cent](/blog/ssp-allocation-rounding-residual-cent-asc-606) is handled when allocations do not divide evenly, or brush up on the [relative SSP method](/glossary/relative-ssp-method) and [standalone selling price](/glossary/standalone-selling-price). Send three ramp contracts for a [free 3-contract workpaper](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261017-worked-examples).
+    `
+  },
+  {
+    slug: "ssp-allocation-example-ind-as-115-inr-gst",
+    title: "How is 18% GST handled under Ind AS 115 for a SaaS contract?",
+    subtitle: "A ₹11,80,000 invoice with 18% GST: exclude GST from the transaction price, allocate ₹10,00,000 by relative SSP, and build the 12-month schedule.",
+    publishedAt: "October 18, 2026",
+    updatedAt: "October 18, 2026",
+    readTime: "4 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["Ind AS 115", "GST Isolation", "SSP Allocation", "INR Contracts", "Worked Example"],
+    targetQuery: "Ind AS 115 SSP allocation example GST",
+    definitionAnchor: "Under Ind AS 115, GST collected on an invoice is an amount collected on behalf of the government, so it is excluded from the transaction price and only the net consideration is allocated to performance obligations by relative standalone selling price.",
+    excerpt: "Remove ₹1,80,000 of GST from an ₹11,80,000 invoice, allocate ₹10,00,000 by relative SSP, and see the ₹0.02 terminal remainder land in March 2027.",
+    toc: [
+      { id: "what-is-the-contract-in-this-example", label: "What is the contract in this example?" },
+      { id: "why-is-gst-excluded-from-the-transaction-price", label: "Why is GST excluded from the transaction price?" },
+      { id: "how-is-1000000-allocated-by-relative-ssp", label: "How is ₹10,00,000 allocated by relative SSP?" },
+      { id: "what-does-the-12-month-schedule-look-like", label: "What does the 12-month schedule look like?" },
+      { id: "what-does-this-example-not-cover", label: "What does this example not cover?" },
+      { id: "how-can-you-try-it-on-your-own-inr-contracts", label: "How can you try it on your own INR contracts?" }
+    ],
+    faqs: [
+      {
+        question: "Is GST part of revenue under Ind AS 115?",
+        answer: "No. Paragraph 47 excludes amounts collected on behalf of third parties from the transaction price. Output GST is collected for the government, so it is recorded as a liability when invoiced and never passes through revenue or the allocation."
+      },
+      {
+        question: "Why does March 2027 recognise ₹71,428.59?",
+        answer: "The subscription allocation of ₹8,57,142.86 does not divide into 12 equal paisa amounts. Eleven months take ₹71,428.57 and the final month absorbs the ₹0.02 left over, so the schedule ends at exactly ₹0.00."
+      },
+      {
+        question: "Does the same allocation apply to a US contract?",
+        answer: "The relative SSP method is the same under ASC 606. A US contract in this engine carries no GST; whether sales tax is excluded depends on the entity's ASC 606-10-32-2A election."
+      }
+    ],
+    engineVerified: true,
+    content: `
+Indian SaaS invoices carry GST, and the first mistake in a revenue schedule is allocating the gross invoice. This worked example takes an ₹11,80,000 invoice that includes 18% GST, removes the tax from the transaction price, allocates the net ₹10,00,000 between onboarding and a cloud subscription by relative standalone selling price (SSP), and lays out the 12-month schedule. Every figure comes from a run of the Soluqube engine.
+
+## What is the contract in this example?
+
+A customer is invoiced ₹11,80,000 including 18% GST, so the net consideration is ₹10,00,000. The contract runs 12 months from April 2026 and has two performance obligations: onboarding, recognised at a point in time, with an SSP of ₹1,50,000, and a cloud subscription, recognised ratably, with an SSP of ₹9,00,000.
+
+Ind AS 115 applies to companies covered by the Ind AS roadmap under the Companies (Indian Accounting Standards) Rules, 2015, broadly listed companies and companies above specified net-worth thresholds. Check the current MCA notification for whether your entity is in scope.
+
+## Why is GST excluded from the transaction price?
+
+Ind AS 115 paragraph 47 defines the transaction price as the consideration the entity expects to be entitled to, excluding amounts collected on behalf of third parties. Output GST is collected on behalf of the government, so the ₹1,80,000 is a liability, not revenue, and only ₹10,00,000 is allocated to the obligations.
+
+The US has a parallel: ASC 606-10-32-2A lets an entity elect to exclude sales and similar taxes from the transaction price. The mechanics differ, but the outcome for this example is the same: allocate the net amount, not the invoice.
+
+At invoice, the entry is:
+
+| Account | Debit | Credit |
+|---|---|---|
+| Trade receivable | ₹11,80,000 | |
+| Deferred revenue (contract liability) | | ₹10,00,000 |
+| GST output liability | | ₹1,80,000 |
+
+GST is isolated from revenue; the ₹1,80,000 output GST liability arises on the invoice. It is not spread across the revenue schedule.
+
+## How is ₹10,00,000 allocated by relative SSP?
+
+Each obligation receives the net transaction price multiplied by its SSP over total SSP of ₹10,50,000. Onboarding receives ₹1,42,857.14, rounded to the paisa. The subscription is listed last, so it receives ₹10,00,000 minus onboarding, ₹8,57,142.86, absorbing the rounding residual. The two sum to exactly ₹10,00,000.00.
+
+Net transaction price: ₹10,00,000.00
+
+| Obligation | SSP | Share | Allocated |
+|---|---|---|---|
+| Onboarding | ₹1,50,000 | 1,50,000 / 10,50,000 | ₹1,42,857.14 |
+| Cloud subscription | ₹9,00,000 | 9,00,000 / 10,50,000 | ₹8,57,142.86 (absorbs residual) |
+| Total | ₹10,50,000 | | ₹10,00,000.00 |
+
+The allocation guidance is ASC 606-10-32-28 to 32-41 and the corresponding Ind AS 115 paragraphs 73 to 86. Why the last obligation carries the residual is covered in the [residual-cent post](/blog/ssp-allocation-rounding-residual-cent-asc-606).
+
+## What does the 12-month schedule look like?
+
+April 2026 recognises ₹2,14,285.71: all of onboarding plus the first ₹71,428.57 of subscription. Each month to February 2027 recognises ₹71,428.57. March 2027 recognises ₹71,428.59, carrying a ₹0.02 terminal remainder, so the deferred balance ends at ₹0.00 and total revenue is ₹10,00,000.00.
+
+| Month | Onboarding | Subscription | Revenue | Deferred |
+|---|---|---|---|---|
+| Apr 2026 | ₹1,42,857.14 | ₹71,428.57 | ₹2,14,285.71 | ₹7,85,714.29 |
+| May 2026 | — | ₹71,428.57 | ₹71,428.57 | ₹7,14,285.72 |
+| Jun 2026 | — | ₹71,428.57 | ₹71,428.57 | ₹6,42,857.15 |
+| ... | — | ₹71,428.57 each month | | |
+| Jan 2027 | — | ₹71,428.57 | ₹71,428.57 | ₹1,42,857.16 |
+| Feb 2027 | — | ₹71,428.57 | ₹71,428.57 | ₹71,428.59 |
+| Mar 2027 | — | ₹71,428.59 | ₹71,428.59 | ₹0.00 (+₹0.02 remainder) |
+| Total | | | ₹10,00,000.00 | |
+
+Each month's entry debits the contract liability and credits revenue. You can open the same contract as the sample "Example Software India" on [app.soluqube.com](https://app.soluqube.com).
+
+## What does this example not cover?
+
+The engine applies one term to every obligation, recognises point-in-time obligations in month 1 with no delivery-date input, and spreads ratable months equally with no daily proration. It has no billing or contract-asset modelling, no usage-based or variable consideration, and no contract modifications.
+
+GST is handled at invoice only; it is not a GST return or tax-liability schedule.
+
+## How can you try it on your own INR contracts?
+
+Run your own onboarding and subscription split, on the net amount after GST, in the [SSP allocation calculator](/tools/ssp-allocation-calculator) to see each allocation and the schedule. See the [relative SSP method](/glossary/relative-ssp-method) and [standalone selling price](/glossary/standalone-selling-price) glossary entries, or send three contracts for a [free 3-contract workpaper](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261017-worked-examples).
+    `
   }
 ];

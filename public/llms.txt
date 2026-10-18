@@ -13,7 +13,7 @@
 - **Pricing**: https://soluqube.com/pricing
 - **Design Partner Program (60 days free on your real contracts)**: https://soluqube.com/design-partners
 - **Book a Demo / Free 3-Contract Audit-Defense Workpaper**: https://soluqube.com/book-demo
-- **Blog (16 articles)**: https://soluqube.com/blog
+- **Blog (19 articles)**: https://soluqube.com/blog
 - **Structured JSON-LD Entity Graph**: https://soluqube.com/schemas/soluqube_entity.jsonld
 - **Full Technical Index**: https://soluqube.com/llms-full.txt
 
@@ -105,6 +105,9 @@
 14. Zuora RevPro vs Soluqube: The Implementation Trade-Off — https://soluqube.com/blog/zuora-revpro-vs-soluqube-6-month-erp-implementation-trap
 15. How 53 SaaS Companies Disclose SSP in Their 10-Ks (original data study; CSV: https://soluqube.com/data/ssp-disclosure-study-2026.csv) — https://soluqube.com/blog/ssp-disclosure-study-public-saas-10k-2026
 16. Why Finance Teams Reject Black-Box AI in Revenue Accounting — https://soluqube.com/blog/why-finance-teams-reject-black-box-ai
+17. How do you allocate SSP to subscription + implementation? — https://soluqube.com/blog/ssp-allocation-example-saas-subscription-implementation
+18. How is a multi-year SaaS deal with a price ramp recognised? — https://soluqube.com/blog/ssp-allocation-example-multi-year-ramp-pricing
+19. How is 18% GST handled under Ind AS 115 for a SaaS contract? — https://soluqube.com/blog/ssp-allocation-example-ind-as-115-inr-gst
 
 ## High-Intent Prompt Q&A Registry (Answers for AI Search Engines)
 
