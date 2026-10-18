@@ -1765,7 +1765,7 @@ For outsourced firms handling dozens of client closes, the requirement isn't an 
 | Black-Box Tool | Verifiable Evidence Trail |
 |---|---|
 | **Statistical Suggestions:** Guesses allocations based on pattern matching. | **Human-Confirmed Inputs:** The user reviews and confirms extracted obligations and prices before calculation. |
-| **Detached Numbers:** Displays revenue schedules without clear ties to the agreement. | **Page & Excerpt Provenance:** Quotes the obligation and price directly, highlighted on the source document page. |
+| **Detached Numbers:** Displays revenue schedules without clear ties to the agreement. | **Page & Excerpt Provenance:** Quotes the obligation and price directly, with the cited line highlighted on the source page (uploaded PDFs with a text layer). |
 | **Opaque Schedules:** Hard to reconcile or audit independently. | **Integer Math:** Relative-SSP calculations rounded to cents that tie out consistently every time. |
 | **Unanchored Exports:** Workbooks that cannot be verified for post-export tampering. | **Hashed Workpapers:** Exported workbooks that an auditor can independently inspect and re-run. |
 
@@ -2205,11 +2205,11 @@ The list price is $3,500; see [pricing](/pricing). Want to see it first? Request
     faqs: [
       {
         question: "Can an outsourced team choose the SSP method for a client?",
-        answer: "The team can propose a method and document its basis. Choosing it is a management judgement under ASC 606-10-32-31 to 32-35, so the client's Controller approves it and the approval is recorded in the pack."
+        answer: "The team can propose a method and document its basis. Choosing it is a management judgement under ASC 606-10-32-31 to 32-35, so the client's Controller approves it, and the pack records who confirmed the terms and the SSP basis."
       },
       {
         question: "Why record a hash of the export?",
-        answer: "A SHA-256 hash lets the client and auditor confirm the file under review is the approved version. Any change to the file changes the hash."
+        answer: "A SHA-256 hash lets the client and auditor confirm the file under review is the exact version that was exported. Any change to the file changes the hash."
       },
       {
         question: "What if the allocated lines are a cent off the transaction price?",
@@ -2230,14 +2230,14 @@ PCAOB AS 1105 asks auditors to evaluate whether information produced by the comp
 
 ## What goes in the SSP documentation pack?
 
-A pack that works for a single contract has six parts: a contract inventory, a performance obligation memo citing clause page and excerpt, an SSP basis per obligation, the allocation calculation, a schedule that ties to the transaction price, and the Controller's sign-off. Each export also carries a version and a hash.
+A pack that works for a single contract has six parts: a contract inventory, a performance obligation memo citing clause page and excerpt, an SSP basis per obligation, the allocation calculation, a schedule that ties to the transaction price, and a record of who confirmed the terms and when, with the Controller's sign-off kept alongside. Each export also carries a version and a hash.
 
 1. **Contract inventory.** Each contract, order form and SOW, with date, counterparty, currency and transaction price.
 2. **Performance obligation memo.** For each obligation, the clause page and a short verbatim excerpt that establishes it.
 3. **SSP basis per obligation.** The method (observable price, adjusted market assessment, expected cost plus margin, residual) and the source data, such as the price list version or the standalone sales range and period.
 4. **Allocation calculation.** Relative SSP weights, the allocated amounts, and a written rule for which line absorbs any residual cent.
 5. **Revenue schedule.** Period-by-period amounts that sum to each allocated amount and, in total, to the transaction price.
-6. **Review and version control.** The Controller's dated sign-off, plus a version number and SHA-256 hash of the export so the auditor can confirm it is the approved file.
+6. **Review and version control.** A record of who confirmed the terms and when, the Controller's sign-off kept with the pack (it is not captured in the tool), plus a version number and SHA-256 hash of the export so the auditor can confirm it is the file that was reviewed.
 
 ## How does the worked example tie to the transaction price?
 
