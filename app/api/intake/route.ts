@@ -84,14 +84,14 @@ export async function POST(req: Request) {
 
     // 1. Internal Notification (To Nikhil at Soluqube)
     const internalMailOptions = {
-      from: `"Soluqube Audit Enclave" <${senderEmail}>`,
+      from: `"Soluqube" <${senderEmail}>`,
       to: `${alertEmail}, nikhillaky@gmail.com`,
       replyTo: workEmail,
       subject: `🚨 New Audit-Defense Workpaper Request: ${enterpriseCompany} (${jobTitle})`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
           <div style="background: #0f172a; padding: 20px 24px; color: #ffffff;">
-            <div style="font-size: 11px; font-weight: bold; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Soluqube Deterministic Engine • Executive Intake</div>
+            <div style="font-size: 11px; font-weight: bold; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Soluqube • Workpaper request</div>
             <h2 style="margin: 0; font-size: 18px; font-weight: 700;">🚨 New Audit-Defense Workpaper Request</h2>
           </div>
           
@@ -124,7 +124,7 @@ export async function POST(req: Request) {
                 <td style="padding: 10px 0; color: #0f172a; font-weight: 600;">${h.standard}</td>
               </tr>
               <tr style="border-bottom: 1px solid #f1f5f9;">
-                <td style="padding: 10px 0; color: #64748b; font-weight: 600;">3-Contract Drift Audit:</td>
+                <td style="padding: 10px 0; color: #64748b; font-weight: 600;">Free 3-Contract Workpaper:</td>
                 <td style="padding: 10px 0; color: #059669; font-weight: bold;">${driftAuditOffer !== false ? "✓ Included at no charge" : "Custom Inquiry"}</td>
               </tr>
               ${extraScope ? `
@@ -136,13 +136,13 @@ export async function POST(req: Request) {
             </table>
 
             <div style="margin-top: 24px; padding: 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
-              <a href="mailto:${workEmail}?subject=Soluqube%20Audit%20Request%20-%20${encodeURIComponent(enterpriseCompany)}&body=Hi%20${encodeURIComponent(contactName.split(' ')[0])},%0A%0AThank%20you%20for%20requesting%20a%20historical%20drift%20audit%20for%20${encodeURIComponent(enterpriseCompany)}.%20I%20have%20logged%20your%20request%20under%20reference%20${referenceId}.%0A%0ABest%20regards,%0ANikhil%20Laky%0AFounder,%20Soluqube" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none;">
+              <a href="mailto:${workEmail}?subject=Soluqube%20Audit%20Request%20-%20${encodeURIComponent(enterpriseCompany)}&body=Hi%20${encodeURIComponent(contactName.split(' ')[0])},%0A%0AThank%20you%20for%20requesting%20a%20Free%203-Contract%20Audit-Defense%20Workpaper%20for%20${encodeURIComponent(enterpriseCompany)}.%20I%20have%20logged%20your%20request%20under%20reference%20${referenceId}.%0A%0ABest%20regards,%0ANikhil%20Laky%0AFounder,%20Soluqube" style="display: inline-block; background: #0f172a; color: #ffffff; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none;">
                 Reply to Prospect in 1-Click &rarr;
               </a>
             </div>
 
             <div style="margin-top: 16px; font-size: 11px; color: #94a3b8; text-align: center;">
-              Received at: ${timestamp} • Patent Priority #202621096305
+              Received at: ${timestamp} • Patent Pending (App. No. 202621096305)
             </div>
           </div>
         </div>
