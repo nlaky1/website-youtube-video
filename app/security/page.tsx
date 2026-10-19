@@ -41,6 +41,9 @@ export default function SecurityPage() {
           Soluqube is built and run by one founder. This page states what the product does with a contract you upload
           today, and what it does not do.
         </P>
+        <P>
+          Soluqube is operated by Nikhil Laky (sole proprietor). Technology and operations support: Intuitech Technologies Private Limited, Indore.
+        </P>
 
         <H2>What happens when you upload a contract</H2>
         <OL>

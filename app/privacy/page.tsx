@@ -64,6 +64,9 @@ export default function PrivacyPage() {
           &ldquo;we&rdquo;), Indore, Madhya Pradesh, India, handles personal data on soluqube.com and
           app.soluqube.com.
         </P>
+        <P>
+          Soluqube is operated by Nikhil Laky (sole proprietor). Technology and operations support: Intuitech Technologies Private Limited, Indore.
+        </P>
 
         <H2>What we collect</H2>
         <div className="overflow-x-auto mb-3">

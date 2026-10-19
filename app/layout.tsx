@@ -153,6 +153,7 @@ export default function RootLayout({
       >
         <Analytics />
         {children}
+        <footer className="py-4 text-center text-xs text-slate-400">Powered by Intuitech Technologies Private Limited</footer>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-61QYXZFGCG"} />
         <AnalyticsClicks />
       </body>

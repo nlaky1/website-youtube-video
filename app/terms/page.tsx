@@ -33,6 +33,9 @@ export default function TermsPage() {
           (&ldquo;Soluqube&rdquo;). Soluqube is provided by Nikhil Laky, a sole proprietor trading as Soluqube,
           Indore, Madhya Pradesh, India.
         </P>
+        <P>
+          Soluqube is operated by Nikhil Laky (sole proprietor). Technology and operations support: Intuitech Technologies Private Limited, Indore.
+        </P>
 
         <H2>1. What Soluqube is</H2>
         <P>
