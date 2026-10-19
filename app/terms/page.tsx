@@ -26,7 +26,7 @@ export default function TermsPage() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
         <p className="text-xs font-mono uppercase tracking-wider text-slate-500 mb-3">Legal</p>
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-3">Terms of Service</h1>
-        <p className="text-sm text-slate-500 mb-8">Last updated: 16 October 2026</p>
+        <p className="text-sm text-slate-500 mb-8">Last updated: 19 October 2026</p>
 
         <P>
           These terms apply to soluqube.com, app.soluqube.com and any workbook or service we deliver

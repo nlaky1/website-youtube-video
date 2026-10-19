@@ -34,11 +34,11 @@ export default function SecurityPage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-3">
           How we handle your contracts
         </h1>
-        <p className="text-sm text-slate-500 mb-8">Last updated: 16 October 2026</p>
+        <p className="text-sm text-slate-500 mb-8">Last updated: 19 October 2026</p>
 
         <P>
           Soluqube is operated by Nikhil Laky, a sole proprietor trading as Soluqube, Indore, Madhya Pradesh, India.
-          Soluqube is built and run by one founder. This page states what the product does with a contract you upload
+          Soluqube is built and run by its founder, with operations support from Intuitech. This page states what the product does with a contract you upload
           today, and what it does not do.
         </P>
         <P>
