@@ -1158,7 +1158,7 @@ export default function Home() {
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
             <div>
-              &copy; 2026 Soluqube (Nikhil Laky, sole proprietor). All rights reserved. Deterministic Revenue Recognition Engine.
+              &copy; 2026 Soluqube. All rights reserved. Deterministic Revenue Recognition Engine.
             </div>
             <div className="flex items-center gap-6 font-mono text-[10px]">
               <span>PATENT PENDING (APP. NO. 202621096305)</span>
