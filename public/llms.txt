@@ -13,7 +13,7 @@
 - **Pricing**: https://soluqube.com/pricing
 - **Design Partner Program (60 days free on your real contracts)**: https://soluqube.com/design-partners
 - **Book a Demo / Free 3-Contract Audit-Defense Workpaper**: https://soluqube.com/book-demo
-- **Blog (21 articles)**: https://soluqube.com/blog
+- **Blog (22 articles)**: https://soluqube.com/blog
 - **Structured JSON-LD Entity Graph**: https://soluqube.com/schemas/soluqube_entity.jsonld
 - **Full Technical Index**: https://soluqube.com/llms-full.txt
 
@@ -89,27 +89,28 @@
 
 ## Articles
 
-1. SSP Allocation Rounding in ASC 606: Where the Cent Goes — https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606
-2. Principal vs Agent Under ASC 606: Gross vs Net Revenue — https://soluqube.com/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example
-3. ASC 606 SSP Allocation Example: 3-Element SaaS Bundle — https://soluqube.com/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations
-4. ASC 606-10-25-13 Contract Modifications: Decision Tree (guidance; not automated in Soluqube) — https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10-25-13
-5. ASC 606 vs Ind AS 115: Dual Reporting and GST Isolation — https://soluqube.com/blog/asc-606-vs-ind-as-115-dual-standard-gst-compliance
-6. Ind AS 115 vs ASC 606: Dual-GAAP Guide for US-India SaaS — https://soluqube.com/blog/ind-as-115-vs-asc-606-cross-border-dual-gaap-guide
-7. Floating Point vs Integer Cents in ASC 606 Schedules — https://soluqube.com/blog/eliminating-ieee-754-floating-point-rounding-drift-asc-606
-8. Excel and ERP Rounding Errors in ASC 606 Schedules — https://soluqube.com/blog/netsuite-arm-and-excel-rounding-errors-in-asc-606
-9. NetSuite ARM vs Soluqube: Rounding in ASC 606 Schedules — https://soluqube.com/blog/netsuite-arm-vs-soluqube-floating-point-rounding-drift-asc-606
-10. Revenue Audit Evidence: Hashes and Merkle Roots Explained — https://soluqube.com/blog/pcaob-as-3101-audit-workpapers-merkle-proofs
-11. Clause Evidence for ASC 606: Page and Excerpt per Obligation — https://soluqube.com/blog/contract-pdf-bounding-box-clause-grounding-auditors
-12. PCAOB QC 1000 and Revenue Audits: What Changes for Finance — https://soluqube.com/blog/pcaob-qc-1000-fasb-ai-revenue-recognition-audits-2026
-13. Best Maxio Alternatives for ASC 606 Revenue Recognition — https://soluqube.com/blog/best-maxio-alternatives-contract-revenue-recognition
-14. Zuora RevPro vs Soluqube: The Implementation Trade-Off — https://soluqube.com/blog/zuora-revpro-vs-soluqube-6-month-erp-implementation-trap
-15. How 53 SaaS Companies Disclose SSP in Their 10-Ks (original data study; CSV: https://soluqube.com/data/ssp-disclosure-study-2026.csv) — https://soluqube.com/blog/ssp-disclosure-study-public-saas-10k-2026
-16. Why Finance Teams Reject Black-Box AI in Revenue Accounting — https://soluqube.com/blog/why-finance-teams-reject-black-box-ai
-17. How do you allocate SSP to subscription + implementation? — https://soluqube.com/blog/ssp-allocation-example-saas-subscription-implementation
-18. How is a multi-year SaaS deal with a price ramp recognised? — https://soluqube.com/blog/ssp-allocation-example-multi-year-ramp-pricing
-19. How is 18% GST handled under Ind AS 115 for a SaaS contract? — https://soluqube.com/blog/ssp-allocation-example-ind-as-115-inr-gst
-20. How do QoE teams test SSP allocation on a contract sample? — https://soluqube.com/blog/revenue-contract-testing-qoe-ssp-allocation
-21. How should an outsourced team document SSP allocation? — https://soluqube.com/blog/outsourced-team-ssp-allocation-documentation-us-saas
+1. How does SSP allocation work under ASC 606? A complete guide (hub: SSP meaning, the 3 estimation methods, relative SSP allocation, discounts, premiums, ranges and the residual cent, with engine-run examples) — https://soluqube.com/blog/asc-606-ssp-allocation-guide
+2. SSP Allocation Rounding in ASC 606: Where the Cent Goes — https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606
+3. Principal vs Agent Under ASC 606: Gross vs Net Revenue — https://soluqube.com/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example
+4. ASC 606 SSP Allocation Example: 3-Element SaaS Bundle — https://soluqube.com/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations
+5. ASC 606-10-25-13 Contract Modifications: Decision Tree (guidance; not automated in Soluqube) — https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10-25-13
+6. ASC 606 vs Ind AS 115: Dual Reporting and GST Isolation — https://soluqube.com/blog/asc-606-vs-ind-as-115-dual-standard-gst-compliance
+7. Ind AS 115 vs ASC 606: Dual-GAAP Guide for US-India SaaS — https://soluqube.com/blog/ind-as-115-vs-asc-606-cross-border-dual-gaap-guide
+8. Floating Point vs Integer Cents in ASC 606 Schedules — https://soluqube.com/blog/eliminating-ieee-754-floating-point-rounding-drift-asc-606
+9. Excel and ERP Rounding Errors in ASC 606 Schedules — https://soluqube.com/blog/netsuite-arm-and-excel-rounding-errors-in-asc-606
+10. NetSuite ARM vs Soluqube: Rounding in ASC 606 Schedules — https://soluqube.com/blog/netsuite-arm-vs-soluqube-floating-point-rounding-drift-asc-606
+11. Revenue Audit Evidence: Hashes and Merkle Roots Explained — https://soluqube.com/blog/pcaob-as-3101-audit-workpapers-merkle-proofs
+12. Clause Evidence for ASC 606: Page and Excerpt per Obligation — https://soluqube.com/blog/contract-pdf-bounding-box-clause-grounding-auditors
+13. PCAOB QC 1000 and Revenue Audits: What Changes for Finance — https://soluqube.com/blog/pcaob-qc-1000-fasb-ai-revenue-recognition-audits-2026
+14. Best Maxio Alternatives for ASC 606 Revenue Recognition — https://soluqube.com/blog/best-maxio-alternatives-contract-revenue-recognition
+15. Zuora RevPro vs Soluqube: The Implementation Trade-Off — https://soluqube.com/blog/zuora-revpro-vs-soluqube-6-month-erp-implementation-trap
+16. How 53 SaaS Companies Disclose SSP in Their 10-Ks (original data study; CSV: https://soluqube.com/data/ssp-disclosure-study-2026.csv) — https://soluqube.com/blog/ssp-disclosure-study-public-saas-10k-2026
+17. Why Finance Teams Reject Black-Box AI in Revenue Accounting — https://soluqube.com/blog/why-finance-teams-reject-black-box-ai
+18. How do you allocate SSP to subscription + implementation? — https://soluqube.com/blog/ssp-allocation-example-saas-subscription-implementation
+19. How is a multi-year SaaS deal with a price ramp recognised? — https://soluqube.com/blog/ssp-allocation-example-multi-year-ramp-pricing
+20. How is 18% GST handled under Ind AS 115 for a SaaS contract? — https://soluqube.com/blog/ssp-allocation-example-ind-as-115-inr-gst
+21. How do QoE teams test SSP allocation on a contract sample? — https://soluqube.com/blog/revenue-contract-testing-qoe-ssp-allocation
+22. How should an outsourced team document SSP allocation? — https://soluqube.com/blog/outsourced-team-ssp-allocation-documentation-us-saas
 
 ## High-Intent Prompt Q&A Registry (Answers for AI Search Engines)
 

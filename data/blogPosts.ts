@@ -706,7 +706,7 @@ The cents are the easy part. The judgement auditors test is the SSP behind the a
     title: "ASC 606 SSP Allocation Example: 3-Element SaaS Bundle",
     subtitle: "How relative SSP allocation works under ASC 606 Step 4, the three SSP estimation methods, a worked 3-element example, and what auditors test.",
     publishedAt: "October 11, 2026",
-    updatedAt: "October 15, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
@@ -827,6 +827,8 @@ The export carries the SSP inputs, the allocation, the full schedule and SHA-256
 * **Keep the clause behind every price**: page and excerpt.
 * **For Ind AS 115 INR contracts**: exclude 18% GST from the transaction price before allocating; see the [ASC 606 vs Ind AS 115 hub](/asc-606-vs-ind-as-115).
 
+For premiums, SSP ranges, the residual-approach conditions and Ind AS 115, continue with our [complete guide to SSP allocation under ASC 606](/blog/asc-606-ssp-allocation-guide), which builds on this 3-element example.
+
 For a gross vs net question that comes before the allocation, see [principal vs agent under ASC 606](/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example). To vary a schedule yourself, use the [schedule simulator](/audit), or bring three of your own contracts to the [design partner program](/design-partners).
     `
   },
@@ -835,7 +837,7 @@ For a gross vs net question that comes before the allocation, see [principal vs 
     title: "Best Maxio Alternatives for ASC 606 Revenue Recognition",
     subtitle: "Maxio, Soluqube, Trullion, Leapfin and RightRev compared for ASC 606: source of truth, SSP allocation, rounding policy, Ind AS 115 and how each is bought.",
     publishedAt: "October 12, 2026",
-    updatedAt: "October 15, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
@@ -940,6 +942,8 @@ When choosing a tool to replace or sit beside Maxio, ask four questions:
 2. **How does it assign the residual cent?** Ask for the written rule, and check that allocations and schedules sum to the transaction price.
 3. **How is it priced?** Prefer published, predictable pricing to fees that scale with billings.
 4. **Do you need Ind AS 115?** If you bill Indian customers in INR, check that GST is excluded from the transaction price before allocation.
+
+Whichever tool you choose, the method it has to reproduce is the one in our [guide to ASC 606 SSP allocation](/blog/asc-606-ssp-allocation-guide).
     `
   },
   {
@@ -1246,6 +1250,7 @@ Request it as a [free 3-contract audit-defense workpaper](/book-demo). For other
     title: "SSP Allocation Rounding in ASC 606: Where the Cent Goes",
     subtitle: "Allocating a bundle by relative SSP leaves fractions of a cent. Worked 3-element example and a defensible policy for the residual.",
     publishedAt: "October 14, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "6 min read",
     author: {
       name: "Soluqube Editorial",
@@ -1279,6 +1284,8 @@ Request it as a [free 3-contract audit-defense workpaper](/book-demo). For other
       }
     ],
     content: `
+The residual cent is the last step of relative SSP allocation; if you need the steps before it (estimating SSP, spreading the discount), start with [how SSP allocation works under ASC 606](/blog/asc-606-ssp-allocation-guide).
+
 ## Why does relative SSP allocation leave a residual cent?
 
 Relative SSP allocation multiplies the transaction price by each obligation's share of total standalone selling price. Those shares are rarely whole cents. Round each line half-up on its own and the rounded lines can add up to one cent more, or one cent less, than the contract. That leftover cent is the residual, and it has to land somewhere.
@@ -1388,6 +1395,7 @@ To run your own bundle, enter the transaction price, obligations and SSPs in the
     title: "Principal vs Agent Under ASC 606: Gross vs Net Revenue",
     subtitle: "Principal or agent under ASC 606? The control test, the 55-39 indicators, a gross vs net worked example, SaaS and reseller cases, and a memo outline.",
     publishedAt: "October 15, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "8 min read",
     author: {
       name: "Soluqube Editorial",
@@ -1555,6 +1563,8 @@ Soluqube does not decide whether you are principal or agent; that judgement belo
 
 The allocation and schedule run in integer arithmetic, rounded to cents, with a written residual-cent rule and the final period absorbing the remainder so each obligation's deferred balance reaches $0.00. Each obligation carries the page, the verbatim clause and a highlight on that line, drawn from the PDF's text layer, and exports are SHA-256 hashed so a reviewer can confirm the file has not changed. For how the residual cent is handled, see the [SSP rounding guide](/blog/ssp-allocation-rounding-residual-cent-asc-606), and for the wider standard, the [ASC 606 hub](/asc-606).
 
+Once gross or net has fixed the transaction price, the next step is splitting it across obligations, covered in [SSP allocation under ASC 606, step by step](/blog/asc-606-ssp-allocation-guide).
+
 To try it on a sample contract, open the [Soluqube sandbox](https://app.soluqube.com/). Finance teams who want to run their own contracts with us for 60 days can apply to the [design partner program](/design-partners).
     `
   },
@@ -1563,7 +1573,7 @@ To try it on a sample contract, open the [Soluqube sandbox](https://app.soluqube
     title: "How 53 SaaS Companies Disclose SSP in Their 10-Ks",
     subtitle: "We read the revenue notes of 53 US-listed software companies. Few name an ASC 606 estimation method, and none discloses how allocations are rounded.",
     publishedAt: "October 15, 2026",
-    updatedAt: "October 15, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
@@ -1710,6 +1720,8 @@ The 10-K is a summary; the support behind it is what the auditor tests. The fili
 
 One row per company: fiscal year, filing URL, revenue band, SSP classification, technique flags, professional-services treatment, whether a critical audit matter references SSP, passage word count and a verbatim quote (40 words or fewer). Download the CSV: [ssp-disclosure-study-2026.csv](https://soluqube.com/data/ssp-disclosure-study-2026.csv). Free to reuse with attribution to Soluqube; report coding errors and we will correct the file.
 
+If your own SSP note is thin, our [guide to SSP allocation methods and ranges](/blog/asc-606-ssp-allocation-guide) sets out the three estimation methods and the range policy these filers rarely describe.
+
 ## About Soluqube
 
 Soluqube is a revenue allocation and schedule engine for SaaS finance teams. It allocates the transaction price on a relative-SSP basis using integer arithmetic and rounds to cents. The final period absorbs the remainder, so each schedule ties back to the transaction price, and exports are hashed so they can be reproduced. Each obligation links to the exact page, the verbatim clause and a highlight on that line, drawn from the PDF's own text layer. We are offering a free design-partner seat to a few controllers preparing SSP and allocation support for this year's audit; apply through the [design partner program](/design-partners).
@@ -1722,7 +1734,7 @@ _Soluqube Editorial. This analysis is based on public SEC filings and is not acc
     title: "Why Finance Teams Reject Black-Box AI in Revenue Accounting",
     subtitle: "Controllers and QoE teams reject black-box AI: their name is on the workpapers. What passes an audit: confirmed inputs, clause evidence, integer math.",
     publishedAt: "October 16, 2026",
-    updatedAt: "October 16, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "4 min read",
     author: {
       name: "Soluqube Editorial",
@@ -1779,6 +1791,8 @@ They need tools that remove manual transcription, highlight the contract evidenc
 
 A $100,000 contract bundles implementation (SSP $30,000), premium support (SSP $30,000) and a platform subscription (SSP $120,000). Total SSP is $180,000, so the $80,000 discount is spread in proportion. Round each line on its own and the three allocations sum to $100,000.01. Soluqube's engine allocates $16,666.67, $16,666.67 and $66,666.66, which sums to exactly $100,000.00, and the exported workbook carries the page and excerpt for each obligation plus a SHA-256 hash. Re-run it and you get the same cents. Full walk-through: [SSP allocation rounding and the residual cent](https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606). Try your own numbers in the [free SSP allocation calculator](https://soluqube.com/tools/ssp-allocation-calculator).
 
+To see what a re-performable allocation looks like in practice, follow the contract in our [worked SSP allocation guide](/blog/asc-606-ssp-allocation-guide).
+
 ## See it on a real contract
 
 Download the [one-page sample contract (PDF)](https://soluqube.com/samples/soluqube-ssp-sample.pdf), then open it in the [Soluqube app](https://app.soluqube.com/) to see confirmed inputs, page-and-excerpt evidence and the hashed export on a schedule you can re-run. Outsourced firms and QoE teams can [join the design-partner list](https://soluqube.com/design-partners) for a free 3-contract audit-defense workpaper.
@@ -1789,7 +1803,7 @@ Download the [one-page sample contract (PDF)](https://soluqube.com/samples/soluq
     title: "How do you allocate SSP to subscription + implementation?",
     subtitle: "A $126,000, 36-month SaaS contract with a platform subscription and implementation, allocated by relative SSP, with the full monthly schedule.",
     publishedAt: "October 18, 2026",
-    updatedAt: "October 18, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "4 min read",
     author: {
       name: "Soluqube Editorial",
@@ -1825,6 +1839,8 @@ Download the [one-page sample contract (PDF)](https://soluqube.com/samples/soluq
     engineVerified: true,
     content: `
 A three-year SaaS deal that bundles a platform subscription with an implementation service is one of the most common Step 4 allocations a revenue team performs. This worked example takes a $126,000 contract, allocates it by relative standalone selling price (SSP) under ASC 606-10-32-28 to 32-41, and lays out the 36-month schedule. Every figure below comes from a run of the Soluqube engine, so you can re-perform it line by line.
+
+This is a two-obligation case; [our SSP allocation guide](/blog/asc-606-ssp-allocation-guide) runs the same method on a three-obligation, 36-month contract with a premium support tier.
 
 ## What is the contract in this example?
 
@@ -1885,7 +1901,7 @@ Run your own subscription and implementation bundle through the [SSP allocation 
     title: "How is a multi-year SaaS deal with a price ramp recognised?",
     subtitle: "A $270,000 three-year SaaS ramp deal ($60k, $90k, $120k) treated as one series obligation: the ratable schedule, and contract assets vs liabilities.",
     publishedAt: "October 18, 2026",
-    updatedAt: "October 18, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "4 min read",
     author: {
       name: "Soluqube Editorial",
@@ -1973,6 +1989,8 @@ The engine applies one term to every obligation, recognises point-in-time obliga
 ## How can you check your own ramp deals?
 
 Model the allocation for multi-obligation deals in the [SSP allocation calculator](/tools/ssp-allocation-calculator), read how the [residual cent](/blog/ssp-allocation-rounding-residual-cent-asc-606) is handled when allocations do not divide evenly, or brush up on the [relative SSP method](/glossary/relative-ssp-method) and [standalone selling price](/glossary/standalone-selling-price). Send three ramp contracts for a [free 3-contract workpaper](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261017-worked-examples).
+
+How the transaction price is split before the ramp schedule is built is covered step by step in the [ASC 606 SSP allocation guide](/blog/asc-606-ssp-allocation-guide).
     `
   },
   {
@@ -1980,7 +1998,7 @@ Model the allocation for multi-obligation deals in the [SSP allocation calculato
     title: "How is 18% GST handled under Ind AS 115 for a SaaS contract?",
     subtitle: "A ₹11,80,000 invoice with 18% GST: exclude GST from the transaction price, allocate ₹10,00,000 by relative SSP, and build the 12-month schedule.",
     publishedAt: "October 18, 2026",
-    updatedAt: "October 18, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "4 min read",
     author: {
       name: "Soluqube Editorial",
@@ -2016,6 +2034,8 @@ Model the allocation for multi-obligation deals in the [SSP allocation calculato
     engineVerified: true,
     content: `
 Indian SaaS invoices carry GST, and the first mistake in a revenue schedule is allocating the gross invoice. This worked example takes an ₹11,80,000 invoice that includes 18% GST, removes the tax from the transaction price, allocates the net ₹10,00,000 between onboarding and a cloud subscription by relative standalone selling price (SSP), and lays out the 12-month schedule. Every figure comes from a run of the Soluqube engine.
+
+Ind AS 115 allocates by relative SSP the same way ASC 606 does; our [step-by-step guide to SSP allocation](/blog/asc-606-ssp-allocation-guide) covers the estimation methods and the discount and premium rules this example relies on.
 
 ## What is the contract in this example?
 
@@ -2086,7 +2106,7 @@ Run your own onboarding and subscription split, on the net amount after GST, in 
     title: "How do QoE teams test SSP allocation on a contract sample?",
     subtitle: "How QoE and diligence teams recompute SSP allocation and deferred revenue on a sample of a SaaS target's contracts, and document each difference.",
     publishedAt: "October 18, 2026",
-    updatedAt: "October 18, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "5 min read",
     author: {
       name: "Soluqube Editorial",
@@ -2123,6 +2143,8 @@ Run your own onboarding and subscription split, on the net amount after GST, in 
     engineVerified: true,
     content: `
 In a quality of earnings (QoE) review of a SaaS target, revenue quality usually comes down to contracts. Billings say little until someone recomputes, contract by contract, how each price was allocated and spread over the term. This guide is for transaction advisory and financial due diligence teams. It covers picking a sample, re-performing the relative standalone selling price (SSP) allocation and schedule, comparing the result with the target's revenue by period and deferred revenue, documenting each difference with its clause, and where the work stops. For the rounding mechanics behind a schedule that ties to the cent, see [our residual-cent post](/blog/ssp-allocation-rounding-residual-cent-asc-606).
+
+Before recomputing a sample, make sure the team agrees on the method being tested; our [SSP allocation guide for ASC 606](/blog/asc-606-ssp-allocation-guide) sets out the formula, the discount rule and the residual-cent rule.
 
 ## Why does SaaS revenue quality hinge on contract-level recomputation?
 
@@ -2183,7 +2205,7 @@ The list price is $3,500; see [pricing](/pricing). Want to see it first? Request
     title: "How should an outsourced team document SSP allocation?",
     subtitle: "A step-by-step SSP documentation pack for offshore accounting teams preparing ASC 606 revenue support for US SaaS clients and their auditors.",
     publishedAt: "October 18, 2026",
-    updatedAt: "October 18, 2026",
+    updatedAt: "October 19, 2026",
     readTime: "5 min read",
     author: {
       name: "Soluqube Editorial",
@@ -2272,11 +2294,202 @@ The client owns every accounting judgement: which obligations exist, which SSP m
 
 Write this boundary into the engagement letter. Label any SSP estimate the team proposes as a proposal until the Controller approves it, and flag contract modifications to the client separately.
 
+For the accounting behind each item in the pack, from the SSP method to the residual-cent rule, see [how SSP allocation works, from estimate to schedule](/blog/asc-606-ssp-allocation-guide).
+
 ## How can your firm try it on three client contracts?
 
 Your firm can get a free 3-contract workpaper through the [design partner programme](https://soluqube.com/design-partners). You confirm the obligations and stated prices, and you get back the allocation, a schedule that ties to the cent, page-and-excerpt clause evidence and a hashed export, ready for the Controller to review.
 
 Firm Tool Access is $49 a month per firm, a founding price for the first 10 customers ([pricing](https://soluqube.com/pricing)). In the app, uploaded text-layer PDFs also show a highlight on the cited line; built-in samples use an approximate overlay.
+    `
+  },
+  {
+    slug: "asc-606-ssp-allocation-guide",
+    title: "How does SSP allocation work under ASC 606? A complete guide",
+    subtitle: "What SSP means under ASC 606, the 3 ways to estimate it, relative SSP allocation, discounts, ranges and rounding, with engine-run examples.",
+    publishedAt: "October 19, 2026",
+    updatedAt: "October 19, 2026",
+    readTime: "9 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Standalone Selling Price", "Relative SSP Method", "Ind AS 115"],
+    targetQuery: "asc 606 ssp",
+    definitionAnchor: "Under ASC 606 Step 4, the transaction price is split across performance obligations in proportion to their standalone selling prices. Estimate each SSP, total them, and multiply the contract price by each obligation's share. Round each line so the allocation ties to the contract exactly, then schedule each obligation.",
+    excerpt: "What SSP means, how to estimate it when nothing is sold on its own, how relative SSP allocation spreads a discount or a premium, and where the rounding cent goes. Includes a $138,000, 36-month contract, run through the Soluqube engine, that ties to $0.00 deferred.",
+    toc: [
+      { id: "what-does-ssp-mean-in-accounting", label: "What does SSP mean in accounting?" },
+      { id: "how-do-you-estimate-ssp-under-asc-606", label: "How do you estimate SSP under ASC 606?" },
+      { id: "when-do-you-use-an-observable-price-instead-of-an-estimate", label: "When do you use an observable price instead of an estimate?" },
+      { id: "how-does-relative-ssp-allocation-work", label: "How does relative SSP allocation work?" },
+      { id: "what-does-a-full-ssp-allocation-look-like-on-a-saas-contract", label: "What does a full SSP allocation look like on a SaaS contract?" },
+      { id: "how-are-discounts-and-premiums-allocated", label: "How are discounts and premiums allocated?" },
+      { id: "when-is-the-residual-approach-allowed", label: "When is the residual approach allowed?" },
+      { id: "how-do-ssp-ranges-work", label: "How do SSP ranges work?" },
+      { id: "where-does-the-rounding-cent-go", label: "Where does the rounding cent go?" },
+      { id: "when-is-revenue-ratable-and-when-is-it-point-in-time", label: "When is revenue ratable and when is it point in time?" },
+      { id: "what-changes-under-ind-as-115-and-18-gst", label: "What changes under Ind AS 115 and 18% GST?" },
+      { id: "what-do-auditors-look-for-on-ssp", label: "What do auditors look for on SSP?" },
+      { id: "what-should-an-ssp-documentation-checklist-include", label: "What should an SSP documentation checklist include?" },
+      { id: "how-can-you-test-this-on-your-own-contracts", label: "How can you test this on your own contracts?" }
+    ],
+    faqs: [
+      {
+        question: "What is SSP in ASC 606?",
+        answer: "SSP (standalone selling price) is the price at which an entity would sell a promised good or service separately to a customer. ASC 606 uses it to split one contract price across performance obligations: each obligation receives the contract price multiplied by its SSP divided by the total SSP."
+      },
+      {
+        question: "Is SSP the same as list price?",
+        answer: "Not necessarily. A list price is SSP evidence only if items actually sell at or near it. If most deals close at a discount to list, the observable standalone price is what customers actually pay, and the list price is just one input to the estimate."
+      },
+      {
+        question: "Can the residual approach be used for a SaaS subscription?",
+        answer: "Only when the subscription's selling price is highly variable or uncertain, and only when the other obligations have observable SSPs. Most SaaS subscriptions sell standalone often enough to support an observable price or an adjusted market assessment, so the residual approach is rare for them."
+      },
+      {
+        question: "Does relative SSP allocation apply to Ind AS 115 contracts?",
+        answer: "Yes. Ind AS 115 allocates on a relative standalone selling price basis, as ASC 606 does. For an Indian SaaS contract, the 18% GST is taken out first: it is collected for the government, so it stays out of the transaction price and is booked as a liability."
+      }
+    ],
+    engineVerified: true,
+    content: `
+Searching "ASC 606 SSP" usually means one of two things: you need to know what a standalone selling price is, or you have a bundled contract and an auditor asking how you split it. This guide covers both. It explains what SSP means, the three estimation methods in ASC 606-10-32-33 to 32-35, how relative SSP allocation works under 32-28 to 32-31, and how discounts, premiums, ranges and rounding fit in. Every worked number below was produced by the Soluqube engine using integer arithmetic, and every allocation ties to the contract price. For the terms, see the [standalone selling price](/glossary/standalone-selling-price) and [relative SSP method](/glossary/relative-ssp-method) glossary entries. To try your own figures, use the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## What does SSP mean in accounting?
+
+SSP means standalone selling price: the price at which an entity would sell a promised good or service separately to a similar customer. In ASC 606 and IFRS 15, SSP is the basis for Step 4 of the five-step model. A bundled contract price is split across its performance obligations in proportion to their SSPs.
+
+SSP is set at contract inception and is not updated for later price changes. It applies to the transaction price, which is fixed in Step 3. If you resell third-party software, decide first whether you report gross or net; our [principal vs agent worked example](/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example) covers that test.
+
+## How do you estimate SSP under ASC 606?
+
+When SSP isn't directly observable, ASC 606-10-32-33 requires an estimate that uses as many observable inputs as possible. Paragraph 32-34 names three suitable methods: adjusted market assessment, expected cost plus a margin, and the residual approach. Under 32-35, you can combine methods, for example applying the residual approach to only one obligation.
+
+- **Adjusted market assessment.** Start from what the market would pay, using competitor pricing for similar products, then adjust for your costs and margins.
+- **Expected cost plus a margin.** Forecast the cost of providing the item, then add an appropriate margin. This works well for implementation and professional services.
+- **[Residual approach](/glossary/residual-approach).** SSP is the total transaction price minus the observable SSPs of the other obligations. It is allowed only in narrow cases, covered below.
+
+## When do you use an observable price instead of an estimate?
+
+Use an [observable price](/glossary/observable-price) whenever one exists. ASC 606-10-32-32 calls the price of a good or service sold separately in similar circumstances to similar customers the best evidence of SSP. A list price counts only if items actually sell near it. If deals routinely close below list, use the actual prices instead.
+
+In SaaS, renewal-only support and standalone training days often have observable prices; a subscription sold only in bundles usually needs an estimate. One contract can mix both. Document which is which, and keep the data each one rests on.
+
+## How does relative SSP allocation work?
+
+Under ASC 606-10-32-28 to 32-31, each performance obligation receives the transaction price multiplied by its SSP, divided by the total SSP of all obligations in the contract. The allocated amounts always add up to the transaction price, so any gap between the price and the total SSP is spread across every obligation in proportion.
+
+The formula for each line is:
+
+**Allocated amount = Transaction price × Obligation SSP ÷ Total SSP**
+
+The results rarely come out in whole cents, so you need a fixed rounding rule. The engine rounds every obligation except the last half-up to the cent, and the last obligation takes the residual.
+
+## What does a full SSP allocation look like on a SaaS contract?
+
+Take a $138,000, 36-month SaaS contract starting December 2026. It has three obligations with a total SSP of $159,000.00: a subscription, a premium support tier (24x7, 1-hour SLA) and onboarding. The $21,000.00 discount is spread pro rata. The allocated amounts tie to $138,000.00, and deferred revenue ends at $0.00.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Subscription | Ratable, 36 months | $120,000.00 | $104,150.94 |
+| Premium support (24x7, 1-hr SLA) | Ratable, 36 months | $30,000.00 | $26,037.74 |
+| Onboarding (absorbs residual cent) | Point in time, month 1 | $9,000.00 | $7,811.32 |
+| **Total** | | **$159,000.00** | **$138,000.00** |
+
+The subscription line is $138,000 × $120,000 ÷ $159,000, which is $104,150.94 after rounding. Premium support is $26,037.74. Onboarding takes what's left: $7,811.32.
+
+Here is the monthly schedule:
+
+| Month | Recognised | Made up of | Deferred after month |
+|---|---:|---|---:|
+| 1 (Dec 2026) | $11,427.67 | Subscription $2,893.08 + support $723.27 + onboarding $7,811.32 | $126,572.33 |
+| 2–34 | $3,616.35 each | Subscription $2,893.08 + support $723.27 | falls by $3,616.35 a month |
+| 35 (Oct 2029) | $3,616.35 | Subscription $2,893.08 + support $723.27 | $3,616.43 |
+| 36 (Nov 2029) | $3,616.43 | Subscription $2,893.14 + support $723.29 | $0.00 |
+
+The subscription recognises $2,893.08 × 35 months and then $2,893.14 in month 36. Support recognises $723.27 × 35 and then $723.29. In each case the final month absorbs the rounding remainder. The engine result's SHA-256 hash is 527ca94f9afa96bae0f16aa3c70377d9918b970299299d6321fd41128a67e853. You can reproduce this exact schedule in the app, or re-perform the allocation in the [calculator](/tools/ssp-allocation-calculator). For a two-obligation version, see [subscription plus implementation](/blog/ssp-allocation-example-saas-subscription-implementation). The [sample SSP workpaper](/samples/soluqube-ssp-sample.pdf) shows the output format.
+
+## How are discounts and premiums allocated?
+
+Under ASC 606-10-32-36 to 32-38, a discount is spread across all obligations in proportion to SSP. It goes to specific obligations only when observable evidence shows that it relates to them. When the contract price is above total SSP, the same relative formula spreads the premium pro rata.
+
+Here is a premium case from the engine. A $66,000.00 contract has a total SSP of $64,500.00, so the price is $1,500.00 above SSP:
+
+| Obligation | SSP | Allocated |
+|---|---:|---:|
+| Subscription (12 months) | $48,000.00 | $49,116.28 |
+| Dedicated CSM (12 months) | $9,000.00 | $9,209.30 |
+| Implementation (absorbs residual cent) | $7,500.00 | $7,674.42 |
+| **Total** | **$64,500.00** | **$66,000.00** |
+
+A premium should also make you look again at your SSPs. A price consistently above total SSP can mean an SSP is understated, or that an obligation is missing from the list.
+
+## When is the residual approach allowed?
+
+ASC 606-10-32-34(c) allows the residual approach only when an item's selling price is highly variable, or uncertain because it is new or has never been sold separately. Even then, the other obligations need observable SSPs. A residual that comes out at zero or near zero is a warning sign, not a valid result.
+
+The residual approach estimates SSP; it doesn't replace relative allocation. Consider any discount under 32-37 before you arrive at the residual. See the [residual approach](/glossary/residual-approach) entry for the steps.
+
+## How do SSP ranges work?
+
+ASC 606 doesn't define SSP ranges, but many SaaS companies use one: a band around the midpoint of their standalone sales prices. Prices inside the band are accepted as SSP. A price outside it is adjusted to the nearest point in the band, or to the midpoint, under a written policy.
+
+A range saves re-estimating SSP for every deal, but recalculate it periodically and keep the sales data behind it. See the [SSP range](/glossary/ssp-range) entry. In public filings, [few SaaS companies name their SSP method](/blog/ssp-disclosure-study-public-saas-10k-2026).
+
+## Where does the rounding cent go?
+
+Relative allocation rarely produces whole cents. If you round every line on its own, the total can end up a cent above or below the contract price. A written rule fixes this by naming one obligation to absorb the residual cent. The engine assigns it to the last-listed obligation, so the allocation ties exactly.
+
+The same applies over time. Monthly amounts are rounded down, and the final month absorbs the remainder. That is why the subscription in the main example ends at $2,893.14 rather than $2,893.08. The amounts involved are far below materiality. The point is that a reviewer can re-perform the allocation and get the same result. Our [residual-cent post](/blog/ssp-allocation-rounding-residual-cent-asc-606) compares the alternative rules.
+
+## When is revenue ratable and when is it point in time?
+
+Revenue is ratable when the customer receives and uses the benefit as you perform, as with a subscription or a support tier that is available every day. Under ASC 606-10-25-27, that is recognition over time. Distinct onboarding or training is usually recognised at a point in time, when it is delivered.
+
+Allocation and timing are separate steps. Step 4 decides how much each obligation gets, and Step 5 decides when it is recognised. In the main example, onboarding's $7,811.32 is all recognised in month 1, while the two ratable lines spread over 36 months. Multi-year deals whose price ramps up raise their own timing questions; see [multi-year ramp pricing](/blog/ssp-allocation-example-multi-year-ramp-pricing).
+
+## What changes under Ind AS 115 and 18% GST?
+
+Ind AS 115 uses the same relative SSP allocation as ASC 606. For an Indian SaaS contract, 18% GST is collected on behalf of the government, so it is not part of the transaction price. You take it out before allocating and book it as an output GST liability on the invoice.
+
+Here is an engine run on an INR contract. The transaction price is ₹24,00,000.00 net of GST, the total SSP is ₹27,50,000.00, and it starts in April 2027:
+
+| Obligation | SSP | Allocated | GST 18% |
+|---|---:|---:|---:|
+| Subscription (24 months) | ₹22,00,000.00 | ₹19,20,000.00 | ₹3,45,600.00 |
+| Onboarding (month 1) | ₹2,50,000.00 | ₹2,18,181.82 | ₹39,272.73 |
+| Premium support (24 months, absorbs residual) | ₹3,00,000.00 | ₹2,61,818.18 | ₹47,127.27 |
+| **Total** | **₹27,50,000.00** | **₹24,00,000.00** | **₹4,32,000.00** |
+
+₹4,32,000 output GST kept out of revenue, booked as a liability on the invoice. The gross invoice is ₹28,32,000.00. The subscription recognises ₹80,000.00 a month, and support recognises ₹10,909.09 a month for 23 months, then ₹10,909.11. US contracts carry no GST. See the [Ind AS 115 GST example](/blog/ssp-allocation-example-ind-as-115-inr-gst).
+
+## What do auditors look for on SSP?
+
+Auditors look for four things. Each SSP should have a documented basis. Observable data should be used wherever it exists. Methods should be applied consistently across similar contracts. And the allocation and schedule should be recalculable from the inputs. They also test whether the contract data feeding the calculation is complete and accurate, and who approved each judgement.
+
+Expect a reviewer to recompute a sample of contracts. Numbers nobody can re-run draw more questions, which is why [finance teams reject black-box AI](/blog/why-finance-teams-reject-black-box-ai) for this work. Diligence teams follow the same pattern: see [how QoE teams test SSP allocation](/blog/revenue-contract-testing-qoe-ssp-allocation).
+
+## What should an SSP documentation checklist include?
+
+For each contract, a usable SSP file has seven parts: the signed contract and order forms; a list of performance obligations with the clause page and excerpt for each; the SSP method and source data for each obligation; the allocation; the residual-cent rule; a schedule that ties to the price; and the Controller's sign-off.
+
+1. Contract inventory: date, counterparty, currency, transaction price.
+2. Performance obligations, each with its clause page and a verbatim excerpt.
+3. The SSP method for each line, with the price list version or sales data behind it.
+4. The allocation, showing that it ties to the transaction price.
+5. The written residual-cent rule.
+6. A schedule ending at $0.00 deferred.
+7. Sign-off, export version and SHA-256 hash.
+
+For teams preparing this for a client, see [how an outsourced team documents SSP allocation](/blog/outsourced-team-ssp-allocation-documentation-us-saas).
+
+## How can you test this on your own contracts?
+
+Send us three of your hardest contracts through the [design partner programme](/design-partners), and you get a free 3-contract workpaper. You confirm the obligations and stated prices. We send back the relative SSP allocation, a schedule that ties to the cent, page-and-excerpt clause evidence for each obligation, and a hashed export your auditor can re-run.
+
+Founding prices for the first 10 customers are on the [pricing](/pricing) page. In the app, uploaded text-layer PDFs also show a highlight on the cited line; built-in samples use an approximate overlay. The engine doesn't model contract modifications, variable consideration or billing schedules yet. Treat those topics as guidance only.
     `
   }
 ];
