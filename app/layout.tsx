@@ -11,7 +11,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://soluqube.com"),
   title: {
-    default: "Soluqube | Defensible SSP Allocation for ASC 606",
+    default: "ASC 606 SSP Allocation Software, Tied to the Cent",
     template: "%s | Soluqube",
   },
   description:
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     canonical: "https://soluqube.com",
   },
   openGraph: {
-    title: "Soluqube | Defensible SSP Allocation for ASC 606",
+    title: "ASC 606 SSP Allocation Software, Tied to the Cent",
     description:
       "Deterministic SSP allocation, a full-term schedule that ties to the cent, and a hashed evidence workpaper your auditor can re-perform. ASC 606 and Ind AS 115.",
     url: "https://soluqube.com",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soluqube | Defensible SSP Allocation for ASC 606",
+    title: "ASC 606 SSP Allocation Software, Tied to the Cent",
     description:
       "Deterministic SSP allocation, schedules that tie to the cent, clause evidence per obligation (page, verbatim excerpt and, on uploaded PDFs, a highlight on the cited line), and hashed evidence workpapers.",
     images: ["/og-image.jpg"],

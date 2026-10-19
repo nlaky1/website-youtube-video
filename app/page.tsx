@@ -233,11 +233,23 @@ export default function Home() {
     },
     {
       q: "What integrations are supported for ERP general ledgers and billing engines?",
-      a: "Today Soluqube exports the allocation and full-term schedule as Excel and CSV files you can review and load into Oracle NetSuite Advanced Revenue Management (ARM), SAP S/4HANA Revenue Accounting and Reporting (RAR), QuickBooks, Tally Prime, or another general ledger. Live ERP connectors are on the roadmap; there is no direct sync today."
+      a: "Today Soluqube exports the allocation and full-term schedule as an Excel workbook and JSON files you can review and load into Oracle NetSuite Advanced Revenue Management (ARM), SAP S/4HANA Revenue Accounting and Reporting (RAR), QuickBooks, Tally Prime, or another general ledger. Live ERP connectors are on the roadmap; there is no direct sync today."
     },
     {
       q: "What deliverables does Soluqube produce for audit readiness?",
-      a: "Soluqube generates a 5-sheet Excel workbook (Summary, Allocation, Schedule, Clause Evidence, Event Log) and a JSON evidence pack containing clause evidence (page + excerpt) per obligation, SHA-256 hashes, and a Merkle root computed on the export, so your auditor can re-run it and get identical output."
+      a: "Soluqube generates a 5-sheet Excel workbook (Summary, Allocation, Schedule, Clause Evidence, Event Log) and a JSON evidence pack containing clause evidence (page + excerpt) per obligation and SHA-256 hashes of the source PDF and the export, so your auditor can re-run it and get identical output."
+    },
+    {
+      q: "What does SSP allocation software do?",
+      a: "It splits one contract price across its performance obligations in proportion to each one's standalone selling price, rounds each allocation to the cent so the total ties, and schedules each obligation as ratable or point-in-time revenue."
+    },
+    {
+      q: "Do I have to type in my contract terms?",
+      a: "You confirm the parties, price, obligations, SSPs and term. Extraction from a text-layer PDF is heuristic and always needs a human check. The engine then does the allocation and the schedule."
+    },
+    {
+      q: "Does it handle Indian GST?",
+      a: "Yes, for INR contracts. 18% GST is kept out of the transaction price and tracked as a liability before allocation. US contracts carry no GST."
     }
   ];
 
@@ -286,6 +298,11 @@ export default function Home() {
           {/* Subheading */}
           <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal">
             When your auditor questions a standalone selling price allocation, Soluqube produces the deterministic allocation, the full-term schedule that ties to $0.00, and a hashed evidence workpaper — integer arithmetic under ASC 606 and Ind AS 115, not a spreadsheet.
+          </p>
+
+          {/* Direct answer (SEO sprint 4.1) */}
+          <p className="mt-6 max-w-3xl mx-auto text-left text-sm sm:text-base text-slate-700 leading-relaxed bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4">
+            Soluqube allocates a SaaS contract&apos;s transaction price by relative standalone selling price under ASC 606 and Ind AS 115, then builds the full-term schedule in integer arithmetic so it ties to the contract value to the cent. Each obligation links to its contract clause, and the export carries a SHA-256 hash for re-performance.
           </p>
 
           {/* Dual Call-to-Action */}
@@ -805,6 +822,9 @@ export default function Home() {
               );
             })}
           </div>
+          <p className="mt-6 text-sm text-slate-600 text-center">
+            <a href="/blog/asc-606-ssp-allocation-guide" className="font-semibold text-slate-900 underline underline-offset-4 hover:text-slate-700">How SSP allocation works under ASC 606</a>
+          </p>
 
         </div>
       </section>

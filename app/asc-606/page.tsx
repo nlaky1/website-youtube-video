@@ -16,11 +16,22 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "ASC 606 SSP Allocation & Revenue Schedules | Soluqube" },
+  title: { absolute: "ASC 606 SSP: Allocation, Schedules and Audit Evidence" },
   description: "Relative-SSP allocation, full-term ASC 606 schedules that tie to the cent, and audit-ready evidence packages with clause references per obligation.",
   alternates: {
     canonical: "https://soluqube.com/asc-606",
   },
+};
+
+const ASC606_FAQS = [
+  { q: "What is SSP in ASC 606?", a: "The price an entity would charge for a distinct good or service sold separately to a similar customer. It is observable when you sell the item alone; otherwise you estimate it (adjusted market assessment, expected cost plus margin, or residual in narrow cases)." },
+  { q: "How is a discount allocated?", a: "By default, in proportion to relative SSP across all obligations. ASC 606-10-32-37 allows it to go to only some obligations when observable evidence meets all three criteria." },
+  { q: "Which recognition patterns does Soluqube schedule?", a: "Ratable monthly and point-in-time obligations, in USD or INR. Contract modifications, variable consideration and billing-based contract assets are not modelled yet." },
+];
+const ASC606_FAQ_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: ASC606_FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 
 export default function ASC606HubPage() {
@@ -38,10 +49,13 @@ export default function ASC606HubPage() {
           </nav>
 
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 max-w-4xl">
-            Deterministic ASC 606 Contract-to-Ledger Engine
+            ASC 606 SSP Allocation and Full-Term Revenue Schedules
           </h1>
           <p className="text-slate-600 text-base max-w-3xl leading-relaxed">
             Relative-SSP allocation and full-term ASC 606 schedules in integer (BigInt) arithmetic that tie to the cent, with clause evidence per obligation and hashed evidence workpapers.
+          </p>
+          <p className="max-w-3xl text-sm sm:text-base text-slate-700 leading-relaxed bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4">
+            Under ASC 606, standalone selling price (SSP) is the price at which you would sell each promised good or service on its own. In Step 4, the contract price is allocated to obligations in proportion to their SSPs. Soluqube computes that allocation and the full-term schedule, tied to the cent.
           </p>
         </div>
       </section>
@@ -98,6 +112,19 @@ export default function ASC606HubPage() {
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
+        <section className="space-y-4">
+          <h2 className="text-xl font-bold text-slate-900">ASC 606 SSP questions</h2>
+          {ASC606_FAQS.map((f) => (
+            <div key={f.q} className="p-5 rounded-2xl bg-white border border-slate-200">
+              <h3 className="text-base font-bold text-slate-900">{f.q}</h3>
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed">{f.a}</p>
+            </div>
+          ))}
+          <p className="text-sm text-slate-600">
+            Read the <Link href="/blog/asc-606-ssp-allocation-guide" className="font-semibold text-slate-900 underline underline-offset-4">complete guide to SSP allocation under ASC 606</Link>.
+          </p>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ASC606_FAQ_JSONLD) }} />
+        </section>
       </main>
 
       {/* FOOTER */}
