@@ -573,7 +573,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2 text-slate-400">
                 <ShieldCheck className="w-4 h-4 text-blue-400" />
-                <span>Ind AS 115 &amp; ASC 606 Verified</span>
+                <span>Ind AS 115 &amp; ASC 606 schedules</span>
               </div>
               <div className="flex items-center gap-2 text-slate-400">
                 <Lock className="w-4 h-4 text-purple-400" />
