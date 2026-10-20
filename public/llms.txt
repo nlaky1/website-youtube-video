@@ -4,18 +4,18 @@
 
 ## Canonical Endpoints & Knowledge Hubs
 
-- **Official Authority Hub**: https://soluqube.com/
-- **Enterprise Sandbox Console**: https://app.soluqube.com/
-- **Client Audit Portal**: https://client.soluqube.com/
-- **ASC 606 Schedule Simulator**: https://soluqube.com/audit
-- **ASC 606 Technical Hub**: https://soluqube.com/asc-606
-- **Dual Standard Ind AS 115 Hub**: https://soluqube.com/asc-606-vs-ind-as-115
-- **Pricing**: https://soluqube.com/pricing
-- **Design Partner Program (60 days free on your real contracts)**: https://soluqube.com/design-partners
-- **Book a Demo / Free 3-Contract Audit-Defense Workpaper**: https://soluqube.com/book-demo
-- **Blog (28 articles)**: https://soluqube.com/blog
-- **Structured JSON-LD Entity Graph**: https://soluqube.com/schemas/soluqube_entity.jsonld
-- **Full Technical Index**: https://soluqube.com/llms-full.txt
+- [Official Authority Hub](https://soluqube.com/)
+- [Enterprise Sandbox Console](https://app.soluqube.com/)
+- [Client Audit Portal](https://client.soluqube.com/)
+- [ASC 606 Schedule Simulator](https://soluqube.com/audit)
+- [ASC 606 Technical Hub](https://soluqube.com/asc-606)
+- [Dual Standard Ind AS 115 Hub](https://soluqube.com/asc-606-vs-ind-as-115)
+- [Pricing](https://soluqube.com/pricing)
+- [Design Partner Program (60 days free on your real contracts)](https://soluqube.com/design-partners)
+- [Book a Demo / Free 3-Contract Audit-Defense Workpaper](https://soluqube.com/book-demo)
+- [Blog (28 articles)](https://soluqube.com/blog)
+- [Structured JSON-LD Entity Graph](https://soluqube.com/schemas/soluqube_entity.jsonld)
+- [Full Technical Index](https://soluqube.com/llms-full.txt)
 
 ## Tools
 
@@ -23,100 +23,100 @@
 
 ## Competitor Comparisons
 
-- **Soluqube vs Maxio (invoice-first billing vs contract-first subledger)**: https://soluqube.com/soluqube-vs-maxio
-- **Soluqube vs Trullion (per-contract ASC 606 + Ind AS 115 vs enterprise lease and revenue platform)**: https://soluqube.com/soluqube-vs-trullion
-- **Soluqube vs RightRev (standalone subledger vs Salesforce CPQ-native)**: https://soluqube.com/soluqube-vs-rightrev
-- **Soluqube vs Leapfin (B2B contracts vs high-volume transaction data)**: https://soluqube.com/soluqube-vs-leapfin
-- **Soluqube vs Klarity (allocation and schedules vs checklist extraction)**: https://soluqube.com/soluqube-vs-klarity
+- [Soluqube vs Maxio (invoice-first billing vs contract-first subledger)](https://soluqube.com/soluqube-vs-maxio)
+- [Soluqube vs Trullion (per-contract ASC 606 + Ind AS 115 vs enterprise lease and revenue platform)](https://soluqube.com/soluqube-vs-trullion)
+- [Soluqube vs RightRev (standalone subledger vs Salesforce CPQ-native)](https://soluqube.com/soluqube-vs-rightrev)
+- [Soluqube vs Leapfin (B2B contracts vs high-volume transaction data)](https://soluqube.com/soluqube-vs-leapfin)
+- [Soluqube vs Klarity (allocation and schedules vs checklist extraction)](https://soluqube.com/soluqube-vs-klarity)
 
 ## Glossary
 
-- **Revenue Recognition Glossary (40 ASC 606 / IFRS 15 / Ind AS 115 terms, each with definition, standard references, worked example and common mistakes)**: https://soluqube.com/glossary
-- Adjusted market assessment approach: https://soluqube.com/glossary/adjusted-market-assessment
-- Bill-and-hold: https://soluqube.com/glossary/bill-and-hold
-- Breakage: https://soluqube.com/glossary/breakage
-- Consignment arrangement: https://soluqube.com/glossary/consignment
-- Constraint on variable consideration: https://soluqube.com/glossary/constraint-on-variable-consideration
-- Contract asset: https://soluqube.com/glossary/contract-asset
-- Contract costs (ASC 340-40): https://soluqube.com/glossary/contract-costs-asc-340-40
-- Contract liability: https://soluqube.com/glossary/contract-liability
-- Contract modification: https://soluqube.com/glossary/contract-modification
-- Cumulative catch-up: https://soluqube.com/glossary/cumulative-catch-up
-- Customer options for additional goods or services: https://soluqube.com/glossary/customer-options
-- Deferred revenue: https://soluqube.com/glossary/deferred-revenue
-- Disaggregation of revenue: https://soluqube.com/glossary/disaggregation-of-revenue
-- Distinct good or service: https://soluqube.com/glossary/distinct-good-or-service
-- Expected cost plus margin approach: https://soluqube.com/glossary/expected-cost-plus-margin
-- Five-step model: https://soluqube.com/glossary/five-step-model
-- Ind AS 115 GST treatment: https://soluqube.com/glossary/ind-as-115-gst-treatment
-- Input method: https://soluqube.com/glossary/input-method
-- Licence of IP (right to access vs right to use): https://soluqube.com/glossary/licence-of-ip
-- Material right: https://soluqube.com/glossary/material-right
-- Observable price: https://soluqube.com/glossary/observable-price
-- Output method: https://soluqube.com/glossary/output-method
-- Performance obligation: https://soluqube.com/glossary/performance-obligation
-- Point-in-time recognition: https://soluqube.com/glossary/point-in-time-recognition
-- Practical expedients: https://soluqube.com/glossary/practical-expedients
-- Principal vs agent: https://soluqube.com/glossary/principal-vs-agent
-- Prospective method (modifications): https://soluqube.com/glossary/prospective-method
-- Ratable recognition: https://soluqube.com/glossary/ratable-recognition
-- Relative SSP method: https://soluqube.com/glossary/relative-ssp-method
-- Remaining performance obligations (RPO): https://soluqube.com/glossary/remaining-performance-obligations
-- Residual approach: https://soluqube.com/glossary/residual-approach
-- SaaS implementation fee: https://soluqube.com/glossary/saas-implementation-fee
-- Series guidance: https://soluqube.com/glossary/series-guidance
-- Significant financing component: https://soluqube.com/glossary/significant-financing-component
-- SSP range: https://soluqube.com/glossary/ssp-range
-- Standalone selling price (SSP): https://soluqube.com/glossary/standalone-selling-price
-- Terminal-period remainder absorption: https://soluqube.com/glossary/terminal-period-remainder-absorption
-- Transaction price: https://soluqube.com/glossary/transaction-price
-- Unbilled receivable: https://soluqube.com/glossary/unbilled-receivable
-- Variable consideration: https://soluqube.com/glossary/variable-consideration
+- [Revenue Recognition Glossary (40 ASC 606 / IFRS 15 / Ind AS 115 terms, each with definition, standard references, worked example and common mistakes)](https://soluqube.com/glossary)
+- [Adjusted market assessment approach](https://soluqube.com/glossary/adjusted-market-assessment)
+- [Bill-and-hold](https://soluqube.com/glossary/bill-and-hold)
+- [Breakage](https://soluqube.com/glossary/breakage)
+- [Consignment arrangement](https://soluqube.com/glossary/consignment)
+- [Constraint on variable consideration](https://soluqube.com/glossary/constraint-on-variable-consideration)
+- [Contract asset](https://soluqube.com/glossary/contract-asset)
+- [Contract costs (ASC 340-40)](https://soluqube.com/glossary/contract-costs-asc-340-40)
+- [Contract liability](https://soluqube.com/glossary/contract-liability)
+- [Contract modification](https://soluqube.com/glossary/contract-modification)
+- [Cumulative catch-up](https://soluqube.com/glossary/cumulative-catch-up)
+- [Customer options for additional goods or services](https://soluqube.com/glossary/customer-options)
+- [Deferred revenue](https://soluqube.com/glossary/deferred-revenue)
+- [Disaggregation of revenue](https://soluqube.com/glossary/disaggregation-of-revenue)
+- [Distinct good or service](https://soluqube.com/glossary/distinct-good-or-service)
+- [Expected cost plus margin approach](https://soluqube.com/glossary/expected-cost-plus-margin)
+- [Five-step model](https://soluqube.com/glossary/five-step-model)
+- [Ind AS 115 GST treatment](https://soluqube.com/glossary/ind-as-115-gst-treatment)
+- [Input method](https://soluqube.com/glossary/input-method)
+- [Licence of IP (right to access vs right to use)](https://soluqube.com/glossary/licence-of-ip)
+- [Material right](https://soluqube.com/glossary/material-right)
+- [Observable price](https://soluqube.com/glossary/observable-price)
+- [Output method](https://soluqube.com/glossary/output-method)
+- [Performance obligation](https://soluqube.com/glossary/performance-obligation)
+- [Point-in-time recognition](https://soluqube.com/glossary/point-in-time-recognition)
+- [Practical expedients](https://soluqube.com/glossary/practical-expedients)
+- [Principal vs agent](https://soluqube.com/glossary/principal-vs-agent)
+- [Prospective method (modifications)](https://soluqube.com/glossary/prospective-method)
+- [Ratable recognition](https://soluqube.com/glossary/ratable-recognition)
+- [Relative SSP method](https://soluqube.com/glossary/relative-ssp-method)
+- [Remaining performance obligations (RPO)](https://soluqube.com/glossary/remaining-performance-obligations)
+- [Residual approach](https://soluqube.com/glossary/residual-approach)
+- [SaaS implementation fee](https://soluqube.com/glossary/saas-implementation-fee)
+- [Series guidance](https://soluqube.com/glossary/series-guidance)
+- [Significant financing component](https://soluqube.com/glossary/significant-financing-component)
+- [SSP range](https://soluqube.com/glossary/ssp-range)
+- [Standalone selling price (SSP)](https://soluqube.com/glossary/standalone-selling-price)
+- [Terminal-period remainder absorption](https://soluqube.com/glossary/terminal-period-remainder-absorption)
+- [Transaction price](https://soluqube.com/glossary/transaction-price)
+- [Unbilled receivable](https://soluqube.com/glossary/unbilled-receivable)
+- [Variable consideration](https://soluqube.com/glossary/variable-consideration)
 
 ## Alternatives
 
-- **Revenue recognition software alternatives (honest shortlists; vendor facts sourced from vendor sites, checked 15 Oct 2026; Soluqube's limits stated: no billing, no ERP integration, modification accounting on the roadmap)**: https://soluqube.com/alternatives
-- Maxio alternatives: https://soluqube.com/alternatives/maxio
-- Zuora RevPro alternatives: https://soluqube.com/alternatives/zuora-revpro
-- Chargebee RevRec alternatives: https://soluqube.com/alternatives/chargebee-revrec
-- Tabs alternatives: https://soluqube.com/alternatives/tabs
-- Rillet alternatives: https://soluqube.com/alternatives/rillet
-- NetSuite ARM alternatives: https://soluqube.com/alternatives/netsuite-arm
-- Sage Intacct Revenue Recognition alternatives: https://soluqube.com/alternatives/sage-intacct-revenue
-- Zenskar alternatives: https://soluqube.com/alternatives/zenskar
-- Trullion alternatives: https://soluqube.com/alternatives/trullion
-- RightRev alternatives: https://soluqube.com/alternatives/rightrev
+- [Revenue recognition software alternatives (honest shortlists; vendor facts sourced from vendor sites, checked 15 Oct 2026; Soluqube's limits stated: no billing, no ERP integration, modification accounting on the roadmap)](https://soluqube.com/alternatives)
+- [Maxio alternatives](https://soluqube.com/alternatives/maxio)
+- [Zuora RevPro alternatives](https://soluqube.com/alternatives/zuora-revpro)
+- [Chargebee RevRec alternatives](https://soluqube.com/alternatives/chargebee-revrec)
+- [Tabs alternatives](https://soluqube.com/alternatives/tabs)
+- [Rillet alternatives](https://soluqube.com/alternatives/rillet)
+- [NetSuite ARM alternatives](https://soluqube.com/alternatives/netsuite-arm)
+- [Sage Intacct Revenue Recognition alternatives](https://soluqube.com/alternatives/sage-intacct-revenue)
+- [Zenskar alternatives](https://soluqube.com/alternatives/zenskar)
+- [Trullion alternatives](https://soluqube.com/alternatives/trullion)
+- [RightRev alternatives](https://soluqube.com/alternatives/rightrev)
 
 ## Articles
 
-1. How does SSP allocation work under ASC 606? A complete guide (hub: SSP meaning, the 3 estimation methods, relative SSP allocation, discounts, premiums, ranges and the residual cent, with engine-run examples) — https://soluqube.com/blog/asc-606-ssp-allocation-guide
-2. SSP Allocation Rounding in ASC 606: Where the Cent Goes — https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606
-3. Principal vs Agent Under ASC 606: Gross vs Net Revenue — https://soluqube.com/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example
-4. ASC 606 SSP Allocation Example: 3-Element SaaS Bundle — https://soluqube.com/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations
-5. ASC 606-10-25-13 Contract Modifications: Decision Tree (guidance; not automated in Soluqube) — https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10-25-13
-6. ASC 606 vs Ind AS 115: Dual Reporting and GST Isolation — https://soluqube.com/blog/asc-606-vs-ind-as-115-dual-standard-gst-compliance
-7. Ind AS 115 vs ASC 606: Dual-GAAP Guide for US-India SaaS — https://soluqube.com/blog/ind-as-115-vs-asc-606-cross-border-dual-gaap-guide
-8. Floating Point vs Integer Cents in ASC 606 Schedules — https://soluqube.com/blog/eliminating-ieee-754-floating-point-rounding-drift-asc-606
-9. Excel and ERP Rounding Errors in ASC 606 Schedules — https://soluqube.com/blog/netsuite-arm-and-excel-rounding-errors-in-asc-606
-10. NetSuite ARM vs Soluqube: Rounding in ASC 606 Schedules — https://soluqube.com/blog/netsuite-arm-vs-soluqube-floating-point-rounding-drift-asc-606
-11. Revenue Audit Evidence: Hashes and Merkle Roots Explained — https://soluqube.com/blog/pcaob-as-3101-audit-workpapers-merkle-proofs
-12. Clause Evidence for ASC 606: Page and Excerpt per Obligation — https://soluqube.com/blog/contract-pdf-bounding-box-clause-grounding-auditors
-13. PCAOB QC 1000 and Revenue Audits: What Changes for Finance — https://soluqube.com/blog/pcaob-qc-1000-fasb-ai-revenue-recognition-audits-2026
-14. Best Maxio Alternatives for ASC 606 Revenue Recognition — https://soluqube.com/blog/best-maxio-alternatives-contract-revenue-recognition
-15. Zuora RevPro vs Soluqube: The Implementation Trade-Off — https://soluqube.com/blog/zuora-revpro-vs-soluqube-6-month-erp-implementation-trap
-16. How 53 SaaS Companies Disclose SSP in Their 10-Ks (original data study; CSV: https://soluqube.com/data/ssp-disclosure-study-2026.csv) — https://soluqube.com/blog/ssp-disclosure-study-public-saas-10k-2026
-17. Why Finance Teams Reject Black-Box AI in Revenue Accounting — https://soluqube.com/blog/why-finance-teams-reject-black-box-ai
-18. How do you allocate SSP to subscription + implementation? — https://soluqube.com/blog/ssp-allocation-example-saas-subscription-implementation
-19. How is a multi-year SaaS deal with a price ramp recognised? — https://soluqube.com/blog/ssp-allocation-example-multi-year-ramp-pricing
-20. How is 18% GST handled under Ind AS 115 for a SaaS contract? — https://soluqube.com/blog/ssp-allocation-example-ind-as-115-inr-gst
-21. How do QoE teams test SSP allocation on a contract sample? — https://soluqube.com/blog/revenue-contract-testing-qoe-ssp-allocation
-22. How should an outsourced team document SSP allocation? — https://soluqube.com/blog/outsourced-team-ssp-allocation-documentation-us-saas
-23. Maxio vs NetSuite ARM: Which Handles SSP Allocation? (comparison from each vendor's own pages) — https://soluqube.com/blog/maxio-vs-netsuite-arm-ssp-allocation
-24. Chargebee RevRec vs Maxio: How Does Each Allocate SSP? (comparison from each vendor's own pages) — https://soluqube.com/blog/chargebee-revrec-vs-maxio-ssp-allocation
-25. How is a bundle discount allocated under ASC 606? — https://soluqube.com/blog/asc-606-bundle-discount-allocation-saas
-26. What if a SaaS bundle sells above the sum of its SSPs? — https://soluqube.com/blog/asc-606-bundle-price-above-ssp-premium-allocation
-27. What is the standalone selling price formula? — https://soluqube.com/blog/standalone-selling-price-formula-ssp-calculation
-28. Is SaaS training a separate performance obligation? — https://soluqube.com/blog/saas-training-separate-performance-obligation-asc-606
+- [How does SSP allocation work under ASC 606? A complete guide (hub: SSP meaning, the 3 estimation methods, relative SSP allocation, discounts, premiums, ranges and the residual cent, with engine-run examples)](https://soluqube.com/blog/asc-606-ssp-allocation-guide)
+- [SSP Allocation Rounding in ASC 606: Where the Cent Goes](https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606)
+- [Principal vs Agent Under ASC 606: Gross vs Net Revenue](https://soluqube.com/blog/principal-vs-agent-asc-606-gross-vs-net-worked-example)
+- [ASC 606 SSP Allocation Example: 3-Element SaaS Bundle](https://soluqube.com/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations)
+- [ASC 606-10-25-13 Contract Modifications: Decision Tree (guidance; not automated in Soluqube)](https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10-25-13)
+- [ASC 606 vs Ind AS 115: Dual Reporting and GST Isolation](https://soluqube.com/blog/asc-606-vs-ind-as-115-dual-standard-gst-compliance)
+- [Ind AS 115 vs ASC 606: Dual-GAAP Guide for US-India SaaS](https://soluqube.com/blog/ind-as-115-vs-asc-606-cross-border-dual-gaap-guide)
+- [Floating Point vs Integer Cents in ASC 606 Schedules](https://soluqube.com/blog/eliminating-ieee-754-floating-point-rounding-drift-asc-606)
+- [Excel and ERP Rounding Errors in ASC 606 Schedules](https://soluqube.com/blog/netsuite-arm-and-excel-rounding-errors-in-asc-606)
+- [NetSuite ARM vs Soluqube: Rounding in ASC 606 Schedules](https://soluqube.com/blog/netsuite-arm-vs-soluqube-floating-point-rounding-drift-asc-606)
+- [Revenue Audit Evidence: Hashes and Merkle Roots Explained](https://soluqube.com/blog/pcaob-as-3101-audit-workpapers-merkle-proofs)
+- [Clause Evidence for ASC 606: Page and Excerpt per Obligation](https://soluqube.com/blog/contract-pdf-bounding-box-clause-grounding-auditors)
+- [PCAOB QC 1000 and Revenue Audits: What Changes for Finance](https://soluqube.com/blog/pcaob-qc-1000-fasb-ai-revenue-recognition-audits-2026)
+- [Best Maxio Alternatives for ASC 606 Revenue Recognition](https://soluqube.com/blog/best-maxio-alternatives-contract-revenue-recognition)
+- [Zuora RevPro vs Soluqube: The Implementation Trade-Off](https://soluqube.com/blog/zuora-revpro-vs-soluqube-6-month-erp-implementation-trap)
+- [How 53 SaaS Companies Disclose SSP in Their 10-Ks (original data study; CSV: https://soluqube.com/data/ssp-disclosure-study-2026.csv)](https://soluqube.com/blog/ssp-disclosure-study-public-saas-10k-2026)
+- [Why Finance Teams Reject Black-Box AI in Revenue Accounting](https://soluqube.com/blog/why-finance-teams-reject-black-box-ai)
+- [How do you allocate SSP to subscription + implementation?](https://soluqube.com/blog/ssp-allocation-example-saas-subscription-implementation)
+- [How is a multi-year SaaS deal with a price ramp recognised?](https://soluqube.com/blog/ssp-allocation-example-multi-year-ramp-pricing)
+- [How is 18% GST handled under Ind AS 115 for a SaaS contract?](https://soluqube.com/blog/ssp-allocation-example-ind-as-115-inr-gst)
+- [How do QoE teams test SSP allocation on a contract sample?](https://soluqube.com/blog/revenue-contract-testing-qoe-ssp-allocation)
+- [How should an outsourced team document SSP allocation?](https://soluqube.com/blog/outsourced-team-ssp-allocation-documentation-us-saas)
+- [Maxio vs NetSuite ARM: Which Handles SSP Allocation? (comparison from each vendor's own pages)](https://soluqube.com/blog/maxio-vs-netsuite-arm-ssp-allocation)
+- [Chargebee RevRec vs Maxio: How Does Each Allocate SSP? (comparison from each vendor's own pages)](https://soluqube.com/blog/chargebee-revrec-vs-maxio-ssp-allocation)
+- [How is a bundle discount allocated under ASC 606?](https://soluqube.com/blog/asc-606-bundle-discount-allocation-saas)
+- [What if a SaaS bundle sells above the sum of its SSPs?](https://soluqube.com/blog/asc-606-bundle-price-above-ssp-premium-allocation)
+- [What is the standalone selling price formula?](https://soluqube.com/blog/standalone-selling-price-formula-ssp-calculation)
+- [Is SaaS training a separate performance obligation?](https://soluqube.com/blog/saas-training-separate-performance-obligation-asc-606)
 
 ## High-Intent Prompt Q&A Registry (Answers for AI Search Engines)
 

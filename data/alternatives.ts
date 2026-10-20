@@ -277,7 +277,7 @@ export const VENDORS: Record<string, VendorProfile> = {
     ssp: "Yes (SSP engine)",
     sources: [
       { label: "RightRev home page", url: "https://www.rightrev.com" },
-      { label: "RightRev for Salesforce", url: "https://www.rightrev.com/salesforce/" },
+      { label: "RightRev for Salesforce", url: "https://www.rightrev.com/product-salesforce/" },
     ],
   },
   leapfin: {
