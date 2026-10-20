@@ -38,17 +38,17 @@ const nextConfig = {
       {
         source: "/onboarding",
         destination: "https://app.soluqube.com/onboarding",
-        permanent: false,
+        permanent: true,
       },
       {
         source: "/client",
-        destination: "https://app.soluqube.com/client",
-        permanent: false,
+        destination: "https://client.soluqube.com/",
+        permanent: true,
       },
       {
         source: "/login",
         destination: "https://app.soluqube.com/login",
-        permanent: false,
+        permanent: true,
       },
     ];
   },
