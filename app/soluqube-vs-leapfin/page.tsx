@@ -118,12 +118,12 @@ export default function SoluqubeVsLeapfinPage() {
               <p className="text-xs text-slate-500 mt-1">Page, verbatim excerpt and a highlighted line for the clause behind each obligation.</p>
             </div>
             <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/40">
-              <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Precision & Compliance</div>
+              <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">Reproducibility</div>
               <div className="text-base font-semibold text-white flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-indigo-400" />
-                Dual-GAAP & Merkle Proof
+                SHA-256 hashes on every export
               </div>
-              <p className="text-xs text-slate-500 mt-1">ASC 606 + Ind AS 115 with SHA-256 sealed workpapers.</p>
+              <p className="text-xs text-slate-500 mt-1">ASC 606 and Ind AS 115 schedules, exported with SHA-256 hashes.</p>
             </div>
           </div>
         </div>
