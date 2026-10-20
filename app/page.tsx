@@ -266,11 +266,41 @@ export default function Home() {
       })),
   };
 
+  // SoftwareApplication JSON-LD on the home page only (moved from app/layout.tsx; site audit 2026-10-21).
+  // No aggregateRating/review: there are none yet, never invent them.
+  const softwareJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://soluqube.com/#software",
+    name: "Soluqube Revenue Recognition Engine",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Cloud, Linux, macOS, Windows",
+    url: "https://soluqube.com",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      name: "Free 3-Contract Audit-Defense Workpaper",
+    },
+    featureList: [
+      "Clause Evidence per Obligation (page, verbatim excerpt, highlight on the cited line in uploaded text PDFs)",
+      "Integer (BigInt) Fixed-Point Parity (10^6 scale, rounded to cents, terminal-period remainder absorption)",
+      "Dual Standard ASC 606 & Ind AS 115 Amortization Schedules",
+      "Statutory 18% GST Isolation for INR Contracts (Ind AS 115)",
+      "ERP-Ready Schedule Export for NetSuite ARM & SAP RAR (Excel + CSV)",
+      "Audit-Ready Evidence Package Generator (5-Sheet Excel & JSON)",
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
       />
       {/* 1. INSTITUTIONAL TOP NAVIGATION */}
       <Navbar />

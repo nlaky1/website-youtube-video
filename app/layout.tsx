@@ -109,28 +109,6 @@ const structuredData = {
       description:
         "Soluqube is a revenue allocation and schedule engine for ASC 606 and Ind AS 115: relative-SSP allocation that ties to the cent, with clause evidence for each performance obligation.",
     },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://soluqube.com/#software",
-      name: "Soluqube Revenue Recognition Engine",
-      applicationCategory: "FinanceApplication",
-      operatingSystem: "Cloud, Linux, macOS, Windows",
-      url: "https://soluqube.com",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        name: "Free 3-Contract Audit-Defense Workpaper",
-      },
-      featureList: [
-        "Clause Evidence per Obligation (page, verbatim excerpt, highlight on the cited line in uploaded text PDFs)",
-        "Integer (BigInt) Fixed-Point Parity (10^6 scale, rounded to cents, terminal-period remainder absorption)",
-        "Dual Standard ASC 606 & Ind AS 115 Amortization Schedules",
-        "Statutory 18% GST Isolation for INR Contracts (Ind AS 115)",
-        "ERP-Ready Schedule Export for NetSuite ARM & SAP RAR (Excel + CSV)",
-        "Audit-Ready Evidence Package Generator (5-Sheet Excel & JSON)",
-      ],
-    },
   ],
 };
 
