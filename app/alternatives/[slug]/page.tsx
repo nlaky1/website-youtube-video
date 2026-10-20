@@ -272,7 +272,7 @@ export default function AlternativesDetailPage({ params }: Props) {
             {sources.map((s) => (
               <li key={s.url}>
                 {s.label}:{" "}
-                <a href={s.url} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-2">
+                <a href={s.url} target="_blank" rel={s.url === SITE || s.url.startsWith(`${SITE}/`) ? "noopener noreferrer" : "noopener noreferrer nofollow"} className="underline underline-offset-2">
                   {s.url}
                 </a>
               </li>
