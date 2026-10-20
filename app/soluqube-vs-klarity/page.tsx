@@ -41,7 +41,9 @@ export default function SoluqubeVsKlarityPage() {
           "name": "Soluqube Systems",
           "url": "https://soluqube.com"
         },
-        "mainEntityOfPage": "https://soluqube.com/soluqube-vs-klarity"
+        "mainEntityOfPage": "https://soluqube.com/soluqube-vs-klarity",
+        "datePublished": "2026-10-13",
+        "image": "https://soluqube.com/og-image.jpg"
       }
     ]
   };

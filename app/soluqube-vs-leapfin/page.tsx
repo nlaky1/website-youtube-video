@@ -44,7 +44,9 @@ export default function SoluqubeVsLeapfinPage() {
           "name": "Soluqube Systems",
           "url": "https://soluqube.com"
         },
-        "mainEntityOfPage": "https://soluqube.com/soluqube-vs-leapfin"
+        "mainEntityOfPage": "https://soluqube.com/soluqube-vs-leapfin",
+        "datePublished": "2026-10-13",
+        "image": "https://soluqube.com/og-image.jpg"
       }
     ]
   };

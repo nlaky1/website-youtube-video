@@ -45,7 +45,9 @@ export default function SoluqubeVsTrullionPage() {
           "name": "Soluqube Systems",
           "url": "https://soluqube.com"
         },
-        "mainEntityOfPage": "https://soluqube.com/soluqube-vs-trullion"
+        "mainEntityOfPage": "https://soluqube.com/soluqube-vs-trullion",
+        "datePublished": "2026-10-13",
+        "image": "https://soluqube.com/og-image.jpg"
       }
     ]
   };

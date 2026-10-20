@@ -45,7 +45,9 @@ export default function SoluqubeVsRightRevPage() {
           "name": "Soluqube Systems",
           "url": "https://soluqube.com"
         },
-        "mainEntityOfPage": "https://soluqube.com/soluqube-vs-rightrev"
+        "mainEntityOfPage": "https://soluqube.com/soluqube-vs-rightrev",
+        "datePublished": "2026-10-13",
+        "image": "https://soluqube.com/og-image.jpg"
       }
     ]
   };

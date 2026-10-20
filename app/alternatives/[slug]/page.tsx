@@ -71,7 +71,10 @@ export default function AlternativesDetailPage({ params }: Props) {
         "@id": `${url}#article`,
         headline: p.title,
         description: p.description,
+        // Fixed: all 10 alternatives pages were first published on 2026-10-15 (commit 1148894).
+        datePublished: "2026-10-15",
         dateModified: CHECKED_ON_ISO,
+        image: "https://soluqube.com/og-image.jpg",
         author: { "@type": "Organization", name: "Soluqube Editorial", url: SITE },
         publisher: { "@type": "Organization", name: "Soluqube", url: SITE },
         mainEntityOfPage: url,
