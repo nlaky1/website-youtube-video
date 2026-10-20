@@ -404,6 +404,7 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
       { vendor: "soluqube", fit: "A narrow option for the contracts your auditor questions: allocation, schedule and hashed workpaper, no billing. Not a replacement for Maxio's billing." },
     ],
     versusPage: "/soluqube-vs-maxio",
+    relatedPost: { href: "/blog/maxio-vs-netsuite-arm-ssp-allocation", label: "Maxio vs NetSuite ARM: which handles SSP allocation?" },
   },
   {
     slug: "zuora-revpro",
@@ -461,6 +462,7 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
       { vendor: "tabs", fit: "Billing-first with ASC 606 rev rec on every tier, aimed at usage and commitment-heavy pricing." },
       { vendor: "soluqube", fit: "For the subset of contracts you must defend on SSP: deterministic allocation, schedule and hashed workpaper, independent of billing. No GL posting." },
     ],
+    relatedPost: { href: "/blog/chargebee-revrec-vs-maxio-ssp-allocation", label: "Chargebee RevRec vs Maxio: how does each allocate SSP?" },
   },
   {
     slug: "tabs",
@@ -545,6 +547,7 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
       { vendor: "rillet", fit: "Only if you are prepared to replace NetSuite itself with an ERP that has revenue recognition built in." },
       { vendor: "soluqube", fit: "Runs beside NetSuite for contracts you need to defend: allocation, schedule and hashed workpaper, exported as a CSV you review and post." },
     ],
+    relatedPost: { href: "/blog/maxio-vs-netsuite-arm-ssp-allocation", label: "Maxio vs NetSuite ARM: which handles SSP allocation?" },
   },
   {
     slug: "sage-intacct-revenue",

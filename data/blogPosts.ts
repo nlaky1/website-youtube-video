@@ -2308,7 +2308,7 @@ Firm Tool Access is $49 a month per firm, a founding price for the first 10 cust
     title: "How does SSP allocation work under ASC 606? A complete guide",
     subtitle: "What SSP means under ASC 606, the 3 ways to estimate it, relative SSP allocation, discounts, ranges and rounding, with engine-run examples.",
     publishedAt: "October 19, 2026",
-    updatedAt: "October 19, 2026",
+    updatedAt: "October 20, 2026",
     readTime: "9 min read",
     author: {
       name: "Soluqube Editorial",
@@ -2483,13 +2483,269 @@ For each contract, a usable SSP file has seven parts: the signed contract and or
 6. A schedule ending at $0.00 deferred.
 7. Sign-off, export version and SHA-256 hash.
 
-For teams preparing this for a client, see [how an outsourced team documents SSP allocation](/blog/outsourced-team-ssp-allocation-documentation-us-saas).
+For teams preparing this for a client, see [how an outsourced team documents SSP allocation](/blog/outsourced-team-ssp-allocation-documentation-us-saas). If you are choosing a tool to hold this evidence, our comparisons of [Maxio vs NetSuite ARM](/blog/maxio-vs-netsuite-arm-ssp-allocation) and [Chargebee RevRec vs Maxio](/blog/chargebee-revrec-vs-maxio-ssp-allocation) set out how each vendor describes SSP allocation, from its own pages.
 
 ## How can you test this on your own contracts?
 
 Send us three of your hardest contracts through the [design partner programme](/design-partners), and you get a free 3-contract workpaper. You confirm the obligations and stated prices. We send back the relative SSP allocation, a schedule that ties to the cent, page-and-excerpt clause evidence for each obligation, and a hashed export your auditor can re-run.
 
 Founding prices for the first 10 customers are on the [pricing](/pricing) page. In the app, uploaded text-layer PDFs also show a highlight on the cited line; built-in samples use an approximate overlay. The engine doesn't model contract modifications, variable consideration or billing schedules yet. Treat those topics as guidance only.
+    `
+  },
+  {
+    slug: "maxio-vs-netsuite-arm-ssp-allocation",
+    title: "Maxio vs NetSuite ARM: Which Handles SSP Allocation?",
+    subtitle: "How Maxio and NetSuite ARM allocate price to performance obligations under ASC 606, from each vendor's own docs, with a 36-month worked example.",
+    publishedAt: "October 20, 2026",
+    updatedAt: "October 20, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Maxio", "NetSuite ARM", "Comparison"],
+    targetQuery: "maxio vs netsuite arm",
+    definitionAnchor: "Maxio is a billing and financial reporting platform with revenue recognition; NetSuite Advanced Revenue Management (ARM) is a revenue module inside NetSuite ERP. Oracle publishes ARM's allocation methods (SSP, VSOE, ESP, TPE or other) in the Revenue Allocation add-on. Maxio says it handles SSP but does not publish its allocation method.",
+    excerpt: "A neutral comparison of Maxio and NetSuite ARM on SSP allocation, contract changes, journal posting and price, using only each vendor's own pages (checked 20 Oct 2026). Includes a $138,000, 36-month bundle run through the Soluqube engine.",
+    toc: [
+      { id: "what-are-maxio-and-netsuite-arm", label: "What are Maxio and NetSuite ARM?" },
+      { id: "how-do-maxio-and-netsuite-arm-compare-side-by-side", label: "How do Maxio and NetSuite ARM compare side by side?" },
+      { id: "how-does-each-one-allocate-the-transaction-price-by-ssp", label: "How does each one allocate the transaction price by SSP?" },
+      { id: "how-does-each-one-handle-contract-changes", label: "How does each one handle contract changes?" },
+      { id: "where-does-each-one-post-journal-entries", label: "Where does each one post journal entries?" },
+      { id: "what-does-each-one-cost", label: "What does each one cost?" },
+      { id: "can-you-run-maxio-with-netsuite-as-the-general-ledger", label: "Can you run Maxio with NetSuite as the general ledger?" },
+      { id: "what-does-a-relative-ssp-allocation-look-like-on-a-real-bundle", label: "What does a relative-SSP allocation look like on a real bundle?" },
+      { id: "where-does-ssp-allocation-evidence-fit-alongside-either-tool", label: "Where does SSP allocation evidence fit alongside either tool?" },
+      { id: "sources", label: "Sources" }
+    ],
+    faqs: [
+      {
+        question: "Does NetSuite ARM allocate across obligations without the Revenue Allocation add-on?",
+        answer: "Oracle's help says Revenue Allocation \"is an add-on feature to Advanced Revenue Management (Essentials)\", and it is the feature the same page describes as using fair values to allocate revenue across performance obligations. Confirm with Oracle or your NetSuite partner which features your account has enabled."
+      },
+      {
+        question: "Does Maxio publish how it allocates SSP?",
+        answer: "Not on the pages we read. Maxio's revenue recognition page says it handles standalone selling prices and negotiated transaction prices and can reallocate revenue, but the allocation method itself is not published. Ask Maxio for its configuration documentation before you rely on it for an audit file."
+      },
+      {
+        question: "Can Soluqube post its allocation into Maxio or NetSuite?",
+        answer: "No. Soluqube has no billing or ERP sync today. It produces the allocation, the schedule and a hashed export with clause evidence, and your team books the result in Maxio or NetSuite. It also does not handle contract modifications or usage-based fees yet."
+      }
+    ],
+    engineVerified: true,
+    content: `
+Maxio and NetSuite Advanced Revenue Management (ARM) both recognise revenue under ASC 606, but they start from different places: Maxio from billing, ARM from inside the NetSuite ERP. This comparison uses only each vendor's own public pages, checked on 20 Oct 2026. It focuses on the question auditors ask most: how is the transaction price allocated across performance obligations by standalone selling price? Where a page doesn't say something, we write "not published". That means the page we read did not state it, not that the product lacks it. For the method itself, read our [guide to SSP allocation under ASC 606](/blog/asc-606-ssp-allocation-guide).
+
+## What are Maxio and NetSuite ARM?
+
+Maxio is a billing and financial reporting platform whose revenue recognition page names ASC 606 and IFRS 15. NetSuite ARM is a module inside NetSuite ERP. Oracle says ARM (Essentials) "automates revenue forecasting, recognition, reclassification, deferral, and auditing through a rule-based event handling framework". Both serve subscription businesses, from different starting points.
+
+Oracle adds that ARM Essentials and Revenue Allocation support "both existing standards and the new standard". In practice the choice often follows the stack: if NetSuite is already your ERP, ARM lives inside it, while Maxio sits in front of a general ledger and syncs to it.
+
+## How do Maxio and NetSuite ARM compare side by side?
+
+The table below sets each vendor's own wording side by side, row by row, with a link to the page each fact comes from. Every fact was checked on 20 Oct 2026. "Not published" means the page we read did not say it. Vendor pages change, so re-check before relying on any row.
+
+| Topic | Maxio | NetSuite ARM |
+|---|---|---|
+| What it is | Billing and financial reporting with revenue recognition ([Maxio](https://www.maxio.com/revenue-recognition)) | Revenue module inside NetSuite ERP ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Standards named | ASC 606 and IFRS 15 ([Maxio](https://www.maxio.com/revenue-recognition)) | "both existing standards and the new standard" ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4703499262.html)) |
+| SSP and allocation | Handles "standalone selling prices (SSP) and negotiated transaction prices"; can "reallocate revenue"; method not published ([Maxio](https://www.maxio.com/revenue-recognition)) | SSP, VSOE, ESP, TPE "or some other method"; fair value pricing, range checking, formulas ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Where allocation sits | Advanced revenue management listed under optional modules; tier inclusion not published ([Maxio pricing](https://www.maxio.com/pricing)) | Revenue Allocation "is an add-on feature" to ARM Essentials ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Contract changes | "Instantly edit contracts for upgrades, refunds, and other changes" ([Maxio](https://www.maxio.com/revenue-recognition)) | Prospective and retrospective merges ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1498077674.html)) |
+| GL and journals | Syncs "invoices and SaaS payments to NetSuite, Sage, QuickBooks, etc." ([Maxio](https://www.maxio.com/revenue-recognition)) | "You must generate revenue recognition journal entries to post the revenue to the general ledger" ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Audit trail and reports | "Generate detailed audit trails"; waterfall reports ([Maxio](https://www.maxio.com/revenue-recognition)) | ARM "automates ... auditing"; audit-trail reports not published on the pages read ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Price | Grow $599/month up to $100k monthly billings; Scale by quote ([Maxio pricing](https://www.maxio.com/pricing)) | Not published ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Migration | Not published ([Maxio](https://www.maxio.com/revenue-recognition)) | From classic Revenue Recognition needs "NetSuite Professional Services or a qualified NetSuite partner" ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Using both | Maxio's own case study: "using NetSuite as a general ledger only" ([Maxio](https://maxio.com/customers/maxio-netsuite)) | n/a |
+
+## How does each one allocate the transaction price by SSP?
+
+Oracle publishes the mechanics. The Revenue Allocation add-on uses fair values based on "standalone selling price (SSP), vendor-specific objective evidence (VSOE), best estimate of selling price (ESP), third party evidence (TPE), or some other method", with price lists, range checking and formulas. Maxio says it handles SSP and can "reallocate revenue"; its allocation method is not published.
+
+Whichever tool you use, the auditor's questions are the same: what is each SSP based on, what share of the price does each obligation get, and can the split be re-performed? The pages we read describe configuration, not a standalone allocation workpaper, so plan where that evidence will live.
+
+## How does each one handle contract changes?
+
+Maxio says you can "instantly edit contracts for upgrades, refunds, and other changes", with schedules adjusted "without overwriting original data". Oracle documents prospective and retrospective merges. A prospective merge "terminates and locks the original revenue arrangements and creates a new arrangement with the residual values as of the effective date".
+
+Oracle also states that a prospective merge can't be reverted once it "has recognized revenue or reclassified deferred revenue". That is a documented control point to plan period-end work around. Maxio's page does not describe its modification method in more detail.
+
+## Where does each one post journal entries?
+
+NetSuite ARM posts inside NetSuite. Oracle says "you must generate revenue recognition journal entries to post the revenue to the general ledger". Maxio says it can "sync invoices and SaaS payments to NetSuite, Sage, QuickBooks, etc."; how it posts revenue journals to an external ledger is not published on the page we read.
+
+## What does each one cost?
+
+Maxio publishes Grow at $599 per month for up to $100k in monthly billings, with Scale by quote above that. Advanced revenue management appears under optional modules, and which tier includes which level of revenue recognition is not published. NetSuite ARM pricing is not published in Oracle's help documentation.
+
+One cost Oracle does state: moving from classic Revenue Recognition to ARM requires "NetSuite Professional Services or a qualified NetSuite partner".
+
+## Can you run Maxio with NetSuite as the general ledger?
+
+Yes. Maxio's own case study about its finance team describes "keeping billing, revenue recognition, and reporting in Maxio and using NetSuite as a general ledger only". In that setup, allocation and schedules come from Maxio and NetSuite holds the books. Whether Maxio and ARM run together on the same contracts is not published.
+
+## What does a relative-SSP allocation look like on a real bundle?
+
+Take a $138,000.00, 36-month contract starting December 2026 with three obligations whose SSPs total $159,000.00. The $21,000.00 discount is spread pro rata by the relative SSP method. The allocation ties to $138,000.00, onboarding absorbs the residual cent, and the unrecognised balance reaches $0.00 in month 36.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Subscription | Ratable, 36 months | $120,000.00 | $104,150.94 |
+| Premium support (24x7, 1-hr SLA) | Ratable, 36 months | $30,000.00 | $26,037.74 |
+| Onboarding (absorbs residual cent) | Point in time, month 1 | $9,000.00 | $7,811.32 |
+| **Total** | | **$159,000.00** | **$138,000.00** |
+
+Month 1 (Dec 2026) recognises $11,427.67: subscription $2,893.08, support $723.27 and onboarding $7,811.32. Months 2 to 35 recognise $3,616.35 each. Month 36 (Nov 2029) recognises $3,616.43, because the subscription's final month absorbs $0.06 ($2,893.08 × 35 + $2,893.14) and support's absorbs $0.02 ($723.27 × 35 + $723.29). The engine result's SHA-256 hash is 527ca94f9afa96bae0f16aa3c70377d9918b970299299d6321fd41128a67e853.
+
+A reviewer can re-perform these numbers from the SSPs alone, whichever tool books the contract. Try it in the app, or check the split in the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## Where does SSP allocation evidence fit alongside either tool?
+
+Soluqube is an allocation and evidence layer that sits next to Maxio or NetSuite. You confirm the obligations, price and SSPs. It returns the relative-SSP allocation in integer arithmetic, a full-term schedule that ties to the cent, clause evidence for each obligation and a SHA-256-hashed export for your external auditor.
+
+Clause evidence is the page and verbatim excerpt behind each obligation. In the app, uploaded text-layer PDFs also get a highlight on the cited line, and exports carry the page and excerpt. Contract extraction is heuristic, so you confirm every field. You then book the result in whichever system holds your revenue.
+
+The limits are plain. Soluqube does not do contract-modification accounting, does not handle usage-based fees, and has no billing or ERP sync. For vendor-by-vendor detail, see [Maxio alternatives](/alternatives/maxio), [NetSuite ARM alternatives](/alternatives/netsuite-arm) and [Soluqube vs Maxio](/soluqube-vs-maxio).
+
+To test it on your own deals, send three of your hardest bundled contracts through the [design partner programme](/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261020-vs). Founding prices for the first 10 customers are on [pricing](/pricing).
+
+## Sources
+
+All checked on 20 Oct 2026.
+
+- Maxio, revenue recognition: https://www.maxio.com/revenue-recognition
+- Maxio, pricing: https://www.maxio.com/pricing
+- Maxio, case study (Maxio with NetSuite): https://maxio.com/customers/maxio-netsuite
+- Oracle NetSuite help, Advanced Revenue Management: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html
+- Oracle NetSuite help, transition to the new revenue standard: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4703499262.html
+- Oracle NetSuite help, prospective merge of revenue arrangements: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1498077674.html
+    `
+  },
+  {
+    slug: "chargebee-revrec-vs-maxio-ssp-allocation",
+    title: "Chargebee RevRec vs Maxio: How Does Each Allocate SSP?",
+    subtitle: "How Chargebee RevRec and Maxio set SSP, handle changes and post to the GL, from each vendor's own pages, with a 15-month free-months example.",
+    publishedAt: "October 20, 2026",
+    updatedAt: "October 20, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Chargebee RevRec", "Maxio", "Comparison"],
+    targetQuery: "chargebee revrec vs maxio",
+    definitionAnchor: "Chargebee RevRec is a revenue recognition subledger that allocates with \"a configurable SSP library tied to your price book\". Maxio is a billing and financial reporting platform with revenue recognition that handles SSP and negotiated prices; its allocation method is not published. Both name ASC 606 and IFRS 15.",
+    excerpt: "A neutral comparison of Chargebee RevRec and Maxio on SSP, contract changes, controls, GL posting and price, using only each vendor's own pages (checked 20 Oct 2026). Includes a $54,000, 15-month free-months contract run through the Soluqube engine.",
+    toc: [
+      { id: "what-are-chargebee-revrec-and-maxio", label: "What are Chargebee RevRec and Maxio?" },
+      { id: "how-do-chargebee-revrec-and-maxio-compare-side-by-side", label: "How do Chargebee RevRec and Maxio compare side by side?" },
+      { id: "do-you-need-their-billing-product-to-use-their-revenue-recognition", label: "Do you need their billing product to use their revenue recognition?" },
+      { id: "how-does-each-one-set-and-document-ssp", label: "How does each one set and document SSP?" },
+      { id: "how-does-each-one-treat-upsells-renewals-and-other-changes", label: "How does each one treat upsells, renewals and other changes?" },
+      { id: "how-does-each-one-post-to-your-general-ledger", label: "How does each one post to your general ledger?" },
+      { id: "what-does-each-one-cost", label: "What does each one cost?" },
+      { id: "how-is-a-free-months-bundle-allocated-by-ssp", label: "How is a free-months bundle allocated by SSP?" },
+      { id: "where-does-ssp-allocation-evidence-fit-alongside-either-tool", label: "Where does SSP allocation evidence fit alongside either tool?" },
+      { id: "sources", label: "Sources" }
+    ],
+    faqs: [
+      {
+        question: "Does Chargebee RevRec require Chargebee Billing?",
+        answer: "For one plan, yes. Chargebee's pricing page says the Performance plan \"is available only to Chargebee Billing customers\". The Enterprise plan carries no such note, and Chargebee's product page lists direct integrations with Stripe and other systems. Whether Enterprise needs Chargebee Billing is not published."
+      },
+      {
+        question: "Do free months change how much revenue each obligation gets?",
+        answer: "Not by themselves. Allocation in Step 4 uses SSP and the total transaction price. Free months change when the customer is invoiced, not the relative SSP split. In the example here, $54,000 is spread over the full 15-month service period. Billing schedules and contract assets need separate analysis."
+      },
+      {
+        question: "Can Soluqube sync with Chargebee or Maxio?",
+        answer: "No. Soluqube has no billing or ERP sync today. You confirm the obligations, price and SSPs, and it returns the allocation, a schedule that ties to the cent and a hashed export with clause evidence. It also does not handle contract modifications or usage-based fees yet."
+      }
+    ],
+    engineVerified: true,
+    content: `
+Chargebee RevRec and Maxio both offer revenue recognition close to subscription billing. This comparison uses only each vendor's own public pages, checked on 20 Oct 2026, and focuses on standalone selling price (SSP): how each one sets it, documents it and allocates the transaction price. Where a page doesn't say something, we write "not published". That means the page we read did not state it, not that the product lacks it. For the underlying method, read our [guide to SSP allocation under ASC 606](/blog/asc-606-ssp-allocation-guide).
+
+## What are Chargebee RevRec and Maxio?
+
+Chargebee RevRec is a revenue recognition subledger. Chargebee describes an "end-to-end, automated revenue recognition workflow based on ASC 606's and IFRS 15's five-step model". Maxio is a billing and financial reporting platform with revenue recognition, and its page also names ASC 606 and IFRS 15. One is a dedicated subledger; the other is part of a billing platform.
+
+## How do Chargebee RevRec and Maxio compare side by side?
+
+The table below sets each vendor's own wording side by side, row by row, with a link to the page each fact comes from. Every fact was checked on 20 Oct 2026. "Not published" means the page we read did not say it. Vendor pages change, so re-check before relying on any row.
+
+| Topic | Chargebee RevRec | Maxio |
+|---|---|---|
+| What it is | Revenue recognition subledger ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | Billing and financial reporting with revenue recognition ([Maxio](https://www.maxio.com/revenue-recognition)) |
+| Standards named | "ASC 606's and IFRS 15's five-step model" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | ASC 606 and IFRS 15 ([Maxio](https://www.maxio.com/revenue-recognition)) |
+| SSP | "a configurable SSP library tied to your price book"; "SSP documentation traceable at every step" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | Handles "standalone selling prices (SSP) and negotiated transaction prices"; method not published ([Maxio](https://www.maxio.com/revenue-recognition)) |
+| Advanced SSP features | Enterprise: "Advanced Revenue Rules and SSP configurations", "SSP Price Analyzer" ([Chargebee pricing](https://www.chargebee.com/pricing/)) | Advanced revenue management listed under optional modules ([Maxio pricing](https://www.maxio.com/pricing)) |
+| Contract changes | "upsells, co-terms, credit notes, early renewals, and other modifications" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | "Instantly edit contracts for upgrades, refunds, and other changes" ([Maxio](https://www.maxio.com/revenue-recognition)) |
+| Controls | "Lock periods and enforce accounting controls" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | "Generate detailed audit trails"; period locks not published ([Maxio](https://www.maxio.com/revenue-recognition)) |
+| GL posting | "Post summarized journal entries … on your fiscal calendar" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | Syncs "invoices and SaaS payments to NetSuite, Sage, QuickBooks, etc." ([Maxio](https://www.maxio.com/revenue-recognition)) |
+| Source sync | "on a 24-hour cycle" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | Not published ([Maxio](https://www.maxio.com/revenue-recognition)) |
+| Integrations named | Chargebee, Stripe, NetSuite, Sage Intacct, QuickBooks, Xero ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | NetSuite, Sage, QuickBooks ([Maxio](https://www.maxio.com/revenue-recognition)) |
+| Billing prerequisite | Performance plan "available only to Chargebee Billing customers"; Enterprise not published ([Chargebee pricing](https://www.chargebee.com/pricing/)) | Revenue recognition is part of Maxio's platform ([Maxio pricing](https://www.maxio.com/pricing)) |
+| Price | Not published: Performance "request pricing", Enterprise by quote ([Chargebee pricing](https://www.chargebee.com/pricing/)) | Grow $599/month up to $100k monthly billings; Scale by quote ([Maxio pricing](https://www.maxio.com/pricing)) |
+
+## Do you need their billing product to use their revenue recognition?
+
+For Chargebee it depends on the plan. Its pricing page says the RevRec Performance plan "is available only to Chargebee Billing customers"; the Enterprise plan carries no such note, and the product page lists integrations with Stripe and others. Maxio's revenue recognition is part of its billing platform, with advanced revenue management listed as an optional module.
+
+## How does each one set and document SSP?
+
+Chargebee says allocation uses "a configurable SSP library tied to your price book", with "SSP documentation traceable at every step", and its Enterprise plan adds an "SSP Price Analyzer". Maxio says it handles "standalone selling prices (SSP) and negotiated transaction prices" and can "reallocate revenue". Maxio's allocation method is not published on the page we read.
+
+For an audit file, the question is the same in either tool: can a reviewer see each SSP's basis, the share of price each obligation receives and the rounding rule, then re-perform the split outside the system?
+
+## How does each one treat upsells, renewals and other changes?
+
+Chargebee says it automates "recognition treatment for upsells, co-terms, credit notes, early renewals, and other modifications". Maxio says you can "instantly edit contracts for upgrades, refunds, and other changes", with schedules adjusted "without overwriting original data". Neither page we read sets out the accounting method for each type of change in detail.
+
+## How does each one post to your general ledger?
+
+Chargebee says RevRec can "post summarized journal entries to the right accounts in your general ledger, automatically, on your fiscal calendar", and billing data syncs in "on a 24-hour cycle". Maxio says it can "sync invoices and SaaS payments to NetSuite, Sage, QuickBooks, etc."; its sync frequency and revenue-journal posting method are not published.
+
+## What does each one cost?
+
+Maxio publishes Grow at $599 per month for up to $100k in monthly billings, with Scale by quote above that; which tier includes which level of revenue recognition is not published. Chargebee RevRec pricing is not published: the Performance plan says "request pricing", and Enterprise is by quote.
+
+## How is a free-months bundle allocated by SSP?
+
+Take a $54,000.00 contract for 15 months of service starting November 2026, with three months free. Subscription and standard support have SSPs totalling $63,000.00, so the $9,000.00 discount is spread pro rata. The $54,000.00 is recognised over the full 15-month service period, not just the paid months.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Subscription | Ratable, 15 months | $56,250.00 | $48,214.29 |
+| Standard support (absorbs residual cent) | Ratable, 15 months | $6,750.00 | $5,785.71 |
+| **Total** | | **$63,000.00** | **$54,000.00** |
+
+Months 1 to 14 recognise $3,599.99 each: subscription $3,214.28 and support $385.71. Month 15 (Jan 2028) recognises $3,600.14, because the subscription's final month absorbs $0.09 ($3,214.28 × 14 + $3,214.37) and support's absorbs $0.06 ($385.71 × 14 + $385.77). Total recognised is $54,000.00 and the unrecognised balance ends at $0.00. The engine result's SHA-256 hash is f147aa14cb17c7a8427946e232f06d7bac7daf74d807b6f16bca79b590468a10.
+
+The engine models recognition only. It does not model billing schedules or contract assets, so the gap between invoices and revenue in the free months needs separate analysis. Try it in the app, or check the split in the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## Where does SSP allocation evidence fit alongside either tool?
+
+Soluqube is an allocation and evidence layer that sits next to Chargebee RevRec or Maxio. You confirm the obligations, price and SSPs. It returns the relative-SSP allocation in integer arithmetic, a full-term schedule that ties to the cent, clause evidence for each obligation and a SHA-256-hashed export for your external auditor.
+
+Clause evidence is the page and verbatim excerpt behind each obligation. In the app, uploaded text-layer PDFs also get a highlight on the cited line, and exports carry the page and excerpt. Contract extraction is heuristic, so you confirm every field. It is evidence you attach to the file for the deals an auditor samples, not a second subledger.
+
+The limits are plain. Soluqube does not do contract-modification accounting, does not handle usage-based fees, and has no billing or ERP sync. For vendor-by-vendor detail, see [Chargebee RevRec alternatives](/alternatives/chargebee-revrec), [Maxio alternatives](/alternatives/maxio) and [Soluqube vs Maxio](/soluqube-vs-maxio).
+
+To test it on your own deals, send three of your hardest bundled contracts through the [design partner programme](/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261020-vs). Founding prices for the first 10 customers are on [pricing](/pricing).
+
+## Sources
+
+All checked on 20 Oct 2026.
+
+- Chargebee, revenue recognition software (RevRec): https://www.chargebee.com/revenue-recognition-software/
+- Chargebee, pricing (RevRec plans): https://www.chargebee.com/pricing/
+- Maxio, revenue recognition: https://www.maxio.com/revenue-recognition
+- Maxio, pricing: https://www.maxio.com/pricing
     `
   }
 ];

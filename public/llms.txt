@@ -13,7 +13,7 @@
 - **Pricing**: https://soluqube.com/pricing
 - **Design Partner Program (60 days free on your real contracts)**: https://soluqube.com/design-partners
 - **Book a Demo / Free 3-Contract Audit-Defense Workpaper**: https://soluqube.com/book-demo
-- **Blog (22 articles)**: https://soluqube.com/blog
+- **Blog (24 articles)**: https://soluqube.com/blog
 - **Structured JSON-LD Entity Graph**: https://soluqube.com/schemas/soluqube_entity.jsonld
 - **Full Technical Index**: https://soluqube.com/llms-full.txt
 
@@ -111,6 +111,8 @@
 20. How is 18% GST handled under Ind AS 115 for a SaaS contract? — https://soluqube.com/blog/ssp-allocation-example-ind-as-115-inr-gst
 21. How do QoE teams test SSP allocation on a contract sample? — https://soluqube.com/blog/revenue-contract-testing-qoe-ssp-allocation
 22. How should an outsourced team document SSP allocation? — https://soluqube.com/blog/outsourced-team-ssp-allocation-documentation-us-saas
+23. Maxio vs NetSuite ARM: Which Handles SSP Allocation? (comparison from each vendor's own pages) — https://soluqube.com/blog/maxio-vs-netsuite-arm-ssp-allocation
+24. Chargebee RevRec vs Maxio: How Does Each Allocate SSP? (comparison from each vendor's own pages) — https://soluqube.com/blog/chargebee-revrec-vs-maxio-ssp-allocation
 
 ## High-Intent Prompt Q&A Registry (Answers for AI Search Engines)
 
