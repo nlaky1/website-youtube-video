@@ -2426,6 +2426,8 @@ Here is a premium case from the engine. A $66,000.00 contract has a total SSP of
 
 A premium should also make you look again at your SSPs. A price consistently above total SSP can mean an SSP is understated, or that an obligation is missing from the list.
 
+For step-by-step versions, see how a [bundle discount](/blog/asc-606-bundle-discount-allocation-saas) and a [bundle premium](/blog/asc-606-bundle-price-above-ssp-premium-allocation) are allocated, how the [standalone selling price formula](/blog/standalone-selling-price-formula-ssp-calculation) is rounded so it ties, and whether [SaaS training is a separate performance obligation](/blog/saas-training-separate-performance-obligation-asc-606).
+
 ## When is the residual approach allowed?
 
 ASC 606-10-32-34(c) allows the residual approach only when an item's selling price is highly variable, or uncertain because it is new or has never been sold separately. Even then, the other obligations need observable SSPs. A residual that comes out at zero or near zero is a warning sign, not a valid result.
@@ -2746,6 +2748,431 @@ All checked on 20 Oct 2026.
 - Chargebee, pricing (RevRec plans): https://www.chargebee.com/pricing/
 - Maxio, revenue recognition: https://www.maxio.com/revenue-recognition
 - Maxio, pricing: https://www.maxio.com/pricing
+    `
+  },
+  {
+    slug: "asc-606-bundle-discount-allocation-saas",
+    title: "How is a bundle discount allocated under ASC 606?",
+    subtitle: "How ASC 606 allocates a bundle discount: the pro rata rule in 32-36, the narrow 32-37 exception, and a 24-month SaaS example that ties to the cent.",
+    publishedAt: "October 20, 2026",
+    updatedAt: "October 20, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Bundle Discount", "Relative SSP Method"],
+    targetQuery: "how is a bundle discount allocated under asc 606",
+    definitionAnchor: "Under ASC 606-10-32-36, a bundle discount exists when the total standalone selling price of a contract's obligations exceeds its transaction price. By default the discount is spread across every obligation in proportion to SSP. It goes to only some obligations when all three conditions in 32-37 are met.",
+    excerpt: "What counts as a bundle discount under ASC 606, how the relative SSP method spreads it, when 32-37 lets you target it, and how to show it in a workpaper. Includes a $96,000, 24-month contract run through the Soluqube engine.",
+    toc: [
+      { id: "what-counts-as-a-discount-under-asc-606-10-32-36", label: "What counts as a discount under ASC 606-10-32-36?" },
+      { id: "how-is-a-discount-spread-across-obligations-by-default", label: "How is a discount spread across obligations by default?" },
+      { id: "what-does-a-pro-rata-discount-look-like-on-a-24-month-bundle", label: "What does a pro rata discount look like on a 24-month bundle?" },
+      { id: "when-can-a-discount-go-to-only-some-obligations", label: "When can a discount go to only some obligations?" },
+      { id: "how-do-you-show-the-discount-in-the-allocation-workpaper", label: "How do you show the discount in the allocation workpaper?" },
+      { id: "how-can-you-test-this-on-your-own-contracts", label: "How can you test this on your own contracts?" }
+    ],
+    faqs: [
+      {
+        question: "Can the whole discount be allocated to the implementation fee?",
+        answer: "Only if all three conditions in ASC 606-10-32-37 are met, which requires observable evidence that the discount belongs to that obligation. Without that evidence, the discount is spread pro rata across every obligation, including the subscription, and the implementation fee keeps its proportional share."
+      },
+      {
+        question: "Is a bundle discount the same as variable consideration?",
+        answer: "No. A bundle discount is a fixed gap between the contract price and the total SSP, known at inception. Variable consideration, such as usage fees or price concessions, is estimated and constrained in Step 3 before allocation starts. Soluqube's engine handles fixed prices only, so treat variable consideration as guidance."
+      },
+      {
+        question: "Does a bundle discount change when revenue is recognised?",
+        answer: "No. The discount changes how much each obligation is allocated in Step 4, not when it is recognised in Step 5. A ratable subscription is still recognised evenly over its term, and a point-in-time migration is still recognised when it is delivered, just at the lower allocated amount."
+      }
+    ],
+    engineVerified: true,
+    content: `
+A bundle discount exists whenever a SaaS contract's price is lower than the total standalone selling price of everything it includes. ASC 606 spreads that discount across every performance obligation in proportion to SSP, unless observable evidence ties it to specific items. This post covers the default rule in ASC 606-10-32-36, the narrow exception in 32-37, and how to show the discount in an allocation workpaper. The worked example is a 24-month, three-obligation bundle run through the Soluqube engine, which uses integer arithmetic so the allocation ties to the contract price. If you need the steps before this one, start with how SSP allocation works in our [ASC 606 SSP allocation guide](/blog/asc-606-ssp-allocation-guide). Key terms: [standalone selling price](/glossary/standalone-selling-price), [transaction price](/glossary/transaction-price) and [relative SSP method](/glossary/relative-ssp-method).
+
+## What counts as a discount under ASC 606-10-32-36?
+
+Under ASC 606-10-32-36, a customer receives a discount for buying a bundle when the sum of the standalone selling prices of the promised goods or services exceeds the promised consideration. In SaaS, that usually means a subscription, implementation and support priced together for less than they would cost bought separately.
+
+The comparison is between the [transaction price](/glossary/transaction-price) and total SSP, not list price. If your SSPs are list prices nobody actually pays, part of the apparent discount may simply be stale SSPs. Fix the SSP evidence first. Each item must also be a distinct [performance obligation](/glossary/performance-obligation); a discount can't be allocated to something that isn't one.
+
+## How is a discount spread across obligations by default?
+
+By default, ASC 606-10-32-36 allocates the discount proportionately to every performance obligation in the contract. Each obligation receives the transaction price multiplied by its SSP, divided by total SSP. That single formula spreads the discount pro rata, so every line is reduced by the same proportion of its SSP.
+
+**Allocated amount = Transaction price × Obligation SSP ÷ Total SSP**
+
+You don't calculate the discount separately and then subtract it. The relative formula does it in one step, and each line's discount is simply its SSP minus its allocated amount. The results rarely land on whole cents, so you need a written rounding rule. The engine rounds every obligation except the last half-up to the cent, and the last-listed obligation absorbs the residual cent.
+
+## What does a pro rata discount look like on a 24-month bundle?
+
+Take a $96,000.00, 24-month contract starting December 2026. Its three obligations have SSPs totalling $106,300.00: a subscription, a one-off data migration and standard support. The $10,300.00 discount is spread pro rata. The allocation ties to $96,000.00, and deferred revenue reaches $0.00 in the final month.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Subscription | Ratable, 24 months | $84,000.00 | $75,860.77 |
+| Data migration | Point in time, month 1 | $12,500.00 | $11,288.81 |
+| Standard support (absorbs residual cent) | Ratable, 24 months | $9,800.00 | $8,850.42 |
+| **Total** | | **$106,300.00** | **$96,000.00** |
+
+The subscription line is $96,000 × $84,000 ÷ $106,300, which rounds to $75,860.77. Data migration is $11,288.81, and standard support takes what remains: $8,850.42.
+
+| Month | Recognised | Made up of | Deferred after month |
+|---|---:|---|---:|
+| 1 (Dec 2026) | $14,818.43 | Subscription $3,160.86 + migration $11,288.81 + support $368.76 | $81,181.57 |
+| 2 (Jan 2027) | $3,529.62 | Subscription $3,160.86 + support $368.76 | $77,651.95 |
+| 3–22 | $3,529.62 each | Subscription $3,160.86 + support $368.76 | falls by $3,529.62 a month |
+| 23 (Oct 2028) | $3,529.62 | Subscription $3,160.86 + support $368.76 | $3,529.93 |
+| 24 (Nov 2028) | $3,529.93 | Subscription $3,160.99 + support $368.94 | $0.00 |
+
+The subscription recognises $3,160.86 × 23 months and then $3,160.99 in month 24. Support recognises $368.76 × 23 and then $368.94. Monthly amounts are rounded down and the final month absorbs the remainder ([terminal-period remainder absorption](/glossary/terminal-period-remainder-absorption)). Total recognised is $96,000.00. The engine result's SHA-256 hash is 734e129170b590beb4a306a898c140ce86088fe15c996af80eed3335cba3aaa0. You can reproduce this schedule in the app, or re-perform the allocation in the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## When can a discount go to only some obligations?
+
+Only when all three conditions in ASC 606-10-32-37 are met: you regularly sell each distinct good or service on its own; you regularly sell a bundle of some of them at a discount; and that bundle's discount is substantially the same as the contract discount, with observable evidence showing which obligations it belongs to.
+
+In SaaS this is rare, because few vendors sell implementation and support as a separately discounted bundle often enough to build that evidence. Wanting to load the discount onto a one-off fee so more revenue lands up front is not a reason. If the conditions are met, ASC 606-10-32-38 says to allocate the discount before using the [residual approach](/glossary/residual-approach) for any obligation. The Soluqube engine and calculator apply the default pro rata rule; a targeted 32-37 allocation is a judgement you document separately.
+
+## How do you show the discount in the allocation workpaper?
+
+Show each obligation's SSP and its basis, the transaction price, total SSP and the allocated amounts side by side, so a reviewer can see the discount and re-perform the split. State which rule applied, pro rata under 32-36 or targeted under 32-37, and the evidence behind that choice.
+
+A reviewer re-performing the allocation should need nothing beyond the page. Include:
+
+1. The contract price and each obligation, with its clause page and excerpt.
+2. Each SSP, its estimation method and source data.
+3. The discount rule applied, with 32-37 evidence if it was targeted.
+4. The allocation and the written residual-cent rule.
+5. A schedule that ends at $0.00 deferred, plus the export hash.
+
+The [sample SSP workpaper](/samples/soluqube-ssp-sample.pdf) shows this layout. For how the rounding rule is chosen and documented, see our post on [where the residual cent goes](/blog/ssp-allocation-rounding-residual-cent-asc-606). For the opposite case, where the contract price is above total SSP, see [what happens when a SaaS bundle sells above the sum of its SSPs](/blog/asc-606-bundle-price-above-ssp-premium-allocation).
+
+## How can you test this on your own contracts?
+
+Send us three of your hardest bundled contracts through the [design partner programme](/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261019-sprint), and you get a free 3-contract workpaper. You confirm the obligations and stated prices. We send back the relative SSP allocation, a schedule that ties to the cent, clause evidence for each obligation, and a hashed export.
+
+Founding prices for the first 10 customers are available on [pricing](/pricing). The engine doesn't model contract modifications, variable consideration or billing schedules yet, so treat those topics as guidance only.
+    `
+  },
+  {
+    slug: "asc-606-bundle-price-above-ssp-premium-allocation",
+    title: "What if a SaaS bundle sells above the sum of its SSPs?",
+    subtitle: "When a SaaS contract price is above total SSP, ASC 606 spreads the premium pro rata. A 12-month example that ties to the cent, plus what the memo says.",
+    publishedAt: "October 20, 2026",
+    updatedAt: "October 20, 2026",
+    readTime: "5 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Bundle Premium", "Relative SSP Method"],
+    targetQuery: "what if bundle price is higher than sum of standalone selling prices",
+    definitionAnchor: "When a contract's transaction price is higher than the total standalone selling price of its obligations, ASC 606 has no separate premium rule. The relative SSP method in ASC 606-10-32-29 allocates the whole price, so the premium is spread across every obligation in proportion to SSP.",
+    excerpt: "Can a SaaS contract price exceed total SSP, how relative SSP spreads the premium, when a premium means your SSPs are stale, and what the memo should say. Includes a $66,000, 12-month contract run through the Soluqube engine.",
+    toc: [
+      { id: "can-the-transaction-price-exceed-the-total-ssp", label: "Can the transaction price exceed the total SSP?" },
+      { id: "how-does-relative-ssp-allocate-a-premium", label: "How does relative SSP allocate a premium?" },
+      { id: "what-does-a-premium-look-like-on-a-12-month-saas-bundle", label: "What does a premium look like on a 12-month SaaS bundle?" },
+      { id: "is-a-premium-a-sign-that-the-ssps-are-stale", label: "Is a premium a sign that the SSPs are stale?" },
+      { id: "what-should-the-memo-say", label: "What should the memo say?" },
+      { id: "how-can-you-test-this-on-your-own-contracts", label: "How can you test this on your own contracts?" }
+    ],
+    faqs: [
+      {
+        question: "Can the whole premium be allocated to the subscription?",
+        answer: "ASC 606 gives no premium equivalent of the 32-37 discount exception, so the default is a pro rata spread under 32-29. If you believe the premium really belongs to one obligation, that usually means its SSP is understated. Fix the SSP estimate and its evidence rather than targeting the premium."
+      },
+      {
+        question: "Does a premium change when revenue is recognised?",
+        answer: "No. The premium changes how much each obligation is allocated in Step 4, not when it is recognised in Step 5. A ratable subscription is still recognised evenly over its term, and a point-in-time implementation is still recognised when it is delivered, just at the higher allocated amount."
+      },
+      {
+        question: "Is a premium the same as variable consideration?",
+        answer: "No. A premium is a fixed gap between the contract price and total SSP, known at inception. Variable consideration, such as usage fees or bonuses, is estimated and constrained in Step 3 before allocation. Soluqube's engine handles fixed prices only, so treat variable consideration as guidance."
+      }
+    ],
+    engineVerified: true,
+    content: `
+Most bundled SaaS contracts sell below the total standalone selling price of what they include. Some sell above it, because a customer pays for a dedicated success manager, a fast start or simply a strong negotiating position on your side. ASC 606 has no separate rule for that premium: the relative SSP method allocates the whole transaction price, so the premium is spread pro rata. This post explains why, what a premium may say about your SSPs, and what the memo should record. The worked example is a 12-month, three-obligation bundle run through the Soluqube engine, which uses integer arithmetic so the allocation ties to the contract price. For the full method, start with how SSP allocation works in our [ASC 606 SSP allocation guide](/blog/asc-606-ssp-allocation-guide). Key terms: [standalone selling price](/glossary/standalone-selling-price), [transaction price](/glossary/transaction-price) and [relative SSP method](/glossary/relative-ssp-method).
+
+## Can the transaction price exceed the total SSP?
+
+Yes. Nothing in ASC 606 requires the transaction price to be at or below the sum of standalone selling prices. SSP is an estimate of what each item would sell for on its own, and a negotiated bundle can land above that total. The standard then allocates the full transaction price, premium included.
+
+The discount rules in ASC 606-10-32-36 to 32-38 deal only with prices below total SSP. There is no mirror-image "premium" paragraph. So the general rule in 32-29 applies: allocate the [transaction price](/glossary/transaction-price) to each [performance obligation](/glossary/performance-obligation) in proportion to its SSP. The premium is not a separate line, a gain or an extra obligation. It is part of the price.
+
+## How does relative SSP allocate a premium?
+
+The same formula that spreads a discount spreads a premium. Each obligation receives the transaction price multiplied by its SSP, divided by total SSP. Because the price is above total SSP, every allocated amount comes out above its SSP, and each line carries the same proportion of the premium.
+
+**Allocated amount = Transaction price × Obligation SSP ÷ Total SSP**
+
+You don't compute the premium first and then add it. The relative formula does it in one step, and each line's premium is its allocated amount minus its SSP. The results rarely land on whole cents, so you need a written rounding rule. The engine rounds every obligation except the last half-up to the cent, and the last-listed obligation absorbs the residual cent.
+
+## What does a premium look like on a 12-month SaaS bundle?
+
+Take a $66,000.00, 12-month contract starting January 2027. Its three obligations have SSPs totalling $64,500.00: a subscription, a dedicated customer success manager and a one-off implementation. The $1,500.00 premium is spread pro rata. The allocation ties to $66,000.00, and deferred revenue reaches $0.00 in month 12.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Subscription | Ratable, 12 months | $48,000.00 | $49,116.28 |
+| Dedicated CSM | Ratable, 12 months | $9,000.00 | $9,209.30 |
+| Implementation (absorbs residual cent) | Point in time, month 1 | $7,500.00 | $7,674.42 |
+| **Total** | | **$64,500.00** | **$66,000.00** |
+
+The subscription line is $66,000 × $48,000 ÷ $64,500, which rounds to $49,116.28. The dedicated CSM is $9,209.30, and implementation takes what remains: $7,674.42.
+
+| Month | Recognised | Made up of | Deferred after month |
+|---|---:|---|---:|
+| 1 (Jan 2027) | $12,534.88 | Subscription $4,093.02 + CSM $767.44 + implementation $7,674.42 | $53,465.12 |
+| 2 (Feb 2027) | $4,860.46 | Subscription $4,093.02 + CSM $767.44 | $48,604.66 |
+| 3–10 | $4,860.46 each | Subscription $4,093.02 + CSM $767.44 | falls by $4,860.46 a month |
+| 11 (Nov 2027) | $4,860.46 | Subscription $4,093.02 + CSM $767.44 | $4,860.52 |
+| 12 (Dec 2027) | $4,860.52 | Subscription $4,093.06 + CSM $767.46 | $0.00 |
+
+The subscription recognises $4,093.02 × 11 months and then $4,093.06 in month 12. The CSM recognises $767.44 × 11 and then $767.46. Monthly amounts are rounded down and the final month absorbs the remainder ([terminal-period remainder absorption](/glossary/terminal-period-remainder-absorption)). Total recognised is $66,000.00. The engine result's SHA-256 hash is b17819f44f249771fd41b7da41fc82a0fdd6026eee0f35914dc876c1545b1605. You can reproduce this schedule in the app, or re-perform the allocation in the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## Is a premium a sign that the SSPs are stale?
+
+Often, yes. If customers regularly pay more for the bundle than your SSPs add up to, at least one SSP is probably understated, usually the one priced from an old list or a cost-plus estimate. A premium can also mean a promise is missing from the obligation list. Check both before you allocate.
+
+A one-off premium on a single negotiated deal is plausible. A pattern is evidence. Compare the contract with recent standalone sales and with your [SSP range](/glossary/ssp-range), if you set one. If the dedicated CSM is regularly sold alone for more than its SSP, update that estimate using an [observable price](/glossary/observable-price). Also read the contract for anything you haven't listed as a [distinct good or service](/glossary/distinct-good-or-service), such as a separate training session or an extra environment. Allocating a premium across the wrong list of obligations moves revenue between periods.
+
+## What should the memo say?
+
+The memo should state that the transaction price exceeds total SSP, give both figures, and explain why the premium is plausible for this deal. It should confirm that the SSPs and the obligation list were reviewed, and that the premium was spread pro rata under 32-29 with a written residual-cent rule.
+
+A reviewer should be able to re-perform the allocation from the page alone. Include:
+
+1. The contract price and each obligation, with its clause page and excerpt.
+2. Each SSP, its estimation method and source data.
+3. Why the price is above total SSP, and what was checked.
+4. The allocation and the written residual-cent rule.
+5. A schedule that ends at $0.00 deferred, plus the export hash.
+
+The [sample SSP workpaper](/samples/soluqube-ssp-sample.pdf) shows this layout. For a simpler two-obligation case with the same method, see our [subscription and implementation SSP example](/blog/ssp-allocation-example-saas-subscription-implementation). For the more common case, where the price is below total SSP, see [how a bundle discount is allocated under ASC 606](/blog/asc-606-bundle-discount-allocation-saas).
+
+## How can you test this on your own contracts?
+
+Send us three of your hardest bundled contracts through the [design partner programme](/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261019-sprint), and you get a free 3-contract workpaper. You confirm the obligations and stated prices. We send back the relative SSP allocation, a schedule that ties to the cent, clause evidence for each obligation, and a hashed export.
+
+Founding prices for the first 10 customers are available on [pricing](/pricing). The engine doesn't model contract modifications, variable consideration or billing schedules yet, so treat those topics as guidance only.
+    `
+  },
+  {
+    slug: "standalone-selling-price-formula-ssp-calculation",
+    title: "What is the standalone selling price formula?",
+    subtitle: "The relative SSP formula, how to round each allocation so the total ties, and a spreadsheet layout, with a $50,000 three-line SaaS example.",
+    publishedAt: "October 20, 2026",
+    updatedAt: "October 20, 2026",
+    readTime: "5 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Relative SSP Method", "SSP Formula"],
+    targetQuery: "standalone selling price formula",
+    definitionAnchor: "The standalone selling price formula under ASC 606-10-32-31 allocates the transaction price to each performance obligation in proportion to its SSP: allocated amount = transaction price × obligation SSP ÷ total SSP. Each result is rounded to the cent, and a written rule decides which line takes the residual so the total ties.",
+    excerpt: "The relative SSP formula, how to compute the ratios, how to round each allocation so the total ties to the contract price, and how to lay it out in a spreadsheet. Includes a $50,000, 12-month contract run through the Soluqube engine.",
+    toc: [
+      { id: "what-is-the-relative-ssp-formula", label: "What is the relative SSP formula?" },
+      { id: "how-do-you-compute-the-weights", label: "How do you compute the weights?" },
+      { id: "what-does-the-formula-give-on-a-50000-saas-bundle", label: "What does the formula give on a $50,000 SaaS bundle?" },
+      { id: "how-should-each-allocation-be-rounded-so-the-total-ties", label: "How should each allocation be rounded so the total ties?" },
+      { id: "how-do-you-lay-it-out-in-a-spreadsheet", label: "How do you lay it out in a spreadsheet?" },
+      { id: "how-can-you-test-this-on-your-own-contracts", label: "How can you test this on your own contracts?" }
+    ],
+    faqs: [
+      {
+        question: "Is the SSP formula the same under ASC 606 and IFRS 15?",
+        answer: "Yes. Both standards allocate the transaction price on a relative standalone selling price basis, and Ind AS 115 follows IFRS 15. The formula is identical. Differences in practice come from how each company estimates SSP and documents its evidence, not from the arithmetic of the allocation."
+      },
+      {
+        question: "Do I have to use the relative SSP formula for every contract?",
+        answer: "It is the default under ASC 606-10-32-29. A discount can go to only some obligations when the 32-37 criteria are met, and the residual approach is limited to SSPs that are highly variable or uncertain. Outside those cases, the relative formula applies to the whole transaction price."
+      },
+      {
+        question: "Should I round the weights or the amounts?",
+        answer: "Round the amounts, not the weights. A weight rounded to two decimals can move an allocation by hundreds of dollars on a large contract. Keep the full ratio in the calculation, round each allocated amount to the cent, and let one written rule decide which line takes the residual."
+      }
+    ],
+    engineVerified: true,
+    content: `
+The standalone selling price formula is the arithmetic at the centre of Step 4 of ASC 606. Once you have a transaction price and an SSP for each performance obligation, the formula allocates the price in proportion to those SSPs. The formula is one line. The hard parts are getting the ratios right, rounding each result so the total ties to the contract price, and laying the calculation out so a reviewer can re-perform it. This post covers all three with a three-line, 12-month SaaS bundle run through the Soluqube engine, which uses integer arithmetic so the allocation ties to the cent. For how SSPs are estimated in the first place, see how SSP allocation works in our [ASC 606 SSP allocation guide](/blog/asc-606-ssp-allocation-guide). Key terms: [standalone selling price](/glossary/standalone-selling-price), [transaction price](/glossary/transaction-price) and [relative SSP method](/glossary/relative-ssp-method).
+
+## What is the relative SSP formula?
+
+The relative SSP formula allocates the transaction price to each performance obligation in proportion to its standalone selling price. Each obligation receives the contract price multiplied by its own SSP and divided by the sum of all SSPs. ASC 606-10-32-31 sets this as the method, and it applies whether the bundle sells at a discount or a premium.
+
+**Allocated amount = Transaction price × Obligation SSP ÷ Total SSP**
+
+The formula needs two inputs you have already settled: the [transaction price](/glossary/transaction-price) from Step 3 and an SSP for each [performance obligation](/glossary/performance-obligation). If the price is below total SSP, the formula spreads the discount pro rata. If it is above, it spreads the premium the same way.
+
+## How do you compute the weights?
+
+Each weight is one obligation's SSP divided by total SSP. The weights always add up to exactly one, so the allocations add up to the full contract price. Keep each weight as an exact ratio rather than a rounded percentage, because a weight rounded too early moves the allocated amount, sometimes by more than a few cents.
+
+Most SSP sets do not divide cleanly. In the example below, total SSP is $55,000.00, and a ratio such as $45,000 ÷ $55,000 is a repeating decimal that never terminates. A spreadsheet that shows the weight to two decimals and then multiplies by that displayed figure gives a different answer from one that keeps the full ratio. The safe order is to multiply first, divide second and round last.
+
+## What does the formula give on a $50,000 SaaS bundle?
+
+Take a $50,000.00, 12-month contract starting November 2026, with a subscription, onboarding and training. Their SSPs total $55,000.00, so the $5,000.00 discount is spread pro rata. The formula allocates $40,909.09, $6,363.64 and $2,727.27, which ties to $50,000.00, and deferred revenue reaches $0.00 in month 12.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Subscription | Ratable, 12 months | $45,000.00 | $40,909.09 |
+| Onboarding | Point in time, month 1 | $7,000.00 | $6,363.64 |
+| Training (absorbs residual cent) | Point in time, month 2 | $3,000.00 | $2,727.27 |
+| **Total** | | **$55,000.00** | **$50,000.00** |
+
+The subscription line is $50,000 × $45,000 ÷ $55,000, rounded to $40,909.09. Onboarding rounds up to $6,363.64. Training takes what is left: $50,000.00 − $40,909.09 − $6,363.64 = $2,727.27.
+
+| Month | Recognised | Made up of | Deferred after month |
+|---|---:|---|---:|
+| 1 (Nov 2026) | $9,772.73 | Subscription $3,409.09 + onboarding $6,363.64 | $40,227.27 |
+| 2 (Dec 2026) | $6,136.36 | Subscription $3,409.09 + training $2,727.27 | $34,090.91 |
+| 3–11 | $3,409.09 each | Subscription | falls to $3,409.10 |
+| 12 (Oct 2027) | $3,409.10 | Subscription | $0.00 |
+
+The subscription recognises $3,409.09 for 11 months and $3,409.10 in month 12, so the final month absorbs $0.01 ([terminal-period remainder absorption](/glossary/terminal-period-remainder-absorption)). Total recognised is $50,000.00. The engine result's SHA-256 hash is 7bb1cfef98f0a6f167119def1bef783ffa27d1d5fbe17bf729f5be263b6688d8. This schedule is engine behaviour: the app's upload workbook gives the same allocation but puts every point-in-time item in month 1. You can re-perform the allocation in the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## How should each allocation be rounded so the total ties?
+
+Round every line except one to the cent, then give the last line whatever remains of the transaction price. That way the allocations always add up to the contract price exactly. The rule should be written down, applied the same way every time, and name which line takes the residual, so a reviewer gets the same answer.
+
+Rounding each line on its own and adding them up can leave the total a cent above or below the contract price. In the example, the rounded shares happen to add up to $50,000.00, so the residual on the training line is zero. On another contract it will be a cent. Our post on [where the residual cent goes in SSP allocation](/blog/ssp-allocation-rounding-residual-cent-asc-606) walks through cases where it is not zero. The same idea applies in Step 5: round the monthly amounts down and let the final month absorb the remainder, so deferred revenue ends at $0.00.
+
+## How do you lay it out in a spreadsheet?
+
+Use one row per obligation and one column per step: SSP, SSP source, the weight as a full ratio, the raw allocation, the rounded allocation, and a residual check. Put the transaction price and total SSP in labelled cells, reference them by name, and add a control cell showing allocations minus price, which should be zero.
+
+A layout a reviewer can follow usually has:
+
+1. The contract price, with its clause page and excerpt.
+2. Each obligation, its SSP and the [observable price](/glossary/observable-price) or estimate behind it.
+3. The formula in each row, referencing the price and total SSP cells, not typed numbers.
+4. The rounding rule in words, next to the line that takes the residual.
+5. A monthly schedule that ends at $0.00 deferred.
+
+The [sample SSP workpaper](/samples/soluqube-ssp-sample.pdf) shows the same structure as a finished document.
+
+## How can you test this on your own contracts?
+
+Send us three of your hardest bundled contracts through the [design partner programme](/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261020-sprint), and you get a free 3-contract workpaper. You confirm the obligations and stated prices. We send back the relative SSP allocation, a schedule that ties to the cent, clause evidence for each obligation, and a hashed export.
+
+Founding prices for the first 10 customers are available on [pricing](/pricing). The engine doesn't model contract modifications, variable consideration or billing schedules yet, so treat those topics as guidance only.
+    `
+  },
+  {
+    slug: "saas-training-separate-performance-obligation-asc-606",
+    title: "Is SaaS training a separate performance obligation?",
+    subtitle: "When SaaS training is distinct under ASC 606, when it is recognised, how to set its SSP, and a $72,000 example with two training deliveries.",
+    publishedAt: "October 20, 2026",
+    updatedAt: "October 20, 2026",
+    readTime: "5 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Performance Obligations", "SaaS Training"],
+    targetQuery: "is saas training a separate performance obligation",
+    definitionAnchor: "SaaS training is usually a separate performance obligation under ASC 606 when the customer can benefit from it with the software or with resources it already has, and when it does not significantly modify the software. It then takes a share of the transaction price by relative SSP and is recognised when it is delivered.",
+    excerpt: "When training is distinct from a SaaS subscription, whether it is recognised at a point in time or over time, how to estimate its SSP, and what auditors ask. Includes a $72,000, 24-month contract run through the Soluqube engine.",
+    toc: [
+      { id: "when-is-training-distinct", label: "When is training distinct?" },
+      { id: "is-training-recognised-at-a-point-in-time-or-over-time", label: "Is training recognised at a point in time or over time?" },
+      { id: "how-do-you-estimate-ssp-for-training", label: "How do you estimate SSP for training?" },
+      { id: "how-is-a-72000-contract-with-two-trainings-allocated", label: "How is a $72,000 contract with two trainings allocated?" },
+      { id: "what-do-auditors-ask-about-training", label: "What do auditors ask about training?" },
+      { id: "how-can-you-test-this-on-your-own-contracts", label: "How can you test this on your own contracts?" }
+    ],
+    faqs: [
+      {
+        question: "Is free training included in a SaaS deal still a performance obligation?",
+        answer: "It can be. If the training is a promise in the contract and is distinct, it is a performance obligation even when the order form shows no separate price. It still receives a share of the transaction price by relative SSP, which moves some revenue out of the subscription and into the training delivery."
+      },
+      {
+        question: "What happens to training the customer never uses?",
+        answer: "Revenue for the training stays deferred until the training is delivered or the right to it expires. If the company expects some training to go unused and can estimate how much, the breakage guidance applies. Document the expiry terms and the history behind any estimate of unused training."
+      },
+      {
+        question: "Is on-demand video training a separate performance obligation?",
+        answer: "Often it is not material enough to treat separately, and access to a self-serve library may be part of the subscription itself. Assess whether the customer pays for it as a distinct promise. If it is distinct and material, it is usually recognised over the access period rather than at a point in time."
+      }
+    ],
+    engineVerified: true,
+    content: `
+Training is one of the most common items in a SaaS order form and one of the least documented. Whether it is a separate performance obligation decides how much of the contract price is recognised when a session is delivered, and how much stays in the subscription. This post covers the distinct test, recognition timing, SSP evidence and the questions auditors ask, with a $72,000, 24-month contract run through the Soluqube engine. For the full Step 4 picture, see our [ASC 606 SSP allocation guide](/blog/asc-606-ssp-allocation-guide), which explains how SSP allocation works across a bundle. Key terms: [performance obligation](/glossary/performance-obligation), [distinct good or service](/glossary/distinct-good-or-service) and [standalone selling price](/glossary/standalone-selling-price).
+
+## When is training distinct?
+
+Training is distinct when two tests are met under ASC 606-10-25-19. The customer can benefit from it, with the software or with readily available resources, and it is separately identifiable from the subscription. Standard admin or user training usually passes both. Training that is part of a significant customisation of the software usually does not.
+
+The second test is where judgement sits. ASC 606-10-25-21 asks whether the vendor is integrating the training with the software into a combined output, whether the training significantly modifies the software, and whether the two are highly interdependent. Training on how to use a product as it is sold rarely meets any of these. Signs that training is distinct include:
+
+1. The vendor or third parties sell the same training on its own.
+2. The customer can use the software without it.
+3. The training does not change the software's code or configuration.
+
+## Is training recognised at a point in time or over time?
+
+Training is a service, so it is recognised as it is delivered. A live session delivered on one day is in practice recognised on that day, which looks like point-in-time recognition. A programme of sessions over several months is recognised over time as each session is delivered, using an input or output measure of progress.
+
+What matters is the delivery date, not the invoice date or the contract start. If training is billed upfront but delivered in month four, its revenue stays deferred until month four. See [point-in-time recognition](/glossary/point-in-time-recognition) and [ratable recognition](/glossary/ratable-recognition) for how each pattern behaves in a schedule.
+
+## How do you estimate SSP for training?
+
+Use an [observable price](/glossary/observable-price) first: the price at which the company sells the same training on its own, such as a published day rate. If there is none, estimate it with [expected cost plus margin](/glossary/expected-cost-plus-margin), built from trainer days, preparation time and a margin consistent with other services.
+
+A list price that is always discounted is weak evidence. A day rate actually charged on standalone training orders is strong evidence. Keep the source of each SSP in the workpaper next to the figure, so the reviewer can trace it without asking.
+
+## How is a $72,000 contract with two trainings allocated?
+
+Take a $72,000.00, 24-month contract starting February 2027, with a subscription, live admin training in month 1 and a train-the-trainer workshop in month 4. Their SSPs total $72,400.00, so the $400.00 discount is spread pro rata. The allocations are $63,646.41, $4,773.48 and $3,580.11, which tie to $72,000.00.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Subscription | Ratable, 24 months | $64,000.00 | $63,646.41 |
+| Live admin training | Point in time, month 1 | $4,800.00 | $4,773.48 |
+| Train-the-trainer workshop (absorbs residual cent) | Point in time, month 4 | $3,600.00 | $3,580.11 |
+| **Total** | | **$72,400.00** | **$72,000.00** |
+
+The workshop takes what is left: $72,000.00 − $63,646.41 − $4,773.48 = $3,580.11.
+
+| Month | Recognised | Made up of | Deferred after month |
+|---|---:|---|---:|
+| 1 (Feb 2027) | $7,425.41 | Subscription $2,651.93 + live admin training $4,773.48 | $64,574.59 |
+| 2–3 | $2,651.93 each | Subscription | falls to $59,270.73 |
+| 4 (May 2027) | $6,232.04 | Subscription $2,651.93 + workshop $3,580.11 | $53,038.69 |
+| 5–23 | $2,651.93 each | Subscription | falls to $2,652.02 |
+| 24 (Jan 2029) | $2,652.02 | Subscription | $0.00 |
+
+The subscription recognises $2,651.93 for 23 months and $2,652.02 in month 24, so the final month absorbs $0.09 ([terminal-period remainder absorption](/glossary/terminal-period-remainder-absorption)). Total recognised is $72,000.00. The engine result's SHA-256 hash is f6c0569d8f32cec97b8ab2e5c6fcc9c4702c63a04b781d65f67c315553d836ff. This schedule is engine behaviour: the app's upload workbook gives the same allocation but puts every point-in-time item in month 1. You can re-perform the allocation in the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## What do auditors ask about training?
+
+Auditors ask four things: why the training is distinct, where its SSP comes from, when it was actually delivered, and what happens to training the customer has not used. The answers belong in the workpaper before fieldwork, with the contract clause and delivery evidence attached to each training line.
+
+In practice that means:
+
+1. The distinct assessment, citing the clause that describes the training.
+2. The SSP source: standalone orders, a day rate or a cost build.
+3. Delivery evidence, such as attendance records or a customer sign-off, dated within the period.
+4. Cutoff: training delivered just after period end stays deferred.
+5. Expiry terms for unused training, and whether [breakage](/glossary/breakage) applies.
+
+For a related service line, our post on [allocating SSP to subscription and implementation](/blog/ssp-allocation-example-saas-subscription-implementation) shows the same workpaper structure. The [sample SSP workpaper](/samples/soluqube-ssp-sample.pdf) shows it as a finished document.
+
+## How can you test this on your own contracts?
+
+Send us three of your hardest bundled contracts through the [design partner programme](/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261020-sprint), and you get a free 3-contract workpaper. You confirm the obligations and stated prices. We send back the relative SSP allocation, a schedule that ties to the cent, clause evidence for each obligation, and a hashed export.
+
+Founding prices for the first 10 customers are available on [pricing](/pricing). The engine doesn't model contract modifications, variable consideration, breakage estimates or billing schedules yet, so treat those topics as guidance only.
     `
   }
 ];

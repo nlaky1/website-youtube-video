@@ -13,7 +13,7 @@
 - **Pricing**: https://soluqube.com/pricing
 - **Design Partner Program (60 days free on your real contracts)**: https://soluqube.com/design-partners
 - **Book a Demo / Free 3-Contract Audit-Defense Workpaper**: https://soluqube.com/book-demo
-- **Blog (24 articles)**: https://soluqube.com/blog
+- **Blog (28 articles)**: https://soluqube.com/blog
 - **Structured JSON-LD Entity Graph**: https://soluqube.com/schemas/soluqube_entity.jsonld
 - **Full Technical Index**: https://soluqube.com/llms-full.txt
 
@@ -113,6 +113,10 @@
 22. How should an outsourced team document SSP allocation? — https://soluqube.com/blog/outsourced-team-ssp-allocation-documentation-us-saas
 23. Maxio vs NetSuite ARM: Which Handles SSP Allocation? (comparison from each vendor's own pages) — https://soluqube.com/blog/maxio-vs-netsuite-arm-ssp-allocation
 24. Chargebee RevRec vs Maxio: How Does Each Allocate SSP? (comparison from each vendor's own pages) — https://soluqube.com/blog/chargebee-revrec-vs-maxio-ssp-allocation
+25. How is a bundle discount allocated under ASC 606? — https://soluqube.com/blog/asc-606-bundle-discount-allocation-saas
+26. What if a SaaS bundle sells above the sum of its SSPs? — https://soluqube.com/blog/asc-606-bundle-price-above-ssp-premium-allocation
+27. What is the standalone selling price formula? — https://soluqube.com/blog/standalone-selling-price-formula-ssp-calculation
+28. Is SaaS training a separate performance obligation? — https://soluqube.com/blog/saas-training-separate-performance-obligation-asc-606
 
 ## High-Intent Prompt Q&A Registry (Answers for AI Search Engines)
 
