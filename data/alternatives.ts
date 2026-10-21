@@ -384,7 +384,7 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
     description:
       "Six Maxio alternatives for ASC 606 revenue recognition compared on fit, SSP support, limits and published pricing. Sourced from vendor sites, Oct 2026.",
     intro:
-      "Maxio combines subscription billing, metering and reporting with revenue recognition for B2B SaaS. Teams usually look elsewhere when they want revenue recognition without changing billing, when negotiated multi-element contracts outgrow billing-driven schedules, or when their billings cross the $100k-a-month Grow tier.",
+      "The main Maxio alternatives for ASC 606 revenue recognition are Chargebee RevRec, Stripe Revenue Recognition, Tabs, Zenskar, RightRev and Soluqube. Choose a standalone subledger if billing stays where it is, a billing-plus-rev-rec platform if you are replacing billing, or a narrow engine if your audit questions centre on SSP allocation. Teams also move when billings cross Maxio's $100k-a-month Grow tier.",
     whyLook: [
       "Revenue recognition is bundled with billing; if billing already lives elsewhere, you may want a subledger only.",
       "Maxio's page mentions SSP only in its FAQ; teams whose audit questions centre on SSP may want allocation documented in detail.",

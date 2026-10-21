@@ -2351,6 +2351,10 @@ Firm Tool Access is $49 a month per firm, a founding price for the first 10 cust
       {
         question: "Does relative SSP allocation apply to Ind AS 115 contracts?",
         answer: "Yes. Ind AS 115 allocates on a relative standalone selling price basis, as ASC 606 does. For an Indian SaaS contract, the 18% GST is taken out first: it is collected for the government, so it stays out of the transaction price and is booked as a liability."
+      },
+      {
+        question: "How often should standalone selling price estimates be refreshed?",
+        answer: "ASC 606 and IFRS 15 set no fixed frequency. SSP is set at contract inception and is not revised for that contract later. For new contracts, update estimates when pricing, discounting or the market changes, and document a periodic review, for example quarterly or annually, with the evidence used."
       }
     ],
     engineVerified: true,
@@ -2485,7 +2489,7 @@ For each contract, a usable SSP file has seven parts: the signed contract and or
 6. A schedule ending at $0.00 deferred.
 7. Sign-off, export version and SHA-256 hash.
 
-For teams preparing this for a client, see [how an outsourced team documents SSP allocation](/blog/outsourced-team-ssp-allocation-documentation-us-saas). If you are choosing a tool to hold this evidence, our comparisons of [Maxio vs NetSuite ARM](/blog/maxio-vs-netsuite-arm-ssp-allocation) and [Chargebee RevRec vs Maxio](/blog/chargebee-revrec-vs-maxio-ssp-allocation) set out how each vendor describes SSP allocation, from its own pages.
+For teams preparing this for a client, see [how an outsourced team documents SSP allocation](/blog/outsourced-team-ssp-allocation-documentation-us-saas). If you are choosing a tool to hold this evidence, our comparisons of [Maxio vs NetSuite ARM](/blog/maxio-vs-netsuite-arm-ssp-allocation) and [Chargebee RevRec vs Maxio](/blog/chargebee-revrec-vs-maxio-ssp-allocation) set out how each vendor describes SSP allocation, from its own pages; [Maxio alternatives](/alternatives/maxio) compares six options side by side.
 
 ## How can you test this on your own contracts?
 

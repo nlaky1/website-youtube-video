@@ -135,7 +135,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     description:
       "How the relative standalone selling price method allocates a transaction price under ASC 606 and IFRS 15, with a worked $120,000 two-obligation example.",
     definition:
-      "The relative standalone selling price method allocates a contract's transaction price to each performance obligation in proportion to its standalone selling price. Each obligation receives its SSP divided by the sum of all SSPs, multiplied by the transaction price, so a bundle discount is spread proportionately across every obligation.",
+      "The relative SSP method allocates a contract's transaction price to each performance obligation in proportion to its standalone selling price: allocated amount = obligation SSP ÷ sum of all SSPs × transaction price. A bundle discount or premium is therefore spread across every obligation pro rata, unless the conditions for allocating a discount to only some obligations are met.",
     references: [
       { standard: "ASC 606", ref: "606-10-32-29 and 32-31" },
       { standard: "IFRS 15", ref: "paragraphs 74 and 76" },
@@ -158,7 +158,13 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Using stale or undocumented SSPs, which is where most auditor challenges on allocation start.",
     ],
     related: ["standalone-selling-price", "transaction-price", "residual-approach", "ssp-range", "terminal-period-remainder-absorption"],
-    further: [SSP_TOOL, ROUNDING_POST],
+    further: [
+      SSP_TOOL,
+      ROUNDING_POST,
+      { href: "/blog/asc-606-ssp-allocation-guide", label: "ASC 606 SSP allocation guide" },
+      { href: "/blog/standalone-selling-price-formula-ssp-calculation", label: "Standalone selling price formula: SSP calculation" },
+      { href: "/blog/asc-606-bundle-discount-allocation-saas", label: "ASC 606 bundle discount allocation in SaaS" },
+    ],
     soluqubeNote:
       "Soluqube computes this allocation in integer arithmetic at 10^6 scale, rounded to cents, with a documented rule for the residual cent, and hashes the export so it can be re-run.",
   },
@@ -192,7 +198,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Not documenting why the price is highly variable or uncertain.",
     ],
     related: ["standalone-selling-price", "relative-ssp-method", "adjusted-market-assessment", "expected-cost-plus-margin", "observable-price"],
-    further: [SSP_EXAMPLE_POST, SSP_TOOL],
+    further: [SSP_EXAMPLE_POST, SSP_TOOL, { href: "/blog/asc-606-ssp-allocation-guide", label: "ASC 606 SSP allocation guide" }],
   },
   {
     slug: "adjusted-market-assessment",
@@ -753,12 +759,12 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   },
   {
     slug: "cumulative-catch-up",
-    term: "Cumulative catch-up",
+    term: "Cumulative catch-up adjustment",
     title: "Cumulative Catch-Up Adjustment: ASC 606 Example",
     description:
       "The cumulative catch-up method under ASC 606-10-25-13(b) and IFRS 15.21(b): when it applies, and a worked example on a partly complete fixed-fee build.",
     definition:
-      "A cumulative catch-up adjustment recognises, in the current period, the effect of a change on revenue recognised to date, as if the revised terms or estimates had applied from inception. It applies to modifications of a single, partially satisfied performance obligation and to changes in estimated progress or transaction price.",
+      "A cumulative catch-up adjustment is a one-time entry in the current period that brings revenue recognised to date in line with revised terms or estimates, as if they had applied from inception. It applies to modifications of a single, partially satisfied performance obligation and to changes in estimated progress or transaction price. Prior periods are not restated.",
     references: [
       { standard: "ASC 606", ref: "606-10-25-13(b)" },
       { standard: "ASC 606", ref: "606-10-32-43", note: "changes in transaction price" },
@@ -780,7 +786,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Not disclosing significant changes in estimates.",
     ],
     related: ["contract-modification", "prospective-method", "input-method", "variable-consideration", "constraint-on-variable-consideration"],
-    further: [MODIFICATION_POST, DESIGN_PARTNERS],
+    further: [MODIFICATION_POST, ASC_HUB, DESIGN_PARTNERS],
     soluqubeNote: "Soluqube does not automate modification catch-up today; it is on the roadmap.",
   },
   {
@@ -1033,12 +1039,12 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   },
   {
     slug: "licence-of-ip",
-    term: "Licence of IP (right to access vs right to use)",
-    title: "Licence of IP: Right to Access vs Right to Use",
+    term: "Right to use vs right to access (licence of IP)",
+    title: "Right to Use vs Right to Access: Licence of IP",
     description:
-      "Licences of intellectual property under IFRS 15 and ASC 606: right to access vs right to use, functional vs symbolic IP, and a worked timing example.",
+      "Right to use vs right to access for IP licences under IFRS 15 and ASC 606: functional vs symbolic IP, when revenue is recognised, and a worked example.",
     definition:
-      "A licence of intellectual property grants either a right to access the IP as it exists throughout the licence period, recognised over time, or a right to use the IP as it exists when granted, recognised at a point in time. IFRS 15 uses this access-or-use distinction; ASC 606 classifies the IP as functional or symbolic.",
+      "A right to access gives the customer the licensor's IP as it changes over the licence period, so revenue is recognised over time. A right to use gives the customer the IP as it exists when granted, so revenue is recognised at a point in time. ASC 606 reaches this split by classifying IP as symbolic or functional.",
     references: [
       { standard: "ASC 606", ref: "606-10-55-54 to 55-65" },
       { standard: "IFRS 15", ref: "paragraphs B52–B63" },
@@ -1059,7 +1065,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Applying the general variable-consideration constraint to sales- or usage-based royalties instead of the royalty exception.",
     ],
     related: ["point-in-time-recognition", "ratable-recognition", "constraint-on-variable-consideration", "distinct-good-or-service", "performance-obligation"],
-    further: [ASC_HUB, DESIGN_PARTNERS],
+    further: [ASC_HUB, { href: "/blog/saas-training-separate-performance-obligation-asc-606", label: "Is SaaS training a separate performance obligation?" }, DESIGN_PARTNERS],
   },
   {
     slug: "saas-implementation-fee",
