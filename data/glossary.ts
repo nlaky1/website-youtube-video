@@ -170,6 +170,23 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     soluqubeNote:
       "Soluqube computes this allocation in integer arithmetic at 10^6 scale, rounded to cents, with a documented rule for the residual cent, and hashes the export so it can be re-run.",
+    faqs: [
+      {
+        question: "What is the relative SSP method formula?",
+        answer:
+          "Allocated amount equals the obligation's standalone selling price divided by the sum of all standalone selling prices, multiplied by the transaction price. ASC 606-10-32-31 requires this allocation at contract inception. The allocated amounts must add back to the transaction price, so a written rule for the rounding remainder keeps the total exact.",
+      },
+      {
+        question: "Does a bundle premium get allocated the same way as a discount?",
+        answer:
+          "Usually, yes. When the transaction price exceeds the sum of the standalone selling prices, the excess is generally spread across all obligations in proportion to their SSPs, just as a discount is. First check that the SSPs are current and that the excess is not variable consideration that relates to a specific obligation.",
+      },
+      {
+        question: "Can the discount go to one obligation only?",
+        answer:
+          "Only if all three conditions in ASC 606-10-32-37 are met: each distinct item is regularly sold on its own, a bundle of some of those items is also regularly sold at a discount, and that bundle discount is substantially the same as the discount in the contract. Otherwise the discount is allocated pro rata.",
+      },
+    ],
   },
   {
     slug: "residual-approach",
@@ -202,6 +219,23 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["standalone-selling-price", "relative-ssp-method", "adjusted-market-assessment", "expected-cost-plus-margin", "observable-price"],
     further: [SSP_EXAMPLE_POST, SSP_TOOL, { href: "/blog/asc-606-ssp-allocation-guide", label: "ASC 606 SSP allocation guide" }],
+    faqs: [
+      {
+        question: "How often should standalone selling price estimates be refreshed when using the residual approach?",
+        answer:
+          "Each time a new contract uses it. The residual SSP is set at contract inception and is not revised later for that contract. For each new contract, confirm again that the item's price is still highly variable or uncertain and that the other items' observable prices are current. Once a representative price emerges, the residual approach stops fitting.",
+      },
+      {
+        question: "Can the residual approach give a zero SSP?",
+        answer:
+          "It should not. A residual of zero or a very small amount suggests the approach does not fit the facts, because the estimate must still meet the allocation objective in ASC 606-10-32-28. Test the result against the observed price range, and use another estimation method if it falls outside it.",
+      },
+      {
+        question: "Residual approach vs relative SSP method: what is the difference?",
+        answer:
+          "They do different jobs. The residual approach is one of three ways to estimate a standalone selling price under ASC 606-10-32-34. The relative SSP method then allocates the transaction price across obligations in proportion to those SSPs under 32-31. A residual estimate feeds into the allocation; it does not replace it.",
+      },
+    ],
   },
   {
     slug: "adjusted-market-assessment",
@@ -791,6 +825,23 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     related: ["contract-modification", "prospective-method", "input-method", "variable-consideration", "constraint-on-variable-consideration"],
     further: [MODIFICATION_POST, ASC_HUB, DESIGN_PARTNERS],
     soluqubeNote: "Soluqube does not automate modification catch-up today; it is on the roadmap.",
+    faqs: [
+      {
+        question: "What is a cumulative catch-up adjustment?",
+        answer:
+          "It is a single entry in the current period that brings revenue recognised to date in line with revised terms or estimates, as if they had applied from contract inception. Under ASC 606-10-25-13(b) it applies when a modification adds goods or services that are not distinct from a single, partially satisfied performance obligation.",
+      },
+      {
+        question: "Cumulative catch-up vs prospective method: which applies?",
+        answer:
+          "It depends on what remains to be delivered. If the remaining goods or services are distinct from those already transferred, ASC 606-10-25-13(a) applies prospectively. If they form part of a single performance obligation that is partly satisfied, 25-13(b) requires a cumulative catch-up. A mix of remaining items can require both treatments in one contract.",
+      },
+      {
+        question: "Are prior periods restated for a cumulative catch-up?",
+        answer:
+          "No. The whole adjustment is recorded in the period of the modification or change in estimate, and earlier financial statements stay as reported. A change in estimate is not an error correction, so there is no restatement. Disclose significant changes in estimates and the effect on revenue, so readers can see why current-period revenue moved.",
+      },
+    ],
   },
   {
     slug: "prospective-method",
@@ -1069,6 +1120,23 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["point-in-time-recognition", "ratable-recognition", "constraint-on-variable-consideration", "distinct-good-or-service", "performance-obligation"],
     further: [ASC_HUB, { href: "/blog/saas-training-separate-performance-obligation-asc-606", label: "Is SaaS training a separate performance obligation?" }, DESIGN_PARTNERS],
+    faqs: [
+      {
+        question: "What is the difference between right to use and right to access?",
+        answer:
+          "A right to access gives the customer the licensor's IP as it changes over the licence period, so revenue is recognised over time. A right to use gives the IP as it exists when granted, so revenue is recognised at a point in time. ASC 606-10-55-58 to 55-64 makes the split through symbolic versus functional IP.",
+      },
+      {
+        question: "Is a SaaS subscription a right to access licence?",
+        answer:
+          "Generally no. Under ASC 606-10-55-54(a), a hosted arrangement is a licence only if the customer can take possession of the software without significant penalty and run it on its own or a third party's hardware. If it cannot, the subscription is a service, recognised over time as it is provided, not a licence of IP.",
+      },
+      {
+        question: "When is revenue from a right-to-use licence recognised?",
+        answer:
+          "At the point in time control transfers, which cannot be earlier than both the moment the software or other IP is made available to the customer and the start of the period in which the customer can use it. A renewal of a right-to-use licence is not recognised before the renewal period begins, under ASC 606-10-55-58C.",
+      },
+    ],
   },
   {
     slug: "saas-implementation-fee",

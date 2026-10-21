@@ -408,6 +408,23 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
     ],
     versusPage: "/soluqube-vs-maxio",
     relatedPost: { href: "/blog/maxio-vs-netsuite-arm-ssp-allocation", label: "Maxio vs NetSuite ARM: which handles SSP allocation?" },
+    faqs: [
+      {
+        question: "What is the best Maxio alternative for ASC 606?",
+        answer:
+          "It depends on whether billing moves too. If you bill in Chargebee, Chargebee RevRec is the closest like-for-like subledger. On Stripe, Stripe Revenue Recognition is an add-on. Tabs and Zenskar combine billing and revenue recognition. RightRev is a standalone subledger. Soluqube is a narrow engine for SSP allocation, not a billing replacement.",
+      },
+      {
+        question: "Is there a Maxio alternative without changing billing?",
+        answer:
+          "Yes. Standalone subledgers such as RightRev, or Chargebee RevRec if you also bill in Chargebee, keep billing where it is. Soluqube also works beside your billing system: you confirm the contract terms, and it produces the relative SSP allocation, the full-term schedule and a hashed export, with page and excerpt evidence per obligation.",
+      },
+      {
+        question: "How much does Maxio cost?",
+        answer:
+          "Maxio's pricing page lists a Grow plan at $599 a month for up to $100k in monthly billings, and a Scale plan priced by quote. Advanced revenue management is listed as an optional module, and the page does not spell out which tier includes what, so confirm the module cost with Maxio directly.",
+      },
+    ],
   },
   {
     slug: "zuora-revpro",
