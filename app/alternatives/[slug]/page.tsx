@@ -242,7 +242,11 @@ export default function AlternativesDetailPage({ params }: Props) {
             <Link href="/glossary/contract-modification" className="text-emerald-700 underline underline-offset-2">
               contract modifications
             </Link>{" "}
-            show what to check.
+            show what to check. For the full method, see the{" "}
+            <Link href="/blog/asc-606-ssp-allocation-guide" className="text-emerald-700 underline underline-offset-2">
+              ASC 606 SSP allocation guide
+            </Link>
+            .
             {p.relatedPost ? (
               <>
                 {" "}Related reading:{" "}
