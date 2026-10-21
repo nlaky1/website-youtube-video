@@ -1,3 +1,4 @@
+import type { PageFaq } from "@/lib/page-faqs";
 /**
  * "<Vendor> alternatives" pages.
  *
@@ -373,6 +374,8 @@ export interface AlternativesPage {
   /** Existing head-to-head page, if any (different intent; linked, not canonicalised). */
   versusPage?: string;
   relatedPost?: { href: string; label: string };
+  /** Optional real-query FAQs; rendered visibly and as FAQPage JSON-LD only when present. */
+  faqs?: PageFaq[];
 }
 
 export const ALTERNATIVES_PAGES: AlternativesPage[] = [

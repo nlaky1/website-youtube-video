@@ -2,6 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import PageFaqs from "@/components/page-faqs";
+import { faqGraph } from "@/lib/page-faqs";
 import Navbar from "@/components/navbar";
 import ResourceFooter from "@/components/resource-footer";
 import {
@@ -94,6 +96,7 @@ export default function AlternativesDetailPage({ params }: Props) {
           { "@type": "ListItem", position: 3, name: `${p.subjectName} alternatives`, item: url },
         ],
       },
+      ...faqGraph(url, p.faqs),
     ],
   };
 
@@ -258,6 +261,8 @@ export default function AlternativesDetailPage({ params }: Props) {
             ) : null}
           </p>
         </section>
+
+        <PageFaqs faqs={p.faqs} />
 
         <aside className="rounded-2xl bg-slate-900 text-white p-6 space-y-2">
           <p className="font-bold">Want to test Soluqube on your own contracts?</p>

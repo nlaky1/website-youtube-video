@@ -1,3 +1,4 @@
+import type { PageFaq } from "@/lib/page-faqs";
 /**
  * Revenue recognition glossary (ASC 606 / IFRS 15 / Ind AS 115).
  *
@@ -39,6 +40,8 @@ export interface GlossaryTerm {
   further: GlossaryLink[];
   /** Plain statement of what Soluqube does or does not do for this topic, when relevant. */
   soluqubeNote?: string;
+  /** Optional real-query FAQs; rendered visibly and as FAQPage JSON-LD only when present. */
+  faqs?: PageFaq[];
 }
 
 const SSP_TOOL: GlossaryLink = { href: "/tools/ssp-allocation-calculator", label: "SSP allocation calculator" };

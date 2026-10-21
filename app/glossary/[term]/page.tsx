@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
 import ResourceFooter from "@/components/resource-footer";
+import PageFaqs from "@/components/page-faqs";
+import { faqGraph } from "@/lib/page-faqs";
 import { GLOSSARY_TERMS, getGlossaryTerm, type GlossaryTerm } from "@/data/glossary";
 
 interface Props {
@@ -69,6 +71,7 @@ export default function GlossaryTermPage({ params }: Props) {
           { "@type": "ListItem", position: 3, name: t.term, item: url },
         ],
       },
+      ...faqGraph(url, t.faqs),
     ],
   };
 
@@ -140,6 +143,8 @@ export default function GlossaryTermPage({ params }: Props) {
             <p>{t.soluqubeNote}</p>
           </section>
         )}
+
+        <PageFaqs faqs={t.faqs} />
 
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-slate-900">Related terms</h2>

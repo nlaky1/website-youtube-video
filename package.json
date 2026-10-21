@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:tools": "node --no-warnings=MODULE_TYPELESS_PACKAGE_JSON --test tests/ssp-calculator.test.mjs tests/calculator-email.test.mjs tests/analytics.test.mjs"
+    "test:tools": "node --no-warnings=MODULE_TYPELESS_PACKAGE_JSON --test tests/ssp-calculator.test.mjs tests/calculator-email.test.mjs tests/analytics.test.mjs tests/page-faqs.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
