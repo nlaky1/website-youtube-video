@@ -13,7 +13,7 @@
 - [Pricing](https://soluqube.com/pricing)
 - [Design Partner Program (60 days free on your real contracts)](https://soluqube.com/design-partners)
 - [Book a Demo / Free 3-Contract Audit-Defense Workpaper](https://soluqube.com/book-demo)
-- [Blog (28 articles)](https://soluqube.com/blog)
+- [Blog (30 articles)](https://soluqube.com/blog)
 - [Structured JSON-LD Entity Graph](https://soluqube.com/schemas/soluqube_entity.jsonld)
 - [Full Technical Index](https://soluqube.com/llms-full.txt)
 
@@ -117,6 +117,8 @@
 - [What if a SaaS bundle sells above the sum of its SSPs?](https://soluqube.com/blog/asc-606-bundle-price-above-ssp-premium-allocation)
 - [What is the standalone selling price formula?](https://soluqube.com/blog/standalone-selling-price-formula-ssp-calculation)
 - [Is SaaS training a separate performance obligation?](https://soluqube.com/blog/saas-training-separate-performance-obligation-asc-606)
+- [What SSP allocation mistakes do auditors flag?](https://soluqube.com/blog/ssp-allocation-mistakes-asc-606)
+- [Is premium support SSP a percentage of the subscription?](https://soluqube.com/blog/premium-support-ssp-saas-support-tier-allocation)
 
 ## High-Intent Prompt Q&A Registry (Answers for AI Search Engines)
 

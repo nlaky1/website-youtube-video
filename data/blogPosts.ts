@@ -3178,5 +3178,264 @@ Send us three of your hardest bundled contracts through the [design partner prog
 
 Founding prices for the first 10 customers are available on [pricing](/pricing). The engine doesn't model contract modifications, variable consideration, breakage estimates or billing schedules yet, so treat those topics as guidance only.
     `
+  },
+  {
+    slug: "ssp-allocation-mistakes-asc-606",
+    title: "What SSP allocation mistakes do auditors flag?",
+    subtitle: "Ten SSP allocation mistakes across estimation, obligations, arithmetic and schedules, with a $186,000, 36-month contract run through the Soluqube engine.",
+    publishedAt: "October 23, 2026",
+    updatedAt: "October 23, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Audit Readiness", "Relative SSP Method"],
+    targetQuery: "ssp allocation mistakes",
+    definitionAnchor: "An SSP allocation mistake is any gap in ASC 606 Step 4 that stops a reviewer re-performing the allocation: an SSP with no evidence, a merged or missing performance obligation, a discount placed without meeting ASC 606-10-32-37, rounding that does not tie, or a schedule that leaves deferred revenue after the term.",
+    excerpt: "Ten SSP allocation mistakes auditors raise under ASC 606, from undocumented SSPs to schedules that don't tie, with a $186,000 engine-run example.",
+    toc: [
+      { id: "what-counts-as-an-ssp-allocation-mistake", label: "What counts as an SSP allocation mistake?" },
+      { id: "which-mistakes-happen-when-estimating-ssp", label: "Which mistakes happen when estimating SSP?" },
+      { id: "which-mistakes-happen-when-identifying-obligations", label: "Which mistakes happen when identifying obligations?" },
+      { id: "which-mistakes-happen-in-the-allocation-arithmetic", label: "Which mistakes happen in the allocation arithmetic?" },
+      { id: "which-mistakes-happen-in-the-revenue-schedule", label: "Which mistakes happen in the revenue schedule?" },
+      { id: "what-does-a-clean-allocation-look-like-on-a-186000-contract", label: "What does a clean allocation look like on a $186,000 contract?" },
+      { id: "what-should-the-ssp-file-hold-before-fieldwork", label: "What should the SSP file hold before fieldwork?" },
+      { id: "how-can-you-test-this-on-your-own-contracts", label: "How can you test this on your own contracts?" }
+    ],
+    faqs: [
+      {
+        question: "Is a rounding cent in an SSP allocation an audit finding?",
+        answer: "On its own it is usually far below materiality. What it can signal is a weaker control: no written rounding rule, or a schedule nobody ties back to the contract price. Auditors tend to spend their time on SSP judgement, obligations and cutoff, so fix the rule once and move on."
+      },
+      {
+        question: "Do you reallocate existing contracts when SSPs change?",
+        answer: "No. ASC 606-10-32-43 says the transaction price is not reallocated for changes in standalone selling prices after contract inception. Updated SSPs apply to new contracts. Keep the SSP set used at inception with each contract, so a reviewer can see which figures applied on the day it was signed."
+      },
+      {
+        question: "Is using the residual approach always a mistake?",
+        answer: "No. ASC 606-10-32-34(c) allows it when an SSP is highly variable or uncertain, for example a new product with no pricing history. The mistake is using it as a shortcut when observable prices or a reasonable estimate exist. Document why the criteria are met and check the residual result is reasonable."
+      }
+    ],
+    engineVerified: true,
+    content: `
+SSP allocation is where many ASC 606 review comments start, and most of them are not about arithmetic. They are about an SSP with no evidence behind it, a service folded into the subscription, a discount placed on one line without support, or a schedule that does not end at zero. This post lists ten mistakes grouped by where they happen in Step 4, then shows a clean allocation on a $186,000.00, 36-month contract run through the Soluqube engine. The list comes from the standard's requirements, not from a survey, so use it as a checklist rather than a ranking. For how SSP allocation works end to end, see our [ASC 606 SSP allocation guide](https://soluqube.com/blog/asc-606-ssp-allocation-guide). Key terms: [standalone selling price](https://soluqube.com/glossary/standalone-selling-price), [relative SSP method](https://soluqube.com/glossary/relative-ssp-method) and [performance obligation](https://soluqube.com/glossary/performance-obligation).
+
+## What counts as an SSP allocation mistake?
+
+An SSP allocation mistake is any gap that stops a reviewer re-performing Step 4 and reaching the same numbers. It can sit in the SSP estimate, in the list of performance obligations, in the arithmetic or in the schedule. Judgement and evidence gaps usually draw the most questions; a stray rounding cent is normally below materiality.
+
+ASC 606-10-32-28 sets the objective: allocate the transaction price in an amount that depicts the consideration the entity expects for each promised good or service. ASC 606-10-32-29 and 32-31 make relative SSP the default way to get there. Every mistake below is a place where the file stops showing how that objective was met.
+
+## Which mistakes happen when estimating SSP?
+
+The three estimation mistakes are using a list price that every deal discounts as the SSP, recording a figure with no source behind it, and leaving SSPs unchanged for years. ASC 606-10-32-32 and 32-33 point to observable prices first, then estimates that maximise observable inputs and are applied consistently.
+
+1. **A list price nobody pays.** If every customer gets a discount from list, the list price is weak evidence of what the item sells for on its own. Use prices from actual standalone sales, or an estimate under ASC 606-10-32-34. See [observable price](https://soluqube.com/glossary/observable-price).
+2. **No source next to the figure.** An SSP with no standalone sales data, market assessment or cost build beside it cannot be traced. Record the method and the data on the same row as the number.
+3. **Stale SSPs.** A study run once and never refreshed drifts away from current pricing. Existing contracts are not reallocated for later SSP changes (ASC 606-10-32-43), but new contracts need current figures, and the review date belongs in the file.
+
+## Which mistakes happen when identifying obligations?
+
+The two identification mistakes are folding a distinct service, such as onboarding or training, into the subscription, and leaving out a promise because the order form shows no price for it. Both change the allocation before any arithmetic starts, because the distinct test in ASC 606-10-25-19 decides which items get an SSP at all.
+
+4. **Merging a distinct service into the subscription.** Onboarding or training that the customer can benefit from and that does not significantly modify the software usually passes ASC 606-10-25-19 and 25-21. Our post on whether [SaaS training is a separate performance obligation](https://soluqube.com/blog/saas-training-separate-performance-obligation-asc-606) walks through the test.
+5. **Ignoring a "free" promise.** An item included at no charge is still a performance obligation if it is a distinct promise. It takes a share of the transaction price by relative SSP, which moves revenue out of the other lines.
+
+## Which mistakes happen in the allocation arithmetic?
+
+The three arithmetic mistakes are pushing the whole discount onto one line without meeting ASC 606-10-32-37, using the residual approach where 32-34(c) does not allow it, and multiplying by rounded weights instead of exact ratios. Each one moves revenue between obligations, and the last can leave the allocation not tying to the contract price.
+
+6. **Discount on one line without support.** ASC 606-10-32-36 spreads a discount pro rata by default. Placing it on some obligations only needs all three 32-37 criteria to be met and documented. Our post on [how a bundle discount is allocated](https://soluqube.com/blog/asc-606-bundle-discount-allocation-saas) covers both cases.
+7. **Residual approach as a shortcut.** It is limited to SSPs that are highly variable or uncertain. Where observable prices or a reasonable estimate exist, the residual result is not the allocation the standard asks for. See [residual approach](https://soluqube.com/glossary/residual-approach).
+8. **Rounded weights and no rounding rule.** A weight shown to two decimals and then multiplied can give a different amount from the full ratio. Keep exact ratios, round the amounts, and write down which line takes the residual cent. Our post on [where the rounding cent goes](https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606) shows cases where it is not zero.
+
+## Which mistakes happen in the revenue schedule?
+
+The two schedule mistakes are recognising a point-in-time item when it is invoiced or when the contract starts, instead of when control transfers, and building monthly amounts that leave a balance in deferred revenue after the last month. The first is a cutoff question under ASC 606-10-25-30; the second is a tie-out failure that a reviewer can spot quickly.
+
+9. **Point-in-time items on the wrong date.** Onboarding delivered in month 2 is recognised in month 2, not on the invoice date. Keep delivery evidence, such as a sign-off, dated within the period. See [point-in-time recognition](https://soluqube.com/glossary/point-in-time-recognition).
+10. **A schedule that does not end at zero.** Equal monthly amounts rounded to the cent rarely add up to the allocation exactly. Round each month down and let the final month absorb the remainder, so deferred revenue ends at $0.00. See [terminal-period remainder absorption](https://soluqube.com/glossary/terminal-period-remainder-absorption).
+
+## What does a clean allocation look like on a $186,000 contract?
+
+Take a $186,000.00, 36-month contract starting November 2026 with four obligations whose SSPs total $231,000.00. The Soluqube engine spreads the $45,000.00 discount pro rata and allocates $144,935.06, $14,493.51, $21,740.26 and $4,831.17, which ties to $186,000.00. Deferred revenue ends at $0.00 in month 36.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Platform subscription | Ratable, 36 months | $180,000.00 | $144,935.06 |
+| Onboarding | Point in time, month 2 | $18,000.00 | $14,493.51 |
+| Premium support | Ratable, 36 months | $27,000.00 | $21,740.26 |
+| Admin training (absorbs residual cent) | Point in time, month 3 | $6,000.00 | $4,831.17 |
+| **Total** | | **$231,000.00** | **$186,000.00** |
+
+| Month | Recognised | Made up of | Deferred after month |
+|---|---:|---|---:|
+| 1 (Nov 2026) | $4,629.86 | Subscription $4,025.97 + premium support $603.89 | $181,370.14 |
+| 2 (Dec 2026) | $19,123.37 | Subscription $4,025.97 + onboarding $14,493.51 + premium support $603.89 | $162,246.77 |
+| 3 (Jan 2027) | $9,461.03 | Subscription $4,025.97 + premium support $603.89 + admin training $4,831.17 | $152,785.74 |
+| 4–35 | $4,629.86 each | Subscription $4,025.97 + premium support $603.89 | falls to $4,630.22 |
+| 36 (Oct 2029) | $4,630.22 | Subscription $4,026.11 + premium support $604.11 | $0.00 |
+
+Here is how the example avoids the mistakes above:
+
+- **Mistake 6:** the discount is spread pro rata across all four obligations, because nothing in the contract supports placing it on one line.
+- **Mistake 8:** each line except the last is rounded half-up to the cent, and admin training, the last listed obligation, absorbs the residual cent. The amounts are quoted, not the weights.
+- **Mistake 9:** onboarding is recognised in month 2 and admin training in month 3, the months the scenario sets for delivery, not in month 1.
+- **Mistake 10:** the subscription recognises $4,025.97 for 35 months and $4,026.11 in month 36, so the final month absorbs $0.14. Premium support recognises $603.89 for 35 months and $604.11 in month 36, absorbing $0.22.
+
+Total recognised is $186,000.00. The engine result's SHA-256 hash is 02fc241e81f1da732a63fbb31eec1626f54228831e4389a4fc18bff6b1f3e964. This schedule is engine behaviour: the app's upload workbook gives the same allocation but puts every point-in-time item in month 1. You can re-perform the allocation in the [SSP allocation calculator](https://soluqube.com/tools/ssp-allocation-calculator?utm_source=blog&utm_medium=community&utm_campaign=20261021-sprint).
+
+## What should the SSP file hold before fieldwork?
+
+Before fieldwork, the SSP file should let a reviewer trace every number back to a source without asking. That means the contract clause for each obligation, each SSP with its evidence, the allocation and its written rounding rule, a schedule that ends at $0.00 deferred, and a note of each judgement and who approved it.
+
+A file built that way usually has:
+
+1. The contract price and each obligation, with the clause page and verbatim excerpt that supports it.
+2. Each SSP, its method under ASC 606-10-32-34 and the date it was last reviewed.
+3. The distinct assessment for every service line, including any item sold at no charge.
+4. The discount treatment, and the 32-37 analysis if the discount is not spread pro rata.
+5. The allocation, the rounding rule and the monthly schedule, tied to the contract price.
+
+Terms pulled from a contract by software, including Soluqube's heuristic extraction, still need a person to confirm them before they go into the file. The [sample SSP workpaper](https://soluqube.com/samples/soluqube-ssp-sample.pdf) shows the structure as a finished document.
+
+## How can you test this on your own contracts?
+
+Send us three of your hardest bundled contracts through the [design partner programme](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261021-sprint), and you get a free 3-contract workpaper. You confirm the obligations and stated prices. We send back the relative SSP allocation, a schedule that ties to the cent, a page and verbatim excerpt for each obligation, and a hashed export.
+
+Founding prices for the first 10 customers are a free 3-contract workpaper, a $475 audit workpaper for up to 10 contracts, a $1,750 QoE deal pack and $49/month firm tool access. Details are on [pricing](https://soluqube.com/pricing?utm_source=blog&utm_medium=community&utm_campaign=20261021-sprint). The engine doesn't model contract modifications, variable consideration or billing schedules yet, so treat those topics as guidance only.
+    `
+  },
+  {
+    slug: "premium-support-ssp-saas-support-tier-allocation",
+    title: "Is premium support SSP a percentage of the subscription?",
+    subtitle: "When premium support is a separate performance obligation, how to set a support-tier SSP, how it is recognised, and the support lines of an $84,000, 24-month contract run through the Soluqube engine.",
+    publishedAt: "October 23, 2026",
+    updatedAt: "October 23, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Standalone Selling Price", "Premium Support", "Performance Obligations"],
+    targetQuery: "premium support ssp percentage of subscription",
+    definitionAnchor: "Premium support SSP is the price at which a SaaS company would sell a support tier on its own. A percentage of the subscription price is a valid way to express it only when standalone sales or renewals show customers actually pay that percentage; otherwise estimate it under ASC 606-10-32-34 and keep the evidence beside the figure.",
+    excerpt: "Should premium support SSP be a percentage of the subscription? How to set a SaaS support-tier SSP under ASC 606, with an $84,000 engine-run example.",
+    toc: [
+      { id: "is-premium-support-a-separate-performance-obligation", label: "Is premium support a separate performance obligation?" },
+      { id: "should-premium-support-ssp-be-a-percentage-of-the-subscription", label: "Should premium support SSP be a percentage of the subscription?" },
+      { id: "when-is-expected-cost-plus-margin-the-better-method", label: "When is expected cost plus margin the better method?" },
+      { id: "how-is-premium-support-recognised-over-the-term", label: "How is premium support recognised over the term?" },
+      { id: "how-is-premium-support-allocated-on-an-84000-contract", label: "How is premium support allocated on an $84,000 contract?" },
+      { id: "what-evidence-supports-a-support-tier-ssp", label: "What evidence supports a support-tier SSP?" },
+      { id: "how-can-you-test-this-on-your-own-contracts", label: "How can you test this on your own contracts?" }
+    ],
+    faqs: [
+      {
+        question: "Is standard support included in every SaaS subscription a separate performance obligation?",
+        answer: "Not always. Basic help that comes with every subscription at no extra charge is often part of the subscription service itself. A tier the customer chooses and pays for, with faster response times or extra coverage, is more likely a distinct promise. Assess each tier against ASC 606-10-25-19 and document the conclusion."
+      },
+      {
+        question: "Can two support tiers have different SSPs in the same company?",
+        answer: "Yes. Each tier is a different promise, so each needs its own SSP and its own evidence. A premium tier with a one-hour response commitment usually costs more to deliver and sells at a higher price than a standard tier. Keep separate standalone sales data or cost builds for each tier."
+      },
+      {
+        question: "Is premium support SSP updated when list prices change?",
+        answer: "Not for contracts already signed. ASC 606-10-32-43 says the transaction price is not reallocated for later changes in standalone selling prices. New contracts use the current estimate. Record the date each support-tier SSP was last reviewed, so a reviewer can see which figure applied when each contract was signed."
+      }
+    ],
+    engineVerified: true,
+    content: `
+Premium support is a SaaS line item that is often quoted as a percentage of the subscription. That makes the percentage a natural first guess for its standalone selling price, but a pricing rule is not SSP evidence on its own. This post covers when a support tier is a separate performance obligation, when a percentage of the subscription is a fair SSP and when a cost build is better, how support is recognised, and what evidence belongs in the file. The worked example is an $84,000.00, 24-month contract with a standard and a premium support tier, run through the Soluqube engine; the [ASC 606 SSP allocation guide](https://soluqube.com/blog/asc-606-ssp-allocation-guide) covers the wider method. Key terms: [standalone selling price](https://soluqube.com/glossary/standalone-selling-price), [performance obligation](https://soluqube.com/glossary/performance-obligation) and [series guidance](https://soluqube.com/glossary/series-guidance).
+
+## Is premium support a separate performance obligation?
+
+Usually, yes, when the customer chooses and pays for it. Premium support is a promise to stand ready to answer tickets within a set time over the term. The customer benefits from it alongside the software, and it does not modify the software, so it normally passes the distinct test in ASC 606-10-25-19 to 25-21.
+
+ASC 606-10-25-18(e) lists standing ready to provide goods or services as a promise in its own right. Because each period of support is substantially the same and transfers in the same way, a support tier is usually accounted for as a series under ASC 606-10-25-14(b) and 25-15. Signs that a tier is distinct include:
+
+1. It is sold as a separate tier, or added to some contracts and not others.
+2. The customer can use the software without it.
+3. It changes response times or coverage, not the software itself.
+
+Basic help included in every subscription at no extra charge is a different case. It may be part of the subscription service rather than a separate promise, so assess it on its own facts.
+
+## Should premium support SSP be a percentage of the subscription?
+
+Only if the evidence supports the percentage. A percentage of the subscription is a convenient way to express SSP, but ASC 606-10-32-32 calls the price of standalone sales the best evidence. If customers actually pay a consistent percentage when they buy or renew support on its own, that observed percentage is a fair SSP.
+
+If the percentage is only a list-price rule that most deals discount, it is weak evidence. ASC 606-10-32-33 asks for an estimate that uses as many observable inputs as possible, and 32-34(a) allows an [adjusted market assessment](https://soluqube.com/glossary/adjusted-market-assessment) built from what the market pays for similar support. A percentage drawn from renewals where support is bought separately is often the strongest data a SaaS company has.
+
+Two practical points apply:
+
+1. The percentage should be applied to the subscription's SSP, not to a discounted contract price, or the discount is counted twice.
+2. Record the percentage, the deals it comes from and the date it was set, so a reviewer can trace it. See [observable price](https://soluqube.com/glossary/observable-price).
+
+## When is expected cost plus margin the better method?
+
+Expected cost plus margin is the better method when support is never sold on its own and no market data exists. ASC 606-10-32-34(b) allows forecasting the cost of providing the tier, such as support staff time, tooling and on-call cover, and adding a margin consistent with the company's other services.
+
+A cost build suits a new premium tier with a one-hour response commitment, because there are no renewals yet to observe. It also works as a cross-check on a percentage: if the percentage implies a margin far from the company's other services, the file should explain why. See [expected cost plus margin](https://soluqube.com/glossary/expected-cost-plus-margin).
+
+ASC 606-10-32-35 allows methods to be combined, so a company can start with a cost build and move to observed renewal prices once enough standalone sales exist. Document the change and the date it took effect.
+
+## How is premium support recognised over the term?
+
+Premium support is usually recognised ratably over the support term. The customer receives and consumes the benefit of the stand-ready service as the vendor provides it, which meets the over-time criterion in ASC 606-10-25-27(a). Equal monthly amounts are a reasonable measure of progress when support is available evenly across the term.
+
+Recognition follows the support term, not the invoice. If three years of support are billed upfront, the amount stays in deferred revenue and is released month by month. If usage is heavily uneven, for example a tier that includes a fixed number of escalations, consider whether a different measure of progress fits better. See [ratable recognition](https://soluqube.com/glossary/ratable-recognition).
+
+## How is premium support allocated on an $84,000 contract?
+
+Take an $84,000.00, 24-month contract starting March 2027: a subscription, standard support, premium support (24x7, 1-hour SLA) and onboarding, with SSPs totalling $99,600.00. The Soluqube engine spreads the $15,600.00 discount pro rata, allocating $6,072.29 to standard support and $12,144.58 to premium support. Premium support recognises $506.02 a month for 23 months, then $506.12.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Subscription | Ratable, 24 months | $72,000.00 | $60,722.89 |
+| Standard support | Ratable, 24 months | $7,200.00 | $6,072.29 |
+| Premium support (24x7, 1-hr SLA) | Ratable, 24 months | $14,400.00 | $12,144.58 |
+| Onboarding (last line, residual $0.00) | Point in time, month 1 | $6,000.00 | $5,060.24 |
+| **Total** | | **$99,600.00** | **$84,000.00** |
+
+Both support tiers get their pro-rata share of the discount, like every other line: standard support's $7,200.00 SSP becomes $6,072.29 and premium support's $14,400.00 SSP becomes $12,144.58. Nothing in the contract supports placing the discount only on the subscription or only on one tier (ASC 606-10-32-36 and 32-37). Our post on [how a bundle discount is allocated](https://soluqube.com/blog/asc-606-bundle-discount-allocation-saas) covers when that would change.
+
+| Month | Recognised | Made up of | Deferred after month |
+|---|---:|---|---:|
+| 1 (Mar 2027) | $8,349.39 | Subscription $2,530.12 + standard support $253.01 + premium support $506.02 + onboarding $5,060.24 | $75,650.61 |
+| 2–23 | $3,289.15 each | Subscription $2,530.12 + standard support $253.01 + premium support $506.02 | falls to $3,289.31 |
+| 24 (Feb 2029) | $3,289.31 | Subscription $2,530.13 + standard support $253.06 + premium support $506.12 | $0.00 |
+
+How the engine handles the support lines:
+
+- **Allocation rounding:** each line except the last is rounded half-up to the cent, and onboarding, the last listed obligation, takes the residual. Here its pro-rata share rounds exactly to $5,060.24, so the residual is $0.00. The amounts are quoted, not percentage weights.
+- **Monthly amounts:** premium support recognises $506.02 for 23 months and $506.12 in month 24, so the final month absorbs $0.10 ([terminal-period remainder absorption](https://soluqube.com/glossary/terminal-period-remainder-absorption)). Standard support recognises $253.01 for 23 months and $253.06 in month 24, absorbing $0.05. The subscription recognises $2,530.12 for 23 months and $2,530.13 in month 24, absorbing $0.01.
+- **Tie-out:** total recognised is $84,000.00 and deferred revenue ends at $0.00.
+
+The engine result's SHA-256 hash is c786a647ba347dd2bcb322e2181ef0efe6373300db207d761cc07041f3c22800. The app reproduces this exact allocation and schedule from an uploaded workbook (workbook SHA-256 6af707f22c0cec111d5adfae3f8117b6240d8bb1b02125bcb20cc96c66184316), or you can re-perform the allocation in the [SSP allocation calculator](https://soluqube.com/tools/ssp-allocation-calculator?utm_source=blog&utm_medium=community&utm_campaign=20261021-sprint).
+
+## What evidence supports a support-tier SSP?
+
+The evidence that supports a support-tier SSP is the data behind the figure: standalone sales or renewals of the tier, a market assessment of similar support, or a cost build with a margin. It sits next to the SSP, with the contract clause that describes the tier, its response commitments and the date the estimate was last reviewed.
+
+A support-tier file usually holds:
+
+1. The clause describing each tier, with its page and verbatim excerpt.
+2. The distinct assessment for each tier, including any support included at no extra charge.
+3. The SSP method under ASC 606-10-32-34, the data it rests on and the review date.
+4. If SSP is a percentage of the subscription, the deals the percentage was observed in.
+5. The allocation and the monthly schedule, tied to the contract price.
+
+Terms pulled from a contract by software, including Soluqube's heuristic extraction, still need a person to confirm them before they go into the file. For another service line, our post on whether [SaaS training is a separate performance obligation](https://soluqube.com/blog/saas-training-separate-performance-obligation-asc-606) uses the same file structure. The [sample SSP workpaper](https://soluqube.com/samples/soluqube-ssp-sample.pdf) shows it as a finished document.
+
+## How can you test this on your own contracts?
+
+Send us three of your hardest bundled contracts through the design partner programme, and you get a free 3-contract workpaper. You confirm the obligations, support tiers and stated prices. We send back the relative SSP allocation, a schedule that ties to the cent, a page and verbatim excerpt for each obligation, and a hashed export.
+
+Apply through the [design partner programme](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261021-sprint). Founding prices for the first 10 customers are a free 3-contract workpaper, a $475 audit workpaper for up to 10 contracts, a $1,750 QoE deal pack and $49/month firm tool access. Details are on [pricing](https://soluqube.com/pricing?utm_source=blog&utm_medium=community&utm_campaign=20261021-sprint). The engine doesn't model contract modifications, variable consideration, usage-based support or billing schedules yet, so treat those topics as guidance only.
+    `
   }
 ];
