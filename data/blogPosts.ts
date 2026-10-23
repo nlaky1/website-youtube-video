@@ -3437,5 +3437,276 @@ Send us three of your hardest bundled contracts through the design partner progr
 
 Apply through the [design partner programme](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261021-sprint). Founding prices for the first 10 customers are a free 3-contract workpaper, a $475 audit workpaper for up to 10 contracts, a $1,750 QoE deal pack and $49/month firm tool access. Details are on [pricing](https://soluqube.com/pricing?utm_source=blog&utm_medium=community&utm_campaign=20261021-sprint). The engine doesn't model contract modifications, variable consideration, usage-based support or billing schedules yet, so treat those topics as guidance only.
     `
+  },
+  {
+    slug: "netsuite-arm-vs-sage-intacct-revenue-allocation",
+    title: "NetSuite ARM vs Sage Intacct: How Is Revenue Allocated?",
+    subtitle: "How NetSuite ARM and Sage Intacct allocate revenue across obligations under ASC 606, from each vendor's own help pages, with a setup example.",
+    publishedAt: "October 23, 2026",
+    updatedAt: "October 23, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "NetSuite ARM", "Sage Intacct", "Comparison"],
+    targetQuery: "netsuite arm vs sage intacct revenue recognition",
+    definitionAnchor: "NetSuite Advanced Revenue Management (ARM) is a revenue module inside NetSuite ERP; Oracle publishes its allocation bases (SSP, VSOE, ESP, TPE or other) in the Revenue Allocation add-on. Sage Intacct Contracts allocates through a multiple-element arrangement (MEA) allocation in its Advanced Revenue Recognition add-on.",
+    excerpt: "A neutral comparison of NetSuite ARM and Sage Intacct Contracts on allocation, the five ASC 606 steps, recognition methods, change orders and price, using only each vendor's own help pages (checked 23 Oct 2026). Includes a $40,000 setup example run through the Soluqube engine.",
+    toc: [
+      { id: "what-are-netsuite-arm-and-sage-intacct-contracts", label: "What are NetSuite ARM and Sage Intacct Contracts?" },
+      { id: "how-do-netsuite-arm-and-sage-intacct-compare-side-by-side", label: "How do NetSuite ARM and Sage Intacct compare side by side?" },
+      { id: "which-add-on-do-you-need-to-allocate-across-obligations", label: "Which add-on do you need to allocate across obligations?" },
+      { id: "how-does-each-one-map-to-the-five-asc-606-steps", label: "How does each one map to the five ASC 606 steps?" },
+      { id: "which-recognition-methods-does-each-one-support", label: "Which recognition methods does each one support?" },
+      { id: "how-does-each-one-handle-change-orders-and-modifications", label: "How does each one handle change orders and modifications?" },
+      { id: "what-does-each-one-cost", label: "What does each one cost?" },
+      { id: "why-does-the-setup-decision-change-the-allocation", label: "Why does the setup decision change the allocation?" },
+      { id: "how-does-soluqube-help-with-revenue-allocation-evidence", label: "How does Soluqube help with revenue allocation evidence?" },
+      { id: "sources", label: "Sources" }
+    ],
+    faqs: [
+      {
+        question: "Does Sage Intacct allocate revenue by standalone selling price?",
+        answer: "The Sage Intacct help pages we read describe step 4 as creating \"a multiple element arrangement (MEA) allocation\", and say the Advanced Revenue Recognition add-on \"includes support for multiple-element arrangement (MEA) allocations\". They do not name SSP or fair value as the basis. Ask Sage or your partner for the configuration documentation before relying on it for an audit file."
+      },
+      {
+        question: "Can you revert a prospective merge in NetSuite ARM?",
+        answer: "Sometimes. Oracle's help says prospective merge arrangements include a Revert Change Order button, but you can't revert one that \"has recognized revenue or reclassified deferred revenue\" or \"has contract acquisition costs\". Plan period-end work around that point, and confirm the behaviour in your own account."
+      },
+      {
+        question: "Can Soluqube post its allocation into NetSuite or Sage Intacct?",
+        answer: "No. Soluqube has no billing or ERP sync today. It produces the allocation, the schedule and a hashed export with clause evidence, and your team books the result in NetSuite or Sage Intacct. It also does not handle contract modifications or usage-based fees yet."
+      }
+    ],
+    engineVerified: true,
+    content: `
+NetSuite Advanced Revenue Management (ARM) and Sage Intacct Contracts both recognise revenue inside an ERP, and in both the step that allocates price across obligations sits in an add-on. This comparison uses only each vendor's own public help pages, checked on 23 Oct 2026. Where a page doesn't say something, we write "not published". That means the page we read did not state it, not that the product lacks it. For the method itself, read our [ASC 606 SSP allocation guide](https://soluqube.com/blog/asc-606-ssp-allocation-guide).
+
+## What are NetSuite ARM and Sage Intacct Contracts?
+
+NetSuite ARM is a revenue module inside NetSuite ERP. Oracle says ARM (Essentials) "automates revenue forecasting, recognition, reclassification, deferral, and auditing through a rule-based event handling framework". Sage Intacct Contracts is the contract billing and revenue recognition application in Sage Intacct, whose help page states "complete support for ASC 606 and IFRS 15".
+
+Oracle adds that ARM Essentials and Revenue Allocation support "both existing standards and the new standard", which it names as ASC 606 and IFRS 15. In practice the choice usually follows the ERP you already run. Whether Sage Intacct Contracts can be used without Sage Intacct as the ERP is not published on the pages we read.
+
+## How do NetSuite ARM and Sage Intacct compare side by side?
+
+The table below sets each vendor's own wording side by side, row by row, with a link to the page each fact comes from. Every fact was checked on 23 Oct 2026. "Not published" means the page we read did not say it. Vendor pages change, so re-check before relying on any row.
+
+| Topic | NetSuite ARM | Sage Intacct Contracts |
+|---|---|---|
+| What it is | Revenue module inside NetSuite ERP ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) | Contract billing and revenue recognition in Sage Intacct ([Sage Intacct](https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm)) |
+| Standards named | "both existing standards and the new standard" (ASC 606, IFRS 15) ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4703499262.html)) | "complete support for ASC 606 and IFRS 15" ([Sage Intacct](https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm)) |
+| Allocation basis | SSP, VSOE, ESP, TPE "or some other method"; fair value pricing, range checking, formulas ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) | "multiple-element arrangement (MEA) allocations"; SSP or fair value not named on the pages read ([Sage Intacct](https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm)) |
+| Where allocation sits | Revenue Allocation "is an add-on feature" to ARM Essentials ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) | Advanced Revenue Recognition, described as an "add-on subscription" ([Sage Intacct](https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm)) |
+| Five-step mapping | Not published ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) | Each step mapped to a Contracts task ([Sage Intacct](https://www.intacct.com/ia/docs/en_ZA/help_action/Contracts/Using_Contracts/Learn_about/recognition-standard-steps.htm)) |
+| Recognition methods | Rules and plans; each element "can have a forecast plan and one or more actual plans" ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) | "Straight-line, daily rate, quantity-based, and custom recognition schedules, independent of billing" ([Sage Intacct](https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm)) |
+| Modifications | Prospective and retrospective merges ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1498077674.html)) | "contract add-ons, change orders, and cancellations"; automatic renewals ([Sage Intacct](https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm)) |
+| Audit trail | ARM "automates ... auditing"; audit-trail reports not published ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) | "Provides an audit trail for MEA executions" ([Sage Intacct](https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm)) |
+| Multi-book | Parallel processing in a secondary book, "Optional - requires Multi-Book Accounting" ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4703499262.html)) | "Multi-book accounting" ([Sage Intacct](https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm)) |
+| GL posting | "You must generate revenue recognition journal entries to post the revenue to the general ledger" ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) | "Post revenue recognition" according to the contract line's revenue schedule ([Sage Intacct](https://www.intacct.com/ia/docs/en_ZA/help_action/Contracts/Using_Contracts/Learn_about/recognition-standard-steps.htm)) |
+| Price | Not published ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) | Not published; "Contact your Sage Intacct account manager" ([Sage Intacct](https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm)) |
+
+## Which add-on do you need to allocate across obligations?
+
+In both ERPs, allocation across obligations sits in an add-on. Oracle says Revenue Allocation "is an add-on feature to Advanced Revenue Management (Essentials)". Sage's help says its Advanced Revenue Recognition add-on "includes support for multiple-element arrangement (MEA) allocations". Which subscription levels include each add-on is not published on the pages we read.
+
+Oracle also names the basis for the fair values it allocates with: "standalone selling price (SSP), vendor-specific objective evidence (VSOE), best estimate of selling price (ESP), third party evidence (TPE), or some other method". Sage's pages describe the MEA allocation but do not name SSP or fair value as its basis, so confirm the configuration with Sage before you document it.
+
+## How does each one map to the five ASC 606 steps?
+
+Sage Intacct's help maps each ASC 606 step to a Contracts task: create a contract, create the contract lines, enter the amount, "create a multiple element arrangement (MEA) allocation", then "post revenue recognition" from each line's revenue schedule. Oracle's ARM pages describe arrangements, elements, rules and plans, but do not set out a step-by-step mapping.
+
+In either system, step 2 is a judgement you make before the software runs. Whether setup, training or support is distinct decides whether it becomes its own contract line or revenue element, and that decision drives the allocation more than any setting does.
+
+## Which recognition methods does each one support?
+
+Sage lists "straight-line, daily rate, quantity-based, and custom recognition schedules, independent of billing". Oracle describes revenue recognition rules that set "the recognition method, amount source, and start and end date sources", with revenue plans derived from those rules. Each ARM revenue element "can have a forecast plan and one or more actual plans".
+
+Oracle adds that "the actual revenue plans control the posting of revenue". Sage's step 5 posts revenue "according to the contract line's revenue schedule". Both tie recognition to a schedule per obligation, which is what an auditor re-performs.
+
+## How does each one handle change orders and modifications?
+
+Oracle documents prospective and retrospective merges. A prospective merge "terminates and locks the original revenue arrangements and creates a new arrangement with the residual values as of the effective date". Sage says Contract Billing can "automate the accounting for contract add-ons, change orders, and cancellations" and can "automatically trigger contract renewals as the contract end date approaches".
+
+Oracle also states when a prospective merge can't be reverted: when it "has recognized revenue or reclassified deferred revenue" or "has contract acquisition costs". That is a documented control point to plan period-end work around. Sage's page does not describe its modification accounting method in more detail.
+
+## What does each one cost?
+
+Neither vendor publishes a price on the pages we read. Oracle's ARM help gives no price, and says moving from classic Revenue Recognition needs "NetSuite Professional Services or a qualified NetSuite partner". Sage's help says to "Contact your Sage Intacct account manager" for subscription details, and describes advanced revenue recognition as an add-on subscription.
+
+## Why does the setup decision change the allocation?
+
+Step 2 decides it. If setup is a distinct obligation, it takes its own share of the price and is recognised when delivered. If it is not distinct, it joins the subscription and is recognised over the term. Both ERPs model this as contract lines or revenue elements, but the judgement comes before either tool.
+
+Take a $40,000.00, 12-month contract starting January 2027, run both ways through the Soluqube engine.
+
+| Treatment | Obligation | Pattern | SSP | Allocated |
+|---|---|---|---:|---:|
+| Setup distinct | Subscription | Ratable, 12 months | $38,000.00 | $35,348.84 |
+| Setup distinct | Setup (absorbs residual cent) | Point in time, month 1 | $5,000.00 | $4,651.16 |
+| Setup distinct | **Total** | | **$43,000.00** | **$40,000.00** |
+| Setup not distinct | Subscription incl. setup | Ratable, 12 months | $40,000.00 | $40,000.00 |
+
+If setup is distinct, the $3,000.00 discount is spread pro rata by relative SSP. Month 1 (Jan 2027) recognises $7,596.89: subscription $2,945.73 and setup $4,651.16. Months 2 to 11 recognise $2,945.73 each, and month 12 (Dec 2027) recognises $2,945.81 because the final month absorbs $0.08. The engine result's SHA-256 hash is 936908566cb996e4f4f3920acfc70f6b4e16a8c806efb13b1af259b50d5bcbd9.
+
+If setup is not distinct, the full $40,000.00 is recognised ratably: $3,333.33 in each of months 1 to 11 and $3,333.37 in month 12, which absorbs $0.04. The engine result's SHA-256 hash is f5b417cdac460df761556c9b4c8c2dfcad5ef30fc8b2e27222004d149ff8c606. Both runs end with $0.00 unrecognised. Try either in the app, or check the split in the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## How does Soluqube help with revenue allocation evidence?
+
+Soluqube documents the allocation outside either ERP. You confirm the obligations, price and SSPs. It returns the relative-SSP allocation in integer arithmetic, a full-term schedule that ties to the cent, page-and-excerpt clause evidence for each obligation and a SHA-256-hashed export for your external auditor. You then book the result in NetSuite or Sage Intacct.
+
+Clause evidence is the page and verbatim excerpt behind each obligation. In the app, uploaded text-layer PDFs also get a highlight on the cited line, and exports carry the page and excerpt. Contract extraction is heuristic, so you confirm every field. The point is that the step 2 and step 4 judgements are reviewable whichever ERP books them.
+
+The limits are plain. Soluqube does not do contract-modification accounting, does not handle usage-based fees, and has no billing or ERP sync. For a billing-led comparison, see [Maxio vs NetSuite ARM](/blog/maxio-vs-netsuite-arm-ssp-allocation). For vendor-by-vendor detail, see [NetSuite ARM alternatives](/alternatives/netsuite-arm) and [Sage Intacct revenue recognition alternatives](/alternatives/sage-intacct-revenue).
+
+To test it on your own deals, send three of your hardest bundled contracts through the [design partner programme](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261023-vs). Founding prices for the first 10 customers are a free 3-contract workpaper, a $475 audit workpaper (up to 10 contracts), a $1,750 QoE deal pack and $49/month firm tool access; see [pricing](https://soluqube.com/pricing?utm_source=blog&utm_medium=community&utm_campaign=20261023-vs).
+
+## Sources
+
+All checked on 23 Oct 2026.
+
+- Oracle NetSuite help, Advanced Revenue Management: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html
+- Oracle NetSuite help, transition to the new revenue standard (ASC 606 / IFRS 15, Multi-Book Accounting): https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4703499262.html
+- Oracle NetSuite help, prospective merge of revenue arrangements: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1498077674.html
+- Sage Intacct help, about Contracts: https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm
+- Sage Intacct help, revenue recognition standard steps (Sage's en_ZA regional help page): https://www.intacct.com/ia/docs/en_ZA/help_action/Contracts/Using_Contracts/Learn_about/recognition-standard-steps.htm
+    `
+  },
+  {
+    slug: "chargebee-revrec-vs-netsuite-arm-ssp-allocation",
+    title: "Chargebee RevRec vs NetSuite ARM: Which Fits Your Stack?",
+    subtitle: "Chargebee RevRec, a subledger, vs NetSuite ARM, an ERP module: SSP, changes, GL posting and price from each vendor's own pages, with a worked example.",
+    publishedAt: "October 23, 2026",
+    updatedAt: "October 23, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Chargebee RevRec", "NetSuite ARM", "Comparison"],
+    targetQuery: "chargebee revrec vs netsuite arm",
+    definitionAnchor: "Chargebee RevRec is a revenue recognition subledger that allocates with \"a configurable SSP library tied to your price book\". NetSuite Advanced Revenue Management (ARM) is a revenue module inside NetSuite ERP; its Revenue Allocation add-on allocates on SSP, VSOE, ESP, TPE or another method.",
+    excerpt: "A neutral comparison of Chargebee RevRec and NetSuite ARM on SSP, contract changes, GL posting, using both together and price, using only each vendor's own pages (checked 23 Oct 2026). Includes a $96,000, 24-month bundle run through the Soluqube engine.",
+    toc: [
+      { id: "what-is-the-difference-between-a-revenue-subledger-and-an-erp-module", label: "What is the difference between a revenue subledger and an ERP module?" },
+      { id: "how-do-chargebee-revrec-and-netsuite-arm-compare-side-by-side", label: "How do Chargebee RevRec and NetSuite ARM compare side by side?" },
+      { id: "how-does-each-one-set-ssp", label: "How does each one set SSP?" },
+      { id: "can-you-use-chargebee-with-netsuite-arm", label: "Can you use Chargebee with NetSuite ARM?" },
+      { id: "how-does-each-one-handle-contract-changes", label: "How does each one handle contract changes?" },
+      { id: "where-do-journal-entries-post", label: "Where do journal entries post?" },
+      { id: "what-does-each-one-cost", label: "What does each one cost?" },
+      { id: "how-is-a-bundle-discount-allocated-by-ssp", label: "How is a bundle discount allocated by SSP?" },
+      { id: "how-does-soluqube-help-with-ssp-allocation-evidence", label: "How does Soluqube help with SSP allocation evidence?" },
+      { id: "sources", label: "Sources" }
+    ],
+    faqs: [
+      {
+        question: "Does Chargebee RevRec require NetSuite ARM?",
+        answer: "Not on the pages we read. Chargebee's NetSuite configuration doc covers its Billing integration and says to enable features \"such as SuiteCloud or Advanced Revenue Management for the integration\". It does not say RevRec needs ARM. RevRec's own page lists NetSuite among several direct integrations, alongside Sage Intacct, QuickBooks and Xero."
+      },
+      {
+        question: "Is a revenue subledger the same as an ERP revenue module?",
+        answer: "No. A subledger such as Chargebee RevRec holds revenue schedules outside the ERP and posts summarized journal entries to the general ledger. An ERP module such as NetSuite ARM keeps revenue arrangements and journal entries inside the ERP. Both can allocate by SSP; the difference is where the schedules live."
+      },
+      {
+        question: "Can Soluqube sync with Chargebee or NetSuite?",
+        answer: "No. Soluqube has no billing or ERP sync today. You confirm the obligations, price and SSPs, and it returns the allocation, a schedule that ties to the cent and a hashed export with clause evidence. It also does not handle contract modifications or usage-based fees yet."
+      }
+    ],
+    engineVerified: true,
+    content: `
+Chargebee RevRec and NetSuite Advanced Revenue Management (ARM) both recognise revenue under ASC 606, but one is a dedicated subledger and the other is a module inside an ERP. This comparison uses only each vendor's own public pages, checked on 23 Oct 2026, and focuses on standalone selling price (SSP). Where a page doesn't say something, we write "not published". That means the page we read did not state it, not that the product lacks it. For the method itself, read our [ASC 606 SSP allocation guide](https://soluqube.com/blog/asc-606-ssp-allocation-guide).
+
+## What is the difference between a revenue subledger and an ERP module?
+
+A subledger keeps revenue schedules in its own system and posts results to your ledger. Chargebee calls RevRec "your single revenue subledger", which can "post summarized journal entries to the right accounts in your general ledger". An ERP module keeps them inside the ERP: NetSuite ARM generates revenue recognition journal entries in NetSuite itself.
+
+Chargebee describes a workflow "based on ASC 606's and IFRS 15's five-step model". Oracle says ARM Essentials and Revenue Allocation support "both existing standards and the new standard", which it names as ASC 606 and IFRS 15. In practice the choice often follows the stack: billing system first, or ERP first.
+
+## How do Chargebee RevRec and NetSuite ARM compare side by side?
+
+The table below sets each vendor's own wording side by side, row by row, with a link to the page each fact comes from. Every fact was checked on 23 Oct 2026. "Not published" means the page we read did not say it. Vendor pages change, so re-check before relying on any row.
+
+| Topic | Chargebee RevRec | NetSuite ARM |
+|---|---|---|
+| What it is | "your single revenue subledger" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | Revenue module inside NetSuite ERP ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Standards named | "ASC 606's and IFRS 15's five-step model" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | "both existing standards and the new standard" (ASC 606, IFRS 15) ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4703499262.html)) |
+| SSP | "a configurable SSP library tied to your price book"; "SSP documentation traceable at every step" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | SSP, VSOE, ESP, TPE "or some other method"; fair value pricing, range checking, formulas ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Where allocation sits | Enterprise: "Advanced Revenue Rules and SSP configurations", "SSP Price Analyzer" ([Chargebee pricing](https://www.chargebee.com/pricing/)) | Revenue Allocation "is an add-on feature" to ARM Essentials ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Contract changes | "upsells, co-terms, credit notes, early renewals, and other modifications" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | Prospective and retrospective merges ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1498077674.html)) |
+| Controls | "Lock periods and enforce accounting controls" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | ARM "automates ... auditing"; period-lock wording not published on the pages read ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| GL posting | "Post summarized journal entries … on your fiscal calendar" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | "You must generate revenue recognition journal entries to post the revenue to the general ledger" ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Source data | Invoice and billing data synced "on a 24-hour cycle" ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | Revenue arrangements inside NetSuite ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Integrations named | Chargebee, Stripe, NetSuite, Sage Intacct, QuickBooks, Xero ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | n/a (inside NetSuite) |
+| Using both | Chargebee Billing's NetSuite doc: enable "SuiteCloud or Advanced Revenue Management for the integration" ([Chargebee docs](https://www.chargebee.com/docs/2.0/netsuite-config.html)) | n/a |
+| Billing prerequisite | Performance plan "available only to Chargebee Billing customers"; Enterprise not published ([Chargebee pricing](https://www.chargebee.com/pricing/)) | Requires NetSuite ERP ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Price | Not published: Performance "request pricing", Enterprise by quote ([Chargebee pricing](https://www.chargebee.com/pricing/)) | Not published ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+| Migration | Not published ([Chargebee](https://www.chargebee.com/revenue-recognition-software/)) | From classic Revenue Recognition needs "NetSuite Professional Services or a qualified NetSuite partner" ([Oracle](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html)) |
+
+## How does each one set SSP?
+
+Chargebee says allocation uses "a configurable SSP library tied to your price book", with "SSP documentation traceable at every step", and its Enterprise plan adds an "SSP Price Analyzer". Oracle's Revenue Allocation add-on uses fair values based on "standalone selling price (SSP), vendor-specific objective evidence (VSOE), best estimate of selling price (ESP), third party evidence (TPE), or some other method".
+
+Oracle adds that ARM "supports the use of fair value pricing, range checking, and fair value formulas to allocate revenue across several performance obligations". For an audit file the question is the same in either tool: can a reviewer see each SSP's basis, each obligation's share of the price and the rounding rule, and re-perform the split outside the system?
+
+## Can you use Chargebee with NetSuite ARM?
+
+Chargebee documents a NetSuite integration for its Billing product. It says to "ensure you have enabled features such as SuiteCloud or Advanced Revenue Management for the integration", and that custom start and end date fields can be mapped "with Advanced Revenue Management fields". That doc covers Chargebee Billing to NetSuite; it does not say RevRec requires ARM.
+
+RevRec's own page lists NetSuite among its "direct integrations", alongside Chargebee, Stripe, Sage Intacct, QuickBooks and Xero. Whether a team would run RevRec and ARM on the same contracts at once is not published on the pages we read.
+
+## How does each one handle contract changes?
+
+Chargebee says it automates "recognition treatment for upsells, co-terms, credit notes, early renewals, and other modifications". Oracle documents prospective and retrospective merges in ARM. A prospective merge "terminates and locks the original revenue arrangements and creates a new arrangement with the residual values as of the effective date", starting in the first open period.
+
+Oracle also states that a prospective merge can't be reverted once it "has recognized revenue or reclassified deferred revenue" or "has contract acquisition costs". Chargebee's product page does not set out its accounting method for each type of change in more detail.
+
+## Where do journal entries post?
+
+Chargebee says RevRec can "post summarized journal entries to the right accounts in your general ledger", with billing data synced in "on a 24-hour cycle". NetSuite ARM posts inside NetSuite: Oracle says "you must generate revenue recognition journal entries to post the revenue to the general ledger", and "the actual revenue plans control the posting of revenue".
+
+## What does each one cost?
+
+Neither vendor publishes a price on the pages we read. Chargebee's pricing page says the RevRec Performance plan is "request pricing" and Enterprise is by quote. Oracle's ARM help gives no price, but says moving from classic Revenue Recognition needs "NetSuite Professional Services or a qualified NetSuite partner". Ask both for a quote on your contract volume.
+
+## How is a bundle discount allocated by SSP?
+
+When the contract price is below the total SSP, the discount is spread across every obligation in proportion to SSP, unless the narrow exception in ASC 606 applies. Both tools allocate in their own systems; the arithmetic a reviewer re-performs is the same. Here is one bundle run through the Soluqube engine, with every figure tied to the cent.
+
+Take a $96,000.00, 24-month contract starting December 2026 with three obligations whose SSPs total $106,300.00. The $10,300.00 discount is spread pro rata by the relative SSP method, and standard support absorbs the residual cent.
+
+| Obligation | Pattern | SSP | Allocated |
+|---|---|---:|---:|
+| Subscription | Ratable, 24 months | $84,000.00 | $75,860.77 |
+| Data migration | Point in time, month 1 | $12,500.00 | $11,288.81 |
+| Standard support (absorbs residual cent) | Ratable, 24 months | $9,800.00 | $8,850.42 |
+| **Total** | | **$106,300.00** | **$96,000.00** |
+
+Month 1 (Dec 2026) recognises $14,818.43, including the $11,288.81 data migration. The subscription's final month absorbs $0.13 and support's absorbs $0.18, and the unrecognised balance ends at $0.00 in month 24 (Nov 2028). The engine result's SHA-256 hash is 734e129170b590beb4a306a898c140ce86088fe15c996af80eed3335cba3aaa0. The full monthly schedule is in our [bundle discount allocation walkthrough](/blog/asc-606-bundle-discount-allocation-saas); check the split yourself in the [SSP allocation calculator](/tools/ssp-allocation-calculator).
+
+## How does Soluqube help with SSP allocation evidence?
+
+Soluqube is an allocation and evidence layer that sits next to Chargebee RevRec or NetSuite ARM. You confirm the obligations, price and SSPs. It returns the relative-SSP allocation in integer arithmetic, a full-term schedule that ties to the cent, page-and-excerpt clause evidence for each obligation and a SHA-256-hashed export for your external auditor.
+
+Clause evidence is the page and verbatim excerpt behind each obligation. In the app, uploaded text-layer PDFs also get a highlight on the cited line, and exports carry the page and excerpt. Contract extraction is heuristic, so you confirm every field. You then book the result in whichever system holds your revenue. It is evidence for the deals an auditor samples, not a second subledger.
+
+The limits are plain. Soluqube does not do contract-modification accounting, does not handle usage-based fees, and has no billing or ERP sync. For a subledger-vs-billing view, see [Chargebee RevRec vs Maxio](/blog/chargebee-revrec-vs-maxio-ssp-allocation). For vendor-by-vendor detail, see [Chargebee RevRec alternatives](/alternatives/chargebee-revrec) and [NetSuite ARM alternatives](/alternatives/netsuite-arm).
+
+To test it on your own deals, send three of your hardest bundled contracts through the [design partner programme](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261023-vs). Founding prices for the first 10 customers are a free 3-contract workpaper, a $475 audit workpaper (up to 10 contracts), a $1,750 QoE deal pack and $49/month firm tool access; see [pricing](https://soluqube.com/pricing?utm_source=blog&utm_medium=community&utm_campaign=20261023-vs).
+
+## Sources
+
+All checked on 23 Oct 2026.
+
+- Chargebee, revenue recognition software (RevRec): https://www.chargebee.com/revenue-recognition-software/
+- Chargebee, pricing (RevRec plans): https://www.chargebee.com/pricing/
+- Chargebee docs, NetSuite integration configuration (Chargebee Billing): https://www.chargebee.com/docs/2.0/netsuite-config.html
+- Oracle NetSuite help, Advanced Revenue Management: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html
+- Oracle NetSuite help, transition to the new revenue standard: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4703499262.html
+- Oracle NetSuite help, prospective merge of revenue arrangements: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1498077674.html
+    `
   }
 ];
