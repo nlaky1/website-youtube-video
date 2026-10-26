@@ -546,6 +546,23 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["customer-options", "standalone-selling-price", "breakage", "relative-ssp-method", "saas-implementation-fee"],
     further: [SSP_TOOL, SSP_EXAMPLE_POST],
+    faqs: [
+      {
+        question: "What is a material right under ASC 606?",
+        answer:
+          "A material right is an option granted to a customer to acquire additional goods or services at a significant discount that they would not receive without entering the contract (ASC 606-10-55-42). Under ASC 606 and IFRS 15, it constitutes a separate performance obligation requiring an allocated portion of the transaction price.",
+      },
+      {
+        question: "How is the Standalone Selling Price (SSP) of a renewal option estimated?",
+        answer:
+          "The SSP of an option is calculated as the expected discount relative to what a comparable customer pays, multiplied by the probability that the customer will exercise the option. For example, a $20,000 discount with an 80% renewal likelihood has an estimated SSP of $16,000.",
+      },
+      {
+        question: "When is revenue allocated to a material right recognized?",
+        answer:
+          "Revenue allocated to a material right is deferred as a contract liability at contract inception and recognized either when the additional goods or services are transferred upon exercise, or when the option expires unexercised.",
+      },
+    ],
   },
   {
     slug: "principal-vs-agent",
@@ -1228,6 +1245,23 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["remaining-performance-obligations", "point-in-time-recognition", "ratable-recognition", "principal-vs-agent", "ind-as-115-gst-treatment"],
     further: [ASC_HUB, IND_AS_HUB],
+    faqs: [
+      {
+        question: "What are the required categories for disaggregation of revenue under ASC 606?",
+        answer:
+          "Under ASC 606-10-50-5, entities must disaggregate revenue into categories that depict how nature, amount, timing, and uncertainty of revenue and cash flows are affected by economic factors. Common categories include product lines, geographic regions, contract duration, customer type, and timing of transfer (point-in-time vs over-time).",
+      },
+      {
+        question: "How does disaggregation of revenue relate to segment reporting?",
+        answer:
+          "ASC 606-10-50-6 requires disaggregated revenue categories to reconcile directly with the revenue disclosed for each reportable segment under ASC 280, ensuring that public reporting, investor presentations, and audit workpapers remain consistent.",
+      },
+      {
+        question: "How is disaggregation of revenue handled for dual ASC 606 and Ind AS 115 filings?",
+        answer:
+          "Both standards follow identical disaggregation principles, but entities reporting under Ind AS 115 must strictly exclude Goods and Services Tax (GST) from all disaggregated revenue categories because taxes collected on behalf of the government are not revenue.",
+      },
+    ],
   },
   {
     slug: "ind-as-115-gst-treatment",
@@ -1323,6 +1357,23 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["standalone-selling-price", "observable-price", "relative-ssp-method", "residual-approach", "adjusted-market-assessment"],
     further: [SSP_TOOL, SSP_EXAMPLE_POST],
+    faqs: [
+      {
+        question: "What is an acceptable Standalone Selling Price (SSP) range for SaaS?",
+        answer:
+          "While ASC 606 does not prescribe a specific mathematical percentage, auditor-defensible SSP ranges typically fall within ±10% to ±15% of the median price observed in standalone sales, provided at least 80% of historical transactions cluster within that band.",
+      },
+      {
+        question: "How do auditors evaluate an SSP range under ASC 606?",
+        answer:
+          "External auditors test whether historical standalone sales data is statistically representative, verify that discounting policies are consistently applied, and confirm that out-of-band contract prices are adjusted to the boundary or median strictly in accordance with documented accounting policy.",
+      },
+      {
+        question: "How often should an SSP range be refreshed?",
+        answer:
+          "SSP ranges should be reviewed at least annually, or sooner if the company introduces new packaging, significant price changes, or new product features that alter relative standalone value.",
+      },
+    ],
   },
   {
     slug: "observable-price",

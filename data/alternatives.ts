@@ -596,6 +596,23 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
       { vendor: "rillet", fit: "Only if you are considering replacing Sage Intacct as your ERP." },
       { vendor: "soluqube", fit: "Adds documented relative-SSP allocation and schedules for the contracts under audit; you post the export to Sage Intacct yourself." },
     ],
+    faqs: [
+      {
+        question: "Can Sage Intacct handle ASC 606 and IFRS 15 for hybrid subscription contracts?",
+        answer:
+          "Sage Intacct Contracts supports ASC 606 and IFRS 15 schedules for standard subscriptions, but complex multi-element arrangements with hybrid usage, professional services, or customized discount carve-outs typically require the optional Advanced Revenue Management module or a dedicated subledger beside Sage Intacct.",
+      },
+      {
+        question: "What are the limitations of Sage Intacct revenue recognition?",
+        answer:
+          "Sage Intacct's native revenue recognition is tightly coupled with its Contracts module and General Ledger. Standalone Selling Price (SSP) allocation across multi-element bundles requires add-ons, pricing is quote-only, and mid-contract modifications often require manual recalculation or dual-entry reconciliation.",
+      },
+      {
+        question: "Can you use a standalone rev-rec engine with Sage Intacct without replacing billing?",
+        answer:
+          "Yes. Standalone revenue subledgers or purpose-built engines like Soluqube operate alongside Sage Intacct. Soluqube ingests contract terms, calculates relative SSP allocations and amortization schedules to the cent, and provides audit-ready CSV exports formatted for GL journal entry import into Sage Intacct.",
+      },
+    ],
   },
   {
     slug: "zenskar",
