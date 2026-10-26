@@ -130,6 +130,13 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["relative-ssp-method", "observable-price", "ssp-range", "adjusted-market-assessment", "expected-cost-plus-margin", "residual-approach"],
     further: [SSP_TOOL, SSP_EXAMPLE_POST],
+    faqs: [
+      {
+        question: "How often should standalone selling price estimates be refreshed?",
+        answer:
+          "Under ASC 606 and IFRS 15, entities must review and refresh standalone selling price (SSP) estimates periodically—typically on an annual basis or whenever significant changes occur in pricing strategies, discounting policies, market conditions, or product bundling.",
+      },
+    ],
   },
   {
     slug: "relative-ssp-method",
@@ -299,6 +306,18 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["standalone-selling-price", "adjusted-market-assessment", "saas-implementation-fee", "residual-approach", "ssp-range"],
     further: [SSP_TOOL, SSP_EXAMPLE_POST],
+    faqs: [
+      {
+        question: "When should the expected cost plus margin approach be used for SSP?",
+        answer:
+          "The expected cost plus margin approach is appropriate when standalone sales are unavailable and direct costs can be reliably forecasted, such as for bespoke implementation, custom software modifications, or specialized professional services under ASC 606-10-32-34(b) and IFRS 15 paragraph 79(b).",
+      },
+      {
+        question: "What is the difference between markup on cost and margin on price?",
+        answer:
+          "Markup on cost adds a percentage to the budgeted cost ($Cost × (1 + Markup)), whereas margin on price divides cost by the complement of the margin ($Cost / (1 - Margin)). For example, on a $10,000 cost, a 30% markup yields $13,000, while a 30% margin yields $14,285.71.",
+      },
+    ],
   },
   {
     slug: "transaction-price",
