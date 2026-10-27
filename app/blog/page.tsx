@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
+import ResourceFooter from "@/components/resource-footer";
 import { BLOG_POSTS } from "@/data/blogPosts";
 import { 
   BookOpen, 
@@ -231,29 +232,7 @@ export default function BlogIndexPage() {
         </section>
       </main>
 
-      {/* FOOTER */}
-      <footer className="border-t border-slate-200 bg-white py-10 text-slate-500 text-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-900">Soluqube</span>
-            <span>|</span>
-            <span>Deterministic Contract-to-Ledger Revenue Engine</span>
-          </div>
-          <div className="flex items-center gap-5 text-slate-600">
-            <span>&copy; {new Date().getFullYear()} Soluqube</span>
-            <Link href="/" className="hover:text-slate-950">Home</Link>
-            <Link href="/blog" className="text-slate-900 font-bold">Blog</Link>
-            <Link href="/asc-606" className="hover:text-slate-950">ASC 606 Hub</Link>
-            <Link href="/asc-606-vs-ind-as-115" className="hover:text-slate-950">Dual Standard</Link>
-            <a href="https://www.crunchbase.com/organization/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950">Crunchbase</a>
-            <a href="https://www.linkedin.com/company/soluqube" target="_blank" rel="noopener noreferrer" className="hover:text-slate-950">LinkedIn</a>
-            <Link href="/contact" className="hover:text-slate-950">Contact</Link>
-            <Link href="/privacy" className="hover:text-slate-950">Privacy</Link>
-            <Link href="/terms" className="hover:text-slate-950">Terms</Link>
-            <Link href="/security" className="hover:text-slate-950">Security</Link>
-          </div>
-        </div>
-      </footer>
+      <ResourceFooter />
     </div>
   );
 }

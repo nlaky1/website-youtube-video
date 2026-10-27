@@ -2222,6 +2222,7 @@ The list price is $3,500; see [pricing](/pricing). Want to see it first? Request
       { id: "how-does-the-worked-example-tie-to-the-transaction-price", label: "How does the worked example tie to the transaction price?" },
       { id: "what-should-the-handoff-checklist-confirm", label: "What should the handoff checklist confirm?" },
       { id: "who-signs-what", label: "Who signs what?" },
+      { id: "how-to-speed-up-asc-606-audit-documentation-and-gap-analysis", label: "How to speed up ASC 606 audit documentation & gap analysis" },
       { id: "how-can-your-firm-try-it-on-three-client-contracts", label: "How can your firm try it on three client contracts?" }
     ],
     faqs: [
@@ -2295,6 +2296,16 @@ The client owns every accounting judgement: which obligations exist, which SSP m
 Write this boundary into the engagement letter. Label any SSP estimate the team proposes as a proposal until the Controller approves it, and flag contract modifications to the client separately.
 
 For the accounting behind each item in the pack, from the SSP method to the residual-cent rule, see [how SSP allocation works, from estimate to schedule](/blog/asc-606-ssp-allocation-guide).
+
+## How to speed up ASC 606 audit documentation & gap analysis
+
+When technical accounting advisory teams or gap analysts evaluate a batch of 20 to 100 contracts during an ASC 606 readiness review, audit sampling, or pre-audit gap analysis, the biggest bottleneck is manual contract review and workpaper creation. Sifting through 30-page MSAs, identifying separate performance obligations, calculating relative standalone selling prices, and assembling audit tie-outs by hand takes hours per contract.
+
+To accelerate the workflow:
+
+1. **Automate the arithmetic in seconds**: Instead of manually building custom Excel models that break with mid-contract amendments or variable pricing, use our free [SSP Allocation Calculator](/tools/ssp-allocation-calculator) to generate exact relative weights and amortisation schedules to the cent.
+2. **Anchor clause citations upfront**: Documenting the exact page number and verbatim excerpt for each obligation immediately satisfies auditor requests under PCAOB AS 1105 (audit evidence) and eliminates back-and-forth PBC review cycles.
+3. **Bridge ERP limitations**: For firms managing revenue across disparate billing or GL tools, see our comparative guides for [Tabs Alternatives](/alternatives/tabs), [Chargebee RevRec Alternatives](/alternatives/chargebee-revrec), and [Sage Intacct Alternatives](/alternatives/sage-intacct-revenue) to identify where dedicated rev-rec subledgers fit beside existing ERP infrastructure.
 
 ## How can your firm try it on three client contracts?
 
@@ -2988,6 +2999,7 @@ Founding prices for the first 10 customers are available on [pricing](/pricing).
       { id: "what-does-the-formula-give-on-a-50000-saas-bundle", label: "What does the formula give on a $50,000 SaaS bundle?" },
       { id: "how-should-each-allocation-be-rounded-so-the-total-ties", label: "How should each allocation be rounded so the total ties?" },
       { id: "how-do-you-lay-it-out-in-a-spreadsheet", label: "How do you lay it out in a spreadsheet?" },
+      { id: "how-to-calculate-relative-ssp-allocation-fast", label: "How to calculate relative SSP allocation fast" },
       { id: "how-can-you-test-this-on-your-own-contracts", label: "How can you test this on your own contracts?" }
     ],
     faqs: [
@@ -3063,6 +3075,16 @@ A layout a reviewer can follow usually has:
 5. A monthly schedule that ends at $0.00 deferred.
 
 The [sample SSP workpaper](/samples/soluqube-ssp-sample.pdf) shows the same structure as a finished document.
+
+## How to calculate relative SSP allocation fast
+
+When technical accountants, auditors, or gap analysts evaluate a sample of 20 to 50 revenue contracts during year-end close or pre-audit testing, setting up multi-column workpapers in Excel for each multi-element contract consumes 30 to 45 minutes per contract. Manual spreadsheets frequently introduce floating-point rounding errors where the sum of rounded obligations differs by a cent from the contract price.
+
+To calculate relative SSP allocation quickly and avoid spreadsheet rebuilds:
+
+1. **Use an instant allocation engine**: Instead of writing nested \`ROUND()\` formulas in Excel, tools like our free [SSP Allocation Calculator](/tools/ssp-allocation-calculator) compute proportional weights in integer arithmetic, tie out deferred schedules to the exact cent, and absorb terminal-period residuals automatically in under 30 seconds.
+2. **Standardize your PBC documentation**: Auditors testing SSP under PCAOB standards look for three pieces of evidence: the observable historical price band (e.g., standalone list minus median discount), the math recalculation, and the exact contract clause excerpt. Keeping the clause snippet attached directly to the allocation prevents back-and-forth review comments.
+3. **Compare dedicated rev-rec subledgers**: If you are scaling beyond manual spreadsheets or evaluating alternatives to ERP modules, review dedicated standalone engines such as our [NetSuite ARM Alternatives](/alternatives/netsuite-arm), [Sage Intacct Alternatives](/alternatives/sage-intacct-revenue), and [Maxio Alternatives](/alternatives/maxio) guides.
 
 ## How can you test this on your own contracts?
 

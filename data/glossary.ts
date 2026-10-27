@@ -136,6 +136,11 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
         answer:
           "Under ASC 606 and IFRS 15, entities must review and refresh standalone selling price (SSP) estimates periodically—typically on an annual basis or whenever significant changes occur in pricing strategies, discounting policies, market conditions, or product bundling.",
       },
+      {
+        question: "How do auditors test standalone selling price (SSP) allocation?",
+        answer:
+          "Auditors test SSP allocation under PCAOB standards by selecting a sample of revenue contracts, verifying that observable standalone sales cluster within management's defined price band (typically median ±15%), checking that total transaction price equals the sum of allocated obligations, and validating that source contract clauses support each identified performance obligation.",
+      },
     ],
   },
   {
@@ -192,6 +197,11 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
         question: "Can the discount go to one obligation only?",
         answer:
           "Only if all three conditions in ASC 606-10-32-37 are met: each distinct item is regularly sold on its own, a bundle of some of those items is also regularly sold at a discount, and that bundle discount is substantially the same as the discount in the contract. Otherwise the discount is allocated pro rata.",
+      },
+      {
+        question: "How do you calculate relative SSP allocation quickly without rounding errors?",
+        answer:
+          "To calculate relative SSP quickly and avoid rounding errors, multiply the transaction price by each obligation's full SSP ratio before rounding (do not round intermediate percentages). Round each obligation to whole cents, and apply a deterministic rule to absorb the terminal cent residual so the sum of allocated amounts equals the transaction price exactly.",
       },
     ],
   },
