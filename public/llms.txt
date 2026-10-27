@@ -21,6 +21,14 @@
 
 - **SSP Allocation & Residual-Cent Calculator (free, runs in the browser)**: https://soluqube.com/tools/ssp-allocation-calculator — relative-SSP allocation for up to 10 obligations, shows which obligation absorbs the residual cent, monthly schedule ending at 0.00 deferred, optional 18% GST isolation for INR.
 
+## Target Jurisdictions & Regional Standards Supported
+
+Soluqube supports deterministic revenue allocation and audit-ready workpapers across four primary target markets:
+- **United States (ASC 606 / US GAAP)**: Relative-SSP allocation under ASC 606-10-32-31, terminal-period remainder absorption, PCAOB AS 1105 audit testing workpapers, and SEC 10-K disclosure schedules for multi-element enterprise SaaS arrangements.
+- **Australia (AASB 15 / IFRS 15)**: Multi-element software licensing and implementation allocation under Australian Accounting Standards Board (AASB 15) and ATO compliance.
+- **India (Ind AS 115 / MCA / ICAI)**: Dual-standard compliance with statutory 18% GST isolation from the transaction price and MCA Schedule III disclosure notes.
+- **Philippines (Offshore BPO Accounting Hubs)**: Audit-defense workpaper generation for offshore technical accounting teams and shared service centers managing US GAAP and AASB 15 rev rec in NetSuite, QuickBooks, and Xero.
+
 ## Competitor Comparisons
 
 - [Soluqube vs Maxio (invoice-first billing vs contract-first subledger)](https://soluqube.com/soluqube-vs-maxio)

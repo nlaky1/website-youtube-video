@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   keywords: [
     "ASC 606 revenue recognition software",
     "Ind AS 115 automated compliance",
+    "AASB 15 revenue recognition Australia",
+    "AASB 15 standalone selling price allocation",
+    "US GAAP relative SSP allocation",
+    "Philippines offshore accounting US GAAP",
+    "outsourced revenue recognition BPO Philippines",
     "contract to ledger revenue engine",
     "audit readiness revenue recognition",
     "B2B SaaS revenue waterfall engine",
@@ -99,6 +104,12 @@ const structuredData = {
         "@type": "ImageObject",
         url: "https://soluqube.com/icon.png",
       },
+      areaServed: [
+        { "@type": "Country", name: "United States", alternateName: "US" },
+        { "@type": "Country", name: "Australia", alternateName: "AU" },
+        { "@type": "Country", name: "India", alternateName: "IN" },
+        { "@type": "Country", name: "Philippines", alternateName: "PH" },
+      ],
       sameAs: [
         "https://app.soluqube.com",
         "https://client.soluqube.com",
@@ -107,7 +118,22 @@ const structuredData = {
         "https://www.saashub.com/soluqube"
       ],
       description:
-        "Soluqube is a revenue allocation and schedule engine for ASC 606 and Ind AS 115: relative-SSP allocation that ties to the cent, with clause evidence for each performance obligation.",
+        "Soluqube is a revenue allocation and schedule engine for ASC 606, AASB 15, and Ind AS 115: relative-SSP allocation that ties to the cent, with clause evidence for each performance obligation.",
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://soluqube.com/#software",
+      name: "Soluqube",
+      applicationCategory: "FinancialApplication, BusinessApplication",
+      operatingSystem: "Web",
+      areaServed: [
+        { "@type": "Country", name: "United States" },
+        { "@type": "Country", name: "Australia" },
+        { "@type": "Country", name: "India" },
+        { "@type": "Country", name: "Philippines" },
+      ],
+      description:
+        "Deterministic revenue allocation and amortization engine under US GAAP (ASC 606), Australian Accounting Standards (AASB 15), and Indian GAAP (Ind AS 115).",
     },
   ],
 };
