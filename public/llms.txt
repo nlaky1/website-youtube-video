@@ -10,6 +10,7 @@
 - [ASC 606 Schedule Simulator](https://soluqube.com/audit)
 - [ASC 606 Technical Hub](https://soluqube.com/asc-606)
 - [Dual Standard Ind AS 115 Hub](https://soluqube.com/asc-606-vs-ind-as-115)
+- [2026 SaaS ASC 606 & Audit Benchmark Report](https://soluqube.com/benchmarks/asc-606-saas-audit-report)
 - [Pricing](https://soluqube.com/pricing)
 - [Design Partner Program (60 days free on your real contracts)](https://soluqube.com/design-partners)
 - [Book a Demo / Free 3-Contract Audit-Defense Workpaper](https://soluqube.com/book-demo)

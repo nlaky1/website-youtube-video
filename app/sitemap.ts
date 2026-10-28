@@ -42,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/benchmarks/asc-606-saas-audit-report`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.90,
+    },
+    {
       url: `${baseUrl}/asc-606-vs-ind-as-115`,
       lastModified: now,
       changeFrequency: "weekly",
