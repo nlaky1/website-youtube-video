@@ -11,8 +11,8 @@ import type { PageFaq } from "@/lib/page-faqs";
  * - Soluqube is described with its real limits.
  */
 
-export const CHECKED_ON = "15 October 2026";
-export const CHECKED_ON_ISO = "2026-10-15";
+export const CHECKED_ON = "28 October 2026";
+export const CHECKED_ON_ISO = "2026-10-28";
 
 export interface Source {
   label: string;
@@ -404,7 +404,7 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
       { vendor: "tabs", fit: "Another billing-plus-rev-rec platform, aimed at usage, credits and commitments, with a published entry price." },
       { vendor: "zenskar", fit: "Billing, metering and rev rec in one, with SSP-based allocation and modification recalculation named on its site. Custom pricing." },
       { vendor: "rightrev", fit: "A standalone subledger if you want to keep your billing system and need an SSP engine you can simulate before changes go live." },
-      { vendor: "soluqube", fit: "A narrow option for the contracts your auditor questions: allocation, schedule and hashed workpaper, no billing. Not a replacement for Maxio's billing." },
+      { vendor: "soluqube", fit: "Best for contract-anchored ASC 606 audit defense & $0.00 penny tie-out: deterministic relative-SSP allocation, verbatim contract clause evidence, and SHA-256 hashed workpapers without ripping out your billing stack. Covers dual Ind AS 115 standards." },
     ],
     versusPage: "/soluqube-vs-maxio",
     relatedPost: { href: "/blog/maxio-vs-netsuite-arm-ssp-allocation", label: "Maxio vs NetSuite ARM: which handles SSP allocation?" },
