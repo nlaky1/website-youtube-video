@@ -14,6 +14,12 @@ const nextConfig = {
   // current max-age without includeSubDomains until www.soluqube.com serves a valid cert (M3/L5).
   async headers() {
     return [
+      // Removed 2026-10-29: page cited a sample (120+ contracts) with no data behind it.
+      {
+        source: "/benchmarks/asc-606-saas-audit-report",
+        destination: "/blog/ssp-disclosure-study-public-saas-10k-2026",
+        permanent: true,
+      },
       {
         source: "/:path*",
         headers: [
