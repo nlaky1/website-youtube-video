@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LOCALES, hreflangMap } from "@/lib/i18n";
 import Navbar from "@/components/navbar";
 import ResourceFooter from "@/components/resource-footer";
 import { ALTERNATIVES_PAGES, CHECKED_ON } from "@/data/alternatives";
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   title: { absolute: "Revenue Recognition Software Alternatives | Soluqube" },
   description:
     "Honest alternatives to Maxio, Zuora RevPro, Chargebee RevRec, NetSuite ARM, RightRev and more, with limits and pricing sourced from vendor sites.",
-  alternates: { canonical: `${SITE}/alternatives` },
+  alternates: { canonical: `${SITE}/alternatives`, languages: hreflangMap("/alternatives", LOCALES) },
   openGraph: {
     title: "Revenue Recognition Software Alternatives",
     description:

@@ -1,0 +1,560 @@
+{
+ "consignment": {
+  "slug": "consignment",
+  "term": "Konsignationsvereinbarung",
+  "title": "Konsignationsvereinbarungen nach ASC 606",
+  "description": "Konsignationsvereinbarungen nach ASC 606 und IFRS 15: Indikatoren, warum die Lieferung an einen Händler kein Verkauf ist, und ein Beispiel zum Weiterverkauf.",
+  "definition": "Bei einer Konsignationsvereinbarung liefert ein Unternehmen Produkte an einen Händler oder Distributor, der die Beherrschung darüber nicht erlangt; bei der Lieferung wird daher keine Umsatzerlöse realisiert. Indikatoren sind unter anderem, dass das Unternehmen die Beherrschung bis zu einem bestimmten Ereignis behält, etwa dem Verkauf an einen Endkunden, und dass es die Rückgabe des Produkts verlangen kann.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-79 to 55-80",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B77–B78",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B77–B78",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: 100 Geräte werden zu je $500 in Konsignation an einen Wiederverkäufer geliefert. Der Wiederverkäufer verkauft in diesem Quartal 30 davon an Endkunden.",
+  "steps": [
+    "Keine Umsatzrealisierung bei der Lieferung der 100 Geräte.",
+    "Umsatz für die 30 weiterverkauften Geräte: 30 × $500 = $15,000.",
+    "Die übrigen 70 bleiben zu Anschaffungskosten im Vorratsvermögen des Lieferanten, am Standort des Wiederverkäufers."
+   ],
+   "result": "$15,000 Umsatz in diesem Quartal; 70 Einheiten bleiben Vorratsvermögen des Lieferanten."
+  },
+  "mistakes": [
+   "Umsatzrealisierung bereits bei Versand an den Konsignatar.",
+   "Konsignationsähnliche Bedingungen in Vereinbarungen mit Distributoren, die auf dem Weiterverkauf beruhen, werden übersehen.",
+   "Der Überblick über Bestände an Standorten der Konsignatare geht verloren."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "breakage": {
+  "slug": "breakage",
+  "term": "Breakage",
+  "title": "Breakage-Erlöse nach ASC 606: Beispiel",
+  "description": "Breakage nach ASC 606 und IFRS 15: Realisierung nicht ausgeübter Kundenrechte wie ungenutzter Guthaben, mit einem anteiligen Rechenbeispiel.",
+  "definition": "Breakage ist der Teil einer nicht erstattungsfähigen Vorauszahlung eines Kunden für Rechte, die voraussichtlich nicht ausgeübt werden, etwa ungenutzte Geschenkkarten, Guthaben oder Gutscheine. Erwartet das Unternehmen, Anspruch auf Breakage zu haben, realisiert es diese im Verhältnis zum Muster der vom Kunden ausgeübten Rechte; andernfalls, sobald die Ausübung unwahrscheinlich wird.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-46 to 55-49",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B44–B47",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B44–B47",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: Ein Kunde zahlt $10,000 für nicht erstattungsfähige API-Guthaben im Voraus. Die Erfahrungswerte zeigen, dass 10% der Guthaben nie genutzt werden, und kein Gesetz verlangt, dass nicht genutzte Beträge an eine staatliche Stelle abzuführen sind.",
+   "steps": [
+    "Erwartete Nutzung: $9,000; erwartete Breakage: $1,000.",
+    "Der Kunde nutzt Guthaben von $4,500, das sind 50% der erwarteten Nutzung.",
+    "Umsatz: $4,500 genutzt + 50% × $1,000 Breakage = $5,000 (gleichbedeutend: 50% × $10,000)."
+   ],
+   "result": "$5,000 realisiert; $5,000 bleiben eine Vertragsverbindlichkeit."
+  },
+  "mistakes": [
+   "Erwartete Breakage wird bereits beim Verkauf realisiert.",
+   "Breakage wird auf Beträge realisiert, die das Unternehmen nach den Vorschriften zu nicht beanspruchtem Vermögen abführen muss.",
+   "Die Beschränkung variabler Gegenleistungen wird auf die Breakage-Schätzung nicht angewendet."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "customer-options": {
+  "slug": "customer-options",
+  "term": "Kundenoptionen auf zusätzliche Güter oder Dienstleistungen",
+  "title": "Kundenoptionen nach ASC 606: Wann aufteilen?",
+  "description": "Kundenoptionen nach ASC 606 und IFRS 15: wann eine Option auf Mehrkäufe ein wesentliches Recht ist und wann ein Marketingangebot, mit Beispiel zu Zusatzlizenzen.",
+  "definition": "Kundenoptionen sind Rechte, zusätzliche Güter oder Dienstleistungen kostenlos oder mit Preisnachlass zu erwerben, etwa Verlängerungsoptionen, Preise für Zusatzmodule, Treuepunkte oder Mengenstaffeln. Eine Option ist nur dann eine eigene Leistungsverpflichtung, wenn sie ein wesentliches Recht begründet; andernfalls ist sie ein Marketingangebot, auf das bis zur Ausübung nichts aufgeteilt wird.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-41 to 55-45",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B39–B43",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B39–B43",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: Ein Abonnement erlaubt es dem Kunden, während der Laufzeit jederzeit weitere Nutzerplätze (Seats) hinzuzubuchen.",
+   "steps": [
+    "Fall A: Zusätzliche Seats kosten $40 pro Seat und Monat, also genau das, was vergleichbare Kunden zahlen. Kein wesentliches Recht; die hinzugebuchten Seats werden bilanziert, wenn sie gekauft werden.",
+    "Fall B: Zusätzliche Seats kosten $25, während vergleichbare Kunden $40 zahlen, und der Nachlass besteht nur aufgrund dieses Vertrags. Das ist ein wesentliches Recht, und ein Teil des Preises wird darauf aufgeteilt.",
+    "Im Gegensatz dazu stehen nutzungsabhängige Entgelte im bestehenden Vertrag: Sie sind variable Gegenleistung, keine Optionen."
+   ],
+   "result": "Nur Fall B verändert die Aufteilung bei Vertragsbeginn."
+  },
+  "mistakes": [
+   "Optionale Käufe werden als variable Gegenleistung behandelt, oder umgekehrt.",
+   "Mengenstaffeln mit rückwirkendem Preisnachlass werden übersehen.",
+   "Der Optionspreis wird nicht mit dem Nachlass verglichen, der dieser Kundengruppe üblicherweise gewährt wird."
+  ],
+  "furtherLabels": [
+   "ASC 606 SSP-Aufteilung, Beispiel: SaaS-Paket mit 3 Elementen",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "licence-of-ip": {
+  "slug": "licence-of-ip",
+  "term": "Nutzungsrecht vs. Zugangsrecht (Lizenz an geistigem Eigentum)",
+  "title": "Nutzungsrecht vs. Zugangsrecht: IP-Lizenz",
+  "description": "Nutzungs- vs. Zugangsrecht bei IP-Lizenzen nach IFRS 15 und ASC 606: funktionales vs. symbolisches IP, Zeitpunkt der Umsatzrealisierung, Rechenbeispiel.",
+  "definition": "Ein Zugangsrecht gewährt dem Kunden das geistige Eigentum des Lizenzgebers in der Form, wie es sich während der Lizenzlaufzeit verändert; der Umsatz wird daher über einen Zeitraum realisiert. Ein Nutzungsrecht gewährt das geistige Eigentum in der Form, wie es bei Gewährung besteht; der Umsatz wird zu einem Zeitpunkt realisiert. ASC 606 gelangt zu dieser Unterscheidung über die Einstufung des IP als symbolisch oder funktional.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-54 to 55-65",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B52–B63",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B52–B63",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: zwei Lizenzen mit dreijähriger Laufzeit, die am selben Tag unterzeichnet werden.",
+   "steps": [
+    "Marken- und Figurenlizenz für $120,000 (symbolisches IP, das der Lizenzgeber weiter unterstützt): Zugangsrecht, über einen Zeitraum mit $40,000 pro Jahr realisiert.",
+    "Zeitlich befristete On-Premise-Softwarelizenz für $90,000 (funktionales IP, dessen Nutzen der Lizenzgeber nicht verändert): Nutzungsrecht, realisiert, wenn die Software verfügbar ist und die Laufzeit beginnt.",
+    "Ein SaaS-Abonnement, bei dem der Kunde die Software nicht in Besitz nehmen kann, ist in der Regel eine Dienstleistung und keine Lizenz."
+   ],
+   "result": "$40,000 pro Jahr für die Markenlizenz; $90,000 im Voraus für die Softwarelizenz."
+  },
+  "mistakes": [
+   "SaaS-Zugang wird als Lizenz an geistigem Eigentum behandelt.",
+   "Eine Lizenzverlängerung wird realisiert, bevor der Verlängerungszeitraum beginnt.",
+   "Die allgemeine Beschränkung variabler Gegenleistungen wird auf umsatz- oder nutzungsabhängige Lizenzgebühren angewendet statt der Ausnahmeregelung für Lizenzgebühren."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Ist SaaS-Schulung eine eigene Leistungsverpflichtung?",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Was ist der Unterschied zwischen Nutzungsrecht und Zugangsrecht?",
+    "answer": "Ein Zugangsrecht gewährt dem Kunden das geistige Eigentum des Lizenzgebers in der Form, wie es sich während der Lizenzlaufzeit verändert; der Umsatz wird daher über einen Zeitraum realisiert. Ein Nutzungsrecht gewährt das geistige Eigentum in der Form, wie es bei Gewährung besteht; der Umsatz wird zu einem Zeitpunkt realisiert. ASC 606-10-55-58 to 55-64 nimmt diese Unterscheidung anhand von symbolischem und funktionalem IP vor."
+   },
+   {
+    "question": "Ist ein SaaS-Abonnement eine Lizenz mit Zugangsrecht?",
+    "answer": "In der Regel nein. Nach ASC 606-10-55-54(a) ist eine gehostete Vereinbarung nur dann eine Lizenz, wenn der Kunde die Software ohne erhebliche Nachteile in Besitz nehmen und auf eigener oder fremder Hardware betreiben kann. Ist das nicht möglich, ist das Abonnement eine Dienstleistung, die über den Zeitraum der Leistungserbringung realisiert wird, und keine Lizenz an geistigem Eigentum."
+   },
+   {
+    "question": "Wann wird der Umsatz aus einer Lizenz mit Nutzungsrecht realisiert?",
+    "answer": "Zu dem Zeitpunkt, zu dem die Beherrschung übergeht. Dieser kann nicht vor dem Moment liegen, in dem die Software oder das sonstige IP dem Kunden zur Verfügung gestellt wird, und auch nicht vor Beginn des Zeitraums, in dem der Kunde es nutzen kann. Eine Verlängerung einer Lizenz mit Nutzungsrecht wird nach ASC 606-10-55-58C nicht vor Beginn des Verlängerungszeitraums realisiert."
+   }
+  ]
+ },
+ "saas-implementation-fee": {
+  "slug": "saas-implementation-fee",
+  "term": "SaaS-Implementierungsgebühr",
+  "title": "SaaS-Implementierungsgebühren nach ASC 606",
+  "description": "Bilanzierung von SaaS-Implementierungs- und Einrichtungsgebühren nach ASC 606 und IFRS 15: abgrenzbar oder nicht, mit zwei Beispielen und der Verlängerungsfalle.",
+  "definition": "Eine SaaS-Implementierungsgebühr ist ein Entgelt für Einrichtung, Konfiguration, Datenmigration oder Schulung zu Beginn eines Abonnements. Überträgt die Tätigkeit eine eigenständige Dienstleistung, ist sie eine separate Leistungsverpflichtung. Handelt es sich um eine Einrichtungstätigkeit oder ist sie nicht eigenständig, wird die Gebühr zur Gegenleistung für das Abonnement addiert und über den Leistungszeitraum realisiert.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-17",
+    "note": "Einrichtungstätigkeiten"
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-50 to 55-53",
+    "note": "nicht erstattungsfähige Vorabgebühren"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 25 and B48–B51",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: ein Jahresabonnement über $60,000 mit einer Implementierungsgebühr von $12,000 im Voraus.",
+   "steps": [
+    "Nicht eigenständig (nur Einrichtung): ($60,000 + $12,000) / 12 = $6,000 pro Monat realisieren. Kann der Kunde verlängern, ohne die Gebühr erneut zu zahlen, ist zu prüfen, ob die Gebühr ein wesentliches Recht begründet, das den Realisierungszeitraum verlängert.",
+    "Eigenständig (Standardkonfiguration, die auch andere verkaufen): Die SSPs betragen $66,000 (Abonnement) und $9,000 (Implementierung), zusammen $75,000.",
+    "$72,000 aufteilen: Abonnement $72,000 × 66/75 = $63,360; Implementierung $72,000 × 9/75 = $8,640."
+   ],
+   "result": "Entweder $6,000 pro Monat oder $63,360 linear plus $8,640 entsprechend dem Fortschritt der Implementierung."
+  },
+  "mistakes": [
+   "Die Gebühr wird bei Rechnungsstellung realisiert.",
+   "Das wesentliche Recht wird ignoriert, das entsteht, wenn bei Verlängerungen die Gebühr nicht erneut anfällt.",
+   "Interne Einrichtungsaufgaben werden als Leistungsverpflichtung behandelt."
+  ],
+  "furtherLabels": [
+   "SSP-Aufteilungsrechner",
+   "ASC 606 SSP-Aufteilung, Beispiel: SaaS-Paket mit 3 Elementen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "remaining-performance-obligations": {
+  "slug": "remaining-performance-obligations",
+  "term": "Verbleibende Leistungsverpflichtungen (RPO)",
+  "title": "Verbleibende Leistungsverpflichtungen (RPO)",
+  "description": "Angabe der verbleibenden Leistungsverpflichtungen (RPO) nach ASC 606 und IFRS 15: Umfang, Zeitbänder und ein Beispiel für einen Dreijahresvertrag.",
+  "definition": "Die verbleibenden Leistungsverpflichtungen (RPO) sind die Angabe des Transaktionspreises, der auf zum Berichtsstichtag nicht oder teilweise erfüllte Leistungsverpflichtungen aufgeteilt ist, mit einer Erläuterung, wann das Unternehmen dessen Realisierung erwartet. Sie umfassen passive Rechnungsabgrenzung und vertraglich vereinbarte, noch nicht fakturierte Beträge.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-50-13 to 50-15",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 120–122",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 120–122",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: ein unkündbarer Dreijahresvertrag über $90,000, ab 1 January 2026 jährlich im Voraus mit $30,000 fakturiert. Berichtsstichtag ist der 30 June 2026.",
+   "steps": [
+    "Bisher realisiert: 6 × $2,500 = $15,000. Passive Rechnungsabgrenzung: $15,000. Noch nicht fakturiert: $60,000.",
+    "RPO = $15,000 + $60,000 = $75,000.",
+    "Innerhalb von 12 Monaten (July 2026–June 2027): $30,000. Danach (July 2027–December 2028): 18 × $2,500 = $45,000."
+   ],
+   "result": "RPO von $75,000: $30,000 innerhalb eines Jahres und $45,000 danach."
+  },
+  "mistakes": [
+   "Zeiträume werden einbezogen, in denen der Kunde ohne substanzielle Vertragsstrafe kündigen kann.",
+   "Vertraglich vereinbarte, noch nicht fakturierte Beträge werden weggelassen.",
+   "RPO wird mit Auftragseingang (Bookings) oder ARR gleichgesetzt."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "disaggregation-of-revenue": {
+  "slug": "disaggregation-of-revenue",
+  "term": "Aufgliederung der Umsatzerlöse",
+  "title": "Aufgliederung der Umsatzerlöse: ASC 606",
+  "description": "Aufgliederung der Umsatzerlöse nach ASC 606 und IFRS 15: welche Kategorien in Frage kommen, Überleitung zu Segmenten und ein SaaS-Beispiel zur Angabe.",
+  "definition": "Die Aufgliederung der Umsatzerlöse ist die verpflichtende Angabe, die Umsatzerlöse in Kategorien zerlegt, welche zeigen, wie Art, Betrag, zeitlicher Anfall und Unsicherheit der Umsatzerlöse und Zahlungsströme durch wirtschaftliche Faktoren beeinflusst werden, zum Beispiel nach Produktlinie, Region, Kundentyp, Vertragsdauer oder Zeitpunkt der Übertragung.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-50-5 to 50-7 and 606-10-55-89 to 55-91",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 114–115 and B87–B89",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 114–115 and B87–B89",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: ein SaaS-Unternehmen mit Umsatzerlösen von $10.0 million.",
+   "steps": [
+    "Nach Art und Zeitpunkt: Abonnements über einen Zeitraum $8.2m; Professional Services über einen Zeitraum $1.3m; Hardware zu einem Zeitpunkt $0.5m.",
+    "Nach Region: United States $7.0m; India $3.0m.",
+    "Kontrolle: Beide Sichten summieren sich auf $10.0m, und jede Kategorie wird mit den berichtspflichtigen Segmenten abgestimmt erläutert."
+   ],
+   "result": "Zwei Aufgliederungen, die zu den gesamten Umsatzerlösen und zur Segmentberichterstattung übergeleitet werden können."
+  },
+  "mistakes": [
+   "Es wird nur eine Kategorie angegeben, obwohl Investorenunterlagen bereits mehrere verwenden.",
+   "Kategorien, die nicht mit denen in Ergebnismitteilungen oder der Segmentberichterstattung übereinstimmen.",
+   "Der Zusammenhang zwischen aufgegliederten Umsatzerlösen und Segmenten wird nicht erläutert."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Fachportal ASC 606 vs. Ind AS 115"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Welche Kategorien sind für die Aufgliederung der Umsatzerlöse nach ASC 606 vorgeschrieben?",
+    "answer": "Nach ASC 606-10-50-5 müssen Unternehmen die Umsatzerlöse in Kategorien aufgliedern, die abbilden, wie Art, Betrag, zeitlicher Anfall und Unsicherheit der Umsatzerlöse und Zahlungsströme durch wirtschaftliche Faktoren beeinflusst werden. Gängige Kategorien sind Produktlinien, geografische Regionen, Vertragsdauer, Kundentyp und Zeitpunkt der Übertragung (zeitpunktbezogen vs. zeitraumbezogen)."
+   },
+   {
+    "question": "Wie hängt die Aufgliederung der Umsatzerlöse mit der Segmentberichterstattung zusammen?",
+    "answer": "ASC 606-10-50-6 verlangt, dass die Kategorien der aufgegliederten Umsatzerlöse direkt mit den nach ASC 280 für jedes berichtspflichtige Segment angegebenen Umsatzerlösen abgestimmt werden, damit die öffentliche Berichterstattung, Investorenpräsentationen und Arbeitspapiere der Abschlussprüfer konsistent bleiben."
+   },
+   {
+    "question": "Wie wird die Aufgliederung der Umsatzerlöse bei Abschlüssen nach ASC 606 und Ind AS 115 gehandhabt?",
+    "answer": "Beide Standards folgen identischen Grundsätzen der Aufgliederung, doch Unternehmen, die nach Ind AS 115 berichten, müssen die Goods and Services Tax (GST) aus allen aufgegliederten Umsatzkategorien strikt ausschließen, da im Namen des Staates vereinnahmte Steuern keine Umsatzerlöse sind."
+   }
+  ]
+ },
+ "ind-as-115-gst-treatment": {
+  "slug": "ind-as-115-gst-treatment",
+  "term": "GST-Behandlung nach Ind AS 115",
+  "title": "GST nach Ind AS 115: Behandlung und Beispiel",
+  "description": "Wie Ind AS 115 die GST behandelt: als für den Staat vereinnahmter Betrag vom Transaktionspreis ausgenommen, mit einem Zeitplan für ein Abonnement in INR.",
+  "definition": "Nach Ind AS 115 enthält der Transaktionspreis keine im Namen Dritter vereinnahmten Beträge; die auf einer Rechnung ausgewiesene Goods and Services Tax (GST) ist daher kein Umsatz. Die GST wird als Verbindlichkeit gegenüber dem Staat erfasst; nur die Nettogegenleistung wird auf die Leistungsverpflichtungen aufgeteilt und als Umsatz realisiert.",
+  "references": [
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 47",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 47",
+    "note": null
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-2A",
+    "note": "Wahlrecht in den USA, Verkaufsteuern auszuschließen"
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: ein Jahresabonnement in INR, fakturiert mit ₹11,80,000 inklusive 18% GST.",
+   "steps": [
+    "Nettogegenleistung: ₹11,80,000 / 1.18 = ₹10,00,000. GST: ₹1,80,000 auf GST-Verbindlichkeit (CGST und SGST bei Lieferungen innerhalb eines Bundesstaates, IGST bei Lieferungen zwischen Bundesstaaten).",
+    "Monatlicher Umsatz: ₹10,00,000 / 12 = ₹83,333.33 für die Monate 1–11 (₹9,16,666.63).",
+    "Monat 12 nimmt den Restbetrag auf: ₹10,00,000 − ₹9,16,666.63 = ₹83,333.37."
+   ],
+   "result": "₹10,00,000 Umsatz über 12 Monate; ₹1,80,000 berühren den Umsatz nie."
+  },
+  "mistakes": [
+   "Der Bruttorechnungsbetrag einschließlich GST wird aufgeteilt und in den Zeitplan aufgenommen.",
+   "Die GST wird zunächst als Umsatz und dann als Aufwand gebucht.",
+   "GST-Logik wird auf US-Verträge angewendet, die keine GST enthalten."
+  ],
+  "furtherLabels": [
+   "Fachportal ASC 606 vs. Ind AS 115",
+   "ASC 606 vs. Ind AS 115: duale Berichterstattung und GST-Isolierung"
+  ],
+  "soluqubeNote": "Bei Verträgen in INR bucht Soluqube die 18% GST auf eine Verbindlichkeit und teilt nur die Nettogegenleistung auf und plant sie ein. US-Verträge enthalten keine GST.",
+  "faqs": null
+ },
+ "five-step-model": {
+  "slug": "five-step-model",
+  "term": "Fünf-Schritte-Modell",
+  "title": "ASC 606 Fünf-Schritte-Modell: Rechenbeispiel",
+  "description": "Das Fünf-Schritte-Modell der Umsatzrealisierung nach ASC 606, IFRS 15 und Ind AS 115, mit einem SaaS-Vertrag über $120,000, der alle fünf Schritte durchläuft.",
+  "definition": "Das Fünf-Schritte-Modell ist der Kern von ASC 606, IFRS 15 und Ind AS 115: den Vertrag identifizieren; die Leistungsverpflichtungen identifizieren; den Transaktionspreis bestimmen; den Transaktionspreis auf die Leistungsverpflichtungen aufteilen; und den Umsatz realisieren, wenn bzw. sobald jede Verpflichtung erfüllt ist.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-05-4",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph IN7",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "same five-step structure as IFRS 15",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: ein unterzeichneter Zweijahresvertrag über $120,000, der ein Abonnement und ein Onboarding-Projekt umfasst.",
+   "steps": [
+    "Schritt 1: unterzeichnet, durchsetzbar, einbringlich — ein Vertrag liegt vor.",
+    "Schritt 2: zwei Leistungsverpflichtungen — Abonnement (Serie) und Onboarding (eigenständige Dienstleistung).",
+    "Schritt 3: Transaktionspreis $120,000 fest.",
+    "Schritt 4: SSPs $100,000 und $25,000; relative Aufteilung $96,000 und $24,000.",
+    "Schritt 5: Abonnement $96,000 / 24 = $4,000 pro Monat; Onboarding $24,000 entsprechend den erbrachten Stunden."
+   ],
+   "result": "Zwei Zeitpläne, die zusammen genau $120,000 realisieren."
+  },
+  "mistakes": [
+   "Die Prüfungen in Schritt 1 wie Durchsetzbarkeit und Einbringlichkeit werden übersprungen.",
+   "Schritt 4 wird auf Basis von Listenpreisen statt SSPs durchgeführt.",
+   "Schritt 5 wird nach dem Fakturierungsplan gesteuert."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "SSP-Aufteilungsrechner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "ssp-range": {
+  "slug": "ssp-range",
+  "term": "SSP-Bandbreite",
+  "title": "SSP-Bandbreite festlegen und belegen",
+  "description": "Wie SaaS-Unternehmen eine Einzelveräußerungspreis-Bandbreite aus beobachtbaren Verkäufen festlegen, auf Vertragspreise anwenden und für Prüfer dokumentieren.",
+  "definition": "Eine SSP-Bandbreite ist ein Preisband, üblicherweise um den Median beobachtbarer Einzelverkäufe gelegt, innerhalb dessen der im Vertrag genannte Preis als Einzelveräußerungspreis anerkannt wird. ASC 606 schreibt keine Bandbreiten vor, sie sind aber gängige Praxis; Preise außerhalb des Bands werden nach einer schriftlichen Richtlinie auf einen Punktwert angepasst, etwa auf die nähere Bandgrenze.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-32 to 32-33",
+    "note": "allgemeine SSP-Leitlinien; Bandbreiten sind eine Praxis, kein eigener Paragraph"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 77–78",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: Support wird bei beobachtbaren Verkäufen mit einem Median von 18% des Netto-Lizenzpreises verkauft. Richtlinie: Das Band ist der Median ±15%.",
+   "steps": [
+    "Band: 18% × 0.85 = 15.3% bis 18% × 1.15 = 20.7%.",
+    "Vertrag A bepreist den Support mit 19%: innerhalb des Bands, daher wird 19% als SSP verwendet.",
+    "Vertrag B bepreist den Support mit 12%: außerhalb des Bands, daher wird der SSP gemäß Richtlinie auf die nähere Grenze 15.3% festgelegt."
+   ],
+   "result": "Vertrag A verwendet seinen genannten Preis; Vertrag B wird vor der Aufteilung auf 15.3% angepasst."
+  },
+  "mistakes": [
+   "Ein so breites Band, dass jeder Preis hineinfällt.",
+   "Das Band wird bei Preisänderungen nicht aktualisiert.",
+   "Preise außerhalb des Bands werden in manchen Verträgen auf den Mittelwert und in anderen auf die Bandgrenze angepasst.",
+   "Zu wenige beobachtbare Transaktionen, um das Band zu stützen."
+  ],
+  "furtherLabels": [
+   "SSP-Aufteilungsrechner",
+   "ASC 606 SSP-Aufteilung, Beispiel: SaaS-Paket mit 3 Elementen"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Welche SSP-Bandbreite (Einzelveräußerungspreis) ist für SaaS akzeptabel?",
+    "answer": "ASC 606 schreibt zwar keinen bestimmten Prozentsatz vor, doch für Prüfer vertretbare SSP-Bandbreiten liegen typischerweise innerhalb von ±10% bis ±15% um den bei Einzelverkäufen beobachteten Medianpreis, sofern mindestens 80% der historischen Transaktionen in diesem Band liegen."
+   },
+   {
+    "question": "Wie beurteilen Abschlussprüfer eine SSP-Bandbreite nach ASC 606?",
+    "answer": "Externe Prüfer testen, ob die historischen Einzelverkaufsdaten statistisch repräsentativ sind, prüfen, dass Rabattrichtlinien konsistent angewendet werden, und bestätigen, dass Vertragspreise außerhalb des Bands strikt gemäß der dokumentierten Bilanzierungsrichtlinie auf die Grenze oder den Median angepasst werden."
+   },
+   {
+    "question": "Wie oft sollte eine SSP-Bandbreite aktualisiert werden?",
+    "answer": "SSP-Bandbreiten sollten mindestens jährlich überprüft werden, oder früher, wenn das Unternehmen neue Pakete einführt, wesentliche Preisänderungen vornimmt oder neue Produktfunktionen einführt, die den relativen Einzelwert verändern."
+   }
+  ]
+ },
+ "observable-price": {
+  "slug": "observable-price",
+  "term": "Beobachtbarer Preis",
+  "title": "Beobachtbarer Preis als Nachweis des SSP",
+  "description": "Was nach ASC 606 und IFRS 15 als beobachtbarer Einzelveräußerungspreis gilt, warum der Listenpreis nicht als SSP vermutet wird, mit Beispiel zur Support-Bepreisung.",
+  "definition": "Ein beobachtbarer Preis ist der Preis, zu dem ein Unternehmen ein Gut oder eine Dienstleistung tatsächlich separat an vergleichbare Kunden unter vergleichbaren Umständen verkauft. Er ist der beste Nachweis für den Einzelveräußerungspreis. Ein vertraglich genannter Preis oder Listenpreis kann der Einzelveräußerungspreis sein, wird aber nicht als solcher vermutet.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-32",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 77",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 77",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: Premium-Support wurde in den letzten 12 Monaten 45 Mal einzeln an Mittelstandskunden verkauft, zu Preisen von $9,000 bis $13,500.",
+   "steps": [
+    "80% dieser Verkäufe liegen zwischen $10,800 und $12,200; der Median beträgt $11,500.",
+    "Der Listenpreis beträgt $15,000, doch fast kein Kunde zahlt ihn; der Listenpreis ist daher nicht der SSP.",
+    "$11,500 als SSP-Punktschätzung verwenden, oder $10,800–$12,200 als Bandbreite nach einer schriftlichen Richtlinie."
+   ],
+   "result": "SSP, gestützt auf 45 beobachtbare Einzelverkäufe und nicht auf den Listenpreis."
+  },
+  "mistakes": [
+   "Der Listenpreis wird als beobachtbarer Nachweis behandelt.",
+   "Kundengruppen wie Großkunden und kleine Unternehmen werden in einem Datensatz vermischt.",
+   "Verkäufe, die Teil von Paketen waren, werden einbezogen.",
+   "Schlussfolgerungen aus zu wenigen Transaktionen."
+  ],
+  "furtherLabels": [
+   "ASC 606 SSP-Aufteilung, Beispiel: SaaS-Paket mit 3 Elementen",
+   "SSP-Aufteilungsrechner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "terminal-period-remainder-absorption": {
+  "slug": "terminal-period-remainder-absorption",
+  "term": "Restbetragsaufnahme in der Schlussperiode",
+  "title": "Restbetragsaufnahme in der Schlussperiode",
+  "description": "Eine Rundungsrichtlinie für Realisierungspläne: Die letzte Periode nimmt den Restbetrag auf, sodass der Plan der Aufteilung entspricht. Beispiel $100,000 / 36.",
+  "definition": "Die Restbetragsaufnahme in der Schlussperiode ist eine Rundungsrichtlinie für Realisierungspläne: Der Betrag jeder Periode wird aus dem aufgeteilten Preis berechnet und auf den Cent gerundet; die letzte Periode nimmt die Differenz zwischen dem aufgeteilten Betrag und der Summe der früheren Perioden auf. Der Plan summiert sich dann exakt zur Aufteilung, und die passive Rechnungsabgrenzung endet bei null.",
+  "references": [
+   {
+    "standard": "Policy",
+    "ref": "Not prescribed by ASC 606, IFRS 15 or Ind AS 115",
+    "note": "die Standards legen keine Rundungsregeln fest; dies ist eine Bilanzierungsrichtlinie, die den Plan mit dem aufgeteilten Betrag in Übereinstimmung hält"
+   }
+  ],
+  "example": {
+   "scenario": "Zur Veranschaulichung: $100,000 sind auf ein Abonnement mit 36 Monaten Laufzeit aufgeteilt.",
+   "steps": [
+    "Exakter Monatsbetrag: $2,777.777…",
+    "Jeden Monat auf $2,777.78 aufrunden: Summe $100,000.08, also acht Cent zu viel.",
+    "Jeden Monat auf $2,777.77 abschneiden: Summe $99,999.72, sodass $0.28 dauerhaft abgegrenzt bleiben.",
+    "In der letzten Periode aufnehmen: 35 × $2,777.77 = $97,221.95; Monat 36 = $2,778.05; Summe $100,000.00."
+   ],
+   "result": "Der Plan stimmt auf den Cent, und die passive Rechnungsabgrenzung schließt bei $0.00."
+  },
+  "mistakes": [
+   "Jede Periode wird einzeln gerundet, und der Rest verbleibt in der passiven Rechnungsabgrenzung.",
+   "Der Restbetrag wird ad hoc verteilt, statt nach einer schriftlichen Regel.",
+   "Für Aufteilungen und Pläne gelten unterschiedliche Rundungsregeln, ohne dass eine von beiden dokumentiert ist."
+  ],
+  "furtherLabels": [
+   "Rundung bei der SSP-Aufteilung nach ASC 606: wohin der Cent geht",
+   "SSP-Aufteilungsrechner"
+  ],
+  "soluqubeNote": "Die Engine von Soluqube verwendet diese Regel: Ganzzahlarithmetik (BigInt) im Maßstab 10^6, auf Cent gerundet, wobei die letzte Periode den Restbetrag aufnimmt.",
+  "faqs": null
+ }
+}

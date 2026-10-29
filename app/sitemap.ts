@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/data/blogPosts";
 import { GLOSSARY_TERMS } from "@/data/glossary";
 import { ALTERNATIVES_PAGES } from "@/data/alternatives";
+import { LOCALES, hreflangMap, localeUrl } from "@/lib/i18n";
+import { alternativesSlugs, blogSlugs, glossarySlugs, langsFor } from "@/lib/i18n-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://soluqube.com";
@@ -9,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogUrls: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
+    ...(langsFor("blog", post.slug).length ? { alternates: { languages: hreflangMap(`/blog/${post.slug}`, langsFor("blog", post.slug)) } } : {}),
     lastModified: now,
     changeFrequency: "weekly",
     priority: 0.85,
@@ -16,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const glossaryUrls: MetadataRoute.Sitemap = GLOSSARY_TERMS.map((t) => ({
     url: `${baseUrl}/glossary/${t.slug}`,
+    ...(langsFor("glossary", t.slug).length ? { alternates: { languages: hreflangMap(`/glossary/${t.slug}`, langsFor("glossary", t.slug)) } } : {}),
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.7,
@@ -23,14 +27,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const alternativesUrls: MetadataRoute.Sitemap = ALTERNATIVES_PAGES.map((p) => ({
     url: `${baseUrl}/alternatives/${p.slug}`,
+    ...(langsFor("alternatives", p.slug).length ? { alternates: { languages: hreflangMap(`/alternatives/${p.slug}`, langsFor("alternatives", p.slug)) } } : {}),
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.75,
   }));
 
+  // Multilingual wave 1: one entry per translated page, each listing every variant (reciprocal hreflang).
+  const localized: MetadataRoute.Sitemap = LOCALES.flatMap((lang) => {
+    const entry = (path: string, priority: number) => ({
+      url: localeUrl(lang, path),
+      alternates: { languages: hreflangMap(path, path === "/" || /^\/(glossary|blog|alternatives)$/.test(path) ? LOCALES : langsFor(path.split("/")[1] as "glossary" | "blog" | "alternatives", path.split("/")[2])) },
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority,
+    });
+    return [
+      entry("/", 0.8),
+      entry("/glossary", 0.6),
+      entry("/blog", 0.6),
+      entry("/alternatives", 0.6),
+      ...glossarySlugs(lang).map((slug) => entry(`/glossary/${slug}`, 0.5)),
+      ...blogSlugs(lang).map((slug) => entry(`/blog/${slug}`, 0.55)),
+      ...alternativesSlugs(lang).map((slug) => entry(`/alternatives/${slug}`, 0.55)),
+    ];
+  });
+
   return [
     {
       url: `${baseUrl}/`,
+      alternates: { languages: hreflangMap("/", LOCALES) },
       lastModified: now,
       changeFrequency: "daily",
       priority: 1.0,
@@ -158,5 +184,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogUrls,
     ...glossaryUrls,
     ...alternativesUrls,
+    ...localized,
   ];
 }

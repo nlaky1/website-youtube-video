@@ -2,6 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { hreflangMap } from "@/lib/i18n";
+import { langsFor } from "@/lib/i18n-data";
 import PageFaqs from "@/components/page-faqs";
 import { faqGraph } from "@/lib/page-faqs";
 import Navbar from "@/components/navbar";
@@ -39,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: title },
     description: p.description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, ...(langsFor("alternatives", p.slug).length ? { languages: hreflangMap(`/alternatives/${p.slug}`, langsFor("alternatives", p.slug)) } : {}) },
     openGraph: { title, description: p.description, url, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }], type: "article", siteName: "Soluqube" },
     twitter: { card: "summary", title, description: p.description },
   };

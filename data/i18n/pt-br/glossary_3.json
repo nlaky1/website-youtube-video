@@ -1,0 +1,560 @@
+{
+ "consignment": {
+  "slug": "consignment",
+  "term": "Acordo de consignação",
+  "title": "Acordos de consignação sob a ASC 606",
+  "description": "Consignação sob a ASC 606 e a IFRS 15: os indicadores, por que a entrega a um revendedor não é uma venda e um exemplo prático de sell-through.",
+  "definition": "Em um acordo de consignação, a entidade entrega o produto a um revendedor ou distribuidor que não obtém o controle dele, de modo que nenhuma receita é reconhecida na entrega. Os indicadores incluem a entidade manter o controle até um evento específico, como a venda a um cliente final, e a sua capacidade de exigir a devolução do produto.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-79 to 55-80",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B77–B78",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B77–B78",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: 100 dispositivos são entregues em consignação a um revendedor a $500 cada. O revendedor vende 30 a clientes finais neste trimestre.",
+   "steps": [
+    "Nenhuma receita na entrega dos 100 dispositivos.",
+    "Receita das 30 unidades vendidas: 30 × $500 = $15,000.",
+    "As outras 70 permanecem no estoque do fornecedor, ao custo, nas instalações do revendedor."
+   ],
+   "result": "$15,000 de receita neste trimestre; 70 unidades continuam no estoque do fornecedor."
+  },
+  "mistakes": [
+   "Reconhecer receita no embarque ao consignatário.",
+   "Não identificar termos semelhantes a consignação em contratos de distribuidores com sell-through.",
+   "Perder o controle do estoque mantido nas instalações dos consignatários."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como design partner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "breakage": {
+  "slug": "breakage",
+  "term": "Breakage",
+  "title": "Receita de breakage sob a ASC 606: exemplo",
+  "description": "Breakage sob a ASC 606 e a IFRS 15: reconhecimento de direitos não exercidos pelo cliente, como créditos pré-pagos não usados, com exemplo proporcional.",
+  "definition": "Breakage é a parcela de um pré-pagamento não reembolsável do cliente referente a direitos que não se espera que ele exerça, como vale-presentes, créditos pré-pagos ou vouchers não usados. Se a entidade espera ter direito ao breakage, ela o reconhece em proporção ao padrão de direitos exercidos pelo cliente; caso contrário, quando o exercício se tornar remoto.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-46 to 55-49",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B44–B47",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B44–B47",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: um cliente pré-paga $10,000 em créditos de API não reembolsáveis. O histórico mostra que 10% dos créditos nunca são usados, e nenhuma lei exige que os valores não usados sejam repassados a um governo.",
+   "steps": [
+    "Uso esperado: $9,000; breakage esperado: $1,000.",
+    "O cliente usa $4,500 em créditos, o que corresponde a 50% do uso esperado.",
+    "Receita: $4,500 usados + 50% × $1,000 de breakage = $5,000 (equivalente a 50% × $10,000)."
+   ],
+   "result": "$5,000 reconhecidos; $5,000 permanecem como passivo de contrato."
+  },
+  "mistakes": [
+   "Reconhecer o breakage esperado no momento da venda.",
+   "Reconhecer breakage sobre valores que leis de bens não reclamados exigem que a entidade repasse.",
+   "Não aplicar a restrição da contraprestação variável à estimativa de breakage."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como design partner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "customer-options": {
+  "slug": "customer-options",
+  "term": "Opções do cliente para bens ou serviços adicionais",
+  "title": "Opções do cliente na ASC 606: quando alocar",
+  "description": "Opções do cliente na ASC 606 e IFRS 15: quando uma opção de compra é direito material ou oferta de marketing, com exemplo de assentos extras.",
+  "definition": "Opções do cliente são direitos de adquirir bens ou serviços adicionais, gratuitamente ou com desconto, como opções de renovação, preços de complementos, pontos de fidelidade ou faixas de volume. Uma opção é uma obrigação de desempenho separada somente se conferir um direito material; caso contrário, é uma oferta de marketing e nada é alocado a ela até que seja exercida.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-41 to 55-45",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B39–B43",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B39–B43",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma assinatura permite que o cliente adicione assentos a qualquer momento durante o prazo.",
+   "steps": [
+    "Caso A: os assentos extras custam $40 por assento por mês, o mesmo preço que clientes semelhantes pagam. Não há direito material; contabilize os assentos adicionais quando forem comprados.",
+    "Caso B: os assentos extras custam $25 quando clientes semelhantes pagam $40, e o desconto só está disponível por causa deste contrato. Isso é um direito material e parte do preço é alocada a ele.",
+    "Compare com as taxas de uso previstas no contrato existente, que são contraprestação variável, não opções."
+   ],
+   "result": "Somente o Caso B altera a alocação no início do contrato."
+  },
+  "mistakes": [
+   "Tratar compras opcionais como contraprestação variável, ou o contrário.",
+   "Ignorar faixas de volume que aplicam um desconto retroativo.",
+   "Não comparar o preço da opção com o desconto normalmente concedido a essa classe de clientes."
+  ],
+  "furtherLabels": [
+   "Exemplo de alocação de SSP na ASC 606: pacote SaaS com 3 elementos",
+   "Teste seus próprios contratos como design partner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "licence-of-ip": {
+  "slug": "licence-of-ip",
+  "term": "Direito de uso vs direito de acesso (licença de PI)",
+  "title": "Direito de uso vs direito de acesso: licença de PI",
+  "description": "Direito de uso vs direito de acesso em licenças de PI sob a IFRS 15 e a ASC 606: PI funcional vs simbólica, quando a receita é reconhecida e um exemplo prático.",
+  "definition": "Um direito de acesso dá ao cliente a PI do licenciante à medida que ela muda ao longo do período da licença, de modo que a receita é reconhecida ao longo do tempo. Um direito de uso dá ao cliente a PI como ela existe quando concedida, de modo que a receita é reconhecida em um momento específico. A ASC 606 chega a essa divisão classificando a PI como simbólica ou funcional.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-54 to 55-65",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B52–B63",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B52–B63",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: duas licenças de três anos assinadas no mesmo dia.",
+   "steps": [
+    "Licença de marca e personagens por $120,000 (PI simbólica que o licenciante continua a sustentar): direito de acesso, reconhecido ao longo do tempo a $40,000 por ano.",
+    "Licença de prazo de software on-premise por $90,000 (PI funcional cuja utilidade o licenciante não altera): direito de uso, reconhecido quando o software fica disponível e o prazo começa.",
+    "Uma assinatura SaaS em que o cliente não pode tomar posse do software geralmente é um serviço, não uma licença."
+   ],
+   "result": "$40,000 por ano para a licença de marca; $90,000 antecipados para a licença de software."
+  },
+  "mistakes": [
+   "Tratar o acesso a SaaS como licença de PI.",
+   "Reconhecer a renovação de uma licença antes do início do período de renovação.",
+   "Aplicar a restrição geral da contraprestação variável a royalties baseados em vendas ou uso, em vez da exceção de royalties."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "O treinamento de SaaS é uma obrigação de desempenho separada?",
+   "Teste seus próprios contratos como design partner"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Qual é a diferença entre direito de uso e direito de acesso?",
+    "answer": "Um direito de acesso dá ao cliente a PI do licenciante à medida que ela muda ao longo do período da licença, de modo que a receita é reconhecida ao longo do tempo. Um direito de uso dá a PI como ela existe quando concedida, de modo que a receita é reconhecida em um momento específico. A ASC 606-10-55-58 to 55-64 faz essa divisão por meio da PI simbólica versus funcional."
+   },
+   {
+    "question": "Uma assinatura SaaS é uma licença de direito de acesso?",
+    "answer": "Geralmente não. Sob a ASC 606-10-55-54(a), um acordo hospedado é uma licença somente se o cliente puder tomar posse do software sem penalidade significativa e executá-lo em hardware próprio ou de terceiros. Se não puder, a assinatura é um serviço, reconhecido ao longo do tempo à medida que é prestado, e não uma licença de PI."
+   },
+   {
+    "question": "Quando a receita de uma licença de direito de uso é reconhecida?",
+    "answer": "No momento em que o controle é transferido, que não pode ser anterior ao momento em que o software ou outra PI é disponibilizado ao cliente nem ao início do período em que o cliente pode usá-lo. A renovação de uma licença de direito de uso não é reconhecida antes do início do período de renovação, conforme a ASC 606-10-55-58C."
+   }
+  ]
+ },
+ "saas-implementation-fee": {
+  "slug": "saas-implementation-fee",
+  "term": "Taxa de implementação de SaaS",
+  "title": "Taxas de implementação de SaaS sob a ASC 606",
+  "description": "Como contabilizar taxas de implementação e configuração de SaaS sob a ASC 606 e a IFRS 15: distinta ou não, com dois exemplos práticos e a armadilha da renovação.",
+  "definition": "Uma taxa de implementação de SaaS é uma cobrança por configuração, parametrização, migração de dados ou treinamento no início de uma assinatura. Se a atividade transfere um serviço distinto, ela é uma obrigação de desempenho separada. Se for uma atividade de configuração ou não for distinta, a taxa é somada à contraprestação da assinatura e reconhecida ao longo do período do serviço.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-17",
+    "note": "atividades de configuração"
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-50 to 55-53",
+    "note": "taxas iniciais não reembolsáveis"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 25 and B48–B51",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma assinatura anual de $60,000 com uma taxa de implementação inicial de $12,000.",
+   "steps": [
+    "Não distinta (apenas configuração): reconheça ($60,000 + $12,000) / 12 = $6,000 por mês. Se o cliente puder renovar sem pagar a taxa novamente, avalie se a taxa confere um direito material que estende o período de reconhecimento.",
+    "Distinta (configuração padrão que outros também vendem): os SSPs são $66,000 (assinatura) e $9,000 (implementação), total de $75,000.",
+    "Aloque $72,000: assinatura $72,000 × 66/75 = $63,360; implementação $72,000 × 9/75 = $8,640."
+   ],
+   "result": "Ou $6,000 por mês, ou $63,360 de forma linear mais $8,640 conforme a implementação é entregue."
+  },
+  "mistakes": [
+   "Reconhecer a taxa quando faturada.",
+   "Ignorar o direito material criado quando as renovações não repetem a taxa.",
+   "Tratar tarefas internas de configuração como obrigação de desempenho."
+  ],
+  "furtherLabels": [
+   "Calculadora de alocação de SSP",
+   "Exemplo de alocação de SSP na ASC 606: pacote SaaS com 3 elementos"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "remaining-performance-obligations": {
+  "slug": "remaining-performance-obligations",
+  "term": "Obrigações de desempenho remanescentes (RPO)",
+  "title": "Obrigações de desempenho remanescentes (RPO)",
+  "description": "Divulgação de obrigações de desempenho remanescentes (RPO) na ASC 606 e na IFRS 15: o que incluir, faixas de prazo e um exemplo de contrato de três anos.",
+  "definition": "As obrigações de desempenho remanescentes (RPO) são a divulgação do preço da transação alocado às obrigações de desempenho não satisfeitas, ou parcialmente satisfeitas, na data de reporte, com uma explicação de quando a entidade espera reconhecê-lo. Ela combina a receita diferida e os valores contratados ainda não faturados.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-50-13 to 50-15",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 120–122",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 120–122",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: um contrato de três anos, não cancelável, de $90,000, faturado em $30,000 por ano, antecipadamente, a partir de 1 January 2026. Data de reporte: 30 June 2026.",
+   "steps": [
+    "Reconhecido até a data: 6 × $2,500 = $15,000. Receita diferida: $15,000. Ainda não faturado: $60,000.",
+    "RPO = $15,000 + $60,000 = $75,000.",
+    "Em até 12 meses (July 2026–June 2027): $30,000. Depois disso (July 2027–December 2028): 18 × $2,500 = $45,000."
+   ],
+   "result": "RPO de $75,000: $30,000 em até um ano e $45,000 depois."
+  },
+  "mistakes": [
+   "Incluir períodos em que o cliente pode cancelar sem penalidade substantiva.",
+   "Deixar de fora valores contratados que ainda não foram faturados.",
+   "Tratar o RPO como se fosse o mesmo que bookings ou ARR."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como design partner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "disaggregation-of-revenue": {
+  "slug": "disaggregation-of-revenue",
+  "term": "Desagregação de receita",
+  "title": "Desagregação de receita: divulgação da ASC 606",
+  "description": "Desagregação de receita na ASC 606 e na IFRS 15: quais categorias usar, como se concilia com segmentos e um exemplo prático de divulgação para SaaS.",
+  "definition": "A desagregação de receita é a divulgação exigida que divide a receita em categorias que mostram como a natureza, o valor, o momento e a incerteza da receita e dos fluxos de caixa são afetados por fatores econômicos, por exemplo por linha de produto, geografia, tipo de cliente, duração do contrato ou momento da transferência.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-50-5 to 50-7 and 606-10-55-89 to 55-91",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 114–115 and B87–B89",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 114–115 and B87–B89",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma empresa de SaaS com $10.0 million de receita.",
+   "steps": [
+    "Por tipo e momento: assinaturas ao longo do tempo $8.2m; serviços profissionais ao longo do tempo $1.3m; hardware em um momento específico $0.5m.",
+    "Por geografia: Estados Unidos $7.0m; Índia $3.0m.",
+    "Verificação: as duas visões somam $10.0m, e cada categoria é explicada em relação aos segmentos reportáveis."
+   ],
+   "result": "Duas visões de desagregação que se conciliam com a receita total e com o reporte por segmento."
+  },
+  "mistakes": [
+   "Apresentar uma única categoria quando os materiais para investidores já usam várias.",
+   "Categorias que não correspondem às usadas nos comunicados de resultados ou no reporte por segmento.",
+   "Não explicar a relação entre a receita desagregada e os segmentos."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Hub ASC 606 vs Ind AS 115"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Quais são as categorias exigidas para a desagregação de receita sob a ASC 606?",
+    "answer": "Sob a ASC 606-10-50-5, as entidades devem desagregar a receita em categorias que retratem como a natureza, o valor, o momento e a incerteza da receita e dos fluxos de caixa são afetados por fatores econômicos. Categorias comuns incluem linhas de produto, regiões geográficas, duração do contrato, tipo de cliente e momento da transferência (em um momento específico vs ao longo do tempo)."
+   },
+   {
+    "question": "Como a desagregação de receita se relaciona com o reporte por segmento?",
+    "answer": "A ASC 606-10-50-6 exige que as categorias de receita desagregada se conciliem diretamente com a receita divulgada para cada segmento reportável sob a ASC 280, garantindo que o reporte público, as apresentações a investidores e os papéis de trabalho de auditoria permaneçam consistentes."
+   },
+   {
+    "question": "Como a desagregação de receita é tratada em divulgações duplas sob a ASC 606 e a Ind AS 115?",
+    "answer": "Ambas as normas seguem princípios idênticos de desagregação, mas as entidades que reportam sob a Ind AS 115 devem excluir rigorosamente o Goods and Services Tax (GST) de todas as categorias de receita desagregada, pois os tributos cobrados em nome do governo não são receita."
+   }
+  ]
+ },
+ "ind-as-115-gst-treatment": {
+  "slug": "ind-as-115-gst-treatment",
+  "term": "Tratamento do GST na Ind AS 115",
+  "title": "GST na Ind AS 115: tratamento e exemplo",
+  "description": "Como a Ind AS 115 trata o GST: excluído do preço da transação por ser valor cobrado para o governo, com um cronograma prático de assinatura em INR.",
+  "definition": "Sob a Ind AS 115, o preço da transação exclui valores cobrados em nome de terceiros, de modo que o Goods and Services Tax (GST) cobrado em uma fatura não é receita. O GST é registrado como passivo perante o governo; somente a contraprestação líquida é alocada às obrigações de desempenho e reconhecida como receita.",
+  "references": [
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 47",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 47",
+    "note": null
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-2A",
+    "note": "opção dos EUA de excluir impostos sobre vendas"
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma assinatura anual em INR faturada por ₹11,80,000, incluindo 18% de GST.",
+   "steps": [
+    "Contraprestação líquida: ₹11,80,000 / 1.18 = ₹10,00,000. GST: ₹1,80,000 para GST a pagar (CGST e SGST para fornecimentos intraestaduais, IGST para interestaduais).",
+    "Receita mensal: ₹10,00,000 / 12 = ₹83,333.33 nos meses 1–11 (₹9,16,666.63).",
+    "O mês 12 absorve o resto: ₹10,00,000 − ₹9,16,666.63 = ₹83,333.37."
+   ],
+   "result": "₹10,00,000 de receita em 12 meses; ₹1,80,000 nunca passam pela receita."
+  },
+  "mistakes": [
+   "Alocar e programar o valor bruto da fatura, incluindo o GST.",
+   "Registrar o GST como receita e depois como despesa.",
+   "Aplicar a lógica do GST a contratos dos EUA, que não têm GST."
+  ],
+  "furtherLabels": [
+   "Hub ASC 606 vs Ind AS 115",
+   "ASC 606 vs Ind AS 115: relatório duplo e isolamento do GST"
+  ],
+  "soluqubeNote": "Para contratos em INR, a Soluqube registra o GST de 18% em um passivo e aloca e programa somente a contraprestação líquida. Contratos dos EUA não têm GST.",
+  "faqs": null
+ },
+ "five-step-model": {
+  "slug": "five-step-model",
+  "term": "Modelo de cinco etapas",
+  "title": "Modelo de cinco etapas da ASC 606: exemplo prático",
+  "description": "O modelo de cinco etapas de reconhecimento de receita na ASC 606, IFRS 15 e Ind AS 115, com um contrato SaaS de $120,000 percorrendo as cinco etapas.",
+  "definition": "O modelo de cinco etapas é o núcleo da ASC 606, da IFRS 15 e da Ind AS 115: identificar o contrato; identificar as obrigações de desempenho; determinar o preço da transação; alocar o preço da transação às obrigações de desempenho; e reconhecer a receita quando, ou à medida que, cada obrigação é satisfeita.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-05-4",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph IN7",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "same five-step structure as IFRS 15",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: um contrato assinado de dois anos de $120,000, que abrange uma assinatura e um projeto de onboarding.",
+   "steps": [
+    "Etapa 1: assinado, exequível, com recebimento provável — existe um contrato.",
+    "Etapa 2: duas obrigações de desempenho — assinatura (série) e onboarding (serviço distinto).",
+    "Etapa 3: preço da transação de $120,000, fixo.",
+    "Etapa 4: SSPs de $100,000 e $25,000; alocação relativa de $96,000 e $24,000.",
+    "Etapa 5: assinatura $96,000 / 24 = $4,000 por mês; onboarding $24,000 conforme as horas são entregues."
+   ],
+   "result": "Dois cronogramas que, juntos, reconhecem exatamente $120,000."
+  },
+  "mistakes": [
+   "Pular as verificações da etapa 1, como exequibilidade e probabilidade de recebimento.",
+   "Fazer a etapa 4 com preços de tabela em vez de SSPs.",
+   "Executar a etapa 5 a partir do cronograma de faturamento."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Calculadora de alocação de SSP"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "ssp-range": {
+  "slug": "ssp-range",
+  "term": "Faixa de SSP",
+  "title": "Faixa de SSP: como definir e defender",
+  "description": "Como empresas SaaS definem a faixa de preço de venda individual (SSP) com vendas observáveis, a aplicam aos contratos e a documentam para auditores.",
+  "definition": "Uma faixa de SSP é um intervalo de preços, geralmente definido em torno da mediana das vendas individuais observáveis, dentro do qual o preço declarado de um contrato é aceito como seu preço de venda individual. A ASC 606 não prescreve faixas, mas elas são prática comum; preços fora da faixa são ajustados para um ponto, como o limite mais próximo, conforme uma política escrita.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-32 to 32-33",
+    "note": "orientação geral sobre SSP; faixas são uma prática, não um parágrafo separado"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 77–78",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: o suporte é vendido a uma mediana de 18% do preço líquido da licença em vendas observáveis. Política: a faixa é a mediana ±15%.",
+   "steps": [
+    "Faixa: 18% × 0.85 = 15.3% a 18% × 1.15 = 20.7%.",
+    "O Contrato A precifica o suporte em 19%: dentro da faixa, portanto 19% é usado como SSP.",
+    "O Contrato B precifica o suporte em 12%: fora da faixa, portanto o SSP é fixado no limite mais próximo, 15.3%, conforme a política."
+   ],
+   "result": "O Contrato A usa o preço declarado; o Contrato B é ajustado para 15.3% antes da alocação."
+  },
+  "mistakes": [
+   "Uma faixa tão ampla que todo preço cai dentro dela.",
+   "Não atualizar a faixa conforme os preços mudam.",
+   "Ajustar preços fora da faixa para o ponto médio em alguns contratos e para o limite em outros.",
+   "Poucas transações observáveis para sustentar a faixa."
+  ],
+  "furtherLabels": [
+   "Calculadora de alocação de SSP",
+   "Exemplo de alocação de SSP na ASC 606: pacote SaaS com 3 elementos"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Qual é uma faixa aceitável de preço de venda individual (SSP) para SaaS?",
+    "answer": "Embora a ASC 606 não prescreva um percentual matemático específico, faixas de SSP defensáveis perante auditores normalmente ficam entre ±10% e ±15% da mediana dos preços observados em vendas individuais, desde que pelo menos 80% das transações históricas se concentrem nessa faixa."
+   },
+   {
+    "question": "Como os auditores avaliam uma faixa de SSP sob a ASC 606?",
+    "answer": "Os auditores externos testam se os dados históricos de vendas individuais são estatisticamente representativos, verificam se as políticas de desconto são aplicadas de forma consistente e confirmam que os preços de contrato fora da faixa são ajustados para o limite ou a mediana estritamente de acordo com a política contábil documentada."
+   },
+   {
+    "question": "Com que frequência uma faixa de SSP deve ser atualizada?",
+    "answer": "As faixas de SSP devem ser revisadas pelo menos uma vez por ano, ou antes, se a empresa introduzir novos pacotes, mudanças significativas de preço ou novas funcionalidades de produto que alterem o valor individual relativo."
+   }
+  ]
+ },
+ "observable-price": {
+  "slug": "observable-price",
+  "term": "Preço observável",
+  "title": "Preço observável como evidência de SSP",
+  "description": "O que é preço de venda individual observável na ASC 606 e IFRS 15, por que o preço de tabela não é presumido como SSP, com exemplo de suporte.",
+  "definition": "Um preço observável é o preço pelo qual a entidade efetivamente vende um bem ou serviço separadamente a clientes semelhantes em circunstâncias semelhantes. É a melhor evidência do preço de venda individual. Um preço contratual declarado ou de tabela pode ser o preço de venda individual, mas não é presumido como tal.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-32",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 77",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 77",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: o suporte premium foi vendido isoladamente 45 vezes nos últimos 12 meses a clientes de médio porte, a preços de $9,000 a $13,500.",
+   "steps": [
+    "80% dessas vendas ficam entre $10,800 e $12,200; a mediana é $11,500.",
+    "O preço de tabela é $15,000, mas quase nenhum cliente o paga, portanto o preço de tabela não é o SSP.",
+    "Use $11,500 como estimativa pontual do SSP, ou $10,800–$12,200 como faixa, conforme uma política escrita."
+   ],
+   "result": "SSP sustentado por 45 vendas individuais observáveis, e não pelo preço de tabela."
+  },
+  "mistakes": [
+   "Tratar o preço de tabela como evidência observável.",
+   "Misturar classes de clientes, como enterprise e SMB, em um mesmo conjunto de dados.",
+   "Incluir vendas que faziam parte de pacotes.",
+   "Tirar conclusões de transações insuficientes."
+  ],
+  "furtherLabels": [
+   "Exemplo de alocação de SSP na ASC 606: pacote SaaS com 3 elementos",
+   "Calculadora de alocação de SSP"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "terminal-period-remainder-absorption": {
+  "slug": "terminal-period-remainder-absorption",
+  "term": "Absorção do resto no período final",
+  "title": "Absorção do resto no período final",
+  "description": "Política de arredondamento para cronogramas de receita: o último período absorve o resto para que o cronograma some a alocação. Exemplo de $100,000 / 36.",
+  "definition": "A absorção do resto no período final é uma política de arredondamento para cronogramas de receita: calcule o valor de cada período a partir do preço alocado, arredonde para o centavo e deixe o período final absorver a diferença entre o valor alocado e a soma dos períodos anteriores. O cronograma então soma exatamente a alocação, e a receita diferida termina em zero.",
+  "references": [
+   {
+    "standard": "Policy",
+    "ref": "Not prescribed by ASC 606, IFRS 15 or Ind AS 115",
+    "note": "as normas não definem regras de arredondamento; esta é uma política contábil que mantém o cronograma igual ao valor alocado"
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: $100,000 alocados a uma assinatura de 36 meses.",
+   "steps": [
+    "Valor mensal exato: $2,777.777…",
+    "Arredondando cada mês para cima, para $2,777.78: total de $100,000.08, oito centavos a mais.",
+    "Truncando cada mês para $2,777.77: total de $99,999.72, deixando $0.28 diferidos para sempre.",
+    "Absorvendo no período final: 35 × $2,777.77 = $97,221.95; mês 36 = $2,778.05; total de $100,000.00."
+   ],
+   "result": "O cronograma fecha ao centavo e a receita diferida encerra em $0.00."
+  },
+  "mistakes": [
+   "Arredondar cada período de forma independente e deixar o resíduo na receita diferida.",
+   "Distribuir o resto de forma ad hoc em vez de seguir uma regra escrita.",
+   "Usar uma regra de arredondamento para alocações e outra para cronogramas sem documentar nenhuma delas."
+  ],
+  "furtherLabels": [
+   "Arredondamento na alocação de SSP na ASC 606: para onde vai o centavo",
+   "Calculadora de alocação de SSP"
+  ],
+  "soluqubeNote": "O motor da Soluqube usa esta regra: aritmética de inteiros (BigInt) em escala 10^6, arredondada para centavos, com o período final absorvendo o resto.",
+  "faqs": null
+ }
+}

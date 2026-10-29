@@ -1,0 +1,537 @@
+{
+ "pages": {
+  "maxio": {
+   "slug": "maxio",
+   "title": "6 melhores alternativas ao Maxio em 2026 [Preços e RevRec]",
+   "description": "Compare as 6 melhores alternativas ao Maxio para ASC 606 e preços híbridos: matriz de preços, alocação de SSP e papel de trabalho em Excel grátis.",
+   "intro": "As principais alternativas ao Maxio para o reconhecimento de receita conforme a ASC 606 são Chargebee RevRec, Stripe Revenue Recognition, Tabs, Zenskar, RightRev e Soluqube. Escolha um subledger independente se o faturamento permanecer onde está, uma plataforma de faturamento com reconhecimento de receita se você estiver substituindo o faturamento, ou um motor específico se as perguntas da auditoria giram em torno da alocação de SSP. As equipes também migram quando o faturamento ultrapassa o nível Grow do Maxio, de $100k por mês.",
+   "whyLook": [
+    "O reconhecimento de receita vem junto com o faturamento; se o faturamento já está em outro lugar, talvez você queira apenas um subledger.",
+    "A página do Maxio menciona o SSP somente no FAQ; equipes cujas perguntas de auditoria giram em torno do SSP podem querer a alocação documentada em detalhe.",
+    "Acima de $100k de faturamento mensal, o preço do Maxio passa a ser apenas sob cotação."
+   ],
+   "howToChoose": [
+    "Decida primeiro se você também vai substituir o faturamento. Se não, avalie subledgers (Chargebee RevRec, RightRev) ou um motor específico.",
+    "Se você fatura pelo Stripe, verifique o Stripe Revenue Recognition antes de comprar outra ferramenta.",
+    "Peça a cada fornecedor que aloque um de seus contratos reais com múltiplos elementos e mostre a evidência de SSP."
+   ],
+   "pickFits": [
+    "O equivalente mais próximo se você também fatura no Chargebee: um subledger dedicado com biblioteca de SSP e tratamento de modificações. O plano Performance exige o Chargebee Billing.",
+    "Se o faturamento já roda no Stripe, o reconhecimento de receita é um complemento cobrado por uso, com tarifas publicadas e sem novo sistema de faturamento.",
+    "Outra plataforma de faturamento com reconhecimento de receita, voltada a uso, créditos e compromissos, com preço de entrada publicado.",
+    "Faturamento, medição e reconhecimento de receita em um só produto, com alocação baseada em SSP e recálculo de modificações citados no site. Preço personalizado.",
+    "Um subledger independente se você quer manter seu sistema de faturamento e precisa de um motor de SSP que possa simular antes de as mudanças entrarem em produção.",
+    "Ideal para a defesa de auditoria da ASC 606 ancorada no contrato e para a conciliação de $0.00 até o centavo: alocação determinística por SSP relativo, evidência literal das cláusulas do contrato e papéis de trabalho com hash SHA-256, sem abrir mão da sua stack de faturamento. Cobre também a Ind AS 115."
+   ],
+   "relatedPostLabel": "Maxio vs NetSuite ARM: qual trata melhor a alocação de SSP?",
+   "faqs": [
+    {
+     "question": "Qual alternativa ao Maxio lida com preços híbridos?",
+     "answer": "Tabs e Zenskar oferecem suporte a modelos de preço híbridos que combinam assinaturas antecipadas, medição de uso e consumo de saldo pré-pago. Para subledgers de ASC 606 dedicados ao lado do faturamento existente, Chargebee RevRec e RightRev tratam modificações complexas de contratos híbridos e a alocação por preço de venda individual relativo."
+    },
+    {
+     "question": "Qual é a melhor alternativa ao Maxio para a ASC 606?",
+     "answer": "Depende de o faturamento também mudar. Se você fatura no Chargebee, o Chargebee RevRec é o subledger mais parecido. No Stripe, o Stripe Revenue Recognition é um complemento. Tabs e Zenskar combinam faturamento e reconhecimento de receita. O RightRev é um subledger independente. O Soluqube é um motor específico para alocação de SSP, não um substituto de faturamento."
+    },
+    {
+     "question": "Existe alguma alternativa ao Maxio sem trocar o faturamento?",
+     "answer": "Sim. Subledgers independentes como o RightRev, ou o Chargebee RevRec se você também fatura no Chargebee, mantêm o faturamento onde está. O Soluqube também funciona ao lado do seu sistema de faturamento: você confirma os termos do contrato e ele produz a alocação por SSP relativo, o cronograma de todo o prazo e uma exportação com hash, com evidência de página e trecho por obrigação."
+    },
+    {
+     "question": "Quanto custa o Maxio?",
+     "answer": "A página de preços do Maxio lista um plano Grow a $599 por mês para até $100k de faturamento mensal e um plano Scale com preço sob cotação. A gestão avançada de receita aparece como módulo opcional, e a página não detalha o que cada nível inclui; por isso, confirme o custo do módulo diretamente com o Maxio."
+    }
+   ]
+  },
+  "zuora-revpro": {
+   "slug": "zuora-revpro",
+   "title": "Alternativas ao Zuora RevPro (Zuora Revenue) 2026",
+   "description": "Alternativas ao Zuora Revenue (RevPro) para a ASC 606: subledgers, módulos de ERP e ferramentas mais leves, com limites e preços dos sites dos fornecedores.",
+   "intro": "O Zuora Revenue, que muitas equipes ainda chamam de RevPro, é um produto corporativo de automação de receita dentro da suíte quote-to-cash da Zuora, com modelagem de SSP, regras de modificação e controles voltados ao SOX. As equipes buscam alternativas quando querem algo mais leve, já operam um ERP com módulo de receita ou não usam o Zuora Billing.",
+   "whyLook": [
+    "É posicionado e vendido para grandes empresas; equipes menores podem não precisar de toda essa abrangência.",
+    "O preço não é publicado, então o custo só é conhecido depois de um processo comercial.",
+    "Se o seu ERP já inclui um módulo de receita, um segundo sistema pode ser redundante."
+   ],
+   "howToChoose": [
+    "Se você usa NetSuite ou Sage Intacct, avalie primeiro o preço dos módulos de receita deles; eles lançam diretamente no seu razão geral.",
+    "Se você precisa de modelagem de SSP e tratamento de modificações fora do ERP, compare subledgers independentes.",
+    "Pergunte quanto tempo leva a implantação e quem a executa; nenhum desses fornecedores publica prazos."
+   ],
+   "pickFits": [
+    "Um subledger independente com motor de SSP e realocação de aditivos, agnóstico de ERP; o par funcional mais próximo fora de uma suíte corporativa.",
+    "Se você está no NetSuite, o ARM mantém a receita dentro do ERP com lançamento nativo no razão geral; a alocação de SSP exige o complemento Revenue Allocation.",
+    "Um subledger com biblioteca de SSP e tratamento de modificações, mais forte se você também fatura no Chargebee.",
+    "Combina faturamento e reconhecimento de receita com alocação de SSP; indicado para equipes que estão substituindo o faturamento ao mesmo tempo.",
+    "Para clientes do Sage Intacct: faturamento e reconhecimento de contratos no ERP, com alocação MEA como complemento.",
+    "Não é um substituto do RevPro: é um motor específico para produzir alocações e cronogramas defensáveis nos contratos sob auditoria, ao lado do seu ERP."
+   ],
+   "relatedPostLabel": "Zuora RevPro vs Soluqube: o trade-off da implantação",
+   "faqs": null
+  },
+  "chargebee-revrec": {
+   "slug": "chargebee-revrec",
+   "title": "Alternativas ao Chargebee RevRec para a ASC 606 (2026)",
+   "description": "Alternativas ao Chargebee RevRec: receita nativa do faturamento, subledgers independentes e ferramentas específicas, com SSP, limites e preços.",
+   "intro": "O Chargebee RevRec, que nasceu da aquisição da RevLock pela Chargebee em 2021, é um subledger de receita com biblioteca de SSP, tratamento de modificações e lançamento no razão geral. O plano Performance está disponível apenas para clientes do Chargebee Billing, o motivo mais comum para as equipes compararem alternativas.",
+   "whyLook": [
+    "O plano Performance exige o Chargebee Billing; equipes com outro sistema de faturamento precisam de outro caminho.",
+    "Os dados de origem são sincronizados em um ciclo de 24 horas, segundo a página do produto.",
+    "O preço não é publicado para nenhum dos dois planos do RevRec."
+   ],
+   "howToChoose": [
+    "Comece pelo seu sistema de faturamento: usuários de Stripe e Maxio têm opções nativas.",
+    "Se o faturamento vai continuar onde está e você precisa de um subledger, compare o motor de SSP do RightRev.",
+    "Teste o tratamento de modificações em um upsell real e em uma mudança de preço no meio do prazo antes de decidir."
+   ],
+   "pickFits": [
+    "Faturamento e reconhecimento de receita em um só produto, com preço de entrada publicado ($599/month até $100k de faturamento mensal).",
+    "Se você fatura pelo Stripe, o complemento de reconhecimento de receita tem configuração de SSP e preço por uso publicado.",
+    "Um subledger independente com simulador de SSP e realocação de aditivos, que não depende do seu fornecedor de faturamento.",
+    "Faturamento, medição e reconhecimento de receita com alocação de SSP e extração por IA das obrigações a partir dos contratos.",
+    "Foco em faturamento, com reconhecimento de receita conforme a ASC 606 em todos os níveis, voltado a preços baseados em uso e compromissos.",
+    "Para o subconjunto de contratos que você precisa defender quanto ao SSP: alocação determinística, cronograma e papel de trabalho com hash, independentes do faturamento. Sem lançamento no razão geral."
+   ],
+   "relatedPostLabel": "Chargebee RevRec vs Maxio: como cada um aloca o SSP?",
+   "faqs": null
+  },
+  "tabs": {
+   "slug": "tabs",
+   "title": "Alternativas ao Tabs: faturamento e RevRec (Guia 2026)",
+   "description": "Alternativas ao Tabs para faturamento B2B e reconhecimento de receita (ASC 606), com base em sites de fornecedores: SSP, limites e preços.",
+   "intro": "O Tabs é uma plataforma de faturamento, cobrança e reconhecimento de receita conforme a ASC 606 para uso, créditos, compromissos e preços híbridos, com um plano de entrada publicado de $2,000 por mês. As equipes comparam alternativas quando também reportam pela IFRS 15, precisam da alocação de SSP documentada ou querem reconhecimento de receita sem trocar o faturamento.",
+   "whyLook": [
+    "As páginas que lemos citam a ASC 606, mas não a IFRS 15 nem o SSP.",
+    "É voltado primeiro ao faturamento; equipes com faturamento em outro lugar podem querer apenas um subledger.",
+    "Somente o nível de entrada tem preço público."
+   ],
+   "howToChoose": [
+    "Se você precisa da IFRS 15 ou da Ind AS 115 além da ASC 606, confirme a cobertura por escrito.",
+    "Se você também vai substituir o faturamento, compare lado a lado as plataformas de faturamento com reconhecimento de receita.",
+    "Se o reconhecimento de receita é a única lacuna, um subledger ou um motor específico causa menos ruptura."
+   ],
+   "pickFits": [
+    "Faturamento e reconhecimento de receita citando tanto a ASC 606 quanto a IFRS 15, com preço de entrada publicado mais baixo.",
+    "Faturamento voltado a uso, com alocação baseada em SSP e recálculo de modificações declarados no site.",
+    "Se você prefere faturar no Chargebee, o RevRec adiciona uma biblioteca de SSP e lançamento no razão geral.",
+    "Para empresas que faturam pelo Stripe, reconhecimento de receita com configuração de SSP e preço pay-as-you-go.",
+    "Se você também está repensando seu razão geral, a Rillet incorpora o reconhecimento de receita da ASC 606 a um ERP.",
+    "Cobre a Ind AS 115 com isolamento de GST, além da ASC 606, apenas para alocação e cronogramas. Não faz faturamento nem cobrança."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "rillet": {
+   "slug": "rillet",
+   "title": "Alternativas à Rillet para RevRec da ASC 606 (2026) [Preços]",
+   "description": "Alternativas à Rillet para reconhecimento de receita (ASC 606): subledgers independentes, módulos de ERP, suporte a SSP e preços públicos.",
+   "intro": "A Rillet é um ERP nativo de IA com reconhecimento de receita embutido, então escolhê-la significa escolher um novo razão geral. As equipes que comparam alternativas costumam querer manter o ERP atual, precisar da alocação de SSP detalhada ou reportar pela IFRS 15 ou pela Ind AS 115.",
+   "whyLook": [
+    "Adotar o reconhecimento de receita da Rillet significa adotar a Rillet como ERP.",
+    "A página de reconhecimento de receita que lemos não menciona o SSP.",
+    "O preço não é publicado."
+   ],
+   "howToChoose": [
+    "Se você vai manter o NetSuite ou o Sage Intacct, comece pelos módulos de receita deles.",
+    "Se você quer o reconhecimento de receita separado do razão geral, compare subledgers independentes.",
+    "Se você vai trocar o ERP de qualquer forma, peça a cada fornecedor que processe o seu contrato mais difícil com múltiplos elementos."
+   ],
+   "pickFits": [
+    "Mantém a receita dentro de um ERP consolidado, com lançamento nativo no razão geral; alocação de SSP pelo complemento Revenue Allocation.",
+    "Para usuários do Sage Intacct: faturamento e reconhecimento de contratos no ERP, com alocação de múltiplos elementos como complemento.",
+    "Um subledger agnóstico de ERP com motor de SSP, se você quer manter seu razão atual.",
+    "Se a lacuna real é faturamento mais cronogramas da ASC 606, e não o ERP inteiro.",
+    "Faturamento e reconhecimento de receita com sincronização bidirecional com QuickBooks, NetSuite, Sage, Xero e Zoho Books.",
+    "Mantém seu ERP e adiciona uma alocação e um cronograma defensáveis para contratos auditados. Você mesmo lança a exportação."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "netsuite-arm": {
+   "slug": "netsuite-arm",
+   "title": "Principais alternativas ao NetSuite ARM em 2026 [RevRec Zero-Drift]",
+   "description": "Alternativas ao NetSuite ARM comparadas por aderência à ASC 606, alocação de SSP e preço. Papéis de trabalho com conciliação até o centavo.",
+   "intro": "O NetSuite Advanced Revenue Management (ARM) mantém o reconhecimento de receita dentro do NetSuite, com alocação por valor justo por meio de um complemento separado, o Revenue Allocation. As equipes buscam alternativas quando acham a configuração pesada, precisam de ajuda de parceiros para migrar ou querem análise de SSP e tratamento de modificações fora do ERP.",
+   "whyLook": [
+    "A alocação de SSP exige o complemento Revenue Allocation além do ARM Essentials.",
+    "A documentação da Oracle diz que migrar do reconhecimento de receita clássico exige o NetSuite Professional Services ou um parceiro qualificado.",
+    "Alguns padrões de modificação (mesclagens prospectivas) não podem ser revertidos depois que a receita é reconhecida."
+   ],
+   "howToChoose": [
+    "A maioria das alternativas aqui ainda lança no NetSuite; confirme como os lançamentos contábeis voltam e com que frequência.",
+    "Se a dor está na evidência de SSP e não nas regras de reconhecimento, uma ferramenta mais específica pode bastar.",
+    "Peça uma execução em paralelo com um trimestre de contratos antes de migrar."
+   ],
+   "pickFits": [
+    "Um subledger agnóstico de ERP com simulador de SSP e realocação de aditivos, lançando os lançamentos contábeis no seu razão geral.",
+    "Automação de receita corporativa com modelagem de SSP e conector com o NetSuite, para equipes maiores.",
+    "Subledger com integração nativa com o NetSuite e biblioteca de SSP; melhor opção se você fatura no Chargebee.",
+    "Faturamento e reconhecimento de receita com sincronização bidirecional com o NetSuite e alocação baseada em SSP.",
+    "Somente se você estiver disposto a substituir o próprio NetSuite por um ERP com reconhecimento de receita embutido.",
+    "Roda ao lado do NetSuite para os contratos que você precisa defender: alocação, cronograma e papel de trabalho com hash, exportados em CSV para você revisar e lançar."
+   ],
+   "relatedPostLabel": "Maxio vs NetSuite ARM: qual trata melhor a alocação de SSP?",
+   "faqs": [
+    {
+     "question": "Qual é a melhor alternativa ao NetSuite ARM para a ASC 606?",
+     "answer": "Para reconhecimento de receita independente sem substituir o razão geral do NetSuite, RightRev e Zuora Revenue oferecem subledgers dedicados que calculam a alocação por SSP relativo e lançam os lançamentos contábeis de volta no NetSuite. Para equipes que buscam uma calculadora específica para contratos complexos com múltiplos elementos, o Soluqube fornece papéis de trabalho independentes de cronograma de SSP."
+    },
+    {
+     "question": "Por que as equipes financeiras buscam alternativas ao NetSuite ARM?",
+     "answer": "As equipes financeiras normalmente avaliam alternativas ao NetSuite ARM por causa da complexidade e do custo do complemento Revenue Allocation, dos pesados requisitos de implantação e das regras rígidas de modificação, em que mesclagens prospectivas não podem ser facilmente revertidas depois que o reconhecimento de receita começou."
+    }
+   ]
+  },
+  "sage-intacct-revenue": {
+   "slug": "sage-intacct-revenue",
+   "title": "Alternativas ao RevRec do Sage Intacct (2026) [ASC 606 e híbrido]",
+   "description": "Alternativas ao Sage Intacct para ASC 606 e contratos híbridos: subledgers independentes, alocação por SSP relativo e papéis de trabalho em Excel.",
+   "intro": "O aplicativo Contracts do Sage Intacct trata faturamento de assinaturas e reconhecimento de receita dentro do ERP, com alocação de múltiplos elementos disponível por meio de um complemento Advanced Revenue Recognition. As equipes comparam alternativas quando exigem mais ferramentas de SSP, lidam com modificações complexas ou querem um subledger não atrelado ao ERP.",
+   "whyLook": [
+    "A alocação entre múltiplos elementos exige um complemento separado.",
+    "A documentação que lemos descreve a alocação MEA em vez de ferramentas de análise de SSP.",
+    "O preço não é publicado."
+   ],
+   "howToChoose": [
+    "Prefira ferramentas com integração nativa com o Sage Intacct para que os lançamentos contábeis sejam lançados sem problemas.",
+    "Se o faturamento funciona bem no Sage Intacct, adicione um subledger em vez de substituir o faturamento.",
+    "Verifique como cada opção trata um upsell no meio do prazo em um contrato real."
+   ],
+   "pickFits": [
+    "Integração nativa com o Sage Intacct, biblioteca de SSP e tratamento de modificações; mais forte com o Chargebee Billing.",
+    "Faturamento e reconhecimento de receita com integração com o Sage Intacct e preço de entrada publicado.",
+    "Subledger API-first com simulador de SSP; confirme a conexão com o Sage Intacct junto ao fornecedor.",
+    "Sincronização bidirecional com o Sage, alocação baseada em SSP e recálculo de modificações.",
+    "Somente se você estiver considerando substituir o Sage Intacct como ERP.",
+    "Adiciona alocação por SSP relativo e cronogramas documentados para os contratos sob auditoria; você mesmo lança a exportação no Sage Intacct."
+   ],
+   "relatedPostLabel": null,
+   "faqs": [
+    {
+     "question": "O Sage Intacct consegue tratar a ASC 606 e a IFRS 15 em contratos de assinatura híbridos?",
+     "answer": "O Sage Intacct Contracts oferece suporte a cronogramas da ASC 606 e da IFRS 15 para assinaturas padrão, mas arranjos complexos com múltiplos elementos, com uso híbrido, serviços profissionais ou descontos personalizados, normalmente exigem o módulo opcional Advanced Revenue Management ou um subledger dedicado ao lado do Sage Intacct."
+    },
+    {
+     "question": "Quais são as limitações do reconhecimento de receita do Sage Intacct?",
+     "answer": "O reconhecimento de receita nativo do Sage Intacct é fortemente acoplado ao módulo Contracts e ao razão geral. A alocação do preço de venda individual (SSP) entre pacotes com múltiplos elementos exige complementos, o preço é apenas sob cotação e as modificações no meio do contrato muitas vezes exigem recálculo manual ou conciliação em dupla digitação."
+    },
+    {
+     "question": "É possível usar um motor de reconhecimento de receita independente com o Sage Intacct sem substituir o faturamento?",
+     "answer": "Sim. Subledgers de receita independentes ou motores específicos como o Soluqube operam ao lado do Sage Intacct. O Soluqube recebe os termos do contrato, calcula as alocações por SSP relativo e os cronogramas de amortização até o centavo e fornece exportações em CSV prontas para auditoria, formatadas para importação de lançamentos contábeis no razão geral do Sage Intacct."
+    }
+   ]
+  },
+  "zenskar": {
+   "slug": "zenskar",
+   "title": "Alternativas ao Zenskar para faturamento e RevRec (2026)",
+   "description": "Alternativas ao Zenskar para faturamento por uso e reconhecimento de receita (ASC 606 / IFRS 15): perfil, cobertura de SSP, limites e preços.",
+   "intro": "O Zenskar é uma plataforma nativa de IA de faturamento, medição e reconhecimento de receita, com alocação baseada em SSP e recálculo de modificações. Todos os planos têm preço personalizado e o reconhecimento de receita vem junto com a camada de faturamento, por isso as equipes costumam compará-lo com plataformas que publicam preços ou com subledgers independentes.",
+   "whyLook": [
+    "Todos os planos têm preço personalizado.",
+    "O reconhecimento de receita está atrelado à adoção da camada de faturamento e medição.",
+    "SAP e Oracle não aparecem entre as integrações nas páginas que lemos."
+   ],
+   "howToChoose": [
+    "Se você precisa de preços publicados, Maxio, Tabs e Stripe divulgam seus preços.",
+    "Se o faturamento vai continuar onde está, compare subledgers em vez de plataformas de faturamento.",
+    "Teste a extração de obrigações por IA contra o que o seu auditor aceitaria como evidência."
+   ],
+   "pickFits": [
+    "Faturamento de uso, créditos e compromissos com reconhecimento de receita pela ASC 606 e preço de entrada publicado.",
+    "Faturamento e reconhecimento de receita com medição e um plano Grow publicado.",
+    "Se você prefere o Chargebee Billing, o RevRec adiciona biblioteca de SSP, tratamento de modificações e lançamento no razão geral.",
+    "Para empresas que faturam pelo Stripe, reconhecimento de receita com preço calculado como percentual do volume, com configuração de SSP.",
+    "Um subledger independente com motor de SSP se você quer manter seu sistema de faturamento.",
+    "Sem faturamento e sem extração por IA: você confirma as obrigações e recebe uma alocação determinística, um cronograma e um papel de trabalho com hash. Cobre a Ind AS 115."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "trullion": {
+   "slug": "trullion",
+   "title": "Alternativas ao Trullion para reconhecimento de receita",
+   "description": "Alternativas ao Trullion para reconhecimento de receita (ASC 606 / IFRS 15): subledgers, suítes corporativas e ferramentas específicas.",
+   "intro": "O Trullion é uma plataforma de contabilidade e auditoria com IA que extrai termos de contratos e executa fluxos de reconhecimento de receita e de arrendamentos, voltada tanto a equipes de contabilidade corporativa quanto a auditores. As equipes comparam alternativas quando precisam de ferramentas de SSP, tratamento de modificações ou modelos baseados em uso que as páginas de receita não mencionam.",
+   "whyLook": [
+    "As páginas que lemos não mencionam SSP, modificações de contrato nem faturamento baseado em uso.",
+    "Nenhuma integração específica com ERP é citada nas páginas que lemos.",
+    "O preço não é publicado."
+   ],
+   "howToChoose": [
+    "Se alocação e SSP são o foco da auditoria, prefira ferramentas que documentem o SSP de forma explícita.",
+    "Se você também precisa de contabilidade de arrendamentos, avalie se ter uma única plataforma importa mais do que a profundidade em receita.",
+    "Pergunte a cada fornecedor como os termos extraídos por IA são revisados antes de gerarem números."
+   ],
+   "pickFits": [
+    "Motor e simulador de SSP mais realocação de aditivos, para equipes cujas perguntas de auditoria giram em torno da alocação.",
+    "Automação de receita corporativa com modelagem de SSP e regras de modificação.",
+    "Subledger com biblioteca de SSP, tratamento de modificações e integrações com ERPs nomeados.",
+    "Para alto volume de transações, e não para revisão de contratos; preço publicado. A Leapfin está se juntando à Airwallex.",
+    "Também extrai obrigações dos contratos com IA e adiciona faturamento, alocação de SSP e recálculo de modificações.",
+    "Evidência de cláusulas (página, trecho literal e destaque da linha) por obrigação, como uma ferramenta de auditoria, mas os números vêm de um motor determinístico de inteiros que você pode reexecutar. Sem contabilidade de arrendamentos."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "rightrev": {
+   "slug": "rightrev",
+   "title": "Alternativas ao RightRev para a ASC 606 (2026)",
+   "description": "Alternativas ao RightRev para reconhecimento de receita (ASC 606 / IFRS 15): suítes corporativas, módulos de ERP e ferramentas específicas.",
+   "intro": "O RightRev é um subledger de reconhecimento de receita com motor e simulador de SSP, realocação de aditivos e uma edição nativa do Salesforce. As equipes comparam alternativas quando querem a receita dentro do ERP, não usam o Salesforce ou precisam de preços publicados.",
+   "whyLook": [
+    "O preço não é publicado.",
+    "A edição para Salesforce pressupõe uma organização Salesforce.",
+    "Nenhum ERP específico é citado nas páginas; a conexão com o razão geral é baseada em API."
+   ],
+   "howToChoose": [
+    "Se você está no NetSuite e quer um único sistema, compare o ARM com o complemento Revenue Allocation.",
+    "Para escala corporativa e amplitude de suíte, compare o Zuora Revenue.",
+    "Peça a cada fornecedor que execute o seu estudo de SSP e um aditivo com dados reais."
+   ],
+   "pickFits": [
+    "Par corporativo com modelagem de SSP, regras de modificação e conectores para NetSuite, Workday, SAP e Salesforce.",
+    "Subledger com biblioteca de SSP e integrações com ERPs nomeados; mais forte com o Chargebee Billing.",
+    "Mantém a receita no NetSuite com lançamento nativo no razão geral; métodos de SSP pelo complemento Revenue Allocation.",
+    "Faturamento e reconhecimento de receita com alocação de SSP e recálculo de modificações, se você também vai substituir o faturamento.",
+    "Se a revisão de contratos pelo lado da auditoria importa tanto quanto o subledger, e a contabilidade de arrendamentos também está no escopo.",
+    "Uma opção mais específica e com preço publicado para defender alocações em contratos determinados, cobrindo também a Ind AS 115. Sem integração com CRM e, por ora, sem contabilização de modificações de contrato."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  }
+ },
+ "vendors": {
+  "maxio": {
+   "whatItIs": "Plataforma de faturamento e relatórios financeiros para negócios de assinatura, com reconhecimento de receita embutido.",
+   "whoFor": "Empresas de SaaS B2B, de IA e de assinatura (o Maxio nasceu da combinação entre Chargify e SaaSOptics).",
+   "strengths": [
+    "Declara conformidade com a ASC 606 e a IFRS 15, com múltiplos livros de receita, modelos de preço e obrigações de desempenho.",
+    "Edições de contrato para upgrades, reembolsos e outras mudanças; o FAQ trata de SSP e preços de transação negociados, exclusões e realocação.",
+    "Permite comparar estados anteriores de reconhecimento com cronogramas atualizados sem alterar os dados originais da transação; relatórios de waterfall e de roll-forward.",
+    "Faturamento baseado em uso (medição, tarifação, compromissos mínimos) e integrações com NetSuite, Sage Intacct, QuickBooks, Xero, Salesforce e HubSpot."
+   ],
+   "limits": [
+    "Voltado primeiro ao faturamento: o reconhecimento de receita fica ao lado do faturamento e dos pagamentos, e não como um subledger independente.",
+    "A página de preços lista a \"gestão avançada de receita\" como módulo opcional; não está detalhado o que cada nível inclui.",
+    "O SSP é mencionado somente no FAQ; o método de alocação não é descrito na página."
+   ],
+   "pricing": "Plano Grow $599/month para até $100k de faturamento mensal; plano Scale sob cotação (maxio.com/pricing).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Mencionado (FAQ)"
+  },
+  "zuora": {
+   "whatItIs": "Reconhecimento e automação de receita corporativos dentro da suíte quote-to-cash da Zuora (o produto que muitas equipes financeiras ainda chamam de RevPro).",
+   "whoFor": "Equipes corporativas de finanças e de contabilidade de receita; entre os clientes citados estão Salesforce, Okta, Zoom e Elastic.",
+   "strengths": [
+    "Declara automatizar as cinco etapas da ASC 606 e da IFRS 15, com regras para preços, mudanças de prazo e modificações de contrato.",
+    "SSP calculado a partir de dados históricos, com modelagem de SSP assistida por IA.",
+    "Controles voltados ao SOX, segurança baseada em perfis, trilhas de auditoria e mais de 60 relatórios prontos.",
+    "Trata assinaturas, cobranças avulsas e uso; conectores para NetSuite, Workday, SAP e Salesforce."
+   ],
+   "limits": [
+    "O preço não é publicado; apenas demonstração ou contato comercial.",
+    "Posicionado para grandes empresas e vendido como parte de uma suíte maior (Billing, Revenue, Collect e mais)."
+   ],
+   "pricing": "Não publicado.",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sim (modelagem de SSP)"
+  },
+  "chargebee": {
+   "whatItIs": "Subledger de reconhecimento de receita que automatiza cronogramas, alocação, conciliação e lançamentos contábeis, vendido junto com o Chargebee Billing.",
+   "whoFor": "Empresas de SaaS e IA com preços híbridos, por uso, baseados em créditos ou contratos personalizados. O Chargebee RevRec veio da aquisição da RevLock pela Chargebee em 2021.",
+   "strengths": [
+    "Aloca o preço da transação entre as obrigações de desempenho com uma biblioteca de SSP configurável vinculada à tabela de preços, seguindo o modelo de cinco etapas da ASC 606 / IFRS 15.",
+    "Automatiza o tratamento de upsells, co-terms, notas de crédito, renovações antecipadas e outras modificações, além de contratos plurianuais com rampa.",
+    "Bloqueios de período, roll-forwards, waterfalls de receita diferida, trilhas de auditoria e lançamentos contábeis resumidos lançados no razão geral.",
+    "Integrações nativas com NetSuite, Sage Intacct, QuickBooks, Xero, Chargebee e Stripe, além de uma API REST."
+   ],
+   "limits": [
+    "O plano RevRec Performance está disponível apenas para clientes do Chargebee Billing.",
+    "A página do produto descreve um ciclo de sincronização de 24 horas para os dados de origem.",
+    "O preço não é publicado."
+   ],
+   "pricing": "Não publicado (RevRec Performance: solicitar preço; RevRec Enterprise: sob cotação).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sim (biblioteca de SSP)"
+  },
+  "tabs": {
+   "whatItIs": "Plataforma de faturamento, cobrança e reconhecimento de receita pela ASC 606 que transforma contratos e uso em faturas e cronogramas de receita.",
+   "whoFor": "Equipes B2B de finanças, contabilidade e RevOps; os planos são definidos por faixa de receita, de menos de $5M a $50M+.",
+   "strengths": [
+    "Faturamento, cobrança e reconhecimento de receita para muitos modelos de preço em um só produto.",
+    "Oferece suporte a uso, créditos, compromissos, mínimos, excedentes, rampas e híbridos, com medição de uso.",
+    "Gera faturas e cronogramas de receita a partir de contratos e uso; reconhecimento de receita pela ASC 606 em todos os níveis.",
+    "As integrações nomeadas incluem Sage Intacct, QuickBooks, HubSpot e DocuSign."
+   ],
+   "limits": [
+    "Voltado primeiro ao faturamento: o reconhecimento de receita é um módulo.",
+    "As páginas que lemos citam a ASC 606, mas não a IFRS 15 nem o SSP, e não descrevem explicitamente a contabilização de modificações de contrato.",
+    "Somente o nível de entrada tem preço publicado."
+   ],
+   "pricing": "Plano Launch $2,000/month (até $5M de receita anual, 100 contratos ativos); níveis superiores personalizados (tabs.com/pricing).",
+   "standards": "ASC 606",
+   "ssp": "Não mencionado"
+  },
+  "netsuite": {
+   "whatItIs": "Módulo de reconhecimento de receita baseado em regras dentro do ERP NetSuite, com alocação por valor justo por meio de um complemento Revenue Allocation.",
+   "whoFor": "Empresas que já usam o NetSuite como ERP.",
+   "strengths": [
+    "A documentação da Oracle declara suporte à ASC 606 e à IFRS 15, com ferramentas de conversão.",
+    "O Revenue Allocation oferece suporte a métodos de valor justo, incluindo preço de venda individual, listas de preços de valor justo, verificação de faixas e fórmulas para arranjos com múltiplos elementos.",
+    "Acordos de receita nativos, elementos de receita por obrigação de desempenho, regras e planos de reconhecimento, com lançamentos contábeis lançados direto no razão geral do NetSuite.",
+    "Tratamento de ordens de alteração, incluindo mesclagem prospectiva, em \"Combination and Modification of Performance Obligations\"."
+   ],
+   "limits": [
+    "É um módulo do NetSuite: exige o ERP NetSuite, e o Revenue Allocation é um complemento separado do ARM Essentials.",
+    "A documentação da Oracle diz que migrar do Revenue Recognition clássico exige o NetSuite Professional Services ou um parceiro qualificado.",
+    "As mesclagens prospectivas não podem ser revertidas depois que a receita é reconhecida ou reclassificada e não são compatíveis com alguns tipos de plano."
+   ],
+   "pricing": "Não publicado nas páginas a que tivemos acesso (o netsuite.com bloqueou o acesso automatizado; os fatos aqui vêm da documentação do NetSuite da Oracle).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sim (métodos de valor justo, complemento)"
+  },
+  "rillet": {
+   "whatItIs": "ERP nativo de IA (razão geral, fechamento, contas a receber e a pagar, consolidação) com um módulo Advanced Revenue Recognition embutido.",
+   "whoFor": "Empresas de médio porte, grandes empresas e companhias abertas, com páginas dedicadas a SaaS, startups, private equity e firmas de contabilidade.",
+   "strengths": [
+    "Declara aplicar a ASC 606 diretamente a partir dos seus contratos.",
+    "Automatiza modelos conduzidos por vendas, conduzidos pelo produto e baseados em uso, incluindo preços por uso e por marcos.",
+    "Os aditivos contratuais fluem para os cronogramas e para o razão geral.",
+    "Cronogramas de receita diferida, waterfall de receita, multientidade e multimoeda; integrações com Salesforce, HubSpot, Stripe, Avalara e outros."
+   ],
+   "limits": [
+    "Usá-la significa adotar a Rillet como ERP e razão geral; NetSuite, Sage Intacct e QuickBooks aparecem como páginas de comparação, não como integrações.",
+    "A página de reconhecimento de receita que lemos não menciona o SSP; a IFRS 15 aparece no título da página, mas não no texto das funcionalidades.",
+    "O preço não é publicado."
+   ],
+   "pricing": "Não publicado (contato comercial).",
+   "standards": "ASC 606 (IFRS 15 no título da página)",
+   "ssp": "Não mencionado"
+  },
+  "sage": {
+   "whatItIs": "Aplicativo de gestão de contratos, faturamento e reconhecimento de receita dentro do ERP em nuvem Sage Intacct.",
+   "whoFor": "Negócios de assinatura que usam o Sage Intacct.",
+   "strengths": [
+    "A documentação do Sage Intacct declara suporte completo à ASC 606 e à IFRS 15.",
+    "Cronogramas de reconhecimento lineares, por taxa diária, por quantidade e personalizados, mantidos separados do faturamento, com contabilidade multilivro.",
+    "O complemento Contract Advanced Revenue Recognition oferece suporte à alocação de arranjos com múltiplos elementos (MEA) com trilha de auditoria.",
+    "Faturamento por uso (faixas, tarifas mínimas) e faturamento de contratos para complementos, ordens de alteração, cancelamentos e renovações."
+   ],
+   "limits": [
+    "É um módulo do Sage Intacct: exige o Sage Intacct como ERP.",
+    "A alocação MEA exige o complemento separado Advanced Revenue Recognition; o nível padrão não faz alocação.",
+    "A documentação que lemos usa \"alocação MEA\" em vez do termo preço de venda individual."
+   ],
+   "pricing": "Não publicado nas páginas a que tivemos acesso (o sage.com bloqueou o acesso automatizado; a documentação de ajuda orienta contatar um gerente de contas do Sage Intacct).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Alocação MEA (complemento)"
+  },
+  "zenskar": {
+   "whatItIs": "Plataforma nativa de IA de faturamento, medição e reconhecimento de receita que transforma contratos em faturas e cronogramas de receita.",
+   "whoFor": "Equipes financeiras de empresas em rápido crescimento; os planos vão de equipes pequenas a corporativos.",
+   "strengths": [
+    "Declara conformidade total com a ASC 606 e a IFRS 15 e extração por IA das obrigações de desempenho a partir dos contratos.",
+    "Alocação de receita baseada em SSP, incluindo SSPs para pacotes.",
+    "Recalcula a receita (futura e passada) para modificações de contrato, com ajuste manual.",
+    "Medição de uso a partir de APIs, CSV ou data warehouses; integrações bidirecionais com QuickBooks, NetSuite, Sage, Xero e Zoho Books."
+   ],
+   "limits": [
+    "Todos os planos têm preço personalizado.",
+    "O reconhecimento de receita vem com a camada de faturamento e medição, então é adequado a equipes dispostas a trocar também o faturamento.",
+    "SAP e Oracle não aparecem entre as integrações nas páginas que lemos."
+   ],
+   "pricing": "Não publicado (Starter, Standard e Enterprise têm preço personalizado).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sim"
+  },
+  "trullion": {
+   "whatItIs": "Plataforma de contabilidade e auditoria com IA que extrai termos de contratos e executa fluxos de reconhecimento de receita e de arrendamentos.",
+   "whoFor": "Equipes de contabilidade corporativa (CFOs, controllers), auditores externos e internos e firmas de consultoria.",
+   "strengths": [
+    "Posiciona-se para a conformidade com a ASC 606 / IFRS 15.",
+    "Extrai datas de renovação, obrigações e cláusulas com impacto na receita de contratos enviados, com trilha de auditoria até o documento de origem.",
+    "Configuração de obrigações de desempenho, waterfalls de receita e divulgações; lançamentos contábeis exportados para o seu ERP.",
+    "Também cobre contabilidade de arrendamentos e fluxos de auditoria, como testes substantivos."
+   ],
+   "limits": [
+    "As páginas que lemos não citam nenhuma integração específica com ERP.",
+    "SSP, modificações de contrato e faturamento baseado em uso não são mencionados nas páginas que lemos.",
+    "O preço não é publicado."
+   ],
+   "pricing": "Não publicado (tour do produto sob solicitação).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Não mencionado"
+  },
+  "rightrev": {
+   "whatItIs": "Subledger de reconhecimento de receita que opera ao lado do ERP, com motor de SSP e uma edição nativa do Salesforce.",
+   "whoFor": "Equipes de finanças e contabilidade com modelos de assinatura e consumo; entre os clientes citados estão Epicor, Docebo e Drata.",
+   "strengths": [
+    "Declara conformidade com a ASC 606 / IFRS 15.",
+    "Motor e simulador de SSP para modelar e validar resultados de SSP e alocação antes de implantar mudanças.",
+    "Aditivos, cancelamentos, renovações e expansões são detectados e realocados.",
+    "Assinaturas, uso, créditos, marcos e compromissos; lançamentos contábeis lançados no razão geral com rastreabilidade."
+   ],
+   "limits": [
+    "Descreve-se como agnóstico de ERP e API-first; nenhum ERP específico é citado nas páginas que lemos.",
+    "A edição para Salesforce é construída sobre o Salesforce e pressupõe uma organização Salesforce.",
+    "O preço não é publicado."
+   ],
+   "pricing": "Não publicado (solicitação de demonstração).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sim (motor de SSP)"
+  },
+  "leapfin": {
+   "whatItIs": "Plataforma de dados financeiros de alto volume que transforma dados de transações em lançamentos contábeis, reconhecimento de receita e conciliações.",
+   "whoFor": "Negócios de alto volume de transações, como e-commerce, marketplaces, assinatura e software. A Leapfin anunciou em June 2026 que está se juntando à Airwallex.",
+   "strengths": [
+    "Consolida muitas fontes de dados em um único conjunto de dados pronto para o razão.",
+    "Automatiza lançamentos contábeis, reconhecimento de receita, conciliação e fechamento com rastreabilidade em nível de transação.",
+    "Suporte a faturamento baseado em uso e um feed para o NetSuite."
+   ],
+   "limits": [
+    "Construída para volume de transações, e não para termos contratuais negociados.",
+    "IFRS 15, SSP e modificações de contrato não são mencionados nas páginas que lemos."
+   ],
+   "pricing": "Publicado: Standard a partir de $500/month, Premium a partir de $1,000/month, Enterprise personalizado (leapfin.com/pricing; o FAQ da página também cita uma base de $1,000/month).",
+   "standards": "ASC 606",
+   "ssp": "Não mencionado"
+  },
+  "stripe": {
+   "whatItIs": "Subledger de receita dentro do Stripe Dashboard que transforma transações e termos de faturamento do Stripe em lançamentos contábeis e relatórios.",
+   "whoFor": "Empresas que faturam pelo Stripe.",
+   "strengths": [
+    "Declara resultados alinhados à IFRS 15 e à ASC 606.",
+    "SSPs configuráveis para produtos em pacote e mais de 15 modelos de preço, incluindo baseados em uso e híbridos.",
+    "Trata upgrades, downgrades, rateios, reembolsos e disputas; relatórios de waterfall, balancete e aging de contas a receber.",
+    "Importa transações que não são do Stripe por CSV."
+   ],
+   "limits": [
+    "Exige uma conta Stripe e é usado pelo Stripe Dashboard; a disponibilidade varia por país.",
+    "Os dados que não são do Stripe entram como CSV com datas do período de serviço, e não a partir de documentos contratuais.",
+    "Exporta para sistemas contábeis por mapeamento do razão geral; nenhum conector de ERP nomeado nas páginas que lemos."
+   ],
+   "pricing": "Publicado: 0.25% do volume, ou 0.2% acima de $100,000 por mês, com teste gratuito de 30 dias (stripe.com; o volume inclui transações importadas).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sim"
+  },
+  "soluqube": {
+   "whatItIs": "Motor de alocação e cronograma orientado ao contrato para a ASC 606 e a Ind AS 115, que produz um papel de trabalho com evidências para os contratos que você precisa defender.",
+   "whoFor": "Controllers, contadores de receita e firmas de CPA ou de CFO fracionado que defendem alocações de SSP em contratos B2B negociados perante auditores externos, nos EUA e na Índia.",
+   "strengths": [
+    "Alocação por SSP relativo e cronograma de todo o prazo em aritmética de inteiros (escala 10^6, arredondada para centavos), com o último período absorvendo o resto, de modo que o cronograma concilia com a alocação e a receita diferida termina em $0.00.",
+    "Evidência de cláusulas por obrigação (página, trecho literal e um destaque na linha citada, para PDFs com camada de texto) e uma exportação com hash SHA-256: mesma entrada, mesma saída, reexecutável diante de um auditor.",
+    "Tratamento da Ind AS 115 com o GST de 18% mantido fora do preço da transação para contratos em INR.",
+    "Papel de trabalho gratuito de defesa de auditoria para 3 contratos para começar; sem projeto de implantação."
+   ],
+   "limits": [
+    "Produto em estágio inicial, criado por um fundador solo; ainda sem referências de clientes publicadas.",
+    "Você confirma as obrigações e os preços declarados; a extração do contrato é heurística, não automática.",
+    "Sem faturamento nem faturamento baseado em uso, e sem integração com ERP: você mesmo revisa e lança as exportações em Excel/CSV.",
+    "A contabilização de modificações de contrato (prospectiva e com ajuste cumulativo) está no roadmap, não foi construída."
+   ],
+   "pricing": "Preços de fundador para os 10 primeiros clientes: papel de trabalho gratuito para 3 contratos; $475 de papel de trabalho de auditoria para até 10 contratos; $1,750 de pacote de operação QoE; $49/month de acesso à ferramenta para firmas (soluqube.com/pricing).",
+   "standards": "ASC 606, Ind AS 115",
+   "ssp": "Sim (SSP relativo, regra documentada do centavo residual)"
+  }
+ }
+}

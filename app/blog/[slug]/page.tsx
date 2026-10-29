@@ -8,6 +8,8 @@ import rehypeSlug from "rehype-slug";
 import GithubSlugger from "github-slugger";
 import Navbar from "@/components/navbar";
 import ResourceFooter from "@/components/resource-footer";
+import { hreflangMap } from "@/lib/i18n";
+import { langsFor } from "@/lib/i18n-data";
 import { BLOG_POSTS, type BlogPost } from "@/data/blogPosts";
 import { 
   ArrowLeft, 
@@ -154,6 +156,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: post.tags,
     alternates: {
       canonical: `https://soluqube.com/blog/${post.slug}`,
+      ...(langsFor("blog", post.slug).length ? { languages: hreflangMap(`/blog/${post.slug}`, langsFor("blog", post.slug)) } : {}),
     },
     openGraph: {
       title,

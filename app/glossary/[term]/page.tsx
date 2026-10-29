@@ -6,6 +6,8 @@ import Navbar from "@/components/navbar";
 import ResourceFooter from "@/components/resource-footer";
 import PageFaqs from "@/components/page-faqs";
 import { faqGraph } from "@/lib/page-faqs";
+import { hreflangMap } from "@/lib/i18n";
+import { langsFor } from "@/lib/i18n-data";
 import { GLOSSARY_TERMS, getGlossaryTerm, type GlossaryTerm } from "@/data/glossary";
 
 interface Props {
@@ -32,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: title },
     description: t.description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, ...(langsFor("glossary", t.slug).length ? { languages: hreflangMap(`/glossary/${t.slug}`, langsFor("glossary", t.slug)) } : {}) },
     openGraph: { title, description: t.description, url, images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soluqube" }], type: "article", siteName: "Soluqube" },
     twitter: { card: "summary", title, description: t.description },
   };

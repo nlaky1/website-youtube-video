@@ -1,0 +1,537 @@
+{
+ "pages": {
+  "maxio": {
+   "slug": "maxio",
+   "title": "6 beste Maxio-Alternativen 2026 [Preise & RevRec]",
+   "description": "Die 6 besten Maxio-Alternativen für ASC 606 und hybride Preismodelle im Vergleich: Preismatrix, SSP-Aufteilung und kostenloses Excel-Arbeitspapier.",
+   "intro": "Die wichtigsten Maxio-Alternativen für die Umsatzrealisierung nach ASC 606 sind Chargebee RevRec, Stripe Revenue Recognition, Tabs, Zenskar, RightRev und Soluqube. Wählen Sie ein eigenständiges Nebenbuch, wenn die Fakturierung bleibt, wo sie ist, eine Plattform für Fakturierung und Umsatzrealisierung, wenn Sie die Fakturierung ersetzen, oder ein schlankes Tool, wenn Ihre Prüfungsfragen vor allem die SSP-Aufteilung betreffen. Teams wechseln auch, wenn die Fakturierung die Grenze von $100k pro Monat im Grow-Tarif von Maxio überschreitet.",
+   "whyLook": [
+    "Die Umsatzrealisierung ist an die Fakturierung gekoppelt; läuft die Fakturierung bereits anderswo, benötigen Sie womöglich nur ein Nebenbuch.",
+    "Auf der Maxio-Seite wird SSP nur in den FAQ erwähnt; Teams, deren Prüfungsfragen sich um SSP drehen, möchten die Aufteilung unter Umständen detailliert dokumentiert haben.",
+    "Ab $100k Fakturierungsvolumen pro Monat gibt es Maxio-Preise nur noch auf Anfrage."
+   ],
+   "howToChoose": [
+    "Entscheiden Sie zuerst, ob Sie auch die Fakturierung ersetzen. Falls nicht, betrachten Sie Nebenbücher (Chargebee RevRec, RightRev) oder ein schlankes Tool.",
+    "Wenn Sie über Stripe fakturieren, prüfen Sie Stripe Revenue Recognition, bevor Sie ein separates Tool kaufen.",
+    "Bitten Sie jeden Anbieter, einen Ihrer realen Verträge mit mehreren Elementen aufzuteilen und die SSP-Nachweise zu zeigen."
+   ],
+   "pickFits": [
+    "Der engste Vergleich, wenn Sie ebenfalls in Chargebee fakturieren: ein dediziertes Nebenbuch mit SSP-Bibliothek und Behandlung von Vertragsänderungen. Der Performance-Tarif setzt Chargebee Billing voraus.",
+    "Läuft die Fakturierung bereits auf Stripe, ist die Umsatzrealisierung ein nutzungsbasiertes Add-on mit veröffentlichten Preisen und ohne neues Fakturierungssystem.",
+    "Eine weitere Plattform für Fakturierung und Umsatzrealisierung, ausgerichtet auf Nutzung, Guthaben und Mindestabnahmen, mit veröffentlichtem Einstiegspreis.",
+    "Fakturierung, Metering und Umsatzrealisierung in einem, wobei SSP-basierte Aufteilung und Neuberechnung bei Vertragsänderungen auf der Website genannt werden. Individuelle Preise.",
+    "Ein eigenständiges Nebenbuch, wenn Sie Ihr Fakturierungssystem behalten möchten und eine SSP-Engine benötigen, die Sie vor Änderungen im Produktivbetrieb simulieren können.",
+    "Am besten für vertragsbasierte Prüfungsabwehr nach ASC 606 und centgenaue Abstimmung auf $0.00: deterministische Relative-SSP-Aufteilung, wörtliche Vertragsklausel-Nachweise und SHA-256-gehashte Arbeitspapiere, ohne Ihren Fakturierungs-Stack auszutauschen. Deckt zusätzlich Ind AS 115 ab."
+   ],
+   "relatedPostLabel": "Maxio vs. NetSuite ARM: Welches System bewältigt die SSP-Aufteilung?",
+   "faqs": [
+    {
+     "question": "Welche Maxio-Alternative unterstützt hybride Preismodelle?",
+     "answer": "Tabs und Zenskar unterstützen hybride Preismodelle, die Vorab-Abonnements, nutzungsbasiertes Metering und vorausbezahlte Kontingente kombinieren. Für dedizierte ASC-606-Nebenbücher neben der bestehenden Fakturierung bewältigen Chargebee RevRec und RightRev komplexe hybride Vertragsänderungen und die Aufteilung nach dem relativen Einzelveräußerungspreis."
+    },
+    {
+     "question": "Was ist die beste Maxio-Alternative für ASC 606?",
+     "answer": "Das hängt davon ab, ob die Fakturierung ebenfalls wechselt. Wenn Sie in Chargebee fakturieren, ist Chargebee RevRec das naheliegendste vergleichbare Nebenbuch. Auf Stripe ist Stripe Revenue Recognition ein Add-on. Tabs und Zenskar kombinieren Fakturierung und Umsatzrealisierung. RightRev ist ein eigenständiges Nebenbuch. Soluqube ist ein schlankes Tool für die SSP-Aufteilung und kein Ersatz für die Fakturierung."
+    },
+    {
+     "question": "Gibt es eine Maxio-Alternative, ohne die Fakturierung zu wechseln?",
+     "answer": "Ja. Eigenständige Nebenbücher wie RightRev oder Chargebee RevRec, falls Sie ebenfalls in Chargebee fakturieren, lassen die Fakturierung unangetastet. Auch Soluqube arbeitet neben Ihrem Fakturierungssystem: Sie bestätigen die Vertragsbedingungen, und es erzeugt die Aufteilung nach dem relativen SSP, den Zeitplan über die gesamte Laufzeit und einen gehashten Export, mit Seiten- und Textauszugsnachweis je Leistungsverpflichtung."
+    },
+    {
+     "question": "Was kostet Maxio?",
+     "answer": "Auf der Preisseite von Maxio wird ein Grow-Tarif für $599 pro Monat bei bis zu $100k monatlichem Fakturierungsvolumen aufgeführt sowie ein Scale-Tarif auf Anfrage. Erweitertes Revenue Management wird als optionales Modul genannt, und die Seite legt nicht dar, welcher Tarif was enthält. Klären Sie die Modulkosten daher direkt mit Maxio."
+    }
+   ]
+  },
+  "zuora-revpro": {
+   "slug": "zuora-revpro",
+   "title": "Zuora-RevPro-Alternativen (Zuora Revenue) 2026",
+   "description": "Alternativen zu Zuora Revenue (RevPro) für ASC 606 im Vergleich: Nebenbücher, ERP-Module und schlankere Tools, mit Grenzen und Preisen laut Anbieterseiten.",
+   "intro": "Zuora Revenue, von vielen Teams weiterhin RevPro genannt, ist ein Enterprise-Produkt zur Automatisierung der Umsatzrealisierung innerhalb der Quote-to-Cash-Suite von Zuora, mit SSP-Modellierung, Regeln für Vertragsänderungen und SOX-orientierten Kontrollen. Teams suchen Alternativen, wenn sie etwas Schlankeres wollen, bereits ein ERP mit Umsatzmodul betreiben oder Zuora Billing nicht nutzen.",
+   "whyLook": [
+    "Es ist auf Großunternehmen ausgerichtet und wird dafür verkauft; kleinere Teams benötigen die Funktionsbreite womöglich nicht.",
+    "Die Preise sind nicht veröffentlicht, die Kosten stehen also erst nach einem Vertriebsprozess fest.",
+    "Wenn Ihr ERP bereits ein Umsatzmodul enthält, ist ein zweites System unter Umständen überflüssig."
+   ],
+   "howToChoose": [
+    "Wenn Sie NetSuite oder Sage Intacct betreiben, prüfen Sie zuerst deren Umsatzmodule; sie buchen direkt in Ihr Hauptbuch.",
+    "Wenn Sie SSP-Modellierung und die Behandlung von Vertragsänderungen außerhalb des ERP benötigen, vergleichen Sie eigenständige Nebenbücher.",
+    "Fragen Sie, wie lange die Implementierung dauert und wer sie durchführt; keiner dieser Anbieter veröffentlicht Zeitpläne."
+   ],
+   "pickFits": [
+    "Ein eigenständiges Nebenbuch mit SSP-Engine und Neuaufteilung bei Vertragsänderungen, ERP-unabhängig; der funktional nächste Vergleich außerhalb einer Enterprise-Suite.",
+    "Wenn Sie NetSuite nutzen, hält ARM die Umsatzrealisierung innerhalb des ERP mit nativer Hauptbuchbuchung; für die SSP-Aufteilung ist das Revenue-Allocation-Add-on nötig.",
+    "Ein Nebenbuch mit SSP-Bibliothek und Behandlung von Vertragsänderungen, am stärksten, wenn Sie ebenfalls in Chargebee fakturieren.",
+    "Kombiniert Fakturierung und Umsatzrealisierung mit SSP-Aufteilung; geeignet für Teams, die gleichzeitig die Fakturierung ersetzen.",
+    "Für Kunden von Sage Intacct: Vertragsfakturierung und Realisierung im ERP, mit MEA-Aufteilung als Add-on.",
+    "Kein RevPro-Ersatz: ein schlankes Tool, um belastbare Aufteilungen und Zeitpläne für die geprüften Verträge zu erstellen, neben Ihrem ERP."
+   ],
+   "relatedPostLabel": "Zuora RevPro vs. Soluqube: der Kompromiss bei der Implementierung",
+   "faqs": null
+  },
+  "chargebee-revrec": {
+   "slug": "chargebee-revrec",
+   "title": "Chargebee-RevRec-Alternativen für ASC 606 (2026)",
+   "description": "Alternativen zu Chargebee RevRec im Vergleich: Fakturierung mit RevRec, eigenständige Nebenbücher und schlanke Tools, mit SSP, Grenzen und Preisen.",
+   "intro": "Chargebee RevRec, hervorgegangen aus der Übernahme von RevLock durch Chargebee im Jahr 2021, ist ein Umsatz-Nebenbuch mit SSP-Bibliothek, Behandlung von Vertragsänderungen und Hauptbuchbuchung. Der Performance-Tarif steht nur Kunden von Chargebee Billing zur Verfügung, was der häufigste Grund ist, weshalb Teams Alternativen vergleichen.",
+   "whyLook": [
+    "Der Performance-Tarif setzt Chargebee Billing voraus; Teams mit einem anderen Fakturierungssystem benötigen einen anderen Weg.",
+    "Quelldaten werden laut Produktseite in einem 24-Stunden-Zyklus synchronisiert.",
+    "Für keinen der beiden RevRec-Tarife sind Preise veröffentlicht."
+   ],
+   "howToChoose": [
+    "Gehen Sie von Ihrem Fakturierungssystem aus: Nutzer von Stripe und Maxio haben native Optionen.",
+    "Wenn die Fakturierung bleibt und Sie ein Nebenbuch benötigen, vergleichen Sie die SSP-Engine von RightRev.",
+    "Testen Sie die Behandlung von Vertragsänderungen an einem realen Upsell und einer Preisänderung während der Laufzeit, bevor Sie sich entscheiden."
+   ],
+   "pickFits": [
+    "Fakturierung und Umsatzrealisierung in einem, mit veröffentlichtem Einstiegspreis ($599/Monat bis zu $100k monatlichem Fakturierungsvolumen).",
+    "Wenn Sie über Stripe fakturieren: das Add-on zur Umsatzrealisierung bietet SSP-Konfiguration und veröffentlichte nutzungsbasierte Preise.",
+    "Ein eigenständiges Nebenbuch mit SSP-Simulator und Neuaufteilung bei Vertragsänderungen, unabhängig von Ihrem Fakturierungsanbieter.",
+    "Fakturierung, Metering und Umsatzrealisierung mit SSP-Aufteilung und KI-gestützter Extraktion von Leistungsverpflichtungen aus Verträgen.",
+    "Fakturierung zuerst, mit Umsatzrealisierung nach ASC 606 in jedem Tarif, ausgerichtet auf nutzungs- und abnahmeintensive Preismodelle.",
+    "Für die Verträge, die Sie hinsichtlich SSP verteidigen müssen: deterministische Aufteilung, Zeitplan und gehashtes Arbeitspapier, unabhängig von der Fakturierung. Keine Hauptbuchbuchung."
+   ],
+   "relatedPostLabel": "Chargebee RevRec vs. Maxio: Wie teilt jedes System den SSP auf?",
+   "faqs": null
+  },
+  "tabs": {
+   "slug": "tabs",
+   "title": "Tabs-Alternativen für Fakturierung & RevRec (Leitfaden 2026)",
+   "description": "Alternativen zu Tabs für B2B-Fakturierung und Umsatzrealisierung nach ASC 606 im Vergleich. Basierend auf Anbieterseiten, mit SSP-Unterstützung, Grenzen und Preisen.",
+   "intro": "Tabs ist eine Plattform für Fakturierung, Forderungseinzug und Umsatzrealisierung nach ASC 606 für Nutzung, Guthaben, Mindestabnahmen und hybride Preismodelle, mit einem veröffentlichten Einstiegstarif von $2,000 pro Monat. Teams vergleichen Alternativen, wenn sie auch nach IFRS 15 berichten, eine dokumentierte SSP-Aufteilung benötigen oder die Umsatzrealisierung ohne Wechsel der Fakturierung wollen.",
+   "whyLook": [
+    "Die von uns gelesenen Seiten nennen ASC 606, aber weder IFRS 15 noch SSP.",
+    "Es ist auf Fakturierung ausgerichtet; Teams, die anderswo fakturieren, wollen womöglich nur ein Nebenbuch.",
+    "Nur der Einstiegstarif ist öffentlich bepreist."
+   ],
+   "howToChoose": [
+    "Wenn Sie neben ASC 606 auch IFRS 15 oder Ind AS 115 benötigen, lassen Sie sich die Abdeckung schriftlich bestätigen.",
+    "Wenn Sie auch die Fakturierung ersetzen, vergleichen Sie die Plattformen für Fakturierung und Umsatzrealisierung direkt nebeneinander.",
+    "Wenn die Umsatzrealisierung die einzige Lücke ist, ist ein Nebenbuch oder schlankes Tool weniger einschneidend."
+   ],
+   "pickFits": [
+    "Fakturierung plus Umsatzrealisierung, die sowohl ASC 606 als auch IFRS 15 nennt, mit niedrigerem veröffentlichtem Einstiegspreis.",
+    "Nutzungsintensive Fakturierung mit SSP-basierter Aufteilung und Neuberechnung bei Vertragsänderungen, wie auf der Website angegeben.",
+    "Wenn Sie die Fakturierung lieber in Chargebee betreiben, ergänzt RevRec eine SSP-Bibliothek und Hauptbuchbuchung.",
+    "Für Unternehmen, die über Stripe fakturieren: Umsatzrealisierung mit SSP-Konfiguration und nutzungsabhängiger Bezahlung.",
+    "Wenn Sie auch Ihr Hauptbuch überdenken, bündelt Rillet die Umsatzrealisierung nach ASC 606 in einem ERP.",
+    "Deckt neben ASC 606 auch Ind AS 115 mit GST-Abgrenzung ab, nur für Aufteilung und Zeitpläne. Keine Fakturierung und kein Forderungseinzug."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "rillet": {
+   "slug": "rillet",
+   "title": "Rillet-Alternativen für ASC 606 RevRec (2026) [Preise]",
+   "description": "Rillet-Alternativen für die Umsatzrealisierung nach ASC 606: eigenständige Nebenbücher, ERP-Module, SSP-Unterstützung und Preise laut Anbieterseiten.",
+   "intro": "Rillet ist ein KI-natives ERP mit integrierter Umsatzrealisierung; wer es wählt, entscheidet sich also für ein neues Hauptbuch. Teams, die Alternativen vergleichen, wollen meist ihr bestehendes ERP behalten, benötigen eine ausformulierte SSP-Aufteilung oder berichten nach IFRS 15 oder Ind AS 115.",
+   "whyLook": [
+    "Die Umsatzrealisierung von Rillet zu nutzen bedeutet, Rillet als ERP einzuführen.",
+    "Die von uns gelesene Seite zur Umsatzrealisierung erwähnt SSP nicht.",
+    "Die Preise sind nicht veröffentlicht."
+   ],
+   "howToChoose": [
+    "Wenn Sie NetSuite oder Sage Intacct behalten, beginnen Sie mit deren Umsatzmodulen.",
+    "Wenn Sie die Umsatzrealisierung getrennt vom Hauptbuch wollen, vergleichen Sie eigenständige Nebenbücher.",
+    "Wenn Sie ohnehin das ERP ersetzen, bitten Sie jeden Anbieter, Ihren schwierigsten Vertrag mit mehreren Elementen durchzurechnen."
+   ],
+   "pickFits": [
+    "Hält die Umsatzrealisierung innerhalb eines etablierten ERP mit nativer Hauptbuchbuchung; SSP-Aufteilung über das Revenue-Allocation-Add-on.",
+    "Für Nutzer von Sage Intacct: Vertragsfakturierung und Realisierung im ERP, mit Aufteilung bei mehreren Elementen als Add-on.",
+    "Ein ERP-unabhängiges Nebenbuch mit SSP-Engine, wenn Sie Ihr aktuelles Hauptbuch behalten möchten.",
+    "Wenn die eigentliche Lücke Fakturierung plus Zeitpläne nach ASC 606 ist und nicht das gesamte ERP.",
+    "Fakturierung und Umsatzrealisierung mit bidirektionaler Synchronisierung zu QuickBooks, NetSuite, Sage, Xero und Zoho Books.",
+    "Behält Ihr ERP bei und ergänzt eine belastbare Aufteilung und einen Zeitplan für geprüfte Verträge. Den Export buchen Sie selbst."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "netsuite-arm": {
+   "slug": "netsuite-arm",
+   "title": "Die besten NetSuite-ARM-Alternativen 2026 [RevRec]",
+   "description": "Die besten NetSuite-ARM-Alternativen im Vergleich: Eignung für ASC 606, SSP-Aufteilung und Preise. Saubere Arbeitspapiere mit Zeitplan-Abstimmung auf den Cent genau.",
+   "intro": "NetSuite Advanced Revenue Management (ARM) hält die Umsatzrealisierung innerhalb von NetSuite, wobei die Aufteilung nach dem Fair Value über ein separates Revenue-Allocation-Add-on erfolgt. Teams suchen Alternativen, wenn sie die Konfiguration aufwendig finden, für die Migration Partnerunterstützung benötigen oder SSP-Analysen und die Behandlung von Vertragsänderungen außerhalb des ERP wünschen.",
+   "whyLook": [
+    "Die SSP-Aufteilung erfordert das Revenue-Allocation-Add-on zusätzlich zu ARM Essentials.",
+    "Laut Oracle-Dokumentation erfordert der Wechsel von der klassischen Umsatzrealisierung NetSuite Professional Services oder einen qualifizierten Partner.",
+    "Manche Änderungsmuster (prospektive Zusammenführungen) lassen sich nicht rückgängig machen, sobald Umsatz realisiert wurde."
+   ],
+   "howToChoose": [
+    "Die meisten Alternativen hier buchen weiterhin nach NetSuite; klären Sie, wie und wie oft Buchungssätze zurückfließen.",
+    "Wenn das Problem der SSP-Nachweis ist und nicht die Realisierungsregeln, genügt möglicherweise ein schlankeres Tool.",
+    "Verlangen Sie einen Parallellauf über ein Quartal an Verträgen, bevor Sie wechseln."
+   ],
+   "pickFits": [
+    "Ein ERP-unabhängiges Nebenbuch mit SSP-Simulator und Neuaufteilung bei Vertragsänderungen, das Buchungssätze in Ihr Hauptbuch bucht.",
+    "Enterprise-Automatisierung der Umsatzrealisierung mit SSP-Modellierung und NetSuite-Konnektor, für größere Teams.",
+    "Nebenbuch mit nativer NetSuite-Integration und SSP-Bibliothek; passt am besten, wenn Sie in Chargebee fakturieren.",
+    "Fakturierung plus Umsatzrealisierung mit bidirektionaler NetSuite-Synchronisierung und SSP-basierter Aufteilung.",
+    "Nur wenn Sie bereit sind, NetSuite selbst durch ein ERP mit integrierter Umsatzrealisierung zu ersetzen.",
+    "Läuft neben NetSuite für Verträge, die Sie verteidigen müssen: Aufteilung, Zeitplan und gehashtes Arbeitspapier, exportiert als CSV, die Sie prüfen und buchen."
+   ],
+   "relatedPostLabel": "Maxio vs. NetSuite ARM: Welches System bewältigt die SSP-Aufteilung?",
+   "faqs": [
+    {
+     "question": "Was ist die beste NetSuite-ARM-Alternative für ASC 606?",
+     "answer": "Für eine eigenständige Umsatzrealisierung, ohne das NetSuite-Hauptbuch zu ersetzen, bieten RightRev und Zuora Revenue dedizierte Nebenbücher, die die Aufteilung nach dem relativen SSP berechnen und Buchungssätze zurück nach NetSuite buchen. Für Teams, die einen schlanken Rechner für komplexe Verträge mit mehreren Elementen suchen, liefert Soluqube eigenständige Arbeitspapiere mit SSP-Zeitplänen."
+    },
+    {
+     "question": "Warum suchen Finanzteams nach Alternativen zu NetSuite ARM?",
+     "answer": "Finanzteams prüfen Alternativen zu NetSuite ARM in der Regel wegen der Komplexität und der Kosten des Revenue-Allocation-Add-ons, des hohen Implementierungsaufwands und starrer Regeln für Vertragsänderungen, bei denen sich prospektive Zusammenführungen nicht ohne Weiteres rückgängig machen lassen, sobald die Umsatzrealisierung begonnen hat."
+    }
+   ]
+  },
+  "sage-intacct-revenue": {
+   "slug": "sage-intacct-revenue",
+   "title": "Sage-Intacct-RevRec-Alternativen (2026) [ASC 606 & Hybrid]",
+   "description": "Die besten Alternativen zu Sage Intacct für ASC 606 und hybride Verträge: eigenständige Nebenbücher, Relative-SSP-Aufteilung und Excel-Export-Arbeitspapiere.",
+   "intro": "Die Contracts-Anwendung von Sage Intacct deckt Abonnement-Fakturierung und Umsatzrealisierung innerhalb des ERP ab, wobei die Aufteilung bei mehreren Elementen über ein Add-on für erweiterte Umsatzrealisierung (Advanced Revenue Recognition) verfügbar ist. Teams vergleichen Alternativen, wenn sie mehr SSP-Werkzeuge benötigen, komplexe Vertragsänderungen abwickeln oder ein Nebenbuch wünschen, das nicht an das ERP gebunden ist.",
+   "whyLook": [
+    "Die Aufteilung auf mehrere Elemente erfordert ein separates Add-on.",
+    "Die von uns gelesene Dokumentation beschreibt die MEA-Aufteilung und keine Werkzeuge für die SSP-Analyse.",
+    "Die Preise sind nicht veröffentlicht."
+   ],
+   "howToChoose": [
+    "Bevorzugen Sie Tools mit nativer Sage-Intacct-Integration, damit Buchungssätze sauber gebucht werden.",
+    "Wenn die Fakturierung in Sage Intacct gut funktioniert, ergänzen Sie ein Nebenbuch, statt die Fakturierung zu ersetzen.",
+    "Prüfen Sie, wie jede Option einen Upsell während der Laufzeit an einem realen Vertrag handhabt."
+   ],
+   "pickFits": [
+    "Native Sage-Intacct-Integration, SSP-Bibliothek und Behandlung von Vertragsänderungen; am stärksten mit Chargebee Billing.",
+    "Fakturierung und Umsatzrealisierung mit Sage-Intacct-Integration und veröffentlichtem Einstiegspreis.",
+    "API-first-Nebenbuch mit SSP-Simulator; lassen Sie sich die Sage-Intacct-Anbindung vom Anbieter bestätigen.",
+    "Bidirektionale Synchronisierung mit Sage, SSP-basierte Aufteilung und Neuberechnung bei Vertragsänderungen.",
+    "Nur wenn Sie erwägen, Sage Intacct als ERP zu ersetzen.",
+    "Ergänzt eine dokumentierte Relative-SSP-Aufteilung und Zeitpläne für die geprüften Verträge; den Export buchen Sie selbst nach Sage Intacct."
+   ],
+   "relatedPostLabel": null,
+   "faqs": [
+    {
+     "question": "Kann Sage Intacct ASC 606 und IFRS 15 für hybride Abonnementverträge abbilden?",
+     "answer": "Sage Intacct Contracts unterstützt Zeitpläne nach ASC 606 und IFRS 15 für Standardabonnements, doch komplexe Vereinbarungen mit mehreren Elementen, hybrider Nutzung, Dienstleistungen oder individuellen Rabattabgrenzungen erfordern in der Regel das optionale Modul Advanced Revenue Management oder ein dediziertes Nebenbuch neben Sage Intacct."
+    },
+    {
+     "question": "Welche Einschränkungen hat die Umsatzrealisierung in Sage Intacct?",
+     "answer": "Die native Umsatzrealisierung von Sage Intacct ist eng an das Contracts-Modul und das Hauptbuch gekoppelt. Die Aufteilung des Einzelveräußerungspreises (SSP) auf Bündel mit mehreren Elementen erfordert Add-ons, die Preise gibt es nur auf Anfrage, und Vertragsänderungen während der Laufzeit erfordern häufig eine manuelle Neuberechnung oder einen doppelten Abstimmungsaufwand."
+    },
+    {
+     "question": "Kann man eine eigenständige RevRec-Engine mit Sage Intacct nutzen, ohne die Fakturierung zu ersetzen?",
+     "answer": "Ja. Eigenständige Umsatz-Nebenbücher oder speziell entwickelte Engines wie Soluqube arbeiten neben Sage Intacct. Soluqube übernimmt Vertragsbedingungen, berechnet Aufteilungen nach dem relativen SSP und Amortisationszeitpläne auf den Cent genau und liefert prüfungsfähige CSV-Exporte, die für den Import von Hauptbuch-Buchungssätzen in Sage Intacct formatiert sind."
+    }
+   ]
+  },
+  "zenskar": {
+   "slug": "zenskar",
+   "title": "Zenskar-Alternativen für Fakturierung und RevRec (2026)",
+   "description": "Alternativen zu Zenskar für nutzungsbasierte Fakturierung und Umsatzrealisierung nach ASC 606 / IFRS 15: Eignung, SSP-Abdeckung, Grenzen und veröffentlichte Preise.",
+   "intro": "Zenskar ist eine KI-native Plattform für Fakturierung, Metering und Umsatzrealisierung mit SSP-basierter Aufteilung und Neuberechnung bei Vertragsänderungen. Alle Tarife sind individuell bepreist, und die Umsatzrealisierung gehört zur Fakturierungsebene, weshalb Teams es häufig mit Plattformen mit veröffentlichten Preisen oder mit eigenständigen Nebenbüchern vergleichen.",
+   "whyLook": [
+    "Alle Tarife sind individuell bepreist.",
+    "Die Umsatzrealisierung ist an die Einführung der Fakturierungs- und Metering-Ebene gebunden.",
+    "SAP und Oracle werden auf den von uns gelesenen Seiten nicht unter den Integrationen aufgeführt."
+   ],
+   "howToChoose": [
+    "Wenn Sie veröffentlichte Preise benötigen, nennen Maxio, Tabs und Stripe ihre Preise.",
+    "Wenn die Fakturierung bleibt, wo sie ist, vergleichen Sie Nebenbücher statt Fakturierungsplattformen.",
+    "Testen Sie die KI-Extraktion von Leistungsverpflichtungen daran, was Ihr Abschlussprüfer als Nachweis akzeptieren würde."
+   ],
+   "pickFits": [
+    "Fakturierung von Nutzung, Guthaben und Mindestabnahmen mit Umsatzrealisierung nach ASC 606 und veröffentlichtem Einstiegspreis.",
+    "Fakturierung plus Umsatzrealisierung mit Metering und einem veröffentlichten Grow-Tarif.",
+    "Wenn Sie Chargebee Billing bevorzugen, ergänzt RevRec eine SSP-Bibliothek, Behandlung von Vertragsänderungen und Hauptbuchbuchung.",
+    "Für Unternehmen, die über Stripe fakturieren: Umsatzrealisierung, bepreist als Prozentsatz des Volumens, mit SSP-Konfiguration.",
+    "Ein eigenständiges Nebenbuch mit SSP-Engine, wenn Sie Ihr Fakturierungssystem behalten möchten.",
+    "Keine Fakturierung und keine KI-Extraktion: Sie bestätigen die Leistungsverpflichtungen und erhalten eine deterministische Aufteilung, einen Zeitplan und ein gehashtes Arbeitspapier. Deckt Ind AS 115 ab."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "trullion": {
+   "slug": "trullion",
+   "title": "Trullion-Alternativen für die Umsatzrealisierung",
+   "description": "Alternativen zu Trullion für die Umsatzrealisierung nach ASC 606 / IFRS 15: Nebenbücher, Enterprise-Suiten und schlankere Tools, mit Grenzen und Preisen.",
+   "intro": "Trullion ist eine KI-Plattform für Rechnungslegung und Prüfung, die Vertragsbedingungen extrahiert und Workflows für Umsatzrealisierung und Leasing ausführt, ausgerichtet sowohl auf Rechnungswesen-Teams in Unternehmen als auch auf Abschlussprüfer. Teams vergleichen Alternativen, wenn sie SSP-Werkzeuge, die Behandlung von Vertragsänderungen oder nutzungsbasierte Modelle benötigen, die auf den Umsatzseiten nicht erwähnt werden.",
+   "whyLook": [
+    "Die von uns gelesenen Seiten erwähnen weder SSP noch Vertragsänderungen oder nutzungsbasierte Fakturierung.",
+    "Auf den von uns gelesenen Seiten wird keine konkrete ERP-Integration genannt.",
+    "Die Preise sind nicht veröffentlicht."
+   ],
+   "howToChoose": [
+    "Wenn Aufteilung und SSP im Mittelpunkt der Prüfung stehen, bevorzugen Sie Tools, die den SSP ausdrücklich dokumentieren.",
+    "Wenn Sie auch Leasingbilanzierung benötigen, klären Sie, ob eine einzelne Plattform wichtiger ist als Tiefe bei der Umsatzrealisierung.",
+    "Fragen Sie jeden Anbieter, wie KI-extrahierte Bedingungen geprüft werden, bevor sie Zahlen bestimmen."
+   ],
+   "pickFits": [
+    "SSP-Engine und Simulator plus Neuaufteilung bei Vertragsänderungen, für Teams, deren Prüfungsfragen sich um die Aufteilung drehen.",
+    "Enterprise-Automatisierung der Umsatzrealisierung mit SSP-Modellierung und Regeln für Vertragsänderungen.",
+    "Nebenbuch mit SSP-Bibliothek, Behandlung von Vertragsänderungen und benannten ERP-Integrationen.",
+    "Für hohe Transaktionsvolumina statt Vertragsprüfung; veröffentlichte Preise. Leapfin schließt sich Airwallex an.",
+    "Extrahiert ebenfalls Leistungsverpflichtungen aus Verträgen mit KI und ergänzt Fakturierung, SSP-Aufteilung und Neuberechnung bei Vertragsänderungen.",
+    "Klauselnachweis (Seite, wörtlicher Textauszug und Zeilenmarkierung) je Leistungsverpflichtung wie bei einem Prüfungstool, die Zahlen stammen jedoch aus einer deterministischen Integer-Engine, die Sie erneut ausführen können. Keine Leasingbilanzierung."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "rightrev": {
+   "slug": "rightrev",
+   "title": "RightRev-Alternativen für ASC 606 (2026)",
+   "description": "Alternativen zu RightRev für die Umsatzrealisierung nach ASC 606 / IFRS 15: Enterprise-Suiten, ERP-Module und schlankere Tools, mit SSP-Unterstützung und Preisen.",
+   "intro": "RightRev ist ein Nebenbuch für die Umsatzrealisierung mit SSP-Engine und Simulator, Neuaufteilung bei Vertragsänderungen und einer Salesforce-nativen Edition. Teams vergleichen Alternativen, wenn sie die Umsatzrealisierung im ERP wünschen, nicht auf Salesforce setzen oder veröffentlichte Preise benötigen.",
+   "whyLook": [
+    "Die Preise sind nicht veröffentlicht.",
+    "Die Salesforce-Edition setzt eine Salesforce-Organisation voraus.",
+    "Auf den Seiten wird kein konkretes ERP genannt; die Hauptbuchanbindung erfolgt über eine API."
+   ],
+   "howToChoose": [
+    "Wenn Sie NetSuite nutzen und ein einziges System wollen, vergleichen Sie ARM mit dem Revenue-Allocation-Add-on.",
+    "Für Enterprise-Maßstab und Suite-Breite vergleichen Sie Zuora Revenue.",
+    "Bitten Sie jeden Anbieter, Ihre SSP-Studie und eine Vertragsänderung mit realen Daten durchzurechnen."
+   ],
+   "pickFits": [
+    "Enterprise-Pendant mit SSP-Modellierung, Regeln für Vertragsänderungen und Konnektoren für NetSuite, Workday, SAP und Salesforce.",
+    "Nebenbuch mit SSP-Bibliothek und benannten ERP-Integrationen; am stärksten mit Chargebee Billing.",
+    "Hält die Umsatzrealisierung in NetSuite mit nativer Hauptbuchbuchung; SSP-Methoden über das Revenue-Allocation-Add-on.",
+    "Fakturierung plus Umsatzrealisierung mit SSP-Aufteilung und Neuberechnung bei Vertragsänderungen, wenn Sie auch die Fakturierung ersetzen.",
+    "Wenn die Vertragsprüfung auf Prüferseite ebenso wichtig ist wie das Nebenbuch und auch die Leasingbilanzierung im Umfang liegt.",
+    "Eine schlankere Option mit veröffentlichtem Preis, um Aufteilungen für bestimmte Verträge zu verteidigen, die auch Ind AS 115 abdeckt. Keine CRM-Integration und noch keine Bilanzierung von Vertragsänderungen."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  }
+ },
+ "vendors": {
+  "maxio": {
+   "whatItIs": "Plattform für Fakturierung und Finanzberichterstattung für Abonnementgeschäfte, mit integrierter Umsatzrealisierung.",
+   "whoFor": "B2B-SaaS-, KI- und Abonnementunternehmen (Maxio entstand aus dem Zusammenschluss von Chargify und SaaSOptics).",
+   "strengths": [
+    "Gibt an, ASC 606 und IFRS 15 zu entsprechen, mit mehreren Umsatzbüchern, Preismodellen und Leistungsverpflichtungen.",
+    "Vertragsanpassungen bei Upgrades, Erstattungen und sonstigen Änderungen; die FAQ behandeln SSP und verhandelte Transaktionspreise, Abgrenzungen und Neuaufteilung.",
+    "Ermöglicht den Vergleich früherer Realisierungsstände mit aktualisierten Zeitplänen, ohne die ursprünglichen Transaktionsdaten zu ändern; Waterfall- und Roll-forward-Berichte.",
+    "Nutzungsbasierte Fakturierung (Metering, Rating, Mindestabnahmen) und Integrationen mit NetSuite, Sage Intacct, QuickBooks, Xero, Salesforce und HubSpot."
+   ],
+   "limits": [
+    "Fakturierung zuerst: Die Umsatzrealisierung läuft neben Fakturierung und Zahlungen mit und ist kein eigenständiges Nebenbuch.",
+    "Die Preisseite nennt „Advanced revenue management“ als optionales Modul; welcher Tarif was enthält, wird nicht dargelegt.",
+    "SSP wird nur in den FAQ erwähnt; die Aufteilungsmethode wird auf der Seite nicht beschrieben."
+   ],
+   "pricing": "Grow-Tarif $599/Monat für bis zu $100k monatliches Fakturierungsvolumen; Scale-Tarif auf Anfrage (maxio.com/pricing).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Erwähnt (FAQ)"
+  },
+  "zuora": {
+   "whatItIs": "Enterprise-Lösung für Umsatzrealisierung und Automatisierung innerhalb der Quote-to-Cash-Suite von Zuora (das Produkt, das viele Finanzteams weiterhin RevPro nennen).",
+   "whoFor": "Finanz- und Umsatzbuchhaltungsteams in Großunternehmen; zu den genannten Kunden zählen Salesforce, Okta, Zoom und Elastic.",
+   "strengths": [
+    "Gibt an, alle fünf Schritte von ASC 606 und IFRS 15 zu automatisieren, mit Regeln für Preise, Laufzeitänderungen und Vertragsänderungen.",
+    "SSP wird aus historischen Daten berechnet, mit KI-gestützter SSP-Modellierung.",
+    "SOX-orientierte Kontrollen, rollenbasierte Sicherheit, Prüfpfade und über 60 vorkonfigurierte Berichte.",
+    "Verarbeitet Abonnements, Einmalgebühren und Nutzung; Konnektoren für NetSuite, Workday, SAP und Salesforce."
+   ],
+   "limits": [
+    "Die Preise sind nicht veröffentlicht; nur über Demo oder Kontakt zum Vertrieb.",
+    "Auf Großunternehmen ausgerichtet und als Teil einer größeren Suite verkauft (Billing, Revenue, Collect und mehr)."
+   ],
+   "pricing": "Nicht veröffentlicht.",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Ja (SSP-Modellierung)"
+  },
+  "chargebee": {
+   "whatItIs": "Nebenbuch für die Umsatzrealisierung, das Zeitpläne, Aufteilung, Abstimmung und Buchungen automatisiert und zusammen mit Chargebee Billing verkauft wird.",
+   "whoFor": "SaaS- und KI-Unternehmen mit hybriden, nutzungsbasierten, guthabenbasierten oder individuellen Vertragspreismodellen. Chargebee RevRec stammt aus der Übernahme von RevLock durch Chargebee im Jahr 2021.",
+   "strengths": [
+    "Teilt den Transaktionspreis mit einer konfigurierbaren, an die Preisliste gebundenen SSP-Bibliothek auf Leistungsverpflichtungen auf, nach dem Fünf-Schritte-Modell von ASC 606 / IFRS 15.",
+    "Automatisiert die Behandlung von Upsells, Co-Terms, Gutschriften, vorzeitigen Verlängerungen und sonstigen Vertragsänderungen sowie mehrjährigen Ramp-Verträgen.",
+    "Periodensperren, Roll-forwards, Waterfalls für passive Rechnungsabgrenzungen, Prüfpfade und zusammengefasste Buchungssätze, die ins Hauptbuch gebucht werden.",
+    "Native Integrationen mit NetSuite, Sage Intacct, QuickBooks, Xero, Chargebee und Stripe sowie eine REST-API."
+   ],
+   "limits": [
+    "Der RevRec-Performance-Tarif steht nur Kunden von Chargebee Billing zur Verfügung.",
+    "Die Produktseite beschreibt einen 24-Stunden-Synchronisierungszyklus für Quelldaten.",
+    "Die Preise sind nicht veröffentlicht."
+   ],
+   "pricing": "Nicht veröffentlicht (RevRec Performance: Preise anfragen; RevRec Enterprise: auf Anfrage).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Ja (SSP-Bibliothek)"
+  },
+  "tabs": {
+   "whatItIs": "Plattform für Fakturierung, Forderungseinzug und Umsatzrealisierung nach ASC 606, die Verträge und Nutzung in Rechnungen und Realisierungspläne umsetzt.",
+   "whoFor": "B2B-Teams in Finanzen, Rechnungswesen und RevOps; die Tarife richten sich nach Umsatzband von unter $5M bis $50M+.",
+   "strengths": [
+    "Fakturierung, Forderungseinzug und Umsatzrealisierung für viele Preismodelle in einem Produkt.",
+    "Unterstützt Nutzung, Guthaben, Mindestabnahmen, Mindestbeträge, Mehrverbrauch, Ramps und Hybridmodelle, mit Nutzungs-Metering.",
+    "Erzeugt Rechnungen und Realisierungspläne aus Verträgen und Nutzung; Umsatzrealisierung nach ASC 606 in jedem Tarif.",
+    "Zu den genannten Integrationen zählen Sage Intacct, QuickBooks, HubSpot und DocuSign."
+   ],
+   "limits": [
+    "Fakturierung zuerst: Die Umsatzrealisierung ist ein Modul.",
+    "Die von uns gelesenen Seiten nennen ASC 606, aber weder IFRS 15 noch SSP und beschreiben die Bilanzierung von Vertragsänderungen nicht ausdrücklich.",
+    "Nur der Einstiegstarif hat einen veröffentlichten Preis."
+   ],
+   "pricing": "Launch-Tarif $2,000/Monat (bis zu $5M Jahresumsatz, 100 aktive Verträge); höhere Tarife individuell (tabs.com/pricing).",
+   "standards": "ASC 606",
+   "ssp": "Nicht erwähnt"
+  },
+  "netsuite": {
+   "whatItIs": "Regelbasiertes Modul für die Umsatzrealisierung innerhalb des NetSuite-ERP, mit Aufteilung nach dem Fair Value über ein Revenue-Allocation-Add-on.",
+   "whoFor": "Unternehmen, die NetSuite bereits als ERP einsetzen.",
+   "strengths": [
+    "Die Oracle-Dokumentation nennt die Unterstützung von ASC 606 und IFRS 15, mit Umstellungswerkzeugen.",
+    "Revenue Allocation unterstützt Fair-Value-Methoden, darunter Einzelveräußerungspreis, Fair-Value-Preislisten, Bereichsprüfung und Formeln für Vereinbarungen mit mehreren Elementen.",
+    "Native Umsatzvereinbarungen, Umsatzelemente je Leistungsverpflichtung, Realisierungsregeln und -pläne, mit Buchungssätzen, die direkt ins NetSuite-Hauptbuch gebucht werden.",
+    "Behandlung von Änderungsaufträgen, einschließlich prospektiver Zusammenführung, unter „Combination and Modification of Performance Obligations“."
+   ],
+   "limits": [
+    "Ein Modul von NetSuite: Es setzt das NetSuite-ERP voraus, und Revenue Allocation ist ein separates Add-on zu ARM Essentials.",
+    "Laut Oracle-Dokumentation erfordert der Wechsel von der klassischen Umsatzrealisierung NetSuite Professional Services oder einen qualifizierten Partner.",
+    "Prospektive Zusammenführungen lassen sich nicht rückgängig machen, sobald Umsatz realisiert oder umgegliedert wurde, und werden für manche Plantypen nicht unterstützt."
+   ],
+   "pricing": "Auf den zugänglichen Seiten nicht veröffentlicht (netsuite.com blockierte automatisierte Zugriffe; die Angaben hier stammen aus der NetSuite-Dokumentation von Oracle).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Ja (Fair-Value-Methoden, Add-on)"
+  },
+  "rillet": {
+   "whatItIs": "KI-natives ERP (Hauptbuch, Abschluss, Debitoren/Kreditoren, Konsolidierung) mit integriertem Modul für erweiterte Umsatzrealisierung.",
+   "whoFor": "Mittelstand, Großunternehmen und börsennotierte Unternehmen, mit eigenen Seiten für SaaS, Startups, Private Equity und Wirtschaftsprüfungs- und Beratungsgesellschaften.",
+   "strengths": [
+    "Gibt an, ASC 606 direkt aus Ihren Verträgen anzuwenden.",
+    "Automatisiert vertriebsgesteuerte, produktgesteuerte und nutzungsbasierte Modelle, einschließlich Preisgestaltung nach Nutzung und Meilensteinen.",
+    "Vertragsänderungen fließen in Zeitpläne und das Hauptbuch ein.",
+    "Zeitpläne für passive Rechnungsabgrenzungen, Umsatz-Waterfall, mehrere Gesellschaften und Währungen; Integrationen mit Salesforce, HubSpot, Stripe, Avalara und weiteren."
+   ],
+   "limits": [
+    "Die Nutzung bedeutet, Rillet als ERP und Hauptbuch einzuführen; NetSuite, Sage Intacct und QuickBooks erscheinen als Vergleichsseiten, nicht als Integrationen.",
+    "Die von uns gelesene Seite zur Umsatzrealisierung erwähnt SSP nicht; IFRS 15 steht im Seitentitel, aber nicht im Funktionstext.",
+    "Die Preise sind nicht veröffentlicht."
+   ],
+   "pricing": "Nicht veröffentlicht (Kontakt zum Vertrieb).",
+   "standards": "ASC 606 (IFRS 15 im Seitentitel)",
+   "ssp": "Nicht erwähnt"
+  },
+  "sage": {
+   "whatItIs": "Anwendung für Vertragsverwaltung, Fakturierung und Umsatzrealisierung innerhalb des Cloud-ERP Sage Intacct.",
+   "whoFor": "Abonnementunternehmen, die Sage Intacct einsetzen.",
+   "strengths": [
+    "Die Dokumentation von Sage Intacct nennt die vollständige Unterstützung von ASC 606 und IFRS 15.",
+    "Lineare, tagessatzbasierte, mengenbasierte und individuelle Realisierungspläne, getrennt von der Fakturierung geführt, mit Multi-Book-Buchhaltung.",
+    "Das Add-on Contract Advanced Revenue Recognition unterstützt die Aufteilung bei Vereinbarungen mit mehreren Elementen (MEA) mit Prüfpfad.",
+    "Nutzungsfakturierung (Staffeln, Mindestgebühren) und Vertragsfakturierung für Add-ons, Änderungsaufträge, Kündigungen und Verlängerungen."
+   ],
+   "limits": [
+    "Ein Modul von Sage Intacct: Es setzt Sage Intacct als ERP voraus.",
+    "Die MEA-Aufteilung erfordert das separate Add-on Advanced Revenue Recognition; der Standardtarif teilt nicht auf.",
+    "Die von uns gelesene Dokumentation verwendet „MEA allocation“ statt des Begriffs Einzelveräußerungspreis."
+   ],
+   "pricing": "Auf den zugänglichen Seiten nicht veröffentlicht (sage.com blockierte automatisierte Zugriffe; die Hilfedokumentation verweist auf den Ansprechpartner bei Sage Intacct).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "MEA-Aufteilung (Add-on)"
+  },
+  "zenskar": {
+   "whatItIs": "KI-native Plattform für Fakturierung, Metering und Umsatzrealisierung, die Verträge in Rechnungen und Realisierungspläne umsetzt.",
+   "whoFor": "Finanzteams in schnell wachsenden Unternehmen; die Tarife reichen von kleinen Teams bis zu Großunternehmen.",
+   "strengths": [
+    "Gibt volle Konformität mit ASC 606 und IFRS 15 an sowie KI-Extraktion von Leistungsverpflichtungen aus Verträgen.",
+    "SSP-basierte Umsatzaufteilung, einschließlich SSP für Bündel.",
+    "Berechnet den Umsatz (zukünftig und rückwirkend) bei Vertragsänderungen neu, mit manueller Überschreibung.",
+    "Nutzungs-Metering über APIs, CSV oder Data Warehouses; bidirektionale Integrationen mit QuickBooks, NetSuite, Sage, Xero und Zoho Books."
+   ],
+   "limits": [
+    "Alle Tarife sind individuell bepreist.",
+    "Die Umsatzrealisierung gehört zur Fakturierungs- und Metering-Ebene und eignet sich daher für Teams, die bereit sind, auch die Fakturierung zu wechseln.",
+    "SAP und Oracle werden auf den von uns gelesenen Seiten nicht unter den Integrationen aufgeführt."
+   ],
+   "pricing": "Nicht veröffentlicht (Starter, Standard und Enterprise sind alle individuell bepreist).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Ja"
+  },
+  "trullion": {
+   "whatItIs": "KI-Plattform für Rechnungslegung und Prüfung, die Vertragsbedingungen extrahiert und Workflows für Umsatzrealisierung und Leasing ausführt.",
+   "whoFor": "Rechnungswesen-Teams in Unternehmen (CFOs, Controller), externe und interne Prüfer sowie Beratungsgesellschaften.",
+   "strengths": [
+    "Positioniert sich für die Konformität mit ASC 606 / IFRS 15.",
+    "Extrahiert Verlängerungsdaten, Verpflichtungen und umsatzrelevante Klauseln aus hochgeladenen Verträgen, mit Prüfpfad zurück zum Quelldokument.",
+    "Einrichtung von Leistungsverpflichtungen, Umsatz-Waterfalls und Angaben; Buchungssätze werden in Ihr ERP exportiert.",
+    "Deckt außerdem Leasingbilanzierung und Prüfungsabläufe wie aussagebezogene Einzelfallprüfungen ab."
+   ],
+   "limits": [
+    "Die von uns gelesenen Seiten nennen keine konkrete ERP-Integration.",
+    "SSP, Vertragsänderungen und nutzungsbasierte Fakturierung werden auf den von uns gelesenen Seiten nicht erwähnt.",
+    "Die Preise sind nicht veröffentlicht."
+   ],
+   "pricing": "Nicht veröffentlicht (Produkttour auf Anfrage).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Nicht erwähnt"
+  },
+  "rightrev": {
+   "whatItIs": "Nebenbuch für die Umsatzrealisierung, das neben dem ERP läuft, mit SSP-Engine und einer Salesforce-nativen Edition.",
+   "whoFor": "Finanz- und Rechnungswesen-Teams mit Abonnement- und Verbrauchsmodellen; zu den genannten Kunden zählen Epicor, Docebo und Drata.",
+   "strengths": [
+    "Gibt Konformität mit ASC 606 / IFRS 15 an.",
+    "SSP-Engine und Simulator, um SSP- und Aufteilungsergebnisse vor der Einführung von Änderungen zu modellieren und zu validieren.",
+    "Änderungen, Kündigungen, Verlängerungen und Erweiterungen werden erkannt und neu aufgeteilt.",
+    "Abonnements, Nutzung, Guthaben, Meilensteine und Mindestabnahmen; Buchungssätze werden mit Nachvollziehbarkeit ins Hauptbuch gebucht."
+   ],
+   "limits": [
+    "Beschreibt sich als ERP-unabhängig und API-first; auf den von uns gelesenen Seiten wird kein konkretes ERP genannt.",
+    "Die Salesforce-Edition basiert auf Salesforce und setzt eine Salesforce-Organisation voraus.",
+    "Die Preise sind nicht veröffentlicht."
+   ],
+   "pricing": "Nicht veröffentlicht (Demo-Anfrage).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Ja (SSP-Engine)"
+  },
+  "leapfin": {
+   "whatItIs": "Finanzdatenplattform für hohe Volumina, die Transaktionsdaten in Buchungssätze, Umsatzrealisierung und Abstimmungen umsetzt.",
+   "whoFor": "Unternehmen mit hohem Transaktionsvolumen wie E-Commerce, Marktplätze, Abonnements und Software. Leapfin gab im Juni 2026 bekannt, dass es sich Airwallex anschließt.",
+   "strengths": [
+    "Bündelt viele Datenquellen in einem hauptbuchfertigen Datensatz.",
+    "Automatisiert Buchungssätze, Umsatzrealisierung, Abstimmung und Abschluss mit Nachvollziehbarkeit auf Transaktionsebene.",
+    "Unterstützung nutzungsbasierter Fakturierung und ein NetSuite-Feed."
+   ],
+   "limits": [
+    "Ausgelegt auf Transaktionsvolumen statt auf verhandelte Vertragsbedingungen.",
+    "IFRS 15, SSP und Vertragsänderungen werden auf den von uns gelesenen Seiten nicht erwähnt."
+   ],
+   "pricing": "Veröffentlicht: Standard ab $500/Monat, Premium ab $1,000/Monat, Enterprise individuell (leapfin.com/pricing; die FAQ der Seite nennt ebenfalls eine Basis von $1,000/Monat).",
+   "standards": "ASC 606",
+   "ssp": "Nicht erwähnt"
+  },
+  "stripe": {
+   "whatItIs": "Umsatz-Nebenbuch im Stripe Dashboard, das Stripe-Transaktionen und Fakturierungsbedingungen in Buchungssätze und Berichte umsetzt.",
+   "whoFor": "Unternehmen, die über Stripe fakturieren.",
+   "strengths": [
+    "Gibt Ergebnisse im Einklang mit IFRS 15 und ASC 606 an.",
+    "Konfigurierbare SSP für gebündelte Produkte und über 15 Preismodelle, einschließlich nutzungsbasierter und hybrider.",
+    "Verarbeitet Upgrades, Downgrades, anteilige Berechnungen, Erstattungen und Streitfälle; Waterfall-, Summen- und Saldenlisten- sowie Forderungsaltersberichte.",
+    "Importiert Nicht-Stripe-Transaktionen per CSV."
+   ],
+   "limits": [
+    "Setzt ein Stripe-Konto voraus und wird über das Stripe Dashboard genutzt; die Verfügbarkeit variiert je nach Land.",
+    "Daten außerhalb von Stripe kommen als CSV mit Leistungszeitraum-Daten herein, nicht aus Vertragsdokumenten.",
+    "Exportiert über Hauptbuch-Mapping in Buchhaltungssysteme; auf den von uns gelesenen Seiten wird kein ERP-Konnektor genannt."
+   ],
+   "pricing": "Veröffentlicht: 0.25% des Volumens bzw. 0.2% oberhalb von $100,000 pro Monat, mit 30 Tagen kostenloser Testphase (stripe.com; das Volumen schließt importierte Transaktionen ein).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Ja"
+  },
+  "soluqube": {
+   "whatItIs": "Vertragsbasierte Engine für Aufteilung und Zeitpläne nach ASC 606 und Ind AS 115, die ein Nachweis-Arbeitspapier für die Verträge erstellt, die Sie verteidigen müssen.",
+   "whoFor": "Controller, Umsatzbuchhalter sowie Kanzleien von Wirtschaftsprüfern (CPA) oder Fractional-CFOs, die SSP-Aufteilungen bei verhandelten B2B-Verträgen gegenüber externen Abschlussprüfern verteidigen, in den USA und Indien.",
+   "strengths": [
+    "Relative-SSP-Aufteilung und Zeitplan über die gesamte Laufzeit in Integer-Arithmetik (Skalierung 10^6, auf Cent gerundet), wobei die letzte Periode den Rest aufnimmt, sodass der Zeitplan mit der Aufteilung übereinstimmt und die passive Rechnungsabgrenzung bei $0.00 endet.",
+    "Klauselnachweis je Leistungsverpflichtung (Seite, wörtlicher Textauszug und eine Markierung der zitierten Zeile, bei PDFs mit Textebene) und ein SHA-256-gehashter Export: gleiche Eingabe, gleiche Ausgabe, vor dem Abschlussprüfer erneut ausführbar.",
+    "Behandlung nach Ind AS 115 mit 18% GST, der bei INR-Verträgen aus dem Transaktionspreis herausgehalten wird.",
+    "Kostenloses Prüfungsabwehr-Arbeitspapier für 3 Verträge zum Einstieg; kein Implementierungsprojekt."
+   ],
+   "limits": [
+    "Produkt in der Frühphase, von einem Einzelgründer entwickelt; bislang keine veröffentlichten Kundenreferenzen.",
+    "Sie bestätigen die Leistungsverpflichtungen und angegebenen Preise; die Vertragsextraktion ist heuristisch, nicht automatisch.",
+    "Keine Fakturierung oder nutzungsbasierte Fakturierung und keine ERP-Integration: Excel-/CSV-Exporte prüfen und buchen Sie selbst.",
+    "Die Bilanzierung von Vertragsänderungen (prospektiv und kumulativer Nachholeffekt) steht auf der Roadmap und ist nicht umgesetzt."
+   ],
+   "pricing": "Gründungspreise für die ersten 10 Kunden: kostenloses Arbeitspapier für 3 Verträge; $475 Prüfungs-Arbeitspapier für bis zu 10 Verträge; $1,750 QoE-Deal-Paket; $49/Monat Zugang zum Tool für Kanzleien (soluqube.com/pricing).",
+   "standards": "ASC 606, Ind AS 115",
+   "ssp": "Ja (relativer SSP, dokumentierte Regel für Restcents)"
+  }
+ }
+}

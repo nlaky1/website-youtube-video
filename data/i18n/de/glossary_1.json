@@ -1,0 +1,692 @@
+{
+ "performance-obligation": {
+  "slug": "performance-obligation",
+  "term": "Leistungsverpflichtung",
+  "title": "Leistungsverpflichtung: Definition & Beispiel",
+  "description": "Was eine Leistungsverpflichtung nach ASC 606, IFRS 15 und Ind AS 115 ist, mit SaaS-Beispiel zur Aufteilung eines Vertrags in Verpflichtungen und typischen Fehlern.",
+  "definition": "Eine Leistungsverpflichtung ist ein Versprechen in einem Vertrag, dem Kunden entweder ein eigenständiges Gut oder eine eigenständige Dienstleistung (oder ein Bündel davon) oder eine Reihe eigenständiger Güter oder Dienstleistungen zu übertragen, die im Wesentlichen gleichartig sind und nach demselben Muster übertragen werden. Sie ist die Rechnungslegungseinheit, auf die der Transaktionspreis aufgeteilt und der Umsatz realisiert wird.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-14 to 25-15",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 22–23",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 22–23",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein dreijähriges Auftragsformular über $120,000 enthält Plattform-Abonnement, Implementierung und Premium-Support.",
+   "steps": [
+    "Abonnement: Der Kunde kann die Plattform eigenständig nutzen, und der Zugang wird über die Laufzeit täglich bereitgestellt. Es handelt sich um eine Reihe eigenständiger Tagesleistungen, also um eine Leistungsverpflichtung, die über einen Zeitraum realisiert wird.",
+    "Implementierung: Eine Standardkonfiguration, die auch Drittpartner durchführen und ohne die die Plattform funktioniert. Sie ist eigenständig abgrenzbar und separat identifizierbar, also eine zweite Leistungsverpflichtung.",
+    "Premium-Support: Ein Bereitschaftsversprechen, Tickets über die Laufzeit zu beantworten. Es ist eine dritte Leistungsverpflichtung, ebenfalls eine Reihe.",
+    "Die interne Einrichtung des Kundenkontos ist eine Vorbereitungstätigkeit, die dem Kunden nichts überträgt, und daher keine Leistungsverpflichtung."
+   ],
+   "result": "Drei Leistungsverpflichtungen. Die $120,000 werden in Schritt 4 nach dem relativen Einzelveräußerungspreis auf sie aufgeteilt."
+  },
+  "mistakes": [
+   "Jede Position des Auftragsformulars als eigene Verpflichtung behandeln, ohne zu prüfen, ob sie jeweils eigenständig ist.",
+   "Implizite Zusagen übersehen, die sich aus der üblichen Geschäftspraxis ergeben, etwa kostenlose Upgrades, die Kunden stets erhalten.",
+   "Interne Vorbereitungstätigkeiten, die dem Kunden nichts übertragen, als Leistungsverpflichtungen behandeln."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachhub",
+   "ASC 606 SSP-Aufteilungsbeispiel: SaaS-Bündel mit 3 Elementen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "standalone-selling-price": {
+  "slug": "standalone-selling-price",
+  "term": "Einzelveräußerungspreis (SSP)",
+  "title": "Einzelveräußerungspreis (SSP): Definition",
+  "description": "Einzelveräußerungspreis nach ASC 606 und IFRS 15: Definition, drei Schätzmethoden, durchgerechnetes SaaS-Beispiel mit Lizenz und Onboarding, typische Fehler.",
+  "definition": "Der Einzelveräußerungspreis (SSP) ist der Preis, zu dem ein Unternehmen ein zugesagtes Gut oder eine zugesagte Dienstleistung einem Kunden separat verkaufen würde. Der beste Nachweis ist ein beobachtbarer Preis aus Einzelverkäufen an ähnliche Kunden unter ähnlichen Umständen. Liegt keiner vor, schätzt das Unternehmen den SSP mit einer Methode, die beobachtbare Inputfaktoren maximiert.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-31 to 32-34",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 76–80",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 76–80",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein Anbieter verkauft eine Analytics-Lizenz und ein Onboarding-Paket gemeinsam und benötigt für jedes einen SSP.",
+   "steps": [
+    "Lizenz: In den letzten 12 Monaten 340-mal einzeln verkauft, mittlerer Nettopreis $48,000 pro Jahr. Das ist ein beobachtbarer Preis, also SSP = $48,000.",
+    "Onboarding: Nie separat verkauft. Die erwarteten Kosten betragen $6,000 an Beraterzeit; der Zielaufschlag auf Dienstleistungen beträgt 40%.",
+    "Erwartete Kosten zuzüglich Marge: $6,000 × 1.40 = $8,400."
+   ],
+   "result": "SSPs von $48,000 (Lizenz) und $8,400 (Onboarding) fließen in die Aufteilung des Bündelpreises nach der Relative-SSP-Methode ein."
+  },
+  "mistakes": [
+   "Den Listenpreis als SSP verwenden, ohne zu prüfen, was Kunden nach üblichen Rabatten tatsächlich zahlen.",
+   "Den im Vertrag genannten Preis standardmäßig als SSP ansetzen; ein genannter Preis gilt nicht als SSP.",
+   "Pro Vertrag eine andere Schätzmethode wählen, um ein gewünschtes Ergebnis zu erreichen, statt eine dokumentierte Richtlinie konsistent anzuwenden.",
+   "Die SSP-Analyse nie aktualisieren, obwohl sich Preise und Rabatte ändern."
+  ],
+  "furtherLabels": [
+   "SSP-Aufteilungsrechner",
+   "ASC 606 SSP-Aufteilungsbeispiel: SaaS-Bündel mit 3 Elementen"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Wie oft sollten Schätzungen des Einzelveräußerungspreises aktualisiert werden?",
+    "answer": "Nach ASC 606 und IFRS 15 müssen Unternehmen ihre Schätzungen des Einzelveräußerungspreises (SSP) regelmäßig überprüfen und aktualisieren, typischerweise jährlich oder bei wesentlichen Änderungen der Preisstrategie, der Rabattpolitik, der Marktbedingungen oder der Produktbündelung."
+   },
+   {
+    "question": "Wie prüfen Abschlussprüfer die Aufteilung nach dem Einzelveräußerungspreis (SSP)?",
+    "answer": "Abschlussprüfer prüfen die SSP-Aufteilung nach den PCAOB-Standards, indem sie eine Stichprobe von Umsatzverträgen auswählen, verifizieren, dass beobachtbare Einzelverkäufe innerhalb der vom Management definierten Preisspanne liegen (typischerweise Median ±15%), prüfen, dass der gesamte Transaktionspreis der Summe der aufgeteilten Verpflichtungen entspricht, und validieren, dass die Vertragsklauseln der Quelldokumente jede identifizierte Leistungsverpflichtung stützen."
+   }
+  ]
+ },
+ "relative-ssp-method": {
+  "slug": "relative-ssp-method",
+  "term": "Relative-SSP-Methode",
+  "title": "Relative-SSP-Methode: Formel & Rechenbeispiel",
+  "description": "Wie die Relative-SSP-Methode den Transaktionspreis nach ASC 606 und IFRS 15 aufteilt, mit durchgerechnetem Beispiel über $120,000 und zwei Leistungsverpflichtungen.",
+  "definition": "Die Relative-SSP-Methode teilt den Transaktionspreis eines Vertrags im Verhältnis seiner Einzelveräußerungspreise auf die einzelnen Leistungsverpflichtungen auf: aufgeteilter Betrag = SSP der Verpflichtung ÷ Summe aller SSPs × Transaktionspreis. Ein Bündelrabatt oder -aufschlag wird dadurch anteilig auf alle Verpflichtungen verteilt, sofern nicht die Voraussetzungen für die Zuordnung eines Rabatts zu nur einigen Verpflichtungen erfüllt sind.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-29 and 32-31",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 74 and 76",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 74 and 76",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Transaktionspreis $120,000; SSP des Abonnements $100,000; SSP der professionellen Dienstleistungen $25,000.",
+   "steps": [
+    "Summe der SSPs: $100,000 + $25,000 = $125,000. Der Bündelrabatt beträgt $5,000 (4%).",
+    "Abonnement: $100,000 / $125,000 × $120,000 = $96,000.",
+    "Dienstleistungen: $25,000 / $125,000 × $120,000 = $24,000.",
+    "Kontrolle: $96,000 + $24,000 = $120,000. Der Rabatt von $5,000 verteilt sich als $4,000 / $1,000."
+   ],
+   "result": "Aufgeteilte Beträge von $96,000 und $24,000, die anschließend den Realisierungsplan jeder Verpflichtung bestimmen."
+  },
+  "mistakes": [
+   "Den gesamten Rabatt einer Verpflichtung zuordnen, ohne die Voraussetzungen für die vollständige Zuordnung eines Rabatts zu einzelnen Verpflichtungen zu erfüllen (ASC 606-10-32-37; IFRS 15.82).",
+   "Jede Zeile einzeln auf den Cent runden, sodass die Aufteilungen nicht mehr die Summe des Transaktionspreises ergeben, ohne schriftliche Regel für den Rest-Cent.",
+   "Veraltete oder undokumentierte SSPs verwenden; hier beginnen die meisten Beanstandungen der Abschlussprüfer zur Aufteilung."
+  ],
+  "furtherLabels": [
+   "SSP-Aufteilungsrechner",
+   "Rundung bei der SSP-Aufteilung nach ASC 606: wohin der Cent geht",
+   "ASC 606 Leitfaden zur SSP-Aufteilung",
+   "Formel für den Einzelveräußerungspreis: SSP-Berechnung",
+   "Aufteilung von Bündelrabatten nach ASC 606 bei SaaS"
+  ],
+  "soluqubeNote": "Soluqube berechnet diese Aufteilung in Ganzzahlarithmetik im Maßstab 10^6, auf Cent gerundet, mit einer dokumentierten Regel für den Rest-Cent, und versieht den Export mit einem Hash, damit er erneut ausgeführt werden kann.",
+  "faqs": [
+   {
+    "question": "Wie lautet die Formel der Relative-SSP-Methode?",
+    "answer": "Der aufgeteilte Betrag entspricht dem Einzelveräußerungspreis der Verpflichtung, geteilt durch die Summe aller Einzelveräußerungspreise, multipliziert mit dem Transaktionspreis. ASC 606-10-32-31 verlangt diese Aufteilung bei Vertragsbeginn. Die aufgeteilten Beträge müssen wieder den Transaktionspreis ergeben; eine schriftliche Regel für den Rundungsrest hält die Gesamtsumme exakt."
+   },
+   {
+    "question": "Wird ein Bündelaufschlag genauso aufgeteilt wie ein Rabatt?",
+    "answer": "In der Regel ja. Übersteigt der Transaktionspreis die Summe der Einzelveräußerungspreise, wird der Mehrbetrag im Allgemeinen im Verhältnis ihrer SSPs auf alle Verpflichtungen verteilt, genau wie ein Rabatt. Prüfen Sie zuerst, ob die SSPs aktuell sind und ob der Mehrbetrag keine variable Gegenleistung ist, die sich auf eine bestimmte Verpflichtung bezieht."
+   },
+   {
+    "question": "Kann der Rabatt nur einer Verpflichtung zugeordnet werden?",
+    "answer": "Nur wenn alle drei Bedingungen in ASC 606-10-32-37 erfüllt sind: Jede eigenständige Position wird regelmäßig einzeln verkauft, ein Bündel aus einigen dieser Positionen wird ebenfalls regelmäßig mit Rabatt verkauft, und dieser Bündelrabatt entspricht im Wesentlichen dem Rabatt im Vertrag. Andernfalls wird der Rabatt anteilig aufgeteilt."
+   },
+   {
+    "question": "Wie berechnet man die relative SSP-Aufteilung schnell und ohne Rundungsfehler?",
+    "answer": "Um die relative SSP schnell und ohne Rundungsfehler zu berechnen, multiplizieren Sie den Transaktionspreis vor dem Runden mit dem vollständigen SSP-Verhältnis jeder Verpflichtung (Zwischenprozentsätze nicht runden). Runden Sie jede Verpflichtung auf ganze Cent und wenden Sie eine deterministische Regel an, damit der Rest-Cent in der letzten Periode aufgefangen wird und die Summe der aufgeteilten Beträge exakt dem Transaktionspreis entspricht."
+   }
+  ]
+ },
+ "residual-approach": {
+  "slug": "residual-approach",
+  "term": "Residualansatz",
+  "title": "Residualansatz beim SSP: Wann er zulässig ist",
+  "description": "Der Residualansatz zur Schätzung des SSP nach ASC 606-10-32-34(c) und IFRS 15.79(c): wann er zulässig ist, ein Rechenbeispiel und warum er keine Abkürzung ist.",
+  "definition": "Der Residualansatz schätzt den Einzelveräußerungspreis eines Guts oder einer Dienstleistung als den gesamten Transaktionspreis abzüglich der beobachtbaren Einzelveräußerungspreise der übrigen zugesagten Güter oder Dienstleistungen. Er ist nur zulässig, wenn der Verkaufspreis dieser Position stark schwankt oder unsicher ist, nicht als allgemeine Abkürzung, um einen Bündelrabatt aufzufangen.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-34(c)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 79(c)",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 79(c)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein Vertrag über $150,000 umfasst Lizenz, Hosting und Support. Hosting ($50,000) und Support ($20,000) haben beobachtbare SSPs. Die Lizenz wurde zu Preisen zwischen $40,000 und $140,000 verkauft, ohne repräsentativen Preis.",
+   "steps": [
+    "Bestätigen, dass der Lizenzpreis stark schwankt: Die Spanne ist breit und es ist kein erkennbarer SSP vorhanden.",
+    "Residualer Lizenz-SSP = $150,000 − $50,000 − $20,000 = $80,000.",
+    "Plausibilitätsprüfung: $80,000 liegt innerhalb der beobachteten Spanne und ist nicht null, das Ergebnis ist also plausibel."
+   ],
+   "result": "Lizenz-SSP $80,000, dokumentiert mit dem Nachweis, dass ihr Preis stark schwankt."
+  },
+  "mistakes": [
+   "Den Residualansatz für eine Position verwenden, die einen beobachtbaren Einzelpreis hat.",
+   "Ein Residuum von null oder einen unplausibel kleinen Betrag akzeptieren, was darauf hindeutet, dass der Ansatz nicht zum Sachverhalt passt.",
+   "Den Residualansatz (eine Methode zur SSP-Schätzung) mit dem durch Rundung verbleibenden Rest-Cent verwechseln.",
+   "Nicht dokumentieren, warum der Preis stark schwankt oder unsicher ist."
+  ],
+  "furtherLabels": [
+   "ASC 606 SSP-Aufteilungsbeispiel: SaaS-Bündel mit 3 Elementen",
+   "SSP-Aufteilungsrechner",
+   "ASC 606 Leitfaden zur SSP-Aufteilung"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Wie oft sollten Schätzungen des Einzelveräußerungspreises bei Anwendung des Residualansatzes aktualisiert werden?",
+    "answer": "Bei jedem neuen Vertrag, der ihn verwendet. Der residuale SSP wird bei Vertragsbeginn festgelegt und für diesen Vertrag später nicht mehr angepasst. Bestätigen Sie für jeden neuen Vertrag erneut, dass der Preis der Position weiterhin stark schwankt oder unsicher ist und dass die beobachtbaren Preise der übrigen Positionen aktuell sind. Sobald sich ein repräsentativer Preis herausbildet, passt der Residualansatz nicht mehr."
+   },
+   {
+    "question": "Kann der Residualansatz einen SSP von null ergeben?",
+    "answer": "Das sollte er nicht. Ein Residuum von null oder ein sehr kleiner Betrag deutet darauf hin, dass der Ansatz nicht zum Sachverhalt passt, denn die Schätzung muss weiterhin das Aufteilungsziel in ASC 606-10-32-28 erfüllen. Prüfen Sie das Ergebnis anhand der beobachteten Preisspanne und verwenden Sie eine andere Schätzmethode, falls es außerhalb liegt."
+   },
+   {
+    "question": "Residualansatz vs. Relative-SSP-Methode: Was ist der Unterschied?",
+    "answer": "Sie erfüllen unterschiedliche Aufgaben. Der Residualansatz ist eine von drei Möglichkeiten, einen Einzelveräußerungspreis nach ASC 606-10-32-34 zu schätzen. Die Relative-SSP-Methode teilt anschließend den Transaktionspreis nach 32-31 im Verhältnis dieser SSPs auf die Verpflichtungen auf. Eine residuale Schätzung fließt in die Aufteilung ein; sie ersetzt diese nicht."
+   }
+  ]
+ },
+ "adjusted-market-assessment": {
+  "slug": "adjusted-market-assessment",
+  "term": "Angepasster Marktbewertungsansatz",
+  "title": "Angepasster Marktbewertungsansatz (SSP)",
+  "description": "SSP-Schätzung mit dem angepassten Marktbewertungsansatz nach ASC 606 und IFRS 15: Definition, Rechenbeispiel zur Preisbildung eines Add-ons und typische Fehler.",
+  "definition": "Der angepasste Marktbewertungsansatz schätzt den Einzelveräußerungspreis, indem er den Markt, in dem das Unternehmen verkauft, beurteilt und den Preis schätzt, den Kunden in diesem Markt zahlen würden. Er kann von den Preisen der Wettbewerber für ähnliche Güter oder Dienstleistungen ausgehen, angepasst an die eigenen Kosten, Margen und die eigene Marktposition des Unternehmens.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-34(a)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 79(a)",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 79(a)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein neues Analytics-Add-on wurde nie einzeln verkauft. Zwei Wettbewerber veröffentlichen vergleichbare Add-ons für $30 und $36 pro Nutzer und Monat. Die dokumentierte Positionierung des Anbieters liegt etwa 10% unter dem Marktmittelwert.",
+   "steps": [
+    "Marktmittelwert: ($30 + $36) / 2 = $33 pro Nutzer und Monat.",
+    "Anpassung an die Positionierung: $33 × 0.90 = $29.70 pro Nutzer und Monat.",
+    "SSP für 200 Nutzer über 12 Monate: $29.70 × 200 × 12 = $71,280."
+   ],
+   "result": "Geschätzter SSP von $71,280, wobei die Wettbewerbsnachweise und die Anpassung von 10% im Arbeitspapier festgehalten werden."
+  },
+  "mistakes": [
+   "Listenpreise der Wettbewerber verwenden, ohne die in diesem Markt üblichen Rabatte zu berücksichtigen.",
+   "Nicht dokumentieren, warum die Wettbewerbsprodukte hinsichtlich Funktionen und Kundenklasse vergleichbar sind.",
+   "Den Anpassungsprozentsatz ohne Nachweis dafür anwenden."
+  ],
+  "furtherLabels": [
+   "ASC 606 SSP-Aufteilungsbeispiel: SaaS-Bündel mit 3 Elementen",
+   "SSP-Aufteilungsrechner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "expected-cost-plus-margin": {
+  "slug": "expected-cost-plus-margin",
+  "term": "Ansatz erwartete Kosten zuzüglich Marge",
+  "title": "Erwartete Kosten plus Marge (SSP-Ansatz)",
+  "description": "SSP-Schätzung mit erwarteten Kosten plus Marge nach ASC 606 und IFRS 15, Rechenbeispiel zu Implementierungsleistungen und die Falle Aufschlag vs. Marge.",
+  "definition": "Der Ansatz erwartete Kosten zuzüglich einer Marge schätzt den Einzelveräußerungspreis, indem er die Kosten der Erfüllung einer Leistungsverpflichtung prognostiziert und eine angemessene Marge hinzurechnet. Er eignet sich für Dienstleistungen mit messbaren Kosten, etwa Implementierung, Schulung oder kundenspezifische Entwicklung, und passt schlecht, wenn die Kosten nicht von der konkreten Verpflichtung abhängen.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-34(b)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 79(b)",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 79(b)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein Implementierungspaket ist mit 80 Beraterstunden zu vollen Kosten von $95 pro Stunde veranschlagt.",
+   "steps": [
+    "Erwartete Kosten: 80 × $95 = $7,600.",
+    "Ein Aufschlag von 35% auf die Kosten: $7,600 × 1.35 = $10,260.",
+    "Eine Marge von 35% auf den Preis ist etwas anderes: $7,600 / 0.65 = $11,692.31.",
+    "Die Richtlinie muss festlegen, welche der beiden gemeint ist und woher der Prozentsatz stammt."
+   ],
+   "result": "SSP von $10,260 bei einer Richtlinie mit Aufschlag auf die Kosten oder $11,692.31 bei einer Richtlinie mit Marge auf den Preis."
+  },
+  "mistakes": [
+   "Aufschlag auf die Kosten und Marge auf den Preis verwechseln, was den SSP wesentlich verändert.",
+   "Nur Einzellohnkosten ansetzen und einen angemessenen Gemeinkostenanteil weglassen.",
+   "Eine Marge wählen, die durch das, was der Markt zahlen würde, nicht gestützt ist."
+  ],
+  "furtherLabels": [
+   "SSP-Aufteilungsrechner",
+   "ASC 606 SSP-Aufteilungsbeispiel: SaaS-Bündel mit 3 Elementen"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Wann sollte der Ansatz erwartete Kosten zuzüglich Marge für den SSP verwendet werden?",
+    "answer": "Der Ansatz erwartete Kosten zuzüglich Marge ist angemessen, wenn keine Einzelverkäufe vorliegen und sich die direkten Kosten verlässlich prognostizieren lassen, etwa bei maßgeschneiderter Implementierung, kundenspezifischen Softwareanpassungen oder spezialisierten professionellen Dienstleistungen nach ASC 606-10-32-34(b) und IFRS 15 paragraph 79(b)."
+   },
+   {
+    "question": "Was ist der Unterschied zwischen Aufschlag auf die Kosten und Marge auf den Preis?",
+    "answer": "Der Aufschlag auf die Kosten addiert einen Prozentsatz auf die budgetierten Kosten ($Cost × (1 + Markup)), während die Marge auf den Preis die Kosten durch das Komplement der Marge teilt ($Cost / (1 - Margin)). Bei Kosten von $10,000 ergibt beispielsweise ein Aufschlag von 30% $13,000, eine Marge von 30% dagegen $14,285.71."
+   }
+  ]
+ },
+ "transaction-price": {
+  "slug": "transaction-price",
+  "term": "Transaktionspreis",
+  "title": "Transaktionspreis nach ASC 606: Definition",
+  "description": "Was in den Transaktionspreis nach ASC 606, IFRS 15 und Ind AS 115 eingeht: variable Gegenleistung, Finanzierung, Gutschriften und Steuern, mit Rechenbeispiel.",
+  "definition": "Der Transaktionspreis ist die Gegenleistung, auf die ein Unternehmen im Austausch für die Übertragung zugesagter Güter oder Dienstleistungen voraussichtlich Anspruch hat, ohne im Auftrag Dritter eingezogene Beträge wie bestimmte Umsatzsteuern. Er berücksichtigt variable Gegenleistungen, wesentliche Finanzierungskomponenten, nicht zahlungswirksame Gegenleistungen und an den Kunden zu zahlende Gegenleistungen.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-2 to 32-27",
+    "note": "32-2A: Wahlrecht zum Ausschluss von Umsatzsteuern"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 47–72",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 47–72",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein unkündbarer Dreijahresvertrag über $40,000 pro Jahr, eine Implementierungsgebühr von $10,000 und eine Marketing-Gutschrift von $5,000, die der Anbieter an den Kunden zahlt. Es können außerdem Mehrverbrauchsgebühren anfallen, die Nutzung ist jedoch höchst ungewiss.",
+   "steps": [
+    "Feste Gegenleistung: 3 × $40,000 + $10,000 = $130,000.",
+    "An den Kunden zu zahlende Gegenleistungen mindern den Preis: $130,000 − $5,000 = $125,000.",
+    "Mehrverbrauchsgebühren sind variable Gegenleistungen. Angesichts der Unsicherheit beträgt die begrenzte Schätzung bei Vertragsbeginn $0 und wird in jeder Periode neu beurteilt."
+   ],
+   "result": "Transaktionspreis bei Vertragsbeginn: $125,000."
+  },
+  "mistakes": [
+   "Vom Rechnungsbetrag einschließlich Steuer ausgehen.",
+   "Gutschriften, Rückvergütungen oder andere an den Kunden zu zahlende Beträge ignorieren.",
+   "Gegenleistungen für Zeiträume einbeziehen, die der Kunde ohne wesentliche Vertragsstrafe kündigen kann und die damit außerhalb des durchsetzbaren Vertrags liegen."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachhub",
+   "SSP-Aufteilungsrechner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "variable-consideration": {
+  "slug": "variable-consideration",
+  "term": "Variable Gegenleistung",
+  "title": "Variable Gegenleistung nach ASC 606",
+  "description": "Variable Gegenleistung nach ASC 606 und IFRS 15: was darunter fällt, Erwartungswert vs. wahrscheinlichster Betrag, SLA-Gutschrift als Rechenbeispiel und Fehler.",
+  "definition": "Variable Gegenleistung ist jeder Teil der zugesagten Gegenleistung, der sich ändern kann: Rabatte, Rückvergütungen, Erstattungen, Gutschriften, Preiszugeständnisse, Anreize, Leistungsprämien, Vertragsstrafen oder nutzungsbasierte Gebühren. Ein Unternehmen schätzt sie anhand des Erwartungswerts oder des wahrscheinlichsten Betrags, je nachdem, welcher das Ergebnis besser vorhersagt, und wendet anschließend die Begrenzung an.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-5 to 32-9",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 50–54",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 50–54",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Eine Jahresgebühr von $60,000 mit einer Service-Level-Gutschrift von 10%, wenn die Verfügbarkeit unter 99.9% fällt. Die Historie zeigt eine Verletzung bei etwa 10% vergleichbarer Verträge.",
+   "steps": [
+    "Erwartungswert: 0.9 × $60,000 + 0.1 × $54,000 = $59,400. Geeignet für ein großes Portfolio ähnlicher Verträge.",
+    "Wahrscheinlichster Betrag: $60,000. Geeignet für einen Einzelvertrag mit binärem Ergebnis.",
+    "Wählen Sie die Methode, die den Betrag besser vorhersagt, wenden Sie sie konsistent an und prüfen Sie die Schätzung dann anhand der Begrenzung."
+   ],
+   "result": "Geschätzte Gegenleistung von $59,400 oder $60,000, je nachdem, welche Methode der Sachverhalt stützt."
+  },
+  "mistakes": [
+   "Implizite Preiszugeständnisse übersehen, etwa eine Historie der Annahme von Teilzahlungen.",
+   "Die Schätzmethode zwischen ähnlichen Verträgen wechseln.",
+   "Die Schätzung nicht zu jedem Berichtsstichtag aktualisieren (ASC 606-10-32-14; IFRS 15.59)."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachhub",
+   "Eigene Verträge als Design-Partner durchlaufen lassen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "constraint-on-variable-consideration": {
+  "slug": "constraint-on-variable-consideration",
+  "term": "Begrenzung der variablen Gegenleistung",
+  "title": "Begrenzung variabler Gegenleistung: Definition",
+  "description": "Begrenzung der variablen Gegenleistung nach ASC 606 und IFRS 15: Test auf wesentliche Umkehrung, Faktoren und ein Rechenbeispiel zur Leistungsprämie.",
+  "definition": "Die Begrenzung beschränkt, wie viel variable Gegenleistung in den Transaktionspreis eingeht: Eine Schätzung wird nur insoweit einbezogen, als es wahrscheinlich ist (IFRS 15: höchstwahrscheinlich), dass es bei Wegfall der Unsicherheit nicht zu einer wesentlichen Umkehrung des kumulierten erfassten Umsatzes kommt. Zu den Faktoren zählen äußere Einflüsse, begrenzte Erfahrung und eine große Bandbreite möglicher Ergebnisse.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-11 to 32-13",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 56–58",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 56–58",
+    "note": null
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-65",
+    "note": "Ausnahme für umsatz- oder nutzungsabhängige Lizenzgebühren bei Lizenzen an geistigem Eigentum"
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Eine feste Implementierung über $90,000 plus eine Prämie von $30,000, wenn der Kunde bis zum 31. März live geht. Der Anbieter hat noch nie mit diesem ERP integriert, und der Termin hängt vom IT-Team des Kunden ab.",
+   "steps": [
+    "Schätzung: Der wahrscheinlichste Betrag der Prämie ist ungewiss; das Ergebnis hängt von Faktoren außerhalb der Kontrolle des Anbieters ab, und dieser hat keine einschlägige Erfahrung.",
+    "Würden jetzt $30,000 einbezogen, könnte dies zu einer wesentlichen Umkehrung führen, daher beträgt der begrenzte Betrag $0.",
+    "Transaktionspreis bei Vertragsbeginn: $90,000. Zu jedem Berichtsstichtag wird neu beurteilt; sobald die Erreichung wahrscheinlich ist, werden die $30,000 hinzugerechnet und der auf bereits erbrachte Arbeit entfallende Anteil als Nachholeffekt realisiert."
+   ],
+   "result": "$90,000 bei Vertragsbeginn; die Prämie geht erst in den Transaktionspreis ein, wenn das Umkehrrisiko ausgeräumt ist."
+  },
+  "mistakes": [
+   "Den gesamten Transaktionspreis begrenzen statt nur den variablen Teil.",
+   "Standardmäßig eine Begrenzung auf null ansetzen, ohne die Faktoren zu analysieren.",
+   "Die allgemeine Begrenzung auf umsatz- oder nutzungsabhängige Lizenzgebühren bei Lizenzen an geistigem Eigentum anwenden, für die eine eigene Ausnahme gilt."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachhub",
+   "Eigene Verträge als Design-Partner durchlaufen lassen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "contract-asset": {
+  "slug": "contract-asset",
+  "term": "Vertragsvermögenswert",
+  "title": "Vertragsvermögenswert nach ASC 606: Definition",
+  "description": "Was ein Vertragsvermögenswert nach ASC 606, IFRS 15 und Ind AS 115 ist, wie er sich von einer Forderung unterscheidet, mit Buchungsbeispiel zu zwei Meilensteinen.",
+  "definition": "Ein Vertragsvermögenswert ist der Anspruch eines Unternehmens auf Gegenleistung für bereits auf den Kunden übertragene Güter oder Dienstleistungen, wenn dieser Anspruch an etwas anderes als den Zeitablauf geknüpft ist, typischerweise an die künftige Leistung des Unternehmens. Wird der Anspruch unbedingt, wird der Betrag in eine Forderung umgegliedert.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-45-1 and 45-3",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 105 and 107",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 105 and 107",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Eine Festpreis-Entwicklung zweier Module über $50,000, auf jedes entfallen $25,000. Der Kunde kann erst fakturiert werden, nachdem beide Module geliefert wurden.",
+  "steps": [
+    "Monat 3, Modul A geliefert: Soll Vertragsvermögenswert $25,000 / Haben Umsatzerlöse $25,000. Die Zahlung hängt weiterhin von der Lieferung von Modul B ab.",
+    "Monat 5, Modul B geliefert und $50,000 fakturiert: Soll Forderung $50,000 / Haben Vertragsvermögenswert $25,000 / Haben Umsatzerlöse $25,000."
+   ],
+   "result": "Der Vertragsvermögenswert besteht nur zwischen den beiden Lieferungen und wird aufgelöst, sobald der Zahlungsanspruch unbedingt wird."
+  },
+  "mistakes": [
+   "Einen bedingten Anspruch als nicht fakturierte Forderung bezeichnen.",
+   "Vertragsvermögenswerte und Vertragsverbindlichkeiten verschiedener Verträge saldieren; die Saldierung erfolgt auf Vertragsebene.",
+   "Vertragsvermögenswerte nicht auf Kreditverluste oder Wertminderung beurteilen."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachhub",
+   "Eigene Verträge als Design-Partner durchlaufen lassen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "contract-liability": {
+  "slug": "contract-liability",
+  "term": "Vertragsverbindlichkeit",
+  "title": "Vertragsverbindlichkeit nach ASC 606: Definition",
+  "description": "Vertragsverbindlichkeit nach ASC 606, IFRS 15 und Ind AS 115: Definition, Bezug zur passiven Rechnungsabgrenzung, Buchungsbeispiel zur Jahresvorauszahlung.",
+  "definition": "Eine Vertragsverbindlichkeit ist die Verpflichtung eines Unternehmens, einem Kunden Güter oder Dienstleistungen zu übertragen, für die es eine Gegenleistung erhalten hat oder für die die Gegenleistung unbedingt fällig ist. Bei SaaS wird sie üblicherweise als passive Rechnungsabgrenzung ausgewiesen und löst sich in Umsatz auf, sobald die zugehörige Leistungsverpflichtung erfüllt wird.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-45-2",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 106",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 106",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein Jahresabonnement über $24,000 mit Beginn am 1. Januar wird am 1. Januar fakturiert und bezahlt.",
+   "steps": [
+    "1. Januar: Soll Bank $24,000 / Haben Vertragsverbindlichkeit $24,000.",
+    "Jeweils zum Monatsende: Soll Vertragsverbindlichkeit $2,000 / Haben Umsatzerlöse $2,000.",
+    "31. März: Saldo der Vertragsverbindlichkeit = $24,000 − 3 × $2,000 = $18,000."
+   ],
+   "result": "Die Verbindlichkeit sinkt bis zum 31. Dezember auf $0, da das Abonnement geliefert wird."
+  },
+  "mistakes": [
+   "Für eine Vorausrechnung bei einem kündbaren Vertrag eine Verbindlichkeit und eine Forderung buchen, obwohl noch kein unbedingter Zahlungsanspruch besteht.",
+   "Vertragsverbindlichkeiten mit Vertragsvermögenswerten eines anderen Vertrags saldieren.",
+   "Eine mehrjährige Vorauszahlung vollständig als kurzfristig ausweisen."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachhub",
+   "Rundung bei der SSP-Aufteilung nach ASC 606: wohin der Cent geht"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "deferred-revenue": {
+  "slug": "deferred-revenue",
+  "term": "Passive Rechnungsabgrenzung (Deferred Revenue)",
+  "title": "Passive Rechnungsabgrenzung nach ASC 606: Beispiel",
+  "description": "Passive Rechnungsabgrenzung nach ASC 606 und IFRS 15: Definition, Verhältnis zur Vertragsverbindlichkeit und ein 36-Monats-Plan, der exakt bei $0.00 endet.",
+  "definition": "Die passive Rechnungsabgrenzung (Deferred Revenue) ist im Voraus erhaltene oder fakturierte Gegenleistung für noch nicht übertragene Güter oder Dienstleistungen. ASC 606 und IFRS 15 bezeichnen sie als Vertragsverbindlichkeit, lassen aber andere Bezeichnungen zu. Sie nimmt ab, sobald Umsatz realisiert wird, und bei einem linear zu realisierenden Abonnement sollte der Saldo am Laufzeitende exakt null betragen.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-45-2 and 45-5",
+    "note": "45-5 lässt andere Bezeichnungen zu"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 106 and 109",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 106 and 109",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: $100,000 im Voraus bezahlt für ein 36-Monats-Abonnement, linear monatlich realisiert.",
+   "steps": [
+    "$100,000 / 36 = $2,777.777… pro Monat.",
+    "Rundet man jeden Monat auf $2,777.78 auf, werden $100,000.08 realisiert, acht Cent mehr als im Vertrag.",
+    "Stattdessen werden für die Monate 1–35 jeweils $2,777.77 realisiert ($97,221.95), und Monat 36 fängt den Rest auf: $100,000 − $97,221.95 = $2,778.05."
+   ],
+   "result": "Die passive Rechnungsabgrenzung nimmt monatlich ab und beträgt nach Monat 36 exakt $0.00."
+  },
+  "mistakes": [
+   "Jede Periode einzeln runden, sodass der abgegrenzte Saldo nie ganz aufgelöst wird.",
+   "Nach dem Fakturierungsplan statt nach dem Leistungsmuster realisieren.",
+   "Bei mehrjährigen Vorauszahlungen die passive Rechnungsabgrenzung nicht in kurz- und langfristig aufteilen."
+  ],
+  "furtherLabels": [
+   "Rundung bei der SSP-Aufteilung nach ASC 606: wohin der Cent geht",
+   "SSP-Aufteilungsrechner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "unbilled-receivable": {
+  "slug": "unbilled-receivable",
+  "term": "Nicht fakturierte Forderung",
+  "title": "Nicht fakturierte Forderung vs. Vertragsvermögenswert",
+  "description": "Nicht fakturierte Forderung nach ASC 606 und IFRS 15: Unterschied zum Vertragsvermögenswert, mit Beispiel zur nachträglichen Nutzungsabrechnung.",
+  "definition": "Eine nicht fakturierte Forderung ist realisierter Umsatz, für den der Anspruch des Unternehmens auf Gegenleistung bereits unbedingt ist und bis zur Zahlung nur Zeit verstreichen muss, für den aber noch keine Rechnung gestellt wurde. Anders als ein Vertragsvermögenswert ist sie eine Forderung und wird zusammen mit den Forderungen aus Lieferungen und Leistungen ausgewiesen.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-45-4",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 108",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 108",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Nutzungsgebühren werden monatlich verdient, aber vierteljährlich nachträglich fakturiert. Die Nutzung im Januar beträgt $8,000, und zu ihrer Verdienung ist keine weitere Leistung erforderlich.",
+   "steps": [
+    "31. Januar: Soll Nicht fakturierte Forderung $8,000 / Haben Umsatzerlöse $8,000.",
+    "31. März, Rechnung gestellt: Soll Forderungen aus Lieferungen und Leistungen $8,000 / Haben Nicht fakturierte Forderung $8,000 (die Nutzung im Februar und März wird ebenso behandelt)."
+   ],
+   "result": "Der Umsatz fällt im Januar an; die Forderung wird bei Rechnungsstellung lediglich umgegliedert."
+  },
+  "mistakes": [
+   "Einen Anspruch, der noch von künftiger Leistung abhängt, als nicht fakturierte Forderung bezeichnen; das ist ein Vertragsvermögenswert.",
+   "Nicht fakturierte Salden aus der Altersstrukturanalyse der Forderungen und der Kreditverlustanalyse ausschließen.",
+   "Vergessen, bei Rechnungsstellung in fakturierte Forderungen umzugliedern."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachhub",
+   "Eigene Verträge als Design-Partner durchlaufen lassen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "material-right": {
+  "slug": "material-right",
+  "term": "Wesentliches Recht (Material Right)",
+  "title": "Wesentliches Recht nach ASC 606: Verlängerungsbeispiel",
+  "description": "Wesentliches Recht nach ASC 606 und IFRS 15: SSP-Schätzung und Rechenbeispiel zur Aufteilung bei rabattierter Verlängerung, auf den Cent genau.",
+  "definition": "Ein wesentliches Recht (Material Right) ist eine Option auf zusätzliche Güter oder Dienstleistungen, die der Kunde ohne Abschluss des Vertrags nicht erhielte, etwa ein Verlängerungs- oder Add-on-Rabatt über das hinaus, was diese Kundenklasse normalerweise erhält. Es ist eine eigene Leistungsverpflichtung: Ein Teil des Preises wird ihr zugeordnet und realisiert, wenn die Option ausgeübt wird oder verfällt.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-41 to 55-45",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B39–B43",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B39–B43",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein einjähriges Abonnement für $50,000 enthält eine Option, Jahr 2 für $30,000 zu verlängern. Neukunden zahlen $50,000, und anderswo wird kein vergleichbarer Rabatt angeboten. Der Anbieter erwartet, dass 80% der Kunden verlängern.",
+   "steps": [
+    "SSP der Option = Rabatt × Ausübungswahrscheinlichkeit: ($50,000 − $30,000) × 80% = $16,000.",
+    "Summe der SSPs: Abonnement $50,000 + Option $16,000 = $66,000.",
+    "Abonnement: $50,000 × 50,000 / 66,000 = $37,878.79. Option: $50,000 × 16,000 / 66,000 = $12,121.21.",
+    "Kontrolle: $37,878.79 + $12,121.21 = $50,000.00."
+   ],
+   "result": "$37,878.79 werden über Jahr 1 realisiert; $12,121.21 bleiben abgegrenzt, bis die Verlängerung ausgeübt wird (dann Realisierung über Jahr 2) oder verfällt."
+  },
+  "mistakes": [
+   "Jede Verlängerungsoption als wesentliches Recht behandeln, ohne sie mit dem Rabatt zu vergleichen, der dieser Kundenklasse normalerweise gewährt wird.",
+   "Wesentliche Rechte übersehen, die in Preisbindungs- oder Meistbegünstigungsklauseln versteckt sind.",
+   "Die Aufteilung auf die Option auch nach deren Verfall abgegrenzt lassen."
+  ],
+  "furtherLabels": [
+   "SSP-Aufteilungsrechner",
+   "ASC 606 SSP-Aufteilungsbeispiel: SaaS-Bündel mit 3 Elementen"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "Was ist ein wesentliches Recht nach ASC 606?",
+    "answer": "Ein wesentliches Recht ist eine dem Kunden eingeräumte Option, zusätzliche Güter oder Dienstleistungen mit erheblichem Rabatt zu erwerben, den er ohne Abschluss des Vertrags nicht erhielte (ASC 606-10-55-42). Nach ASC 606 und IFRS 15 stellt es eine eigene Leistungsverpflichtung dar, der ein Teil des Transaktionspreises zuzuordnen ist."
+   },
+   {
+    "question": "Wie wird der Einzelveräußerungspreis (SSP) einer Verlängerungsoption geschätzt?",
+    "answer": "Der SSP einer Option ergibt sich aus dem erwarteten Rabatt im Verhältnis zu dem, was ein vergleichbarer Kunde zahlt, multipliziert mit der Wahrscheinlichkeit, dass der Kunde die Option ausübt. Ein Rabatt von $20,000 bei einer Verlängerungswahrscheinlichkeit von 80% ergibt beispielsweise einen geschätzten SSP von $16,000."
+   },
+   {
+    "question": "Wann wird der einem wesentlichen Recht zugeordnete Umsatz realisiert?",
+    "answer": "Der einem wesentlichen Recht zugeordnete Umsatz wird bei Vertragsbeginn als Vertragsverbindlichkeit abgegrenzt und entweder realisiert, wenn die zusätzlichen Güter oder Dienstleistungen bei Ausübung übertragen werden, oder wenn die Option unausgeübt verfällt."
+   }
+  ]
+ }
+}

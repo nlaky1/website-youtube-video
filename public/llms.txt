@@ -166,3 +166,9 @@ Soluqube supports deterministic revenue allocation and audit-ready workpapers ac
 - **Ind AS 115 GST Isolation**: for INR contracts, 18% GST is excluded from the transaction price before allocation.
 - **Audit-Ready Evidence Workpaper**: page and clause-excerpt references for each obligation plus SHA-256 integrity hashes on exports, supporting documentation for auditor review.
 - **Roadmap (not built today)**: contract-modification accounting (prospective vs cumulative catch-up), structured extraction with human confirmation, live ERP posting.
+
+## Translations (wave 1, translated guides; the English pages remain the reference)
+- Español: https://soluqube.com/es (glossary https://soluqube.com/es/glossary, blog https://soluqube.com/es/blog, alternatives https://soluqube.com/es/alternatives)
+- Português (Brasil): https://soluqube.com/pt-br (glossary https://soluqube.com/pt-br/glossary, blog https://soluqube.com/pt-br/blog, alternatives https://soluqube.com/pt-br/alternatives)
+- Deutsch: https://soluqube.com/de (glossary https://soluqube.com/de/glossary, blog https://soluqube.com/de/blog, alternatives https://soluqube.com/de/alternatives)
+- Scope: ASC 606, IFRS 15 and Ind AS 115 only. Soluqube does not support local GAAP. Terms, privacy and security pages are English only.

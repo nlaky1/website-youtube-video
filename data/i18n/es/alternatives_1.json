@@ -1,0 +1,537 @@
+{
+ "pages": {
+  "maxio": {
+   "slug": "maxio",
+   "title": "6 mejores alternativas a Maxio en 2026 [Precios y RevRec]",
+   "description": "Compare las 6 mejores alternativas a Maxio para ASC 606, precios híbridos y reconocimiento de ingresos independiente. Matriz de precios, SSP y hoja Excel gratis.",
+   "intro": "Las principales alternativas a Maxio para el reconocimiento de ingresos bajo ASC 606 son Chargebee RevRec, Stripe Revenue Recognition, Tabs, Zenskar, RightRev y Soluqube. Elija un libro auxiliar independiente si la facturación se queda donde está, una plataforma de facturación más reconocimiento de ingresos si va a reemplazar la facturación, o un motor específico si sus preguntas de auditoría giran en torno a la asignación del SSP. Los equipos también cambian cuando la facturación supera el nivel Grow de Maxio, de $100k al mes.",
+   "whyLook": [
+    "El reconocimiento de ingresos viene integrado con la facturación; si la facturación ya está en otro sistema, quizá solo necesite un libro auxiliar.",
+    "La página de Maxio menciona el SSP solo en sus preguntas frecuentes; los equipos cuyas preguntas de auditoría giran en torno al SSP pueden querer la asignación documentada en detalle.",
+    "Por encima de $100k de facturación mensual, el precio de Maxio pasa a ser solo bajo cotización."
+   ],
+   "howToChoose": [
+    "Decida primero si también va a reemplazar la facturación. Si no, considere libros auxiliares (Chargebee RevRec, RightRev) o un motor específico.",
+    "Si factura con Stripe, revise Stripe Revenue Recognition antes de comprar otra herramienta.",
+    "Pida a cada proveedor que asigne uno de sus contratos reales de elementos múltiples y que muestre la evidencia del SSP."
+   ],
+   "pickFits": [
+    "La opción más equivalente si además factura en Chargebee: un libro auxiliar dedicado con biblioteca de SSP y gestión de modificaciones. Su plan Performance requiere Chargebee Billing.",
+    "Si la facturación ya funciona en Stripe, el reconocimiento de ingresos es un complemento con precio por uso, tarifas publicadas y sin un nuevo sistema de facturación.",
+    "Otra plataforma de facturación más reconocimiento de ingresos, orientada a uso, créditos y compromisos, con un precio de entrada publicado.",
+    "Facturación, medición y reconocimiento de ingresos en uno, con asignación basada en SSP y recálculo por modificaciones mencionados en su sitio. Precio personalizado.",
+    "Un libro auxiliar independiente si desea conservar su sistema de facturación y necesita un motor de SSP que pueda simular antes de que los cambios entren en producción.",
+    "Ideal para la defensa de auditoría ASC 606 anclada en el contrato y el cuadre exacto de $0.00: asignación determinista por SSP relativo, evidencia textual de cláusulas del contrato y papeles de trabajo con hash SHA-256, sin sustituir su sistema de facturación. Cubre también la norma Ind AS 115."
+   ],
+   "relatedPostLabel": "Maxio frente a NetSuite ARM: ¿cuál gestiona mejor la asignación del SSP?",
+   "faqs": [
+    {
+     "question": "¿Qué alternativa a Maxio gestiona los precios híbridos?",
+     "answer": "Tabs y Zenskar admiten modelos de precios híbridos que combinan suscripciones por adelantado, medición de uso y consumo de saldos prepagados. Para libros auxiliares dedicados a ASC 606 junto a la facturación existente, Chargebee RevRec y RightRev gestionan modificaciones complejas de contratos híbridos y la asignación del precio de venta independiente relativo."
+    },
+    {
+     "question": "¿Cuál es la mejor alternativa a Maxio para ASC 606?",
+     "answer": "Depende de si la facturación también cambia. Si factura en Chargebee, Chargebee RevRec es el libro auxiliar más equivalente. En Stripe, Stripe Revenue Recognition es un complemento. Tabs y Zenskar combinan facturación y reconocimiento de ingresos. RightRev es un libro auxiliar independiente. Soluqube es un motor específico para la asignación del SSP, no un reemplazo de la facturación."
+    },
+    {
+     "question": "¿Existe una alternativa a Maxio sin cambiar la facturación?",
+     "answer": "Sí. Los libros auxiliares independientes como RightRev, o Chargebee RevRec si también factura en Chargebee, mantienen la facturación donde está. Soluqube también funciona junto a su sistema de facturación: usted confirma los términos del contrato y genera la asignación por SSP relativo, el calendario de plazo completo y una exportación con hash, con evidencia de página y extracto por obligación."
+    },
+    {
+     "question": "¿Cuánto cuesta Maxio?",
+     "answer": "La página de precios de Maxio indica un plan Grow de $599 al mes para hasta $100k de facturación mensual, y un plan Scale con precio bajo cotización. La gestión avanzada de ingresos figura como módulo opcional y la página no detalla qué incluye cada nivel, por lo que conviene confirmar el costo del módulo directamente con Maxio."
+    }
+   ]
+  },
+  "zuora-revpro": {
+   "slug": "zuora-revpro",
+   "title": "Alternativas a Zuora RevPro (Zuora Revenue) 2026",
+   "description": "Alternativas a Zuora Revenue (RevPro) para ASC 606: libros auxiliares, módulos de ERP y herramientas ligeras, con límites y precios de cada proveedor.",
+   "intro": "Zuora Revenue, que muchos equipos aún llaman RevPro, es un producto empresarial de automatización de ingresos dentro de la suite quote-to-cash de Zuora, con modelado de SSP, reglas de modificación y controles orientados a SOX. Los equipos buscan alternativas cuando quieren algo más ligero, ya operan un ERP con módulo de ingresos o no usan Zuora Billing.",
+   "whyLook": [
+    "Está posicionado y se vende para grandes empresas; los equipos más pequeños pueden no necesitar tanta amplitud.",
+    "El precio no se publica, por lo que el costo solo se conoce tras un proceso de ventas.",
+    "Si su ERP ya incluye un módulo de ingresos, un segundo sistema puede ser redundante."
+   ],
+   "howToChoose": [
+    "Si usa NetSuite o Sage Intacct, cotice primero sus módulos de ingresos; registran directamente en su libro mayor.",
+    "Si necesita modelado de SSP y gestión de modificaciones fuera del ERP, compare libros auxiliares independientes.",
+    "Pregunte cuánto dura la implementación y quién la realiza; ninguno de estos proveedores publica plazos."
+   ],
+   "pickFits": [
+    "Un libro auxiliar independiente con motor de SSP y reasignación por enmiendas, compatible con cualquier ERP; el par funcional más cercano fuera de una suite empresarial.",
+    "Si usa NetSuite, ARM mantiene los ingresos dentro del ERP con registro nativo en el libro mayor; la asignación del SSP requiere el complemento Revenue Allocation.",
+    "Un libro auxiliar con biblioteca de SSP y gestión de modificaciones, más sólido si además factura en Chargebee.",
+    "Combina facturación y reconocimiento de ingresos con asignación por SSP; adecuado para equipos que reemplazan la facturación al mismo tiempo.",
+    "Para clientes de Sage Intacct: facturación de contratos y reconocimiento en el ERP, con asignación MEA como complemento.",
+    "No es un reemplazo de RevPro: es un motor específico para producir asignaciones y calendarios defendibles sobre los contratos bajo auditoría, junto a su ERP."
+   ],
+   "relatedPostLabel": "Zuora RevPro frente a Soluqube: el equilibrio de la implementación",
+   "faqs": null
+  },
+  "chargebee-revrec": {
+   "slug": "chargebee-revrec",
+   "title": "Alternativas a Chargebee RevRec para ASC 606 (2026)",
+   "description": "Alternativas a Chargebee RevRec: opciones nativas de facturación, libros auxiliares independientes y herramientas específicas, con SSP, límites y precios.",
+   "intro": "Chargebee RevRec, surgido de la adquisición de RevLock por parte de Chargebee en 2021, es un libro auxiliar de ingresos con biblioteca de SSP, gestión de modificaciones y registro en el libro mayor. Su plan Performance está disponible solo para clientes de Chargebee Billing, que es el motivo más común por el que los equipos comparan alternativas.",
+   "whyLook": [
+    "El plan Performance requiere Chargebee Billing; los equipos con otro sistema de facturación necesitan otra vía.",
+    "Los datos de origen se sincronizan en un ciclo de 24 horas, según la página del producto.",
+    "El precio no se publica para ninguno de los dos planes de RevRec."
+   ],
+   "howToChoose": [
+    "Parta de su sistema de facturación: los usuarios de Stripe y Maxio tienen opciones nativas.",
+    "Si la facturación se queda donde está y necesita un libro auxiliar, compare el motor de SSP de RightRev.",
+    "Pruebe la gestión de modificaciones con una venta adicional real y un cambio de precio a mitad de plazo antes de decidir."
+   ],
+   "pickFits": [
+    "Facturación y reconocimiento de ingresos en uno, con precio de entrada publicado ($599/month hasta $100k de facturación mensual).",
+    "Si factura con Stripe, su complemento de reconocimiento de ingresos incluye configuración de SSP y precios por uso publicados.",
+    "Un libro auxiliar independiente con simulador de SSP y reasignación por enmiendas que no depende de su proveedor de facturación.",
+    "Facturación, medición y reconocimiento de ingresos con asignación por SSP y extracción de obligaciones de los contratos mediante IA.",
+    "Orientado primero a la facturación, con reconocimiento de ingresos ASC 606 en todos los niveles, pensado para precios basados en uso y compromisos.",
+    "Para el subconjunto de contratos que debe defender en cuanto al SSP: asignación determinista, calendario y papel de trabajo con hash, independientes de la facturación. Sin registro en el libro mayor."
+   ],
+   "relatedPostLabel": "Chargebee RevRec frente a Maxio: ¿cómo asigna cada uno el SSP?",
+   "faqs": null
+  },
+  "tabs": {
+   "slug": "tabs",
+   "title": "Alternativas a Tabs para facturación y RevRec (Guía 2026)",
+   "description": "Compare alternativas a Tabs para facturación B2B y reconocimiento de ingresos ASC 606. Basado en sitios de proveedores: SSP, límites y precios publicados.",
+   "intro": "Tabs es una plataforma de facturación, cobranza y reconocimiento de ingresos ASC 606 para uso, créditos, compromisos y precios híbridos, con un plan de entrada publicado de $2,000 al mes. Los equipos comparan alternativas cuando también reportan bajo IFRS 15, necesitan la asignación del SSP documentada o quieren reconocimiento de ingresos sin mover la facturación.",
+   "whyLook": [
+    "Las páginas que revisamos mencionan ASC 606 pero no IFRS 15 ni SSP.",
+    "Está orientado primero a la facturación; los equipos con la facturación en otro sistema pueden querer solo un libro auxiliar.",
+    "Solo el nivel de entrada tiene precio público."
+   ],
+   "howToChoose": [
+    "Si necesita IFRS 15 o Ind AS 115 además de ASC 606, confirme la cobertura por escrito.",
+    "Si también va a reemplazar la facturación, compare lado a lado las plataformas de facturación más reconocimiento de ingresos.",
+    "Si el reconocimiento de ingresos es la única brecha, un libro auxiliar o un motor específico es menos disruptivo."
+   ],
+   "pickFits": [
+    "Facturación más reconocimiento de ingresos que menciona tanto ASC 606 como IFRS 15, con un precio de entrada publicado más bajo.",
+    "Facturación centrada en el uso, con asignación basada en SSP y recálculo por modificaciones indicados en su sitio.",
+    "Si prefiere facturar en Chargebee, RevRec añade una biblioteca de SSP y registro en el libro mayor.",
+    "Para negocios que facturan con Stripe: reconocimiento de ingresos con configuración de SSP y precio de pago por uso.",
+    "Si además está replanteando su libro mayor, Rillet integra el reconocimiento de ingresos ASC 606 en un ERP.",
+    "Cubre Ind AS 115 con aislamiento del GST además de ASC 606, solo para asignaciones y calendarios. No realiza facturación ni cobranza."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "rillet": {
+   "slug": "rillet",
+   "title": "Alternativas a Rillet para RevRec ASC 606 (2026) [Precios]",
+   "description": "Compare alternativas a Rillet para el reconocimiento de ingresos ASC 606: libros auxiliares, módulos de ERP, SSP y precios de los sitios públicos de los proveedores.",
+   "intro": "Rillet es un ERP nativo de IA con reconocimiento de ingresos integrado, por lo que elegirlo implica elegir un nuevo libro mayor. Los equipos que comparan alternativas suelen querer conservar su ERP actual, necesitan la asignación del SSP detallada o reportan bajo IFRS 15 o Ind AS 115.",
+   "whyLook": [
+    "Adoptar el reconocimiento de ingresos de Rillet implica adoptar Rillet como su ERP.",
+    "La página de reconocimiento de ingresos que revisamos no menciona el SSP.",
+    "El precio no se publica."
+   ],
+   "howToChoose": [
+    "Si va a conservar NetSuite o Sage Intacct, empiece por sus módulos de ingresos.",
+    "Si quiere el reconocimiento de ingresos separado del libro mayor, compare libros auxiliares independientes.",
+    "Si de todos modos va a reemplazar el ERP, pida a cada proveedor que procese su contrato de elementos múltiples más difícil."
+   ],
+   "pickFits": [
+    "Mantiene los ingresos dentro de un ERP consolidado con registro nativo en el libro mayor; asignación del SSP mediante el complemento Revenue Allocation.",
+    "Para usuarios de Sage Intacct: facturación de contratos y reconocimiento en el ERP, con asignación de elementos múltiples como complemento.",
+    "Un libro auxiliar compatible con cualquier ERP y con motor de SSP, si desea conservar su libro mayor actual.",
+    "Si la brecha real es la facturación más los calendarios ASC 606, y no todo el ERP.",
+    "Facturación y reconocimiento de ingresos con sincronización bidireccional con QuickBooks, NetSuite, Sage, Xero y Zoho Books.",
+    "Conserva su ERP y añade una asignación y un calendario defendibles para los contratos auditados. Usted registra la exportación por su cuenta."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "netsuite-arm": {
+   "slug": "netsuite-arm",
+   "title": "Principales alternativas a NetSuite ARM en 2026 [RevRec sin deriva]",
+   "description": "Alternativas a NetSuite ARM comparadas por ajuste a ASC 606, asignación del SSP y precios. Papeles de trabajo con calendarios cuadrados al centavo.",
+   "intro": "NetSuite Advanced Revenue Management (ARM) mantiene el reconocimiento de ingresos dentro de NetSuite, con asignación a valor razonable mediante un complemento aparte, Revenue Allocation. Los equipos buscan alternativas cuando encuentran la configuración pesada, necesitan ayuda de un socio para migrar o quieren análisis del SSP y gestión de modificaciones fuera del ERP.",
+   "whyLook": [
+    "La asignación del SSP requiere el complemento Revenue Allocation además de ARM Essentials.",
+    "La documentación de Oracle indica que pasar del reconocimiento de ingresos clásico requiere NetSuite Professional Services o un socio calificado.",
+    "Algunos patrones de modificación (fusiones prospectivas) no pueden revertirse una vez reconocido el ingreso."
+   ],
+   "howToChoose": [
+    "La mayoría de las alternativas aquí aún registran en NetSuite; confirme cómo regresan los asientos contables y con qué frecuencia.",
+    "Si el problema es la evidencia del SSP y no las reglas de reconocimiento, una herramienta más específica puede bastar.",
+    "Pida una ejecución en paralelo con un trimestre de contratos antes de cambiar."
+   ],
+   "pickFits": [
+    "Un libro auxiliar compatible con cualquier ERP, con simulador de SSP y reasignación por enmiendas, que registra asientos contables en su libro mayor.",
+    "Automatización de ingresos empresarial con modelado de SSP y conector con NetSuite, para equipos más grandes.",
+    "Libro auxiliar con integración nativa con NetSuite y biblioteca de SSP; la mejor opción si factura en Chargebee.",
+    "Facturación más reconocimiento de ingresos con sincronización bidireccional con NetSuite y asignación basada en SSP.",
+    "Solo si está dispuesto a reemplazar NetSuite por un ERP con reconocimiento de ingresos integrado.",
+    "Funciona junto a NetSuite para los contratos que necesita defender: asignación, calendario y papel de trabajo con hash, exportados como un CSV que usted revisa y registra."
+   ],
+   "relatedPostLabel": "Maxio frente a NetSuite ARM: ¿cuál gestiona mejor la asignación del SSP?",
+   "faqs": [
+    {
+     "question": "¿Cuál es la mejor alternativa a NetSuite ARM para ASC 606?",
+     "answer": "Para un reconocimiento de ingresos independiente sin reemplazar el libro mayor de NetSuite, RightRev y Zuora Revenue ofrecen libros auxiliares dedicados que calculan la asignación por SSP relativo y registran asientos contables de vuelta en NetSuite. Para equipos que buscan una calculadora específica para contratos complejos de elementos múltiples, Soluqube ofrece papeles de trabajo independientes con calendarios de SSP."
+    },
+    {
+     "question": "¿Por qué los equipos financieros buscan alternativas a NetSuite ARM?",
+     "answer": "Los equipos financieros suelen evaluar alternativas a NetSuite ARM por la complejidad y el costo del complemento Revenue Allocation, los fuertes requisitos de implementación y las reglas de modificación rígidas, en las que las fusiones prospectivas no pueden revertirse fácilmente una vez iniciado el reconocimiento de ingresos."
+    }
+   ]
+  },
+  "sage-intacct-revenue": {
+   "slug": "sage-intacct-revenue",
+   "title": "Alternativas a Sage Intacct RevRec (2026) [ASC 606 e híbridos]",
+   "description": "Alternativas a Sage Intacct para ASC 606 y contratos híbridos: libros auxiliares independientes, asignación por SSP relativo y exportaciones en Excel.",
+   "intro": "La aplicación Contracts de Sage Intacct gestiona la facturación de suscripciones y el reconocimiento de ingresos dentro del ERP, con asignación de elementos múltiples disponible mediante un complemento de Advanced Revenue Recognition. Los equipos comparan alternativas cuando requieren más herramientas de SSP, manejan modificaciones complejas o quieren un libro auxiliar no ligado al ERP.",
+   "whyLook": [
+    "La asignación entre elementos múltiples requiere un complemento aparte.",
+    "La documentación que revisamos describe la asignación MEA en lugar de herramientas de análisis del SSP.",
+    "El precio no se publica."
+   ],
+   "howToChoose": [
+    "Prefiera herramientas con integración nativa con Sage Intacct para que los asientos contables se registren sin problemas.",
+    "Si la facturación funciona bien en Sage Intacct, añada un libro auxiliar en lugar de reemplazar la facturación.",
+    "Verifique cómo gestiona cada opción una venta adicional a mitad de plazo en un contrato real."
+   ],
+   "pickFits": [
+    "Integración nativa con Sage Intacct, biblioteca de SSP y gestión de modificaciones; más sólido con Chargebee Billing.",
+    "Facturación y reconocimiento de ingresos con integración con Sage Intacct y precio de entrada publicado.",
+    "Libro auxiliar con enfoque API-first y simulador de SSP; confirme la conexión con Sage Intacct con el proveedor.",
+    "Sincronización bidireccional con Sage, asignación basada en SSP y recálculo por modificaciones.",
+    "Solo si está considerando reemplazar Sage Intacct como su ERP.",
+    "Añade asignación por SSP relativo documentada y calendarios para los contratos bajo auditoría; usted registra la exportación en Sage Intacct por su cuenta."
+   ],
+   "relatedPostLabel": null,
+   "faqs": [
+    {
+     "question": "¿Puede Sage Intacct gestionar ASC 606 e IFRS 15 en contratos de suscripción híbridos?",
+     "answer": "Sage Intacct Contracts admite calendarios ASC 606 e IFRS 15 para suscripciones estándar, pero los acuerdos complejos de elementos múltiples con uso híbrido, servicios profesionales o descuentos personalizados suelen requerir el módulo opcional Advanced Revenue Management o un libro auxiliar dedicado junto a Sage Intacct."
+    },
+    {
+     "question": "¿Cuáles son las limitaciones del reconocimiento de ingresos de Sage Intacct?",
+     "answer": "El reconocimiento de ingresos nativo de Sage Intacct está estrechamente acoplado a su módulo Contracts y al libro mayor. La asignación del precio de venta independiente (SSP) entre paquetes de elementos múltiples requiere complementos, el precio es solo bajo cotización y las modificaciones a mitad de contrato suelen requerir recálculo manual o conciliación con doble registro."
+    },
+    {
+     "question": "¿Se puede usar un motor de reconocimiento de ingresos independiente con Sage Intacct sin reemplazar la facturación?",
+     "answer": "Sí. Los libros auxiliares de ingresos independientes o los motores diseñados para este fin, como Soluqube, operan junto a Sage Intacct. Soluqube incorpora los términos del contrato, calcula las asignaciones por SSP relativo y los calendarios de amortización al centavo, y ofrece exportaciones CSV listas para auditoría con formato para importar asientos contables en Sage Intacct."
+    }
+   ]
+  },
+  "zenskar": {
+   "slug": "zenskar",
+   "title": "Alternativas a Zenskar para facturación y RevRec (2026)",
+   "description": "Alternativas a Zenskar para facturación por uso y reconocimiento de ingresos ASC 606 / IFRS 15: a quién se ajusta cada una, SSP, límites y precios.",
+   "intro": "Zenskar es una plataforma nativa de IA de facturación, medición y reconocimiento de ingresos con asignación basada en SSP y recálculo por modificaciones. Todos los planes tienen precio personalizado y el reconocimiento de ingresos viene con su capa de facturación, por lo que los equipos suelen compararlo con plataformas que publican precios o con libros auxiliares independientes.",
+   "whyLook": [
+    "Todos los planes tienen precio personalizado.",
+    "El reconocimiento de ingresos va ligado a adoptar su capa de facturación y medición.",
+    "SAP y Oracle no figuran entre sus integraciones en las páginas que revisamos."
+   ],
+   "howToChoose": [
+    "Si necesita precios publicados, Maxio, Tabs y Stripe publican sus tarifas.",
+    "Si la facturación se queda donde está, compare libros auxiliares en lugar de plataformas de facturación.",
+    "Pruebe la extracción de obligaciones con IA frente a lo que su auditor aceptaría como evidencia."
+   ],
+   "pickFits": [
+    "Facturación de uso, créditos y compromisos con reconocimiento de ingresos ASC 606 y un precio de entrada publicado.",
+    "Facturación más reconocimiento de ingresos con medición y un plan Grow publicado.",
+    "Si prefiere Chargebee Billing, RevRec añade una biblioteca de SSP, gestión de modificaciones y registro en el libro mayor.",
+    "Para empresas que facturan con Stripe: reconocimiento de ingresos con precio como porcentaje del volumen y configuración de SSP.",
+    "Un libro auxiliar independiente con motor de SSP si desea conservar su sistema de facturación.",
+    "Sin facturación y sin extracción con IA: usted confirma las obligaciones y obtiene una asignación determinista, un calendario y un papel de trabajo con hash. Cubre Ind AS 115."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "trullion": {
+   "slug": "trullion",
+   "title": "Alternativas a Trullion para reconocimiento de ingresos",
+   "description": "Alternativas a Trullion para reconocimiento de ingresos ASC 606 / IFRS 15: libros auxiliares, suites empresariales y herramientas específicas, con límites y precios.",
+   "intro": "Trullion es una plataforma de contabilidad y auditoría con IA que extrae términos de contratos y ejecuta flujos de reconocimiento de ingresos y arrendamientos, dirigida tanto a equipos contables corporativos como a auditores. Los equipos comparan alternativas cuando necesitan herramientas de SSP, gestión de modificaciones o modelos basados en uso que sus páginas de ingresos no mencionan.",
+   "whyLook": [
+    "Las páginas que revisamos no mencionan el SSP, las modificaciones de contratos ni la facturación basada en uso.",
+    "En las páginas que revisamos no se nombra ninguna integración específica con un ERP.",
+    "El precio no se publica."
+   ],
+   "howToChoose": [
+    "Si la asignación y el SSP son el foco de la auditoría, prefiera herramientas que documenten el SSP de forma explícita.",
+    "Si también necesita contabilidad de arrendamientos, evalúe si importa más una sola plataforma que la profundidad en ingresos.",
+    "Pregunte a cada proveedor cómo se revisan los términos extraídos con IA antes de que determinen las cifras."
+   ],
+   "pickFits": [
+    "Motor y simulador de SSP más reasignación por enmiendas, para equipos cuyas preguntas de auditoría giran en torno a la asignación.",
+    "Automatización de ingresos empresarial con modelado de SSP y reglas de modificación.",
+    "Libro auxiliar con biblioteca de SSP, gestión de modificaciones e integraciones con ERP nombradas.",
+    "Para alto volumen de transacciones más que para revisión de contratos; precios publicados. Leapfin se une a Airwallex.",
+    "También extrae obligaciones de los contratos con IA, y añade facturación, asignación por SSP y recálculo por modificaciones.",
+    "Evidencia de cláusulas (página, extracto textual y resaltado de línea) por obligación, como una herramienta de auditoría, pero las cifras provienen de un motor determinista de enteros que puede volver a ejecutar. Sin contabilidad de arrendamientos."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  },
+  "rightrev": {
+   "slug": "rightrev",
+   "title": "Alternativas a RightRev para ASC 606 (2026)",
+   "description": "Alternativas a RightRev para el reconocimiento de ingresos ASC 606 / IFRS 15: suites empresariales, módulos de ERP y herramientas más específicas, con SSP y precios.",
+   "intro": "RightRev es un libro auxiliar de reconocimiento de ingresos con motor y simulador de SSP, reasignación por enmiendas y una edición nativa de Salesforce. Los equipos comparan alternativas cuando quieren los ingresos dentro de su ERP, no usan Salesforce o necesitan precios publicados.",
+   "whyLook": [
+    "El precio no se publica.",
+    "La edición para Salesforce presupone una organización de Salesforce.",
+    "En sus páginas no se nombra ningún ERP específico; la conexión con el libro mayor se basa en API."
+   ],
+   "howToChoose": [
+    "Si usa NetSuite y quiere un solo sistema, compare ARM con el complemento Revenue Allocation.",
+    "Para escala empresarial y amplitud de suite, compare Zuora Revenue.",
+    "Pida a cada proveedor que ejecute su estudio de SSP y una enmienda con datos reales."
+   ],
+   "pickFits": [
+    "Par empresarial con modelado de SSP, reglas de modificación y conectores para NetSuite, Workday, SAP y Salesforce.",
+    "Libro auxiliar con biblioteca de SSP e integraciones con ERP nombradas; más sólido con Chargebee Billing.",
+    "Mantiene los ingresos en NetSuite con registro nativo en el libro mayor; métodos de SSP mediante el complemento Revenue Allocation.",
+    "Facturación más reconocimiento de ingresos con asignación por SSP y recálculo por modificaciones, si también va a reemplazar la facturación.",
+    "Si la revisión de contratos del lado de auditoría importa tanto como el libro auxiliar, y la contabilidad de arrendamientos también está en el alcance.",
+    "Una opción más específica y de precio publicado para defender asignaciones en contratos concretos, que cubre también Ind AS 115. Sin integración con CRM y, por ahora, sin contabilidad de modificaciones."
+   ],
+   "relatedPostLabel": null,
+   "faqs": null
+  }
+ },
+ "vendors": {
+  "maxio": {
+   "whatItIs": "Plataforma de facturación e informes financieros para negocios de suscripción, con reconocimiento de ingresos integrado.",
+   "whoFor": "Negocios B2B SaaS, de IA y de suscripción (Maxio surgió de la combinación de Chargify y SaaSOptics).",
+   "strengths": [
+    "Declara cumplimiento de ASC 606 e IFRS 15, con múltiples libros de ingresos, modelos de precios y obligaciones de desempeño.",
+    "Ediciones de contrato para actualizaciones, reembolsos y otros cambios; sus preguntas frecuentes cubren el SSP y los precios de transacción negociados, exclusiones y reasignación.",
+    "Permite comparar estados de reconocimiento anteriores con calendarios actualizados sin modificar los datos originales de la transacción; informes de cascada y de saldos acumulados.",
+    "Facturación basada en uso (medición, tarificación, compromisos mínimos) e integraciones con NetSuite, Sage Intacct, QuickBooks, Xero, Salesforce y HubSpot."
+   ],
+   "limits": [
+    "Orientado primero a la facturación: el reconocimiento de ingresos va junto a la facturación y los pagos, y no como un libro auxiliar independiente.",
+    "La página de precios indica \"Advanced revenue management\" como módulo opcional; no se detalla qué incluye cada nivel.",
+    "El SSP se menciona solo en las preguntas frecuentes; el método de asignación no se describe en la página."
+   ],
+   "pricing": "Plan Grow $599/month hasta $100k de facturación mensual; plan Scale bajo cotización (maxio.com/pricing).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Mencionado (preguntas frecuentes)"
+  },
+  "zuora": {
+   "whatItIs": "Reconocimiento y automatización de ingresos empresarial dentro de la suite quote-to-cash de Zuora (el producto que muchos equipos financieros aún llaman RevPro).",
+   "whoFor": "Equipos empresariales de finanzas y contabilidad de ingresos; entre sus clientes nombrados figuran Salesforce, Okta, Zoom y Elastic.",
+   "strengths": [
+    "Declara que automatiza los cinco pasos de ASC 606 e IFRS 15, con reglas para precios, cambios de plazo y modificaciones de contratos.",
+    "SSP calculado a partir de datos históricos, con modelado de SSP asistido por IA.",
+    "Controles orientados a SOX, seguridad basada en roles, pistas de auditoría y más de 60 informes predefinidos.",
+    "Gestiona suscripciones, cargos únicos y uso; conectores para NetSuite, Workday, SAP y Salesforce."
+   ],
+   "limits": [
+    "El precio no se publica; solo mediante demostración o contacto con ventas.",
+    "Posicionado para grandes empresas y vendido como parte de una suite más amplia (Billing, Revenue, Collect y más)."
+   ],
+   "pricing": "No publicado.",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sí (modelado de SSP)"
+  },
+  "chargebee": {
+   "whatItIs": "Libro auxiliar de reconocimiento de ingresos que automatiza calendarios, asignación, conciliación y registro de asientos contables, vendido junto con Chargebee Billing.",
+   "whoFor": "Negocios SaaS y de IA con precios híbridos, por uso, basados en créditos o de contratos personalizados. Chargebee RevRec surgió de la adquisición de RevLock por parte de Chargebee en 2021.",
+   "strengths": [
+    "Asigna el precio de la transacción entre las obligaciones de desempeño con una biblioteca de SSP configurable vinculada a la lista de precios, siguiendo el modelo de cinco pasos de ASC 606 / IFRS 15.",
+    "Automatiza el tratamiento de ventas adicionales, co-terminación, notas de crédito, renovaciones anticipadas y otras modificaciones, además de contratos plurianuales con rampa.",
+    "Bloqueos de periodo, saldos acumulados, cascadas de ingresos diferidos, pistas de auditoría y asientos contables resumidos registrados en el libro mayor.",
+    "Integraciones nativas con NetSuite, Sage Intacct, QuickBooks, Xero, Chargebee y Stripe, además de una API REST."
+   ],
+   "limits": [
+    "El plan RevRec Performance está disponible solo para clientes de Chargebee Billing.",
+    "La página del producto describe un ciclo de sincronización de 24 horas para los datos de origen.",
+    "El precio no se publica."
+   ],
+   "pricing": "No publicado (RevRec Performance: solicitar precio; RevRec Enterprise: cotización).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sí (biblioteca de SSP)"
+  },
+  "tabs": {
+   "whatItIs": "Plataforma de facturación, cobranza y reconocimiento de ingresos ASC 606 que convierte contratos y uso en facturas y calendarios de ingresos.",
+   "whoFor": "Equipos B2B de finanzas, contabilidad y RevOps; los planes se definen por rango de ingresos, desde menos de $5M hasta $50M+.",
+   "strengths": [
+    "Facturación, cobranza y reconocimiento de ingresos para muchos modelos de precios en un solo producto.",
+    "Admite uso, créditos, compromisos, mínimos, excedentes, rampas e híbridos, con medición de uso.",
+    "Genera facturas y calendarios de ingresos a partir de contratos y uso; reconocimiento de ingresos ASC 606 en todos los niveles.",
+    "Entre las integraciones nombradas figuran Sage Intacct, QuickBooks, HubSpot y DocuSign."
+   ],
+   "limits": [
+    "Orientado primero a la facturación: el reconocimiento de ingresos es un módulo más.",
+    "Las páginas que revisamos mencionan ASC 606 pero no IFRS 15 ni SSP, y no describen explícitamente la contabilidad de modificaciones de contratos.",
+    "Solo el nivel de entrada tiene un precio publicado."
+   ],
+   "pricing": "Plan Launch $2,000/month (hasta $5M de ingresos anuales, 100 contratos activos); niveles superiores personalizados (tabs.com/pricing).",
+   "standards": "ASC 606",
+   "ssp": "No mencionado"
+  },
+  "netsuite": {
+   "whatItIs": "Módulo de reconocimiento de ingresos basado en reglas dentro del ERP NetSuite, con asignación a valor razonable mediante un complemento Revenue Allocation.",
+   "whoFor": "Empresas que ya usan NetSuite como ERP.",
+   "strengths": [
+    "La documentación de Oracle declara compatibilidad con ASC 606 e IFRS 15, con herramientas de conversión.",
+    "Revenue Allocation admite métodos de valor razonable, incluidos el precio de venta independiente, listas de precios de valor razonable, verificación de rangos y fórmulas para acuerdos de elementos múltiples.",
+    "Acuerdos de ingresos nativos, elementos de ingresos por obligación de desempeño, reglas y planes de reconocimiento, con asientos contables registrados directamente en el libro mayor de NetSuite.",
+    "Gestión de órdenes de cambio, incluida la fusión prospectiva, bajo \"Combination and Modification of Performance Obligations\"."
+   ],
+   "limits": [
+    "Es un módulo de NetSuite: requiere el ERP NetSuite, y Revenue Allocation es un complemento aparte de ARM Essentials.",
+    "La documentación de Oracle indica que pasar del reconocimiento de ingresos clásico requiere NetSuite Professional Services o un socio calificado.",
+    "Las fusiones prospectivas no pueden revertirse una vez que el ingreso se reconoce o se reclasifica, y no son compatibles con algunos tipos de plan."
+   ],
+   "pricing": "No publicado en las páginas a las que pudimos acceder (netsuite.com bloqueó el acceso automatizado; los datos aquí provienen de la documentación de NetSuite de Oracle).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sí (métodos de valor razonable, complemento)"
+  },
+  "rillet": {
+   "whatItIs": "ERP nativo de IA (libro mayor, cierre, cuentas por cobrar y por pagar, consolidación) con un módulo Advanced Revenue Recognition integrado.",
+   "whoFor": "Empresas medianas, grandes y públicas, con páginas dedicadas para SaaS, startups, capital privado y firmas contables.",
+   "strengths": [
+    "Declara que aplica ASC 606 directamente a partir de sus contratos.",
+    "Automatiza modelos liderados por ventas, por producto y basados en uso, incluidos precios por uso y por hitos.",
+    "Las enmiendas de contratos se reflejan en los calendarios y en el libro mayor.",
+    "Calendarios de ingresos diferidos, cascada de ingresos, multientidad y multimoneda; integraciones con Salesforce, HubSpot, Stripe, Avalara y otras."
+   ],
+   "limits": [
+    "Usarlo implica adoptar Rillet como su ERP y libro mayor; NetSuite, Sage Intacct y QuickBooks aparecen como páginas de comparación, no como integraciones.",
+    "La página de reconocimiento de ingresos que revisamos no menciona el SSP; IFRS 15 aparece en el título de la página pero no en el texto de las funciones.",
+    "El precio no se publica."
+   ],
+   "pricing": "No publicado (contacto con ventas).",
+   "standards": "ASC 606 (IFRS 15 en el título de la página)",
+   "ssp": "No mencionado"
+  },
+  "sage": {
+   "whatItIs": "Aplicación de gestión de contratos, facturación y reconocimiento de ingresos dentro del ERP en la nube Sage Intacct.",
+   "whoFor": "Negocios de suscripción que usan Sage Intacct.",
+   "strengths": [
+    "La documentación de Sage Intacct declara compatibilidad completa con ASC 606 e IFRS 15.",
+    "Calendarios de reconocimiento lineales, por tarifa diaria, basados en cantidad y personalizados, separados de la facturación, con contabilidad multilibro.",
+    "El complemento Contract Advanced Revenue Recognition admite la asignación de acuerdos de elementos múltiples (MEA) con pista de auditoría.",
+    "Facturación por uso (niveles, cargos mínimos) y facturación de contratos para complementos, órdenes de cambio, cancelaciones y renovaciones."
+   ],
+   "limits": [
+    "Es un módulo de Sage Intacct: requiere Sage Intacct como ERP.",
+    "La asignación MEA requiere el complemento aparte Advanced Revenue Recognition; el nivel estándar no asigna.",
+    "La documentación que revisamos usa \"MEA allocation\" en lugar del término precio de venta independiente."
+   ],
+   "pricing": "No publicado en las páginas a las que pudimos acceder (sage.com bloqueó el acceso automatizado; la documentación de ayuda indica contactar a un gerente de cuenta de Sage Intacct).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Asignación MEA (complemento)"
+  },
+  "zenskar": {
+   "whatItIs": "Plataforma nativa de IA de facturación, medición y reconocimiento de ingresos que convierte contratos en facturas y calendarios de ingresos.",
+   "whoFor": "Equipos financieros de empresas de rápido crecimiento; los planes van desde equipos pequeños hasta empresas grandes.",
+   "strengths": [
+    "Declara cumplimiento total de ASC 606 e IFRS 15 y extracción con IA de las obligaciones de desempeño de los contratos.",
+    "Asignación de ingresos basada en SSP, incluidos SSP para paquetes.",
+    "Recalcula los ingresos (futuros y pasados) por modificaciones de contratos, con ajuste manual.",
+    "Medición de uso desde API, CSV o almacenes de datos; integraciones bidireccionales con QuickBooks, NetSuite, Sage, Xero y Zoho Books."
+   ],
+   "limits": [
+    "Todos los planes tienen precio personalizado.",
+    "El reconocimiento de ingresos viene con su capa de facturación y medición, por lo que se ajusta a equipos dispuestos a mover también la facturación.",
+    "SAP y Oracle no figuran entre las integraciones en las páginas que revisamos."
+   ],
+   "pricing": "No publicado (Starter, Standard y Enterprise tienen precio personalizado).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sí"
+  },
+  "trullion": {
+   "whatItIs": "Plataforma de contabilidad y auditoría con IA que extrae términos de contratos y ejecuta flujos de reconocimiento de ingresos y arrendamientos.",
+   "whoFor": "Equipos contables corporativos (CFO, controllers), auditores externos e internos y firmas de asesoría.",
+   "strengths": [
+    "Se posiciona para el cumplimiento de ASC 606 / IFRS 15.",
+    "Extrae fechas de renovación, obligaciones y cláusulas que afectan los ingresos de los contratos cargados, con una pista de auditoría hasta el documento de origen.",
+    "Configuración de obligaciones de desempeño, cascadas de ingresos y revelaciones; asientos contables exportados a su ERP.",
+    "También cubre contabilidad de arrendamientos y flujos de auditoría como las pruebas sustantivas."
+   ],
+   "limits": [
+    "Las páginas que revisamos no nombran ninguna integración específica con un ERP.",
+    "El SSP, las modificaciones de contratos y la facturación basada en uso no se mencionan en las páginas que revisamos.",
+    "El precio no se publica."
+   ],
+   "pricing": "No publicado (recorrido del producto bajo solicitud).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "No mencionado"
+  },
+  "rightrev": {
+   "whatItIs": "Libro auxiliar de reconocimiento de ingresos que opera junto al ERP, con un motor de SSP y una edición nativa de Salesforce.",
+   "whoFor": "Equipos de finanzas y contabilidad con modelos de suscripción y consumo; entre sus clientes nombrados figuran Epicor, Docebo y Drata.",
+   "strengths": [
+    "Declara cumplimiento de ASC 606 / IFRS 15.",
+    "Motor y simulador de SSP para modelar y validar los resultados del SSP y de la asignación antes de poner en producción los cambios.",
+    "Las enmiendas, cancelaciones, renovaciones y expansiones se detectan y se reasignan.",
+    "Suscripciones, uso, créditos, hitos y compromisos; asientos contables registrados en el libro mayor con trazabilidad."
+   ],
+   "limits": [
+    "Se describe como compatible con cualquier ERP y API-first; en las páginas que revisamos no se nombra ningún ERP específico.",
+    "La edición para Salesforce está construida sobre Salesforce y presupone una organización de Salesforce.",
+    "El precio no se publica."
+   ],
+   "pricing": "No publicado (solicitud de demostración).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sí (motor de SSP)"
+  },
+  "leapfin": {
+   "whatItIs": "Plataforma de datos financieros de alto volumen que convierte datos de transacciones en asientos contables, reconocimiento de ingresos y conciliaciones.",
+   "whoFor": "Negocios con alto volumen de transacciones, como comercio electrónico, marketplaces, suscripción y software. Leapfin anunció en junio de 2026 que se une a Airwallex.",
+   "strengths": [
+    "Consolida muchas fuentes de datos en un único conjunto de datos listo para el libro mayor.",
+    "Automatiza asientos contables, reconocimiento de ingresos, conciliación y cierre con trazabilidad a nivel de transacción.",
+    "Compatibilidad con facturación basada en uso y un flujo de datos hacia NetSuite."
+   ],
+   "limits": [
+    "Diseñado para volumen de transacciones y no para términos contractuales negociados.",
+    "IFRS 15, el SSP y las modificaciones de contratos no se mencionan en las páginas que revisamos."
+   ],
+   "pricing": "Publicado: Standard desde $500/month, Premium desde $1,000/month, Enterprise personalizado (leapfin.com/pricing; las preguntas frecuentes de la página también citan una base de $1,000/month).",
+   "standards": "ASC 606",
+   "ssp": "No mencionado"
+  },
+  "stripe": {
+   "whatItIs": "Libro auxiliar de ingresos dentro del Dashboard de Stripe que convierte las transacciones y los términos de facturación de Stripe en asientos contables e informes.",
+   "whoFor": "Negocios que facturan a través de Stripe.",
+   "strengths": [
+    "Declara resultados alineados con IFRS 15 y ASC 606.",
+    "SSP configurables para productos agrupados y más de 15 modelos de precios, incluidos los basados en uso y los híbridos.",
+    "Gestiona mejoras y reducciones de plan, prorrateos, reembolsos y disputas; informes de cascada, balance de comprobación y antigüedad de cuentas por cobrar.",
+    "Importa transacciones ajenas a Stripe mediante CSV."
+   ],
+   "limits": [
+    "Requiere una cuenta de Stripe y se usa a través del Dashboard de Stripe; la disponibilidad varía según el país.",
+    "Los datos ajenos a Stripe entran como CSV con fechas del periodo de servicio, no a partir de documentos contractuales.",
+    "Exporta a sistemas contables mediante mapeo al libro mayor; no se nombra ningún conector de ERP en las páginas que revisamos."
+   ],
+   "pricing": "Publicado: 0.25% del volumen, o 0.2% por encima de $100,000 al mes, con 30 días de prueba gratuita (stripe.com; el volumen incluye las transacciones importadas).",
+   "standards": "ASC 606, IFRS 15",
+   "ssp": "Sí"
+  },
+  "soluqube": {
+   "whatItIs": "Motor de asignación y calendario basado primero en el contrato para ASC 606 e Ind AS 115, que produce un papel de trabajo con evidencia para los contratos que necesita defender.",
+   "whoFor": "Controllers, contadores de ingresos y firmas de CPA o de CFO fraccionales que defienden ante auditores externos asignaciones del SSP en contratos B2B negociados, en Estados Unidos y la India.",
+   "strengths": [
+    "Asignación por SSP relativo y calendario de plazo completo con aritmética de enteros (escala 10^6, redondeada a centavos), con el último periodo absorbiendo el resto, de modo que el calendario cuadra con la asignación y los ingresos diferidos terminan en $0.00.",
+    "Evidencia de cláusulas por obligación (página, extracto textual y un resaltado en la línea citada, para PDF con capa de texto) y una exportación con hash SHA-256: misma entrada, misma salida, repetible ante un auditor.",
+    "Tratamiento de Ind AS 115 con el GST del 18% excluido del precio de la transacción en contratos en INR.",
+    "Papel de trabajo gratuito de defensa de auditoría de 3 contratos para comenzar; sin proyecto de implementación."
+   ],
+   "limits": [
+    "Producto en etapa temprana creado por un fundador individual; aún sin referencias de clientes publicadas.",
+    "Usted confirma las obligaciones y los precios indicados; la extracción de contratos es heurística, no automática.",
+    "Sin facturación ni facturación basada en uso, y sin integración con ERP: usted revisa y registra por su cuenta las exportaciones en Excel/CSV.",
+    "La contabilidad de modificaciones de contratos (prospectiva y de ajuste acumulado) está en la hoja de ruta, no construida."
+   ],
+   "pricing": "Precios de lanzamiento para los primeros 10 clientes: papel de trabajo gratuito de 3 contratos; $475 papel de trabajo de auditoría para hasta 10 contratos; $1,750 paquete QoE para operaciones; $49/month de acceso a la herramienta para firmas (soluqube.com/pricing).",
+   "standards": "ASC 606, Ind AS 115",
+   "ssp": "Sí (SSP relativo, regla documentada del centavo residual)"
+  }
+ }
+}

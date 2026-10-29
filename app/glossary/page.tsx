@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LOCALES, hreflangMap } from "@/lib/i18n";
 import Navbar from "@/components/navbar";
 import ResourceFooter from "@/components/resource-footer";
 import { GLOSSARY_TERMS } from "@/data/glossary";
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   title: { absolute: "ASC 606 & IFRS 15 Revenue Glossary | Soluqube" },
   description:
     "40 revenue recognition terms under ASC 606, IFRS 15 and Ind AS 115, each with a direct definition, standard references and a worked numeric example.",
-  alternates: { canonical: `${SITE}/glossary` },
+  alternates: { canonical: `${SITE}/glossary`, languages: hreflangMap("/glossary", LOCALES) },
   openGraph: {
     title: "ASC 606 & IFRS 15 Revenue Glossary",
     description:

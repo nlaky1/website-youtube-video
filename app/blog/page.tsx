@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { LOCALES, hreflangMap } from "@/lib/i18n";
 import Navbar from "@/components/navbar";
 import ResourceFooter from "@/components/resource-footer";
 import { BLOG_POSTS } from "@/data/blogPosts";
@@ -30,7 +31,8 @@ export const metadata: Metadata = {
     "SSP allocation"
   ],
   alternates: {
-    canonical: "https://soluqube.com/blog"
+    canonical: "https://soluqube.com/blog",
+    languages: hreflangMap("/blog", LOCALES),
   },
   openGraph: {
     title: "ASC 606 & Ind AS 115 Accounting Guides | Soluqube",

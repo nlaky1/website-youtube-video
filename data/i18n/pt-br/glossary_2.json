@@ -1,0 +1,632 @@
+{
+ "principal-vs-agent": {
+  "slug": "principal-vs-agent",
+  "term": "Principal versus agente",
+  "title": "Principal versus agente na ASC 606: definição",
+  "description": "Principal versus agente na ASC 606 e IFRS 15: o teste de controle, os três indicadores e um exemplo de receita bruta versus líquida na revenda de licença de app.",
+  "definition": "A análise de principal versus agente determina se a entidade reporta a receita pelo valor bruto, como principal que controla o bem ou serviço especificado antes da transferência, ou pelo valor líquido, como agente que apenas intermedeia o fornecimento por outra parte. Os indicadores de controle incluem a responsabilidade primária pelo cumprimento, o risco de estoque e a discricionariedade na definição do preço.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-36 to 55-40",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B34–B38",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B34–B38",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: um marketplace vende a um cliente a licença de um app de terceiros por $1,000 e paga $700 ao desenvolvedor.",
+   "steps": [
+    "Identifique o bem especificado: a licença do app.",
+    "Se o marketplace controla a licença antes da transferência (é responsável pelo cumprimento e define o preço), ele é principal: receita de $1,000, custo das vendas de $700.",
+    "Se o desenvolvedor cumpre a entrega e o marketplace apenas intermedeia a venda, ele é agente: receita de $300, a comissão líquida."
+   ],
+   "result": "Mesmo caixa, receita bruta muito diferente: $1,000 pelo valor bruto ou $300 pelo valor líquido."
+  },
+  "mistakes": [
+   "Usar o risco de crédito como indicador; ele foi removido da ASC 606 pela ASU 2016-08.",
+   "Concluir no nível do contrato em vez de para cada bem ou serviço especificado.",
+   "Tratar os indicadores como uma pontuação em vez de evidência sobre o controle."
+  ],
+  "furtherLabels": [
+   "Principal versus agente na ASC 606: exemplo prático de receita bruta versus líquida",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "distinct-good-or-service": {
+  "slug": "distinct-good-or-service",
+  "term": "Bem ou serviço distinto",
+  "title": "Bem ou serviço distinto: teste duplo da ASC 606",
+  "description": "Quando um bem ou serviço é distinto na ASC 606 e IFRS 15: o teste em duas partes, um exemplo de implantação SaaS com os dois resultados e erros comuns.",
+  "definition": "Um bem ou serviço é distinto se o cliente pode se beneficiar dele isoladamente ou com recursos prontamente disponíveis (capaz de ser distinto) e se a promessa de transferi-lo é separadamente identificável das demais promessas do contrato (distinto no contexto do contrato). Os dois critérios devem ser atendidos.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-19 to 25-22",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 27–30",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 27–30",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma assinatura anual de $90,000 vendida com um serviço de configuração de $30,000.",
+   "steps": [
+    "Caso A: a configuração é padrão e também é vendida por parceiros, e a plataforma funciona sem ela. Os dois critérios são atendidos, portanto há duas obrigações; os $120,000 são alocados pelo SSP relativo e a parcela da configuração é reconhecida conforme o trabalho é executado.",
+    "Caso B: a configuração personaliza a plataforma de forma significativa, e o cliente não consegue usá-la para sua finalidade sem ela. As promessas são insumos de um único produto combinado, portanto há uma única obrigação.",
+    "No Caso B, os $120,000 integrais são reconhecidos ao longo do período em que o cliente tem acesso à plataforma personalizada."
+   ],
+   "result": "A mesma tabela de preços gera duas obrigações no Caso A e uma no Caso B."
+  },
+  "mistakes": [
+   "Parar em 'capaz de ser distinto' e pular o teste de identificação separada.",
+   "Ignorar os indicadores de integração significativa, modificação e interdependência.",
+   "Separar promessas que, na verdade, são insumos de um único produto combinado."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Exemplo de alocação de SSP na ASC 606: pacote SaaS com 3 elementos"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "series-guidance": {
+  "slug": "series-guidance",
+  "term": "Orientação de série",
+  "title": "Orientação de série na ASC 606: exemplo SaaS",
+  "description": "A orientação de série da ASC 606 e IFRS 15: quando períodos distintos formam uma única obrigação de desempenho e um exemplo de alocação de tarifas de uso a um mês.",
+  "definition": "A orientação de série trata uma série de bens ou serviços distintos, substancialmente iguais e transferidos com o mesmo padrão, como uma única obrigação de desempenho. Aplica-se quando cada período distinto seria satisfeito ao longo do tempo e o progresso é medido da mesma forma, o que é típico de acesso SaaS diário ou mensal.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-14(b) and 25-15",
+    "note": null
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-39 to 32-41",
+    "note": "alocação de contraprestação variável a períodos distintos"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 22(b), 23 and 84–86",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: um contrato de plataforma de 12 meses a $5,000 por mês, mais $0.02 por transação acima de 1,000,000 de transações em um mês. O volume de março é 1,400,000.",
+   "steps": [
+    "O serviço é uma série de meses distintos de acesso à plataforma: uma obrigação de desempenho.",
+    "Excedente de março: (1,400,000 − 1,000,000) × $0.02 = $8,000.",
+    "O excedente se refere apenas ao serviço de março e é consistente com o objetivo de alocação, portanto é alocado integralmente a março."
+   ],
+   "result": "Receita de março: $5,000 fixos + $8,000 de excedente = $13,000. Não é necessária previsão anual de uso."
+  },
+  "mistakes": [
+   "Tratar a orientação de série como opcional; ela se aplica quando os critérios são atendidos.",
+   "Estimar um ano inteiro de uso na origem em vez de alocar o uso ao período a que se refere.",
+   "Aplicá-la a serviços cujos períodos não são substancialmente iguais."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "ratable-recognition": {
+  "slug": "ratable-recognition",
+  "term": "Reconhecimento linear",
+  "title": "Reconhecimento linear de receita: definição",
+  "description": "Reconhecimento linear de receita em SaaS na ASC 606 e IFRS 15: quando se aplica, convenções por dia versus por mês e um exemplo com início no meio do mês.",
+  "definition": "O reconhecimento linear distribui a receita de forma uniforme ao longo do período em que a obrigação de desempenho é satisfeita. É típico de acesso SaaS em regime de disponibilidade (stand-ready), em que o tempo decorrido retrata fielmente a transferência. É uma conclusão sobre a medida de progresso de uma obrigação satisfeita ao longo do tempo, não um padrão para todo contrato.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-27 and 25-31",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 35 and 39",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 35 and 39",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma assinatura anual de $36,500 (365 dias) com acesso iniciado em 15 de fevereiro.",
+   "steps": [
+    "Convenção diária: $36,500 / 365 = $100 por dia.",
+    "Fevereiro: de 15 a 28 de fevereiro são 14 dias, ou seja, $1,400.",
+    "Uma convenção mensal com meio mês para fevereiro resultaria em $1,520.83 ($36,500 / 12 / 2).",
+    "Escolha uma convenção, documente-a e aplique-a de forma consistente."
+   ],
+   "result": "Receita de fevereiro de $1,400 pela convenção diária; os $35,100 restantes seguem ao longo do prazo."
+  },
+  "mistakes": [
+   "Iniciar o reconhecimento na assinatura em vez de quando o acesso é disponibilizado.",
+   "Seguir o cronograma de faturamento em vez do padrão de transferência.",
+   "Arredondar cada período de forma independente, de modo que o total não seja igual ao valor alocado."
+  ],
+  "furtherLabels": [
+   "Arredondamento na alocação de SSP na ASC 606: onde vai o centavo",
+   "Calculadora de alocação de SSP"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "point-in-time-recognition": {
+  "slug": "point-in-time-recognition",
+  "term": "Reconhecimento em um momento específico",
+  "title": "Reconhecimento em momento específico: definição",
+  "description": "Reconhecimento de receita em um momento específico na ASC 606 e IFRS 15: quando se aplica, os indicadores de controle e um exemplo de licença por prazo com suporte.",
+  "definition": "O reconhecimento em um momento específico se aplica quando a obrigação de desempenho não atende a nenhum dos três critérios de reconhecimento ao longo do tempo. A receita é reconhecida quando o controle é transferido, avaliado por indicadores como direito presente ao pagamento, titularidade legal, posse física, transferência dos riscos e benefícios significativos e aceitação pelo cliente.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-30",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 38",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 38",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma licença on-premise por prazo de três anos com alocação de $60,000 e 12 meses de suporte com alocação de $15,000. A chave é entregue e o prazo começa em 1 de abril.",
+   "steps": [
+    "A licença é um direito de uso de propriedade intelectual funcional como ela existe na entrega, portanto é reconhecida em um momento específico.",
+    "1 de abril: receita de licença de $60,000.",
+    "O suporte é um serviço em regime de disponibilidade (stand-ready): $15,000 / 12 = $1,250 por mês a partir de abril."
+   ],
+   "result": "$61,250 reconhecidos em abril e, depois, $1,250 por mês no restante do prazo de suporte."
+  },
+  "mistakes": [
+   "Reconhecer na assinatura, antes de o software estar disponível ao cliente.",
+   "Ignorar cláusulas substantivas de aceitação pelo cliente.",
+   "Reconhecer a renovação de uma licença antes do início do período de renovação."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "input-method": {
+  "slug": "input-method",
+  "term": "Método de insumos",
+  "title": "Método de insumos (custo a custo) na ASC 606",
+  "description": "O método de insumos para medir o progresso na ASC 606 e IFRS 15, com um exemplo de implantação baseado em horas, incluindo mudança de estimativa.",
+  "definition": "O método de insumos mede o progresso rumo à satisfação de uma obrigação de desempenho ao longo do tempo pelos esforços ou insumos da entidade, como custos incorridos, horas de trabalho ou tempo decorrido, em relação ao total de insumos esperados. Insumos que não retratam a transferência ao cliente, como materiais desperdiçados ou retrabalho, são excluídos.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-20 to 55-21",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B18–B19",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B18–B19",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma implantação de preço fixo de $40,000, orçada em 400 horas.",
+   "steps": [
+    "Trimestre 1: 150 horas utilizadas. Progresso 150 / 400 = 37.5%; receita de $15,000.",
+    "Trimestre 2: estimativa total revisada para 500 horas; 300 horas utilizadas até a data. Progresso de 60%; receita acumulada de $24,000.",
+    "Receita do trimestre 2 = $24,000 − $15,000 = $9,000. A mudança de estimativa é tratada no período corrente."
+   ],
+   "result": "A receita acumulada acompanha a estimativa mais recente do esforço total."
+  },
+  "mistakes": [
+   "Contar retrabalho ou ineficiências como progresso.",
+   "Não atualizar a estimativa do total de insumos a cada período.",
+   "Usar marcos de faturamento como substituto dos insumos."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "output-method": {
+  "slug": "output-method",
+  "term": "Método de produtos",
+  "title": "Método de produtos na ASC 606: definição",
+  "description": "O método de produtos para medir o progresso na ASC 606 e IFRS 15, o expediente prático do direito de faturar e um exemplo de migração de dados.",
+  "definition": "O método de produtos mede o progresso pelo valor transferido ao cliente até a data em relação aos bens ou serviços remanescentes, usando medidas como marcos atingidos, unidades entregues ou tempo decorrido. Um expediente prático permite à entidade reconhecer o valor que tem o direito de faturar quando esse valor corresponde diretamente ao valor transferido.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-16 to 55-19",
+    "note": "55-18: expediente do direito de faturar"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B14–B17",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B14–B17",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma taxa fixa de $25,000 para migrar 50 entidades legadas, mais horas de consultoria faturadas a $150 por hora.",
+   "steps": [
+    "Migração: 20 de 50 entidades migradas no fim do período. Progresso de 40%; receita de $10,000.",
+    "Consultoria: 30 horas entregues a uma tarifa que reflete o valor para o cliente. Pelo expediente do direito de faturar, a receita é 30 × $150 = $4,500."
+   ],
+   "result": "Receita do período de $14,500 nas duas obrigações."
+  },
+  "mistakes": [
+   "Usar marcos que deixam trabalho em andamento relevante sem reconhecimento.",
+   "Aplicar o expediente do direito de faturar quando as tarifas são concentradas no início e não correspondem ao valor entregue.",
+   "Misturar medidas de progresso dentro de uma mesma obrigação de desempenho."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "contract-modification": {
+  "slug": "contract-modification",
+  "term": "Modificação do contrato",
+  "title": "Modificação do contrato na ASC 606: exemplo",
+  "description": "Modificações do contrato na ASC 606-10-25-10 a 25-13 e IFRS 15: os três resultados e um exemplo de upsell de licenças SaaS com preço igual e inferior ao SSP.",
+  "definition": "Uma modificação do contrato é uma alteração aprovada no escopo ou no preço, ou em ambos, de um contrato. É contabilizada como um contrato separado, de forma prospectiva como o encerramento do contrato antigo e a criação de um novo, ou por ajuste cumulativo (catch-up), conforme os bens ou serviços adicionados sejam distintos e precificados ao preço de venda individual.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-10 to 25-13",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 18–21",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 18–21",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma assinatura de três anos a $36,000 por ano. No início do ano 2, o cliente adiciona 50 licenças de usuário (seats) pelos dois anos restantes.",
+   "steps": [
+    "Caso A: as licenças custam $10,000 por ano, o que reflete o SSP delas. As licenças são distintas e precificadas ao SSP, portanto o adicional é um contrato separado; o cronograma original permanece intacto.",
+    "Caso B: as licenças custam $6,000 por ano, um desconto que não reflete o SSP. Os meses restantes são distintos, portanto a modificação é prospectiva.",
+    "Contraprestação remanescente no Caso B: original não reconhecido de $72,000 + novo de $12,000 = $84,000, ao longo de 24 meses = $3,500 por mês."
+   ],
+   "result": "O Caso A adiciona um novo cronograma de $10,000 por ano; o Caso B substitui o cronograma remanescente por $3,500 por mês."
+  },
+  "mistakes": [
+   "Contabilizar ordens de alteração não aprovadas ou ignorar alterações aprovadas, mas sem preço definido, cujo preço precisa ser estimado.",
+   "Esquecer que alterações apenas de preço também são modificações.",
+   "Usar um ajuste cumulativo (catch-up) quando os serviços remanescentes são distintos."
+  ],
+  "furtherLabels": [
+   "Modificações do contrato na ASC 606-10-25-13: árvore de decisão",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": "A Soluqube não automatiza hoje a contabilização de modificações do contrato; isso está no roadmap. O motor trata a alocação e o cronograma originais.",
+  "faqs": null
+ },
+ "cumulative-catch-up": {
+  "slug": "cumulative-catch-up",
+  "term": "Ajuste cumulativo (catch-up)",
+  "title": "Ajuste cumulativo (catch-up): exemplo ASC 606",
+  "description": "O método de ajuste cumulativo na ASC 606-10-25-13(b) e IFRS 15.21(b): quando se aplica e um exemplo com uma obra de preço fixo parcialmente concluída.",
+  "definition": "Um ajuste cumulativo (catch-up) é um lançamento único no período corrente que alinha a receita reconhecida até a data com os termos ou estimativas revisados, como se estivessem em vigor desde a origem. Aplica-se a modificações de uma única obrigação de desempenho parcialmente satisfeita e a mudanças no progresso estimado ou no preço da transação. Períodos anteriores não são reapresentados.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-13(b)",
+    "note": null
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-43",
+    "note": "mudanças no preço da transação"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 21(b)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma obra de preço fixo de $100,000 está 40% concluída, e portanto $40,000 foram reconhecidos. Uma modificação adiciona $20,000 de escopo que não é distinto da obra, e os custos totais revisados levam o progresso a 35%.",
+   "steps": [
+    "Novo preço da transação: $100,000 + $20,000 = $120,000.",
+    "Receita acumulada que deveria ter sido reconhecida: $120,000 × 35% = $42,000.",
+    "Ajuste no período da modificação: $42,000 − $40,000 = $2,000."
+   ],
+   "result": "$2,000 de receita no período corrente; períodos anteriores não são reapresentados."
+  },
+  "mistakes": [
+   "Reapresentar períodos anteriores em vez de registrar o ajuste no período corrente.",
+   "Aplicar um ajuste cumulativo a serviços distintos dos já transferidos.",
+   "Não divulgar mudanças significativas nas estimativas."
+  ],
+  "furtherLabels": [
+   "Modificações do contrato na ASC 606-10-25-13: árvore de decisão",
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": "A Soluqube não automatiza hoje o ajuste cumulativo de modificações; isso está no roadmap.",
+  "faqs": [
+   {
+    "question": "O que é um ajuste cumulativo (catch-up)?",
+    "answer": "É um lançamento único no período corrente que alinha a receita reconhecida até a data com os termos ou estimativas revisados, como se estivessem em vigor desde a origem do contrato. Pela ASC 606-10-25-13(b), aplica-se quando uma modificação adiciona bens ou serviços que não são distintos de uma única obrigação de desempenho parcialmente satisfeita."
+   },
+   {
+    "question": "Ajuste cumulativo versus método prospectivo: qual se aplica?",
+    "answer": "Depende do que ainda falta entregar. Se os bens ou serviços remanescentes são distintos dos já transferidos, aplica-se de forma prospectiva a ASC 606-10-25-13(a). Se fazem parte de uma única obrigação de desempenho parcialmente satisfeita, a 25-13(b) exige um ajuste cumulativo. Uma combinação de itens remanescentes pode exigir os dois tratamentos em um mesmo contrato."
+   },
+   {
+    "question": "Os períodos anteriores são reapresentados em um ajuste cumulativo?",
+    "answer": "Não. Todo o ajuste é registrado no período da modificação ou da mudança de estimativa, e as demonstrações financeiras anteriores permanecem como reportadas. Uma mudança de estimativa não é uma correção de erro, portanto não há reapresentação. Divulgue as mudanças significativas nas estimativas e o efeito sobre a receita, para que os leitores entendam por que a receita do período corrente variou."
+   }
+  ]
+ },
+ "prospective-method": {
+  "slug": "prospective-method",
+  "term": "Método prospectivo (modificações)",
+  "title": "Método prospectivo para modificações do contrato",
+  "description": "O método prospectivo na ASC 606-10-25-13(a) e IFRS 15.21(a): encerramento e novo contrato, com um exemplo de redução de preço em SaaS.",
+  "definition": "No método prospectivo, uma modificação do contrato é tratada como se o contrato existente fosse encerrado e um novo fosse criado. A receita já reconhecida permanece inalterada; a contraprestação não reconhecida do contrato original, somada a qualquer nova contraprestação, é alocada aos bens ou serviços distintos remanescentes.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-13(a)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 21(a)",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 21(a)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma assinatura de 24 meses por $48,000 ($2,000 por mês). Após 12 meses, as partes acordam uma redução de $3,000 para os 12 meses restantes, sem mudança no serviço.",
+   "steps": [
+    "Reconhecido até a data: $24,000. Esse valor não é ajustado.",
+    "Contraprestação remanescente: $24,000 − $3,000 = $21,000.",
+    "Os meses restantes são distintos, portanto o valor é distribuído de forma prospectiva: $21,000 / 12 = $1,750 por mês."
+   ],
+   "result": "$1,750 por mês nos meses 13–24; sem lançamento de ajuste cumulativo."
+  },
+  "mistakes": [
+   "Confundir o método prospectivo de modificação com o método de transição prospectivo usado na adoção da norma.",
+   "Voltar atrás para ajustar a receita já reconhecida.",
+   "Deixar de fora da contraprestação remanescente os saldos existentes de ativo de contrato."
+  ],
+  "furtherLabels": [
+   "Modificações do contrato na ASC 606-10-25-13: árvore de decisão",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": "A Soluqube não automatiza hoje essa avaliação; a contabilização de modificações está no roadmap.",
+  "faqs": null
+ },
+ "significant-financing-component": {
+  "slug": "significant-financing-component",
+  "term": "Componente de financiamento significativo",
+  "title": "Componente de financiamento significativo na ASC 606",
+  "description": "Financiamento significativo na ASC 606 e IFRS 15: quando ajustar pelo valor do dinheiro no tempo, o expediente de um ano e um exemplo de pagamento diferido.",
+  "definition": "Existe um componente de financiamento significativo quando o momento de pagamento acordado pelas partes dá ao cliente ou à entidade um benefício significativo de financiamento. O preço da transação é então ajustado pelo valor do dinheiro no tempo. Um expediente prático dispensa o ajuste quando o intervalo entre o pagamento e a transferência é de um ano ou menos.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-15 to 32-20",
+    "note": "32-18: expediente de um ano"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 60–65",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 60–65",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma licença perpétua é entregue hoje; o cliente paga $100,000 em dois anos. A taxa que as partes usariam em uma transação de financiamento separada é de 5%.",
+   "steps": [
+    "Valor presente: $100,000 / 1.05² = $100,000 / 1.1025 = $90,702.95.",
+    "Receita de licença na entrega: $90,702.95.",
+    "Receita de juros ao longo de dois anos: $100,000 − $90,702.95 = $9,297.05, apresentada separadamente da receita de contratos com clientes."
+   ],
+   "result": "$90,702.95 de receita agora e $9,297.05 de receita de juros ao longo do período de pagamento."
+  },
+  "mistakes": [
+   "Ignorar um componente de financiamento em pré-pagamentos antecipados plurianuais.",
+   "Presumir que toda fatura SaaS anual antecipada gera um; dentro de um ano, o expediente normalmente se aplica.",
+   "Usar uma taxa livre de risco em vez de uma taxa que reflita o crédito do cliente."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "contract-costs-asc-340-40": {
+  "slug": "contract-costs-asc-340-40",
+  "term": "Custos do contrato (ASC 340-40)",
+  "title": "Custos do contrato na ASC 340-40: comissões",
+  "description": "Capitalização de custos do contrato na ASC 340-40 e IFRS 15: custos incrementais de obtenção de contrato, período de amortização e um exemplo de comissão.",
+  "definition": "A ASC 340-40 e a IFRS 15 exigem a capitalização dos custos incrementais de obtenção de um contrato, normalmente comissões de vendas, se for esperado que sejam recuperados, e de certos custos para cumprir um contrato. Os custos capitalizados são amortizados de forma sistemática, consistente com a transferência dos bens ou serviços relacionados, incluindo renovações previstas.",
+  "references": [
+   {
+    "standard": "ASC 340-40",
+    "ref": "340-40-25-1 to 25-8 and 340-40-35-1",
+    "note": "25-4: expediente de um ano"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 91–104",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 91–104",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma comissão de 10% sobre um contrato de três anos de $120,000. As comissões de renovação são de 2%, o que não é proporcional à taxa inicial, e a vida esperada do cliente é de cinco anos.",
+   "steps": [
+    "Custo capitalizado: 10% × $120,000 = $12,000.",
+    "Como as comissões de renovação não são proporcionais, amortiza-se ao longo da vida esperada do cliente, não do prazo inicial.",
+    "Amortização: $12,000 / 60 meses = $200 por mês."
+   ],
+   "result": "Ativo de $12,000 amortizado a $200 por mês ao longo de cinco anos, sujeito a teste de redução ao valor recuperável."
+  },
+  "mistakes": [
+   "Capitalizar custos que seriam incorridos de qualquer forma, como salários-base.",
+   "Amortizar ao longo do prazo inicial do contrato quando as comissões de renovação não são proporcionais.",
+   "Deixar de testar a redução ao valor recuperável do saldo capitalizado."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "practical-expedients": {
+  "slug": "practical-expedients",
+  "term": "Expedientes práticos",
+  "title": "Expedientes práticos da ASC 606: lista e exemplo",
+  "description": "Expedientes práticos da ASC 606 e IFRS 15: financiamento de até um ano, custos do contrato, direito de faturar, divulgação de RPO e portfólios, com exemplo.",
+  "definition": "Expedientes práticos são simplificações opcionais da ASC 606 e da IFRS 15 que reduzem o custo sem alterar materialmente os resultados. Exemplos incluem ignorar um componente de financiamento significativo de um ano ou menos, levar a despesa os custos do contrato amortizados em até um ano, a mensuração pelo direito de faturar e a omissão de certas divulgações de obrigações de desempenho remanescentes.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-18 (financing), 606-10-55-18 (right to invoice), 606-10-50-14 (RPO)",
+    "note": null
+   },
+   {
+    "standard": "ASC 340-40",
+    "ref": "340-40-25-4 (contract costs)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 63, 94, 121 and B16",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: uma empresa vende assinaturas de 12 meses a $12,000, faturadas anualmente de forma antecipada, e paga uma comissão de $1,200 em cada novo negócio e uma comissão igual em cada renovação.",
+   "steps": [
+    "Financiamento: o pagamento e o serviço ocorrem dentro de um ano, portanto não há ajuste pelo valor do dinheiro no tempo.",
+    "Custos do contrato: as comissões de renovação são proporcionais, portanto o período de amortização é de 12 meses; os $1,200 podem ser levados imediatamente a despesa em vez de $100 por mês.",
+    "RPO: contratos com duração original de um ano ou menos podem ficar de fora da divulgação das obrigações de desempenho remanescentes."
+   ],
+   "result": "Três simplificações, cada uma adotada como política contábil e divulgada."
+  },
+  "mistakes": [
+   "Adotar um expediente sem divulgar a escolha quando a divulgação é exigida.",
+   "Aplicar o expediente de RPO de um ano a contratos plurianuais.",
+   "Aplicar um expediente a alguns contratos semelhantes, mas não a outros."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Teste seus próprios contratos como parceiro de design (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "bill-and-hold": {
+  "slug": "bill-and-hold",
+  "term": "Bill-and-hold",
+  "title": "Acordos bill-and-hold na ASC 606",
+  "description": "Bill-and-hold na ASC 606 e IFRS 15: os quatro critérios para reconhecer receita antes do envio e um exemplo prático com serviço de custódia.",
+  "definition": "Um acordo bill-and-hold é aquele em que a entidade fatura o cliente por um produto, mas mantém a posse física até uma data posterior. A receita só é reconhecida antes do envio se o controle tiver sido transferido: há uma razão substantiva, o produto está identificado como do cliente, pronto para transferência, e não pode ser usado nem redirecionado pela entidade.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-81 to 55-84",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B79–B82",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B79–B82",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: 20 appliances de hardware a $4,000 cada ($80,000). O cliente pede ao fornecedor que os armazene até que seu data center esteja pronto; as unidades são identificadas com a etiqueta do cliente e não podem ser redirecionadas. O armazenamento é um serviço separado com SSP de $1,000.",
+   "steps": [
+    "Os quatro critérios são atendidos, portanto o controle dos appliances foi transferido no faturamento.",
+    "Aloque os $80,000 pelo SSP relativo: appliances $80,000 × 80,000 / 81,000 = $79,012.35; armazenamento $80,000 × 1,000 / 81,000 = $987.65.",
+    "Reconheça $79,012.35 agora; reconheça $987.65 ao longo do período de armazenamento."
+   ],
+   "result": "A maior parte da receita no faturamento, com uma pequena obrigação de serviço de custódia diferida."
+  },
+  "mistakes": [
+   "Reconhecer receita em um bill-and-hold solicitado por conveniência do fornecedor.",
+   "Não identificar o serviço de custódia como uma obrigação de desempenho separada.",
+   "Não confirmar que os bens não podem ser usados para atender a outros pedidos."
+  ],
+  "furtherLabels": [
+   "Hub técnico da ASC 606",
+   "Calculadora de alocação de SSP"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ }
+}

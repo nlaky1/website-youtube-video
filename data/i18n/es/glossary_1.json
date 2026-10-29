@@ -1,0 +1,692 @@
+{
+ "performance-obligation": {
+  "slug": "performance-obligation",
+  "term": "Obligación de desempeño",
+  "title": "Obligación de desempeño: definición y ejemplo",
+  "description": "Qué es una obligación de desempeño según ASC 606, IFRS 15 e Ind AS 115, con un ejemplo SaaS que divide un contrato en obligaciones y errores comunes.",
+  "definition": "Una obligación de desempeño es una promesa contenida en un contrato de transferir al cliente un bien o servicio distinto (o un paquete), o una serie de bienes o servicios distintos que son sustancialmente iguales y se transfieren con el mismo patrón. Es la unidad de cuenta a la que se asigna el precio de la transacción y en la que se reconocen los ingresos.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-14 to 25-15",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 22–23",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 22–23",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: una orden de compra a tres años por $120,000 incluye suscripción a la plataforma, implementación y soporte premium.",
+   "steps": [
+    "Suscripción: el cliente puede usar la plataforma por sí solo y el acceso se presta todos los días durante el plazo. Es una serie de días de servicio distintos, por lo que constituye una obligación de desempeño que se reconoce a lo largo del tiempo.",
+    "Implementación: una configuración estándar que también realizan socios externos, y la plataforma funciona sin ella. Es capaz de ser distinta e identificable por separado, por lo que es una segunda obligación de desempeño.",
+    "Soporte premium: una promesa de disponibilidad (stand-ready) para atender tickets durante el plazo. Es una tercera obligación de desempeño, también una serie.",
+    "El aprovisionamiento interno de la cuenta es una actividad de preparación que no transfiere nada al cliente, por lo que no es una obligación de desempeño."
+   ],
+   "result": "Tres obligaciones de desempeño. Los $120,000 se asignan entre ellas según el precio de venta independiente relativo en el paso 4."
+  },
+  "mistakes": [
+   "Tratar cada SKU de la orden de compra como una obligación separada sin comprobar si cada uno es distinto.",
+   "Omitir promesas implícitas generadas por prácticas comerciales habituales, como las mejoras gratuitas que siempre se otorgan a los clientes.",
+   "Tratar como obligaciones de desempeño actividades internas de preparación que no transfieren nada al cliente."
+  ],
+  "furtherLabels": [
+   "Centro técnico de ASC 606",
+   "Ejemplo de asignación de SSP según ASC 606: paquete SaaS de 3 elementos"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "standalone-selling-price": {
+  "slug": "standalone-selling-price",
+  "term": "Precio de venta independiente (SSP)",
+  "title": "Precio de venta independiente (SSP): definición",
+  "description": "Precio de venta independiente según ASC 606 e IFRS 15: definición, tres métodos de estimación, un ejemplo SaaS de licencia e incorporación, y errores.",
+  "definition": "El precio de venta independiente (SSP) es el precio al que una entidad vendería por separado a un cliente un bien o servicio prometido. La mejor evidencia es un precio observable de ventas independientes a clientes similares en circunstancias similares. Cuando no existe, la entidad estima el SSP con un método que maximice los datos observables.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-31 to 32-34",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 76–80",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 76–80",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: un proveedor vende conjuntamente una licencia de analítica y un paquete de incorporación, y necesita un SSP para cada uno.",
+   "steps": [
+    "Licencia: vendida por separado 340 veces en los últimos 12 meses, con un precio neto mediano de $48,000 por año. Es un precio observable, por lo que SSP = $48,000.",
+    "Incorporación: nunca se ha vendido por separado. El costo esperado es de $6,000 en tiempo de consultores; el margen sobre costo objetivo para servicios es del 40%.",
+    "Costo esperado más margen: $6,000 × 1.40 = $8,400."
+   ],
+   "result": "Los SSP de $48,000 (licencia) y $8,400 (incorporación) alimentan la asignación del SSP relativo del precio del paquete."
+  },
+  "mistakes": [
+   "Usar el precio de lista como SSP sin comprobar lo que los clientes realmente pagan tras los descuentos habituales.",
+   "Usar por defecto el precio indicado en el propio contrato como SSP; un precio indicado no se presume que sea el SSP.",
+   "Elegir un método de estimación distinto para cada contrato con el fin de llegar a una respuesta preferida, en lugar de aplicar de forma coherente una política documentada.",
+   "No actualizar nunca el análisis del SSP a medida que cambian los precios y los descuentos."
+  ],
+  "furtherLabels": [
+   "Calculadora de asignación de SSP",
+   "Ejemplo de asignación de SSP según ASC 606: paquete SaaS de 3 elementos"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "¿Con qué frecuencia deben actualizarse las estimaciones del precio de venta independiente?",
+    "answer": "Según ASC 606 e IFRS 15, las entidades deben revisar y actualizar periódicamente sus estimaciones del precio de venta independiente (SSP), normalmente una vez al año o cuando se produzcan cambios significativos en la estrategia de precios, las políticas de descuento, las condiciones de mercado o la composición de los paquetes."
+   },
+   {
+    "question": "¿Cómo prueban los auditores la asignación del precio de venta independiente (SSP)?",
+    "answer": "Los auditores prueban la asignación del SSP según las normas del PCAOB seleccionando una muestra de contratos de ingresos, verificando que las ventas independientes observables se concentren dentro del rango de precios definido por la dirección (normalmente la mediana ±15%), comprobando que el precio total de la transacción sea igual a la suma de las obligaciones asignadas y validando que las cláusulas del contrato fuente respalden cada obligación de desempeño identificada."
+   }
+  ]
+ },
+ "relative-ssp-method": {
+  "slug": "relative-ssp-method",
+  "term": "Método del SSP relativo",
+  "title": "Método del SSP relativo: fórmula y ejemplo",
+  "description": "Cómo el método del precio de venta independiente relativo asigna el precio de la transacción según ASC 606 e IFRS 15, con un ejemplo de $120,000 y dos obligaciones.",
+  "definition": "El método del SSP relativo asigna el precio de la transacción de un contrato a cada obligación de desempeño en proporción a su precio de venta independiente: importe asignado = SSP de la obligación ÷ suma de todos los SSP × precio de la transacción. Por tanto, un descuento o una prima del paquete se distribuye a prorrata entre todas las obligaciones, salvo que se cumplan las condiciones para asignar un descuento solo a algunas obligaciones.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-29 and 32-31",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 74 and 76",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 74 and 76",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: precio de la transacción $120,000; SSP de la suscripción $100,000; SSP de los servicios profesionales $25,000.",
+   "steps": [
+    "Suma de los SSP: $100,000 + $25,000 = $125,000. El descuento del paquete es de $5,000 (4%).",
+    "Suscripción: $100,000 / $125,000 × $120,000 = $96,000.",
+    "Servicios: $25,000 / $125,000 × $120,000 = $24,000.",
+    "Comprobación: $96,000 + $24,000 = $120,000. El descuento de $5,000 se distribuye $4,000 / $1,000."
+   ],
+   "result": "Importes asignados de $96,000 y $24,000, que a su vez determinan el calendario de reconocimiento de cada obligación."
+  },
+  "mistakes": [
+   "Asignar todo el descuento a una sola obligación sin cumplir las condiciones para asignar un descuento íntegramente a algunas obligaciones (ASC 606-10-32-37; IFRS 15.82).",
+   "Redondear cada línea al centavo de forma independiente, de modo que las asignaciones ya no suman el precio de la transacción, sin una regla escrita para el centavo residual.",
+   "Usar SSP desactualizados o sin documentar, que es donde empiezan la mayoría de los cuestionamientos de los auditores sobre la asignación."
+  ],
+  "furtherLabels": [
+   "Calculadora de asignación de SSP",
+   "Redondeo en la asignación de SSP según ASC 606: dónde va el centavo",
+   "Guía de asignación de SSP según ASC 606",
+   "Fórmula del precio de venta independiente: cálculo del SSP",
+   "Asignación del descuento por paquete según ASC 606 en SaaS"
+  ],
+  "soluqubeNote": "Soluqube calcula esta asignación con aritmética de enteros a escala 10^6, redondeada a centavos, con una regla documentada para el centavo residual, y genera un hash de la exportación para que pueda volver a ejecutarse.",
+  "faqs": [
+   {
+    "question": "¿Cuál es la fórmula del método del SSP relativo?",
+    "answer": "El importe asignado es igual al precio de venta independiente de la obligación dividido entre la suma de todos los precios de venta independientes, multiplicado por el precio de la transacción. ASC 606-10-32-31 exige esta asignación al inicio del contrato. Los importes asignados deben volver a sumar el precio de la transacción, por lo que una regla escrita para el residuo del redondeo mantiene el total exacto."
+   },
+   {
+    "question": "¿Una prima del paquete se asigna igual que un descuento?",
+    "answer": "Por lo general, sí. Cuando el precio de la transacción excede la suma de los precios de venta independientes, el exceso se distribuye normalmente entre todas las obligaciones en proporción a sus SSP, igual que un descuento. Primero compruebe que los SSP estén actualizados y que el exceso no sea una contraprestación variable que se relacione con una obligación específica."
+   },
+   {
+    "question": "¿Puede asignarse el descuento a una sola obligación?",
+    "answer": "Solo si se cumplen las tres condiciones de ASC 606-10-32-37: cada elemento distinto se vende regularmente por separado, un paquete de algunos de esos elementos también se vende regularmente con descuento, y ese descuento del paquete es sustancialmente igual al descuento del contrato. De lo contrario, el descuento se asigna a prorrata."
+   },
+   {
+    "question": "¿Cómo se calcula rápidamente la asignación del SSP relativo sin errores de redondeo?",
+    "answer": "Para calcular rápidamente el SSP relativo y evitar errores de redondeo, multiplique el precio de la transacción por la proporción completa del SSP de cada obligación antes de redondear (no redondee los porcentajes intermedios). Redondee cada obligación a centavos enteros y aplique una regla determinista para absorber el centavo residual del período final, de modo que la suma de los importes asignados sea exactamente igual al precio de la transacción."
+   }
+  ]
+ },
+ "residual-approach": {
+  "slug": "residual-approach",
+  "term": "Enfoque residual",
+  "title": "Enfoque residual del SSP: cuándo se permite",
+  "description": "El enfoque residual para estimar el SSP según ASC 606-10-32-34(c) e IFRS 15.79(c): cuándo se permite, un ejemplo y por qué no es un atajo.",
+  "definition": "El enfoque residual estima el precio de venta independiente de un bien o servicio como el precio total de la transacción menos los precios de venta independientes observables de los demás bienes o servicios prometidos. Solo se permite si el precio de venta de ese elemento es altamente variable o incierto, y no como atajo general para absorber un descuento del paquete.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-34(c)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 79(c)",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 79(c)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: un contrato de $150,000 por una licencia, alojamiento y soporte. El alojamiento ($50,000) y el soporte ($20,000) tienen SSP observables. La licencia se ha vendido por importes que van desde $40,000 hasta $140,000, sin un precio representativo.",
+   "steps": [
+    "Confirmar que el precio de la licencia es altamente variable: el rango es amplio y no existe un SSP discernible.",
+    "SSP residual de la licencia = $150,000 − $50,000 − $20,000 = $80,000.",
+    "Comprobación de razonabilidad: $80,000 se sitúa dentro del rango observado y no es nulo, por lo que el resultado es plausible."
+   ],
+   "result": "SSP de la licencia de $80,000, documentado con la evidencia de que su precio es altamente variable."
+  },
+  "mistakes": [
+   "Usar el enfoque residual para un elemento que tiene un precio independiente observable.",
+   "Aceptar un residuo de cero o un importe implausiblemente pequeño, lo que indica que el enfoque no se ajusta a los hechos.",
+   "Confundir el enfoque residual (un método de estimación del SSP) con el centavo residual que deja el redondeo.",
+   "No documentar por qué el precio es altamente variable o incierto."
+  ],
+  "furtherLabels": [
+   "Ejemplo de asignación de SSP según ASC 606: paquete SaaS de 3 elementos",
+   "Calculadora de asignación de SSP",
+   "Guía de asignación de SSP según ASC 606"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "¿Con qué frecuencia deben actualizarse las estimaciones del precio de venta independiente al usar el enfoque residual?",
+    "answer": "Cada vez que un nuevo contrato lo utiliza. El SSP residual se fija al inicio del contrato y no se revisa posteriormente para ese contrato. Para cada nuevo contrato, confirme de nuevo que el precio del elemento sigue siendo altamente variable o incierto y que los precios observables de los demás elementos están actualizados. Una vez que surge un precio representativo, el enfoque residual deja de ser adecuado."
+   },
+   {
+    "question": "¿Puede el enfoque residual dar un SSP de cero?",
+    "answer": "No debería. Un residuo de cero o de un importe muy pequeño sugiere que el enfoque no se ajusta a los hechos, porque la estimación debe seguir cumpliendo el objetivo de asignación de ASC 606-10-32-28. Contraste el resultado con el rango de precios observado y utilice otro método de estimación si queda fuera de él."
+   },
+   {
+    "question": "Enfoque residual frente al método del SSP relativo: ¿cuál es la diferencia?",
+    "answer": "Cumplen funciones distintas. El enfoque residual es una de las tres formas de estimar un precio de venta independiente según ASC 606-10-32-34. El método del SSP relativo asigna después el precio de la transacción entre las obligaciones en proporción a esos SSP según 32-31. Una estimación residual alimenta la asignación; no la sustituye."
+   }
+  ]
+ },
+ "adjusted-market-assessment": {
+  "slug": "adjusted-market-assessment",
+  "term": "Enfoque de evaluación de mercado ajustada",
+  "title": "Enfoque de evaluación de mercado ajustada (SSP)",
+  "description": "Estimación del SSP con el enfoque de evaluación de mercado ajustada según ASC 606 e IFRS 15: qué es, un ejemplo de precio de un complemento y errores comunes.",
+  "definition": "El enfoque de evaluación de mercado ajustada estima el precio de venta independiente evaluando el mercado en el que la entidad vende y estimando el precio que los clientes de ese mercado pagarían. Puede partir de los precios de los competidores para bienes o servicios similares, ajustados por los costos, márgenes y posición de mercado de la propia entidad.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-34(a)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 79(a)",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 79(a)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: un nuevo complemento de analítica nunca se ha vendido por separado. Dos competidores publican complementos comparables a $30 y $36 por usuario al mes. El posicionamiento documentado del proveedor es aproximadamente un 10% por debajo del punto medio del mercado.",
+   "steps": [
+    "Punto medio del mercado: ($30 + $36) / 2 = $33 por usuario al mes.",
+    "Ajuste por posicionamiento: $33 × 0.90 = $29.70 por usuario al mes.",
+    "SSP para 200 usuarios durante 12 meses: $29.70 × 200 × 12 = $71,280."
+   ],
+   "result": "SSP estimado de $71,280, con la evidencia de los competidores y el ajuste del 10% conservados en el papel de trabajo."
+  },
+  "mistakes": [
+   "Usar los precios de lista de los competidores sin ajustar por el descuento habitual en ese mercado.",
+   "No documentar por qué los productos de los competidores son comparables en funcionalidades y tipo de cliente.",
+   "Aplicar el porcentaje de ajuste sin evidencia que lo respalde."
+  ],
+  "furtherLabels": [
+   "Ejemplo de asignación de SSP según ASC 606: paquete SaaS de 3 elementos",
+   "Calculadora de asignación de SSP"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "expected-cost-plus-margin": {
+  "slug": "expected-cost-plus-margin",
+  "term": "Enfoque de costo esperado más margen",
+  "title": "Enfoque de costo esperado más margen (SSP)",
+  "description": "Estimación del SSP con costo esperado más margen según ASC 606 e IFRS 15, con un ejemplo de implementación y la trampa del markup frente al margen.",
+  "definition": "El enfoque de costo esperado más margen estima el precio de venta independiente proyectando los costos de satisfacer una obligación de desempeño y sumándoles un margen adecuado. Resulta apropiado para servicios con costos medibles, como implementación, capacitación o desarrollo a medida, y encaja mal cuando los costos no dependen de la obligación específica.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-34(b)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 79(b)",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 79(b)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: un paquete de implementación se presupuesta en 80 horas de consultor a un costo total cargado de $95 por hora.",
+   "steps": [
+    "Costo esperado: 80 × $95 = $7,600.",
+    "Un margen del 35% sobre el costo: $7,600 × 1.35 = $10,260.",
+    "Un margen del 35% sobre el precio es distinto: $7,600 / 0.65 = $11,692.31.",
+    "La política debe indicar a cuál se refiere y de dónde proviene el porcentaje."
+   ],
+   "result": "SSP de $10,260 con una política de margen sobre costo, o de $11,692.31 con una política de margen sobre precio."
+  },
+  "mistakes": [
+   "Confundir el margen sobre costo (markup) con el margen sobre precio, lo que cambia el SSP de forma material.",
+   "Usar solo la mano de obra directa y omitir una parte razonable de los costos indirectos.",
+   "Elegir un margen sin sustento en lo que el mercado pagaría."
+  ],
+  "furtherLabels": [
+   "Calculadora de asignación de SSP",
+   "Ejemplo de asignación de SSP según ASC 606: paquete SaaS de 3 elementos"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "¿Cuándo debe usarse el enfoque de costo esperado más margen para el SSP?",
+    "answer": "El enfoque de costo esperado más margen es apropiado cuando no hay ventas independientes disponibles y los costos directos pueden proyectarse de forma fiable, como en implementaciones a medida, modificaciones de software personalizadas o servicios profesionales especializados según ASC 606-10-32-34(b) y el párrafo 79(b) de IFRS 15."
+   },
+   {
+    "question": "¿Cuál es la diferencia entre el margen sobre costo y el margen sobre precio?",
+    "answer": "El margen sobre costo (markup) suma un porcentaje al costo presupuestado ($Cost × (1 + Markup)), mientras que el margen sobre precio divide el costo entre el complemento del margen ($Cost / (1 - Margin)). Por ejemplo, con un costo de $10,000, un markup del 30% da $13,000, mientras que un margen del 30% da $14,285.71."
+   }
+  ]
+ },
+ "transaction-price": {
+  "slug": "transaction-price",
+  "term": "Precio de la transacción",
+  "title": "Precio de la transacción según ASC 606: definición",
+  "description": "Qué incluye el precio de la transacción según ASC 606, IFRS 15 e Ind AS 115: contraprestación variable, financiación, créditos e impuestos, con un ejemplo.",
+  "definition": "El precio de la transacción es la contraprestación a la que una entidad espera tener derecho a cambio de transferir los bienes o servicios prometidos, excluyendo los importes cobrados por cuenta de terceros, como algunos impuestos sobre las ventas. Refleja la contraprestación variable, los componentes de financiación significativos, la contraprestación distinta del efectivo y la contraprestación por pagar al cliente.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-2 to 32-27",
+    "note": "32-2A: opción de excluir los impuestos sobre las ventas"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 47–72",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 47–72",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: un contrato no cancelable a tres años por $40,000 al año, una tarifa de implementación de $10,000 y un crédito de marketing de $5,000 que el proveedor paga al cliente. También podrían aplicarse cargos por excedente, pero el uso es muy incierto.",
+   "steps": [
+    "Contraprestación fija: 3 × $40,000 + $10,000 = $130,000.",
+    "La contraprestación por pagar al cliente reduce el precio: $130,000 − $5,000 = $125,000.",
+    "Los cargos por excedente son contraprestación variable. Dada la incertidumbre, la estimación restringida es de $0 al inicio, y se reevalúa cada período."
+   ],
+   "result": "Precio de la transacción al inicio: $125,000."
+  },
+  "mistakes": [
+   "Partir del total de la factura, incluido el impuesto.",
+   "Ignorar créditos, reembolsos u otros importes por pagar al cliente.",
+   "Incluir contraprestación por períodos que el cliente puede cancelar sin una penalización sustantiva, los cuales quedan fuera del contrato exigible."
+  ],
+  "furtherLabels": [
+   "Centro técnico de ASC 606",
+   "Calculadora de asignación de SSP"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "variable-consideration": {
+  "slug": "variable-consideration",
+  "term": "Contraprestación variable",
+  "title": "Contraprestación variable según ASC 606",
+  "description": "Contraprestación variable según ASC 606 e IFRS 15: qué cuenta, valor esperado frente a importe más probable, un ejemplo de crédito por SLA y errores a evitar.",
+  "definition": "La contraprestación variable es cualquier parte de la contraprestación prometida que puede cambiar: descuentos, rebajas, reembolsos, créditos, concesiones de precio, incentivos, bonos por desempeño, penalizaciones o tarifas basadas en el uso. La entidad la estima usando el valor esperado o el importe más probable, el que mejor prediga el resultado, y luego aplica la restricción.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-5 to 32-9",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 50–54",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 50–54",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: una tarifa anual de $60,000 con un crédito de nivel de servicio del 10% si la disponibilidad cae por debajo del 99.9%. El historial muestra un incumplimiento en aproximadamente el 10% de los contratos comparables.",
+   "steps": [
+    "Valor esperado: 0.9 × $60,000 + 0.1 × $54,000 = $59,400. Adecuado para una cartera grande de contratos similares.",
+    "Importe más probable: $60,000. Adecuado para un contrato individual con un resultado binario.",
+    "Elija el método que mejor prediga el importe, aplíquelo de forma coherente y luego contraste la estimación con la restricción."
+   ],
+   "result": "Contraprestación estimada de $59,400 o $60,000, según el método que respalden los hechos."
+  },
+  "mistakes": [
+   "Omitir concesiones de precio implícitas, como un historial de aceptar pagos parciales.",
+   "Cambiar de método de estimación entre contratos similares.",
+   "No actualizar la estimación en cada fecha de reporte (ASC 606-10-32-14; IFRS 15.59)."
+  ],
+  "furtherLabels": [
+   "Centro técnico de ASC 606",
+   "Pruebe sus propios contratos como socio de diseño (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "constraint-on-variable-consideration": {
+  "slug": "constraint-on-variable-consideration",
+  "term": "Restricción de la contraprestación variable",
+  "title": "Restricción de la contraprestación variable",
+  "description": "La restricción de la contraprestación variable según ASC 606 e IFRS 15: la prueba de reversión significativa, los factores y un ejemplo de bono por desempeño.",
+  "definition": "La restricción limita cuánta contraprestación variable entra en el precio de la transacción: se incluye una estimación solo en la medida en que sea probable (IFRS 15: altamente probable) que no ocurra una reversión significativa de los ingresos acumulados reconocidos cuando se resuelva la incertidumbre. Los factores incluyen influencias externas, experiencia limitada y un amplio rango de resultados posibles.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-11 to 32-13",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 56–58",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 56–58",
+    "note": null
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-65",
+    "note": "excepción de regalías basadas en ventas o en el uso para licencias de propiedad intelectual (IP)"
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: una implementación fija de $90,000 más un bono de $30,000 si el cliente entra en producción el 31 de marzo. El proveedor nunca se ha integrado con este ERP y la fecha depende del equipo de TI del cliente.",
+   "steps": [
+    "Estimación: el importe más probable del bono es incierto; el resultado depende de factores fuera del control del proveedor y este no tiene experiencia relevante.",
+    "Incluir $30,000 ahora podría provocar una reversión significativa, por lo que el importe restringido es $0.",
+    "Precio de la transacción al inicio: $90,000. En cada fecha de reporte, se reevalúa; cuando el logro sea probable, se suman los $30,000 y se reconoce como ajuste acumulado la parte correspondiente al trabajo ya realizado."
+   ],
+   "result": "$90,000 al inicio; el bono entra en el precio de la transacción solo cuando se resuelve el riesgo de reversión."
+  },
+  "mistakes": [
+   "Restringir todo el precio de la transacción en lugar de solo la parte variable.",
+   "Aplicar por defecto una restricción de cero sin analizar los factores.",
+   "Aplicar la restricción general a regalías basadas en ventas o en el uso por licencias de propiedad intelectual (IP), que siguen su propia excepción."
+  ],
+  "furtherLabels": [
+   "Centro técnico de ASC 606",
+   "Pruebe sus propios contratos como socio de diseño (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "contract-asset": {
+  "slug": "contract-asset",
+  "term": "Activo del contrato",
+  "title": "Activo del contrato según ASC 606: definición",
+  "description": "Qué es un activo del contrato según ASC 606, IFRS 15 e Ind AS 115, en qué se diferencia de una cuenta por cobrar y un ejemplo de asiento con dos hitos.",
+  "definition": "Un activo del contrato es el derecho de una entidad a recibir una contraprestación a cambio de bienes o servicios ya transferidos al cliente, cuando ese derecho está condicionado a algo distinto del paso del tiempo, normalmente el desempeño futuro de la entidad. Cuando el derecho pasa a ser incondicional, el importe se reclasifica a una cuenta por cobrar.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-45-1 and 45-3",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 105 and 107",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 105 and 107",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: un desarrollo a precio fijo de $50,000 de dos módulos, a cada uno de los cuales se asignan $25,000. Solo se puede facturar al cliente después de entregar ambos módulos.",
+   "steps": [
+    "Mes 3, módulo A entregado: Debe Activo del contrato $25,000 / Haber Ingresos $25,000. El pago sigue condicionado a la entrega del módulo B.",
+    "Mes 5, módulo B entregado y $50,000 facturados: Debe Cuenta por cobrar $50,000 / Haber Activo del contrato $25,000 / Haber Ingresos $25,000."
+   ],
+   "result": "El activo del contrato existe solo entre las dos entregas y se cancela cuando el derecho al pago pasa a ser incondicional."
+  },
+  "mistakes": [
+   "Etiquetar un derecho condicionado como cuenta por cobrar no facturada.",
+   "Compensar activos del contrato y pasivos del contrato de contratos distintos; la compensación se hace a nivel de contrato.",
+   "No evaluar los activos del contrato por pérdidas crediticias o deterioro."
+  ],
+  "furtherLabels": [
+   "Centro técnico de ASC 606",
+   "Pruebe sus propios contratos como socio de diseño (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "contract-liability": {
+  "slug": "contract-liability",
+  "term": "Pasivo del contrato",
+  "title": "Pasivo del contrato según ASC 606: definición",
+  "description": "Qué es un pasivo del contrato según ASC 606, IFRS 15 e Ind AS 115, cómo se relaciona con los ingresos diferidos y un ejemplo de asiento de un prepago anual.",
+  "definition": "Un pasivo del contrato es la obligación de una entidad de transferir bienes o servicios a un cliente por los cuales ha recibido una contraprestación, o por los cuales la contraprestación es exigible de forma incondicional. En SaaS suele presentarse como ingresos diferidos y se libera como ingresos a medida que se satisface la obligación de desempeño correspondiente.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-45-2",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 106",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 106",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: una suscripción anual de $24,000 que comienza el 1 de enero se factura y se paga el 1 de enero.",
+   "steps": [
+    "1 de enero: Debe Efectivo $24,000 / Haber Pasivo del contrato $24,000.",
+    "Cada fin de mes: Debe Pasivo del contrato $2,000 / Haber Ingresos $2,000.",
+    "31 de marzo: saldo del pasivo del contrato = $24,000 − 3 × $2,000 = $18,000."
+   ],
+   "result": "El pasivo se reduce a $0 el 31 de diciembre a medida que se presta la suscripción."
+  },
+  "mistakes": [
+   "Registrar un pasivo y una cuenta por cobrar por una factura anticipada en un contrato cancelable, donde aún no existe un derecho incondicional al pago.",
+   "Compensar pasivos del contrato con activos del contrato de un contrato distinto.",
+   "Presentar un prepago plurianual íntegramente como corriente."
+  ],
+  "furtherLabels": [
+   "Centro técnico de ASC 606",
+   "Redondeo en la asignación de SSP según ASC 606: dónde va el centavo"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "deferred-revenue": {
+  "slug": "deferred-revenue",
+  "term": "Ingresos diferidos",
+  "title": "Ingresos diferidos según ASC 606: ejemplo",
+  "description": "Ingresos diferidos según ASC 606 e IFRS 15: definición, relación con el pasivo del contrato y un calendario de 36 meses que termina exactamente en $0.00.",
+  "definition": "Los ingresos diferidos son la contraprestación recibida o facturada por adelantado por bienes o servicios que aún no se han transferido. ASC 606 e IFRS 15 los denominan pasivo del contrato, pero permiten otras descripciones. Disminuyen a medida que se reconocen los ingresos y, en una suscripción reconocida de forma lineal, el saldo debe llegar exactamente a cero al final del plazo.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-45-2 and 45-5",
+    "note": "45-5 permite otras descripciones"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 106 and 109",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 106 and 109",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: $100,000 prepagados por una suscripción de 36 meses, reconocidos de forma lineal por mes.",
+   "steps": [
+    "$100,000 / 36 = $2,777.777… por mes.",
+    "Redondear cada mes hacia arriba a $2,777.78 reconoce $100,000.08, ocho centavos más que el contrato.",
+    "En su lugar, se reconocen $2,777.77 en los meses 1–35 ($97,221.95) y el mes 36 absorbe el residuo: $100,000 − $97,221.95 = $2,778.05."
+   ],
+   "result": "Los ingresos diferidos disminuyen cada mes y son exactamente $0.00 después del mes 36."
+  },
+  "mistakes": [
+   "Redondear cada período de forma independiente, de modo que el saldo diferido nunca llega a cancelarse del todo.",
+   "Reconocer según el calendario de facturación en lugar del patrón de desempeño.",
+   "No separar los ingresos diferidos corrientes y no corrientes en los prepagos plurianuales."
+  ],
+  "furtherLabels": [
+   "Redondeo en la asignación de SSP según ASC 606: dónde va el centavo",
+   "Calculadora de asignación de SSP"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "unbilled-receivable": {
+  "slug": "unbilled-receivable",
+  "term": "Cuenta por cobrar no facturada",
+  "title": "Cuenta por cobrar no facturada vs activo del contrato",
+  "description": "Qué es una cuenta por cobrar no facturada según ASC 606 e IFRS 15, en qué se diferencia de un activo del contrato y un ejemplo de uso facturado a mes vencido.",
+  "definition": "Una cuenta por cobrar no facturada son ingresos reconocidos para los cuales el derecho de la entidad a la contraprestación ya es incondicional, y solo se requiere el paso del tiempo antes del pago, pero aún no se ha emitido la factura. A diferencia de un activo del contrato, es una cuenta por cobrar y se presenta junto con las cuentas por cobrar comerciales.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-45-4",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 108",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 108",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: las tarifas de uso se devengan mensualmente pero se facturan trimestralmente a período vencido. El uso de enero es de $8,000 y no se necesita ningún desempeño adicional para devengarlo.",
+   "steps": [
+    "31 de enero: Debe Cuenta por cobrar no facturada $8,000 / Haber Ingresos $8,000.",
+    "31 de marzo, factura emitida: Debe Cuentas por cobrar $8,000 / Haber Cuenta por cobrar no facturada $8,000 (el uso de febrero y marzo se trata de la misma manera)."
+   ],
+   "result": "Los ingresos se registran en enero; la cuenta por cobrar simplemente se reclasifica cuando se emite la factura."
+  },
+  "mistakes": [
+   "Llamar cuenta por cobrar no facturada a un derecho que aún depende de un desempeño futuro; eso es un activo del contrato.",
+   "Dejar los saldos no facturados fuera del análisis de antigüedad de cuentas por cobrar y de pérdidas crediticias.",
+   "Olvidar reclasificar a cuentas por cobrar facturadas cuando se emite la factura."
+  ],
+  "furtherLabels": [
+   "Centro técnico de ASC 606",
+   "Pruebe sus propios contratos como socio de diseño (design partner)"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "material-right": {
+  "slug": "material-right",
+  "term": "Derecho material",
+  "title": "Derecho material según ASC 606: ejemplo de renovación",
+  "description": "Qué es un derecho material según ASC 606 e IFRS 15, cómo estimar su SSP y un ejemplo de asignación con renovación con descuento y centavos exactos.",
+  "definition": "Un derecho material es una opción para obtener bienes o servicios adicionales que el cliente no recibiría sin celebrar el contrato, como un descuento de renovación o de complemento superior al que normalmente obtiene esa clase de cliente. Es una obligación de desempeño separada: se le asigna parte del precio y se reconoce cuando la opción se ejerce o vence.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-41 to 55-45",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B39–B43",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B39–B43",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Ilustrativo: una suscripción de un año por $50,000 incluye una opción de renovar el año 2 por $30,000. Los clientes nuevos pagan $50,000 y no se ofrece en ningún otro lugar un descuento comparable. El proveedor espera que el 80% de los clientes renueve.",
+   "steps": [
+    "SSP de la opción = descuento × probabilidad de ejercicio: ($50,000 − $30,000) × 80% = $16,000.",
+    "Suma de los SSP: suscripción $50,000 + opción $16,000 = $66,000.",
+    "Suscripción: $50,000 × 50,000 / 66,000 = $37,878.79. Opción: $50,000 × 16,000 / 66,000 = $12,121.21.",
+    "Comprobación: $37,878.79 + $12,121.21 = $50,000.00."
+   ],
+   "result": "$37,878.79 se reconocen durante el año 1; $12,121.21 se difieren hasta que se ejerza la renovación (y entonces se reconocen durante el año 2) o la opción venza."
+  },
+  "mistakes": [
+   "Tratar toda opción de renovación como un derecho material sin compararla con el descuento que normalmente se otorga a esa clase de cliente.",
+   "Omitir derechos materiales ocultos en cláusulas de bloqueo de precio o de precio de nación más favorecida.",
+   "Dejar diferida la asignación de la opción una vez que esta ha vencido."
+  ],
+  "furtherLabels": [
+   "Calculadora de asignación de SSP",
+   "Ejemplo de asignación de SSP según ASC 606: paquete SaaS de 3 elementos"
+  ],
+  "soluqubeNote": null,
+  "faqs": [
+   {
+    "question": "¿Qué es un derecho material según ASC 606?",
+    "answer": "Un derecho material es una opción otorgada a un cliente para adquirir bienes o servicios adicionales con un descuento significativo que no recibiría sin celebrar el contrato (ASC 606-10-55-42). Según ASC 606 e IFRS 15, constituye una obligación de desempeño separada que requiere que se le asigne una parte del precio de la transacción."
+   },
+   {
+    "question": "¿Cómo se estima el precio de venta independiente (SSP) de una opción de renovación?",
+    "answer": "El SSP de una opción se calcula como el descuento esperado respecto de lo que paga un cliente comparable, multiplicado por la probabilidad de que el cliente ejerza la opción. Por ejemplo, un descuento de $20,000 con una probabilidad de renovación del 80% tiene un SSP estimado de $16,000."
+   },
+   {
+    "question": "¿Cuándo se reconocen los ingresos asignados a un derecho material?",
+    "answer": "Los ingresos asignados a un derecho material se difieren como pasivo del contrato al inicio del contrato y se reconocen cuando se transfieren los bienes o servicios adicionales al ejercerse la opción, o cuando la opción vence sin ejercerse."
+   }
+  ]
+ }
+}

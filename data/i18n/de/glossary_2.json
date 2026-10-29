@@ -1,0 +1,632 @@
+{
+ "principal-vs-agent": {
+  "slug": "principal-vs-agent",
+  "term": "Prinzipal vs. Agent",
+  "title": "Prinzipal vs. Agent nach ASC 606: Definition",
+  "description": "Prinzipal vs. Agent nach ASC 606 und IFRS 15: Kontrolltest, drei Indikatoren und ein Beispiel für Brutto- vs. Nettoausweis bei einer weiterverkauften App-Lizenz.",
+  "definition": "Die Prinzipal-Agent-Analyse entscheidet, ob ein Unternehmen Umsatz brutto ausweist, als Prinzipal, der die festgelegte Ware oder Dienstleistung vor der Übertragung kontrolliert, oder netto, als Agent, der lediglich die Bereitstellung durch einen Dritten vermittelt. Indikatoren für Kontrolle sind die primäre Verantwortung für die Erfüllung, das Bestandsrisiko und der Ermessensspielraum bei der Preisfestsetzung.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-36 to 55-40",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B34–B38",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B34–B38",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein Marktplatz verkauft einem Kunden die App-Lizenz eines Drittanbieters für $1,000 und zahlt dem Entwickler $700.",
+   "steps": [
+    "Die festgelegte Ware identifizieren: die App-Lizenz.",
+    "Kontrolliert der Marktplatz die Lizenz vor der Übertragung (er ist für die Erfüllung verantwortlich und legt den Preis fest), ist er Prinzipal: Umsatz $1,000, Umsatzkosten $700.",
+    "Erfüllt der Entwickler und vermittelt der Marktplatz den Verkauf lediglich, ist er Agent: Umsatz $300, die Nettoprovision."
+   ],
+   "result": "Derselbe Zahlungsmittelzufluss, sehr unterschiedliche Umsatzzahl: $1,000 brutto oder $300 netto."
+  },
+  "mistakes": [
+   "Das Kreditrisiko als Indikator verwenden; es wurde durch ASU 2016-08 aus ASC 606 gestrichen.",
+   "Auf Vertragsebene statt für jede festgelegte Ware oder Dienstleistung zu entscheiden.",
+   "Die Indikatoren als Punktesystem zu behandeln statt als Nachweis für Kontrolle."
+  ],
+  "furtherLabels": [
+   "Prinzipal vs. Agent nach ASC 606: Beispiel für Brutto- vs. Nettoausweis",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "distinct-good-or-service": {
+  "slug": "distinct-good-or-service",
+  "term": "Eigenständige Ware oder Dienstleistung",
+  "title": "Eigenständige Leistung: Zweistufiger Test nach ASC 606",
+  "description": "Wann eine Leistung nach ASC 606 und IFRS 15 eigenständig ist: zweistufiger Test, SaaS-Implementierungsbeispiel mit beiden Ergebnissen, häufige Fehler.",
+  "definition": "Eine Ware oder Dienstleistung ist eigenständig, wenn der Kunde sie allein oder zusammen mit leicht verfügbaren Ressourcen nutzen kann (eigenständig abgrenzbar) und die Zusage zu ihrer Übertragung von den übrigen Zusagen im Vertrag separat identifizierbar ist (eigenständig im Vertragskontext). Beide Kriterien müssen erfüllt sein.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-19 to 25-22",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 27–30",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 27–30",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: ein jährliches Abonnement für $90,000, verkauft mit einer Einrichtungsleistung für $30,000.",
+   "steps": [
+    "Fall A: Die Einrichtung ist eine Standardkonfiguration, die auch Partner verkaufen, und die Plattform funktioniert ohne sie. Beide Kriterien sind erfüllt, es gibt also zwei Leistungsverpflichtungen; die $120,000 werden nach der Relative-SSP-Methode aufgeteilt, und der auf die Einrichtung entfallende Anteil wird mit Fortschritt der Arbeiten realisiert.",
+    "Fall B: Die Einrichtung passt die Plattform erheblich an, und der Kunde kann die Plattform ohne sie nicht für ihren Zweck nutzen. Die Zusagen sind Inputs für ein kombiniertes Ergebnis, es gibt also eine Leistungsverpflichtung.",
+    "In Fall B werden die gesamten $120,000 über den Zeitraum realisiert, in dem der Kunde Zugang zur angepassten Plattform hat."
+   ],
+   "result": "Dieselbe Preisliste führt in Fall A zu zwei Leistungsverpflichtungen und in Fall B zu einer."
+  },
+  "mistakes": [
+   "Beim Kriterium „eigenständig abgrenzbar“ stehen zu bleiben und den Test der separaten Identifizierbarkeit zu überspringen.",
+   "Die Indikatoren für erhebliche Integration, Anpassung und gegenseitige Abhängigkeit zu ignorieren.",
+   "Zusagen aufzuteilen, die tatsächlich Inputs für ein einziges kombiniertes Ergebnis sind."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "ASC 606 SSP-Aufteilung, Beispiel: SaaS-Paket mit 3 Elementen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "series-guidance": {
+  "slug": "series-guidance",
+  "term": "Serienregelung",
+  "title": "Serienregelung nach ASC 606: SaaS-Beispiel",
+  "description": "Serienregelung nach ASC 606 und IFRS 15: wann eigenständige Perioden eine Leistungsverpflichtung bilden, mit Beispiel zur Zuordnung von Nutzungsgebühren.",
+  "definition": "Nach der Serienregelung gilt eine Reihe eigenständiger Waren oder Dienstleistungen, die im Wesentlichen gleichartig sind und nach demselben Muster übertragen werden, als eine einzige Leistungsverpflichtung. Sie greift, wenn jede eigenständige Periode über einen Zeitraum erfüllt würde und der Fortschritt auf dieselbe Weise gemessen wird, was bei täglichem oder monatlichem SaaS-Zugang typisch ist.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-14(b) and 25-15",
+    "note": null
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-39 to 32-41",
+    "note": "Zuordnung variabler Gegenleistung zu eigenständigen Perioden"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 22(b), 23 and 84–86",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: ein 12-monatiger Plattformvertrag zu $5,000 pro Monat plus $0.02 pro Transaktion oberhalb von 1,000,000 Transaktionen in einem Monat. Das Volumen im März beträgt 1,400,000.",
+   "steps": [
+    "Die Leistung ist eine Reihe eigenständiger Monate mit Plattformzugang: eine Leistungsverpflichtung.",
+    "Mehrmenge im März: (1,400,000 − 1,000,000) × $0.02 = $8,000.",
+    "Die Mehrmenge betrifft nur die Leistung im März und steht im Einklang mit dem Aufteilungsziel, daher wird sie vollständig dem März zugeordnet."
+   ],
+   "result": "Umsatz im März: $5,000 fix + $8,000 Mehrmenge = $13,000. Eine Prognose der Jahresnutzung ist nicht erforderlich."
+  },
+  "mistakes": [
+   "Die Serienregelung als optional zu behandeln; sie gilt, wenn die Kriterien erfüllt sind.",
+   "Zu Vertragsbeginn die Nutzung eines ganzen Jahres zu schätzen, statt die Nutzung der Periode zuzuordnen, auf die sie sich bezieht.",
+   "Sie auf Leistungen anzuwenden, deren Perioden nicht im Wesentlichen gleichartig sind."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "ratable-recognition": {
+  "slug": "ratable-recognition",
+  "term": "Lineare Realisierung",
+  "title": "Lineare Umsatzrealisierung: Definition",
+  "description": "Lineare Umsatzrealisierung bei SaaS nach ASC 606 und IFRS 15: wann sie gilt, Tages- vs. Monatskonvention und ein Beispiel mit Start mitten im Monat.",
+  "definition": "Die lineare Realisierung verteilt den Umsatz gleichmäßig über den Zeitraum, in dem eine Leistungsverpflichtung erfüllt wird. Sie ist typisch für SaaS-Zugang in Bereitschaft, bei dem der Zeitablauf die Übertragung getreu abbildet. Sie ist das Ergebnis einer Beurteilung des Leistungsfortschritts für eine über einen Zeitraum erfüllte Verpflichtung, nicht die Standardlösung für jeden Vertrag.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-27 and 25-31",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 35 and 39",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 35 and 39",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: ein Jahresabonnement für $36,500 (365 Tage) mit Zugangsbeginn am 15. Februar.",
+   "steps": [
+    "Tageskonvention: $36,500 / 365 = $100 pro Tag.",
+    "Februar: 15.–28. Februar sind 14 Tage, also $1,400.",
+    "Eine Monatskonvention mit einem halben Monat für Februar würde stattdessen $1,520.83 ergeben ($36,500 / 12 / 2).",
+    "Eine Konvention wählen, dokumentieren und konsistent anwenden."
+   ],
+   "result": "Umsatz im Februar von $1,400 nach der Tageskonvention; die restlichen $35,100 folgen über die Laufzeit."
+  },
+  "mistakes": [
+   "Die Realisierung bei Vertragsunterzeichnung statt bei Bereitstellung des Zugangs zu beginnen.",
+   "Dem Rechnungsplan statt dem Übertragungsmuster zu folgen.",
+   "Jede Periode einzeln zu runden, sodass die Summe nicht dem aufgeteilten Betrag entspricht."
+  ],
+  "furtherLabels": [
+   "Rundung bei der SSP-Aufteilung nach ASC 606: wohin der Cent gehört",
+   "SSP-Aufteilungsrechner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "point-in-time-recognition": {
+  "slug": "point-in-time-recognition",
+  "term": "Zeitpunktbezogene Realisierung",
+  "title": "Zeitpunktbezogene Umsatzrealisierung: Definition",
+  "description": "Zeitpunktbezogene Umsatzrealisierung nach ASC 606 und IFRS 15: wann sie gilt, die Kontrollindikatoren und ein Beispiel mit befristeter Lizenz plus Support.",
+  "definition": "Die zeitpunktbezogene Realisierung gilt, wenn eine Leistungsverpflichtung keines der drei Kriterien für eine Realisierung über einen Zeitraum erfüllt. Der Umsatz wird realisiert, wenn die Kontrolle übergeht; dies wird anhand von Indikatoren beurteilt, etwa einem bestehenden Zahlungsanspruch, rechtlichem Eigentum, physischem Besitz, dem Übergang wesentlicher Risiken und Chancen und der Abnahme durch den Kunden.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-30",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 38",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 38",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: eine dreijährige On-Premise-Lizenz mit fester Laufzeit, der $60,000 zugeordnet werden, und 12 Monate Support, denen $15,000 zugeordnet werden. Der Schlüssel wird geliefert und die Laufzeit beginnt am 1. April.",
+   "steps": [
+    "Die Lizenz ist ein Nutzungsrecht an funktionalem geistigem Eigentum in dem Zustand, in dem es bei Lieferung vorliegt, und wird daher zu einem Zeitpunkt realisiert.",
+    "1. April: Lizenzumsatz $60,000.",
+    "Support ist eine Leistung in Bereitschaft: $15,000 / 12 = $1,250 pro Monat ab April."
+   ],
+   "result": "$61,250 im April realisiert, danach $1,250 pro Monat für den Rest der Supportlaufzeit."
+  },
+  "mistakes": [
+   "Bei Vertragsunterzeichnung zu realisieren, bevor die Software dem Kunden zur Verfügung steht.",
+   "Substanzielle Abnahmeklauseln des Kunden zu ignorieren.",
+   "Eine Lizenzverlängerung zu realisieren, bevor der Verlängerungszeitraum beginnt."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "input-method": {
+  "slug": "input-method",
+  "term": "Inputmethode",
+  "title": "Inputmethode (Cost-to-Cost) nach ASC 606",
+  "description": "Die Inputmethode zur Fortschrittsmessung nach ASC 606 und IFRS 15, mit einem Implementierungsbeispiel auf Stundenbasis einschließlich Schätzungsänderung.",
+  "definition": "Eine Inputmethode misst den Fortschritt bei der Erfüllung einer über einen Zeitraum zu erfüllenden Leistungsverpflichtung anhand der Anstrengungen oder Inputs des Unternehmens, etwa angefallener Kosten, Arbeitsstunden oder verstrichener Zeit, im Verhältnis zu den insgesamt erwarteten Inputs. Inputs, die die Übertragung auf den Kunden nicht abbilden, etwa vergeudetes Material oder Nacharbeit, bleiben unberücksichtigt.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-20 to 55-21",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B18–B19",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B18–B19",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: eine Implementierung zum Festpreis von $40,000, budgetiert mit 400 Stunden.",
+   "steps": [
+    "Quartal 1: 150 Stunden verbraucht. Fortschritt 150 / 400 = 37.5%; Umsatz $15,000.",
+    "Quartal 2: Gesamtschätzung auf 500 Stunden angepasst; bisher 300 Stunden verbraucht. Fortschritt 60%; kumulierter Umsatz $24,000.",
+    "Umsatz Quartal 2 = $24,000 − $15,000 = $9,000. Die Schätzungsänderung wird in der laufenden Periode erfasst."
+   ],
+   "result": "Der kumulierte Umsatz folgt der jeweils aktuellen Schätzung des Gesamtaufwands."
+  },
+  "mistakes": [
+   "Nacharbeit oder Ineffizienzen als Fortschritt zu zählen.",
+   "Die Schätzung der gesamten Inputs nicht in jeder Periode zu aktualisieren.",
+   "Abrechnungsmeilensteine als Ersatz für Inputs zu verwenden."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "output-method": {
+  "slug": "output-method",
+  "term": "Outputmethode",
+  "title": "Outputmethode nach ASC 606: Definition",
+  "description": "Outputmethode nach ASC 606 und IFRS 15, Erleichterung zum Rechnungsstellungsrecht und ein Beispiel zur Datenmigration.",
+  "definition": "Eine Outputmethode misst den Fortschritt anhand des bisher auf den Kunden übertragenen Werts im Verhältnis zu den verbleibenden Waren oder Dienstleistungen, mithilfe von Maßgrößen wie erreichten Meilensteinen, gelieferten Einheiten oder verstrichener Zeit. Eine Praktikabilitätserleichterung erlaubt es, den Betrag zu realisieren, den das Unternehmen in Rechnung stellen darf, wenn dieser Betrag unmittelbar dem übertragenen Wert entspricht.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-16 to 55-19",
+    "note": "55-18: Erleichterung zum Rechnungsstellungsrecht"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B14–B17",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B14–B17",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: ein Festpreis von $25,000 für die Migration von 50 Altgesellschaften, plus Beratungsstunden zu $150 pro Stunde.",
+   "steps": [
+    "Migration: Zum Periodenende sind 20 von 50 Gesellschaften migriert. Fortschritt 40%; Umsatz $10,000.",
+    "Beratung: 30 Stunden geliefert zu einem Satz, der den Wert für den Kunden widerspiegelt. Nach der Erleichterung zum Rechnungsstellungsrecht beträgt der Umsatz 30 × $150 = $4,500."
+   ],
+   "result": "Periodenumsatz von $14,500 über beide Leistungsverpflichtungen."
+  },
+  "mistakes": [
+   "Meilensteine zu verwenden, die wesentliche laufende Arbeiten unrealisiert lassen.",
+   "Die Erleichterung zum Rechnungsstellungsrecht anzuwenden, wenn die Sätze vorgezogen sind und nicht dem gelieferten Wert entsprechen.",
+   "Innerhalb einer Leistungsverpflichtung verschiedene Fortschrittsmaße zu vermischen."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "contract-modification": {
+  "slug": "contract-modification",
+  "term": "Vertragsänderung",
+  "title": "Vertragsänderung nach ASC 606: Beispiel",
+  "description": "Vertragsänderungen nach ASC 606-10-25-10 to 25-13 und IFRS 15: die drei Ergebnisse und ein SaaS-Beispiel zur Platz-Erweiterung zum SSP und unter dem SSP.",
+  "definition": "Eine Vertragsänderung ist eine genehmigte Änderung des Umfangs oder des Preises oder beider Größen eines Vertrags. Sie wird als separater Vertrag, prospektiv als Beendigung des alten und Abschluss eines neuen Vertrags oder durch kumulative Anpassung bilanziert, je nachdem, ob die zusätzlichen Waren oder Dienstleistungen eigenständig sind und zum Einzelveräußerungspreis bepreist werden.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-10 to 25-13",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 18–21",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 18–21",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: ein dreijähriges Abonnement zu $36,000 pro Jahr. Zu Beginn von Jahr 2 bucht der Kunde für die verbleibenden zwei Jahre 50 Plätze hinzu.",
+   "steps": [
+    "Fall A: Die Plätze kosten $10,000 pro Jahr, was ihrem SSP entspricht. Die Plätze sind eigenständig und zum SSP bepreist, daher ist die Erweiterung ein separater Vertrag; der ursprüngliche Zeitplan bleibt unberührt.",
+    "Fall B: Die Plätze kosten $6,000 pro Jahr, ein Rabatt, der den SSP nicht widerspiegelt. Die verbleibenden Monate sind eigenständig, daher erfolgt die Änderung prospektiv.",
+    "Fall B, verbleibende Gegenleistung: noch nicht realisierter Ursprungsbetrag $72,000 + neu $12,000 = $84,000, über 24 Monate = $3,500 pro Monat."
+   ],
+   "result": "Fall A fügt einen neuen Zeitplan über $10,000 pro Jahr hinzu; Fall B ersetzt den verbleibenden Zeitplan durch $3,500 pro Monat."
+  },
+  "mistakes": [
+   "Nicht genehmigte Änderungsaufträge zu bilanzieren oder genehmigte, aber noch nicht bepreiste Änderungen zu ignorieren, deren Preis geschätzt werden muss.",
+   "Zu vergessen, dass auch reine Preisänderungen Vertragsänderungen sind.",
+   "Eine kumulative Anpassung zu verwenden, obwohl die verbleibenden Leistungen eigenständig sind."
+  ],
+  "furtherLabels": [
+   "ASC 606-10-25-13 Vertragsänderungen: Entscheidungsbaum",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": "Soluqube automatisiert die Bilanzierung von Vertragsänderungen derzeit nicht; sie steht auf der Roadmap. Die Engine verarbeitet die ursprüngliche Aufteilung und den ursprünglichen Zeitplan.",
+  "faqs": null
+ },
+ "cumulative-catch-up": {
+  "slug": "cumulative-catch-up",
+  "term": "Kumulative Anpassung (Cumulative Catch-up)",
+  "title": "Kumulative Anpassung (Catch-up): ASC 606 Beispiel",
+  "description": "Die kumulative Anpassung nach ASC 606-10-25-13(b) und IFRS 15.21(b): wann sie gilt, mit einem Beispiel zu einer teilweise fertiggestellten Festpreis-Entwicklung.",
+  "definition": "Eine kumulative Anpassung (Cumulative Catch-up) ist eine einmalige Buchung in der laufenden Periode, die den bislang realisierten Umsatz an geänderte Bedingungen oder Schätzungen angleicht, als hätten diese von Beginn an gegolten. Sie gilt für Änderungen einer einzelnen, teilweise erfüllten Leistungsverpflichtung sowie für Änderungen des geschätzten Fortschritts oder des Transaktionspreises. Vorperioden werden nicht angepasst.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-13(b)",
+    "note": null
+   },
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-43",
+    "note": "Änderungen des Transaktionspreises"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 21(b)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Eine Festpreis-Entwicklung über $100,000 ist zu 40% fertiggestellt, sodass $40,000 realisiert wurden. Eine Vertragsänderung fügt Leistungsumfang über $20,000 hinzu, der von der Entwicklung nicht eigenständig ist, und die überarbeiteten Gesamtkosten ergeben einen Fortschritt von 35%.",
+   "steps": [
+    "Neuer Transaktionspreis: $100,000 + $20,000 = $120,000.",
+    "Kumulativ zu realisierender Umsatz: $120,000 × 35% = $42,000.",
+    "Anpassung in der Periode der Änderung: $42,000 − $40,000 = $2,000."
+   ],
+   "result": "$2,000 Umsatz in der laufenden Periode; Vorperioden werden nicht angepasst."
+  },
+  "mistakes": [
+   "Vorperioden anzupassen, statt die Anpassung in der laufenden Periode zu erfassen.",
+   "Eine kumulative Anpassung auf Leistungen anzuwenden, die von bereits übertragenen Leistungen eigenständig sind.",
+   "Wesentliche Schätzungsänderungen nicht anzugeben."
+  ],
+  "furtherLabels": [
+   "ASC 606-10-25-13 Vertragsänderungen: Entscheidungsbaum",
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": "Soluqube automatisiert die kumulative Anpassung bei Vertragsänderungen derzeit nicht; sie steht auf der Roadmap.",
+  "faqs": [
+   {
+    "question": "Was ist eine kumulative Anpassung (Cumulative Catch-up)?",
+    "answer": "Sie ist eine einzelne Buchung in der laufenden Periode, die den bislang realisierten Umsatz an geänderte Bedingungen oder Schätzungen angleicht, als hätten diese von Vertragsbeginn an gegolten. Nach ASC 606-10-25-13(b) gilt sie, wenn eine Vertragsänderung Waren oder Dienstleistungen hinzufügt, die von einer einzelnen, teilweise erfüllten Leistungsverpflichtung nicht eigenständig sind."
+   },
+   {
+    "question": "Kumulative Anpassung vs. prospektive Methode: welche gilt?",
+    "answer": "Das hängt davon ab, was noch zu liefern ist. Sind die verbleibenden Waren oder Dienstleistungen von den bereits übertragenen eigenständig, gilt ASC 606-10-25-13(a) prospektiv. Sind sie Teil einer einzelnen, teilweise erfüllten Leistungsverpflichtung, verlangt 25-13(b) eine kumulative Anpassung. Eine Mischung verbleibender Positionen kann in einem Vertrag beide Behandlungen erfordern."
+   },
+   {
+    "question": "Werden Vorperioden bei einer kumulativen Anpassung angepasst?",
+    "answer": "Nein. Die gesamte Anpassung wird in der Periode der Vertragsänderung oder Schätzungsänderung erfasst, und frühere Abschlüsse bleiben wie berichtet. Eine Schätzungsänderung ist keine Fehlerkorrektur, daher gibt es keine Anpassung der Vorjahre. Wesentliche Schätzungsänderungen und die Auswirkung auf den Umsatz sind anzugeben, damit Adressaten nachvollziehen können, warum sich der Umsatz der laufenden Periode verändert hat."
+   }
+  ]
+ },
+ "prospective-method": {
+  "slug": "prospective-method",
+  "term": "Prospektive Methode (Vertragsänderungen)",
+  "title": "Prospektive Methode bei Vertragsänderungen",
+  "description": "Die prospektive Methode nach ASC 606-10-25-13(a) und IFRS 15.21(a): Beendigung und neuer Vertrag, mit einem SaaS-Beispiel zu einer Preissenkung.",
+  "definition": "Bei der prospektiven Methode wird eine Vertragsänderung so behandelt, als wäre der bestehende Vertrag beendet und ein neuer abgeschlossen worden. Bereits realisierter Umsatz bleibt unverändert; die noch nicht realisierte Gegenleistung aus dem ursprünglichen Vertrag zuzüglich einer etwaigen neuen Gegenleistung wird den verbleibenden eigenständigen Waren oder Dienstleistungen zugeordnet.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-25-13(a)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraph 21(a)",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraph 21(a)",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: ein 24-monatiges Abonnement für $48,000 ($2,000 pro Monat). Nach 12 Monaten vereinbaren die Parteien für die verbleibenden 12 Monate eine Reduzierung um $3,000 ohne Änderung der Leistung.",
+   "steps": [
+    "Bisher realisiert: $24,000. Dieser Betrag wird nicht angepasst.",
+    "Verbleibende Gegenleistung: $24,000 − $3,000 = $21,000.",
+    "Die verbleibenden Monate sind eigenständig, daher prospektive Verteilung: $21,000 / 12 = $1,750 pro Monat."
+   ],
+   "result": "$1,750 pro Monat für die Monate 13–24; keine Anpassungsbuchung."
+  },
+  "mistakes": [
+   "Die prospektive Methode bei Vertragsänderungen mit der prospektiven Übergangsmethode bei Erstanwendung des Standards zu verwechseln.",
+   "Bereits realisierten Umsatz rückwirkend anzupassen.",
+   "Bestehende Vertragsvermögenswerte bei der verbleibenden Gegenleistung außer Acht zu lassen."
+  ],
+  "furtherLabels": [
+   "ASC 606-10-25-13 Vertragsänderungen: Entscheidungsbaum",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": "Soluqube automatisiert diese Beurteilung derzeit nicht; die Bilanzierung von Vertragsänderungen steht auf der Roadmap.",
+  "faqs": null
+ },
+ "significant-financing-component": {
+  "slug": "significant-financing-component",
+  "term": "Wesentliche Finanzierungskomponente",
+  "title": "Wesentliche Finanzierungskomponente nach ASC 606",
+  "description": "Finanzierungskomponenten nach ASC 606 und IFRS 15: Zeitwert des Geldes, Einjahreserleichterung und ein Beispiel mit aufgeschobener Zahlung.",
+  "definition": "Eine wesentliche Finanzierungskomponente liegt vor, wenn der von den Parteien vereinbarte Zahlungszeitpunkt dem Kunden oder dem Unternehmen einen wesentlichen Finanzierungsvorteil verschafft. Der Transaktionspreis wird dann um den Zeitwert des Geldes angepasst. Eine Praktikabilitätserleichterung verzichtet auf die Anpassung, wenn der Abstand zwischen Zahlung und Übertragung höchstens ein Jahr beträgt.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-15 to 32-20",
+    "note": "32-18: Einjahreserleichterung"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 60–65",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 60–65",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Eine unbefristete Lizenz wird heute geliefert; der Kunde zahlt $100,000 in zwei Jahren. Der Zinssatz, den die Parteien in einer separaten Finanzierungstransaktion verwenden würden, beträgt 5%.",
+   "steps": [
+    "Barwert: $100,000 / 1.05² = $100,000 / 1.1025 = $90,702.95.",
+    "Lizenzumsatz bei Lieferung: $90,702.95.",
+    "Zinsertrag über zwei Jahre: $100,000 − $90,702.95 = $9,297.05, getrennt von den Umsatzerlösen aus Verträgen mit Kunden auszuweisen."
+   ],
+   "result": "$90,702.95 Umsatz jetzt und $9,297.05 Zinsertrag über den Zahlungszeitraum."
+  },
+  "mistakes": [
+   "Eine Finanzierungskomponente bei mehrjährigen Vorauszahlungen zu ignorieren.",
+   "Anzunehmen, dass jede jährlich im Voraus gestellte SaaS-Rechnung eine solche begründet; innerhalb eines Jahres greift in der Regel die Erleichterung.",
+   "Einen risikolosen Zinssatz zu verwenden statt eines Satzes, der die Bonität des Kunden widerspiegelt."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "contract-costs-asc-340-40": {
+  "slug": "contract-costs-asc-340-40",
+  "term": "Vertragskosten (ASC 340-40)",
+  "title": "Vertragskosten nach ASC 340-40: Provisionen",
+  "description": "Aktivierung von Vertragskosten nach ASC 340-40 und IFRS 15: zusätzliche Kosten der Vertragsanbahnung, Abschreibungszeitraum und ein Provisionsbeispiel.",
+  "definition": "ASC 340-40 und IFRS 15 verlangen die Aktivierung der zusätzlichen Kosten der Vertragsanbahnung, typischerweise Vertriebsprovisionen, wenn deren Erstattung erwartet wird, sowie bestimmter Kosten der Vertragserfüllung. Aktivierte Kosten werden planmäßig und im Einklang mit der Übertragung der zugehörigen Waren oder Dienstleistungen abgeschrieben, einschließlich erwarteter Verlängerungen.",
+  "references": [
+   {
+    "standard": "ASC 340-40",
+    "ref": "340-40-25-1 to 25-8 and 340-40-35-1",
+    "note": "25-4: Einjahreserleichterung"
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 91–104",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs 91–104",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: eine Provision von 10% auf einen dreijährigen Vertrag über $120,000. Die Verlängerungsprovisionen betragen 2%, was nicht in einem angemessenen Verhältnis zum anfänglichen Satz steht, und die erwartete Kundenlebensdauer beträgt fünf Jahre.",
+   "steps": [
+    "Aktivierte Kosten: 10% × $120,000 = $12,000.",
+    "Da die Verlängerungsprovisionen nicht in einem angemessenen Verhältnis stehen, wird über die erwartete Kundenlebensdauer abgeschrieben, nicht über die anfängliche Laufzeit.",
+    "Abschreibung: $12,000 / 60 Monate = $200 pro Monat."
+   ],
+   "result": "Ein Vermögenswert von $12,000, abgeschrieben mit $200 pro Monat über fünf Jahre und auf Wertminderung geprüft."
+  },
+  "mistakes": [
+   "Kosten zu aktivieren, die ohnehin angefallen wären, etwa Grundgehälter.",
+   "Über die anfängliche Vertragslaufzeit abzuschreiben, obwohl die Verlängerungsprovisionen nicht in einem angemessenen Verhältnis stehen.",
+   "Den aktivierten Saldo nicht auf Wertminderung zu prüfen."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "practical-expedients": {
+  "slug": "practical-expedients",
+  "term": "Praktikabilitätserleichterungen",
+  "title": "ASC 606 Praktikabilitätserleichterungen: Liste & Beispiel",
+  "description": "Wichtige Erleichterungen nach ASC 606 und IFRS 15: Finanzierung unter einem Jahr, Vertragskosten, Rechnungsstellungsrecht, RPO-Angaben, mit Beispiel.",
+  "definition": "Praktikabilitätserleichterungen sind optionale Vereinfachungen in ASC 606 und IFRS 15, die den Aufwand senken, ohne die Ergebnisse wesentlich zu verändern. Beispiele sind der Verzicht auf eine wesentliche Finanzierungskomponente bei einem Jahr oder weniger, die sofortige Aufwandsverbuchung von Vertragskosten, die innerhalb eines Jahres abgeschrieben würden, die Bewertung nach dem Rechnungsstellungsrecht und der Verzicht auf bestimmte Angaben zu verbleibenden Leistungsverpflichtungen.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-32-18 (financing), 606-10-55-18 (right to invoice), 606-10-50-14 (RPO)",
+    "note": null
+   },
+   {
+    "standard": "ASC 340-40",
+    "ref": "340-40-25-4 (contract costs)",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs 63, 94, 121 and B16",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: Ein Unternehmen verkauft 12-Monats-Abonnements zu $12,000, jährlich im Voraus abgerechnet, und zahlt auf jeden Neuabschluss eine Provision von $1,200 sowie auf jede Verlängerung eine gleich hohe Provision.",
+   "steps": [
+    "Finanzierung: Zahlung und Leistung liegen innerhalb eines Jahres, daher keine Anpassung um den Zeitwert des Geldes.",
+    "Vertragskosten: Die Verlängerungsprovisionen stehen in einem angemessenen Verhältnis, daher beträgt der Abschreibungszeitraum 12 Monate; die $1,200 können sofort als Aufwand erfasst werden statt $100 pro Monat.",
+    "RPO: Verträge mit einer ursprünglichen Laufzeit von einem Jahr oder weniger können aus der Angabe zu den verbleibenden Leistungsverpflichtungen ausgenommen werden."
+   ],
+   "result": "Drei Vereinfachungen, jeweils als Methode gewählt und angegeben."
+  },
+  "mistakes": [
+   "Eine Erleichterung in Anspruch zu nehmen, ohne die Wahl anzugeben, wo eine Angabe erforderlich ist.",
+   "Die einjährige RPO-Erleichterung auf mehrjährige Verträge anzuwenden.",
+   "Eine Erleichterung auf einige ähnliche Verträge anzuwenden, auf andere aber nicht."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "Eigene Verträge als Design-Partner prüfen"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ },
+ "bill-and-hold": {
+  "slug": "bill-and-hold",
+  "term": "Bill-and-Hold",
+  "title": "Bill-and-Hold-Vereinbarungen nach ASC 606",
+  "description": "Bill-and-Hold nach ASC 606 und IFRS 15: die vier Kriterien für die Umsatzrealisierung vor dem Versand und ein Beispiel mit einer Verwahrungsleistung.",
+  "definition": "Eine Bill-and-Hold-Vereinbarung liegt vor, wenn ein Unternehmen einem Kunden ein Produkt in Rechnung stellt, den physischen Besitz aber bis zu einem späteren Zeitpunkt behält. Umsatz wird vor dem Versand nur realisiert, wenn die Kontrolle übergegangen ist: Es gibt einen substanziellen Grund, das Produkt ist als das des Kunden identifiziert, zur Übertragung bereit und kann vom Unternehmen weder verwendet noch umgeleitet werden.",
+  "references": [
+   {
+    "standard": "ASC 606",
+    "ref": "606-10-55-81 to 55-84",
+    "note": null
+   },
+   {
+    "standard": "IFRS 15",
+    "ref": "paragraphs B79–B82",
+    "note": null
+   },
+   {
+    "standard": "Ind AS 115",
+    "ref": "paragraphs B79–B82",
+    "note": null
+   }
+  ],
+  "example": {
+   "scenario": "Illustrativ: 20 Hardware-Appliances zu je $4,000 ($80,000). Der Kunde bittet den Anbieter, sie einzulagern, bis sein Rechenzentrum bereit ist; die Geräte sind dem Kunden zugeordnet und können nicht umgeleitet werden. Die Lagerung ist eine separate Leistung mit einem SSP von $1,000.",
+   "steps": [
+    "Alle vier Kriterien sind erfüllt, die Kontrolle über die Appliances ist also mit der Rechnungsstellung übergegangen.",
+    "$80,000 nach Relative-SSP-Methode aufteilen: Appliances $80,000 × 80,000 / 81,000 = $79,012.35; Lagerung $80,000 × 1,000 / 81,000 = $987.65.",
+    "$79,012.35 jetzt realisieren; $987.65 über den Lagerzeitraum realisieren."
+   ],
+   "result": "Der Großteil des Umsatzes bei Rechnungsstellung, mit einer kleinen abgegrenzten Leistungsverpflichtung für die Verwahrung."
+  },
+  "mistakes": [
+   "Umsatz bei einer Bill-and-Hold-Vereinbarung zu realisieren, die im Interesse des Anbieters erfolgt.",
+   "Die Verwahrungsleistung als separate Leistungsverpflichtung zu übersehen.",
+   "Nicht zu bestätigen, dass die Ware nicht zur Erfüllung anderer Aufträge verwendet werden kann."
+  ],
+  "furtherLabels": [
+   "ASC 606 Fachportal",
+   "SSP-Aufteilungsrechner"
+  ],
+  "soluqubeNote": null,
+  "faqs": null
+ }
+}
