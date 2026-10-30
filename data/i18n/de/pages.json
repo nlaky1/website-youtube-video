@@ -5,5 +5,221 @@
     "englishVersion": "Englische Version",
     "widgetNote": "Der Rechner wird auf Englisch angezeigt; die Berechnung ist dieselbe wie in der englischen Version und läuft in Ihrem Browser.",
     "moreTitle": "Weitere Seiten auf Deutsch"
+  },
+  "asc-606": {
+    "title": "SSP-Aufteilung nach ASC 606: Pläne und Prüfungsnachweise",
+    "description": "Relative-SSP-Aufteilung, ASC-606-Pläne über die volle Laufzeit, die auf den Cent aufgehen, und Prüfungsnachweise mit der Klausel je Leistungsverpflichtung.",
+    "breadcrumb": "ASC-606-Übersicht",
+    "h1": "SSP-Aufteilung nach ASC 606 und Umsatzpläne über die volle Laufzeit",
+    "lead": "Relative-SSP-Aufteilung und ASC-606-Pläne über die volle Laufzeit in Ganzzahl-Arithmetik (BigInt), die auf den Cent aufgehen, mit Klauselbeleg je Verpflichtung und Nachweis-Arbeitspapieren mit Hash.\n\nNach ASC 606 ist der Einzelveräußerungspreis (SSP) der Preis, zu dem jede zugesagte Ware oder Dienstleistung einzeln verkauft würde. In Schritt 4 wird der Transaktionspreis im Verhältnis der SSPs auf die Verpflichtungen aufgeteilt. Soluqube berechnet diese Aufteilung und den Plan über die volle Laufzeit, auf den Cent genau.",
+    "body": "## Was Soluqube heute leistet\n\n- **Geht auf den Cent auf.** Skalierte Ganzzahl-Arithmetik, bei der die letzte Periode den Restbetrag aufnimmt: Der Plan über die volle Laufzeit endet mit $0.00 passiver Rechnungsabgrenzung.\n- **Vertragsänderungen (Roadmap).** Die Bilanzierung von Vertragsänderungen nach ASC 606-10-25-13 (prospektiv oder kumulative Nachholung) steht auf der Roadmap und ist heute nicht automatisiert. Siehe den [Leitfaden mit Entscheidungsbaum](/blog/contract-modification-precedence-dag-asc-606-10-25-13).\n- **Klauselbeleg.** Jede Verpflichtung behält die Seite und den wörtlichen Auszug der Klausel, aus der sie stammt, und bei hochgeladenen PDFs mit Textebene eine Markierung der zitierten Zeile, damit ein Prüfer sie bis zum unterschriebenen Vertrag zurückverfolgen kann.\n\n## Live-Engine und Rechner\n\nDer interaktive BigInt-Arbeitsbereich liegt in der Soluqube-App: [ASC-606-Sandbox öffnen (auf Englisch)](https://app.soluqube.com/asc-606). Für einen schnellen Test im Browser nutzen Sie den [SSP-Aufteilungsrechner](/tools/ssp-allocation-calculator).\n\nLesen Sie den [vollständigen Leitfaden zur SSP-Aufteilung nach ASC 606](/blog/asc-606-ssp-allocation-guide).",
+    "faqs": [
+      {
+        "question": "Was ist der SSP nach ASC 606?",
+        "answer": "Der Preis, den ein Unternehmen für eine abgrenzbare Ware oder Dienstleistung verlangen würde, wenn es sie einem vergleichbaren Kunden einzeln verkauft. Er ist beobachtbar, wenn die Leistung allein verkauft wird; sonst wird er geschätzt (angepasste Marktbewertung, erwartete Kosten plus Marge oder, in engen Fällen, Restwertmethode)."
+      },
+      {
+        "question": "Wie wird ein Rabatt aufgeteilt?",
+        "answer": "Standardmäßig im Verhältnis der relativen SSPs auf alle Verpflichtungen. ASC 606-10-32-37 erlaubt die Zuordnung zu nur einigen Verpflichtungen, wenn beobachtbare Nachweise alle drei Kriterien erfüllen."
+      },
+      {
+        "question": "Welche Realisierungsmuster plant Soluqube?",
+        "answer": "Monatlich lineare und zeitpunktbezogene Verpflichtungen, in USD oder INR. Vertragsänderungen, variable Gegenleistungen und fakturierungsbasierte Vertragsvermögenswerte werden noch nicht abgebildet."
+      }
+    ],
+    "cta": {
+      "title": "Müssen Sie in diesem Quartal eine SSP-Aufteilung verteidigen?",
+      "body": "Senden Sie drei Verträge. Sie bestätigen Verpflichtungen und Preise; Sie erhalten die Relative-SSP-Aufteilung, einen Plan, der auf den Cent aufgeht, und ein Arbeitspapier mit Hash, das sich erneut ausführen lässt.",
+      "label": "Design-Partner-Programm (auf Englisch)",
+      "href": "/design-partners",
+      "secondaryLabel": "ASC-606-Sandbox öffnen (auf Englisch)",
+      "secondaryHref": "https://app.soluqube.com/asc-606"
+    },
+    "type": "website"
+  },
+  "asc-606-vs-ind-as-115": {
+    "title": "ASC 606 vs. Ind AS 115: zwei Bücher und 18 % GST",
+    "description": "ASC-606-Pläne (USD) und Ind-AS-115-Pläne (INR) aus demselben Vertrag; bei INR-Verträgen wird die 18 % GST vor der Aufteilung als Verbindlichkeit getrennt.",
+    "breadcrumb": "ASC 606 vs. Ind AS 115",
+    "eyebrow": "Zwei Standards, ein Vertrag",
+    "h1": "ASC 606 vs. Ind AS 115: Rechnungslegung nach zwei Standards",
+    "lead": "Bei Verträgen in INR trennt Soluqube die indische GST von 18 % als Verbindlichkeit vom Umsatz und stellt den Ind-AS-115-Plan neben den ASC-606-Plan in USD. US-Verträge enthalten keine GST.",
+    "body": "## Grundprinzipien bei zwei Standards\n\n### 1. Die 18 % GST außerhalb der Umsatzabgrenzung\n\nNach Ind AS 115 und der Darstellung gemäß MCA Schedule III wird eine Bruttorechnung mit 18 % GST nicht als passive Rechnungsabgrenzung erfasst. Bei INR-Verträgen berechnet Soluqube bei Vertragsbeginn die Nettogegenleistung = Brutto / 1.18.\n\n### 2. Planexport für beide Bücher\n\nExportiert den Plan für Ihre US-GAAP-Bücher (USD) und Ind-AS-115-Bücher (INR) als Excel und CSV, die Sie prüfen und buchen. Die direkte Buchung ins ERP steht auf der Roadmap.\n\nLesen Sie den [vollständigen Beitrag zu ASC 606 und Ind AS 115](/blog/asc-606-vs-ind-as-115-dual-standard-gst-compliance) und das [Beispiel zur SSP-Aufteilung mit Ind AS 115, INR und GST](/blog/ssp-allocation-example-ind-as-115-inr-gst). Das Glossar erklärt die [GST-Behandlung nach Ind AS 115](/glossary/ind-as-115-gst-treatment).",
+    "cta": {
+      "title": "Abschreibung nach zwei Standards simulieren",
+      "body": "Öffnen Sie den Zwei-Bücher-Rechner in der Soluqube-Sandbox.",
+      "label": "Sandbox öffnen (auf Englisch)",
+      "href": "https://app.soluqube.com/asc-606-vs-ind-as-115",
+      "secondaryLabel": "Design-Partner (auf Englisch)",
+      "secondaryHref": "/design-partners"
+    },
+    "type": "website"
+  },
+  "soluqube-vs-maxio": {
+    "title": "Maxio-Alternative: Soluqube vs. Maxio für ASC 606 (2026)",
+    "description": "Soluqube vs. Maxio für ASC 606: SSP-Aufteilung aus dem Vertrag, Pläne, die auf den Cent aufgehen, und Arbeitspapier statt Fakturierung zuerst.",
+    "breadcrumb": "Soluqube vs. Maxio",
+    "eyebrow": "Vergleich",
+    "h1": "Soluqube vs. Maxio: Vertrag statt Fakturierung",
+    "lead": "Maxio (früher Chargify + SaaSOptics) verwaltet Abonnements und Fakturierung. Soluqube geht vom unterschriebenen Vertrag aus: Sie bestätigen Verpflichtungen und Preise, Soluqube teilt nach der Relative-SSP-Methode mit Ganzzahl-Arithmetik (BigInt) auf, die auf den Cent aufgeht, und liefert ein Nachweis-Arbeitspapier mit Hash.",
+    "body": "## Die beiden Werkzeuge im Überblick\n\n**Maxio (Chargify + SaaSOptics).** Plattform für Fakturierung und Finanzreporting für Abo-Unternehmen, mit integrierter Umsatzrealisierung. Die Realisierung wird aus dem berechnet, was in Fakturierung und CRM hinterlegt ist.\n\n**Soluqube.** Umsatz-Nebenbuch vom Vertrag bis zum Hauptbuch. Geht von Ihren unterschriebenen Verträgen aus, speichert den Klauselbeleg jeder Leistungsverpflichtung (Seite, wörtlicher Auszug und bei hochgeladenen PDFs mit Textebene eine Markierung der zitierten Zeile), teilt nach der Relative-SSP-Methode mit Ganzzahl-Arithmetik (BigInt) auf, damit der Plan auf den Cent aufgeht, und liefert prüfungsfertige Nachweispakete.\n\n- Vertrag hochladen, extrahierte Bedingungen bestätigen, Plan erhalten.\n- Veröffentlichte Preise: $475 je Prüfungs-Arbeitspapier (bis zu 10 Verträge) oder $49/Monat Werkzeugzugang für Kanzleien.\n- ASC 606 (USD) und Ind AS 115 (INR), mit getrennter 18 % GST bei INR-Verträgen.\n\n## Maxio-Alternativen nach Anwendungsfall\n\nDie beste Alternative hängt davon ab, ob Sie die gesamte Fakturierung ersetzen oder nur die Prüfung der Umsatzrealisierung lösen wollen:\n\n- **Ähnlichster Ersatz: Chargebee RevRec.** SaaS-Abofakturierung, nutzungsbasierte Abrechnung und integrierte ASC-606/IFRS-15-Pläne, wenn Sie die gesamte Fakturierung ersetzen.\n- **Stripe-native Abläufe: Stripe RevRec.** Wenn Zahlungen und Rechnungen in Stripe liegen und Sie ein nutzungsbasiertes Add-on bevorzugen.\n- **Xero oder QuickBooks als Hauptbuch behalten: ScaleXP.** Verbindet sich mit QuickBooks oder Xero für automatische Buchungen, MRR-Analysen und einfache Umsatzrealisierung ohne ERP-Migration.\n- **Konzerne mit komplexen Mehrproduktverträgen: Zuora Revenue** (früher RevPro), Quote-to-Cash-Plattform für individuelle Verträge, CPQ und SOX-Kontrollen.\n- **Vertragsbasiertes ASC 606 und Pläne, die auf den Cent aufgehen: Soluqube.** Läuft neben Ihrer bestehenden Fakturierung. Verknüpft jede Leistungsverpflichtung mit der Klausel des unterschriebenen Vertrags über einen wörtlichen Auszug und nutzt Ganzzahl-Arithmetik, damit die passive Rechnungsabgrenzung bei $0.00 endet. Deckt ASC 606 und Ind AS 115 ab.\n\n## Detaillierter Vergleich\n\n| Kriterium | Maxio (Chargify + SaaSOptics) | Soluqube |\n|---|---|---|\n| Kategorie | Abofakturierung und Finanzprozesse | Deterministische Umsatzrealisierung vom Vertrag bis zum Hauptbuch |\n| Datengrundlage | CRM-Angebote und Rechnungspositionen (Salesforce / HubSpot) | Unterschriebener Vertrag (von Ihnen bestätigte Bedingungen) |\n| Vertragserfassung | Manuelle Erfassung oder CPQ-Synchronisierung | Klauselbeleg je Verpflichtung: Seite, wörtlicher Auszug und Markierung der zitierten Zeile (hochgeladene PDFs mit Textebene) |\n| Rechengenauigkeit | Nicht veröffentlicht | Ganzzahl-Arithmetik (BigInt), Maßstab 10^6, auf Cent gerundet; die letzte Periode nimmt den Restbetrag auf, die Abgrenzung endet bei $0.00 |\n| Standards | ASC 606 und IFRS 15 | ASC 606 und Ind AS 115 (18 % GST bei INR-Verträgen getrennt) |\n| Prüfungsnachweise | Berichte und CSV-Exporte | Nachweispaket mit SHA-256-Integritäts-Hashes |\n| Interne Kontrollen | Rollenbasierte Berechtigungen | Vier-Augen-Prüfung: getrenntes Einreichen und Freigeben vor dem Export (identitätsgebundene Freigabe auf der Roadmap) |\n| Preis | Je nach Plan; Preise und Quellen unter [Maxio-Alternativen](/alternatives/maxio) | Veröffentlichte Preise: $475 je Arbeitspapier (bis zu 10 Verträge) oder $49/Monat Zugang für Kanzleien |\n| Einführung | Abhängig von der Implementierung | Vertrag hochladen, extrahierte Bedingungen bestätigen, Plan erzeugen |\n\n## Vier zentrale Unterschiede\n\n### 1. Was nicht im CRM steht\n\nMaxio kennt nur, was im CPQ oder in den Rechnungspositionen hinterlegt ist. Sagt ein PDF-Nachtrag individuelle Liefer-SLAs, ein Kündigungsrecht ohne Grund oder Staffelpreise zu, kann ein Fakturierungswerkzeug Umsatz realisieren, der später korrigiert werden muss. Soluqube geht vom unterschriebenen Vertrag aus: Sie bestätigen jede Verpflichtung und jeden Preis, und jede trägt die Seite, den wörtlichen Auszug und eine Markierung der zitierten Zeile ihrer Klausel.\n\n### 2. Pläne, die auf den Cent aufgehen\n\nMehrjährige SaaS-Verträge, die auf 36 lineare Perioden verteilt werden, erzeugen wiederkehrende Centbruchteile (zum Beispiel $100,000 / 36 = $2,777.7777...). Wird jede Periode für sich gerundet, bleiben Restcents, die jemand beim Abschluss ausbuchen muss. Die Ganzzahl-Engine (BigInt) von Soluqube lässt die letzte Periode den Restbetrag aufnehmen, sodass die passive Rechnungsabgrenzung bei $0.00 endet.\n\n### 3. Ind AS 115 und 18 % GST\n\nUnternehmen mit Gesellschaften in Indien müssen die 18 % GST gemäß MCA Schedule III trennen. Bei INR-Verträgen bucht Soluqube die Steuer auf getrennte Verbindlichkeitskonten und behält die US-GAAP-Abschreibung bei.\n\n### 4. Ohne Ihre Fakturierung zu ersetzen\n\nSoluqube läuft neben Ihrer bestehenden Fakturierung: Sie bestätigen die extrahierten Bedingungen, Soluqube erzeugt Aufteilung und Plan, zu veröffentlichten Preisen.\n\n## Sie nutzen bereits Maxio oder Stripe Billing?\n\nSie müssen Ihre Fakturierung nicht ersetzen. Sie können weiter mit Maxio oder Stripe fakturieren und einziehen und Soluqube als Schicht vom Vertrag bis zum Hauptbuch nutzen, damit Ihr Abschlussprüfer bei der Prüfung der Umsatzpläne die Nachweise hat. Mehr Optionen unter [Maxio-Alternativen](/alternatives/maxio) und in der [ASC-606-Übersicht](/asc-606).",
+    "faqs": [
+      {
+        "question": "Welche Maxio-Alternative hilft, ASC 606 gegenüber dem Prüfer zu verteidigen?",
+        "answer": "Soluqube ist eine Option für Teams, die deterministische ASC-606- und Ind-AS-115-Pläne brauchen, die auf den Cent aufgehen, mit Auszügen aus den Klauseln des unterschriebenen Vertrags, ohne die Fakturierung zu ersetzen."
+      },
+      {
+        "question": "Lässt sich Soluqube zusammen mit Maxio oder Stripe Billing nutzen?",
+        "answer": "Ja. Maxio oder Stripe übernehmen Abofakturierung und Zahlungseinzug; Soluqube geht von den unterschriebenen Verträgen aus und erzeugt die Relative-SSP-Aufteilung und überprüfbare Arbeitspapiere."
+      }
+    ],
+    "cta": {
+      "title": "Kostenloses Arbeitspapier für 3 Verträge",
+      "body": "Senden Sie drei Verträge: Sie erhalten die Relative-SSP-Aufteilung, einen Plan, der auf den Cent aufgeht, und ein Nachweis-Arbeitspapier mit Hash.",
+      "label": "Arbeitspapier anfordern (auf Englisch)",
+      "href": "/audit",
+      "secondaryLabel": "15-Minuten-Walkthrough buchen (auf Englisch)",
+      "secondaryHref": "/book-demo"
+    }
+  },
+  "soluqube-vs-trullion": {
+    "title": "Soluqube vs. Trullion: Preis je Vertrag und Ind AS 115",
+    "description": "Trullion: Unternehmensvertrag, Preis nicht veröffentlicht. Soluqube: SSP-Aufteilung ab $475 für bis zu 10 Verträge, mit ASC 606 und Ind AS 115.",
+    "breadcrumb": "Soluqube vs. Trullion",
+    "eyebrow": "Vergleich",
+    "h1": "Die Trullion-Alternative mit Preis je Vertrag und zwei Standards",
+    "lead": "Trullion verkauft jährliche Unternehmensverträge (Preis nicht veröffentlicht) nach einem Vertriebsprozess, und seine öffentlichen Unterlagen nennen weder Ind-AS-115-Unterstützung noch eine GST-Trennung. Soluqube bietet SSP-Aufteilung je Vertrag mit Ganzzahl-Arithmetik (BigInt) ab $475 für bis zu 10 Verträge.",
+    "body": "## Soluqube im Überblick\n\n- **Veröffentlichte Preise:** $475 je Prüfungs-Arbeitspapier (bis zu 10 Verträge), $1,750 je QoE-Deal-Paket oder $49/Monat Werkzeugzugang für Kanzleien. Keine sechsstelligen Mindestverträge.\n- **Zwei Standards:** ASC 606 (USD) und Ind AS 115 (INR), mit getrennter 18 % GST bei INR-Verträgen.\n- **Ganzzahl-Arithmetik:** BigInt im Maßstab 10^6, auf Cent gerundet; die letzte Periode nimmt den Restbetrag auf, die passive Rechnungsabgrenzung endet bei $0.00.\n- **Vier-Augen-Prüfung:** getrennte Schritte zum Einreichen und Freigeben in der Prüfansicht. Die identitätsgebundene Freigabe steht auf der Roadmap.\n\n## Trullion im Überblick\n\nKI-Plattform für Rechnungswesen und Prüfung, die Vertragsbedingungen extrahiert und Abläufe für Umsatzrealisierung und Leasing ausführt, laut den öffentlichen Seiten.\n\n- **Unternehmensminimum:** Jahresverpflichtung (Preis nicht veröffentlicht).\n- **Ind AS 115 nicht genannt:** ASC 606 und IFRS 15 laut öffentlichen Unterlagen; keine Trennung der indischen GST genannt.\n- **Rundungsregel nicht veröffentlicht:** keine öffentliche Dokumentation, wie Restcents bei Aufteilungen über mehrere Perioden zugeordnet werden.\n- **Kein veröffentlichtes Self-Service:** keine veröffentlichte Option, einen einzelnen Vertrag ohne Plattformvertrag zu prüfen.\n\n## Funktionsvergleich\n\n| Funktion | Soluqube | Trullion |\n|---|---|---|\n| Preismodell | $475 je Arbeitspapier (10 Verträge) / $49/Monat für Kanzleien | Unternehmensvertrag (Preis nicht veröffentlicht) |\n| Zeit bis zum Ergebnis | Am selben Tag (Sie bestätigen Verpflichtungen und Preise) | Nicht veröffentlicht |\n| Ind AS 115 | Ind-AS-115-Pläne (INR) neben ASC 606 | Nicht genannt (ASC 606 und IFRS 15) |\n| Indische GST von 18 % | Bei INR-Verträgen getrennt | Nicht genannt |\n| Rechengenauigkeit | Ganzzahlen (BigInt), auf Cent gerundet (geht auf den Cent auf) | Nicht veröffentlicht |\n| Restbetrag in der letzten Periode | Der Endsaldo der Abgrenzung endet bei $0.00 / ₹0.00 | Nicht veröffentlicht |\n| Prüfungsnachweise | Nachweispaket: Klauselbeleg (Seite und Auszug) und SHA-256-Hashes | Exporte des Prüfpfads |\n| Interne Kontrollen | Vier-Augen-Prüfung (identitätsgebundene Freigabe auf der Roadmap) | Rollenbasierte Berechtigungen |\n\n## Kosten\n\n- **Soluqube Prüfungs-Arbeitspapier:** $475 je 10 Verträge.\n- **Soluqube Werkzeugzugang für Kanzleien:** $490/Jahr je Kanzlei; Sie nutzen die App selbst.\n- **Trullion:** Unternehmenspreis nicht veröffentlicht. Quellen unter [Trullion-Alternativen](/alternatives/trullion).\n\nErst das Ergebnis sehen? [Plan-Simulator ausprobieren (auf Englisch)](/audit).",
+    "cta": {
+      "title": "Verträge prüfen ohne Unternehmensvertrag?",
+      "body": "Bestätigen Sie Verpflichtungen und Preise eines Vertrags und erhalten Sie die SSP-Aufteilung, einen ASC-606- und Ind-AS-115-Plan über die volle Laufzeit, der auf den Cent aufgeht, und ein Nachweis-Arbeitspapier mit Hash.",
+      "label": "Walkthrough buchen (auf Englisch)",
+      "href": "/book-demo",
+      "secondaryLabel": "Design-Partner (auf Englisch)",
+      "secondaryHref": "/design-partners"
+    }
+  },
+  "soluqube-vs-klarity": {
+    "title": "Soluqube vs. Klarity: Nebenbuch oder Vertragsprüfung",
+    "description": "Klarity macht aus Order Forms Prüf-Checklisten. Soluqube ergänzt Relative-SSP-Aufteilung, Pläne, die auf den Cent aufgehen, und ein Arbeitspapier mit Hash.",
+    "breadcrumb": "Soluqube vs. Klarity",
+    "eyebrow": "Vergleich der Arbeitsabläufe",
+    "h1": "Vollständiges Umsatz-Nebenbuch statt reiner Checklisten-Prüfung",
+    "lead": "Klarity liest Order Forms mit KI und füllt Prüf-Checklisten, berechnet aber keine Umsatzpläne; die bleiben in Tabellen oder ERP-Skripten. Soluqube ist ein Nebenbuch vom Vertrag bis zum Hauptbuch: Sie bestätigen Verpflichtungen und Preise, Soluqube berechnet Aufteilung und Plan mit Ganzzahlen (BigInt) und exportiert Buchungszeilen, die Sie prüfen und buchen.",
+    "body": "## Wo jeder Ablauf endet\n\n**Klarity**\n\n1. Nimmt den Vertrag oder die Order Form als PDF auf.\n2. Extrahiert die wichtigsten Bedingungen und füllt Checkliste oder Memo.\n3. Dort endet es: Das Rechnungswesen überträgt die Bedingungen in NetSuite oder baut den Plan in Excel.\n\n**Soluqube**\n\n1. Vertrag hochladen, Verpflichtungen und Preise bestätigen.\n2. Deterministische Relative-SSP-Aufteilung.\n3. Plan über die volle Laufzeit (zum Beispiel 24 oder 36 Monate) und Export der Buchungszeilen zur Prüfung.\n\n## Funktionsvergleich\n\n| Funktion | Soluqube | Klarity |\n|---|---|---|\n| Umfang | Umsatz-Nebenbuch mit Nachweis-Arbeitspapier | Checklisten- und Prüfwerkzeug |\n| Planberechnung | Monatliche Abschreibungspläne | Keine (bleibt im ERP oder in Excel) |\n| ASC 606 und Ind AS 115 | Pläne in USD (ASC 606) und INR (Ind AS 115) | ASC 606 (Ind AS 115 nicht genannt) |\n| Indische GST von 18 % | Bei INR-Verträgen getrennt | Keine Trennung indirekter Steuern |\n| Genauigkeit | Ganzzahlen (BigInt), auf Cent gerundet (geht auf den Cent auf) | Nicht veröffentlicht |\n| Buchungssätze | Export als CSV / Excel / JSON (Sie prüfen und buchen) | Bilanzierungsmemos und Checklisten-Zusammenfassungen |\n| Preis | $475 je Arbeitspapier (10 Verträge) / $49/Monat für Kanzleien | Unternehmensangebot |\n\nWeitere Anbieter vergleichen Sie unter [Alternativen zu Revenue-Recognition-Software](/alternatives).",
+    "cta": {
+      "title": "Von der Checkliste zum Umsatzplan",
+      "body": "Soluqube hört nicht bei der Checkliste auf: Es teilt die Einzelveräußerungspreise auf, erstellt den mehrjährigen Plan und versieht das Nachweis-Arbeitspapier mit einem Hash.",
+      "label": "Walkthrough buchen (auf Englisch)",
+      "href": "/book-demo",
+      "secondaryLabel": "ASC-606-Übersicht",
+      "secondaryHref": "/asc-606"
+    }
+  },
+  "soluqube-vs-rightrev": {
+    "title": "Soluqube vs. RightRev: ASC 606 ohne Salesforce-CPQ-Bindung",
+    "description": "RightRev bietet eine Salesforce-native Edition. Soluqube ist ein eigenständiges Nebenbuch, das vom unterschriebenen Vertrag ausgeht (ASC 606, Ind AS 115).",
+    "breadcrumb": "Soluqube vs. RightRev",
+    "eyebrow": "Vergleich",
+    "h1": "Soluqube vs. RightRev: ASC 606 ohne Bindung an Salesforce CPQ",
+    "lead": "RightRev ist ein Nebenbuch für Umsatzrealisierung neben dem ERP, mit SSP-Engine und einer Salesforce-nativen Edition, laut seinen Seiten. Soluqube gibt dem Finanzteam ein eigenständiges Nebenbuch, das vom unterschriebenen Vertrag ausgeht, mit Ganzzahl-Arithmetik (BigInt), die auf den Cent aufgeht, ohne Abhängigkeit von einem CRM, und mit ASC-606- und Ind-AS-115-Plänen.",
+    "body": "## Soluqube im Überblick\n\n- **Keine CRM-Abhängigkeit:** arbeitet vom unterschriebenen Vertrag aus, egal welches CRM oder CPQ Sie nutzen.\n- **Ganzzahl-Arithmetik:** Die letzte Periode nimmt den Restbetrag auf, daher gehen die Pläne auf den Cent auf.\n- **Zwei Standards und 18 % GST:** US-GAAP-Pläne (ASC 606) und Ind-AS-115-Pläne; bei INR-Verträgen wird die GST gemäß MCA Schedule III getrennt.\n\n## Funktionsvergleich\n\n| Funktion | RightRev | Soluqube |\n|---|---|---|\n| Datengrundlage | Angebots- und Auftragszeilen aus Salesforce CPQ (Salesforce-native Edition) | Unterschriebener Vertrag als PDF (MSA/SOW), mit von Ihnen bestätigten Bedingungen |\n| Salesforce-Abhängigkeit | Salesforce-native Edition; eigenständige Edition neben dem ERP | Eigenständig (kein CRM nötig) |\n| Rechengenauigkeit | Nicht veröffentlicht | Ganzzahlen (BigInt), Maßstab 10^6, auf Cent gerundet |\n| Ind AS 115 | Nicht genannt (ASC 606 und IFRS 15) | Ind-AS-115-Pläne (INR) neben ASC 606 |\n| Indische GST von 18 % | Nicht genannt | Bei INR-Verträgen getrennt |\n| Klauselbeleg | Nicht veröffentlicht | Seite, wörtlicher Auszug und Markierung der zitierten Zeile (hochgeladene PDFs mit Textebene) |\n| Einführung | Nicht veröffentlicht | Kostenloses Arbeitspapier für 3 Verträge in 48 Stunden |\n| Preis | Nicht veröffentlicht (Demo-Anfrage) | $475 je Arbeitspapier (bis zu 10 Verträge) oder $49/Monat für Kanzleien |\n\nZu Vertragsänderungen siehe den [Leitfaden zu ASC 606-10-25-13](/blog/contract-modification-precedence-dag-asc-606-10-25-13). Weitere Anbieter vergleichen Sie unter [RightRev-Alternativen](/alternatives/rightrev).",
+    "faqs": [
+      {
+        "question": "Warum die Umsatzrealisierung von Salesforce trennen?",
+        "answer": "Salesforce ist für Pipeline und CRM gebaut, nicht für die Buchhaltung eines Nebenbuchs. Wer die Umsatz-Engine an das CPQ koppelt, bindet sich an den Anbieter, braucht zusätzliche Lizenzen für das Rechnungswesen und bekommt Abweichungen, wenn der Vertrieb Angebote ändert, ohne den Deal Desk zu informieren. Soluqube arbeitet mit den Bedingungen des unterschriebenen Vertrags, die Sie bestätigen."
+      },
+      {
+        "question": "Wie behandelt Soluqube Vertragsänderungen während der Laufzeit?",
+        "answer": "Nach ASC 606-10-25-10 bis 25-13 wird eine Änderung als separater Vertrag, prospektiv oder mit kumulativer Nachholung bilanziert. Soluqube automatisiert diese Beurteilung noch nicht: Die Bilanzierung von Vertragsänderungen steht auf der Roadmap. Heute entscheidet Ihr Team."
+      },
+      {
+        "question": "Welche Arbeitspapiere exportiert Soluqube für Abschlussprüfer?",
+        "answer": "Nachweispakete mit Aufteilungs- und Abschreibungsplänen, Verweisen auf die Klausel im Vertrags-PDF und einem SHA-256-Integritäts-Hash über den Plan."
+      }
+    ],
+    "cta": {
+      "title": "Komplexe Verträge prüfen ohne Anbieterbindung",
+      "body": "Laden Sie Ihren unterschriebenen MSA oder SOW hoch. Bestätigen Sie Leistungsverpflichtungen und Preise und erhalten Sie Ganzzahl-Pläne (BigInt), die auf den Cent aufgehen, mit Klauselverweisen.",
+      "label": "Walkthrough buchen (auf Englisch)",
+      "href": "/book-demo",
+      "secondaryLabel": "ASC-606-Übersicht",
+      "secondaryHref": "/asc-606"
+    }
+  },
+  "soluqube-vs-leapfin": {
+    "title": "Soluqube vs. Leapfin: B2B-Verträge oder Transaktionsdaten",
+    "description": "Leapfin macht aus Transaktionen mit hohem Volumen Buchungen. Soluqube geht von B2B-Verträgen aus, mit Klauselbeleg und Plänen, die auf den Cent aufgehen.",
+    "breadcrumb": "Soluqube vs. Leapfin",
+    "eyebrow": "Vergleich",
+    "h1": "Soluqube vs. Leapfin: B2B-Verträge statt Transaktionsströme",
+    "lead": "Leapfin ist eine Plattform für Finanzdaten mit hohem Volumen, die Transaktionen in Buchungen, Umsatzrealisierung und Abstimmungen überführt. Soluqube ist für B2B-Finanzverantwortliche gebaut, die individuelle Verträge prüfen müssen, mit Klauselbeleg je Verpflichtung (Seite, wörtlicher Auszug und markierte Zeile) und Ganzzahl-Arithmetik (BigInt), die auf den Cent aufgeht.",
+    "body": "## Soluqube im Überblick\n\n- **Eingang:** Bedingungen des unterschriebenen Vertrags (MSA, SOW, Order Forms); Sie bestätigen Verpflichtungen und Preise.\n- **Klauselprüfung:** Seite, wörtlicher Auszug und markierte Zeile der Klausel hinter jeder Verpflichtung.\n- **Reproduzierbarkeit:** ASC-606- und Ind-AS-115-Pläne, exportiert mit SHA-256-Hashes.\n\n## Funktionsvergleich\n\n| Funktion | Leapfin | Soluqube |\n|---|---|---|\n| Schwerpunkt | Transaktionsdaten mit hohem Volumen | Prüfung komplexer B2B-Verträge |\n| Erfassung von Vertrags-PDFs | Nein (stützt sich auf CRM oder Fakturierung) | Vertrags-Upload; Sie bestätigen Verpflichtungen und Preise |\n| Klauselbeleg | Kein Klauselbeleg aus Vertrags-PDFs | Seite, Auszug und markierte Zeile |\n| Rechengenauigkeit | Nicht veröffentlicht | Ganzzahlen (BigInt), Maßstab 10^6, auf Cent gerundet |\n| Ind AS 115 | Nicht genannt (ASC 606) | Ind-AS-115-Pläne (INR) und getrennte 18 % GST |\n| Einführung | Nicht veröffentlicht | Kostenloses Arbeitspapier für 3 Verträge in 48 Stunden |\n| Preis | Siehe leapfin.com/pricing | $475 je Arbeitspapier (bis zu 10 Verträge) oder $49/Monat für Kanzleien |",
+    "faqs": [
+      {
+        "question": "Wann ist Soluqube die bessere Wahl als Leapfin?",
+        "answer": "Wenn Ihr Unternehmen individuelle B2B-Softwareverträge (MSA, SOW) mit eigenen Kündigungsrechten, mehreren Leistungsverpflichtungen oder indischen Gesellschaften hat, arbeitet Soluqube von diesen Vertragsbedingungen aus und erzeugt Aufteilungen und Pläne, die auf den Cent aufgehen. Leapfin passt besser zu Konsummarken, die Millionen Kleinsttransaktionen aus Stripe oder Shopify bündeln."
+      },
+      {
+        "question": "Wie unterstützt Soluqube die Verteidigung gegenüber dem Prüfer?",
+        "answer": "Jedes Prüfungspaket trägt einen SHA-256-Integritäts-Hash über die Verpflichtungen, die Klauselauszüge und den resultierenden Abschreibungsplan, sodass ein Prüfer es erneut ausführen und bestätigen kann, dass sich die Zahlen seit dem Abschluss nicht geändert haben."
+      }
+    ],
+    "cta": {
+      "title": "Deterministische Umsatzrealisierung für Unternehmensverträge",
+      "body": "Laden Sie Ihre unterschriebenen Kundenverträge hoch. Bestätigen Sie Verpflichtungen und Preise; erhalten Sie Klauselverweise und Ganzzahl-Pläne (BigInt), die auf den Cent aufgehen.",
+      "label": "Walkthrough buchen (auf Englisch)",
+      "href": "/book-demo",
+      "secondaryLabel": "ASC-606-Übersicht",
+      "secondaryHref": "/asc-606"
+    }
+  },
+  "ssp-allocation-calculator": {
+    "title": "Rechner für SSP-Aufteilung und Restcent",
+    "description": "Kostenloser Rechner für die Relative-SSP-Aufteilung (ASC 606): Welche Verpflichtung nimmt den Restcent auf, plus Monatsplan, der bei 0.00 endet.",
+    "breadcrumb": "SSP-Rechner",
+    "eyebrow": "Kostenloses Werkzeug · ASC 606 · Ind AS 115",
+    "h1": "Rechner für SSP-Aufteilung und Restcent",
+    "lead": "Teilen Sie einen Transaktionspreis nach relativen Einzelveräußerungspreisen auf, sehen Sie genau, wohin der Restcent geht, und erhalten Sie einen Monatsplan, der bei 0.00 Abgrenzung endet. Läuft in Ihrem Browser.",
+    "body": "## So funktioniert die Aufteilung\n\nASC 606-10-32-28 legt das Ziel fest: Der Transaktionspreis wird jeder Leistungsverpflichtung in Höhe der Gegenleistung zugeordnet, auf die das Unternehmen dafür voraussichtlich Anspruch hat. Die Absätze 32-29 und 32-31 tun das auf Basis der relativen Einzelveräußerungspreise bei Vertragsbeginn: Jede Verpflichtung erhält Transaktionspreis × ihren SSP ÷ Summe der SSPs. Die Absätze 32-32 bis 32-35 regeln die Schätzung eines nicht direkt beobachtbaren SSP, 32-36 bis 32-41 die Zuordnung eines Rabatts oder einer variablen Gegenleistung zu bestimmten Verpflichtungen; das bildet dieser Rechner nicht ab.\n\nDer Standard sagt nicht, welche Verpflichtung den übrigen Cent bekommt, wenn die gerundeten Anteile nicht den Preis ergeben. Das ist eine Wahl der Bilanzierungsmethode; sie sollte schriftlich festgehalten und immer gleich angewendet werden. Die Regel von Soluqube: in Ganzzahl-Arithmetik im Maßstab 10^6 rechnen, jede Zeile auf den Cent runden und der zuletzt aufgeführten Verpflichtung den Transaktionspreis abzüglich der übrigen geben. Lineare Verpflichtungen erhalten jeden Monat den abgerundeten Monatsbetrag, der letzte Monat nimmt den Restbetrag auf; so passt der Plan zur Aufteilung und die Abgrenzung endet bei 0.00.\n\nEin Cent liegt weit unter der Wesentlichkeit. Der Grund, ihn zu klären, ist mechanisch: Ergeben Aufteilung oder Plan nicht den Vertragswert, erreicht die Abgrenzung nie null, und jemand bucht einen Ausgleich, den der nächste Prüfer erklären muss.\n\nRechenbeispiel und Formulierung der Bilanzierungsmethode: [Rundung bei der SSP-Aufteilung nach ASC 606: wohin der Cent geht](/blog/ssp-allocation-rounding-residual-cent-asc-606).",
+    "faqs": [
+      {
+        "question": "Was macht dieser Rechner?",
+        "answer": "Er teilt den Transaktionspreis eines Vertrags auf bis zu 10 Leistungsverpflichtungen im Verhältnis ihrer Einzelveräußerungspreise auf (ASC 606-10-32-31), zeigt, welche Verpflichtung den Restcent aufnimmt, und erstellt einen monatlichen Realisierungsplan, der bei 0.00 Abgrenzung endet."
+      },
+      {
+        "question": "Warum ergibt die Rundung jeder Zeile nicht den Vertragspreis?",
+        "answer": "Jede Zeile wird für sich auf den Cent gerundet. $100,000, aufgeteilt nach SSPs von 30,000 / 30,000 / 120,000, ergeben 16,666.67 + 16,666.67 + 66,666.67 = 100,000.01. Über die Zeit passiert dasselbe: $100,000 über 36 Monate, jeden Monat gerundet, ergeben 100,000.08."
+      },
+      {
+        "question": "Welche Verpflichtung nimmt den Restcent auf?",
+        "answer": "Die letzte in der Liste. Alle anderen Zeilen werden auf den Cent gerundet, und die letzte erhält den Transaktionspreis abzüglich der übrigen, sodass die Aufteilung genau aufgeht. Im Plan nimmt der letzte Monat jeder linearen Verpflichtung ihre übrigen Cents auf. Mit dem Pfeil ändern Sie, welche Verpflichtung an letzter Stelle steht."
+      },
+      {
+        "question": "Ist das die Restwertmethode zur SSP-Schätzung?",
+        "answer": "Nein. Die Restwertmethode (ASC 606-10-32-34(c)) ist ein Verfahren, um einen stark schwankenden oder unsicheren SSP zu schätzen. Der Restcent ist eine Rundungsregel, die nach der Festlegung der SSPs angewendet wird. Dieser Rechner übernimmt Ihre SSPs wie eingegeben."
+      },
+      {
+        "question": "Wie wird die GST bei INR-Verträgen behandelt?",
+        "answer": "Wählen Sie INR, wird der Preis als Betrag ohne GST behandelt. Die 18 % GST bleiben als Verbindlichkeit außerhalb des Transaktionspreises, werden einmal auf den Gesamtbetrag berechnet und über die Monate verteilt, wobei der letzte Monat den Restbetrag aufnimmt, sodass die GST-Spalte zur Summe passt. USD-Verträge enthalten keine GST."
+      },
+      {
+        "question": "Werden meine Daten irgendwohin gesendet?",
+        "answer": "Nein. Die Berechnung läuft in Ihrem Browser mit derselben Ganzzahl-Arithmetik wie die Soluqube-Engine. Nichts, was Sie eingeben, wird an einen Server gesendet."
+      },
+      {
+        "question": "Was deckt dieser Rechner nicht ab?",
+        "answer": "Rabatte oder variable Gegenleistungen, die bestimmten Verpflichtungen zugeordnet werden (ASC 606-10-32-36 bis 32-41), unterschiedliche Startmonate oder Laufzeiten je Verpflichtung sowie Vertragsänderungen. Er schätzt auch keine SSPs für Sie."
+      }
+    ],
+    "cta": {
+      "title": "Mit echten Verträgen ausprobieren: kostenloser Design-Partner-Platz",
+      "body": "Senden Sie echte Verträge und erhalten Sie die Relative-SSP-Aufteilung, einen Plan über die volle Laufzeit, der auf den Cent aufgeht, einen Klauselbeleg (Seite und Auszug) je Verpflichtung und ein Nachweis-Arbeitspapier mit Hash. 60 Tage kostenlos.",
+      "label": "Design-Partner-Platz beantragen (auf Englisch)",
+      "href": "/design-partners",
+      "secondaryLabel": "Kostenloses Konto anlegen (auf Englisch)",
+      "secondaryHref": "https://app.soluqube.com/signup"
+    },
+    "type": "website"
   }
 }

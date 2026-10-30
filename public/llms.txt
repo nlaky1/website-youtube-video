@@ -170,4 +170,5 @@ Soluqube supports deterministic revenue allocation and audit-ready workpapers ac
 - Español: https://soluqube.com/es (glossary https://soluqube.com/es/glossary, blog https://soluqube.com/es/blog, alternatives https://soluqube.com/es/alternatives)
 - Português (Brasil): https://soluqube.com/pt-br (glossary https://soluqube.com/pt-br/glossary, blog https://soluqube.com/pt-br/blog, alternatives https://soluqube.com/pt-br/alternatives)
 - Deutsch: https://soluqube.com/de (glossary https://soluqube.com/de/glossary, blog https://soluqube.com/de/blog, alternatives https://soluqube.com/de/alternatives)
+- Also translated in each language: /asc-606, /asc-606-vs-ind-as-115, /soluqube-vs-maxio, /soluqube-vs-trullion, /soluqube-vs-klarity, /soluqube-vs-rightrev, /soluqube-vs-leapfin and /tools/ssp-allocation-calculator (e.g. https://soluqube.com/es/asc-606, https://soluqube.com/pt-br/asc-606, https://soluqube.com/de/asc-606). The calculator widget itself is English.
 - Scope: ASC 606, IFRS 15 and Ind AS 115 only. Soluqube does not support local GAAP. Terms, privacy and security pages are English only.
