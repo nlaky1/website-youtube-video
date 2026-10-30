@@ -14,12 +14,14 @@ import {
   CheckCircle2,
   ChevronRight
 } from "lucide-react";
+import { landingHreflang } from "@/lib/i18n-pages";
 
 export const metadata: Metadata = {
   title: { absolute: "ASC 606 SSP: Allocation, Schedules and Audit Evidence" },
   description: "Relative-SSP allocation, full-term ASC 606 schedules that tie to the cent, and audit-ready evidence packages with clause references per obligation.",
   alternates: {
     canonical: "https://soluqube.com/asc-606",
+    languages: landingHreflang("/asc-606"),
   },
 };
 

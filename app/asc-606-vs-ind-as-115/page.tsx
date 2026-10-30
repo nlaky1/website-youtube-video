@@ -15,12 +15,14 @@ import {
   ChevronRight,
   BookOpen
 } from "lucide-react";
+import { landingHreflang } from "@/lib/i18n-pages";
 
 export const metadata: Metadata = {
   title: { absolute: "ASC 606 vs Ind AS 115: Dual Books & 18% GST | Soluqube" },
   description: "Cross-border dual-ledger compliance engine isolating 18% Indian GST under MCA Schedule III while maintaining US GAAP ASC 606 parity.",
   alternates: {
     canonical: "https://soluqube.com/asc-606-vs-ind-as-115",
+    languages: landingHreflang("/asc-606-vs-ind-as-115"),
   },
 };
 

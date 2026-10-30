@@ -5,6 +5,7 @@ import Link from "next/link";
 import { LocaleFooter, LocaleHeader } from "@/components/i18n/locale-shell";
 import { localizedMetadata } from "@/lib/i18n-meta";
 import { LOCALES, SITE, STRINGS, isLocale, localeUrl } from "@/lib/i18n";
+import { LANDING_PATHS, getLanding, landingIds, landingShared } from "@/lib/i18n-pages";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -55,6 +56,20 @@ export default function LangHubPage({ params }: { params: { lang: string } }) {
             </Link>
           ))}
         </section>
+        {landingIds(lang).length > 0 && (
+          <section className="space-y-3">
+            <h2 className="font-bold text-slate-900">{landingShared(lang).moreTitle}</h2>
+            <ul className="grid sm:grid-cols-2 gap-2 text-sm">
+              {landingIds(lang).map((id) => (
+                <li key={id}>
+                  <Link href={`/${lang}${LANDING_PATHS[id]}`} className="text-emerald-700 underline underline-offset-2 hover:text-emerald-900">
+                    {getLanding(lang, id)!.h1}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
         <aside className="rounded-2xl bg-slate-900 text-white p-6 space-y-2">
           <p className="font-bold">{s.hub.ctaTitle}</p>
           <p className="text-sm text-slate-300">{s.hub.ctaBody}</p>

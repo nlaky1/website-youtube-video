@@ -1,0 +1,9 @@
+{
+  "_shared": {
+    "scopeNote": "Soluqube calcula según ASC 606 e Ind AS 115. No ofrece soporte para normas contables locales (por ejemplo, NIF D-1); las guías explican el método.",
+    "faqTitle": "Preguntas frecuentes",
+    "englishVersion": "Versión en inglés",
+    "widgetNote": "La calculadora se muestra en inglés; el cálculo es el mismo que en la versión en inglés y se ejecuta en su navegador.",
+    "moreTitle": "Más páginas en español"
+  }
+}

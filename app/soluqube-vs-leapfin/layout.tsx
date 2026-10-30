@@ -1,10 +1,12 @@
 import { Metadata } from 'next';
+import { landingHreflang } from "@/lib/i18n-pages";
 
 export const metadata: Metadata = {
   title: "Soluqube vs Leapfin: B2B Contract Revenue",
   description: "Leapfin streams high-volume transactions. Soluqube works from B2B contracts: SSP allocation, schedules that tie to the cent, clause evidence.",
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-leapfin',
+    languages: landingHreflang("/soluqube-vs-leapfin"),
   },
   openGraph: {
     title: "Soluqube vs Leapfin: B2B Contract Revenue | Soluqube",

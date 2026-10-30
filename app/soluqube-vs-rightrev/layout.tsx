@@ -1,10 +1,12 @@
 import { Metadata } from 'next';
+import { landingHreflang } from "@/lib/i18n-pages";
 
 export const metadata: Metadata = {
   title: "Soluqube vs RightRev: ASC 606 Without CPQ Lock-In",
   description: "RightRev runs inside Salesforce CPQ. Soluqube is a standalone subledger: relative-SSP allocation, schedules that tie to the cent, Ind AS 115 support.",
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-rightrev',
+    languages: landingHreflang("/soluqube-vs-rightrev"),
   },
   openGraph: {
     title: "Soluqube vs RightRev: ASC 606 Without CPQ Lock-In | Soluqube",

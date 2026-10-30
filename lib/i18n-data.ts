@@ -4,6 +4,7 @@ import { BLOG_POSTS, type BlogPost } from "@/data/blogPosts";
 import type { PageFaq } from "@/lib/page-faqs";
 import { TRANSLATIONS } from "@/data/i18n";
 import { LOCALES, localizeRef, type Locale } from "@/lib/i18n";
+import { getLanding, landingIdForPath } from "@/lib/i18n-pages";
 
 /** Only content with a real translation file gets a localized page (no thin or fallback pages). */
 
@@ -159,6 +160,8 @@ export function localizeHref(lang: Locale, href: string): string {
   if ((m = pathPart.match(/^\/blog\/([^/]+)$/)) && blogSlugs(lang).includes(m[1])) return `/${lang}${pathPart}${hash}`;
   if ((m = pathPart.match(/^\/alternatives\/([^/]+)$/)) && alternativesSlugs(lang).includes(m[1])) return `/${lang}${pathPart}${hash}`;
   if (pathPart === "/glossary" || pathPart === "/blog" || pathPart === "/alternatives") return `/${lang}${pathPart}${hash}`;
+  const landing = landingIdForPath(pathPart);
+  if (landing && getLanding(lang, landing)) return `/${lang}${pathPart}${hash}`;
   if (pathPart === "/") return `/${lang}${hash}`;
   return local;
 }

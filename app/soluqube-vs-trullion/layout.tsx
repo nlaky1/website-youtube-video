@@ -1,10 +1,12 @@
 import { Metadata } from 'next';
+import { landingHreflang } from "@/lib/i18n-pages";
 
 export const metadata: Metadata = {
   title: "Soluqube vs Trullion: ASC 606 and Ind AS 115",
   description: "Compare Soluqube and Trullion: per-contract pricing, integer arithmetic that ties to the cent, and Ind AS 115 GST isolation for INR contracts.",
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-trullion',
+    languages: landingHreflang("/soluqube-vs-trullion"),
   },
   openGraph: {
     title: "Soluqube vs Trullion: ASC 606 and Ind AS 115 | Soluqube",

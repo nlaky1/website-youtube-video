@@ -1,10 +1,12 @@
 import { Metadata } from 'next';
+import { landingHreflang } from "@/lib/i18n-pages";
 
 export const metadata: Metadata = {
   title: "Soluqube vs Klarity: Subledger vs Contract Review",
   description: "Klarity turns Order Forms into review checklists. Soluqube adds relative-SSP allocation, full-term schedules that tie to the cent and a hashed workpaper.",
   alternates: {
     canonical: 'https://soluqube.com/soluqube-vs-klarity',
+    languages: landingHreflang("/soluqube-vs-klarity"),
   },
   openGraph: {
     title: "Soluqube vs Klarity: Subledger vs Contract Review | Soluqube",

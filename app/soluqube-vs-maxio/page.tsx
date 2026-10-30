@@ -19,12 +19,14 @@ import {
   Zap,
   Building2
 } from "lucide-react";
+import { landingHreflang } from "@/lib/i18n-pages";
 
 export const metadata: Metadata = {
   title: "Maxio Alternative: Soluqube vs Maxio for ASC 606 (2026)",
   description: "Compare Soluqube vs Maxio for ASC 606: contract-based SSP allocation, $0.00 decimal penny tie-out, and audit workpapers vs billing-first operations.",
   alternates: {
     canonical: "https://soluqube.com/soluqube-vs-maxio",
+    languages: landingHreflang("/soluqube-vs-maxio"),
   },
   openGraph: {
     title: "Maxio Alternative: Soluqube vs Maxio for ASC 606 (2026)",

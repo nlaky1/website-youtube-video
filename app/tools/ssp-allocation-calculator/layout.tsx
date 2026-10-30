@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { landingHreflang } from "@/lib/i18n-pages";
 
 export const metadata: Metadata = {
   title: "SSP Allocation & Residual-Cent Calculator",
@@ -6,6 +7,7 @@ export const metadata: Metadata = {
     "Free ASC 606 relative-SSP allocation calculator: see which obligation absorbs the residual cent and get a monthly schedule that ends at 0.00 deferred.",
   alternates: {
     canonical: "https://soluqube.com/tools/ssp-allocation-calculator",
+    languages: landingHreflang("/tools/ssp-allocation-calculator"),
   },
   openGraph: {
     title: "SSP Allocation & Residual-Cent Calculator | Soluqube",
