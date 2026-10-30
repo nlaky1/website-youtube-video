@@ -97,7 +97,7 @@ export default function SoluqubeVsRightRevPage() {
             </span>
           </h1>
           <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
-            RightRev binds your revenue accounting directly inside Salesforce CPQ. Soluqube gives finance teams a standalone, contract-grounded subledger with integer (BigInt) micro-cent precision, zero Salesforce dependency, and ASC 606 and Ind AS 115 schedules.
+            RightRev is a revenue subledger with a Salesforce-native edition. Soluqube gives finance teams a standalone, contract-grounded subledger with integer (BigInt) micro-cent precision, zero Salesforce dependency, and ASC 606 and Ind AS 115 schedules.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
