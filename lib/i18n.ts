@@ -153,8 +153,8 @@ const es: Strings = {
   breadcrumbHome: "Inicio",
   hub: {
     title: "Asignación de SSP ASC 606 e Ind AS 115 | Soluqube",
-    description: "Guías en español sobre ASC 606, IFRS 15 e Ind AS 115: glosario, artículos técnicos y alternativas, con ejemplos numéricos y referencias a la norma.",
-    h1: "Reconocimiento de ingresos: ASC 606, IFRS 15 e Ind AS 115",
+    description: "Guías en español sobre ASC 606 e Ind AS 115: glosario, artículos técnicos y alternativas, con ejemplos numéricos y referencias a la norma.",
+    h1: "Reconocimiento de ingresos: ASC 606 e Ind AS 115",
     sub: "Cuando un auditor cuestiona una asignación de precio de venta independiente (SSP) o una modificación de contrato, el controller suele defenderla desde una hoja de cálculo. Soluqube calcula la asignación por SSP relativo, un cronograma que cuadra al centavo y un papel de trabajo con hash SHA-256.",
     points: [
       "Aritmética de enteros (BigInt) a escala 10^6, redondeada a centavos; el último elemento absorbe el residuo y el diferido termina en $0.00.",
@@ -257,8 +257,8 @@ const ptBr: Strings = {
   breadcrumbHome: "Início",
   hub: {
     title: "Alocação de SSP ASC 606 e Ind AS 115 | Soluqube",
-    description: "Guias em português sobre ASC 606, IFRS 15 e Ind AS 115: glossário, artigos técnicos e alternativas, com exemplos numéricos e referências à norma.",
-    h1: "Reconhecimento de receita: ASC 606, IFRS 15 e Ind AS 115",
+    description: "Guias em português sobre ASC 606 e Ind AS 115: glossário, artigos técnicos e alternativas, com exemplos numéricos e referências à norma.",
+    h1: "Reconhecimento de receita: ASC 606 e Ind AS 115",
     sub: "Quando um auditor questiona uma alocação de preço de venda individual (SSP) ou uma modificação contratual, o controller costuma defendê-la a partir de uma planilha. A Soluqube calcula a alocação pelo SSP relativo, um cronograma que fecha no centavo e um papel de trabalho com hash SHA-256.",
     points: [
       "Aritmética de inteiros (BigInt) na escala 10^6, arredondada para centavos; o último item absorve o resíduo e o diferido termina em $0.00.",
@@ -361,8 +361,8 @@ const de: Strings = {
   breadcrumbHome: "Start",
   hub: {
     title: "SSP-Aufteilung nach ASC 606 und Ind AS 115 | Soluqube",
-    description: "Deutschsprachige Leitfäden zu ASC 606, IFRS 15 und Ind AS 115: Glossar, Fachartikel und Alternativen, mit Zahlenbeispielen und Standardverweisen.",
-    h1: "Umsatzrealisierung: ASC 606, IFRS 15 und Ind AS 115",
+    description: "Deutschsprachige Leitfäden zu ASC 606 und Ind AS 115: Glossar, Fachartikel und Alternativen, mit Zahlenbeispielen und Standardverweisen.",
+    h1: "Umsatzrealisierung: ASC 606 und Ind AS 115",
     sub: "Wenn ein Prüfer eine Aufteilung nach dem Einzelveräußerungspreis (SSP) oder eine Vertragsänderung hinterfragt, verteidigen Controller sie oft aus einer selbstgebauten Tabelle. Soluqube berechnet die Aufteilung nach der Relative-SSP-Methode, einen Realisierungsplan, der auf den Cent aufgeht, und ein Arbeitspapier mit SHA-256-Hash.",
     points: [
       "Ganzzahl-Arithmetik (BigInt) im Maßstab 10^6, auf Cent gerundet; die letzte Verpflichtung nimmt den Rest auf, die Abgrenzung endet bei $0.00.",

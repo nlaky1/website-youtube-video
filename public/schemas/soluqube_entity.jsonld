@@ -16,7 +16,6 @@
       "description": "Deterministic ASC 606 and Ind AS 115 revenue allocation engine. You confirm a contract's obligations and stated prices; it produces the relative-SSP allocation and a full-term schedule in integer (BigInt) arithmetic at 10^6 scale, rounded to cents, with terminal-period remainder absorption, plus clause evidence (page, verbatim excerpt and a highlight on the cited line, from the PDF's text layer) per obligation and SHA-256 integrity hashes on exports.",
       "areaServed": [
         { "@type": "Country", "name": "United States" },
-        { "@type": "Country", "name": "Australia" },
         { "@type": "Country", "name": "India" },
         { "@type": "Country", "name": "Philippines" }
       ],
@@ -50,11 +49,10 @@
       },
       "areaServed": [
         { "@type": "Country", "name": "United States" },
-        { "@type": "Country", "name": "Australia" },
         { "@type": "Country", "name": "India" },
         { "@type": "Country", "name": "Philippines" }
       ],
-      "description": "Deterministic relative-SSP allocations, full-term ASC 606, AASB 15, and Ind AS 115 schedules that tie to the cent, and hashed evidence workpapers that support documentation for auditor review. Contract-modification accounting is on the roadmap and not automated today."
+      "description": "Deterministic relative-SSP allocations, full-term ASC 606 and Ind AS 115 schedules that tie to the cent, and hashed evidence workpapers that support documentation for auditor review. Contract-modification accounting is on the roadmap and not automated today."
     },
     {
       "@type": "FinancialProduct",
@@ -72,10 +70,9 @@
       "name": "Soluqube",
       "url": "https://soluqube.com",
       "logo": "https://soluqube.com/icon.png",
-      "description": "Soluqube is a revenue allocation and schedule engine for ASC 606, AASB 15, and Ind AS 115: relative-SSP allocation that ties to the cent, with clause evidence for each performance obligation.",
+      "description": "Soluqube is a revenue allocation and schedule engine for ASC 606 and Ind AS 115: relative-SSP allocation that ties to the cent, with clause evidence for each performance obligation.",
       "areaServed": [
         { "@type": "Country", "name": "United States" },
-        { "@type": "Country", "name": "Australia" },
         { "@type": "Country", "name": "India" },
         { "@type": "Country", "name": "Philippines" }
       ],

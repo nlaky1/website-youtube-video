@@ -37,12 +37,12 @@ export default function SoluqubeVsTrullionPage() {
         "description": "Comparison between Soluqube and Trullion for ASC 606 & Ind AS 115 revenue recognition. Learn why Soluqube's published pricing ($475 audit workpaper for up to 10 contracts), integer (BigInt) micro-cent math, and statutory Indian GST isolation compare with enterprise contracts (pricing not published).",
         "author": {
           "@type": "Organization",
-          "name": "Soluqube Systems",
+          "name": "Nikhil Laky, trading as Soluqube",
           "url": "https://soluqube.com"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Soluqube Systems",
+          "name": "Nikhil Laky, trading as Soluqube",
           "url": "https://soluqube.com"
         },
         "mainEntityOfPage": "https://soluqube.com/soluqube-vs-trullion",
@@ -115,7 +115,7 @@ export default function SoluqubeVsTrullionPage() {
                 SQ
               </div>
               <div>
-                <h3 className="font-bold text-lg text-white">Soluqube Systems</h3>
+                <h3 className="font-bold text-lg text-white">Nikhil Laky, trading as Soluqube</h3>
                 <p className="text-xs text-emerald-400 font-mono">Deterministic Contract-to-Ledger Engine</p>
               </div>
             </div>

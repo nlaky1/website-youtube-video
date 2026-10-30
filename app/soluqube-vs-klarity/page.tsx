@@ -33,12 +33,12 @@ export default function SoluqubeVsKlarityPage() {
         "description": "Comparison between Soluqube and Klarity for ASC 606 revenue accounting. Soluqube adds relative-SSP allocation, full-term schedules in integer cents and journal-line exports you review and post, the workflow gap a checklist tool leaves.",
         "author": {
           "@type": "Organization",
-          "name": "Soluqube Systems",
+          "name": "Nikhil Laky, trading as Soluqube",
           "url": "https://soluqube.com"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Soluqube Systems",
+          "name": "Nikhil Laky, trading as Soluqube",
           "url": "https://soluqube.com"
         },
         "mainEntityOfPage": "https://soluqube.com/soluqube-vs-klarity",

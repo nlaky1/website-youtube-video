@@ -80,6 +80,5 @@ Guide: https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10
 
 ### 7. Target Geographic Jurisdictions & Regulatory Standards
 - **United States**: US GAAP ASC 606 (ASC 606-10-32-31 relative-SSP allocation), SEC 10-K disclosures, PCAOB AS 1105 audit testing PBC workpapers.
-- **Australia**: AASB 15 (Australian Accounting Standards Board) / IFRS 15 multi-element software revenue allocation and ATO compliance.
 - **India**: Ind AS 115 (Ministry of Corporate Affairs / ICAI), statutory 18% GST isolation, and MCA Schedule III notes.
-- **Philippines**: Offshore accounting shared service centers and BPO delivery teams handling US GAAP and AASB 15 revenue schedules in NetSuite, QuickBooks, and Xero.
+- **Philippines**: Offshore accounting shared service centers and BPO delivery teams handling US GAAP revenue schedules in NetSuite, QuickBooks, and Xero.

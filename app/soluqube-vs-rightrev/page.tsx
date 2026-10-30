@@ -32,16 +32,16 @@ export default function SoluqubeVsRightRevPage() {
       {
         "@type": "TechArticle",
         "@id": "https://soluqube.com/soluqube-vs-rightrev#article",
-        "headline": "Soluqube vs RightRev: Standalone Contract Subledger vs Salesforce CPQ Engine",
-        "description": "Comprehensive architectural comparison between Soluqube and RightRev for ASC 606 & IFRS 15 revenue recognition. Learn how Soluqube eliminates Salesforce platform lock-in with raw PDF contract grounding and integer (BigInt) micro-cent math.",
+        "headline": "Soluqube vs RightRev: Standalone Contract Subledger vs ERP-Alongside Revenue Subledger",
+        "description": "Comprehensive architectural comparison between Soluqube and RightRev for ASC 606 revenue recognition. Learn how Soluqube eliminates Salesforce platform lock-in with raw PDF contract grounding and integer (BigInt) micro-cent math.",
         "author": {
           "@type": "Organization",
-          "name": "Soluqube Systems",
+          "name": "Nikhil Laky, trading as Soluqube",
           "url": "https://soluqube.com"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Soluqube Systems",
+          "name": "Nikhil Laky, trading as Soluqube",
           "url": "https://soluqube.com"
         },
         "mainEntityOfPage": "https://soluqube.com/soluqube-vs-rightrev",
@@ -153,7 +153,7 @@ export default function SoluqubeVsRightRevPage() {
             <tbody className="divide-y divide-slate-800/60 text-slate-300">
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Source of Truth</td>
-                <td className="py-4 px-6">Salesforce CPQ Quote / Order lines</td>
+                <td className="py-4 px-6">Subscription, usage and billing data via API (ERP-agnostic); Salesforce edition uses your Salesforce org</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">Executed Contract PDF (MSA/SOW)</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Audits signed legal paper vs CRM</td>
               </tr>

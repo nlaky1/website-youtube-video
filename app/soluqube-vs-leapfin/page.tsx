@@ -36,12 +36,12 @@ export default function SoluqubeVsLeapfinPage() {
         "description": "Technical comparison between Soluqube and Leapfin. Soluqube specializes in B2B enterprise contract ingestion, visual PDF clause grounding, and integer (BigInt) micro-cent math, while Leapfin (acquired by Airwallex in June 2026) focuses on high-volume B2C payment pipelines.",
         "author": {
           "@type": "Organization",
-          "name": "Soluqube Systems",
+          "name": "Nikhil Laky, trading as Soluqube",
           "url": "https://soluqube.com"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Soluqube Systems",
+          "name": "Nikhil Laky, trading as Soluqube",
           "url": "https://soluqube.com"
         },
         "mainEntityOfPage": "https://soluqube.com/soluqube-vs-leapfin",
@@ -189,7 +189,7 @@ export default function SoluqubeVsLeapfinPage() {
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Published Pricing</td>
-                <td className="py-4 px-6">Enterprise sales (pricing not published)</td>
+                <td className="py-4 px-6">Standard from $500/month, Premium from $1,000/month, Enterprise custom (leapfin.com/pricing)</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">$475 per workpaper (up to 10 contracts) or $49/mo firm access</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">No sales procurement roadblocks</td>
               </tr>
@@ -205,7 +205,7 @@ export default function SoluqubeVsLeapfinPage() {
             Per-Contract Pricing vs. Heavy Data Pipeline
           </h2>
           <p className="text-sm text-slate-400 mb-8">
-            Compare annual spend for Leapfin annual enterprise contracts versus Soluqube per-contract workbooks.
+            Compare Leapfin's published plans versus Soluqube per-contract workbooks.
           </p>
 
           <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 text-left max-w-2xl mx-auto">
@@ -223,11 +223,11 @@ export default function SoluqubeVsLeapfinPage() {
 
             <div className="grid grid-cols-2 gap-6 pt-4 border-t border-slate-800">
               <div>
-                <div className="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Leapfin (Annual Contract)</div>
+                <div className="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">Leapfin (Standard plan)</div>
                 <div className="text-2xl sm:text-3xl font-extrabold text-slate-300">
-                  Not published
+                  $500/mo
                 </div>
-                <div className="text-xs text-rose-400 mt-1">Lengthy setup & pipeline fees</div>
+                <div className="text-xs text-rose-400 mt-1">Premium from $1,000/month; Enterprise custom</div>
               </div>
               <div className="border-l border-slate-800 pl-6">
                 <div className="text-xs uppercase tracking-wider text-cyan-400 font-semibold mb-1">Soluqube (Audit Workpaper)</div>
@@ -235,7 +235,7 @@ export default function SoluqubeVsLeapfinPage() {
                   ${soluqubePayAsYouGo.toLocaleString()}
                 </div>
                 <div className="text-xs text-emerald-400 mt-1">
-                  Leapfin does not publish pricing; compare against your own quote.
+                  Leapfin Standard plan from $500/month (leapfin.com/pricing).
                 </div>
               </div>
             </div>

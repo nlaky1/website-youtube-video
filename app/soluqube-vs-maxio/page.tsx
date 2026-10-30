@@ -103,8 +103,8 @@ export default function SoluqubeVsMaxioPage() {
         "description": "Comprehensive architectural and accounting comparison between Soluqube and Maxio for ASC 606 revenue recognition, relative-SSP allocation, and audit workpapers.",
         "datePublished": "2026-10-15",
         "dateModified": "2026-10-28",
-        "author": { "@type": "Organization", "name": "Soluqube Research Group", "url": "https://soluqube.com" },
-        "publisher": { "@type": "Organization", "name": "Soluqube Inc.", "url": "https://soluqube.com" },
+        "author": { "@type": "Organization", "name": "Nikhil Laky, trading as Soluqube", "url": "https://soluqube.com" },
+        "publisher": { "@type": "Organization", "name": "Nikhil Laky, trading as Soluqube", "url": "https://soluqube.com" },
         "mainEntityOfPage": "https://soluqube.com/soluqube-vs-maxio"
       },
       {
@@ -434,7 +434,7 @@ export default function SoluqubeVsMaxioPage() {
       {/* FOOTER */}
       <footer className="border-t border-slate-200 bg-white py-10 px-4 text-center text-xs font-mono text-slate-500 mt-auto">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© 2026 Soluqube Inc. Deterministic ASC 606 & Ind AS 115 Revenue Engine.</p>
+          <p>© 2026 Nikhil Laky, trading as Soluqube. Deterministic ASC 606 & Ind AS 115 Revenue Engine.</p>
           <div className="flex gap-4">
             <Link href="/asc-606" className="hover:text-slate-900">ASC 606 Guide</Link>
             <Link href="/asc-606-vs-ind-as-115" className="hover:text-slate-900">Dual Standard</Link>
