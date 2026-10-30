@@ -5,5 +5,221 @@
     "englishVersion": "Versão em inglês",
     "widgetNote": "A calculadora aparece em inglês; o cálculo é o mesmo da versão em inglês e roda no seu navegador.",
     "moreTitle": "Mais páginas em português"
+  },
+  "asc-606": {
+    "title": "Alocação de SSP no ASC 606: cronogramas e evidência",
+    "description": "Alocação pelo SSP relativo, cronogramas ASC 606 que fecham no centavo e evidência de auditoria com a cláusula de cada obrigação de desempenho.",
+    "breadcrumb": "Central ASC 606",
+    "h1": "Alocação de SSP no ASC 606 e cronogramas de receita do prazo completo",
+    "lead": "Alocação pelo SSP relativo e cronogramas ASC 606 do prazo completo em aritmética de inteiros (BigInt) que fecham no centavo, com evidência de cláusula por obrigação e papéis de trabalho de evidência com hash.\n\nNo ASC 606, o preço de venda individual (SSP) é o preço pelo qual cada bem ou serviço prometido seria vendido separadamente. Na etapa 4, o preço da transação é alocado às obrigações na proporção dos seus SSPs. A Soluqube calcula essa alocação e o cronograma do prazo completo, fechado no centavo.",
+    "body": "## O que a Soluqube faz hoje\n\n- **Fecha no centavo.** Aritmética de inteiros em escala em que o último período absorve o resíduo: o cronograma do prazo completo termina com $0.00 de receita diferida.\n- **Modificações do contrato (roadmap).** A contabilização de modificações segundo o ASC 606-10-25-13 (prospectiva versus ajuste cumulativo) está no roadmap; hoje não é automatizada. Veja o [guia com a árvore de decisão](/blog/contract-modification-precedence-dag-asc-606-10-25-13).\n- **Evidência de cláusula.** Cada obrigação guarda a página e o trecho literal da cláusula de onde veio e, nos PDFs enviados com camada de texto, um destaque na linha citada, para que um revisor possa rastreá-la até o contrato assinado.\n\n## Motor e calculadora ao vivo\n\nO espaço de trabalho interativo de cálculo com BigInt fica no aplicativo da Soluqube: [abrir o sandbox ASC 606 (em inglês)](https://app.soluqube.com/asc-606). Para um teste rápido no navegador, use a [calculadora de alocação de SSP](/tools/ssp-allocation-calculator).\n\nLeia o [guia completo de alocação de SSP no ASC 606](/blog/asc-606-ssp-allocation-guide).",
+    "faqs": [
+      {
+        "question": "O que é o SSP no ASC 606?",
+        "answer": "O preço que uma entidade cobraria por um bem ou serviço distinto vendido separadamente a um cliente semelhante. É observável quando o item é vendido sozinho; caso contrário, é estimado (avaliação de mercado ajustada, custo esperado mais margem ou, em casos restritos, a abordagem residual)."
+      },
+      {
+        "question": "Como um desconto é alocado?",
+        "answer": "Por padrão, na proporção do SSP relativo entre todas as obrigações. O ASC 606-10-32-37 permite alocá-lo apenas a algumas obrigações quando a evidência observável atende aos três critérios."
+      },
+      {
+        "question": "Quais padrões de reconhecimento a Soluqube programa?",
+        "answer": "Obrigações lineares mensais e obrigações reconhecidas em um momento específico, em USD ou INR. Modificações de contrato, contraprestação variável e ativos de contrato baseados no faturamento ainda não são modelados."
+      }
+    ],
+    "cta": {
+      "title": "Vai defender uma alocação de SSP neste trimestre?",
+      "body": "Envie três contratos. Você confirma as obrigações e os preços; recebe a alocação pelo SSP relativo, um cronograma que fecha no centavo e um papel de trabalho com hash que pode ser reexecutado.",
+      "label": "Programa de design partners (em inglês)",
+      "href": "/design-partners",
+      "secondaryLabel": "Abrir o sandbox ASC 606 (em inglês)",
+      "secondaryHref": "https://app.soluqube.com/asc-606"
+    },
+    "type": "website"
+  },
+  "asc-606-vs-ind-as-115": {
+    "title": "ASC 606 vs Ind AS 115: dois livros e GST de 18%",
+    "description": "Cronogramas ASC 606 (USD) e Ind AS 115 (INR) do mesmo contrato; em contratos em INR, o GST de 18% é isolado como passivo antes da alocação.",
+    "breadcrumb": "ASC 606 vs Ind AS 115",
+    "eyebrow": "Duas normas, um contrato",
+    "h1": "ASC 606 vs Ind AS 115: contabilidade com duas normas",
+    "lead": "Em contratos em INR, a Soluqube separa o GST indiano de 18% como passivo, fora da receita, e apresenta o cronograma Ind AS 115 ao lado do cronograma ASC 606 em USD. Contratos dos EUA não têm GST.",
+    "body": "## Princípios centrais com duas normas\n\n### 1. O GST de 18% fora da receita diferida\n\nSegundo o Ind AS 115 e a apresentação do Schedule III da MCA, o faturamento bruto que inclui 18% de GST não é registrado como receita diferida. Em contratos em INR, a Soluqube calcula no início do contrato a contraprestação líquida = Bruto / 1.18.\n\n### 2. Exportação do cronograma para os dois livros\n\nExporta o cronograma para os seus livros US GAAP (USD) e Ind AS 115 (INR) em Excel e CSV, que você revisa e lança. O lançamento direto no ERP está no roadmap.\n\nLeia a [publicação completa sobre ASC 606 e Ind AS 115](/blog/asc-606-vs-ind-as-115-dual-standard-gst-compliance) e o [exemplo de alocação de SSP com Ind AS 115, INR e GST](/blog/ssp-allocation-example-ind-as-115-inr-gst). O glossário explica o [tratamento do GST no Ind AS 115](/glossary/ind-as-115-gst-treatment).",
+    "cta": {
+      "title": "Simule a amortização com duas normas",
+      "body": "Abra a calculadora de dois livros no sandbox da Soluqube.",
+      "label": "Abrir o sandbox (em inglês)",
+      "href": "https://app.soluqube.com/asc-606-vs-ind-as-115",
+      "secondaryLabel": "Design partners (em inglês)",
+      "secondaryHref": "/design-partners"
+    },
+    "type": "website"
+  },
+  "soluqube-vs-maxio": {
+    "title": "Alternativa ao Maxio: Soluqube vs Maxio no ASC 606 (2026)",
+    "description": "Soluqube vs Maxio no ASC 606: alocação de SSP a partir do contrato, cronogramas que fecham no centavo e papel de trabalho versus faturamento.",
+    "breadcrumb": "Soluqube vs Maxio",
+    "eyebrow": "Comparativo",
+    "h1": "Soluqube vs Maxio: o contrato versus o faturamento",
+    "lead": "O Maxio (antes Chargify + SaaSOptics) gerencia assinaturas e faturamento. A Soluqube parte do contrato assinado: você confirma as obrigações e os preços, a Soluqube aloca pelo SSP relativo com aritmética de inteiros (BigInt) que fecha no centavo e entrega um papel de trabalho de evidência com hash.",
+    "body": "## As duas ferramentas em resumo\n\n**Maxio (Chargify + SaaSOptics).** Plataforma de faturamento e relatórios financeiros para empresas de assinatura, com reconhecimento de receita embutido. O reconhecimento é calculado a partir do que está configurado no faturamento e no CRM.\n\n**Soluqube.** Subledger de receita do contrato ao razão. Parte dos seus contratos assinados, guarda a evidência de cláusula de cada obrigação de desempenho (página, trecho literal e, em PDFs enviados com camada de texto, um destaque na linha citada), aloca pelo SSP relativo com aritmética de inteiros (BigInt) para que o cronograma feche no centavo e entrega pacotes de evidência prontos para auditoria.\n\n- Envie um contrato, confirme os termos extraídos e receba o cronograma.\n- Preços publicados: $475 por papel de trabalho de auditoria (até 10 contratos) ou $49/mês de acesso à ferramenta para firmas.\n- ASC 606 (USD) e Ind AS 115 (INR), com o GST de 18% isolado em contratos em INR.\n\n## Alternativas ao Maxio por caso de uso\n\nA melhor alternativa depende de você substituir todo o motor de faturamento ou apenas resolver a revisão do reconhecimento de receita:\n\n- **Troca mais parecida: Chargebee RevRec.** Faturamento de assinaturas SaaS, tarifação por uso e cronogramas ASC 606/IFRS 15 embutidos, se você substituir todo o motor de faturamento.\n- **Operações nativas no Stripe: Stripe RevRec.** Se pagamentos e faturamento ficam no Stripe e você prefere um complemento com preço por uso.\n- **Manter Xero ou QuickBooks como razão: ScaleXP.** Conecta-se ao QuickBooks ou ao Xero para lançamentos automáticos, análise de MRR e reconhecimento básico, sem migrar de ERP.\n- **Empresas com contratos complexos de vários produtos: Zuora Revenue** (antes RevPro), plataforma quote-to-cash para contratos sob medida, CPQ e controles SOX.\n- **ASC 606 ancorado no contrato e cronogramas que fecham no centavo: Soluqube.** Funciona ao lado do seu sistema de faturamento atual. Vincula cada obrigação de desempenho à cláusula do contrato assinado com um trecho literal e usa aritmética de inteiros para que a receita diferida termine em $0.00. Cobre ASC 606 e Ind AS 115.\n\n## Comparativo detalhado\n\n| Critério | Maxio (Chargify + SaaSOptics) | Soluqube |\n|---|---|---|\n| Categoria | Faturamento de assinaturas e operações financeiras | Reconhecimento de receita determinístico, do contrato ao razão |\n| Fonte da verdade | Cotações do CRM e linhas de faturamento (Salesforce / HubSpot) | Contrato assinado (termos que você confirma) |\n| Entrada do contrato | Digitação manual ou sincronização com CPQ | Evidência de cláusula por obrigação: página, trecho literal e destaque da linha citada (PDFs enviados com camada de texto) |\n| Precisão do cálculo | Não publicada | Aritmética de inteiros (BigInt), escala 10^6, arredondada para centavos; o último período absorve o resíduo e o diferido termina em $0.00 |\n| Normas | ASC 606 e IFRS 15 | ASC 606 e Ind AS 115 (GST de 18% isolado em contratos em INR) |\n| Evidência de auditoria | Relatórios e exportações CSV | Pacote de evidência com hashes de integridade SHA-256 |\n| Controles internos | Permissões por papel | Revisão maker-checker: envio e aprovação separados antes da exportação (aprovação vinculada à identidade no roadmap) |\n| Preço | Por plano; veja preços e fontes em [alternativas ao Maxio](/alternatives/maxio) | Preços publicados: $475 por papel de trabalho (até 10 contratos) ou $49/mês de acesso para firmas |\n| Implantação | Depende da implementação | Envie o contrato, confirme os termos extraídos e gere o cronograma |\n\n## Quatro diferenças centrais\n\n### 1. O que não está no CRM\n\nO Maxio só conhece o que está configurado no CPQ ou nas linhas da fatura. Se um aditivo em PDF promete SLAs de entrega sob medida, rescisão por conveniência ou preços escalonados, uma ferramenta de faturamento pode reconhecer receita que depois precise ser reapresentada. A Soluqube parte do contrato assinado: você confirma cada obrigação e preço, e cada uma traz a página, o trecho literal e um destaque da linha citada da sua cláusula.\n\n### 2. Cronogramas que fecham no centavo\n\nContratos SaaS plurianuais divididos em 36 períodos lineares geram frações de centavo recorrentes (por exemplo, $100,000 / 36 = $2,777.7777...). Arredondar cada período isoladamente deixa centavos residuais que alguém precisa ajustar no fechamento. O motor de inteiros (BigInt) da Soluqube faz o último período absorver o resíduo, de modo que a receita diferida termina em $0.00.\n\n### 3. Ind AS 115 e GST de 18%\n\nEmpresas com entidades na Índia precisam separar o GST de 18% segundo o Schedule III da MCA. Em contratos em INR, a Soluqube isola o imposto em contas de passivo separadas e mantém a amortização US GAAP.\n\n### 4. Sem substituir o seu faturamento\n\nA Soluqube funciona ao lado do seu sistema de faturamento atual: você confirma os termos extraídos e a Soluqube gera a alocação e o cronograma, com preços publicados.\n\n## Já usa Maxio ou Stripe Billing?\n\nVocê não precisa substituir o faturamento. Pode continuar faturando e cobrando com o Maxio ou o Stripe e usar a Soluqube como camada do contrato ao razão, para que o seu auditor externo tenha a evidência ao revisar os cronogramas de receita. Mais opções em [alternativas ao Maxio](/alternatives/maxio) e na [central ASC 606](/asc-606).",
+    "faqs": [
+      {
+        "question": "Qual alternativa ao Maxio serve para defender o ASC 606 perante o auditor?",
+        "answer": "A Soluqube é uma opção para equipes que precisam de cronogramas ASC 606 e Ind AS 115 determinísticos que fecham no centavo, com trechos das cláusulas do contrato assinado, sem substituir o motor de faturamento."
+      },
+      {
+        "question": "Dá para usar a Soluqube junto com o Maxio ou o Stripe Billing?",
+        "answer": "Sim. O Maxio ou o Stripe cuidam do faturamento das assinaturas e das cobranças; a Soluqube parte dos contratos assinados e gera a alocação pelo SSP relativo e papéis de trabalho verificáveis."
+      }
+    ],
+    "cta": {
+      "title": "Papel de trabalho gratuito de 3 contratos",
+      "body": "Envie três contratos: você recebe a alocação pelo SSP relativo, um cronograma que fecha no centavo e um papel de trabalho de evidência com hash.",
+      "label": "Solicitar o papel de trabalho (em inglês)",
+      "href": "/audit",
+      "secondaryLabel": "Agendar uma demonstração de 15 minutos (em inglês)",
+      "secondaryHref": "/book-demo"
+    }
+  },
+  "soluqube-vs-trullion": {
+    "title": "Soluqube vs Trullion: preço por contrato e Ind AS 115",
+    "description": "Trullion: contrato corporativo, preço não publicado. Soluqube: alocação de SSP a partir de $475 por até 10 contratos, com ASC 606 e Ind AS 115.",
+    "breadcrumb": "Soluqube vs Trullion",
+    "eyebrow": "Comparativo",
+    "h1": "A alternativa ao Trullion com preço por contrato e duas normas",
+    "lead": "O Trullion vende contratos corporativos anuais (preço não publicado) após um processo comercial, e os seus materiais públicos não anunciam suporte ao Ind AS 115 nem isolamento do GST. A Soluqube oferece alocação de SSP por contrato com aritmética de inteiros (BigInt) a partir de $475 por até 10 contratos.",
+    "body": "## A Soluqube em resumo\n\n- **Preços publicados:** $475 por papel de trabalho de auditoria (até 10 contratos), $1,750 por pacote QoE para transações ou $49/mês de acesso à ferramenta para firmas. Sem contratos mínimos de seis dígitos.\n- **Duas normas:** ASC 606 (USD) e Ind AS 115 (INR), com o GST de 18% isolado em contratos em INR.\n- **Aritmética de inteiros:** BigInt na escala 10^6, arredondada para centavos; o último período absorve o resíduo, então a receita diferida termina em $0.00.\n- **Revisão maker-checker:** etapas separadas de envio e aprovação na tela de revisão. A aprovação vinculada à identidade está no roadmap.\n\n## O Trullion em resumo\n\nPlataforma de contabilidade e auditoria com IA que extrai termos de contratos e executa fluxos de reconhecimento de receita e arrendamentos, segundo as suas páginas públicas.\n\n- **Mínimos corporativos:** compromisso anual (preço não publicado).\n- **Ind AS 115 não anunciado:** ASC 606 e IFRS 15 segundo os materiais públicos; não anuncia isolamento do GST indiano.\n- **Política de arredondamento não publicada:** não há documentação pública de como aloca os centavos residuais em divisões de vários períodos.\n- **Sem autoatendimento publicado:** não publica uma opção para revisar um único contrato sem contratar a plataforma.\n\n## Comparativo de recursos\n\n| Recurso | Soluqube | Trullion |\n|---|---|---|\n| Modelo de preço | $475 por papel de trabalho (10 contratos) / $49/mês para firmas | Contrato corporativo (preço não publicado) |\n| Tempo até o valor | No mesmo dia (você confirma obrigações e preços) | Não publicado |\n| Ind AS 115 | Cronogramas Ind AS 115 (INR) ao lado do ASC 606 | Não anunciado (ASC 606 e IFRS 15) |\n| GST indiano de 18% | Isolado em contratos em INR | Não anunciado |\n| Precisão do cálculo | Inteiros (BigInt), arredondado para centavos (fecha no centavo) | Não publicada |\n| Absorção do resíduo no último período | O saldo diferido final termina em $0.00 / ₹0.00 | Não publicada |\n| Evidência de auditoria | Pacote de evidência: evidência de cláusula (página e trecho) e hashes SHA-256 | Exportações de trilha de auditoria |\n| Controles internos | Revisão maker-checker (aprovação vinculada à identidade no roadmap) | Permissões por papel |\n\n## Custo\n\n- **Papel de trabalho de auditoria da Soluqube:** $475 a cada 10 contratos.\n- **Acesso da Soluqube à ferramenta para firmas:** $490/ano por firma; você usa o aplicativo.\n- **Trullion:** preço corporativo não publicado. Veja as fontes em [alternativas ao Trullion](/alternatives/trullion).\n\nQuer ver o resultado antes? [Teste o simulador de cronogramas (em inglês)](/audit).",
+    "cta": {
+      "title": "Verificar os seus contratos sem um contrato corporativo?",
+      "body": "Confirme as obrigações e os preços de um contrato e receba a alocação de SSP, um cronograma ASC 606 e Ind AS 115 do prazo completo que fecha no centavo e um papel de trabalho de evidência com hash.",
+      "label": "Agendar uma demonstração (em inglês)",
+      "href": "/book-demo",
+      "secondaryLabel": "Design partners (em inglês)",
+      "secondaryHref": "/design-partners"
+    }
+  },
+  "soluqube-vs-klarity": {
+    "title": "Soluqube vs Klarity: subledger ou revisão de contratos",
+    "description": "O Klarity transforma Order Forms em checklists. A Soluqube soma alocação pelo SSP relativo, cronogramas no centavo e um papel de trabalho com hash.",
+    "breadcrumb": "Soluqube vs Klarity",
+    "eyebrow": "Comparativo de fluxo de trabalho",
+    "h1": "Subledger de receita completo versus revisão por checklist",
+    "lead": "O Klarity usa IA para ler Order Forms e preencher checklists de revisão, mas não calcula os cronogramas de receita, que ficam em planilhas ou em scripts do ERP. A Soluqube é um subledger do contrato ao razão: você confirma as obrigações e os preços, a Soluqube executa a alocação e o cronograma com inteiros (BigInt) e exporta linhas de lançamento que você revisa e lança.",
+    "body": "## Onde cada fluxo termina\n\n**Klarity**\n\n1. Recebe o contrato ou a Order Form em PDF.\n2. Extrai os termos principais e preenche o checklist ou memorando.\n3. Para aí: a equipe contábil transcreve os termos no NetSuite ou monta o cronograma no Excel.\n\n**Soluqube**\n\n1. Envie o contrato e confirme obrigações e preços.\n2. Alocação determinística pelo SSP relativo.\n3. Cronograma do prazo completo (por exemplo, 24 ou 36 meses) e exportação de linhas de lançamento para revisão.\n\n## Comparativo de recursos\n\n| Recurso | Soluqube | Klarity |\n|---|---|---|\n| Escopo | Subledger de receita com papel de trabalho de evidência | Ferramenta de checklist e revisão |\n| Cálculo do cronograma | Cronogramas de amortização mensais | Não calcula (fica no ERP ou no Excel) |\n| ASC 606 e Ind AS 115 | Cronogramas em USD (ASC 606) e INR (Ind AS 115) | ASC 606 (não anuncia Ind AS 115) |\n| GST indiano de 18% | Isolado em contratos em INR | Sem isolamento de tributos indiretos |\n| Precisão | Inteiros (BigInt), arredondado para centavos (fecha no centavo) | Não publicada |\n| Lançamentos contábeis | Exportação CSV / Excel / JSON (você revisa e lança) | Memorandos contábeis e resumos de checklist |\n| Preço | $475 por papel de trabalho (10 contratos) / $49/mês para firmas | Cotação corporativa |\n\nPara comparar mais fornecedores, veja as [alternativas de software de reconhecimento de receita](/alternatives).",
+    "cta": {
+      "title": "Do checklist ao cronograma de receita",
+      "body": "A Soluqube não para no checklist: aloca os preços de venda individuais, monta o cronograma plurianual e aplica hash ao papel de trabalho de evidência.",
+      "label": "Agendar uma demonstração (em inglês)",
+      "href": "/book-demo",
+      "secondaryLabel": "Central ASC 606",
+      "secondaryHref": "/asc-606"
+    }
+  },
+  "soluqube-vs-rightrev": {
+    "title": "Soluqube vs RightRev: ASC 606 sem depender do Salesforce CPQ",
+    "description": "O RightRev oferece uma edição nativa do Salesforce. A Soluqube é um subledger independente que parte do contrato assinado (ASC 606 e Ind AS 115).",
+    "breadcrumb": "Soluqube vs RightRev",
+    "eyebrow": "Comparativo",
+    "h1": "Soluqube vs RightRev: ASC 606 sem depender do Salesforce CPQ",
+    "lead": "O RightRev é um subledger de reconhecimento de receita que funciona ao lado do ERP, com um motor de SSP e uma edição nativa do Salesforce, segundo as suas páginas. A Soluqube dá às finanças um subledger independente que parte do contrato assinado, com aritmética de inteiros (BigInt) que fecha no centavo, sem depender de nenhum CRM, e cronogramas ASC 606 e Ind AS 115.",
+    "body": "## A Soluqube em resumo\n\n- **Sem dependência de CRM:** trabalha a partir do contrato assinado, qualquer que seja o seu CRM ou CPQ.\n- **Aritmética de inteiros:** o último período absorve o resíduo, então os cronogramas fecham no centavo.\n- **Duas normas e GST de 18%:** cronogramas US GAAP (ASC 606) e Ind AS 115; em contratos em INR o GST é isolado segundo o Schedule III da MCA.\n\n## Comparativo de recursos\n\n| Recurso | RightRev | Soluqube |\n|---|---|---|\n| Fonte da verdade | Linhas de cotação e pedido do Salesforce CPQ (edição nativa do Salesforce) | Contrato assinado em PDF (MSA/SOW), com termos que você confirma |\n| Dependência do Salesforce | Edição nativa do Salesforce; edição independente ao lado do ERP | Independente (não exige CRM) |\n| Precisão do cálculo | Não publicada | Inteiros (BigInt), escala 10^6, arredondado para centavos |\n| Ind AS 115 | Não anunciado (ASC 606 e IFRS 15) | Cronogramas Ind AS 115 (INR) ao lado do ASC 606 |\n| GST indiano de 18% | Não anunciado | Isolado em contratos em INR |\n| Evidência de cláusula | Não publicada | Página, trecho literal e destaque da linha citada (PDFs enviados com camada de texto) |\n| Implantação | Não publicada | Papel de trabalho gratuito de 3 contratos em 48 horas |\n| Preço | Não publicado (pedido de demonstração) | $475 por papel de trabalho (até 10 contratos) ou $49/mês para firmas |\n\nSobre modificações do contrato, veja o [guia do ASC 606-10-25-13](/blog/contract-modification-precedence-dag-asc-606-10-25-13). Para comparar mais fornecedores, veja as [alternativas ao RightRev](/alternatives/rightrev).",
+    "faqs": [
+      {
+        "question": "Por que separar o reconhecimento de receita do Salesforce?",
+        "answer": "O Salesforce foi feito para pipeline e CRM, não para a contabilidade de um subledger. Acoplar o motor de receita ao CPQ cria dependência do fornecedor, aumenta as licenças para o pessoal contábil e gera divergências quando vendas altera cotações sem avisar o deal desk. A Soluqube trabalha com os termos do contrato assinado que você confirma."
+      },
+      {
+        "question": "Como a Soluqube trata modificações do contrato no meio do prazo?",
+        "answer": "Segundo o ASC 606-10-25-10 a 25-13, uma modificação é contabilizada como contrato separado, de forma prospectiva ou com ajuste cumulativo. A Soluqube ainda não automatiza essa avaliação: a contabilização de modificações está no roadmap. Hoje a decisão é da sua equipe."
+      },
+      {
+        "question": "Quais papéis de trabalho a Soluqube exporta para os auditores externos?",
+        "answer": "Pacotes de evidência com os cronogramas de alocação e amortização, referências à cláusula do contrato em PDF e um hash de integridade SHA-256 sobre o cronograma."
+      }
+    ],
+    "cta": {
+      "title": "Revise os seus contratos complexos sem dependência de fornecedor",
+      "body": "Envie o seu MSA ou SOW assinado. Confirme as obrigações de desempenho e os preços e receba cronogramas com inteiros (BigInt) que fecham no centavo, com referências à cláusula.",
+      "label": "Agendar uma demonstração (em inglês)",
+      "href": "/book-demo",
+      "secondaryLabel": "Central ASC 606",
+      "secondaryHref": "/asc-606"
+    }
+  },
+  "soluqube-vs-leapfin": {
+    "title": "Soluqube vs Leapfin: contratos B2B ou dados de transações",
+    "description": "O Leapfin transforma transações de alto volume em lançamentos. A Soluqube parte de contratos B2B, com evidência de cláusula e cronogramas no centavo.",
+    "breadcrumb": "Soluqube vs Leapfin",
+    "eyebrow": "Comparativo",
+    "h1": "Soluqube vs Leapfin: contratos B2B versus fluxos de transações",
+    "lead": "O Leapfin é uma plataforma de dados financeiros de alto volume que transforma transações em lançamentos, reconhecimento de receita e conciliações. A Soluqube foi feita para líderes de finanças B2B que precisam revisar contratos sob medida, com evidência de cláusula por obrigação (página, trecho literal e linha destacada) e aritmética de inteiros (BigInt) que fecha no centavo.",
+    "body": "## A Soluqube em resumo\n\n- **Entrada:** termos do contrato assinado (MSA, SOW, Order Forms); você confirma obrigações e preços.\n- **Verificação de cláusulas:** página, trecho literal e linha destacada da cláusula de cada obrigação.\n- **Reprodutibilidade:** cronogramas ASC 606 e Ind AS 115 exportados com hashes SHA-256.\n\n## Comparativo de recursos\n\n| Recurso | Leapfin | Soluqube |\n|---|---|---|\n| Foco | Dados de transações de alto volume | Revisão de contratos B2B complexos |\n| Entrada de contratos em PDF | Não (depende do CRM ou do faturamento) | Envio do contrato; você confirma obrigações e preços |\n| Evidência de cláusula | Sem evidência de cláusula a partir de contratos em PDF | Página, trecho e linha destacada |\n| Precisão do cálculo | Não publicada | Inteiros (BigInt), escala 10^6, arredondado para centavos |\n| Ind AS 115 | Não anunciado (ASC 606) | Cronogramas Ind AS 115 (INR) e GST de 18% isolado |\n| Implantação | Não publicada | Papel de trabalho gratuito de 3 contratos em 48 horas |\n| Preço | Consulte leapfin.com/pricing | $475 por papel de trabalho (até 10 contratos) ou $49/mês para firmas |",
+    "faqs": [
+      {
+        "question": "Quando escolher a Soluqube em vez do Leapfin?",
+        "answer": "Se a sua empresa lida com contratos de software B2B sob medida (MSA, SOW) com direitos de rescisão específicos, várias obrigações de desempenho ou entidades na Índia, a Soluqube trabalha a partir desses termos do contrato e produz alocações e cronogramas que fecham no centavo. O Leapfin se encaixa melhor em marcas de consumo que agregam milhões de microtransações do Stripe ou da Shopify."
+      },
+      {
+        "question": "Como a Soluqube apoia a defesa perante o auditor?",
+        "answer": "Cada pacote de auditoria traz um hash de integridade SHA-256 sobre as obrigações, os trechos das cláusulas e o cronograma de amortização resultante, para que o auditor possa reexecutá-lo e confirmar que os números não mudaram desde o fechamento."
+      }
+    ],
+    "cta": {
+      "title": "Reconhecimento de receita determinístico para contratos corporativos",
+      "body": "Envie os seus contratos assinados. Confirme as obrigações e os preços; receba referências à cláusula e cronogramas com inteiros (BigInt) que fecham no centavo.",
+      "label": "Agendar uma demonstração (em inglês)",
+      "href": "/book-demo",
+      "secondaryLabel": "Central ASC 606",
+      "secondaryHref": "/asc-606"
+    }
+  },
+  "ssp-allocation-calculator": {
+    "title": "Calculadora de alocação de SSP e centavo residual",
+    "description": "Calculadora gratuita de alocação pelo SSP relativo (ASC 606): veja qual obrigação absorve o centavo residual e um cronograma mensal que termina em 0.00.",
+    "breadcrumb": "Calculadora de SSP",
+    "eyebrow": "Ferramenta gratuita · ASC 606 · Ind AS 115",
+    "h1": "Calculadora de alocação de SSP e centavo residual",
+    "lead": "Aloque um preço da transação pelo preço de venda individual relativo, veja exatamente para onde vai o centavo residual e receba um cronograma mensal que termina em 0.00 de diferido. Roda no seu navegador.",
+    "body": "## Como a alocação funciona\n\nO ASC 606-10-32-28 define o objetivo: alocar o preço da transação a cada obrigação de desempenho por um valor que represente a contraprestação à qual a entidade espera ter direito por ela. Os parágrafos 32-29 e 32-31 fazem isso com base no preço de venda individual relativo no início do contrato: cada obrigação recebe preço da transação × o seu SSP ÷ a soma dos SSPs. Os parágrafos 32-32 a 32-35 tratam de como estimar um SSP que não é diretamente observável, e 32-36 a 32-41 tratam da alocação de um desconto ou de contraprestação variável a obrigações específicas, que esta calculadora não modela.\n\nA norma não diz qual obrigação recebe o centavo que sobra quando as parcelas arredondadas não somam o preço. É uma escolha de política contábil, que deve ser documentada e aplicada sempre da mesma forma. A regra da Soluqube: calcular em aritmética de inteiros na escala 10^6, arredondar cada linha para o centavo e dar à última obrigação da lista o preço da transação menos as demais. Obrigações lineares recebem todo mês o valor mensal truncado e o último mês absorve o resíduo, de modo que o cronograma fecha com a alocação e o saldo diferido termina em 0.00.\n\nUm centavo está muito abaixo da materialidade. O motivo para resolvê-lo é mecânico: se a alocação ou o cronograma não somam o contrato, o saldo diferido nunca chega a zero e alguém registra um ajuste que o próximo revisor terá de explicar.\n\nExemplo resolvido e redação da política: [arredondamento na alocação de SSP no ASC 606: para onde vai o centavo](/blog/ssp-allocation-rounding-residual-cent-asc-606).",
+    "faqs": [
+      {
+        "question": "O que esta calculadora faz?",
+        "answer": "Aloca o preço da transação de um contrato a até 10 obrigações de desempenho na proporção dos seus preços de venda individuais (ASC 606-10-32-31), mostra qual obrigação absorve o centavo residual e monta um cronograma de reconhecimento mês a mês que termina em 0.00 de diferido."
+      },
+      {
+        "question": "Por que o arredondamento de cada linha não soma o preço do contrato?",
+        "answer": "Cada linha é arredondada para o centavo isoladamente. $100,000 divididos por SSPs de 30,000 / 30,000 / 120,000 dão 16,666.67 + 16,666.67 + 66,666.67 = 100,000.01. O mesmo acontece ao longo do tempo: $100,000 em 36 meses, arredondando todo mês, dão 100,000.08."
+      },
+      {
+        "question": "Qual obrigação absorve o centavo residual?",
+        "answer": "A última da lista. Todas as outras linhas são arredondadas para o centavo e a última recebe o preço da transação menos as demais, então a alocação soma exatamente. No cronograma, o último mês de cada obrigação linear absorve os centavos que sobram. Use a seta para mudar qual obrigação fica por último."
+      },
+      {
+        "question": "Isto é a abordagem residual para estimar o SSP?",
+        "answer": "Não. A abordagem residual (ASC 606-10-32-34(c)) é um método para estimar um SSP altamente variável ou incerto. O centavo residual é uma regra de arredondamento aplicada depois de definir os SSPs. Esta calculadora usa os seus SSPs como informados."
+      },
+      {
+        "question": "Como o GST é tratado em contratos em INR?",
+        "answer": "Escolha INR e o preço é tratado como sem GST. Os 18% de GST ficam fora do preço da transação como passivo, calculados uma vez sobre o total e distribuídos pelos meses, com o último mês absorvendo o resíduo, de modo que a coluna de GST fecha com o total. Contratos em USD não têm GST."
+      },
+      {
+        "question": "Os meus dados são enviados para algum lugar?",
+        "answer": "Não. O cálculo roda no seu navegador com a mesma aritmética de inteiros do motor da Soluqube. Nada do que você digita é enviado a um servidor."
+      },
+      {
+        "question": "O que esta calculadora não cobre?",
+        "answer": "Descontos ou contraprestação variável alocados a obrigações específicas (ASC 606-10-32-36 a 32-41), meses de início ou prazos diferentes por obrigação e modificações do contrato. Ela também não estima os SSPs por você."
+      }
+    ],
+    "cta": {
+      "title": "Rode isto nos seus contratos reais: vaga gratuita de design partner",
+      "body": "Envie contratos reais e receba a alocação pelo SSP relativo, um cronograma do prazo completo que fecha no centavo, evidência de cláusula (página e trecho) por obrigação e um papel de trabalho de evidência com hash. 60 dias grátis.",
+      "label": "Candidatar-se a uma vaga de design partner (em inglês)",
+      "href": "/design-partners",
+      "secondaryLabel": "Criar uma conta gratuita (em inglês)",
+      "secondaryHref": "https://app.soluqube.com/signup"
+    },
+    "type": "website"
   }
 }
