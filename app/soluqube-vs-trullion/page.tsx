@@ -206,7 +206,7 @@ export default function SoluqubeVsTrullionPage() {
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Time-to-Value</td>
                   <td className="p-3.5 text-emerald-400 font-mono font-bold bg-emerald-950/20">Same day (you confirm obligations &amp; prices)</td>
-                  <td className="p-3.5 text-slate-400 font-mono">30–60 days implementation</td>
+                  <td className="p-3.5 text-slate-400 font-mono">Not published</td>
                 </tr>
                 <tr>
                   <td className="p-3.5 font-semibold text-slate-200">Indian GAAP (Ind AS 115) Support</td>

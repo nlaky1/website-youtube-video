@@ -1211,7 +1211,7 @@ export default function Home() {
               &copy; 2026 Soluqube. All rights reserved. Deterministic Revenue Recognition Engine.
             </div>
             <div className="flex items-center gap-6 font-mono text-[10px]">
-              <span>PATENT PENDING (APP. NO. 202621096305)</span>
+              <span className="uppercase">Patent Pending (App. No. 202621096305)</span>
               <span>ENDING DEFERRED: $0.00</span>
               <span className="text-emerald-700 font-bold">ALL GATES ACTIVE</span>
             </div>

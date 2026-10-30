@@ -188,7 +188,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div className="sm:hidden pb-2 border-b border-slate-100">
             <span className="text-[11px] font-mono font-medium px-2 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200 inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              Patent App: 202621096305
+              Patent Pending (App. No. 202621096305)
             </span>
           </div>
 

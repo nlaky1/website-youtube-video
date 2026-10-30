@@ -149,7 +149,7 @@ export default function BookDemoPage() {
 
             {/* Patent Callout */}
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/90 font-mono text-xs text-slate-600">
-              <span className="font-bold text-slate-900 block mb-1">Patent Application: 202621096305</span>
+              <span className="font-bold text-slate-900 block mb-1">Patent Pending (App. No. 202621096305)</span>
               Deterministic Revenue Recognition Engine with Integer (BigInt) Closed-Form Parity.
             </div>
 

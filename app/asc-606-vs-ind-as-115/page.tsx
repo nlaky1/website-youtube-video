@@ -107,7 +107,7 @@ export default function DualStandardHubPage() {
 
       {/* FOOTER */}
       <footer className="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
-        &copy; {new Date().getFullYear()} Soluqube Technologies Inc. &bull; Patent App: 202621096305
+        &copy; {new Date().getFullYear()} Nikhil Laky, trading as Soluqube &bull; Patent Pending (App. No. 202621096305)
       </footer>
     </div>
   );

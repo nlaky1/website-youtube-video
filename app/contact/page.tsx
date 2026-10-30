@@ -138,7 +138,7 @@ export default function ContactForm() {
             </div>
 
             <div className="text-xs text-slate-500 font-mono">
-              Filing Priority Reference: <span className="font-bold text-slate-800">202621096305</span>
+              Patent Pending (App. No. <span className="font-bold text-slate-800">202621096305</span>)
             </div>
           </div>
 

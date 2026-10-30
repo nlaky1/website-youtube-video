@@ -25,7 +25,6 @@ export default function SoluqubeVsRightRevPage() {
 
   // Price comparison
   const soluqubePayAsYouGo = Math.ceil(contractCount / 10) * 475; // $475 audit workpaper per 10 contracts
-  const rightrevEstimatedMin = 30000; // $30k+ annual contract + implementation
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -160,7 +159,7 @@ export default function SoluqubeVsRightRevPage() {
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Salesforce Dependency</td>
-                <td className="py-4 px-6 text-rose-400">100% Native (Hard dependency)</td>
+                <td className="py-4 px-6 text-rose-400">Salesforce-native edition (also sits alongside the ERP)</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Standalone (no CRM required)</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Works alongside any CRM or ERP</td>
               </tr>
@@ -190,13 +189,13 @@ export default function SoluqubeVsRightRevPage() {
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Implementation Duration</td>
-                <td className="py-4 px-6">8 to 16 Weeks (System integrator required)</td>
+                <td className="py-4 px-6">Not published</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">Free 3-contract workpaper in 48 hours</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">No system integrator needed</td>
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Pricing Model</td>
-                <td className="py-4 px-6">$30,000–$60,000/yr + implementation fees</td>
+                <td className="py-4 px-6">Not published (demo request)</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">$475 per workpaper (up to 10 contracts) or $49/mo firm access</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">Published per-contract pricing</td>
               </tr>
@@ -232,9 +231,9 @@ export default function SoluqubeVsRightRevPage() {
               <div>
                 <div className="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-1">RightRev (Annual)</div>
                 <div className="text-2xl sm:text-3xl font-extrabold text-slate-300">
-                  ${rightrevEstimatedMin.toLocaleString()}
+                  Not published
                 </div>
-                <div className="text-xs text-rose-400 mt-1">Requires Salesforce CPQ + Setup</div>
+                <div className="text-xs text-rose-400 mt-1">Salesforce edition assumes a Salesforce org</div>
               </div>
               <div className="border-l border-slate-800 pl-6">
                 <div className="text-xs uppercase tracking-wider text-cyan-400 font-semibold mb-1">Soluqube (Pay-As-You-Go)</div>
@@ -242,7 +241,7 @@ export default function SoluqubeVsRightRevPage() {
                   ${soluqubePayAsYouGo.toLocaleString()}
                 </div>
                 <div className="text-xs text-emerald-400 mt-1">
-                  Save ${(rightrevEstimatedMin - soluqubePayAsYouGo).toLocaleString()} ({(100 - (soluqubePayAsYouGo / rightrevEstimatedMin * 100)).toFixed(0)}% savings)
+                  RightRev does not publish pricing; compare against your own quote.
                 </div>
               </div>
             </div>

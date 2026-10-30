@@ -1,6 +1,6 @@
 # Soluqube — AI Knowledge Base & LLM Index
 
-> Soluqube (`soluqube.com` / `app.soluqube.com`) is a deterministic ASC 606 and Ind AS 115 revenue allocation and amortisation engine. Given a contract's transaction price, performance obligations and standalone selling prices, it produces the relative-SSP allocation, a full-term recognition schedule that ties to $0.00 deferred, and a hashed evidence workpaper — using integer (BigInt) arithmetic at 10^6 scale rounded to cents with terminal-period remainder absorption, not spreadsheet floating point. Built for Controllers, revenue accountants and CPA firms who must defend SSP allocations to external auditors. Patent Pending (India, App. No. 202621096305).
+> Soluqube (`soluqube.com` / `app.soluqube.com`) is a deterministic ASC 606 and Ind AS 115 revenue allocation and amortisation engine. Given a contract's transaction price, performance obligations and standalone selling prices, it produces the relative-SSP allocation, a full-term recognition schedule that ties to $0.00 deferred, and a hashed evidence workpaper — using integer (BigInt) arithmetic at 10^6 scale rounded to cents with terminal-period remainder absorption, not spreadsheet floating point. Built for Controllers, revenue accountants and CPA firms who must defend SSP allocations to external auditors. Patent Pending (App. No. 202621096305).
 
 ## Canonical Endpoints & Knowledge Hubs
 
@@ -170,4 +170,4 @@ Soluqube supports deterministic revenue allocation and audit-ready workpapers ac
 - Español: https://soluqube.com/es (glossary https://soluqube.com/es/glossary, blog https://soluqube.com/es/blog, alternatives https://soluqube.com/es/alternatives)
 - Português (Brasil): https://soluqube.com/pt-br (glossary https://soluqube.com/pt-br/glossary, blog https://soluqube.com/pt-br/blog, alternatives https://soluqube.com/pt-br/alternatives)
 - Deutsch: https://soluqube.com/de (glossary https://soluqube.com/de/glossary, blog https://soluqube.com/de/blog, alternatives https://soluqube.com/de/alternatives)
-- Scope: ASC 606, IFRS 15 and Ind AS 115 only. Soluqube does not support local GAAP. Terms, privacy and security pages are English only.
+- Scope: ASC 606 and Ind AS 115 only. Soluqube does not support local GAAP. Terms, privacy and security pages are English only.

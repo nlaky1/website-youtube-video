@@ -152,7 +152,7 @@ const es: Strings = {
   legalNote: "Aviso legal, privacidad y seguridad: solo en inglés.",
   breadcrumbHome: "Inicio",
   hub: {
-    title: "Asignación de SSP ASC 606 e IFRS 15 | Soluqube",
+    title: "Asignación de SSP ASC 606 e Ind AS 115 | Soluqube",
     description: "Guías en español sobre ASC 606, IFRS 15 e Ind AS 115: glosario, artículos técnicos y alternativas, con ejemplos numéricos y referencias a la norma.",
     h1: "Reconocimiento de ingresos: ASC 606, IFRS 15 e Ind AS 115",
     sub: "Cuando un auditor cuestiona una asignación de precio de venta independiente (SSP) o una modificación de contrato, el controller suele defenderla desde una hoja de cálculo. Soluqube calcula la asignación por SSP relativo, un cronograma que cuadra al centavo y un papel de trabajo con hash SHA-256.",
@@ -175,7 +175,7 @@ const es: Strings = {
     english: "Versión en inglés",
   },
   glossary: {
-    indexTitle: "Glosario ASC 606 e IFRS 15 | Soluqube",
+    indexTitle: "Glosario ASC 606 e Ind AS 115 | Soluqube",
     indexDesc: (n) => `${n} términos de reconocimiento de ingresos (ASC 606, IFRS 15, Ind AS 115) con definición, referencias a la norma y ejemplo numérico.`,
     h1: "Glosario de reconocimiento de ingresos",
     intro: (n) => `${n} términos de ASC 606, IFRS 15 e Ind AS 115. Cada entrada incluye una definición directa, los párrafos de origen, un ejemplo numérico ilustrativo y los errores que los auditores señalan con más frecuencia.`,
@@ -256,7 +256,7 @@ const ptBr: Strings = {
   legalNote: "Termos, privacidade e segurança: apenas em inglês.",
   breadcrumbHome: "Início",
   hub: {
-    title: "Alocação de SSP ASC 606 e IFRS 15 | Soluqube",
+    title: "Alocação de SSP ASC 606 e Ind AS 115 | Soluqube",
     description: "Guias em português sobre ASC 606, IFRS 15 e Ind AS 115: glossário, artigos técnicos e alternativas, com exemplos numéricos e referências à norma.",
     h1: "Reconhecimento de receita: ASC 606, IFRS 15 e Ind AS 115",
     sub: "Quando um auditor questiona uma alocação de preço de venda individual (SSP) ou uma modificação contratual, o controller costuma defendê-la a partir de uma planilha. A Soluqube calcula a alocação pelo SSP relativo, um cronograma que fecha no centavo e um papel de trabalho com hash SHA-256.",
@@ -279,7 +279,7 @@ const ptBr: Strings = {
     english: "Versão em inglês",
   },
   glossary: {
-    indexTitle: "Glossário ASC 606 e IFRS 15 | Soluqube",
+    indexTitle: "Glossário ASC 606 e Ind AS 115 | Soluqube",
     indexDesc: (n) => `${n} termos de reconhecimento de receita (ASC 606, IFRS 15, Ind AS 115) com definição, referências à norma e exemplo numérico.`,
     h1: "Glossário de reconhecimento de receita",
     intro: (n) => `${n} termos de ASC 606, IFRS 15 e Ind AS 115. Cada verbete traz uma definição direta, os parágrafos de origem, um exemplo numérico ilustrativo e os erros que os auditores mais apontam.`,
@@ -360,7 +360,7 @@ const de: Strings = {
   legalNote: "Nutzungsbedingungen, Datenschutz und Sicherheit: nur auf Englisch.",
   breadcrumbHome: "Start",
   hub: {
-    title: "SSP-Aufteilung nach ASC 606 und IFRS 15 | Soluqube",
+    title: "SSP-Aufteilung nach ASC 606 und Ind AS 115 | Soluqube",
     description: "Deutschsprachige Leitfäden zu ASC 606, IFRS 15 und Ind AS 115: Glossar, Fachartikel und Alternativen, mit Zahlenbeispielen und Standardverweisen.",
     h1: "Umsatzrealisierung: ASC 606, IFRS 15 und Ind AS 115",
     sub: "Wenn ein Prüfer eine Aufteilung nach dem Einzelveräußerungspreis (SSP) oder eine Vertragsänderung hinterfragt, verteidigen Controller sie oft aus einer selbstgebauten Tabelle. Soluqube berechnet die Aufteilung nach der Relative-SSP-Methode, einen Realisierungsplan, der auf den Cent aufgeht, und ein Arbeitspapier mit SHA-256-Hash.",
@@ -383,7 +383,7 @@ const de: Strings = {
     english: "Englische Version",
   },
   glossary: {
-    indexTitle: "Glossar zu ASC 606 und IFRS 15 | Soluqube",
+    indexTitle: "Glossar zu ASC 606 und Ind AS 115 | Soluqube",
     indexDesc: (n) => `${n} Begriffe zur Umsatzrealisierung (ASC 606, IFRS 15, Ind AS 115) mit Definition, Standardverweisen und Zahlenbeispiel.`,
     h1: "Glossar zur Umsatzrealisierung",
     intro: (n) => `${n} Begriffe aus ASC 606, IFRS 15 und Ind AS 115. Jeder Eintrag enthält eine direkte Definition, die Fundstellen im Standard, ein illustratives Zahlenbeispiel und die Fehler, die Prüfer am häufigsten beanstanden.`,

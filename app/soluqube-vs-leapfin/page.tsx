@@ -183,7 +183,7 @@ export default function SoluqubeVsLeapfinPage() {
               </tr>
               <tr>
                 <td className="py-4 px-6 font-medium text-white">Implementation Overhead</td>
-                <td className="py-4 px-6">6 to 12 Weeks (Data pipeline engineering)</td>
+                <td className="py-4 px-6">Not published</td>
                 <td className="py-4 px-6 text-cyan-300 font-medium">Free 3-contract workpaper in 48 hours</td>
                 <td className="py-4 px-6 text-emerald-400 font-medium">No data pipeline to build</td>
               </tr>

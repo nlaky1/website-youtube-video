@@ -81,13 +81,13 @@ export default function SoluqubeVsMaxioPage() {
     },
     {
       feature: "Pricing Model",
-      maxio: "Billing volume tax (% of MRR / GMV) starting at $15k–$40k+/yr",
+      maxio: "Grow plan $599/month for up to $100k in monthly billings; Scale plan by quote (maxio.com/pricing)",
       soluqube: "Published flat prices ($475 audit workpaper for up to 10 contracts, or $49/month firm tool access)",
       advantage: "Zero tax on your top-line revenue growth",
     },
     {
       feature: "Time to Value & Onboarding",
-      maxio: "60 to 120 days implementation & ERP consultants",
+      maxio: "Not published",
       soluqube: "Upload, confirm the extracted terms, then generate the schedule",
       advantage: "Audit evidence without ripping out existing billing stack",
     },
@@ -129,7 +129,7 @@ export default function SoluqubeVsMaxioPage() {
             "name": "What is the best alternative to Maxio for ASC 606 audit defense?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Soluqube is the leading Maxio alternative for teams requiring deterministic ASC 606 and Ind AS 115 revenue schedules that tie out to the exact cent ($0.00 remainder drift) with clause-level signed contract excerpts, without replacing their billing engine."
+              "text": "Soluqube is a Maxio alternative for teams requiring deterministic ASC 606 and Ind AS 115 revenue schedules that tie out to the cent with clause-level signed contract excerpts, without replacing their billing engine."
             }
           },
           {
@@ -215,10 +215,6 @@ export default function SoluqubeVsMaxioPage() {
               Designed as an end-to-end billing tool that connects to Stripe and sends customer invoices. Calculates revenue recognition based on whatever sales reps or deal desks type into the CRM.
             </p>
             <ul className="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100">
-              <li className="flex items-center gap-2">
-                <span className="text-amber-500 font-bold">●</span>
-                <span>Takes 60–120 days for implementation & data migration</span>
-              </li>
               <li className="flex items-center gap-2">
                 <span className="text-amber-500 font-bold">●</span>
                 <span>Charges a &quot;billing volume tax&quot; on your top-line revenue</span>
@@ -408,10 +404,10 @@ export default function SoluqubeVsMaxioPage() {
           <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
             <div className="flex items-center gap-2 text-indigo-600 font-bold text-sm">
               <span className="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center text-xs font-mono">4</span>
-              <span>No 4-Month Onboarding or Revenue Volume Tax</span>
+              <span>No Billing Migration or Revenue Volume Tax</span>
             </div>
             <p className="text-slate-600 text-xs leading-relaxed">
-              Maxio charges based on your growing billing volume (punishing you for growing top-line revenue) and requires $5k–$15k in setup fees with 8–12 weeks of data migration. Soluqube operates alongside your existing billing system: you confirm the extracted terms, then it generates the allocation and schedule.
+              Maxio charges based on your growing billing volume (punishing you for growing top-line revenue). Soluqube operates alongside your existing billing system: you confirm the extracted terms, then it generates the allocation and schedule.
             </p>
           </div>
         </div>
