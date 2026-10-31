@@ -319,6 +319,54 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["standalone-selling-price", "adjusted-market-assessment", "saas-implementation-fee", "residual-approach", "ssp-range"],
     further: [SSP_TOOL, SSP_EXAMPLE_POST],
+    soluqubeNote:
+      "Soluqube does not estimate SSP for you. You enter the cost-plus SSP you have supported; it allocates the transaction price by relative SSP, produces a schedule that ties to the cent, and keeps the inputs in a SHA-256-hashed export you can re-run.",
+    sections: [
+      {
+        heading: "Which costs go into expected cost",
+        table: {
+          headers: ["Cost component", "Include?", "Evidence to keep"],
+          rows: [
+            ["Direct labour (hours × loaded hourly cost)", "Yes", "Hours from time records on comparable past projects; a rate card built from payroll cost"],
+            ["Third-party costs (subcontractors, tools bought for the engagement)", "Yes", "Vendor quotes or invoices"],
+            ["Delivery overhead (project management, delivery tooling)", "A reasonable share, on a stated basis", "The allocation basis, written into the SSP policy"],
+            ["Hosting or platform costs", "Only where this obligation drives them", "Cost reports by service"],
+            ["Sales commissions and general corporate costs", "Generally no: they relate to winning the contract or running the business, not to delivering the obligation", "Not applicable"],
+          ],
+        },
+      },
+      {
+        heading: "How to support the margin",
+        bullets: [
+          "Start from the margin the company earns on comparable services sold on their own, if there are any.",
+          "Otherwise use margins that market data or competitors show for similar services, adjusted for differences in scope and customer type.",
+          "Write down whether the percentage is a markup on cost or a margin on price; the worked example above shows how far apart the two land.",
+          "Refresh the estimate when cost rates or pricing change, and keep the version used for each contract.",
+          "Sense-check the result against any observable prices, such as the usual discount off list on standalone sales.",
+        ],
+        links: [
+          { href: "/blog/expected-cost-plus-margin-approach-ssp-example", label: "Full worked example: expected cost plus margin on a bundle, allocated to the cent" },
+          { href: "/blog/how-auditors-test-ssp-allocation-asc-606", label: "How do auditors test SSP allocation?" },
+        ],
+      },
+      {
+        heading: "Expected cost plus margin vs the other SSP methods",
+        table: {
+          headers: ["Method", "When it fits", "Main evidence"],
+          rows: [
+            ["Adjusted market assessment", "A market with comparable products or competitor prices", "Competitor price lists, market studies, your own pricing in that market"],
+            ["Expected cost plus margin", "Services with measurable delivery costs, such as implementation, training or custom work", "Cost budgets, time records and support for the margin"],
+            ["Residual approach", "Only when the selling price is highly variable or not yet established, and the other SSPs are observable", "Evidence that the price is highly variable or uncertain"],
+          ],
+        },
+        note: "All three are listed in ASC 606-10-32-34 and IFRS 15 paragraph 79. A combination of methods can be needed within one contract (ASC 606-10-32-35; IFRS 15 paragraph 80).",
+        links: [
+          { href: "/glossary/standalone-selling-price", label: "Standalone selling price (SSP)" },
+          { href: "/glossary/adjusted-market-assessment", label: "Adjusted market assessment approach" },
+          { href: "/glossary/residual-approach", label: "Residual approach" },
+        ],
+      },
+    ],
     faqs: [
       {
         question: "When should the expected cost plus margin approach be used for SSP?",
@@ -328,7 +376,17 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       {
         question: "What is the difference between markup on cost and margin on price?",
         answer:
-          "Markup on cost adds a percentage to the budgeted cost ($Cost × (1 + Markup)), whereas margin on price divides cost by the complement of the margin ($Cost / (1 - Margin)). For example, on a $10,000 cost, a 30% markup yields $13,000, while a 30% margin yields $14,285.71.",
+          "Markup on cost adds a percentage to the budgeted cost (cost × (1 + markup)), whereas margin on price divides cost by the complement of the margin (cost / (1 − margin)). For example, on a $10,000 cost, a 30% markup yields $13,000, while a 30% margin yields $14,285.71.",
+      },
+      {
+        question: "What does cost-plus margin mean?",
+        answer:
+          "Cost-plus margin means setting a price by taking the expected cost of delivering something and adding a margin on top. Under ASC 606 and IFRS 15, the expected cost plus a margin approach uses this idea to estimate the standalone selling price of an obligation that is never sold on its own, such as an implementation service.",
+      },
+      {
+        question: "What is SSP in ASC 606?",
+        answer:
+          "SSP, the standalone selling price, is the price at which an entity would sell a promised good or service separately to a customer. ASC 606 uses SSPs to allocate a contract's transaction price across its performance obligations. When no observable price exists, SSP is estimated, for example with expected cost plus a margin.",
       },
     ],
   },
