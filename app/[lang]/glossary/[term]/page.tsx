@@ -120,7 +120,7 @@ export default function LocalizedGlossaryTerm({ params }: { params: { lang: stri
             <p>{t.soluqubeNote}</p>
           </section>
         )}
-        <PageFaqs faqs={t.faqs} />
+        <PageFaqs faqs={t.faqs} heading={s.faqHeading} />
         {related.length > 0 && (
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-slate-900">{s.glossary.related}</h2>

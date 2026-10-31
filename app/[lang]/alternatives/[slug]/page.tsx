@@ -215,7 +215,7 @@ export default function LocalizedAlternativesPage({ params }: { params: { lang: 
           </p>
         </section>
 
-        <PageFaqs faqs={p.faqs} />
+        <PageFaqs faqs={p.faqs} heading={s.faqHeading} />
 
         <aside className="rounded-2xl bg-slate-900 text-white p-6 space-y-2">
           <p className="font-bold">{s.alt.ctaTitle}</p>
