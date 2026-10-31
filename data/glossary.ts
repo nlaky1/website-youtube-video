@@ -1460,6 +1460,59 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["remaining-performance-obligations", "point-in-time-recognition", "ratable-recognition", "principal-vs-agent", "ind-as-115-gst-treatment"],
     further: [ASC_HUB, IND_AS_HUB],
+    soluqubeNote:
+      "Soluqube does not prepare the disaggregation note. For the contracts you run through it, it produces per-obligation schedules marked over time or at a point in time, which you can sum by timing of transfer; product-line and geography categories come from your own systems.",
+    sections: [
+      {
+        heading: "Disaggregated revenue: an illustrative disclosure table",
+        paragraphs: [
+          "Disaggregated revenue is total revenue split into categories in the notes to the financial statements. Using the worked example above, a combined table by product line, geography and timing of transfer could look like this.",
+        ],
+        table: {
+          headers: ["Revenue (in millions)", "United States", "India", "Total", "Timing of transfer"],
+          rows: [
+            ["Subscriptions", "$5.8", "$2.4", "$8.2", "Over time"],
+            ["Professional services", "$0.9", "$0.4", "$1.3", "Over time"],
+            ["Hardware", "$0.3", "$0.2", "$0.5", "Point in time"],
+            ["Total revenue", "$7.0", "$3.0", "$10.0", "Over time $9.5; point in time $0.5"],
+          ],
+        },
+        note:
+          "Illustrative figures, hand-made; rows and columns each add up to the totals. India figures exclude the GST charged on INR invoices, which is collected for the government and is not revenue.",
+      },
+      {
+        heading: "Common categories for disaggregating revenue",
+        bullets: [
+          "Type of good or service, such as major product lines.",
+          "Geographical region.",
+          "Market or type of customer, such as government and non-government customers.",
+          "Type of contract, such as fixed-price and time-and-materials.",
+          "Contract duration, such as short-term and long-term contracts.",
+          "Timing of transfer: goods or services transferred at a point in time or over time.",
+          "Sales channel, such as direct to customers or through intermediaries.",
+        ],
+        paragraphs: [
+          "These examples come from ASC 606-10-55-91 (IFRS 15 paragraph B89). Pick the categories that investors, the earnings release and segment reporting already use. Under ASC 606-10-50-7, an entity that is not a public business entity may elect to give revenue by timing of transfer plus qualitative information instead.",
+        ],
+      },
+      {
+        heading: "A public example",
+        paragraphs: [
+          "Cognizant's quarterly report (Form 10-Q) for the period ended 30 June 2022 disaggregates revenue from contracts with clients by client location, service line and contract type (time-and-materials, fixed-price and transaction- or volume-based) for each of its business segments, and explains that this best depicts how the nature, amount, timing and uncertainty of revenue are affected by economic factors.",
+        ],
+        sources: [{ href: "https://www.sec.gov/Archives/edgar/data/1058290/000105829022000241/R10.htm", label: "Cognizant Form 10-Q, Q2 2022, revenues note (SEC EDGAR)" }],
+      },
+      {
+        heading: "Checks before the auditor looks",
+        bullets: [
+          "Every disaggregation view adds up to total revenue on the income statement.",
+          "Categories match those in the segment note, MD&A and earnings releases, or the difference is explained.",
+          "Categories stay the same from period to period, or a change is disclosed.",
+          "The over time and point in time split agrees to the revenue schedules behind it.",
+        ],
+        links: [{ href: "/blog/how-to-prepare-for-asc-606-revenue-audit", label: "How to prepare for an ASC 606 revenue audit" }],
+      },
+    ],
     faqs: [
       {
         question: "What are the required categories for disaggregation of revenue under ASC 606?",
@@ -1475,6 +1528,11 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
         question: "How is disaggregation of revenue handled for dual ASC 606 and Ind AS 115 filings?",
         answer:
           "Both standards follow identical disaggregation principles, but entities reporting under Ind AS 115 must strictly exclude Goods and Services Tax (GST) from all disaggregated revenue categories because taxes collected on behalf of the government are not revenue.",
+      },
+      {
+        question: "What does disaggregation mean in accounting?",
+        answer:
+          "Disaggregation means breaking one total into its parts. For revenue, it is the note that splits total revenue into categories such as product line, region, customer type or timing of transfer, so readers can see how economic factors affect the nature, amount, timing and uncertainty of revenue and cash flows, as ASC 606 and IFRS 15 require.",
       },
     ],
   },
