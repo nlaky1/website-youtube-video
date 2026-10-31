@@ -1147,7 +1147,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     description:
       "Right to use vs right to access for IP licences under IFRS 15 and ASC 606: functional vs symbolic IP, when revenue is recognised, and a worked example.",
     definition:
-      "A right to access gives the customer the licensor's IP as it changes over the licence period, so revenue is recognised over time. A right to use gives the customer the IP as it exists when granted, so revenue is recognised at a point in time. ASC 606 reaches this split by classifying IP as symbolic or functional.",
+      "Right to access and right to use are the two types of IP licence under ASC 606, IFRS 15 and Ind AS 115. A right to access gives the customer the licensor's IP as it changes over the licence period, so revenue is recognised over time; a right to use gives the IP as it exists when granted, so revenue is recognised at a point in time.",
     references: [
       { standard: "ASC 606", ref: "606-10-55-54 to 55-65" },
       { standard: "IFRS 15", ref: "paragraphs B52–B63" },
@@ -1169,6 +1169,58 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["point-in-time-recognition", "ratable-recognition", "constraint-on-variable-consideration", "distinct-good-or-service", "performance-obligation"],
     further: [ASC_HUB, { href: "/blog/saas-training-separate-performance-obligation-asc-606", label: "Is SaaS training a separate performance obligation?" }, DESIGN_PARTNERS],
+    soluqubeNote:
+      "Soluqube does not decide whether a licence is a right to access or a right to use; that is your judgement. Once you confirm each obligation and its pattern (over time or at a point in time), it allocates the price by relative SSP and produces the full-term schedule, with the cent remainder absorbed in the final period and the page and excerpt of the licence clause kept with each obligation.",
+    sections: [
+      {
+        heading: "Right to access vs right to use: side by side",
+        table: {
+          headers: ["", "Right to access", "Right to use"],
+          rows: [
+            ["What the customer gets", "The licensor's IP as it changes over the licence period", "The IP as it exists when the licence is granted"],
+            ["Typical IP under ASC 606", "Symbolic IP: brands, trade names, logos, franchise rights", "Functional IP: software, drug formulas, films, music recordings"],
+            [
+              "IFRS 15 and Ind AS 115 test",
+              "The licensor's expected activities significantly affect the IP, expose the customer to their effects, and do not themselves transfer a good or service (paragraph B58)",
+              "Those criteria are not met",
+            ],
+            ["When revenue is recognised", "Over time, across the licence period", "At a point in time, no earlier than when the IP is available to the customer and the licence period has begun"],
+            ["Example on this page", "Three-year brand licence for $120,000: $3,333.33 a month", "Three-year software term licence for $90,000: all $90,000 when the term begins"],
+            ["Sales- or usage-based royalties", "Royalty exception: recognised when the later sale or usage occurs (or the obligation is satisfied, if later)", "The same royalty exception applies"],
+          ],
+        },
+      },
+      {
+        heading: "Functional vs symbolic IP",
+        paragraphs: [
+          "ASC 606 classifies the IP itself. Functional IP has significant standalone functionality: it can process a transaction, perform a function or task, or be played or aired. Software, drug formulas and finished media such as films and music are the usual examples. A licence of functional IP is a right to use, recognised at a point in time, unless the licensor is expected to substantively change the IP's functionality and the customer is contractually or practically required to use the updated IP.",
+          "Symbolic IP has no significant standalone functionality; its value comes from the licensor's past and ongoing activities, such as supporting a brand. Brands, trade names, logos and franchise rights are the usual examples. A licence of symbolic IP is always a right to access, recognised over time.",
+          "IFRS 15 and Ind AS 115 do not use the functional and symbolic labels. They ask whether the contract requires, or the customer reasonably expects, the licensor to carry out activities that significantly affect the IP. The answers usually match ASC 606, but they can differ, for example for a brand licence where the licensor does no further supporting activity.",
+        ],
+      },
+      {
+        heading: "Journal entries for the worked example",
+        table: {
+          headers: ["Date", "Account", "Dr", "Cr"],
+          rows: [
+            ["1 Jan 2026", "Accounts receivable (brand licence invoiced up front)", "120,000.00", ""],
+            ["", "Contract liability (deferred revenue)", "", "120,000.00"],
+            ["Each month-end, Jan 2026 to Nov 2028 (35 months)", "Contract liability (deferred revenue)", "3,333.33", ""],
+            ["", "Licence revenue", "", "3,333.33"],
+            ["31 Dec 2028 (month 36)", "Contract liability (deferred revenue)", "3,333.45", ""],
+            ["", "Licence revenue", "", "3,333.45"],
+            ["1 Jan 2026", "Accounts receivable (software licence, available and term begun)", "90,000.00", ""],
+            ["", "Licence revenue", "", "90,000.00"],
+          ],
+        },
+        note:
+          "Illustrative contracts. The monthly amounts come from Soluqube's schedule engine: 35 months of $3,333.33 and a final month of $3,333.45 that absorbs the rounding remainder, so the 36 months total exactly $120,000.00 and the liability ends at zero. On this monthly schedule, years one and two each come to $39,999.96 and year three to $40,000.08.",
+        links: [
+          { href: "/blog/how-to-prepare-for-asc-606-revenue-audit", label: "How to prepare for an ASC 606 revenue audit" },
+          { href: "/blog/how-auditors-test-ssp-allocation-asc-606", label: "How do auditors test SSP allocation?" },
+        ],
+      },
+    ],
     faqs: [
       {
         question: "What is the difference between right to use and right to access?",
@@ -1184,6 +1236,16 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
         question: "When is revenue from a right-to-use licence recognised?",
         answer:
           "At the point in time control transfers, which cannot be earlier than both the moment the software or other IP is made available to the customer and the start of the period in which the customer can use it. A renewal of a right-to-use licence is not recognised before the renewal period begins, under ASC 606-10-55-58C.",
+      },
+      {
+        question: "What is the difference between functional IP and symbolic IP?",
+        answer:
+          "Functional IP, such as software, a drug formula or a film, has significant standalone functionality, so a licence to it is usually a right to use, recognised at a point in time. Symbolic IP, such as a brand or logo, gets its value from the licensor's ongoing activities, so a licence to it is a right to access, recognised over time.",
+      },
+      {
+        question: "What is a right-to-use software licence called?",
+        answer:
+          "It is usually called a term licence or a perpetual licence of on-premise software: the customer installs and runs the software as it exists when delivered. Under ASC 606 that software is functional IP, so revenue for the licence is recognised at a point in time, while bundled support or updates, where distinct, are separate obligations usually recognised over time.",
       },
     ],
   },
