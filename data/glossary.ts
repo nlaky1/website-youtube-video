@@ -846,9 +846,9 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   {
     slug: "cumulative-catch-up",
     term: "Cumulative catch-up adjustment",
-    title: "Cumulative Catch-Up Adjustment: ASC 606 Example",
+    title: "Cumulative Catch-Up Adjustment & Method (ASC 606)",
     description:
-      "The cumulative catch-up method under ASC 606-10-25-13(b) and IFRS 15.21(b): when it applies, and a worked example on a partly complete fixed-fee build.",
+      "The cumulative catch-up adjustment method under ASC 606-10-25-13(b): the three modification treatments compared, a worked example and journal entries.",
     definition:
       "A cumulative catch-up adjustment is a one-time entry in the current period that brings revenue recognised to date in line with revised terms or estimates, as if they had applied from inception. It applies to modifications of a single, partially satisfied performance obligation and to changes in estimated progress or transaction price. Prior periods are not restated.",
     references: [
@@ -873,7 +873,60 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["contract-modification", "prospective-method", "input-method", "variable-consideration", "constraint-on-variable-consideration"],
     further: [MODIFICATION_POST, ASC_HUB, DESIGN_PARTNERS],
-    soluqubeNote: "Soluqube does not automate modification catch-up today; it is on the roadmap.",
+    soluqubeNote:
+      "Soluqube does not automate modification catch-up today; it is on the roadmap. What it does produce is the original relative-SSP allocation and full-term schedule, with the page and excerpt behind each obligation, which is the baseline a catch-up is measured against.",
+    sections: [
+      {
+        heading: "Cumulative catch-up method vs prospective method vs separate contract",
+        paragraphs: [
+          "ASC 606 gives three treatments for a contract modification. Which one applies depends on whether the added goods or services are distinct and priced at standalone selling price, and on whether what remains is distinct from what has already been transferred.",
+        ],
+        table: {
+          headers: ["Treatment", "When it applies", "Effect on revenue already recognised", "Typical example"],
+          rows: [
+            [
+              "Separate contract",
+              "The added goods or services are distinct and priced at their standalone selling prices (ASC 606-10-25-12; IFRS 15.20)",
+              "None; the original contract is left as it is",
+              "A customer adds seats at the standard price for the rest of the term",
+            ],
+            [
+              "Prospective (old contract ended, new one created)",
+              "What remains is distinct from what has been transferred, but the change is not priced at standalone selling price (25-13(a); IFRS 15.21(a))",
+              "None; unrecognised consideration plus the new consideration is allocated to the remaining obligations",
+              "A discounted mid-term upsell on a monthly SaaS subscription",
+            ],
+            [
+              "Cumulative catch-up",
+              "What remains is not distinct and forms part of a single, partly satisfied performance obligation (25-13(b); IFRS 15.21(b))",
+              "Adjusted in the current period as if the change had applied from inception; no restatement",
+              "Added scope on a fixed-fee build that is partly complete (the worked example above)",
+            ],
+          ],
+        },
+        note: "When some remaining items are distinct and others are not, ASC 606-10-25-13(c) applies each treatment to the relevant part.",
+        links: [{ href: "/glossary/prospective-method", label: "Prospective method for contract modifications" }],
+      },
+      {
+        heading: "Journal entry for the catch-up",
+        paragraphs: [
+          "In the worked example, $40,000 had been recognised and revised progress on the new $120,000 price supports $42,000, so the catch-up is $2,000. Assume the extra scope has not been invoiced yet, so the entry increases the contract asset.",
+        ],
+        table: {
+          headers: ["Date", "Account", "Dr", "Cr"],
+          rows: [
+            ["Period of the modification", "Contract asset (unbilled revenue)", "2,000.00", ""],
+            ["", "Revenue: cumulative catch-up adjustment", "", "2,000.00"],
+          ],
+        },
+        note:
+          "Illustrative, hand-calculated figures (Soluqube's engine does not compute modification catch-ups). If the customer had already been billed in advance, the debit would reduce the contract liability instead. The remaining $78,000 ($120,000 less $42,000) is recognised as progress continues.",
+        links: [
+          { href: "/blog/how-to-prepare-for-asc-606-revenue-audit", label: "How to prepare for an ASC 606 revenue audit (modifications are a standard sample)" },
+          { href: "/blog/how-auditors-test-ssp-allocation-asc-606", label: "How do auditors test SSP allocation?" },
+        ],
+      },
+    ],
     faqs: [
       {
         question: "What is a cumulative catch-up adjustment?",
@@ -889,6 +942,16 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
         question: "Are prior periods restated for a cumulative catch-up?",
         answer:
           "No. The whole adjustment is recorded in the period of the modification or change in estimate, and earlier financial statements stay as reported. A change in estimate is not an error correction, so there is no restatement. Disclose significant changes in estimates and the effect on revenue, so readers can see why current-period revenue moved.",
+      },
+      {
+        question: "Is a change in estimated progress a cumulative catch-up?",
+        answer:
+          "Yes. A revised measure of progress on an obligation satisfied over time is a change in accounting estimate under ASC 606-10-25-35, so revenue to date is trued up in the current period. Changes in the estimated transaction price, such as variable consideration, are likewise allocated on the original basis and recognised in the period of change.",
+      },
+      {
+        question: "What are the types of contract modifications under ASC 606?",
+        answer:
+          "There are two main types: a modification accounted for as a separate contract, when distinct goods or services are added at standalone selling price, and a modification of the existing contract. The second is then accounted for prospectively, with a cumulative catch-up, or a mix of both, depending on whether what remains is distinct.",
       },
     ],
   },
