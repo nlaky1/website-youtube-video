@@ -115,7 +115,7 @@ export default function SoluqubeVsTrullionPage() {
                 SQ
               </div>
               <div>
-                <h3 className="font-bold text-lg text-white">Nikhil Laky, trading as Soluqube</h3>
+                <h3 className="font-bold text-lg text-white">Soluqube</h3>
                 <p className="text-xs text-emerald-400 font-mono">Deterministic Contract-to-Ledger Engine</p>
               </div>
             </div>

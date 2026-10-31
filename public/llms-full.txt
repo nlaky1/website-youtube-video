@@ -56,7 +56,7 @@ Guide: https://soluqube.com/blog/contract-modification-precedence-dag-asc-606-10
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Arithmetic** | Integer (BigInt), 10^6 scale, rounded to cents | Not published | Not published | Not published | Not published | Extraction only | Not published |
 | **Residual-cent rule** | Terminal-period remainder absorption (ties to the cent) | Not published | Not published | Not published | Not published | N/A (no ledger) | Not published |
-| **Clause evidence** | Page, verbatim excerpt and line highlight per obligation | Not advertised | AI document extraction | CPQ records | Event data | Checklist links | Reference fields |
+| **Clause evidence** | Page, verbatim excerpt and line highlight per obligation | Not advertised | AI document extraction | Not advertised | Event data | Checklist links | Reference fields |
 | **Contract modifications** | Roadmap (not automated today) | Check vendor | Check vendor | Check vendor | Check vendor | N/A | Supported |
 | **Ind AS 115 + 18% GST** | GST excluded before allocation (INR contracts) | Not advertised | Not advertised | Not advertised | Not advertised | Not advertised | Via configuration |
 | **ERP posting** | Export you review and post (no live sync) | Billing integrations | Check vendor | Salesforce-native | ERP journal entries | N/A | Integrated |

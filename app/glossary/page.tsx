@@ -9,12 +9,12 @@ import { GLOSSARY_TERMS } from "@/data/glossary";
 const SITE = "https://soluqube.com";
 
 export const metadata: Metadata = {
-  title: { absolute: "ASC 606 & IFRS 15 Revenue Glossary | Soluqube" },
+  title: { absolute: "ASC 606 & Ind AS 115 Revenue Glossary | Soluqube" },
   description:
-    "40 revenue recognition terms under ASC 606, IFRS 15 and Ind AS 115, each with a direct definition, standard references and a worked numeric example.",
+    "40 revenue recognition terms under ASC 606 and Ind AS 115, with IFRS 15 references: a direct definition, standard paragraphs and a worked numeric example.",
   alternates: { canonical: `${SITE}/glossary`, languages: hreflangMap("/glossary", LOCALES) },
   openGraph: {
-    title: "ASC 606 & IFRS 15 Revenue Glossary",
+    title: "ASC 606 & Ind AS 115 Revenue Glossary",
     description:
       "40 revenue recognition terms with definitions, standard references and worked examples: SSP, performance obligations, contract balances and more.",
     url: `${SITE}/glossary`,

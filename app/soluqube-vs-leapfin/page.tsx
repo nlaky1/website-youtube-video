@@ -202,7 +202,7 @@ export default function SoluqubeVsLeapfinPage() {
       <section className="py-16 bg-slate-900/40 border-y border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-            Per-Contract Pricing vs. Heavy Data Pipeline
+            Per-Contract Pricing vs. Published Subscription Plans
           </h2>
           <p className="text-sm text-slate-400 mb-8">
             Compare Leapfin's published plans versus Soluqube per-contract workbooks.

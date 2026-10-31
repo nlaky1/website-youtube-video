@@ -33,7 +33,7 @@ export default function SoluqubeVsRightRevPage() {
         "@type": "TechArticle",
         "@id": "https://soluqube.com/soluqube-vs-rightrev#article",
         "headline": "Soluqube vs RightRev: Standalone Contract Subledger vs ERP-Alongside Revenue Subledger",
-        "description": "Comprehensive architectural comparison between Soluqube and RightRev for ASC 606 revenue recognition. Learn how Soluqube eliminates Salesforce platform lock-in with raw PDF contract grounding and integer (BigInt) micro-cent math.",
+        "description": "Comprehensive architectural comparison between Soluqube and RightRev for ASC 606 revenue recognition. Learn how Soluqube works from the signed contract, whatever CRM you use, with clause evidence per obligation and integer (BigInt) micro-cent math.",
         "author": {
           "@type": "Organization",
           "name": "Nikhil Laky, trading as Soluqube",
@@ -93,7 +93,7 @@ export default function SoluqubeVsRightRevPage() {
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-6">
             Soluqube vs. RightRev: <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400">
-              Decoupling ASC 606 from Salesforce CPQ
+              A Standalone ASC 606 Subledger, Whatever Your CRM
             </span>
           </h1>
           <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
@@ -257,10 +257,10 @@ export default function SoluqubeVsRightRevPage() {
         <div className="space-y-6">
           <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/40">
             <h3 className="text-lg font-semibold text-white mb-2">
-              Why do finance teams decouple revenue recognition from Salesforce?
+              When does a standalone subledger fit better than a Salesforce edition?
             </h3>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Salesforce is built for pipeline and CRM tracking, not rigorous subledger accounting. Coupling your revrec engine to Salesforce CPQ creates severe vendor lock-in, increases seat license costs for accounting personnel, and introduces data drift whenever sales teams modify quote stages without informing the deal desk. Soluqube works from the signed contract terms you confirm.
+              RightRev sits alongside the ERP and also offers a Salesforce-native edition, which assumes a Salesforce org. If your contracts are negotiated outside Salesforce, or your CRM is something else, a standalone subledger avoids that dependency. Soluqube works from the signed contract terms you confirm, whatever CRM or CPQ you use.
             </p>
           </div>
           <div className="p-6 rounded-xl border border-slate-800 bg-slate-900/40">

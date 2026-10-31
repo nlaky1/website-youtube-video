@@ -48,7 +48,7 @@ export default function SspSamplePage() {
             </li>
             <li className="flex items-start gap-2.5">
               <span className="text-emerald-600 font-bold mt-0.5">✓</span>
-              <span><strong>Dual-Standard Support:</strong> Formatted for US GAAP ASC 606 and IFRS 15 / Ind AS 115 cross-border compliance (USD and INR contracts).</span>
+              <span><strong>Dual-Standard Support:</strong> Formatted for US GAAP ASC 606 and Ind AS 115 (USD and INR contracts; 18% GST isolated on INR contracts only).</span>
             </li>
             <li className="flex items-start gap-2.5">
               <span className="text-emerald-600 font-bold mt-0.5">✓</span>
