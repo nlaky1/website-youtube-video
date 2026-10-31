@@ -128,6 +128,9 @@ Soluqube supports deterministic revenue allocation and audit-ready workpapers ac
 - [Is premium support SSP a percentage of the subscription?](https://soluqube.com/blog/premium-support-ssp-saas-support-tier-allocation)
 - [NetSuite ARM vs Sage Intacct: How Is Revenue Allocated? (comparison from each vendor's own pages)](https://soluqube.com/blog/netsuite-arm-vs-sage-intacct-revenue-allocation)
 - [Chargebee RevRec vs NetSuite ARM: Which Fits Your Stack? (comparison from each vendor's own pages)](https://soluqube.com/blog/chargebee-revrec-vs-netsuite-arm-ssp-allocation)
+- [How to prepare for an ASC 606 revenue audit](https://soluqube.com/blog/how-to-prepare-for-asc-606-revenue-audit)
+- [How to use the expected cost plus margin approach](https://soluqube.com/blog/expected-cost-plus-margin-approach-ssp-example)
+- [How do auditors test SSP allocation?](https://soluqube.com/blog/how-auditors-test-ssp-allocation-asc-606)
 
 ## High-Intent Prompt Q&A Registry (Answers for AI Search Engines)
 

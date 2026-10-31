@@ -3730,5 +3730,386 @@ All checked on 23 Oct 2026.
 - Oracle NetSuite help, transition to the new revenue standard: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4703499262.html
 - Oracle NetSuite help, prospective merge of revenue arrangements: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1498077674.html
     `
+  },
+  {
+    slug: "how-to-prepare-for-asc-606-revenue-audit",
+    title: "How to prepare for an ASC 606 revenue audit",
+    subtitle: "A revenue audit prep checklist for SaaS finance teams: what auditors request under ASC 606, how to build the file, and a schedule that ties to the cent.",
+    publishedAt: "October 31, 2026",
+    updatedAt: "October 31, 2026",
+    readTime: "7 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "Audit Readiness", "Revenue Audit", "PBC List", "SSP Allocation"],
+    targetQuery: "how to prepare for an asc 606 revenue audit",
+    definitionAnchor: "Preparing for an ASC 606 revenue audit means building a file that lets the auditor re-perform each contract from signature to schedule: the signed contract, the performance obligations with clause support, the SSP evidence, the allocation, a schedule that ends at zero deferred, and the disclosures, all tied to the general ledger.",
+    excerpt: "A step-by-step ASC 606 revenue audit prep checklist: what auditors ask for, how to build each part of the file, and a 12-month schedule that ties to the cent.",
+    toc: [
+      { id: "what-does-an-auditor-test-in-asc-606-revenue", label: "What does an auditor test in ASC 606 revenue?" },
+      { id: "what-should-be-on-the-revenue-pbc-list", label: "What should be on the revenue PBC list?" },
+      { id: "how-do-you-build-the-file-step-by-step", label: "How do you build the file, step by step?" },
+      { id: "how-do-you-tie-the-schedule-to-the-ledger", label: "How do you tie the schedule to the ledger?" },
+      { id: "which-judgements-need-a-memo", label: "Which judgements need a memo?" },
+      { id: "how-does-soluqube-help-with-revenue-audit-preparation", label: "How does Soluqube help with revenue audit preparation?" }
+    ],
+    faqs: [
+      {
+        question: "How early should a SaaS company start preparing for a revenue audit?",
+        answer: "Start at the last quarter-end before year-end. Freeze a contract listing, agree it to the ledger, and build the file for your largest and most complex contracts first. Leaving it to fieldwork usually means rebuilding allocations under time pressure, which is where unsupported SSPs and missing amendments surface."
+      },
+      {
+        question: "What do auditors sample in ASC 606 revenue testing?",
+        answer: "Usually a mix of the largest contracts, contracts with unusual terms, contracts signed or amended near period end (for cutoff), and a random selection. For each sample they inspect the signed contract and re-perform the obligations, allocation and schedule, then agree the result to the ledger."
+      },
+      {
+        question: "Do I need a memo for every contract?",
+        answer: "No. You need a policy that covers standard contracts and a memo for each judgement outside it: an unusual bundle, a non-pro-rata discount, a principal-versus-agent call, or a contract modification. Standard contracts are supported by the policy plus the contract-level file."
+      }
+    ],
+    engineVerified: true,
+    content: `
+A revenue audit goes faster when the auditor can pick any contract and re-perform it without asking you a question. This guide covers what external auditors usually test under ASC 606, the items on a typical revenue PBC ("provided by client") list, a step-by-step way to build the file, and a 12-month schedule that ties to the cent. It is written for SaaS controllers and the outsourced teams who prepare revenue support for them. It is general guidance, not audit advice: your auditor's request list decides the scope.
+
+## What does an auditor test in ASC 606 revenue?
+
+Auditors test whether each sampled contract follows the five-step model and whether the totals agree to the ledger and the disclosures. Revenue gets extra attention because auditing standards presume a fraud risk in revenue recognition (AU-C 240 for private companies, AS 2401 for public ones), so expect testing of judgement areas, cutoff and journal entries, not just arithmetic.
+
+In practice the testing falls into five areas:
+
+1. **Contract existence and terms.** Is there a signed contract, and do the price, term and start date match what was booked?
+2. **Performance obligations.** Were the distinct promises identified correctly under ASC 606-10-25-19 to 25-22? See [performance obligation](https://soluqube.com/glossary/performance-obligation).
+3. **SSP and allocation.** Is each standalone selling price supported, and does the allocation follow ASC 606-10-32-28 to 32-41?
+4. **Timing.** Is each obligation recognised over time or at a point in time, and is cutoff right at period end?
+5. **Presentation and disclosure.** Do contract balances, disaggregation (ASC 606-10-50-5) and remaining performance obligations (50-13) agree to the schedules?
+
+## What should be on the revenue PBC list?
+
+A revenue PBC list usually asks for the revenue policy, a contract listing that ties to the ledger, the signed contracts for a sample, SSP support, the allocation and schedule for each sampled contract, deferred revenue roll-forwards, and the disclosure workings. Having these ready before fieldwork removes most of the back-and-forth.
+
+| PBC item | What "ready" looks like |
+|---|---|
+| Revenue recognition policy | Current, covers SSP method, rounding rule, modification and cutoff policy |
+| Contract listing | Every active contract, price, term, start date; total agrees to revenue and deferred revenue in the GL |
+| Signed contracts (sample) | Final signed versions, including order forms and amendments |
+| Performance obligation analysis | One row per obligation, with the clause page and excerpt that supports it |
+| SSP support | Each SSP with its method under ASC 606-10-32-33 and 32-34, data source and review date |
+| Allocation per contract | Relative SSP allocation that ties to the contract price, with the rounding rule stated |
+| Revenue schedule per contract | Monthly amounts per obligation, deferred revenue ending at $0.00 after the term |
+| Deferred revenue roll-forward | Opening balance + billings − revenue = closing balance, agreed to the GL |
+| Disclosure workings | Disaggregation, contract balances and RPO, each agreed to the schedules |
+
+## How do you build the file, step by step?
+
+Build the file one contract at a time, in the order of the five-step model, and keep the evidence next to each number. Start from the signed contract, list the obligations with their clause support, attach SSP evidence, allocate, build the schedule, then reconcile the totals. Each step should be re-performable by someone who has never seen the contract.
+
+1. **Freeze the contract population.** Export the contract listing at period end and agree its totals to revenue and deferred revenue in the ledger before you build anything.
+2. **Pull the signed documents.** Use the executed versions, including every order form and amendment. Amendments need their own assessment under ASC 606-10-25-10 to 25-13 (see [contract modification](https://soluqube.com/glossary/contract-modification)).
+3. **List the obligations with clause support.** For each obligation, record the page and the verbatim excerpt from the contract that creates the promise.
+4. **Attach SSP evidence.** Observable standalone prices first; otherwise an estimate under 32-34 (adjusted market assessment, expected cost plus margin, or residual where allowed) with the inputs shown.
+5. **Allocate and state the rounding rule.** Exact ratios, amounts rounded to the cent, and one named line that takes the residual cent.
+6. **Build the schedule.** Monthly amounts per obligation, with the final month absorbing the remainder so deferred revenue ends at zero.
+7. **Reconcile.** Sum the schedules and agree them to the ledger and to the disclosure workings.
+
+Terms pulled from contracts by any software still need a person to confirm them before they go into the file.
+
+## How do you tie the schedule to the ledger?
+
+Tie each contract's schedule to its allocation, then tie the sum of all schedules to revenue and deferred revenue in the ledger. For a single subscription line, round the monthly amount down to the cent and let the final month absorb the remainder, so recognised revenue equals the allocated amount exactly and deferred revenue ends at $0.00.
+
+Example: a $50,000.00, 12-month subscription obligation.
+
+| Month | Recognised | Deferred after month |
+|---|---:|---:|
+| 1 | $4,166.66 | $45,833.34 |
+| 2–11 | $4,166.66 each | falls to $4,166.74 |
+| 12 | $4,166.74 | $0.00 |
+| **Total** | **$50,000.00** | |
+
+Eleven months at $4,166.66 total $45,833.26, and month 12 takes $4,166.74. The amounts are small, but a schedule that leaves a few cents in deferred revenue after the term is an easy reconciling item for a reviewer to find, and a written rule removes the question. Our post on [where the rounding cent goes](https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606) covers multi-line cases.
+
+## Which judgements need a memo?
+
+Write a short memo for every judgement an auditor could reasonably challenge: SSP estimates without observable prices, bundles where a service might not be distinct, discounts placed on some obligations only (ASC 606-10-32-37), principal-versus-agent calls, and every contract modification. A memo states the facts, the guidance applied, the conclusion and who approved it.
+
+Common memo topics for SaaS:
+
+- **SSP method and refresh cycle**, including why list prices are or are not observable evidence. See the [SSP allocation guide](https://soluqube.com/blog/asc-606-ssp-allocation-guide).
+- **Distinct assessment** for implementation, onboarding and training.
+- **Discount allocation** when it is not spread pro rata.
+- **Contract modifications**: whether each amendment is a separate contract, a prospective change or a cumulative catch-up.
+- **Principal vs agent** for resold third-party products.
+
+For the most common review comments on allocation, see [what SSP allocation mistakes auditors flag](https://soluqube.com/blog/ssp-allocation-mistakes-asc-606).
+
+## How does Soluqube help with revenue audit preparation?
+
+Soluqube builds the allocation-and-schedule part of the file for each contract. You confirm the obligations and stated prices. It returns a relative SSP allocation in integer arithmetic that ties to the contract price, a schedule whose final period absorbs the remainder so deferred revenue ends at $0.00, a page and verbatim excerpt for each obligation, and a SHA-256-hashed export a reviewer can re-check.
+
+What it does today:
+
+- **Allocation and schedule** in integer (BigInt) arithmetic, rounded to the cent, deterministic: the same inputs give the same numbers and the same hash.
+- **Clause evidence** per obligation: page and verbatim excerpt; on uploaded PDFs with a text layer, the cited line is highlighted. Scanned PDFs without a text layer are refused.
+- **Human confirmation**: contract terms are extracted heuristically and must be confirmed before they drive the numbers.
+- **Ind AS 115**: for INR contracts, 18% GST is kept out of the transaction price. US contracts carry no GST.
+
+What it does not do: it does not account for contract modifications (amendments are flagged for manual review), and it does not replace your policy, memos or the auditor's judgement.
+
+To try it on your own contracts, send three of your hardest bundled contracts through the [design partner programme](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint) for a free 3-contract workpaper, or re-perform an allocation in the [SSP allocation calculator](https://soluqube.com/tools/ssp-allocation-calculator?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint). The [sample SSP workpaper](https://soluqube.com/samples/soluqube-ssp-sample.pdf) shows the finished structure. Founding prices for the first 10 customers are on [pricing](https://soluqube.com/pricing?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint).
+    `
+  },
+  {
+    slug: "expected-cost-plus-margin-approach-ssp-example",
+    title: "How to use the expected cost plus margin approach",
+    subtitle: "How to estimate SSP with the expected cost plus margin approach under ASC 606-10-32-34(b): which costs count, how to set the margin, and a worked example.",
+    publishedAt: "October 31, 2026",
+    updatedAt: "October 31, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Estimation", "Expected Cost Plus Margin", "Relative SSP Method"],
+    targetQuery: "expected cost plus margin approach",
+    definitionAnchor: "The expected cost plus margin approach estimates a standalone selling price by forecasting the cost of satisfying a performance obligation and adding an appropriate margin. ASC 606-10-32-34(b) and IFRS 15 paragraph 79(b) list it as one of three estimation methods, used when no observable standalone price exists, typically for implementation and onboarding services.",
+    excerpt: "How to estimate SSP with the expected cost plus margin approach: which costs to include, how to support the margin, and a $63,000 bundle worked through to the cent.",
+    toc: [
+      { id: "what-is-the-expected-cost-plus-margin-approach", label: "What is the expected cost plus margin approach?" },
+      { id: "when-should-you-use-it", label: "When should you use it?" },
+      { id: "which-costs-go-into-the-estimate", label: "Which costs go into the estimate?" },
+      { id: "how-do-you-set-and-support-the-margin", label: "How do you set and support the margin?" },
+      { id: "how-does-it-work-on-a-63000-contract", label: "How does it work on a $63,000 contract?" },
+      { id: "what-do-auditors-ask-about-cost-plus-ssps", label: "What do auditors ask about cost-plus SSPs?" },
+      { id: "how-does-soluqube-help-with-cost-plus-ssp-allocation", label: "How does Soluqube help with cost-plus SSP allocation?" }
+    ],
+    faqs: [
+      {
+        question: "Is expected cost plus margin allowed under IFRS 15 as well as ASC 606?",
+        answer: "Yes. IFRS 15 paragraph 79(b) describes the same method as ASC 606-10-32-34(b). The wording of the two standards on SSP estimation is substantially the same, so a cost-plus SSP built for US GAAP generally works for IFRS 15 and Ind AS 115 reporting too."
+      },
+      {
+        question: "Can I use expected cost plus margin for the SaaS subscription itself?",
+        answer: "You can, but it is rarely the best evidence. The cost to serve a subscription is usually low and says little about what customers pay, so renewal prices or standalone subscription sales are stronger. Cost plus margin fits services delivered by people, such as onboarding and training."
+      },
+      {
+        question: "How often should a cost-plus SSP be refreshed?",
+        answer: "At least annually, and sooner if delivery hours, pay rates or pricing change. Existing contracts are not reallocated when SSPs change (ASC 606-10-32-43); updated figures apply to new contracts. Keep the SSP used at inception with each contract."
+      }
+    ],
+    engineVerified: true,
+    content: `
+When a SaaS company never sells onboarding or implementation on its own, there is no observable price to use as its standalone selling price. The expected cost plus margin approach fills that gap: forecast what it costs to deliver the service and add a margin you can support. This post covers when to use it, which costs to include, how to set the margin, and a worked $63,000.00 bundle, so the estimate holds up when a reviewer re-performs it.
+
+## What is the expected cost plus margin approach?
+
+It is one of the three SSP estimation methods in ASC 606-10-32-34: forecast the expected cost of satisfying a performance obligation, then add an appropriate margin. The result is the price you would expect to charge if you sold that item on its own. See the [glossary definition](https://soluqube.com/glossary/expected-cost-plus-margin).
+
+The other two methods are the [adjusted market assessment](https://soluqube.com/glossary/adjusted-market-assessment), which starts from market prices, and the [residual approach](https://soluqube.com/glossary/residual-approach), which is only allowed when an SSP is highly variable or uncertain. The standard asks you to maximise observable inputs and apply the chosen method consistently to similar situations (ASC 606-10-32-33).
+
+## When should you use it?
+
+Use expected cost plus margin when there is no reliable observable standalone price and the cost of delivering the obligation can be estimated, which is typical for services delivered by your own people: implementation, onboarding, training and premium support. It is a weak fit for software subscriptions, whose cost to serve is low and says little about price.
+
+| Obligation | Usual SSP evidence | Cost plus margin a good fit? |
+|---|---|---|
+| Implementation / onboarding | Rarely sold alone | Yes: labour hours are measurable |
+| Training | Sometimes sold alone | Yes, if no standalone sales |
+| Premium support tier | Often priced as a tier | Sometimes; observable tier prices come first |
+| SaaS subscription | Renewal and standalone sales | Usually no: cost to serve does not reflect value |
+
+If you do have standalone sales of an item, use them. An [observable price](https://soluqube.com/glossary/observable-price) beats an estimate.
+
+## Which costs go into the estimate?
+
+Include the costs you expect to incur to satisfy the obligation: direct labour hours times a loaded hourly cost, third-party costs such as subcontractors or tools bought for the engagement, and a reasonable share of overhead that relates to delivery. Base the hours on actual delivery data where you have it, not on the hours quoted to the customer.
+
+A cost build that a reviewer can follow usually shows:
+
+1. **Hours by role**, from time-tracking on similar past projects (for example, the median of the last 20 onboardings).
+2. **Loaded cost per hour** by role: salary, benefits and payroll taxes, divided by available hours.
+3. **Direct third-party costs**, if any.
+4. **Delivery overhead** allocated on a stated basis.
+5. **The date and the data period** the build is based on.
+
+Leave out costs that do not relate to delivery, such as sales commissions, and keep the build consistent across contracts.
+
+## How do you set and support the margin?
+
+Set the margin from evidence of what the market would pay: the margin you earn on similar services that you do sell on their own, margins of competitors or service partners who sell comparable work, or pricing studies. Be explicit about whether it is a markup on cost or a margin on price, because the two give different SSPs.
+
+The difference matters. On a cost of $5,700.00:
+
+- A **40% margin on price** gives SSP = $5,700.00 ÷ (1 − 0.40) = **$9,500.00**.
+- A **40% markup on cost** gives SSP = $5,700.00 × 1.40 = **$7,980.00**.
+
+Write down which one your policy uses and apply it the same way every time. If the evidence supports a range rather than a point, document the range and how you choose within it; see [SSP range](https://soluqube.com/glossary/ssp-range).
+
+## How does it work on a $63,000 contract?
+
+Take a 12-month contract priced at $63,000.00: a platform subscription with an observable SSP of $60,000.00, plus onboarding delivered in month 2. Onboarding is never sold alone, so its SSP comes from cost plus margin: 60 hours × $95.00 loaded cost = $5,700.00, at a 40% margin on price, giving $9,500.00. Total SSPs are $69,500.00, so the $6,500.00 discount is spread pro rata.
+
+| Obligation | SSP basis | SSP | Allocated |
+|---|---|---:|---:|
+| Platform subscription | Observable (standalone renewals) | $60,000.00 | $54,388.49 |
+| Onboarding (absorbs residual cent) | Expected cost plus margin | $9,500.00 | $8,611.51 |
+| **Total** | | **$69,500.00** | **$63,000.00** |
+
+The subscription's exact share is $63,000 × 60,000 ÷ 69,500 = $54,388.489…, rounded half-up to $54,388.49. Onboarding, the last line, takes the remainder, $8,611.51, so the allocation ties to $63,000.00.
+
+| Month | Subscription | Onboarding | Recognised |
+|---|---:|---:|---:|
+| 1 | $4,532.37 | — | $4,532.37 |
+| 2 | $4,532.37 | $8,611.51 | $13,143.88 |
+| 3–11 | $4,532.37 each | — | $4,532.37 each |
+| 12 | $4,532.42 | — | $4,532.42 |
+| **Total** | **$54,388.49** | **$8,611.51** | **$63,000.00** |
+
+The subscription recognises $4,532.37 for 11 months and $4,532.42 in month 12, so the final month absorbs $0.05 and deferred revenue ends at $0.00. Onboarding is recognised in month 2, when it is completed, not when it is invoiced. This schedule is engine behaviour: the app's upload workbook gives the same allocation but puts every point-in-time item in month 1. You can re-perform the allocation in the [SSP allocation calculator](https://soluqube.com/tools/ssp-allocation-calculator?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint).
+
+## What do auditors ask about cost-plus SSPs?
+
+Auditors usually ask where the hours came from, how the loaded rate was built, why the margin is reasonable, whether the same method was applied to similar contracts, and when the estimate was last refreshed. A cost build tied to time-tracking data and a margin backed by external or internal evidence answers most of these questions before they are asked.
+
+Typical requests:
+
+- The hours data and the projects it came from.
+- Payroll support for the loaded cost.
+- The source of the margin and whether it is on price or on cost.
+- Evidence the method is applied consistently, and the review date.
+- A sensitivity check: does a reasonable change in margin move the allocation materially?
+
+For a broader list of review points, see [what SSP allocation mistakes auditors flag](https://soluqube.com/blog/ssp-allocation-mistakes-asc-606).
+
+## How does Soluqube help with cost-plus SSP allocation?
+
+Soluqube takes the SSPs you have confirmed, including a cost-plus estimate, and does the allocation and schedule. It allocates the contract price by relative SSP in integer arithmetic, rounds to the cent with a named line taking the residual, builds a schedule whose final period absorbs the remainder, and exports the result with a SHA-256 hash so a reviewer can re-check it.
+
+- **You set the SSP; Soluqube does the arithmetic.** It does not estimate costs or margins for you. The SSP basis is recorded in the workbook so the reviewer sees where each figure came from.
+- **Clause evidence**: each obligation carries the contract page and verbatim excerpt; uploaded PDFs with a text layer show the cited line highlighted. Extracted terms are heuristic and need your confirmation.
+- **Deterministic**: the same inputs produce the same allocation, schedule and hash.
+- **Scope**: ASC 606, and Ind AS 115 with 18% GST kept out of the transaction price on INR contracts. Contract modifications are flagged for manual review, not accounted for.
+
+To see it on your own bundles, send three contracts through the [design partner programme](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint) for a free 3-contract workpaper. Founding prices for the first 10 customers are on [pricing](https://soluqube.com/pricing?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint).
+    `
+  },
+  {
+    slug: "how-auditors-test-ssp-allocation-asc-606",
+    title: "How do auditors test SSP allocation?",
+    subtitle: "What external auditors request and re-perform when they test SSP allocation under ASC 606, and how to prepare evidence that answers each test.",
+    publishedAt: "October 31, 2026",
+    updatedAt: "October 31, 2026",
+    readTime: "6 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "SSP Allocation", "Audit Readiness", "Relative SSP Method", "Audit Evidence"],
+    targetQuery: "how to defend ssp allocation to auditors",
+    definitionAnchor: "Auditors test SSP allocation by checking that each standalone selling price is supported by evidence, that the method follows ASC 606-10-32-31 to 32-35 and is applied consistently, and by re-performing the relative SSP allocation and schedule for sampled contracts to confirm they tie to the contract price and the ledger.",
+    excerpt: "What external auditors request and re-perform when they test SSP allocation, with a $120,000 three-line contract re-performed to the cent.",
+    toc: [
+      { id: "what-are-auditors-trying-to-conclude-about-ssp", label: "What are auditors trying to conclude about SSP?" },
+      { id: "what-do-auditors-request-for-ssp-testing", label: "What do auditors request for SSP testing?" },
+      { id: "how-do-auditors-test-the-ssp-estimates", label: "How do auditors test the SSP estimates?" },
+      { id: "how-do-auditors-re-perform-the-allocation", label: "How do auditors re-perform the allocation?" },
+      { id: "how-should-you-respond-to-an-ssp-challenge", label: "How should you respond to an SSP challenge?" },
+      { id: "how-does-soluqube-help-you-defend-an-ssp-allocation", label: "How does Soluqube help you defend an SSP allocation?" }
+    ],
+    faqs: [
+      {
+        question: "Do auditors accept list prices as SSP?",
+        answer: "Only if list prices are good evidence of what the item sells for on its own. If nearly every deal is discounted from list, auditors will usually expect an analysis of actual standalone prices or an estimate under ASC 606-10-32-34 instead. Keep the discount history that shows how list relates to actual prices."
+      },
+      {
+        question: "What if the auditor's re-performed allocation differs by a few cents?",
+        answer: "Find the cause, usually rounded weights or a different residual line, and fix the rule so it is written down and applied every time. A few cents is below materiality, but an unexplained difference suggests the allocation is not controlled, which leads to more questions."
+      },
+      {
+        question: "Can I use the residual approach to avoid estimating an SSP?",
+        answer: "Only when the SSP is highly variable or uncertain, as ASC 606-10-32-34(c) sets out, for example a new product with no pricing history. Where observable prices or a reasonable estimate exist, auditors will expect that instead. Document why the residual criteria are met."
+      }
+    ],
+    engineVerified: true,
+    content: `
+When an auditor challenges an SSP allocation, the question is rarely "is this arithmetic right?". It is "show me why these SSPs are reasonable and that you applied them the same way every time." This post walks through what external auditors usually request, how they test SSP estimates, how they re-perform an allocation (with a $120,000.00 example), and how to respond when a figure is questioned. It is general guidance; your auditor's procedures decide the scope.
+
+## What are auditors trying to conclude about SSP?
+
+Auditors want to conclude that revenue is allocated in a way that meets the objective in ASC 606-10-32-28: each obligation gets the consideration the entity expects for it. To get there they check three things: the SSPs are supported, the method is appropriate and consistent, and the allocation and schedule are calculated correctly and agree to the ledger.
+
+SSP is a judgement area, so it tends to get more attention than the arithmetic. Expect questions on the evidence behind each figure and on contracts where the result looks unusual, such as a large discount or a service allocated far less than its usual price.
+
+## What do auditors request for SSP testing?
+
+Auditors usually request your SSP policy, the SSP study or table in use for the period, the data behind each SSP, the allocation for each sampled contract, the signed contracts, and evidence of who reviewed and approved the SSPs. A request list is easier to answer when every SSP already sits next to its source.
+
+| Request | What a complete answer contains |
+|---|---|
+| SSP policy | Method per obligation type, order of evidence, refresh cycle, rounding rule |
+| SSP table for the period | Each SSP, effective dates, method (observable, adjusted market, cost plus margin, residual) |
+| Supporting data | Standalone sales analysis, price lists with discount history, cost builds, market data |
+| Sampled contracts | Signed contract and order forms, with the clause behind each obligation |
+| Allocation per sample | Exact ratios, amounts to the cent, which line took the residual cent |
+| Review evidence | Who prepared and approved the SSPs, and when |
+
+## How do auditors test the SSP estimates?
+
+Auditors test SSP estimates by tracing each figure to its data, checking the method against ASC 606-10-32-33 and 32-34, and testing the data itself. For observable SSPs they look at the spread of actual standalone prices; for estimates they test the inputs, such as hours, rates and margins, and check the residual approach is used only where allowed.
+
+Common procedures:
+
+1. **Trace to source.** Pick an SSP and follow it to the standalone sales or the cost build it came from.
+2. **Test the data.** Agree a sample of standalone sales to invoices; agree hours and rates in a cost build to time-tracking and payroll.
+3. **Check consistency.** Confirm the same SSP or method was used on similar contracts in the period.
+4. **Look at the range.** If SSPs are set as a range, check where contract prices fall and how outliers were handled. See [SSP range](https://soluqube.com/glossary/ssp-range).
+5. **Check the refresh.** Confirm the SSP table was reviewed recently enough to reflect current pricing.
+
+For cost-based SSPs, see [how to use the expected cost plus margin approach](https://soluqube.com/blog/expected-cost-plus-margin-approach-ssp-example).
+
+## How do auditors re-perform the allocation?
+
+Auditors re-perform the allocation by taking the confirmed contract price and SSPs, computing each obligation's share of the total SSPs, multiplying by the price, and comparing the result, line by line and to the cent, with your allocation and schedule. Any difference has to be explained, so a written rounding rule and exact ratios make re-performance straightforward.
+
+Example: a $120,000.00, 12-month contract with three obligations whose SSPs total $130,000.00, so the $10,000.00 discount is spread pro rata under ASC 606-10-32-36.
+
+| Obligation | SSP | Exact share | Allocated |
+|---|---:|---:|---:|
+| Platform subscription (12 months) | $100,000.00 | $92,307.6923… | $92,307.69 |
+| Implementation (point in time) | $20,000.00 | $18,461.5384… | $18,461.54 |
+| Training (absorbs residual cent) | $10,000.00 | $9,230.7692… | $9,230.77 |
+| **Total** | **$130,000.00** | | **$120,000.00** |
+
+Each line except the last is rounded half-up to the cent, and the last line takes the remainder, so the total ties to $120,000.00. The subscription is then scheduled at $7,692.30 a month for 11 months and $7,692.39 in month 12, ending at $0.00 deferred.
+
+An auditor re-performing this will check the same three numbers and the same rounding rule. If your file uses rounded weights (for example 76.92%) instead of exact ratios, the amounts can differ by a few cents, and you will be asked to explain why. Our post on [where the rounding cent goes](https://soluqube.com/blog/ssp-allocation-rounding-residual-cent-asc-606) covers the edge cases. For the wider audit file, see [how to prepare for an ASC 606 revenue audit](https://soluqube.com/blog/how-to-prepare-for-asc-606-revenue-audit). You can re-perform this example in the [SSP allocation calculator](https://soluqube.com/tools/ssp-allocation-calculator?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint).
+
+## How should you respond to an SSP challenge?
+
+Respond with evidence, not a new number. Show the source data for the SSP, the method and why it fits under ASC 606-10-32-33, the consistency of its use across similar contracts, and a sensitivity check showing whether a reasonable alternative SSP would change the allocation materially. If the challenge is valid, correct the method for new contracts and assess the effect on existing ones.
+
+A response pack usually includes:
+
+- The SSP, its method and the data extract behind it.
+- Two or three similar contracts using the same SSP.
+- A sensitivity table: allocation under your SSP and under the auditor's alternative.
+- The approval trail for the SSP table.
+
+Remember that existing contracts are not reallocated for later SSP changes (ASC 606-10-32-43). A changed SSP applies to new contracts unless the original estimate was an error. For a preparer's checklist of what usually goes wrong, see [what SSP allocation mistakes auditors flag](https://soluqube.com/blog/ssp-allocation-mistakes-asc-606).
+
+## How does Soluqube help you defend an SSP allocation?
+
+Soluqube produces the part of the file an auditor re-performs. After you confirm the obligations, stated prices and SSPs, it allocates by relative SSP in integer arithmetic, rounds to the cent with a named residual line, builds a schedule that ends at $0.00 deferred, records the SSP basis, and exports a SHA-256-hashed workbook so the auditor can confirm nothing changed after review.
+
+- **Re-performable**: deterministic engine; the same inputs give the same allocation, schedule and hash.
+- **Evidence per obligation**: the contract page and verbatim excerpt; on uploaded text-layer PDFs, the cited line is highlighted. Scanned PDFs without a text layer are refused.
+- **You stay in control of judgement**: Soluqube does not choose SSPs or margins. Extracted contract terms are heuristic and must be confirmed.
+- **Scope**: ASC 606, and Ind AS 115 with 18% GST kept out of the transaction price on INR contracts. Contract modifications are flagged for manual review, not accounted for.
+
+Send three contracts through the [design partner programme](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint) for a free 3-contract workpaper, or look at the [sample SSP workpaper](https://soluqube.com/samples/soluqube-ssp-sample.pdf). Founding prices for the first 10 customers are on [pricing](https://soluqube.com/pricing?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint).
+    `
   }
 ];
