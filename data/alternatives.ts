@@ -616,21 +616,75 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
       { vendor: "rillet", fit: "Only if you are considering replacing Sage Intacct as your ERP." },
       { vendor: "soluqube", fit: "Adds documented relative-SSP allocation and schedules for the contracts under audit; you post the export to Sage Intacct yourself." },
     ],
+    sections: [
+      {
+        heading: "How Sage Intacct revenue recognition works",
+        paragraphs: [
+          "Revenue recognition in Sage Intacct runs in one of two applications. Sage's help describes the Contracts application as a subscription billing and revenue management solution that fully supports ASC 606 and IFRS 15. Order Entry, with the Revenue Management subscription, can also defer and recognise revenue, but Sage describes Order Entry revenue recognition as offering limited ASC 606 and IFRS 15 support.",
+          "Revenue recognition templates drive the schedules. A template defines how deferred revenue is amortised: the term, the recognition method and the other data needed to calculate the schedule. Methods in the help include straight line, straight line with exact-day proration, exact days per period, and percent completed for projects.",
+          "With a single invoice, posting the invoice debits accounts receivable, credits deferred revenue and creates a schedule of revenue journal entries, posted automatically or manually depending on the template. With installment invoicing, Intacct uses a revenue recognition contract and a contra deferred revenue account so the deferred revenue forecast covers the full contract amount.",
+        ],
+        table: {
+          headers: ["Where it runs", "What Sage's help says", "Allocation across elements"],
+          rows: [
+            [
+              "Contracts",
+              "Fully supports ASC 606 and IFRS 15; straight-line, daily-rate, quantity-based and custom schedules, independent of billing; multi-book accounting",
+              "Multiple-element arrangement (MEA) allocation with the Contract Advanced Revenue Recognition add-on, with an audit trail of MEA runs",
+            ],
+            [
+              "Order Entry with Revenue Management",
+              "Limited ASC 606 and IFRS 15 support; amortisation, event-based recognition, renewals, and billing separated from revenue",
+              "Order Entry Advanced Revenue Recognition is named in the help",
+            ],
+            ["Accounts Receivable with Revenue Management", "Amortisation only; Sage recommends Order Entry instead", "Not described"],
+          ],
+        },
+        note: "Based on Sage Intacct help pages read on 31 October 2026. Product scope can change; confirm with Sage for your edition.",
+        sources: [
+          { href: "https://www.intacct.com/ia/docs/en_AU/help_action/Contracts/contract-disambiguation.htm", label: "Sage Intacct help: types of contracts tracked in Sage Intacct" },
+          { href: "https://www.intacct.com/ia/docs/en_US/help_action/Revenue_Management/Learn_about/how-Intacct-processes-revenue-recognition.htm", label: "Sage Intacct help: about the revenue recognition process" },
+          { href: "https://www.intacct.com/ia/docs/en_US/help_action/Revenue_Management/Setting_up_Revenue_Management/revenue-recognition-templates.htm", label: "Sage Intacct help: revenue recognition templates" },
+          { href: "https://www.intacct.com/ia/docs/en_US/help_action/Revenue_Management/Learn_about/about-revenue-recognition-methods.htm", label: "Sage Intacct help: revenue recognition methods" },
+          { href: "https://www.intacct.com/ia/docs/en_US/help_action/Contracts/Using_Contracts/Learn_about/about-contracts.htm", label: "Sage Intacct help: about Contracts" },
+        ],
+      },
+      {
+        heading: "Salesforce and Sage Intacct revenue recognition",
+        paragraphs: [
+          "Sage Intacct's setup help lists Salesforce among the add-on integrations that require Order Entry, and it recommends enabling Revenue Management in Order Entry rather than Accounts Receivable. If deals are booked in Salesforce, confirm with Sage which Intacct application the connector feeds before designing the revenue setup, and check how a mid-term change in Salesforce flows through to the revenue schedule.",
+        ],
+        sources: [
+          { href: "https://www.intacct.com/ia/docs/en_US/help_action/Revenue_Management/Setting_up_Revenue_Management/configure-revenue-management.htm", label: "Sage Intacct help: configure Revenue Management" },
+        ],
+        links: [{ href: "/blog/how-auditors-test-ssp-allocation-asc-606", label: "How do auditors test SSP allocation?" }],
+      },
+    ],
     faqs: [
       {
         question: "Can Sage Intacct handle ASC 606 and IFRS 15 for hybrid subscription contracts?",
         answer:
-          "Sage Intacct Contracts supports ASC 606 and IFRS 15 schedules for standard subscriptions, but complex multi-element arrangements with hybrid usage, professional services, or customized discount carve-outs typically require the optional Advanced Revenue Management module or a dedicated subledger beside Sage Intacct.",
+          "Sage's help says the Contracts application fully supports ASC 606 and IFRS 15, with straight-line, daily-rate, quantity-based and custom schedules and usage billing. Allocation across multiple elements needs the Contract Advanced Revenue Recognition add-on, and Order Entry offers only limited ASC 606 and IFRS 15 support. Test one of your real hybrid contracts before deciding.",
       },
       {
         question: "What are the limitations of Sage Intacct revenue recognition?",
         answer:
-          "Sage Intacct's native revenue recognition is tightly coupled with its Contracts module and General Ledger. Standalone Selling Price (SSP) allocation across multi-element bundles requires add-ons, pricing is quote-only, and mid-contract modifications often require manual recalculation or dual-entry reconciliation.",
+          "From Sage's own help pages: it is a module of the Sage Intacct ERP; multiple-element allocation needs a separate add-on; Order Entry gives more limited ASC 606 and IFRS 15 support than Contracts; and pricing was not published on the pages we could read. How modifications behave depends on the application and setup, so test one on a real contract.",
       },
       {
         question: "Can you use a standalone rev-rec engine with Sage Intacct without replacing billing?",
         answer:
-          "Yes. Standalone revenue subledgers or purpose-built engines like Soluqube operate alongside Sage Intacct. Soluqube ingests contract terms, calculates relative SSP allocations and amortization schedules to the cent, and provides audit-ready CSV exports formatted for GL journal entry import into Sage Intacct.",
+          "Yes. Subledgers such as Chargebee RevRec or Zenskar list Sage Intacct integrations. Soluqube also runs beside it: you confirm the obligations and prices, and it produces the relative-SSP allocation and a full-term schedule that ties to the cent, as an Excel/CSV export with page and excerpt evidence. It has no Sage Intacct integration; you post the entries yourself.",
+      },
+      {
+        question: "What is Sage Intacct revenue recognition?",
+        answer:
+          "It is the revenue management capability inside the Sage Intacct cloud ERP. Revenue recognition templates define how deferred revenue is amortised, and Intacct creates a schedule of revenue journal entries when a transaction posts. The Contracts application adds subscription billing and ASC 606 / IFRS 15 support, with multiple-element allocation as an add-on.",
+      },
+      {
+        question: "Can Sage Intacct be integrated with Salesforce?",
+        answer:
+          "Yes. Sage Intacct's help lists Salesforce among its add-on integrations and notes that it requires the Order Entry application. Which records sync, and whether revenue schedules start from Salesforce opportunities, depends on the connector and setup, so confirm the current scope with Sage or your implementation partner.",
       },
     ],
   },
