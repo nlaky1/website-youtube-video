@@ -407,10 +407,65 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
       { vendor: "tabs", fit: "Another billing-plus-rev-rec platform, aimed at usage, credits and commitments, with a published entry price." },
       { vendor: "zenskar", fit: "Billing, metering and rev rec in one, with SSP-based allocation and modification recalculation named on its site. Custom pricing." },
       { vendor: "rightrev", fit: "A standalone subledger if you want to keep your billing system and need an SSP engine you can simulate before changes go live." },
-      { vendor: "soluqube", fit: "Best for contract-anchored ASC 606 audit defense & $0.00 penny tie-out: deterministic relative-SSP allocation, verbatim contract clause evidence, and SHA-256 hashed workpapers without ripping out your billing stack. Covers dual Ind AS 115 standards." },
+      { vendor: "soluqube", fit: "For the contracts you must defend on SSP: deterministic relative-SSP allocation, a schedule that ties to the cent, verbatim clause evidence (page and excerpt) and SHA-256 hashed workpapers, without replacing your billing stack. Covers Ind AS 115 as well as ASC 606." },
     ],
     versusPage: "/soluqube-vs-maxio",
     relatedPost: { href: "/blog/maxio-vs-netsuite-arm-ssp-allocation", label: "Maxio vs NetSuite ARM: which handles SSP allocation?" },
+    sections: [
+      {
+        heading: "Maxio vs NetSuite",
+        paragraphs: [
+          "Maxio and NetSuite are often used together rather than one instead of the other. Maxio's NetSuite integration page describes three models: Maxio as the main two-way connector between the CRM and NetSuite, creating customer and billing records; \"Maxio Metrics\", which takes data from NetSuite for ARR reporting while NetSuite handles billing and revenue recognition; or Maxio connected to the CRM but run separately from NetSuite, with a summary revenue entry recorded each month.",
+        ],
+        table: {
+          headers: ["", "Maxio", "NetSuite Advanced Revenue Management"],
+          rows: [
+            ["What it is", "Billing and financial-reporting platform for subscription businesses, with revenue recognition built in", "Rule-based revenue recognition module inside NetSuite ERP"],
+            ["Standards named", "ASC 606, IFRS 15", "ASC 606, IFRS 15 (Oracle documentation)"],
+            ["SSP and allocation", "SSP mentioned in the FAQ; the allocation method is not described", "Fair-value methods including standalone selling price, through the Revenue Allocation add-on"],
+            ["What it needs", "Its own platform; integrations include NetSuite, Sage Intacct, QuickBooks, Xero, Salesforce and HubSpot", "NetSuite ERP; Revenue Allocation is an add-on to ARM Essentials"],
+            ["Published pricing", "Grow plan $599/month for up to $100k in monthly billings; Scale plan by quote", "Not published on the pages we could access"],
+          ],
+        },
+        note: "Product facts as listed on this page (checked 28 October 2026); integration models read on Maxio's site on 31 October 2026.",
+        sources: [
+          { href: "https://www.maxio.com/integrations/netsuite", label: "Maxio + NetSuite integration" },
+          { href: "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4328435538.html", label: "Oracle NetSuite help: Advanced Revenue Management" },
+          { href: "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4703499262.html", label: "Oracle NetSuite help: ARM and ASC 606 / IFRS 15" },
+        ],
+      },
+      {
+        heading: "Tabs vs Maxio",
+        table: {
+          headers: ["", "Tabs", "Maxio"],
+          rows: [
+            ["Product focus", "Billing, collections and ASC 606 revenue recognition for usage, credits, commitments and hybrid pricing", "Billing and financial reporting for subscription businesses, with revenue recognition built in"],
+            ["Standards named on the pages we read", "ASC 606", "ASC 606, IFRS 15"],
+            ["SSP", "Not mentioned", "Mentioned (FAQ)"],
+            ["Entry price", "Launch plan $2,000/month (up to $5M annual revenue, 100 active contracts)", "Grow plan $599/month (up to $100k in monthly billings)"],
+          ],
+        },
+        paragraphs: [
+          "Tabs' own comparison page suggests Maxio when SaaS billing, subscription management, revenue recognition and SaaS metrics are the core challenge, and Tabs when contracts and deal terms need to drive billing, revenue recognition, collections, reporting and ERP sync. That is one vendor's framing; ask both to run the same real contract.",
+        ],
+        sources: [{ href: "https://www.tabs.com/comparison/tabs-vs-maxio", label: "Tabs vs. Maxio (Tabs comparison page, read 31 October 2026)" }],
+      },
+      {
+        heading: "When teams outgrow Maxio, and what switching involves",
+        bullets: [
+          "Common triggers to review: billings pass the $100k-a-month limit of the published Grow plan, after which pricing is by quote; finance is standardising on an ERP revenue module such as NetSuite ARM or Sage Intacct; or audit questions centre on SSP allocation, which Maxio's revenue recognition page mentions only in its FAQ.",
+          "Export each contract's transactions and revenue schedules. In Maxio, every transaction carries its own revenue schedule, built from its start date, end date and recognition method.",
+          "Agree deferred revenue and unbilled AR by contract at the cutover date; Maxio calculates both at the contract level.",
+          "Cut over after a closed period. Maxio's closing dates lock revenue and invoicing changes before them, which gives a clean starting balance.",
+          "Map each recognition method (for example daily, or evenly with prorated partial months) to the new system, re-run a sample of contracts and check that the schedules match, then run one close in parallel.",
+        ],
+        sources: [{ href: "https://docs.maxio.com/getting-started/for-the-new-user/getting-started-managing-revenue", label: "Maxio help center: getting started, managing revenue" }],
+        links: [
+          { href: "/blog/how-auditors-test-ssp-allocation-asc-606", label: "How do auditors test SSP allocation?" },
+          { href: "/blog/how-to-prepare-for-asc-606-revenue-audit", label: "How to prepare for an ASC 606 revenue audit" },
+        ],
+      },
+    ],
     faqs: [
       {
         question: "Which Maxio alternative handles hybrid pricing?",
@@ -431,6 +486,21 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
         question: "How much does Maxio cost?",
         answer:
           "Maxio's pricing page lists a Grow plan at $599 a month for up to $100k in monthly billings, and a Scale plan priced by quote. Advanced revenue management is listed as an optional module, and the page does not spell out which tier includes what, so confirm the module cost with Maxio directly.",
+      },
+      {
+        question: "Does Maxio handle revenue recognition alongside subscription billing?",
+        answer:
+          "Yes. Maxio's help center says it generates revenue recognition schedules as a by-product of transactions, using each transaction's amount, dates and recognition method, such as daily or evenly with prorated partial months. It flags contracts where transaction amounts, invoices and revenue do not balance. Its revenue recognition page states ASC 606 and IFRS 15 compliance.",
+      },
+      {
+        question: "Maxio vs NetSuite: which is better for SaaS billing and revenue recognition?",
+        answer:
+          "They do different jobs and are often used together. Maxio is a billing and SaaS-reporting platform with revenue recognition built in; NetSuite Advanced Revenue Management is revenue recognition inside the NetSuite ERP, with SSP allocation through an add-on. Maxio's integration page describes three ways to run the two side by side.",
+      },
+      {
+        question: "Is SaaSOptics now Maxio?",
+        answer:
+          "Yes. Maxio announced that Chargify and SaaSOptics were becoming Maxio, so a search for SaaSOptics alternatives or competitors is now, in practice, a search for Maxio alternatives, and the options compared on this page apply.",
       },
     ],
   },
