@@ -1,4 +1,5 @@
 import type { PageFaq } from "@/lib/page-faqs";
+import type { ContentSection } from "@/lib/content-sections";
 /**
  * "<Vendor> alternatives" pages.
  *
@@ -376,6 +377,8 @@ export interface AlternativesPage {
   relatedPost?: { href: string; label: string };
   /** Optional real-query FAQs; rendered visibly and as FAQPage JSON-LD only when present. */
   faqs?: PageFaq[];
+  /** Optional extra sections, rendered after "How to choose"; their sources join the page's source list. English page only. */
+  sections?: ContentSection[];
 }
 
 export const ALTERNATIVES_PAGES: AlternativesPage[] = [

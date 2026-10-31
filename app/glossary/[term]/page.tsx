@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "@/components/navbar";
 import ResourceFooter from "@/components/resource-footer";
 import PageFaqs from "@/components/page-faqs";
+import ContentSections from "@/components/content-sections";
 import { faqGraph } from "@/lib/page-faqs";
 import { hreflangMap } from "@/lib/i18n";
 import { langsFor } from "@/lib/i18n-data";
@@ -129,6 +130,8 @@ export default function GlossaryTermPage({ params }: Props) {
             <p className="text-xs text-slate-500">Illustrative figures for explanation only, not taken from a real contract.</p>
           </div>
         </section>
+
+        <ContentSections sections={t.sections} />
 
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-slate-900">Common mistakes</h2>

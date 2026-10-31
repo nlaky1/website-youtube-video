@@ -5,6 +5,7 @@ import Link from "next/link";
 import { hreflangMap } from "@/lib/i18n";
 import { langsFor } from "@/lib/i18n-data";
 import PageFaqs from "@/components/page-faqs";
+import ContentSections from "@/components/content-sections";
 import { faqGraph } from "@/lib/page-faqs";
 import Navbar from "@/components/navbar";
 import ResourceFooter from "@/components/resource-footer";
@@ -63,6 +64,14 @@ export default function AlternativesDetailPage({ params }: Props) {
       if (!seen.has(s.url)) {
         seen.add(s.url);
         sources.push(s);
+      }
+    }
+  }
+  for (const sec of p.sections ?? []) {
+    for (const s of sec.sources ?? []) {
+      if (!seen.has(s.href)) {
+        seen.add(s.href);
+        sources.push({ label: s.label, url: s.href });
       }
     }
   }
@@ -263,6 +272,8 @@ export default function AlternativesDetailPage({ params }: Props) {
             ) : null}
           </p>
         </section>
+
+        <ContentSections sections={p.sections} />
 
         <PageFaqs faqs={p.faqs} />
 
