@@ -1114,7 +1114,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     description:
       "Key ASC 606 and IFRS 15 practical expedients: financing under one year, contract costs, right to invoice, RPO disclosure and portfolios, with an example.",
     definition:
-      "Practical expedients are optional simplifications in ASC 606 and IFRS 15 that reduce cost without materially changing results. Examples include ignoring a significant financing component of one year or less, expensing contract costs amortised within a year, right-to-invoice measurement, and omitting certain remaining performance obligation disclosures.",
+      "A practical expedient is an optional simplification that a standard allows, elected as an accounting policy, so an entity can skip or simplify a step to save cost and effort. ASC 606 and IFRS 15 include several, such as ignoring a financing component of one year or less, expensing contract costs amortised within a year, and right-to-invoice measurement.",
     references: [
       { standard: "ASC 606", ref: "606-10-32-18 (financing), 606-10-55-18 (right to invoice), 606-10-50-14 (RPO)" },
       { standard: "ASC 340-40", ref: "340-40-25-4 (contract costs)" },
@@ -1137,6 +1137,114 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["significant-financing-component", "contract-costs-asc-340-40", "remaining-performance-obligations", "output-method", "series-guidance"],
     further: [ASC_HUB, DESIGN_PARTNERS],
+    soluqubeNote:
+      "Soluqube does not elect or track practical expedients; they are your policy choices. For the contracts you run through it, it produces the relative-SSP allocation and a full-term schedule that ties to the cent, which your policy memo and RPO disclosure can draw on.",
+    sections: [
+      {
+        heading: "List of ASC 606 practical expedients",
+        table: {
+          headers: ["Practical expedient", "Reference", "When it applies", "Disclosure"],
+          rows: [
+            [
+              "Significant financing component",
+              "ASC 606-10-32-18; IFRS 15.63",
+              "At contract inception, the expected time between payment and transfer of the goods or services is one year or less",
+              "Yes: state that it is used (ASC 606-10-50-22; IFRS 15.129)",
+            ],
+            [
+              "Incremental costs of obtaining a contract",
+              "ASC 340-40-25-4; IFRS 15.94",
+              "The asset would be amortised over one year or less, so the cost can be expensed when incurred",
+              "Yes: state that it is used (ASC 606-10-50-22; IFRS 15.129)",
+            ],
+            [
+              "Right to invoice",
+              "ASC 606-10-55-18; IFRS 15.B16",
+              "The amount the entity can invoice corresponds directly to the value of performance to date, such as an hourly rate",
+              "Yes, when also used to leave amounts out of the RPO disclosure",
+            ],
+            [
+              "Remaining performance obligation (RPO) disclosure",
+              "ASC 606-10-50-14 and 50-14A; IFRS 15.121",
+              "Contracts with an original expected duration of one year or less, or revenue recognised under the right-to-invoice expedient (ASC 606 adds certain variable consideration)",
+              "Yes: say which exemption is used and describe the contracts left out",
+            ],
+            [
+              "Portfolio approach",
+              "ASC 606-10-10-4; IFRS 15.4",
+              "Contracts with similar characteristics, when the result would not differ materially from contract-by-contract accounting",
+              "No specific disclosure",
+            ],
+            [
+              "Sales and similar taxes",
+              "ASC 606-10-32-2A (US GAAP only)",
+              "Policy election to exclude all sales and similar taxes collected from customers from the transaction price",
+              "Disclose the accounting policy",
+            ],
+            [
+              "Shipping and handling after control transfers",
+              "ASC 606-10-25-18B (US GAAP only)",
+              "Policy election to treat shipping after the customer obtains control as a fulfilment cost, not a separate obligation",
+              "Disclose the accounting policy",
+            ],
+            [
+              "Immaterial promises",
+              "ASC 606-10-25-16A (US GAAP only)",
+              "Promised goods or services that are immaterial in the context of the contract need not be assessed as performance obligations",
+              "No specific disclosure",
+            ],
+          ],
+        },
+        paragraphs: [
+          "Ind AS 115 follows IFRS 15 here. Lease standards such as ASC 842 have their own practical expedients (for example, the short-term lease election); they are a separate list and do not change revenue accounting under ASC 606.",
+        ],
+      },
+      {
+        heading: "Journal entries for the worked example",
+        paragraphs: [
+          "The $12,000 subscription is billed in advance and delivered within a year, so the financing expedient means no interest is recorded. The $1,200 commission shows the contract-cost expedient: with it, the cost is expensed at once; without it, the cost is capitalised and amortised.",
+        ],
+        table: {
+          headers: ["Date", "Account", "Dr", "Cr"],
+          rows: [
+            ["Contract start", "Accounts receivable", "12,000.00", ""],
+            ["", "Contract liability (deferred revenue)", "", "12,000.00"],
+            ["Each month-end, months 1 to 12", "Contract liability (deferred revenue)", "1,000.00", ""],
+            ["", "Subscription revenue", "", "1,000.00"],
+            ["Contract start, with the expedient", "Commission expense", "1,200.00", ""],
+            ["", "Commissions payable", "", "1,200.00"],
+            ["Contract start, without the expedient", "Capitalised contract costs (asset)", "1,200.00", ""],
+            ["", "Commissions payable", "", "1,200.00"],
+            ["Each month-end, months 1 to 12, without the expedient", "Commission expense (amortisation)", "100.00", ""],
+            ["", "Capitalised contract costs (asset)", "", "100.00"],
+          ],
+        },
+        note: "Illustrative figures. Both monthly splits leave no balance after month 12.",
+        links: [{ href: "/blog/how-to-prepare-for-asc-606-revenue-audit", label: "How to prepare for an ASC 606 revenue audit (policy elections belong in the file)" }],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a practical expedient?",
+        answer:
+          "A practical expedient is an optional shortcut that an accounting standard allows, so an entity can skip or simplify a step. Under ASC 606 and IFRS 15, examples include ignoring financing effects of one year or less and expensing short-lived contract costs. Each is elected as a policy, applied consistently to similar contracts and disclosed where required.",
+      },
+      {
+        question: "What is an example of a practical expedient in ASC 606?",
+        answer:
+          "A common one is the contract-cost expedient in ASC 340-40-25-4. If a sales commission would be amortised over one year or less, for example a $1,200 commission on a 12-month contract with commensurate renewal commissions, the company can expense it when incurred instead of capitalising it and amortising $100 a month.",
+      },
+      {
+        question: "What is the one-year practical expedient for a significant financing component?",
+        answer:
+          "Under ASC 606-10-32-18 and IFRS 15 paragraph 63, an entity need not adjust the promised consideration for the time value of money if, at contract inception, it expects the period between the customer's payment and the transfer of the goods or services to be one year or less. Using it must be disclosed.",
+      },
+      {
+        question: "Do practical expedients have to be disclosed?",
+        answer:
+          "Several do. Under ASC 606-10-50-22 and IFRS 15 paragraph 129, an entity that uses the financing or contract-cost expedient must say so. Using an exemption from the remaining performance obligation disclosure also requires saying which exemption applies and describing the contracts left out. Policy elections such as sales tax treatment are disclosed as accounting policies.",
+      },
+    ],
   },
   {
     slug: "bill-and-hold",
