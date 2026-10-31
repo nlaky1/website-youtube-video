@@ -589,6 +589,23 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
       { vendor: "rillet", fit: "If you are also rethinking your general ledger, Rillet bundles ASC 606 revenue recognition into an ERP." },
       { vendor: "soluqube", fit: "Covers Ind AS 115 with GST isolation as well as ASC 606, for allocation and schedules only. It does no billing or collections." },
     ],
+    faqs: [
+      {
+        question: "What are the best alternatives to Tabs for B2B billing?",
+        answer:
+          "It depends on what you are replacing. For billing plus revenue recognition, compare Maxio, Zenskar and Chargebee with RevRec. If you bill through Stripe, look at Stripe Revenue Recognition first. If you are also replacing the general ledger, Rillet bundles revenue recognition into an ERP. Soluqube covers allocation and schedules only, with no billing.",
+      },
+      {
+        question: "Does Tabs support IFRS 15 as well as ASC 606?",
+        answer:
+          "The Tabs pages we read name ASC 606 revenue recognition on every plan but do not mention IFRS 15 or standalone selling price. That does not mean the product lacks them. If you report under IFRS 15 or Ind AS 115 as well as ASC 606, ask Tabs to confirm coverage in writing and to run one of your contracts.",
+      },
+      {
+        question: "How much does Tabs cost?",
+        answer:
+          "Tabs' pricing page lists a Launch plan at $2,000 a month for companies with up to $5M in annual revenue and 100 active contracts. Higher tiers, set by revenue band up to $50M and above, are priced on request, so confirm the cost for your volume with Tabs directly.",
+      },
+    ],
   },
   {
     slug: "rillet",
