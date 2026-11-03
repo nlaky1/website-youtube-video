@@ -105,9 +105,9 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   {
     slug: "standalone-selling-price",
     term: "Standalone selling price (SSP)",
-    title: "Standalone Selling Price (SSP): Definition",
+    title: "Standalone Selling Price (SSP): ASC 606 Methods",
     description:
-      "Standalone selling price under ASC 606 and IFRS 15: the definition, three estimation methods, a worked SaaS licence and onboarding example, mistakes.",
+      "Standalone selling price (SSP) under ASC 606 and IFRS 15: estimation hierarchy, observable prices, cost plus margin, residual approach, and worked example.",
     definition:
       "Standalone selling price (SSP) is the price at which an entity would sell a promised good or service separately to a customer. The best evidence is an observable price from standalone sales to similar customers in similar circumstances. When none exists, the entity estimates SSP using a method that maximises observable inputs.",
     references: [
@@ -132,7 +132,61 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Never refreshing SSP analysis as pricing and discounting change.",
     ],
     related: ["relative-ssp-method", "observable-price", "ssp-range", "adjusted-market-assessment", "expected-cost-plus-margin", "residual-approach"],
-    further: [SSP_TOOL, SSP_EXAMPLE_POST],
+    further: [SSP_TOOL, SSP_EXAMPLE_POST, { href: "/blog/how-auditors-test-ssp-allocation-asc-606", label: "How do auditors test SSP allocation?" }, { href: "/blog/expected-cost-plus-margin-approach-ssp-example", label: "Expected cost plus margin approach: worked bundle example" }],
+    sections: [
+      {
+        heading: "Hierarchy of SSP determination methods under ASC 606-10-32-34",
+        paragraphs: [
+          "ASC 606-10-32-33 requires entities to determine SSP at contract inception and allocate the transaction price based on relative SSP. While no formal hierarchy is mandated, observable prices must be used if available before applying estimation methods.",
+        ],
+        table: {
+          headers: ["Method", "Standard preference", "Typical products", "Key audit evidence"],
+          rows: [
+            [
+              "Observable standalone sales (ASC 606-10-32-31)",
+              "Primary: required when observable standalone sales exist",
+              "Standard SaaS subscriptions, add-on user tiers, established modules",
+              "12-month historical sales data clustering within management's price band (e.g. median ±15%)",
+            ],
+            [
+              "Adjusted market assessment (ASC 606-10-32-34(a))",
+              "Secondary estimate: when standalone sales are unavailable",
+              "New software modules sold in competitive markets with competitor pricing",
+              "Competitor price cards, industry benchmark reports, and standard discounting matrices",
+            ],
+            [
+              "Expected cost plus margin (ASC 606-10-32-34(b))",
+              "Secondary estimate: when costs are direct and measurable",
+              "Bespoke onboarding packages, custom integrations, technical training",
+              "Loaded hourly consultant cost cards, delivery time budgets, and supported target margin",
+            ],
+            [
+              "Residual approach (ASC 606-10-32-34(c))",
+              "Strictly restricted exception: only if price is highly variable or uncertain",
+              "Brand new or custom software where other bundle obligations have observable SSPs",
+              "Documentation proving standalone selling price is highly variable or uncertain, plus observable SSPs for all other items",
+            ],
+          ],
+        },
+        links: [
+          { href: "/glossary/observable-price", label: "Observable standalone selling price" },
+          { href: "/glossary/adjusted-market-assessment", label: "Adjusted market assessment approach" },
+          { href: "/glossary/expected-cost-plus-margin", label: "Expected cost plus margin approach" },
+          { href: "/glossary/residual-approach", label: "Residual approach under ASC 606" },
+        ],
+      },
+      {
+        heading: "Establishing SSP price bands and audit workpapers",
+        paragraphs: [
+          "In practice, standalone sales do not occur at a single fixed price due to volume discounting and negotiation. Finance teams establish an acceptable SSP price band—typically median ±15% or the interquartile range (IQR)—across historical standalone transactions.",
+          "If a contract's stated price falls within the established band, the stated price can be supported as SSP. When contract prices fall outside the band, or when bundles are sold at significant aggregate discounts, the transaction price is reallocated across all performance obligations using relative SSP.",
+        ],
+        links: [
+          { href: "/blog/how-auditors-test-ssp-allocation-asc-606", label: "How auditors test SSP allocation: sampling, price dispersion, and workpapers" },
+          { href: "/tools/ssp-allocation-calculator", label: "Interactive SSP allocation calculator" },
+        ],
+      },
+    ],
     faqs: [
       {
         question: "How often should standalone selling price estimates be refreshed?",
@@ -143,6 +197,16 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
         question: "How do auditors test standalone selling price (SSP) allocation?",
         answer:
           "Auditors test SSP allocation under PCAOB standards by selecting a sample of revenue contracts, verifying that observable standalone sales cluster within management's defined price band (typically median ±15%), checking that total transaction price equals the sum of allocated obligations, and validating that source contract clauses support each identified performance obligation.",
+      },
+      {
+        question: "Can contract stated prices be presumed to represent SSP?",
+        answer:
+          "No. Under ASC 606-10-32-32, the stated contract price or list price is not presumed to represent standalone selling price. Management must evaluate observable standalone sales or use reasonable estimation methods to prove that the assigned price reflects what the good or service would sell for separately.",
+      },
+      {
+        question: "What is the relative standalone selling price method?",
+        answer:
+          "The relative SSP method allocates the total transaction price across all performance obligations in proportion to their relative standalone selling prices. Any contract-level discount or premium is allocated proportionally across all obligations, unless specific criteria for allocating discounts to individual obligations are satisfied under ASC 606-10-32-37.",
       },
     ],
   },
@@ -487,9 +551,9 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   {
     slug: "contract-asset",
     term: "Contract asset",
-    title: "Contract Asset Under ASC 606: Definition",
+    title: "Contract Asset Under ASC 606: Definition & Example",
     description:
-      "What a contract asset is under ASC 606, IFRS 15 and Ind AS 115, how it differs from a receivable, and a worked two-milestone journal entry example.",
+      "What a contract asset is under ASC 606 and IFRS 15: definition, difference from receivables, conditional milestones, journal entries, and balance sheet rules.",
     definition:
       "A contract asset is an entity's right to consideration in exchange for goods or services already transferred to the customer, when that right is conditioned on something other than the passage of time, typically the entity's future performance. When the right becomes unconditional, the amount is reclassified to a receivable.",
     references: [
@@ -513,13 +577,91 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["contract-liability", "unbilled-receivable", "deferred-revenue", "input-method", "disaggregation-of-revenue"],
     further: [ASC_HUB, DESIGN_PARTNERS],
+    sections: [
+      {
+        heading: "Contract asset vs accounts receivable: conditionality test",
+        paragraphs: [
+          "Under ASC 606-10-45-3 and IFRS 15 paragraph 107, the distinguishing feature of a contract asset is conditionality: an entity has satisfied a performance obligation by transferring goods or services, but its legal right to payment is conditioned on something other than the mere passage of time (such as completing subsequent deliverables).",
+        ],
+        table: {
+          headers: ["Attribute", "Contract asset (ASC 606-10-45-3)", "Accounts receivable (ASC 606-10-45-4)"],
+          rows: [
+            [
+              "Right to consideration",
+              "Conditional on entity's future performance or milestone satisfaction",
+              "Unconditional; only the passage of time is required before payment is due",
+            ],
+            [
+              "Recognition trigger",
+              "Performance obligation satisfied, but contractual billing rights await subsequent milestones",
+              "Goods or services transferred and unconditional legal right to invoice or collect exists",
+            ],
+            [
+              "Reclassification",
+              "Reclassified to accounts receivable when the billing condition is fulfilled",
+              "Settled through cash receipt or customer write-off",
+            ],
+            [
+              "Balance sheet presentation",
+              "Presented as 'Contract asset' (separate line item, current or non-current)",
+              "Presented as 'Accounts receivable / Trade receivables'",
+            ],
+            [
+              "Impairment standard",
+              "Assessed for credit risk under ASC 326 (CECL) or IFRS 9",
+              "Assessed for credit risk under ASC 326 (CECL) or IFRS 9",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Journal entries for the worked two-milestone example",
+        paragraphs: [
+          "In the worked example, a $50,000 contract requires delivering two modules, each with an allocated SSP of $25,000, but billing can only occur after both modules are delivered.",
+        ],
+        table: {
+          headers: ["Date", "Account", "Dr", "Cr"],
+          rows: [
+            ["Month 3: Module A delivered", "Contract asset", "25,000.00", ""],
+            ["", "Software revenue", "", "25,000.00"],
+            ["Month 5: Module B delivered and invoiced", "Accounts receivable", "50,000.00", ""],
+            ["", "Contract asset (cleared upon billing right)", "", "25,000.00"],
+            ["", "Software revenue", "", "25,000.00"],
+            ["Month 6: Customer pays invoice", "Cash", "50,000.00", ""],
+            ["", "Accounts receivable", "", "50,000.00"],
+          ],
+        },
+        note: "Illustrative figures. Netting contract assets against contract liabilities of unrelated customer contracts is prohibited under ASC 606-10-45-1; netting is performed strictly at the individual contract level.",
+        links: [
+          { href: "/glossary/contract-liability", label: "Contract liability under ASC 606" },
+          { href: "/glossary/unbilled-receivable", label: "Unbilled receivable vs contract asset" },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "When does a contract asset become an accounts receivable under ASC 606?",
+        answer:
+          "A contract asset is reclassified to accounts receivable the moment the entity's right to consideration becomes unconditional under ASC 606-10-45-3. This typically occurs when a required contract milestone is achieved, an acceptance certificate is signed, or contractual billing prerequisites are satisfied.",
+      },
+      {
+        question: "Can you net contract assets and contract liabilities together?",
+        answer:
+          "Netting is permitted only at the individual contract level. Under ASC 606-10-45-1, an entity determines its net position (either a contract asset or contract liability) for each individual contract. Netting across different customer contracts on the balance sheet is strictly prohibited.",
+      },
+      {
+        question: "Is a contract asset the same as an unbilled receivable?",
+        answer:
+          "No. An unbilled receivable represents an unconditional right to payment where only the passage of time is needed before an invoice is issued (ASC 606-10-45-4). A contract asset is conditional on the vendor's future performance or other contractual dependencies before billing is legally permissible.",
+      },
+    ],
   },
   {
     slug: "contract-liability",
     term: "Contract liability",
-    title: "Contract Liability Under ASC 606: Definition",
+    title: "Contract Liability (ASC 606): Journal Entries & Rules",
     description:
-      "What a contract liability is under ASC 606, IFRS 15 and Ind AS 115, how it relates to deferred revenue, and a worked annual-prepayment journal example.",
+      "Contract liability (deferred revenue) under ASC 606 and IFRS 15: definition, recognition criteria, advance billing journal entries, and presentation rules.",
     definition:
       "A contract liability is an entity's obligation to transfer goods or services to a customer for which it has received consideration, or for which consideration is unconditionally due. In SaaS it is usually presented as deferred revenue, and it unwinds into revenue as the related performance obligation is satisfied.",
     references: [
@@ -543,13 +685,84 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["deferred-revenue", "contract-asset", "unbilled-receivable", "remaining-performance-obligations", "ratable-recognition"],
     further: [ASC_HUB, ROUNDING_POST],
+    sections: [
+      {
+        heading: "Contract liability vs contract asset vs refund liability",
+        paragraphs: [
+          "ASC 606 creates distinct balance sheet accounts for contract-related rights and obligations. A contract liability reflects unearned revenue received in advance, whereas a contract asset reflects earned revenue awaiting milestone completion.",
+        ],
+        table: {
+          headers: ["Category", "Balance sheet role", "ASC 606 reference", "Typical trigger"],
+          rows: [
+            [
+              "Contract liability",
+              "Obligation to transfer goods or services for consideration received or due",
+              "ASC 606-10-45-2; IFRS 15.106",
+              "Annual SaaS subscription invoiced or collected in advance on 1 January",
+            ],
+            [
+              "Contract asset",
+              "Right to consideration for goods or services already transferred, conditional on future performance",
+              "ASC 606-10-45-3; IFRS 15.107",
+              "First module delivered under a milestone contract that permits billing only upon final delivery",
+            ],
+            [
+              "Refund liability",
+              "Obligation to return consideration to customer due to expected returns or rebates",
+              "ASC 606-10-32-8; IFRS 15.55",
+              "Estimated volume rebates or historical customer product returns",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Journal entries for the $24,000 annual subscription example",
+        paragraphs: [
+          "The worked example illustrates a $24,000 12-month subscription paid up front on 1 January, recognized ratably at $2,000 per month.",
+        ],
+        table: {
+          headers: ["Date", "Account", "Dr", "Cr"],
+          rows: [
+            ["1 January: Prepayment received", "Cash", "24,000.00", ""],
+            ["", "Contract liability (deferred revenue)", "", "24,000.00"],
+            ["31 January: Month 1 delivery", "Contract liability (deferred revenue)", "2,000.00", ""],
+            ["", "Subscription revenue", "", "2,000.00"],
+            ["Months 2 to 12 (monthly entries)", "Contract liability (deferred revenue)", "2,000.00", ""],
+            ["", "Subscription revenue", "", "2,000.00"],
+            ["31 December: Final contract balance", "Contract liability balance", "0.00", "Cleared"],
+          ],
+        },
+        note: "Illustrative figures. For multi-year customer prepayments, the portion to be recognized beyond 12 months must be classified under non-current liabilities.",
+        links: [
+          { href: "/glossary/deferred-revenue", label: "Deferred revenue under ASC 606" },
+          { href: "/glossary/remaining-performance-obligations", label: "Remaining performance obligations (RPO)" },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is a contract liability under ASC 606?",
+        answer:
+          "Under ASC 606-10-45-2 and IFRS 15.106, a contract liability is an entity's obligation to transfer goods or services to a customer for which the entity has received consideration (or an amount of consideration is due) from the customer. In commercial software and SaaS practice, it is commonly labeled 'deferred revenue'.",
+      },
+      {
+        question: "When should a contract liability be recorded?",
+        answer:
+          "A contract liability is recorded at the earlier of when payment is received from the customer or when consideration is unconditionally due (for example, when an upfront non-cancellable invoice is issued), prior to transferring control of the promised goods or services.",
+      },
+      {
+        question: "How is a contract liability presented on the balance sheet?",
+        answer:
+          "Contract liabilities are presented as current liabilities for the portion expected to be recognized as revenue within 12 months, and as non-current (long-term) liabilities for consideration relating to performance obligations extending beyond one year.",
+      },
+    ],
   },
   {
     slug: "deferred-revenue",
     term: "Deferred revenue",
-    title: "Deferred Revenue Under ASC 606: Example",
+    title: "Deferred Revenue Under ASC 606: Entries & Schedule",
     description:
-      "Deferred revenue under ASC 606 and IFRS 15: definition, how it relates to a contract liability, and a 36-month schedule that ends at exactly $0.00.",
+      "Deferred revenue under ASC 606 and IFRS 15: definition, relationship to contract liabilities, 12-month ratable journal entries, and schedule tie-outs.",
     definition:
       "Deferred revenue is consideration received or billed in advance for goods or services not yet transferred. ASC 606 and IFRS 15 call it a contract liability but permit other descriptions. It decreases as revenue is recognised, and for a ratable subscription the balance should reach exactly zero at the end of the term.",
     references: [
@@ -572,14 +785,105 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Not splitting current and non-current deferred revenue for multi-year prepayments.",
     ],
     related: ["contract-liability", "ratable-recognition", "terminal-period-remainder-absorption", "remaining-performance-obligations", "unbilled-receivable"],
-    further: [ROUNDING_POST, SSP_TOOL],
+    further: [ROUNDING_POST, SSP_TOOL, { href: "/blog/how-to-prepare-for-asc-606-revenue-audit", label: "How to prepare for an ASC 606 revenue audit" }],
+    sections: [
+      {
+        heading: "Deferred revenue vs contract liability vs unbilled receivable",
+        paragraphs: [
+          "While ASC 606 uses the technical term 'contract liability', commercial software companies routinely present this balance as 'deferred revenue' on their balance sheet and customer invoices as permitted by ASC 606-10-45-5.",
+        ],
+        table: {
+          headers: ["Concept", "Consideration status", "Balance sheet role", "ASC 606 ref", "SaaS example"],
+          rows: [
+            [
+              "Deferred revenue (contract liability)",
+              "Received or billed in advance before performance transfers",
+              "Current or non-current liability",
+              "ASC 606-10-45-2",
+              "Upfront annual payment for a 12-month cloud software license",
+            ],
+            [
+              "Unbilled receivable",
+              "Earned through delivery; unconditional right to payment with invoice in arrears",
+              "Current asset (accounts receivable)",
+              "ASC 606-10-45-4",
+              "Monthly platform usage delivered in June, billed on standard quarterly cycle in July",
+            ],
+            [
+              "Contract asset",
+              "Earned through delivery; conditional on future performance milestones",
+              "Current or non-current asset",
+              "ASC 606-10-45-3",
+              "Custom integration delivered, but billing contractually awaits final client acceptance",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Journal entries: 12-month advance SaaS subscription",
+        paragraphs: [
+          "Consider an illustrative $12,000 annual subscription beginning 1 January, invoiced and collected up front, with services recognized ratably over 12 months ($1,000 per month).",
+        ],
+        table: {
+          headers: ["Date", "Account", "Dr", "Cr"],
+          rows: [
+            ["1 Jan: Upfront invoice issued", "Accounts receivable", "12,000.00", ""],
+            ["", "Deferred revenue (contract liability)", "", "12,000.00"],
+            ["15 Jan: Cash payment collected", "Cash", "12,000.00", ""],
+            ["", "Accounts receivable", "", "12,000.00"],
+            ["31 Jan: Month 1 recognition", "Deferred revenue (contract liability)", "1,000.00", ""],
+            ["", "Subscription revenue", "", "1,000.00"],
+            ["Months 2 to 12 (monthly entries)", "Deferred revenue (contract liability)", "1,000.00", ""],
+            ["", "Subscription revenue", "", "1,000.00"],
+            ["31 Dec: Final contract balance", "Deferred revenue balance", "0.00", "Fully cleared"],
+          ],
+        },
+        note: "Illustrative figures. Where subscription amounts do not divide evenly (e.g. $10,000 over 3 months), terminal-period remainder absorption absorbs the decimal remainder in the final month so the sub-ledger ties to exactly $0.00.",
+        links: [
+          { href: "/blog/ssp-allocation-rounding-residual-cent-asc-606", label: "SSP allocation rounding in ASC 606: where the cent goes" },
+          { href: "/tools/ssp-allocation-calculator", label: "Interactive SSP allocation calculator" },
+        ],
+      },
+      {
+        heading: "Balance sheet presentation: current vs non-current split",
+        paragraphs: [
+          "Under US GAAP and IFRS, prepayments spanning multi-year terms must be bifurcated on the balance sheet. Consideration expected to be recognized as revenue within the next twelve months is presented under Current Liabilities, while consideration relating to subsequent periods is presented under Non-Current Liabilities.",
+          "Netting deferred revenue against contract assets of different customer contracts is prohibited under ASC 606-10-45-1. Each contract's net position is evaluated independently.",
+        ],
+        links: [
+          { href: "/blog/how-to-prepare-for-asc-606-revenue-audit", label: "How to prepare for an ASC 606 revenue audit: waterfall reconciliations and GL tie-outs" },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is deferred revenue considered an asset or a liability under ASC 606?",
+        answer:
+          "Deferred revenue is a liability (specifically defined as a 'contract liability' under ASC 606-10-45-2 and IFRS 15.106). It represents an obligation to deliver goods or services in the future for which consideration has already been received or is unconditionally due.",
+      },
+      {
+        question: "How is deferred revenue recognized over time?",
+        answer:
+          "Deferred revenue is recognized as revenue over time as the vendor satisfies its performance obligations. For ratable SaaS subscriptions, recognition is recorded monthly or daily over the contract term, steadily reducing the contract liability until the balance reaches zero upon term expiration.",
+      },
+      {
+        question: "What is the difference between deferred revenue and accrued revenue?",
+        answer:
+          "Deferred revenue represents cash received or billed before performance occurs (a balance sheet liability). Accrued revenue (unbilled receivable) represents revenue recognized for services already performed before an invoice has been issued (a balance sheet asset).",
+      },
+      {
+        question: "Why do external auditors scrutinize the deferred revenue waterfall?",
+        answer:
+          "Auditors reconcile the deferred revenue waterfall to confirm that unearned revenue is not prematurely recognized, that billing schedules agree to signed contracts, that contract modifications are properly accounted for, and that multi-year balances are accurately classified between current and long-term liabilities.",
+      },
+    ],
   },
   {
     slug: "unbilled-receivable",
     term: "Unbilled receivable",
-    title: "Unbilled Receivable vs Contract Asset",
+    title: "Unbilled Receivables: ASC 606 Definition & Entries",
     description:
-      "What an unbilled receivable is under ASC 606 and IFRS 15, how it differs from a contract asset, and a worked usage-billed-in-arrears example.",
+      "Unbilled receivables under ASC 606 and IFRS 15: definition, difference from contract assets, usage in arrears journal entries, and presentation.",
     definition:
       "An unbilled receivable is revenue recognised for which the entity's right to consideration is already unconditional, with only the passage of time required before payment, but no invoice has been issued yet. Unlike a contract asset, it is a receivable and is presented with accounts receivable.",
     references: [
@@ -603,6 +907,82 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     ],
     related: ["contract-asset", "contract-liability", "deferred-revenue", "output-method", "series-guidance"],
     further: [ASC_HUB, DESIGN_PARTNERS],
+    sections: [
+      {
+        heading: "Unbilled receivable vs contract asset vs accounts receivable",
+        paragraphs: [
+          "Understanding the difference between an unbilled receivable and a contract asset is one of the most common focus areas during revenue accounting audits. The critical test is whether the right to consideration is unconditional or conditional.",
+        ],
+        table: {
+          headers: ["Attribute", "Unbilled receivable", "Contract asset", "Accounts receivable (billed)"],
+          rows: [
+            [
+              "Right to consideration",
+              "Unconditional: only the passage of time is required before billing",
+              "Conditional on entity's future performance or milestone completion",
+              "Unconditional: invoice issued and payment due per credit terms",
+            ],
+            [
+              "ASC 606 reference",
+              "ASC 606-10-45-4; IFRS 15.108",
+              "ASC 606-10-45-3; IFRS 15.107",
+              "ASC 606-10-45-3; IFRS 15.105",
+            ],
+            [
+              "Balance sheet presentation",
+              "Included in Accounts Receivable (trade receivables)",
+              "Presented separately as Contract Asset (current/non-current)",
+              "Accounts Receivable (trade receivables)",
+            ],
+            [
+              "Typical trigger",
+              "Usage delivered in Month 1, billed quarterly in arrears per contract terms",
+              "Deliverable 1 completed, but contract conditions billing on Deliverable 2",
+              "Monthly subscription invoice delivered with Net 30 terms",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Journal entries: usage earned in arrears",
+        paragraphs: [
+          "The worked example illustrates usage fees earned monthly but billed quarterly in arrears, where January usage totals $8,000.",
+        ],
+        table: {
+          headers: ["Date", "Account", "Dr", "Cr"],
+          rows: [
+            ["31 Jan: Usage earned", "Unbilled receivable (Accounts receivable)", "8,000.00", ""],
+            ["", "Usage revenue", "", "8,000.00"],
+            ["31 Mar: Quarterly invoice issued", "Accounts receivable (billed)", "8,000.00", ""],
+            ["", "Unbilled receivable", "", "8,000.00"],
+            ["15 Apr: Customer payment received", "Cash", "8,000.00", ""],
+            ["", "Accounts receivable (billed)", "", "8,000.00"],
+          ],
+        },
+        note: "Illustrative figures. Because the vendor's right to payment requires only the passage of time until the contractual billing date, the balance is an unbilled receivable rather than a contract asset.",
+        links: [
+          { href: "/glossary/contract-asset", label: "Contract asset under ASC 606" },
+          { href: "/glossary/deferred-revenue", label: "Deferred revenue under ASC 606" },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is an unbilled receivable considered a contract asset under ASC 606?",
+        answer:
+          "No. Under ASC 606-10-45-4, an unbilled receivable is an unconditional right to consideration where nothing other than the passage of time is required before billing. A contract asset is conditional on the vendor satisfying additional performance obligations before payment rights vest.",
+      },
+      {
+        question: "How is an unbilled receivable presented on the balance sheet?",
+        answer:
+          "Because an unbilled receivable represents an unconditional legal right to payment, ASC 606 permits it to be classified within accounts receivable (trade receivables), typically segregated in a distinct general ledger sub-account and disclosed in financial statement notes.",
+      },
+      {
+        question: "Are unbilled receivables subject to credit loss reserves?",
+        answer:
+          "Yes. Unbilled receivables are financial assets subject to current expected credit loss (CECL) provisions under ASC 326 or expected credit loss (ECL) assessment under IFRS 9, evaluated on the same basis as billed trade receivables.",
+      },
+    ],
   },
   {
     slug: "material-right",
@@ -871,9 +1251,9 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   {
     slug: "contract-modification",
     term: "Contract modification",
-    title: "Contract Modification Under ASC 606: Example",
+    title: "ASC 606 Contract Modifications: 3 Accounting Methods",
     description:
-      "Contract modifications under ASC 606-10-25-10 to 25-13 and IFRS 15: the three outcomes and a worked SaaS seat upsell priced at and below SSP.",
+      "Accounting for contract modifications under ASC 606-10-25-12 and 25-13: separate contract vs prospective vs cumulative catch-up decision framework.",
     definition:
       "A contract modification is an approved change in the scope or price, or both, of a contract. It is accounted for as a separate contract, prospectively as a termination of the old contract and creation of a new one, or by cumulative catch-up, depending on whether the added goods or services are distinct and priced at standalone selling price.",
     references: [
@@ -897,9 +1277,84 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Using a cumulative catch-up when the remaining services are distinct.",
     ],
     related: ["cumulative-catch-up", "prospective-method", "standalone-selling-price", "distinct-good-or-service", "transaction-price"],
-    further: [MODIFICATION_POST, DESIGN_PARTNERS],
+    further: [MODIFICATION_POST, DESIGN_PARTNERS, { href: "/blog/how-to-prepare-for-asc-606-revenue-audit", label: "How to prepare for an ASC 606 revenue audit" }],
     soluqubeNote:
-      "Soluqube does not automate contract-modification accounting today; it is on the roadmap. The engine handles the original allocation and schedule.",
+      "Soluqube does not automate contract-modification accounting today; it is on the roadmap. What it does produce is the original relative-SSP baseline schedule and hashed workpaper that modifications are measured against.",
+    sections: [
+      {
+        heading: "The 3 contract modification treatments under ASC 606",
+        paragraphs: [
+          "ASC 606-10-25-12 and 25-13 provide a clear decision framework for contract modifications based on two criteria: whether the additional goods or services are distinct, and whether they are priced at standalone selling price.",
+        ],
+        table: {
+          headers: ["Treatment", "ASC 606 paragraph", "Required criteria", "Accounting effect on revenue"],
+          rows: [
+            [
+              "Separate contract",
+              "ASC 606-10-25-12; IFRS 15.20",
+              "Added goods/services are distinct AND priced at their standalone selling prices",
+              "No effect on original contract schedule; new schedule created for added scope",
+            ],
+            [
+              "Prospective termination",
+              "ASC 606-10-25-13(a); IFRS 15.21(a)",
+              "Remaining goods/services are distinct, but additional consideration does not reflect SSP",
+              "Existing contract terminated; unrecognised consideration plus new price allocated prospectively",
+            ],
+            [
+              "Cumulative catch-up",
+              "ASC 606-10-25-13(b); IFRS 15.21(b)",
+              "Remaining goods/services are NOT distinct and form part of a single partially satisfied obligation",
+              "Cumulative revenue adjusted in current period to reflect revised progress; no prior restatement",
+            ],
+            [
+              "Combination / Hybrid",
+              "ASC 606-10-25-13(c); IFRS 15.21(c)",
+              "Remaining goods/services contain a combination of distinct and non-distinct items",
+              "Cumulative catch-up applied to non-distinct items; remaining consideration allocated prospectively",
+            ],
+          ],
+        },
+        links: [
+          { href: "/glossary/cumulative-catch-up", label: "Cumulative catch-up adjustment" },
+          { href: "/glossary/prospective-method", label: "Prospective method for contract modifications" },
+        ],
+      },
+      {
+        heading: "Price-only contract modifications and concessions",
+        paragraphs: [
+          "When contract terms change transaction price without changing promised goods or services (such as a mid-term price concession or volume rebate agreement), the accounting depends on the nature of the remaining deliverables.",
+          "If the remaining goods or services are distinct, the price change is allocated prospectively across remaining obligations under ASC 606-10-25-13(a). If the modification alters the price of an obligation satisfied over time that is partially complete, it triggers a cumulative catch-up adjustment under ASC 606-10-32-43.",
+        ],
+        note: "Soluqube does not automate contract-modification accounting today; it is on the roadmap. What it produces is the original relative-SSP baseline schedule and hashed workpaper that modifications are measured against.",
+        links: [
+          { href: "/blog/contract-modification-precedence-dag-asc-606-10-25-13", label: "ASC 606-10-25-13 contract modifications: decision tree" },
+          { href: "/blog/how-to-prepare-for-asc-606-revenue-audit", label: "How to prepare for an ASC 606 revenue audit: testing modifications" },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "When is a contract modification accounted for as a separate contract?",
+        answer:
+          "Under ASC 606-10-25-12, a modification is treated as a separate contract only if two conditions are met: (1) the scope of the contract increases because of additional promised goods or services that are distinct, and (2) the price increases by an amount of consideration that reflects their standalone selling prices.",
+      },
+      {
+        question: "What is the difference between prospective modification and cumulative catch-up?",
+        answer:
+          "Prospective treatment treats the old contract as terminated and creates a new contract allocating remaining consideration forward without altering past revenue (ASC 606-10-25-13(a)). A cumulative catch-up recalculates revenue from inception based on revised progress and records an immediate true-up in the current period (ASC 606-10-25-13(b)).",
+      },
+      {
+        question: "How do you account for a price change with no change in scope?",
+        answer:
+          "Under ASC 606-10-25-13, a price-only change is allocated prospectively to remaining distinct performance obligations. If the remaining obligation is not distinct (such as a single build accounted for over time), the transaction price change triggers a cumulative catch-up adjustment in the current period.",
+      },
+      {
+        question: "Can unapproved contract modifications be accounted for under ASC 606?",
+        answer:
+          "No. Under ASC 606-10-25-10, a contract modification exists only when the parties approve a change that creates new or changes existing enforceable rights and obligations. If parties dispute scope or price, management evaluates the guidance on enforceable rights or variable consideration before recording adjustments.",
+      },
+    ],
   },
   {
     slug: "cumulative-catch-up",
