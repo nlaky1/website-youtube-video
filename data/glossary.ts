@@ -355,9 +355,9 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   {
     slug: "expected-cost-plus-margin",
     term: "Expected cost plus margin approach",
-    title: "Expected Cost Plus Margin Approach (SSP)",
+    title: "Expected Cost Plus Margin Approach: ASC 606 SSP Guide",
     description:
-      "Estimating SSP with expected cost plus a margin under ASC 606 and IFRS 15, a worked implementation-services example, and the markup vs margin trap.",
+      "How to apply the expected cost plus margin approach for standalone selling price under ASC 606 & IFRS 15. Includes formulas, markup vs margin, and examples.",
     definition:
       "The expected cost plus a margin approach estimates standalone selling price by forecasting the costs of satisfying a performance obligation and adding an appropriate margin. It suits services with measurable costs, such as implementation, training or custom development, and fits poorly where costs are not driven by the specific obligation.",
     references: [
@@ -1359,9 +1359,9 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   {
     slug: "cumulative-catch-up",
     term: "Cumulative catch-up adjustment",
-    title: "Cumulative Catch-Up Adjustment & Method (ASC 606)",
+    title: "Cumulative Catch-Up Method & Adjustment Under ASC 606",
     description:
-      "The cumulative catch-up adjustment method under ASC 606-10-25-13(b): the three modification treatments compared, a worked example and journal entries.",
+      "The cumulative catch-up method under ASC 606 and IFRS 15 for contract modifications. Includes worked examples, measurement of progress, and journal entries.",
     definition:
       "A cumulative catch-up adjustment is a one-time entry in the current period that brings revenue recognised to date in line with revised terms or estimates, as if they had applied from inception. It applies to modifications of a single, partially satisfied performance obligation and to changes in estimated progress or transaction price. Prior periods are not restated.",
     references: [
@@ -1827,9 +1827,9 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   {
     slug: "licence-of-ip",
     term: "Right to use vs right to access (licence of IP)",
-    title: "Right to Use vs Right to Access: Licence of IP",
+    title: "Right to Use vs Right to Access: ASC 606 & IFRS 15 Rules",
     description:
-      "Right to use vs right to access for IP licences under IFRS 15 and ASC 606: functional vs symbolic IP, when revenue is recognised, and a worked example.",
+      "Compare right to use vs right to access under ASC 606 & IFRS 15. See functional vs symbolic IP rules, over-time vs point-in-time revenue, and journal entries.",
     definition:
       "Right to access and right to use are the two types of IP licence under ASC 606, IFRS 15 and Ind AS 115. A right to access gives the customer the licensor's IP as it changes over the licence period, so revenue is recognised over time; a right to use gives the IP as it exists when granted, so revenue is recognised at a point in time.",
     references: [
