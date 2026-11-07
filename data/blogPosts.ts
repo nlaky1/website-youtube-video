@@ -4111,5 +4111,320 @@ Soluqube produces the part of the file an auditor re-performs. After you confirm
 
 Send three contracts through the [design partner programme](https://soluqube.com/design-partners?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint) for a free 3-contract workpaper, or look at the [sample SSP workpaper](https://soluqube.com/samples/soluqube-ssp-sample.pdf). Founding prices for the first 10 customers are on [pricing](https://soluqube.com/pricing?utm_source=blog&utm_medium=community&utm_campaign=20261031-sprint).
     `
+  }  ,
+  {
+    slug: "asc-606-deferred-revenue-accounting-journal-entries",
+    title: "ASC 606 Deferred Revenue: Accounting Rules, Journal Entries & Balance Sheet Presentation",
+    subtitle: "How to record contract liabilities under ASC 606-10-45, calculate current vs non-current balance sheet splits, and schedule monthly revenue recognition that ties to $0.00.",
+    publishedAt: "November 7, 2026",
+    updatedAt: "November 7, 2026",
+    readTime: "10 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Content",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "Deferred Revenue", "Contract Liability", "Journal Entries", "Balance Sheet", "SaaS Accounting"],
+    targetQuery: "asc 606 deferred revenue",
+    definitionAnchor: "Under ASC 606-10-45-1 to 45-5, deferred revenue is formally classified as a contract liability: an entity obligation to transfer goods or services to a customer for which the entity has received consideration (or an amount of consideration is due) from the customer. Revenue is recognized as control of the promised performance obligations transfers over time or at a point in time.",
+    excerpt: "A comprehensive practitioners guide to ASC 606 deferred revenue: the difference between contract liabilities and unbilled receivables, calculating current vs non-current balance sheet splits on multi-year contracts, and worked monthly journal entries with terminal-period remainder absorption.",
+    toc: [
+      { id: "what-is-deferred-revenue-under-asc-606", label: "What is deferred revenue under ASC 606?" },
+      { id: "contract-liability-vs-unbilled-receivable", label: "Contract liability vs unbilled receivable" },
+      { id: "when-is-deferred-revenue-recorded", label: "When is deferred revenue recorded?" },
+      { id: "current-vs-non-current-classification", label: "Current vs non-current balance sheet split" },
+      { id: "worked-example-and-monthly-journal-entries", label: "Worked example & monthly journal entries" },
+      { id: "asc-606-50-disclosure-requirements", label: "ASC 606-10-50 disclosure requirements" },
+      { id: "how-soluqube-automates-deferred-revenue-schedules", label: "How Soluqube automates schedules" }
+    ],
+    faqs: [
+      {
+        question: "Is deferred revenue called a contract liability under ASC 606?",
+        answer: "Yes. Under ASC 606-10-45-2, GAAP uses the term contract liability. However, entities are permitted to use alternative descriptions such as deferred revenue or unearned revenue on the face of the balance sheet, provided the footnote disclosures comply with ASC 606-10-50."
+      },
+      {
+        question: "How do you calculate the current and non-current split of deferred revenue?",
+        answer: "Under ASC 210-10-45-1, amounts expected to be recognized as revenue within 12 months after the reporting balance sheet date are presented as current contract liabilities. Any portion of the performance obligation to be satisfied beyond 12 months is classified as non-current contract liability."
+      },
+      {
+        question: "When does deferred revenue become recognized revenue under ASC 606?",
+        answer: "Deferred revenue is reclassified to revenue as the entity satisfies each distinct performance obligation by transferring control of promised goods or services to the customer—either over time (ratably) or at a point in time."
+      },
+      {
+        question: "What happens if monthly deferred revenue amortisation has fractional cents?",
+        answer: "If monthly revenue recognition is calculated using floating-point division without a written rounding convention, rounding fractions accumulate. Soluqube uses integer arithmetic and assigns the residual cent to the terminal period so the deferred balance reaches exactly $0.00."
+      }
+    ],
+    content: `
+## What is deferred revenue under ASC 606?
+
+Under **ASC 606-10-45-1 to 45-5**, deferred revenue is formally classified as a **contract liability**. A contract liability represents an entitys obligation to transfer goods or services to a customer for which the entity has received consideration (or an amount of consideration is due) from the customer.
+
+In enterprise software and B2B SaaS businesses, deferred revenue is the standard balance sheet mechanism for subscription billing. Customers typically pay annually or multi-annually in advance, but under ASC 606 Step 5, software access is delivered continuously across the contractual term. The cash or receivable collected upfront cannot be recognized immediately as revenue; instead, it is deferred on the balance sheet and recognized ratably as performance obligations are satisfied.
+
+Key reference standards:
+- **ASC 606-10-45-1 to 45-2**: Basic definition and presentation of contract assets and contract liabilities.
+- **ASC 606-10-55-284 to 55-297**: Illustrative Example 44 on contract liabilities.
+- **IFRS 15 paragraphs 105–109 & Ind AS 115**: Equivalent international standards governing contract liabilities.
+
+---
+
+## Contract liability vs unbilled receivable (contract asset)
+
+Controllers frequently need to explain the balance sheet distinction between contract liabilities, trade receivables, and contract assets (unbilled revenue) to auditors.
+
+| Financial Item | Balance Sheet Nature | Trigger Event | Conditionality | Standard Ref |
+|---|---|---|---|---|
+| **Contract Liability (Deferred Revenue)** | Credit (Liability) | Cash received or billed prior to service performance | Unconditional obligation to deliver software or services | ASC 606-10-45-2 |
+| **Trade Receivable (A/R)** | Debit (Asset) | Invoiced or due for payment under enforceable contract terms | Unconditional right to consideration (only passage of time required) | ASC 606-10-45-3 |
+| **Contract Asset (Unbilled Receivable)** | Debit (Asset) | Revenue recognized ahead of billing milestones | Conditional on future performance (e.g., milestone acceptance) | ASC 606-10-45-3 |
+
+When a customer pays an annual invoice of $120,000 on January 1 for a 12-month SaaS platform subscription, the vendor has an unconditional obligation to provide hosting across the year. The vendor books a $120,000 contract liability. As each month passes, $10,000 of that liability is extinguished and recognized as subscription revenue.
+
+---
+
+## When is deferred revenue recorded?
+
+Under **ASC 606-10-45-2**, an entity records a contract liability upon the **earlier of two events**:
+1. When the customer performs by making a cash payment before the vendor delivers goods or services.
+2. When the customer consideration is due (for example, when an invoice is issued with unconditional contractual payment terms) before performance occurs.
+
+If a contract specifies billing on December 15, 2026 with payment due in 30 days for a subscription service beginning January 1, 2027:
+- On December 15, the vendor debits Accounts Receivable and credits Contract Liability for the invoiced amount.
+- Even though no cash has been collected and no services have been performed, the enforceable billing creates a contract liability on December 15.
+
+---
+
+## Current vs non-current balance sheet split
+
+For multi-year SaaS contracts billed upfront (e.g., 24-month or 36-month enterprise agreements), deferred revenue must be split on the balance sheet into **Current Contract Liabilities** and **Non-Current Contract Liabilities** under **ASC 210-10-45-1**.
+
+- **Current Contract Liability**: The portion of deferred revenue that the entity expects to recognize within 12 months after the reporting date (or within the normal operating cycle).
+- **Non-Current Contract Liability**: Any remaining deferred consideration relating to performance obligations to be satisfied beyond 12 months.
+
+### Worked Multi-Year Classification Example:
+Consider a $108,000 contract for 36 months of platform access signed and invoiced on January 1, 2026. The monthly ratable revenue is $3,000.00 ($108,000 / 36 months).
+
+At contract inception (January 1, 2026):
+- **Current Contract Liability (Months 1–12)**: $3,000 × 12 = **$36,000.00**
+- **Non-Current Contract Liability (Months 13–36)**: $3,000 × 24 = **$72,000.00**
+
+At the end of Year 1 (December 31, 2026):
+- Year 1 revenue recognized: $36,000.00.
+- Remaining total deferred balance: $72,000.00.
+- **Reclassified Current Contract Liability (Months 13–24)**: **$36,000.00**
+- **Remaining Non-Current Contract Liability (Months 25–36)**: **$36,000.00**
+
+At the end of Year 2 (December 31, 2027):
+- Total remaining deferred balance: $36,000.00.
+- All remaining 12 months are now current; **Non-Current Contract Liability becomes $0.00**.
+
+---
+
+## Worked example & monthly journal entries
+
+Consider a $72,000.00, 24-month enterprise contract signed on January 1, 2026. The contract bundles two distinct performance obligations:
+1. **Core SaaS Subscription**: 24 months, standalone selling price (SSP) of $60,000.00.
+2. **Implementation & Setup**: Completed and accepted in Month 1, SSP of $20,000.00.
+
+Total Standalone Selling Price = $80,000.00. The contract price of $72,000.00 includes an $8,000 bundle discount. Under **ASC 606-10-32-36**, the discount is allocated proportionately:
+- **Allocated to Subscription**: $72,000 × ($60,000 / $80,000) = **$54,000.00** ($2,250.00 / month across 24 months).
+- **Allocated to Implementation**: $72,000 × ($20,000 / $80,000) = **$18,000.00** (recognized at a point in time in Month 1).
+
+### Balance Sheet Classification at Inception (1 Jan 2026):
+- Revenue to recognize in next 12 months = Implementation ($18,000.00) + 12 months subscription ($27,000.00) = **$45,000.00 (Current)**.
+- Revenue to recognize in Year 2 = 12 months subscription = **$27,000.00 (Non-Current)**.
+
+### Comprehensive Journal Entries:
+
+| Date | Account Description | Debit ($) | Credit ($) | Note |
+|---|---|---:|---:|---|
+| **01 Jan 2026** | Accounts Receivable | 72,000.00 | | Invoiced upfront full contract price |
+| | Contract Liability (Current) | | 45,000.00 | To be recognized within 12 months |
+| | Contract Liability (Non-Current) | | 27,000.00 | To be recognized in Year 2 |
+| **31 Jan 2026** | Contract Liability (Current) | 18,000.00 | | Extinguish implementation liability |
+| | Implementation Revenue | | 18,000.00 | Point-in-time transfer of control |
+| **31 Jan 2026** | Contract Liability (Current) | 2,250.00 | | Month 1 subscription amortization |
+| | Subscription Revenue | | 2,250.00 | Ratable over-time recognition |
+| **28 Feb 2026 – 30 Nov 2027** (Months 2–23) | Contract Liability (Current) | 2,250.00 | | Monthly ratable recognition ($2,250.00 each month) |
+| | Subscription Revenue | | 2,250.00 | Extinguishes deferred balance monthly |
+| **31 Dec 2026** (Year-End) | Contract Liability (Non-Current) | 27,000.00 | | Roll forward Year 2 non-current liability into current |
+| | Contract Liability (Current) | | 27,000.00 | Reclassification entry |
+| **31 Dec 2027** (Month 24) | Contract Liability (Current) | 2,250.00 | | Final period amortization |
+| | Subscription Revenue | | 2,250.00 | Deferred revenue reaches exactly $0.00 |
+
+### Handling Fractional Cents and Schedule Drift:
+When contract prices or standalone selling prices produce repeating fractions (for example, a $100,000 contract scheduled over 36 months = $2,777.777... per month), naive decimal division leaves residual cents. Soluqube uses integer arithmetic and assigns the residual cent to the terminal period (Month 36 receives $2,778.05 while Months 1–35 recognize $2,777.77), ensuring the cumulative sum ties to the transaction price and the deferred revenue balance sheet account ends at exactly $0.00.
+
+---
+
+## ASC 606-10-50 disclosure requirements
+
+Public and private entities reporting under ASC 606 must provide quantitative and qualitative footnote disclosures regarding their contract liabilities (**ASC 606-10-50-8 to 50-10**):
+
+1. **Opening and Closing Balances**: A clear roll-forward reconciliation of beginning deferred revenue, additions from billings, reductions from recognized revenue, and closing balances.
+2. **Revenue Recognized from Beginning Liability**: Explicit disclosure of how much revenue in the current reporting period was included in the contract liability balance at the beginning of the period.
+3. **Remaining Performance Obligations (RPO)**: The aggregate amount of transaction price allocated to performance obligations that are unsatisfied (or partially unsatisfied) as of the end of the reporting period, along with expected timing of recognition.
+
+---
+
+## How Soluqube automates deferred revenue schedules
+
+Soluqube provides a deterministic ASC 606 and Ind AS 115 contract subledger for finance teams and auditors:
+- **Exact Relative SSP Allocation**: Allocates multi-element contracts using exact ratios and establishes documented price bands under ASC 606-10-32-34.
+- **Terminal Period Remainder Absorption**: Automatically absorbs residual cents in the final period so deferred revenue balances always reconcile to $0.00.
+- **Audit Evidence Trail**: Captures the exact contract page, clause excerpt, and timestamped review confirmation for every performance obligation.
+- **Patent Pending Architecture**: Built on a deterministic engine (Patent Pending App. No. 202621096305).
+
+Try allocating your own multi-element contracts client-side with the free [Soluqube SSP Allocation Calculator](https://soluqube.com/tools/ssp-allocation-calculator), explore our comprehensive [ASC 606 Technical Accounting Hub](https://soluqube.com/asc-606), or download an audit-ready [sample workpaper](https://soluqube.com/samples/soluqube-ssp-sample.pdf).
+    `
   }
+  ,
+  {
+    slug: "revenue-accounting-memo-alternatives-asc-606",
+    title: "Revenue Accounting Memo Alternatives: From Manual Word Docs to Deterministic Subledgers",
+    subtitle: "Why finance teams are replacing 20-page manual Word and Excel revenue memos with automated, clause-anchored contract subledgers that survive Big 4 audit review.",
+    publishedAt: "November 7, 2026",
+    updatedAt: "November 7, 2026",
+    readTime: "8 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting Practice",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "Revenue Accounting Memo", "Audit Trail", "Technical Accounting", "SaaS Controllers"],
+    targetQuery: "revenue memo alternatives",
+    definitionAnchor: "A revenue accounting memo documents managements technical position under ASC 606 for complex multi-element customer contracts. While historically drafted as static narrative Word documents with attached Excel schedules, modern accounting teams use structured contract subledgers that anchor each performance obligation, relative SSP allocation, and amortisation schedule directly to verbatim contract clause evidence.",
+    excerpt: "Why manual revenue recognition memos break under auditor scrutiny, the 5 essential sections required by PCAOB AS 1105 standards, and how automated contract subledgers provide a deterministic, clause-verified alternative to static Word documents.",
+    toc: [
+      { id: "the-problem-with-manual-revenue-memos", label: "The problem with manual revenue memos" },
+      { id: "the-five-sections-auditors-require", label: "The 5 sections auditors require" },
+      { id: "why-static-spreadsheets-drift-and-fail", label: "Why static spreadsheets drift and fail" },
+      { id: "the-alternative-deterministic-contract-subledgers", label: "The alternative: deterministic subledgers" },
+      { id: "comparison-word-memos-vs-erp-modules-vs-soluqube", label: "Manual memos vs ERP modules vs Soluqube" },
+      { id: "audit-defense-checklist-for-revenue-memos", label: "Audit defense checklist" }
+    ],
+    faqs: [
+      {
+        question: "What is an ASC 606 revenue accounting memo?",
+        answer: "A revenue accounting memo is a formal technical workpaper prepared by management to document the accounting treatment of non-standard, enterprise, or multi-element customer contracts under ASC 606 and IFRS 15. It covers contract enforceability, performance obligation identification, transaction price allocation, and recognition timing."
+      },
+      {
+        question: "Why do auditors scrutinize manual Word and Excel revenue memos?",
+        answer: "Under PCAOB AS 1105 (Audit Evidence) and AS 1215 (Audit Documentation), auditors must test the accuracy and completeness of Information Produced by the Entity (IPE). Manual Word documents and loose Excel sheets frequently suffer from broken formula links, untraced manual overrides, stale standalone selling prices, and missing contract clause evidence."
+      },
+      {
+        question: "What are the best alternatives to manual revenue accounting memos?",
+        answer: "Modern B2B SaaS finance teams use specialized contract revenue subledgers that replace static narrative memos with deterministic, SHA-256-hashed workpapers. These systems anchor each allocated deliverable directly to verbatim PDF clause excerpts and generate schedules that tie out to $0.00 deferred balance."
+      },
+      {
+        question: "How does Soluqube replace manual ASC 606 memos?",
+        answer: "Soluqube automates the quantitative and evidence sections of the memo. Users confirm the extracted contract terms, obligations, and SSP inputs; Soluqube calculates the relative SSP allocation, ties the schedule to $0.00, and exports an audit-ready, cryptographically hashed Excel package with verbatim clause citations."
+      }
+    ],
+    content: `
+## The problem with manual revenue memos
+
+For corporate controllers, technical accounting managers, and outsourced advisory practices, drafting **ASC 606 revenue accounting memos** is one of the most time-consuming and fragile tasks of the financial close.
+
+Whenever an enterprise SaaS vendor closes a multi-element deal featuring customized contract terms—such as tiered platform licenses, bundled onboarding services, custom development milestones, premium SLAs, or price ramp-ups—external auditors require a formal technical memo documenting:
+1. Why each promised deliverable is or is not a distinct performance obligation.
+2. How the standalone selling price (SSP) for each deliverable was established.
+3. How the transaction price and any bundle discounts were allocated under ASC 606 Step 4.
+4. How the resulting deferred revenue schedule amortizes over time.
+
+Historically, this meant writing 15- to 25-page narrative Word documents with pasted Excel tables. While this approach complies with basic documentation standards, it breaks down rapidly as deal volume grows:
+- **Version Control Fractures**: Contract amendments, side letters, and billing changes frequently occur mid-term. Static Word memos are rarely updated, leaving audited workpapers out of step with real general ledger postings.
+- **Untraced Manual Overrides**: Excel schedules attached to memos often contain hardcoded plugs or rounded weights that do not recalculate cleanly.
+- **Auditor Re-Performance Friction**: Under PCAOB AS 1105 (*Audit Evidence*), auditors cannot simply take narrative statements at face value; they must independently re-perform the calculations and agree numbers to underlying source records.
+
+---
+
+## The 5 sections auditors require in an ASC 606 memo
+
+An audit-defensible revenue accounting memo must systematically follow the five-step revenue model outlined in ASC 606-10-05-4:
+
+### 1. Contract Identification & Enforceability (Step 1)
+- **Standard Reference**: ASC 606-10-25-1 to 25-9.
+- **Required Evidence**: Executed Master Services Agreement (MSA), Order Forms, Statements of Work (SOWs), termination clauses, payment terms, and collectibility assessment under 25-1(e).
+
+### 2. Distinct Performance Obligations (Step 2)
+- **Standard Reference**: ASC 606-10-25-14 to 25-22.
+- **Required Evidence**: Analysis of whether promised goods/services are capable of being distinct and distinct within the context of the contract. Key focus areas: significant customisation, integration, or interdependency (e.g., distinguishing standard SaaS setup from complex custom implementation).
+
+### 3. Transaction Price & Variable Consideration (Step 3)
+- **Standard Reference**: ASC 606-10-32-2 to 32-14.
+- **Required Evidence**: Fixed consideration, usage caps, SLA penalties, price concessions, and application of the variable consideration constraint under ASC 606-10-32-11.
+
+### 4. Allocation Based on Relative Standalone Selling Price (Step 4)
+- **Standard Reference**: ASC 606-10-32-28 to 32-41.
+- **Required Evidence**: Documented standalone selling price for each obligation (Observable price, Adjusted Market Assessment, or Expected Cost Plus Margin) and proportionate allocation of bundle discounts under 32-36.
+
+### 5. Recognition Timing & Revenue Schedules (Step 5)
+- **Standard Reference**: ASC 606-10-25-27 to 25-37.
+- **Required Evidence**: Identification of over-time vs point-in-time transfer of control, output vs input methods of progress, and period-by-period amortization schedules tying deferred revenue to $0.00.
+
+---
+
+## Why static spreadsheets drift and fail under audit
+
+The mathematical heart of any revenue memo is the allocation and schedule workpaper. In traditional manual workflows, this is built in Excel.
+
+However, standard spreadsheets introduce subtle calculation errors:
+1. **Floating-Point Rounding Drift**: Dividing contract values across multi-period ratable schedules using floating-point decimals frequently results in fractional cent imbalances. Over a 36-month schedule, rounding each line independently can cause the deferred revenue schedule to finish with an unreconciled cent discrepancy.
+2. **Rounded Allocation Weights**: preparers often show rounded percentages (e.g., 66.67% and 33.33%) and multiply those weights by the transaction price, producing a sum that does not tie to the signed contract total.
+3. **Missing Clause Evidence**: A number in a spreadsheet does not tell an auditor which contract clause authorized it. Auditors spend hours asking: *"Show me the contract page where this 30-day acceptance clause is written."*
+
+---
+
+## The alternative: deterministic contract subledgers
+
+Instead of drafting static Word documents from scratch for every complex deal, high-velocity SaaS finance teams and technical accounting advisors are adopting **clause-anchored contract subledgers**.
+
+In this modern architecture:
+- **Direct Clause Traceability**: Each identified performance obligation is permanently tagged with the verbatim contract clause excerpt and page number from the uploaded contract.
+- **Deterministic Integer Calculation**: Relative standalone selling prices and multi-period amortization schedules are computed using integer arithmetic, with terminal-period remainder absorption so deferred revenue balances always tie out to $0.00.
+- **Cryptographic Audit Packaging**: Rather than unverified Excel files, the system exports a SHA-256-hashed audit package containing the inputs, the mathematical allocation, the full revenue schedule, and the review approvals.
+
+When external auditors request audit evidence, management delivers a reproducible, self-contained workpaper that the auditor can re-perform in 60 seconds without back-and-forth review comments.
+
+---
+
+## Comparison: Word memos vs ERP revenue modules vs Soluqube
+
+| Evaluation Dimension | Traditional Word & Excel Memo | ERP Revenue Modules (NetSuite ARM / Intacct) | Soluqube Contract Subledger |
+|---|---|---|---|
+| **Preparation Time** | 12 – 20 hours per complex contract | 4 – 8 hours (complex setup & rules) | **< 15 minutes per contract** |
+| **Clause-Level Evidence** | Manual copy-pasting of quotes | Not supported (metadata/fields only) | **Verbatim page and sentence citation** |
+| **Schedule Precision** | Manual rounding adjustments | Varies by ERP rounding configuration | **Integer arithmetic with terminal absorption ($0.00 deferred)** |
+| **Audit Defense Re-performance** | High friction; auditors manually re-calculate | Requires auditor ERP access or custom reports | **1-click re-performance with SHA-256 hash verification** |
+| **Maintenance Burden** | High (memos become obsolete when terms change) | High (ERP admin and consultant fees) | **Lightweight, standalone, and export-driven** |
+
+---
+
+## Audit defense checklist for technical revenue memos
+
+Before submitting revenue workpapers to internal reviewers or external audit teams, verify these 6 quality criteria:
+
+- [ ] **Contract Integrity**: The transaction price reconciles to executed order forms, SOWs, and side agreements without unverified adjustments.
+- [ ] **Enforceability Checked**: Payment terms and customer termination rights are documented with specific section citations.
+- [ ] **Distinctness Defended**: Professional services and custom onboarding are analyzed under ASC 606-10-25-14 to prove they are distinct from the software subscription.
+- [ ] **SSP Basis Documented**: Every standalone selling price cites whether it is observable (historical standalone invoices) or estimated (expected cost plus margin or adjusted market).
+- [ ] **Tie-Out Guarantee**: The sum of allocated performance obligations equals the transaction price exactly, and the deferred revenue schedule ends at $0.00.
+- [ ] **Review Evidence Attached**: Evidence of who prepared the allocation, who reviewed it, and when management approved it is permanently filed with the workpaper.
+
+---
+
+## How Soluqube provides an audit-ready alternative
+
+Soluqube was designed specifically to eliminate the friction of manual revenue accounting memos:
+- **Heuristic Extraction & Human Confirmation**: Upload a text-layer contract PDF. Soluqube extracts obligations, terms, and stated pricing; you confirm the terms and SSP inputs.
+- **Deterministic Workpapers**: Produces an ASC 606 relative SSP allocation and period-by-period schedule that ties to the cent, with terminal-period remainder absorption.
+- **Sentence-Level Clause Highlighting**: Keeps the contract page and verbatim excerpt with each obligation.
+- **Patent Pending Verification**: Operates deterministically without black-box guesswork (Patent Pending App. No. 202621096305).
+
+To see how an audit-ready contract workpaper looks, download our [sample SSP workpaper](https://soluqube.com/samples/soluqube-ssp-sample.pdf), test your own contracts with our free [SSP Allocation Calculator](https://soluqube.com/tools/ssp-allocation-calculator), or explore our [ASC 606 Revenue Recognition Hub](https://soluqube.com/asc-606).
+    `
+  }
+
 ];

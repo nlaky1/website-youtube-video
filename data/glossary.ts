@@ -47,7 +47,8 @@ export interface GlossaryTerm {
   sections?: ContentSection[];
 }
 
-const SSP_TOOL: GlossaryLink = { href: "/tools/ssp-allocation-calculator", label: "SSP allocation calculator" };
+const SSP_TOOL: GlossaryLink = { href: "/tools/ssp-allocation-calculator", label: "ASC 606 SSP allocation calculator" };
+const SSP_GUIDE: GlossaryLink = { href: "/blog/asc-606-ssp-allocation-guide", label: "ASC 606 SSP allocation guide" };
 const SSP_EXAMPLE_POST: GlossaryLink = {
   href: "/blog/mastering-asc-606-standalone-selling-price-ssp-multi-element-allocations",
   label: "ASC 606 SSP allocation example: 3-element SaaS bundle",
@@ -132,7 +133,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Never refreshing SSP analysis as pricing and discounting change.",
     ],
     related: ["relative-ssp-method", "observable-price", "ssp-range", "adjusted-market-assessment", "expected-cost-plus-margin", "residual-approach"],
-    further: [SSP_TOOL, SSP_EXAMPLE_POST, { href: "/blog/how-auditors-test-ssp-allocation-asc-606", label: "How do auditors test SSP allocation?" }, { href: "/blog/expected-cost-plus-margin-approach-ssp-example", label: "Expected cost plus margin approach: worked bundle example" }],
+    further: [SSP_TOOL, SSP_GUIDE, SSP_EXAMPLE_POST, { href: "/blog/how-auditors-test-ssp-allocation-asc-606", label: "How do auditors test SSP allocation?" }, { href: "/blog/expected-cost-plus-margin-approach-ssp-example", label: "Expected cost plus margin approach: worked bundle example" }],
     sections: [
       {
         heading: "Hierarchy of SSP determination methods under ASC 606-10-32-34",
@@ -350,7 +351,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Applying the adjustment percentage without evidence for it.",
     ],
     related: ["standalone-selling-price", "expected-cost-plus-margin", "residual-approach", "observable-price", "ssp-range"],
-    further: [SSP_EXAMPLE_POST, SSP_TOOL],
+    further: [SSP_GUIDE, SSP_TOOL, SSP_EXAMPLE_POST],
   },
   {
     slug: "expected-cost-plus-margin",
@@ -382,7 +383,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Choosing a margin with no support in what the market would pay.",
     ],
     related: ["standalone-selling-price", "adjusted-market-assessment", "saas-implementation-fee", "residual-approach", "ssp-range"],
-    further: [SSP_TOOL, SSP_EXAMPLE_POST],
+    further: [SSP_TOOL, SSP_GUIDE, SSP_EXAMPLE_POST],
     soluqubeNote:
       "Soluqube does not estimate SSP for you. You enter the cost-plus SSP you have supported; it allocates the transaction price by relative SSP, produces a schedule that ties to the cent, and keeps the inputs in a SHA-256-hashed export you can re-run.",
     sections: [
@@ -2192,7 +2193,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Too few observable transactions to support the band.",
     ],
     related: ["standalone-selling-price", "observable-price", "relative-ssp-method", "residual-approach", "adjusted-market-assessment"],
-    further: [SSP_TOOL, SSP_EXAMPLE_POST],
+    further: [SSP_TOOL, SSP_GUIDE, SSP_EXAMPLE_POST],
     faqs: [
       {
         question: "What is an acceptable Standalone Selling Price (SSP) range for SaaS?",
@@ -2241,7 +2242,7 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Drawing conclusions from too few transactions.",
     ],
     related: ["standalone-selling-price", "ssp-range", "adjusted-market-assessment", "relative-ssp-method", "residual-approach"],
-    further: [SSP_EXAMPLE_POST, SSP_TOOL],
+    further: [SSP_GUIDE, SSP_TOOL, SSP_EXAMPLE_POST],
   },
   {
     slug: "terminal-period-remainder-absorption",
