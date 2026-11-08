@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import AnalyticsClicks from "@/components/analytics-clicks";
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { LOCALES, hreflangMap } from "@/lib/i18n";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -44,6 +45,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://soluqube.com",
+    languages: hreflangMap("/", LOCALES),
   },
   openGraph: {
     title: "ASC 606 SSP Allocation Software, Tied to the Cent",

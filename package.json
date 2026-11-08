@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/patch-html-lang.mjs",
     "start": "next start",
     "lint": "next lint",
     "test:tools": "node --no-warnings=MODULE_TYPELESS_PACKAGE_JSON --test tests/ssp-calculator.test.mjs tests/calculator-email.test.mjs tests/analytics.test.mjs tests/page-faqs.test.mjs"
