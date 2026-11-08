@@ -546,10 +546,10 @@
  },
  "deferred-revenue": {
   "slug": "deferred-revenue",
-  "term": "Passive Rechnungsabgrenzung (Deferred Revenue)",
-  "title": "Passive Rechnungsabgrenzung nach ASC 606: Beispiel",
-  "description": "Passive Rechnungsabgrenzung nach ASC 606 und IFRS 15: Definition, Verhältnis zur Vertragsverbindlichkeit und ein 36-Monats-Plan, der exakt bei $0.00 endet.",
-  "definition": "Die passive Rechnungsabgrenzung (Deferred Revenue) ist im Voraus erhaltene oder fakturierte Gegenleistung für noch nicht übertragene Güter oder Dienstleistungen. ASC 606 und IFRS 15 bezeichnen sie als Vertragsverbindlichkeit, lassen aber andere Bezeichnungen zu. Sie nimmt ab, sobald Umsatz realisiert wird, und bei einem linear zu realisierenden Abonnement sollte der Saldo am Laufzeitende exakt null betragen.",
+  "term": "Deferred Revenue (Passive Rechnungsabgrenzung)",
+  "title": "Deferred Revenue Deutsch: Passive Rechnungsabgrenzung nach ASC 606",
+  "description": "Was bedeutet Deferred Revenue auf Deutsch? Passive Rechnungsabgrenzung nach ASC 606 & IFRS 15: Definition, Buchungssätze und ein 36-Monats-SaaS-Beispiel.",
+  "definition": "Deferred Revenue (im Deutschen: passive Rechnungsabgrenzung oder erhaltene Anzahlungen) bezeichnet im US-GAAP (ASC 606) und IFRS 15 eine Vertragsverbindlichkeit (Contract Liability). Es handelt sich um im Voraus in Rechnung gestellte oder vereinnahmte Beträge für Leistungen, die das Unternehmen erst in zukünftigen Abrechnungsperioden erbringen wird.",
   "references": [
    {
     "standard": "ASC 606",

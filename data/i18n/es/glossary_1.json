@@ -459,10 +459,10 @@
  },
  "contract-asset": {
   "slug": "contract-asset",
-  "term": "Activo del contrato",
-  "title": "Activo del contrato según ASC 606: definición",
-  "description": "Qué es un activo del contrato según ASC 606, IFRS 15 e Ind AS 115, en qué se diferencia de una cuenta por cobrar y un ejemplo de asiento con dos hitos.",
-  "definition": "Un activo del contrato es el derecho de una entidad a recibir una contraprestación a cambio de bienes o servicios ya transferidos al cliente, cuando ese derecho está condicionado a algo distinto del paso del tiempo, normalmente el desempeño futuro de la entidad. Cuando el derecho pasa a ser incondicional, el importe se reclasifica a una cuenta por cobrar.",
+  "term": "Activo del contrato (Activo por contrato)",
+  "title": "Activo por contrato (Activo del contrato) según ASC 606: definición y ejemplos",
+  "description": "Qué es un activo por contrato (activo del contrato) según ASC 606 e IFRS 15: diferencias con cuentas por cobrar y asientos contables trabajados.",
+  "definition": "Un activo por contrato (o activo del contrato) es el derecho de una entidad a recibir una contraprestación a cambio de bienes o servicios ya transferidos al cliente, cuando ese derecho está condicionado a algo distinto del paso del tiempo, normalmente el desempeño futuro de la entidad. Cuando el derecho pasa a ser incondicional, el importe se reclasifica a una cuenta por cobrar.",
   "references": [
    {
     "standard": "ASC 606",

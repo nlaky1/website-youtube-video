@@ -605,6 +605,11 @@ export const ALTERNATIVES_PAGES: AlternativesPage[] = [
         answer:
           "Tabs' pricing page lists a Launch plan at $2,000 a month for companies with up to $5M in annual revenue and 100 active contracts. Higher tiers, set by revenue band up to $50M and above, are priced on request, so confirm the cost for your volume with Tabs directly.",
       },
+      {
+        question: "How does Tabs compare to Maxio for B2B billing and revenue recognition?",
+        answer:
+          "Tabs focuses on contract-driven billing, complex usage ratings, and automated collections with ASC 606 revenue recognition included across tiers ($2,000/mo entry). Maxio (formerly Chargify and SaaSOptics) focuses on core subscription management, B2B metrics, and dual ASC 606 / IFRS 15 revenue recognition starting from $599/mo. For mid-contract amendments and upsells, evaluate whether you need full billing recalculation or standalone revenue reallocation via relative SSP.",
+      },
     ],
   },
   {

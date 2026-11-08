@@ -1998,9 +1998,9 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
   {
     slug: "disaggregation-of-revenue",
     term: "Disaggregation of revenue",
-    title: "Disaggregation of Revenue: ASC 606 Disclosure",
+    title: "Disaggregated Revenue Meaning & Disclosure: ASC 606 Examples",
     description:
-      "Disaggregation of revenue under ASC 606 and IFRS 15: which categories to use, how it ties to segments, and a worked SaaS disclosure example.",
+      "What is disaggregated revenue? Meaning and disclosure requirements under ASC 606 & IFRS 15, mandatory categories (timing, geography), and worked SaaS examples.",
     definition:
       "Disaggregation of revenue is the required disclosure splitting revenue into categories that show how the nature, amount, timing and uncertainty of revenue and cash flows are affected by economic factors, for example by product line, geography, customer type, contract duration or timing of transfer.",
     references: [
@@ -2023,7 +2023,34 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
       "Not explaining the relationship between disaggregated revenue and segments.",
     ],
     related: ["remaining-performance-obligations", "point-in-time-recognition", "ratable-recognition", "principal-vs-agent", "ind-as-115-gst-treatment"],
-    further: [ASC_HUB, IND_AS_HUB],
+    further: [
+      ASC_HUB,
+      IND_AS_HUB,
+      SSP_TOOL,
+      { href: "/blog/asc-606-deferred-revenue-accounting-journal-entries", label: "ASC 606 deferred revenue accounting & journal entries" },
+    ],
+    faqs: [
+      {
+        question: "What is the meaning of disaggregated revenue in accounting?",
+        answer:
+          "Disaggregated revenue refers to the breakdown of an entity's total revenue into distinct, meaningful categories—such as by product line, geographical market, contract type, or timing of transfer (point-in-time vs. over-time). Under ASC 606-10-50-5 and IFRS 15 paragraph 114, this disclosure is mandatory to depict how the nature, amount, timing, and uncertainty of revenue and cash flows are affected by economic factors.",
+      },
+      {
+        question: "What are the common categories for disaggregating revenue under ASC 606?",
+        answer:
+          "ASC 606-10-55-91 outlines seven primary disaggregation categories: (1) type of good or service (e.g., SaaS subscription vs. professional services), (2) geographical region, (3) market or customer type (e.g., enterprise vs. SMB, government vs. commercial), (4) contract type (e.g., fixed-price vs. consumption-based), (5) contract duration, (6) timing of transfer (ratable over time vs. point-in-time delivery), and (7) sales channels (direct vs. reseller).",
+      },
+      {
+        question: "How does disaggregated revenue reconcile to segment reporting?",
+        answer:
+          "Under ASC 606-10-50-6, the disaggregated revenue disclosure must provide sufficient detail to help users understand the relationship between disaggregated revenue and the revenue information disclosed for each reportable segment under ASC 280 (Segment Reporting). The categories used should align with disclosures presented outside the financial statements, such as investor presentations and earnings releases.",
+      },
+      {
+        question: "Do private companies have to provide full revenue disaggregation?",
+        answer:
+          "No. Under the practical expedient in ASC 606-10-50-7, an entity that is not a public business entity (PBE) may elect to disclose only revenue disaggregated by timing of transfer (e.g., goods/services transferred over time vs. at a point in time), supplemented by qualitative information about how economic factors affect cash flows.",
+      },
+    ],
     soluqubeNote:
       "Soluqube does not prepare the disaggregation note. For the contracts you run through it, it produces per-obligation schedules marked over time or at a point in time, which you can sum by timing of transfer; product-line and geography categories come from your own systems.",
     sections: [
