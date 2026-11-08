@@ -4426,5 +4426,451 @@ Soluqube was designed specifically to eliminate the friction of manual revenue a
 To see how an audit-ready contract workpaper looks, download our [sample SSP workpaper](https://soluqube.com/samples/soluqube-ssp-sample.pdf), test your own contracts with our free [SSP Allocation Calculator](https://soluqube.com/tools/ssp-allocation-calculator), or explore our [ASC 606 Revenue Recognition Hub](https://soluqube.com/asc-606).
     `
   }
+,
+  {
+    slug: "right-to-use-vs-right-to-access-asc-606-software-licensing",
+    title: "Right to Use vs Right to Access: ASC 606 Software Guide",
+    subtitle: "How ASC 606 and IFRS 15 classify software licenses into point-in-time vs over-time revenue, evaluate functional vs symbolic IP, and guide journal entries.",
+    publishedAt: "November 8, 2026",
+    updatedAt: "November 8, 2026",
+    readTime: "11 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting & RevRec Research",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "IFRS 15", "Software Licensing", "Right to Use", "Right to Access", "RevRec"],
+    targetQuery: "right to use vs right to access",
+    definitionAnchor: "Under ASC 606-10-55-54 and IFRS 15 B52, intellectual property licenses are divided into two categories: a right to access IP (recognised over time as the vendor continuously supports or updates the IP) and a right to use IP (recognised at the point in time the customer obtains control and can direct the use of the IP). The classification hinges on whether the IP is functional or symbolic, and whether the vendor is expected to substantively alter the IP's functionality over the term.",
+    excerpt: "A comprehensive guide to right to use vs right to access under ASC 606-10-55-54 and IFRS 15 B52. Features the 3-part access test, functional vs symbolic IP analysis, worked SaaS and on-premise licensing examples, and audit-ready journal entries.",
+    toc: [
+      { id: "the-foundational-distinction-under-asc-606-and-ifrs-15", label: "Foundational distinction (ASC 606 & IFRS 15)" },
+      { id: "functional-ip-vs-symbolic-ip-the-classification-framework", label: "Functional vs symbolic IP framework" },
+      { id: "the-3-part-test-for-right-to-access-asc-606-10-55-55", label: "The 3-part test for right to access (55-55)" },
+      { id: "saas-on-premise-and-hybrid-software-where-do-they-sit", label: "SaaS, on-premise, and hybrid models" },
+      { id: "worked-example-1-on-premise-term-license-with-maintenance-split-model", label: "Example 1: On-premise term license with PCS" },
+      { id: "worked-example-2-hosted-cloud-saas-subscription-right-to-access", label: "Example 2: Hosted cloud SaaS (access)" },
+      { id: "worked-example-3-hybrid-ai-model-with-continuous-cloud-verification", label: "Example 3: Hybrid AI model with cloud API" },
+      { id: "journal-entries-and-balance-sheet-tie-out-schedules", label: "Journal entries & balance sheet tie-outs" },
+      { id: "pcaob-audit-workpaper-requirements-for-software-licenses", label: "PCAOB audit workpaper requirements" },
+      { id: "how-soluqube-structures-software-licensing-allocations", label: "How Soluqube manages license allocations" }
+    ],
+    faqs: [
+      {
+        question: "What is the primary difference between a right to use and a right to access under ASC 606?",
+        answer: "A right to use intellectual property (functional IP) is recognised at a point in time when the customer obtains control and the software key or download is made available. A right to access IP (symbolic IP or dynamic functional IP) is recognised over time throughout the license term because the vendor's ongoing activities significantly affect the IP and expose the customer to positive or negative effects."
+      },
+      {
+        question: "Is hosted cloud SaaS considered a right to access or a service?",
+        answer: "Under ASC 606-10-55-54(a) and US GAAP software guidance (ASC 350-40), standard hosted SaaS contracts do not convey a software license if the customer cannot take possession of the software without significant penalty. Instead, SaaS is treated as a hosted service contract satisfied over time under ASC 606-10-25-27(a). However, if an explicit license grant is transferred alongside hosting, it must be evaluated under the licensing guidance."
+      },
+      {
+        question: "How should an on-premise term license bundled with maintenance (PCS) be split?",
+        answer: "Under ASC 606-10-25-14 and 55-54, an on-premise software term license has standalone functionality (functional IP) and represents a right to use, recognized at a point in time when delivered. The bundled post-contract support (PCS / maintenance / technical support and unspecified updates) represents a distinct service satisfied over time. Consideration must be allocated between the license and PCS based on relative standalone selling prices (Step 4)."
+      },
+      {
+        question: "What happens if a functional IP license requires continuous cloud connectivity to operate?",
+        answer: "If software cannot perform its intended utility without ongoing vendor cloud services (e.g. continuous fraud scoring or dynamic machine learning model updates), the license and cloud service are not distinct within the context of the contract under ASC 606-10-25-14(b). They are combined into a single bundled performance obligation recognized over time over the subscription period."
+      }
+    ],
+    content: `## The foundational distinction under ASC 606 and IFRS 15
 
+In software, technology, and media licensing, determining the precise timing of revenue recognition under **ASC 606** and **IFRS 15** is one of the most contentious technical accounting determinations. 
+
+When an entity licenses intellectual property (IP) to a customer, accounting standard setters established a strict bifurcation under ASC 606-10-55-54 and IFRS 15.B52:
+1. **Right to Access IP**: The customer has access to the vendor's intellectual property as it exists throughout the license period. Revenue is recognized **over time**.
+2. **Right to Use IP**: The customer has the right to use the vendor's intellectual property as it exists at the specific point in time the license is granted. Revenue is recognized at a **point in time**.
+
+This single distinction drives whether a $500,000 multi-year software agreement is recognized upfront on Day 1 or ratably across a 36-month subscription term. Misclassifying a right to use as a right to access defers earned revenue and distorts GAAP operating margins; conversely, recognizing a right to access upfront at contract inception triggers audit restatements and SEC/PCAOB comment letters.
+
+---
+
+## Functional IP vs symbolic IP: The classification framework
+
+To establish whether a license provides a right to access or a right to use, ASC 606-10-55-58 through 55-64 directs preparers to evaluate the fundamental nature of the underlying intellectual property: **Functional IP** vs **Symbolic IP**.
+
+| Attribute | Functional Intellectual Property | Symbolic Intellectual Property |
+|---|---|---|
+| **Authoritative Definition** | IP that has significant standalone functionality (can process transactions, perform tasks, execute logic, or be broadcast). | IP that does not have significant standalone functionality; utility derives from the licensor's ongoing past and future activities. |
+| **Common Examples** | On-premise software, operating systems, mobile applications, engineering blueprints, pharmaceutical formulas, finished films, and music recordings. | Brand names, corporate logos, trademarks, franchise symbols, sporting event badges, and character likenesses. |
+| **Core Utility Driver** | Inherent capability of the code, formula, or content as delivered. | Brand equity, reputation, marketing campaigns, and continuous commercial relevance sustained by the licensor. |
+| **Default Accounting Nature** | **Right to Use** (Point-in-time recognition at license effective date and delivery). | **Right to Access** (Over-time recognition across the entire agreed license period). |
+| **Standard Exception** | Treated as Right to Access **only** if the licensor is contractually or practically expected to substantively alter the IP's functionality over time. | None. Symbolic IP cannot have point-in-time recognition because its value fluctuates with ongoing vendor brand activities. |
+
+### The Critical Rule for Software
+Software code is inherently **functional IP**. When compiled code executes on a CPU, performs database queries, or automates a workflow, it possesses standalone functionality. Therefore, under ASC 606-10-55-59, an on-premises software license is presumed to be a **right to use**, recognized at the point in time the customer receives the download key and can benefit from the asset.
+
+---
+
+## The 3-part test for right to access (ASC 606-10-55-55)
+
+Under ASC 606-10-55-55, a license of intellectual property is classified as a **right to access** if—and only if—all three of the following criteria are satisfied:
+
+1. **Contractual or Constructive Expectation of Activity**: The contract requires, or the customer reasonably expects, that the licensor will undertake activities that significantly affect the intellectual property to which the customer has rights (ASC 606-10-55-55(a)).
+2. **Direct Exposure to Vendor Activities**: The rights granted by the license directly expose the customer to any positive or negative effects of the licensor's activities identified in criterion (a) (ASC 606-10-55-55(b)).
+3. **No Transfer of a Separate Good or Service**: The activities identified in criterion (a) do not result in the transfer of a distinct good or service to the customer as those activities occur (ASC 606-10-55-55(c)).
+
+### What Constitutes "Significantly Affecting" the IP?
+Under ASC 606-10-55-57, a vendor's ongoing activities significantly affect the intellectual property only if:
+- The activities change the form (e.g., the design or character) or the functionality of the IP; or
+- The ability of the customer to obtain benefit from the IP is substantially derived from, or dependent upon, those activities.
+
+If the vendor merely provides routine bug fixes, security patches, or unspecified version upgrades through post-contract support (PCS), those activities do **not** convert functional software into a right to access. Instead, PCS is treated as a separate performance obligation satisfied over time, while the underlying term license remains a right to use recognized at delivery.
+
+---
+
+## SaaS, on-premise, and hybrid software: where do they sit?
+
+Modern enterprise software distribution models fall across three primary architectures, each requiring a distinct revenue recognition path:
+
+### 1. Pure Hosted Cloud SaaS
+In standard multi-tenant cloud software (e.g., Salesforce, Workday, ServiceNow), the customer accesses software hosted on the vendor's cloud infrastructure. 
+- **Guidance**: Under US GAAP (ASC 350-40) and IFRS, standard cloud hosting does **not** transfer a software license if the customer cannot take possession of the software without significant operational penalty.
+- **Classification**: Because no license is transferred, this is accounted for as a **service contract satisfied over time** under ASC 606-10-25-27(a), recognizing revenue ratably across the subscription term.
+
+### 2. On-Premise Term Software License
+The customer downloads executable binaries or containerized images onto their own infrastructure or private cloud.
+- **Classification**: The license component is **functional IP** and represents a **right to use**. Revenue allocated to the license is recognized upfront at the point in time the license key is delivered and the term begins (ASC 606-10-55-58). Bundled maintenance and technical support (PCS) are distinct performance obligations recognized ratably over the term.
+
+### 3. Hybrid Software with Continuous Cloud Dependencies
+Certain modern enterprise software tools combine a local on-premises agent or edge binary with continuous proprietary cloud services (e.g., threat intelligence feeds, continuous machine learning weight re-training, or real-time fraud scoring databases).
+- **Classification**: If the local binary cannot function without the continuous cloud connection, the software license and the cloud service are **not distinct within the context of the contract** (ASC 606-10-25-14(b)). They are combined into a single bundled performance obligation recognized **over time** over the subscription period.
+
+---
+
+## Worked example 1: On-premise term license with maintenance (split model)
+
+Consider an enterprise software vendor that executes a 3-year term license contract for on-premise database optimization software on January 1, 2026:
+- **Contract Transaction Price**: $180,000 billed annually ($60,000 upfront each year).
+- **Contract Deliverables**:
+  1. 3-Year On-Premise Term Software License (functional IP).
+  2. 3-Year Post-Contract Customer Support (PCS: technical support desk and unspecified maintenance releases).
+- **Standalone Selling Price (SSP) Determination**:
+  - The vendor regularly sells perpetual or term licenses standalone; historical pricing establishes an observable SSP of $120,000 for the software license.
+  - The vendor sells standalone support renewals at $30,000 per year, establishing an observable SSP of $90,000 for the 3-year PCS period.
+  - Total Standalone Selling Price = $120,000 + $90,000 = $210,000.
+  - Contract Discount = $210,000 - $180,000 = $30,000 (14.2857% discount).
+
+### Step 4 Relative SSP Allocation
+Under ASC 606-10-32-28, the $180,000 transaction price is allocated proportionally based on relative standalone selling prices:
+
+- **Allocation to Software License**: $180,000 × ($120,000 / $210,000) = **$102,857.14**
+- **Allocation to 3-Year PCS**: $180,000 × ($90,000 / $210,000) = **$77,142.86**
+- **Total Verification Check**: $102,857.14 + $77,142.86 = **$180,000.00**
+
+### Recognition Pattern
+- **Software License (Right to Use - Point in Time)**: $102,857.14 recognized immediately on January 1, 2026, when license keys are provisioned.
+- **PCS Support (Right to Access / Stand-Ready Service - Over Time)**: $77,142.86 recognized ratably over 36 months ($2,142.86 per month).
+
+---
+
+## Worked example 2: Hosted cloud SaaS subscription (right to access)
+
+Now consider a B2B SaaS platform delivering automated accounts payable reconciliation:
+- **Contract Terms**: 12-month access to the multi-tenant web application from January 1, 2026 to December 31, 2026.
+- **Contract Price**: $48,000 billed upfront.
+- **Contract Deliverables**: Platform access and routine customer support.
+
+### Analysis
+1. Does the customer have the contractual right to take possession of the software onto their own servers? **No.**
+2. Can the customer run the software on third-party hardware without significant penalty? **No.**
+3. **Conclusion**: Under ASC 350-40, no software license exists. The contract is a service contract under ASC 606-10-25-27(a).
+4. **Recognition Schedule**: 
+   - January 1, 2026: Cash / Accounts Receivable debited for $48,000; Deferred Revenue (Contract Liability) credited for $48,000.
+   - Monthly Amortization: $48,000 / 12 = $4,000.00 recognized per month.
+   - Upfront recognition on Day 1 = **$0.00**.
+
+---
+
+## Worked example 3: Hybrid AI model with continuous cloud verification
+
+Enterprise AI deployments present nuanced licensing dilemmas. Consider a fraud prevention vendor:
+- **Contract**: An enterprise bank licenses the vendor's fraud detection model weights to run on the bank's on-premise bare-metal cluster.
+- **Contract Dependency**: The on-premise model weights rely on daily cryptographic vector synchronization and dynamic fraud signature feeds from the vendor's cloud network. Without these continuous daily vector syncs, the model degrades within 48 hours and produces fatal false negatives.
+- **Term**: 12 months for $120,000.
+
+### Step 2 Distinctness Analysis (ASC 606-10-25-14)
+1. **Capable of being distinct**: In theory, raw machine learning weights can run offline.
+2. **Distinct within the context of the contract**: Under ASC 606-10-25-14(b), the on-premise weights and the cloud vector service are **highly interrelated and interdependent**. The vendor provides a continuous integrated service.
+3. **Classification**: The license is not distinct from the continuous cloud service. The entire contract is accounted for as a single performance obligation satisfied **over time** ($10,000/month).
+
+---
+
+## Journal entries and balance sheet tie-out schedules
+
+Returning to **Worked Example 1** (On-premise term license with PCS: $180,000 total price, $60,000 annual billing, $102,857.14 upfront license, $77,142.86 PCS over 36 months):
+
+### 1. Inception & Delivery (January 1, 2026)
+Year 1 invoice issued for $60,000; software license delivered:
+
+| Account | Debit ($) | Credit ($) | Note |
+|---|---|---|---|
+| **Accounts Receivable** | 60,000.00 | — | Year 1 invoice billed |
+| **Contract Asset (Unbilled)** | 42,857.14 | — | Revenue earned in excess of billing |
+| **Revenue (Software License)** | — | 102,857.14 | Point-in-time delivery (Right to Use) |
+
+*Balance Sheet Check*: Revenue recognized on Day 1 ($102,857.14) equals billings ($60,000) plus unbilled contract asset ($42,857.14).
+
+### 2. Year 1 Monthly PCS Amortization (January 31, 2026)
+Monthly PCS revenue = $77,142.86 / 36 = $2,142.86 per month:
+
+| Account | Debit ($) | Credit ($) | Note |
+|---|---|---|---|
+| **Contract Asset (Unbilled)** | 2,142.86 | — | Monthly unbilled PCS revenue |
+| **Revenue (PCS Services)** | — | 2,142.86 | Over-time service recognition |
+
+### 3. Year 2 Invoice Issuance (January 1, 2027)
+Second annual installment of $60,000 billed:
+
+| Account | Debit ($) | Credit ($) | Note |
+|---|---|---|---|
+| **Accounts Receivable** | 60,000.00 | — | Year 2 invoice billed |
+| **Contract Asset (Unbilled)** | — | 60,000.00 | Reclassification of unbilled balance to A/R |
+
+### 4. 36-Month Amortization Tie-Out Table
+
+| Period | Cash Billed ($) | License Revenue ($) | PCS Revenue ($) | Cumulative Revenue ($) | Ending Contract Asset / (Liability) ($) |
+|---|---|---|---|---|---|
+| **Jan 1, 2026** | 60,000.00 | 102,857.14 | 0.00 | 102,857.14 | 42,857.14 |
+| **Year 1 (2026)** | 60,000.00 | 102,857.14 | 25,714.29 | 128,571.43 | 68,571.43 |
+| **Year 2 (2027)** | 60,000.00 | 0.00 | 25,714.29 | 154,285.72 | 34,285.72 |
+| **Year 3 (2028)** | 60,000.00 | 0.00 | 25,714.28 | 180,000.00 | **0.00** |
+
+*Schedule Tie-Out Guarantee*: At Month 36, cumulative revenue recognized equals cumulative cash billed exactly ($180,000.00), and the contract asset balance ties out to $0.00 through terminal-period remainder absorption.
+
+---
+
+## PCAOB audit workpaper requirements for software licenses
+
+External auditors inspect software revenue contracts under PCAOB AS 1105 (*Audit Evidence*) and AS 2301 (*The Auditor's Responses to the Risks of Material Misstatement*). When reviewing Right to Use vs Right to Access claims, auditors demand specific documentation:
+
+1. **Proof of Software Delivery**: Cryptographic proof, download server logs, electronic license key transmission receipts, or signed customer acceptance certificates proving control transferred on or before the balance sheet date.
+2. **Contract Clause Grounding**: Exact citations to:
+   - Grant clause (identifying whether the grant is perpetual, term, non-exclusive, or hosted).
+   - Maintenance clause (specifying whether updates are major releases, minor patches, or stand-ready support).
+   - Hosting & possession terms (confirming whether the customer possesses the right to run code off-cloud).
+3. **Standalone Selling Price (SSP) Support**: Historical observable pricing data (such as bell-curve discount analyses of standalone term license sales or standalone PCS renewals) justifying the relative allocation weights.
+4. **Exact Mathematical Tie-Out**: Schedules that show zero unexplained rounding plugs, preserving precision across multi-period amortization.
+
+---
+
+## How Soluqube structures software licensing allocations
+
+Soluqube eliminates the manual spreadsheet risk in software licensing accounting:
+- **Heuristic Clause Extraction**: Ingests technology contracts and extracts the license grant, PCS terms, and pricing tiers with verbatim page citations.
+- **Objective Classification Support**: Provides structured workflows for accounting teams to document functional vs symbolic IP criteria and justify point-in-time vs over-time treatments.
+- **Deterministic SSP Allocation**: Calculates relative standalone selling prices using exact integer arithmetic with terminal-period remainder absorption so deferred revenue and contract asset balances tie out to $0.00.
+- **Audit-Ready Cryptographic Workpapers**: Exports immutable, SHA-256 hashed workpapers that auditors can independently re-perform in 60 seconds (Patent Pending App. No. 202621096305).
+
+To model your software licensing allocations, test our free [SSP Allocation Calculator](https://soluqube.com/tools/ssp-allocation-calculator) or explore our [ASC 606 Revenue Recognition Guide](https://soluqube.com/asc-606).`
+  },
+  {
+    slug: "cumulative-catch-up-adjustment-asc-606-contract-modifications",
+    title: "Cumulative Catch-Up Adjustment: ASC 606 Worked Examples",
+    subtitle: "How to calculate cumulative catch-up adjustments under ASC 606-10-25-13(b), compare against prospective accounting, and record exact journal entries.",
+    publishedAt: "November 8, 2026",
+    updatedAt: "November 8, 2026",
+    readTime: "10 min read",
+    author: {
+      name: "Soluqube Editorial",
+      role: "Technical Accounting & RevRec Research",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+    },
+    tags: ["ASC 606", "IFRS 15", "Contract Modifications", "Cumulative Catch-Up", "Journal Entries"],
+    targetQuery: "cumulative catch up adjustment",
+    definitionAnchor: "A cumulative catch-up adjustment under ASC 606-10-25-13(b) is an immediate accounting entry in the current reporting period that updates cumulative revenue recognized to date to reflect a contract modification or estimate change, as if the revised terms had been in effect from inception. It applies when remaining goods or services are not distinct and form part of a single performance obligation partially satisfied over time.",
+    excerpt: "Master cumulative catch-up adjustments under ASC 606-10-25-13(b) and IFRS 15. Includes the 3-way modification decision tree, mathematical formula, worked SaaS implementation examples, journal entries, and balance sheet tie-outs.",
+    toc: [
+      { id: "what-is-a-cumulative-catch-up-adjustment-under-asc-606", label: "What is a cumulative catch-up adjustment?" },
+      { id: "the-3-way-contract-modification-decision-framework-asc-606-10-25-12-to-25-13", label: "The 3-way modification decision tree" },
+      { id: "the-mathematical-formula-for-cumulative-catch-up-adjustments", label: "Mathematical formula for catch-up true-ups" },
+      { id: "prospective-treatment-vs-cumulative-catch-up-side-by-side-comparison", label: "Prospective vs cumulative catch-up side-by-side" },
+      { id: "worked-example-1-saas-implementation-scope-expansion-input-method", label: "Example 1: Implementation scope expansion" },
+      { id: "worked-example-2-retroactive-price-concession-and-milestone-change", label: "Example 2: Retroactive price concession" },
+      { id: "worked-example-3-hybrid-modification-distinct-subscription-seats-cumulative-implementation", label: "Example 3: Hybrid modification (mixed treatment)" },
+      { id: "full-journal-entries-and-contract-assetliability-ledger-postings", label: "Journal entries & contract ledger postings" },
+      { id: "audit-workpaper-defense-and-internal-control-considerations", label: "Audit defense & internal controls" },
+      { id: "how-soluqube-manages-multi-period-schedule-tie-outs", label: "How Soluqube manages multi-period schedules" }
+    ],
+    faqs: [
+      {
+        question: "When is a cumulative catch-up adjustment required under ASC 606?",
+        answer: "A cumulative catch-up adjustment is required under ASC 606-10-25-13(b) when a contract is modified and the remaining goods or services are not distinct from those already transferred, forming part of a single performance obligation that is partially satisfied over time. It is also required under ASC 606-10-32-43 when there is a change in the transaction price or estimated variable consideration for an ongoing obligation."
+      },
+      {
+        question: "Are prior financial periods restated when recording a cumulative catch-up adjustment?",
+        answer: "No. Under ASC 606-10-25-13(b), prior reporting periods are not restated. Instead, the entire cumulative adjustment required to bring inception-to-date revenue into alignment with revised progress and transaction price is recorded in the current reporting period as an adjustment to revenue."
+      },
+      {
+        question: "How does a cumulative catch-up adjustment differ from prospective modification accounting?",
+        answer: "Prospective accounting (ASC 606-10-25-13(a)) applies when remaining goods or services are distinct; it terminates the original contract and allocates remaining plus new consideration over remaining future deliverables with zero impact on past revenue. A cumulative catch-up recalculates inception-to-date revenue immediately, creating a current-period revenue increase or decrease."
+      },
+      {
+        question: "What causes a negative cumulative catch-up adjustment?",
+        answer: "A negative cumulative catch-up occurs when the revised measure of progress decreases (e.g. project cost overruns increase total estimated costs in the denominator under the cost-to-cost method) or when management grants a retroactive price concession, resulting in cumulative revenue earned to date being lower than what was previously recognized."
+      }
+    ],
+    content: `## What is a cumulative catch-up adjustment under ASC 606?
+
+In multi-year enterprise SaaS, complex implementation services, and recurring subscription agreements, contracts rarely stay static. Customers add users, expand modules, alter service deliverables, negotiate mid-term price concessions, or extend development milestones.
+
+Under **ASC 606** and **IFRS 15**, whenever a contract's scope or price is modified, accounting teams must classify the change into one of three specific treatment models:
+1. **Separate Contract** (ASC 606-10-25-12)
+2. **Prospective Treatment** (ASC 606-10-25-13(a))
+3. **Cumulative Catch-Up Adjustment** (ASC 606-10-25-13(b))
+
+A **cumulative catch-up adjustment** is an immediate one-time accounting entry in the current reporting period that updates inception-to-date revenue recognized. It acts as if the revised contract price and revised measures of progress had been in effect from the contract's very inception. Prior financial periods are not restated; rather, the entire cumulative adjustment is recognized as an addition to, or deduction from, revenue in the period of modification.
+
+---
+
+## The 3-way contract modification decision framework (ASC 606-10-25-12 to 25-13)
+
+Under ASC 606-10-25-10 through 25-13, every contract modification must pass through a rigorous two-step decision tree:
+
+1. **Step 1: Are the added goods or services distinct?** (ASC 606-10-25-14)
+   - If **NO** (the added goods/services are not distinct and form part of a single partially satisfied obligation): Account for the modification as a **Cumulative Catch-Up Adjustment** under ASC 606-10-25-13(b).
+   - If **YES** (the added goods/services are distinct): Proceed to Step 2.
+2. **Step 2: Are the additional distinct deliverables priced at their Standalone Selling Price (SSP)?**
+   - If **YES**: Account for the modification as a **Separate Contract** under ASC 606-10-25-12. The existing contract accounting is unaltered.
+   - If **NO**: Account for the modification **Prospectively** under ASC 606-10-25-13(a) by terminating the old contract and creating a new one allocating remaining consideration forward.
+
+### Detailed Evaluation Rules
+
+| Modification Pathway | Authoritative Criteria | Accounting Treatment |
+|---|---|---|
+| **1. Separate Contract** (ASC 606-10-25-12) | - The modification adds distinct goods or services (Step 2); and<br>- The contract price increases by an amount that reflects the standalone selling price (SSP) of the added deliverables (Step 4). | The modification is treated as an independent, unrelated contract. Past and existing contract schedules remain completely untouched. |
+| **2. Prospective Treatment** (ASC 606-10-25-13(a)) | - Remaining goods or services are **distinct** from those transferred prior to modification; but<br>- The added goods or services are **not** priced at their standalone selling price. | The original contract is treated as terminated. Unrecognized consideration plus new consideration is allocated prospectively across remaining distinct deliverables. Prior revenue is not touched. |
+| **3. Cumulative Catch-Up** (ASC 606-10-25-13(b)) | - Remaining goods or services are **not distinct** from goods/services already transferred; and<br>- They form part of a single, partially satisfied performance obligation recognized over time. | Recompute inception-to-date revenue based on revised transaction price and revised progress. Recognize the net true-up immediately in current period revenue. |
+
+---
+
+## The mathematical formula for cumulative catch-up adjustments
+
+When a cumulative catch-up modification occurs, finance teams calculate the required general ledger true-up using the following formulation:
+
+- **Cumulative Revenue Under Revised Terms** = Revised Measure of Progress × Revised Total Transaction Price
+- **Cumulative Catch-Up Adjustment** = Cumulative Revenue Under Revised Terms - Cumulative Revenue Previously Recognized
+
+### Interpretations of the Adjustment
+- **Positive Adjustment (> $0.00)**: If progress increased or the transaction price expanded faster than cost increases, the entity recognizes additional revenue in the current period (Debit Contract Asset / Credit Revenue).
+- **Negative Adjustment (< $0.00)**: If cost budget overruns diluted the percentage of completion, or if management granted a retroactive price concession, the entity records an immediate reduction in current-period revenue (Debit Revenue / Credit Contract Liability).
+
+---
+
+## Prospective treatment vs cumulative catch-up: Side-by-side comparison
+
+Understanding the differences between prospective treatment and cumulative catch-up is essential for audit compliance:
+
+| Dimension | Prospective Treatment (25-13(a)) | Cumulative Catch-Up (25-13(b)) |
+|---|---|---|
+| **Applicable Deliverables** | Distinct goods/services (e.g. additional SaaS user seats, distinct add-on modules, renewal months). | Non-distinct deliverables (e.g. continuous custom software development, milestone implementation). |
+| **Historical Revenue Impact** | **Zero**. Past periods and cumulative revenue recognized to date are untouched. | **Immediate True-Up**. Cumulative revenue is adjusted to match revised inception-to-date economics. |
+| **Balance Sheet Balance** | Amortizes forward over remaining delivery periods. | Contract Asset or Contract Liability is trued up on the modification date. |
+| **Revenue Run-Rate** | Blends remaining price smoothly over remaining term. | Can cause a sharp spike or dip in revenue in the modification period. |
+| **Common SaaS Trigger** | Adding 50 software seats at a negotiated 40% discount for the remaining 6 months of a contract. | Expanding the technical scope of an ongoing data migration and custom ERP integration project. |
+
+---
+
+## Worked example 1: SaaS implementation scope expansion (input method)
+
+Let us examine a real-world enterprise software implementation contract:
+- **Contract Date**: January 1, 2026.
+- **Contract Scope**: Single integrated performance obligation to configure and customize an enterprise revenue subledger over time.
+- **Initial Transaction Price**: $120,000.
+- **Initial Budgeted Labor Costs**: $80,000.
+- **Measurement Method**: Cost-to-cost input method (ASC 606-10-55-20).
+
+### Status at March 31, 2026 (Pre-Modification)
+- Actual costs incurred in Q1: $32,000.
+- Measure of Progress: $32,000 / $80,000 = **40.0%**.
+- Cumulative Revenue Recognized: 40.0% × $120,000 = **$48,000.00**.
+
+### Contract Modification on April 1, 2026
+The customer requests complex multi-currency ledger integration that was not part of the initial SOW.
+- The additional services are integrated and **not distinct** from the ongoing configuration (ASC 606-10-25-14(b)).
+- The contract price increases by **$30,000** (New total transaction price = **$150,000**).
+- Estimated total costs increase by **$40,000** (New total estimated costs = **$120,000**).
+
+### Cumulative Catch-Up Computation (April 1, 2026)
+1. **Revised Measure of Progress**:
+   Actual Costs Incurred / Revised Total Costs = $32,000 / $120,000 = **26.6667%**
+2. **Revised Cumulative Revenue Required**:
+   26.6667% × $150,000.00 = **$40,000.00**
+3. **Cumulative Catch-Up Adjustment**:
+   $40,000.00 - $48,000.00 = **-$8,000.00**
+
+Because progress was diluted from 40% to 26.67%, the entity must record a **negative $8,000 cumulative catch-up adjustment** against revenue in April 2026.
+
+---
+
+## Worked example 2: Retroactive price concession and milestone change
+
+Now consider an enterprise deployment where the vendor successfully hits performance milestones ahead of schedule, but grants a retroactive price adjustment:
+- **Original Terms**: $100,000 fixed price, measured on input cost progress.
+- **Costs Incurred**: $50,000 out of $100,000 total estimated costs (50% progress).
+- **Revenue Recognized**: $50,000.
+- **Modification Event**: To secure a 3-year renewal commitment, management amends the original contract, reducing the fee for this initial phase from $100,000 to $90,000, while scope and cost remain unchanged at 50% completion.
+
+### Cumulative Catch-Up Computation
+1. Revised Progress: **50.0%**.
+2. Revised Cumulative Revenue: 50.0% × $90,000 = **$45,000.00**.
+3. Prior Revenue Recognized: **$50,000.00**.
+4. Catch-Up Adjustment: $45,000 - $50,000 = **-$5,000.00**.
+5. Accounting Entry: Debit Revenue $5,000; Credit Contract Liability (or Contract Asset) $5,000.
+
+---
+
+## Worked example 3: Hybrid modification (distinct subscription seats + cumulative implementation)
+
+Enterprise contracts often combine distinct recurring subscriptions with non-distinct customization services. Under ASC 606-10-25-13(c), a modification that touches both must be separated:
+
+- **Deliverable A (SaaS Subscription)**: Distinct performance obligation recognized ratably over time. Adding 10 seats mid-term is accounted for **prospectively** under 25-13(a).
+- **Deliverable B (Custom Migration Service)**: Single partially satisfied performance obligation. Expanding scope or price is accounted for via **cumulative catch-up** under 25-13(b).
+
+Accounting teams must bifurcate the modification consideration, applying prospective amortization to the remaining subscription schedule and an immediate catch-up entry to the professional services ledger.
+
+---
+
+## Full journal entries and contract asset/liability ledger postings
+
+Recording the April 1, 2026 catch-up adjustment from **Worked Example 1** (Negative $8,000.00 adjustment):
+
+### 1. Cumulative Catch-Up Adjustment Entry (April 1, 2026)
+
+| Account | Debit ($) | Credit ($) | Description |
+|---|---|---|---|
+| **Contract Revenue (Cumulative Catch-Up)** | 8,000.00 | — | Current-period reversal to reflect revised 26.67% progress |
+| **Contract Asset (Unbilled Revenue)** | — | 8,000.00 | Reduction of unbilled contract asset balance |
+
+*Financial Statement Impact*: Q2 revenue is reduced by $8,000.00. The Contract Asset balance on the balance sheet reflects exactly $40,000 cumulative earned less billings to date.
+
+### 2. Subsequent Incurrence of Remaining Costs (Q2–Q4 2026)
+Over the subsequent 3 quarters, the vendor incurs the remaining $88,000 in costs ($32,000 + $88,000 = $120,000 total) and completes the project:
+
+- **Remaining Revenue Recognized**: $150,000.00 - $40,000.00 = **$110,000.00**
+- **Final Cumulative Revenue**: $40,000.00 + $110,000.00 = **$150,000.00**
+
+At project completion, cumulative revenue recognized ties out exactly to the $150,000 amended contract price.
+
+---
+
+## Audit workpaper defense and internal control considerations
+
+Because cumulative catch-up adjustments alter past recognized economics in the current period, auditors under PCAOB standards (AS 2401 and AS 1105) apply heightened professional skepticism:
+
+1. **Management Review Controls (MRC)**: Internal controls must verify that the revised cost estimates (denominator in cost-to-cost progress) are derived from objective project management data, not arbitrary management estimates.
+2. **Approved Modification Evidence**: Written, legally enforceable amendments (e.g., signed change orders, revised SOWs) must be retained. Oral agreements or unapproved change orders must be evaluated under ASC 606-10-25-11 for variable consideration constraints.
+3. **Disclosure Requirements**: ASC 606-10-50-10 requires entities to disclose the quantitative impact of changes in estimates and contract modifications that materially impact current-period operating results.
+
+---
+
+## How Soluqube manages multi-period schedule tie-outs
+
+While contract modification assessments (prospective vs catch-up) require technical accounting judgement, Soluqube handles the quantitative schedule management:
+- **Exact Schedule Tie-Out**: Computes multi-period revenue amortization and contract asset/liability balances using deterministic arithmetic with terminal-period remainder absorption so deferred revenue balances always tie to $0.00.
+- **Audit-Ready Workpapers**: Generates immutable, SHA-256 hashed workpaper packages documenting contract clauses, standalone selling price allocations, and amortization schedules (Patent Pending App. No. 202621096305).
+- **Clause Grounding**: Every deliverable is tied directly to the relevant section of your signed agreements.
+
+To evaluate your contract allocations, try our free [SSP Allocation Calculator](https://soluqube.com/tools/ssp-allocation-calculator) or explore our [ASC 606 Revenue Recognition Guide](https://soluqube.com/asc-606).`
+  }
 ];
